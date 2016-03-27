@@ -14,6 +14,11 @@ class FunFactsController extends Controller
     {
       $this->middleware('auth');
     }
+    public function index()
+    {
+      return view('student.about');
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [

@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
 
-      @include('layouts.menu')
+      @include('layouts.emmenu')
 
       <div class="col-md-10" style="font-size:12px;">
         @if(count($jobs)>0)

@@ -14,6 +14,11 @@ class RefController extends Controller
     {
       $this->middleware('auth');
     }
+    public function index()
+    {
+      return view('student.reference');
+    }
+
     public function store(Request $request)
     {
       $this->validate($request, [

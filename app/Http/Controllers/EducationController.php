@@ -4,15 +4,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\Student\Education;
+use App\Model\Student\University;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use DB;
 class EducationController extends Controller
 {
     //
     public function __construct()
     {
       $this->middleware('auth');
+    }
+
+    public function index()
+    {
+      $uni= DB::table('universities')->select('universities.*')->orderBy('university', 'ASC')->get();
+      return view('student.degree',['uni'=> $uni]);
     }
 
 

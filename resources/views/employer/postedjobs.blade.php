@@ -25,7 +25,8 @@
                       <li>Salary: {{$jobs->job_salary}}</li>
                       <div class="well">
                         Description: {{$jobs->job_description}}
-                        {{$jobs->job_reqs}}
+                        <br>
+                        Requirements :{{$jobs->job_reqs}}
                       </div>
                     </div>
 
@@ -39,7 +40,7 @@
 
                     </div>
                   </div>
-              
+
 
               @endforeach
 

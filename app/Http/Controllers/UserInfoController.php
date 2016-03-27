@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
     use App\Model\Student\UserInfo;
     use App\Http\Requests;
     use App\Http\Controllers\Controller;
-
+    use DB;
     class UserInfoController extends Controller
     {
       //
@@ -18,7 +18,8 @@ namespace App\Http\Controllers;
       {
 
 
-        return view('student.userinfo');
+        $uni= DB::table('universities')->select('universities.*')->orderBy('university', 'ASC')->get();
+        return view('student.userinfo',['uni'=> $uni]);
 
       }
       public function store(Request $request)
@@ -29,14 +30,14 @@ namespace App\Http\Controllers;
               'lname' => 'required|max:255|min:4',
               'area' =>'required',
               'post_code' => 'required|max:4|min:4',
-              'other'=>'max:255',
+              //'other'=>'max:255',
               'institute' => 'required|max:255|min:10',
               'passing_date' => 'required|date',
               'mobile' => 'required|max:14|min:11',
               'universityId' => 'required|max:20',
               'NId' => 'required|max:17|min:13',
               'facebookId' => 'required|url',
-              'LinkedInId' => 'url',
+            //  'LinkedInId' => 'url',
               'youtube'=> 'max:255'
             ]);
 
@@ -72,7 +73,7 @@ namespace App\Http\Controllers;
           'lname' => 'required|max:255|min:4',
           'area' =>'required',
           'post_code' => 'required|max:4|min:4',
-          'other'=>'max:255',
+          //'other'=>'max:255',
           'institute' => 'required|max:255|min:10',
           'passing_date' => 'required|date',
           'mobile' => 'required|max:14|min:11',

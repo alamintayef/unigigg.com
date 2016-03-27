@@ -1,44 +1,49 @@
+@extends('layouts.app')
+
+@section('content')
+  <div class="container ">
+    <div class="row">
+      @include('layouts.menu')
+      <div class="col-md-8">
+
+        <ul class="nav nav-pills whiteproper">
+          <li ><a href="{{url('userinfo')}}">Basic Information</a></li>
+          <li ><a href="{{url('image')}}">Profile Pic</a></li>
+          <li ><a href="{{url('edu')}}">Degree</a></li>
+          <li ><a href="{{url('skill')}}">Skills</a></li>
+          <li ><a href="{{url('experience')}}">Experience</a></li>
+          <li ><a href="{{url('refs')}}">Reference</a></li>
+          <li class="active"><a href="{{url('excc')}}">Extra-Curricular</a></li>
+          <li><a href="{{url('interest')}}">Interests</a></li>
+          <li><a href="{{url('hobby')}}">Hobbies</a></li>
+          <li><a href="{{url('fun')}}">About You</a></li>
+
+        </ul>
 
 
-    <div class="panel panel-default">
-      <div class="panel-heading"><a class="btn btn-primary btn-block btn-lg" data-toggle="collapse" href="#collapseexcc">Add Extra Curricular Acitivities</a></div>
-        <div id="collapseexcc" class="panel-collapse collapse">
-          <div class="panel-body">
+          <div class="well">
 
-    {!! Form::open(array('url' => '/exccstore')) !!}
+            @if(count($errors)>0)
+              <div class="alert alert-danger">
+                @foreach($errors->all() as $error)
+                  <p>{{ $error }}</p>
+                @endforeach
+              </div>
+            @endif
+            @if (notify()->ready())
+              <div class="alert alert-{{notify()->type()}}">
+                {{notify()->message()}}
+              </div>
+            @endif
 
 
-    <div class="form-group">
-      {!! Form::label('excc_name', 'Title:', ['class' => 'control-label']) !!}
-      {!! Form::text('excc_name', null, ['class' => 'form-control']) !!}
+            @include('student.forms.excc')
+
+
+      </div>
     </div>
-
-    <div class="form-group">
-      {!! Form::label('excc_start_date', 'Start Date:', ['class' => 'control-label']) !!}
-      {!! Form::date('excc_start_date', null, ['class' => 'form-control']) !!}
-    </div>
-    <div class="form-group">
-      {!! Form::label('excc_end_date', 'End Date:', ['class' => 'control-label']) !!}
-      {!! Form::date('excc_end_date', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}
-    </div>
-    <div class="form-group">
-      {!! Form::label('excc_description', 'Tell Us Something About it:', ['class' => 'control-label']) !!}
-      {!! Form::textarea('excc_description', null, ['class' => 'form-control' ,'row'=>'3',]) !!}
-    </div>
-    @if($errors->any())
-    <div class="alert alert-danger">
-        @foreach($errors->all() as $error)
-            <p>{{ $error }}</p>
-        @endforeach
-    </div>
-  @endif
-
-
-
-    {!! Form::submit('Add', ['class' => 'btn btn-primary']) !!}
-
- {!! Form::close() !!}
-
+  </div>
 </div>
-</div>
-</div>
+
+
+@endsection

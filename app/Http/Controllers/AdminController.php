@@ -18,6 +18,7 @@ use App\Model\Student\FunFacts;
 use App\Model\Student\Image;
 use App\Model\Student\EmInfo;
 use App\Model\Student\Jobs;
+use App\Model\Student\University;
 use App\Model\Student\Reference;
 
 class AdminController extends Controller
@@ -31,5 +32,19 @@ class AdminController extends Controller
         'alluser' => $alluser,
       ]);
 
+    }
+    public function unistore(Request $request)
+    {
+      $this->validate($request, [
+        'university'=> 'required',
+      ]);
+    $university = new University;
+    $university->university = $request->university;
+    $university->save();
+    notify()->flash('Added Successfully! ', 'success', [
+       
+     ]);
+
+    return redirect('/home');
     }
 }

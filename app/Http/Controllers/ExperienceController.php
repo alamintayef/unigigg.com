@@ -14,6 +14,11 @@ class ExperienceController extends Controller
     {
       $this->middleware('auth');
     }
+    public function index()
+    {
+      return view('student.experience');
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [

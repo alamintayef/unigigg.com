@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="name" content="First Online Youth Employment Platform in Bangladesh">
-
+    <meta http-equiv="Page-Enter" content="revealTrans(Duration=2.0,Transition=12)">
     <title>unigigg | Get Empowered | Get Hired</title>
 
     <!-- Fonts -->
@@ -23,9 +23,13 @@
         body {
             font-family: 'Raleway';
             background-color: 	#f7f7f7;
-            font-size: 16px;
+            font-size: 14px;
             padding-top: 100px;
 
+        }
+        .nav
+        {
+          font-size: 15px;
         }
         .center{
           text-align:center;;
@@ -55,7 +59,7 @@
             margin-right: 6px;
         }
         .ft{
-          font-size: 12px;
+          font-size: 14px;
         }
         .textb{
           color:#3b5998;

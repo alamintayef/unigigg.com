@@ -50,8 +50,12 @@ Route::get('emailview', function()
 
 Route::group(['middleware' => ['web']], function () {
       //
-
+      //admin
       Route::get('admin','AdminController@index');
+      Route::post('university', 'AdminController@unistore');
+
+
+
       Route::get('/employer/login','EmployerController@login');
 
       //Registration
@@ -101,6 +105,7 @@ Route::group(['middleware' => 'web'], function () {
     //  Route::get('/userupdate/{id}', 'UserInfoController@update');
       Route::post('/userupdate/{id}', 'UserInfoController@update');
   //skills
+      Route::get('/skill', 'SkillController@index');
       Route::post('/skillstore', 'SkillController@store');
       Route::post('/skill/{id}','SkillController@destroy');
       Route::post('/skills/{id}','SkillController@add_skill_proof');
@@ -108,28 +113,35 @@ Route::group(['middleware' => 'web'], function () {
   //interest
       Route::post('/intereststore', 'InterestController@store');
       Route::post('/interest/{id}','InterestController@destroy');
-
+      Route::get('/interest', 'InterestController@index');
+      //hobby
       Route::post('/hobbystore', 'HobbyController@store');
       Route::post('/hobby/{id}','HobbyController@destroy');
+      Route::get('/hobby', 'HobbyController@index');
 
   // Education
+      Route::get('/edu','EducationController@index');
       Route::post('/edustore', 'EducationController@store');
-
       Route::post('/edupdate/{id}','EducationController@update');
       Route::post('/edudel/{id}','EducationController@destroy');
   //Image
       Route::post('/imagestore', 'ImageController@store');
+      Route::get('/image', 'ImageController@index');
   //Reference
       Route::post('/refstore','RefController@store');
       Route::post('/refdelete/{id}','RefController@destroy');
+      Route::get('/refs', 'RefController@index');
   // experience
       Route::post('/experiencestore', 'ExperienceController@store');
       Route::post('/experience/{id}','ExperienceController@destroy');
+      Route::get('/experience','ExperienceController@index');
   //extra
       Route::post('/exccstore', 'ExtraCurController@store');
       Route::post('/excc/{id}','ExtraCurController@destroy');
-
+      Route::get('/excc','ExtraCurController@index');
+  //fun
       Route::post('/funstore', 'FunFactsController@store');
+      Route::get('/fun','FunFactsController@index');
   //Job Application
       Route::post('/apply', 'ChakriController@store');
       Route::post('/apply/eccentric', 'OddAppliedController@store');

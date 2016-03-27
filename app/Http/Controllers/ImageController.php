@@ -17,6 +17,11 @@ class ImageController extends Controller
     {
       $this->middleware('auth');
     }
+    public function index()
+    {
+      return view('student.propic');
+    }
+
 
     public function store(Request $request){
   		// Store records process

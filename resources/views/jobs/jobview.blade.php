@@ -4,7 +4,7 @@
   <div class="container ">
     <div class="row">
 
-      @include('layouts.menu')
+      @include('layouts.emmenu')
 
 
       <div class="col-md-10">
@@ -28,6 +28,7 @@
                   <p>
                     <strong>Description: </strong>{{$job->job_description}}
                   </p>
+                  <hr>
                   <p>
                     <strong>Requirements: </strong> {{$job->job_reqs}}
                   </p>

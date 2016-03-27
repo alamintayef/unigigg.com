@@ -8,15 +8,15 @@
 
         <ul class="nav nav-pills whiteproper">
           <li ><a href="{{url('userinfo')}}">Basic Information</a></li>
-          <li ><a href="{{url('image')}}">Profile Pic</a></li>
+          <li ><a href="{{url('Image')}}">Profile Pic</a></li>
           <li ><a href="{{url('edu')}}">Degree</a></li>
           <li ><a href="{{url('skill')}}">Skills</a></li>
-          <li class="active"><a href="{{url('experience')}}">Experience</a></li>
-          <li ><a href="{{url('refs')}}">Reference</a></li>
+          <li><a href="{{url('experience')}}">Experience</a></li>
+          <li><a href="{{url('refs')}}">Reference</a></li>
           <li><a href="{{url('excc')}}">Extra-Curricular</a></li>
           <li><a href="{{url('interest')}}">Interests</a></li>
           <li><a href="{{url('hobby')}}">Hobbies</a></li>
-          <li ><a href="{{url('fun')}}">About You</a></li>
+          <li class="active"><a href="{{url('fun')}}">About You</a></li>
 
         </ul>
 
@@ -35,9 +35,9 @@
                 {{notify()->message()}}
               </div>
             @endif
+          
 
-
-            @include('student.forms.experience')
+            @include('student.forms.funfacts')
 
 
       </div>

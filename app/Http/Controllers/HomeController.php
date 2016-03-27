@@ -40,18 +40,19 @@ class HomeController extends Controller
     public function index(Request $request)
     {
 
-      $infos = Userinfo::where('user_id', $request->user()->id)->get();
+      $infos = Userinfo::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->limit(1)->get();
       $skill = Skills::where('user_id', $request->user()->id)->get();
       $interest = Interest::where('user_id', $request->user()->id)->get();
       $hobbies = Hobbies::where('user_id', $request->user()->id)->get();
-      $education = Education::where('user_id', $request->user()->id)->get();
-      $experiences = Experience::where('user_id', $request->user()->id)->get();
+      $education = Education::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->limit(5)->get();
+      $experiences = Experience::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->limit(5)->get();
       $extracs = ExtraCur::where('user_id', $request->user()->id)->get();
       $funs = FunFacts::where('user_id', $request->user()->id)->get();
       $images = Image::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->limit(1)->get();
-      $refs = Reference::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->get();
+      $refs = Reference::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->limit(3)->get();
       //employer
       $eminfos = EmInfo::where('user_id', $request->user()->id)->get();
+      //admin
       $allusers = User::all();
       $allJobs = Jobs::all();
       $allOddJobs = OddJobs::all();

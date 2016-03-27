@@ -26,11 +26,15 @@ class OddJobsController extends Controller
       }
       public function postjobs()
       {
-        return view('jobs.postoddjobs');
+        $uni= DB::table('universities')->select('universities.*')->orderBy('university', 'ASC')->get();
+        return view('jobs.postoddjobs',['uni'=> $uni]);
+
       }
       public function empostjobs()
       {
-        return view('jobs.empostoddjobs');
+        $uni= DB::table('universities')->select('universities.*')->orderBy('university', 'ASC')->get();
+        return view('jobs.empostoddjobs',['uni'=> $uni]);
+
       }
       public function postjob(Request $request)
       {

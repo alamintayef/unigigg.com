@@ -19,16 +19,14 @@
           @include('student.partials.userview.infoview')
           <br>
           <br>
-          <br>
-          <br>
-          <br>
+        
           @if(count($education)>0)
           @include('student.partials.userview.eduview')
         @endif
         <br>
           <br>
             <br>
-            
+
 
 
           <h3>Show Data</h3>

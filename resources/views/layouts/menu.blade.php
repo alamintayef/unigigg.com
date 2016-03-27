@@ -24,7 +24,7 @@
   </li>
   <li class="list-group-item dropdown">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-        <i class="fa fa-btn fa-tasks"></i>  Eccentric-Jobs <span class="caret"></span>
+      <strong> <i class="fa fa-btn fa-tasks"></i>  Eccentric-Jobs <span class="caret"></span></strong> 
       </a>
       <ul class="dropdown-menu" role="menu">
       <li class="list-group-item">

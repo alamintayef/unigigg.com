@@ -14,6 +14,11 @@ class InterestController extends Controller
     {
       $this->middleware('auth');
     }
+    public function index()
+    {
+      return view('student.interest');
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [

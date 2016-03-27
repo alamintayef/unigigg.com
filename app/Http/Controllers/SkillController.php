@@ -15,6 +15,10 @@ class SkillController extends Controller
   {
     $this->middleware('auth');
   }
+  public function index()
+  {
+    return view('student.skill');
+  }
 
   public function store(Request $request)
   {

@@ -37,7 +37,32 @@
         </div>
 
       </div>
-  </div>
+        </div>
+      <div class="col-md-4 pull-left whiteproper">
+        <div class="panel-body">
+
+            {!! Form::open(array('url' => '/university')) !!}
+            @if(count($errors)>0)
+              <div class="alert alert-danger">
+                @foreach($errors->all() as $error)
+                  <p>{{ $error }}</p>
+                @endforeach
+              </div>
+            @endif
+            @if (notify()->ready())
+              <div class="alert alert-{{notify()->type()}}">
+                {{notify()->message()}}
+              </div>
+            @endif
+          <div class="form-group">
+            {!! Form::label('university', 'Add University:', ['class' => 'control-label']) !!}
+            {!! Form::text('university', null, ['class' => 'form-control']) !!}
+          </div>
+            {!! Form::submit('Add', ['class' => 'btn btn-primary']) !!}
+        </div>
+
+      </div>
+
 
 
 
