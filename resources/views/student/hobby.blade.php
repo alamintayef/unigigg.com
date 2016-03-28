@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+  
   <div class="container ">
     <div class="row">
       @include('layouts.menu')
@@ -30,11 +31,9 @@
                 @endforeach
               </div>
             @endif
-            @if (notify()->ready())
-              <div class="alert alert-{{notify()->type()}}">
-                {{notify()->message()}}
-              </div>
-            @endif
+            @if(Session::has('flash_message'))
+    <div class="alert alert-success"><em> {!! session('flash_message') !!}</em></div>
+@endif
 
 
             @include('student.forms.hobby')

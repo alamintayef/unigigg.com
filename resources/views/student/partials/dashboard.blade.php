@@ -1,11 +1,13 @@
 <div class="container">
   <div class="row">
     @include('layouts.menu')
-
+    
     <div class="col-md-10 ">
       <div class="panel panel-primary">
         <div class="panel-heading">Dashboard</div>
-
+        @if(Session::has('flash_message'))
+<div class="alert alert-success"><em> {!! session('flash_message') !!}</em></div>
+@endif
         <div class="panel-body">
           <h4 class="well">Welcome onboard <strong>{{Auth::user()->name}}</strong>   </h4>
           <div class="col-md-5">
@@ -50,7 +52,7 @@
             <div class="tab-pane fade" id="experience">
 
                 @include('student.partials.userview.expview')
-              
+
             </div>
             <div class="tab-pane fade" id="interest">
                   @include('student.partials.userview.interestview')

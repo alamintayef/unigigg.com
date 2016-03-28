@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\Student\Hobbies;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Session;
 class HobbyController extends Controller
 {
     //
@@ -33,12 +33,9 @@ class HobbyController extends Controller
             'hobbies_related_work' => $request->hobbies_related_work,
 
         ]);
-        notify()->flash('Added Successfully! Go to Dashboard', 'success', [
-           'timer' => 3000,
-           'text' => 'It\'s really great to see you again',
-         ]);
+        Session::flash('flash_message','Hobby successfully added.');
 
-         return redirect('/hobby');
+        return redirect('/hobby');
     }
     public function destroy($id)
     {

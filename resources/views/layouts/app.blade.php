@@ -95,7 +95,7 @@
 
               @else
 
-                <a class="navbar-brand text-primary" href="{{ url('/home') }}" >
+                <a class="navbar-brand text-primary" href="{{ url('/') }}" >
                   <i class="fa fa-graduation-cap text-primary"></i>  unigigg<sub><small>alpha</small></sub>
                 </a>
 
