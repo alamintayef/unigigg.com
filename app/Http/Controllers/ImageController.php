@@ -50,7 +50,7 @@ class ImageController extends Controller
                     'text' => 'It\'s really great to see you again',
                   ]);
 
-                  return redirect('/userinfo');
+                  return redirect('/image');
         }
         public function update($id, Request $request)
         {

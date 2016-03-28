@@ -40,7 +40,7 @@ class SkillController extends Controller
     ]);
 
 
-    return redirect('/userinfo');
+    return redirect('/skill');
 
   }
   public function destroy($id)

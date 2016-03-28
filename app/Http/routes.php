@@ -53,7 +53,7 @@ Route::group(['middleware' => ['web']], function () {
       //admin
       Route::get('admin','AdminController@index');
       Route::post('university', 'AdminController@unistore');
-
+      Route::get('/aprofile/{id}', 'AdminController@studentemview');
 
 
       Route::get('/employer/login','EmployerController@login');
@@ -73,6 +73,7 @@ Route::group(['middleware' => ['web']], function () {
   //Jobs
       Route::get('/jobs', 'JobsController@jobboard');
       Route::get('/chakri', 'ChakriController@chakriboard');
+      Route::get('/show/ejobs/{id}','JobsController@showjobs');
   //show who applied
       Route::get('/whoapplied', 'ApplyController@showApplied');
   //shortlist

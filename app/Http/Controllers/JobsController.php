@@ -57,7 +57,7 @@ class JobsController extends Controller
     }
     public function show(Request $request)
     {
-      $postedjobs = Jobs::where('user_id', $request->user()->id)->get();
+      $postedjobs = Jobs::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->get();
       return view('employer.postedjobs', [
         'postedjobs'=>$postedjobs,
       ]);
@@ -102,6 +102,26 @@ class JobsController extends Controller
       'applied'=>$applied,
 
     ]);
+  }
+  public function showjobs($id)
+  {
+    $jobs = DB::table('jobs')
+          ->where('jobs.job_id','=', $id)
+          ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
+          ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
+          ->orderBy('created_at', 'desc')
+          ->get();
+    $uid= auth()->user()->id;
+    $applicable=DB::table('user_info')
+                ->where('user_info.user_id' ,'=',$uid)
+                ->join('skills', 'user_info.user_id','=','skills.user_id')
+                ->select('user_info.*','skills.*')
+                ->get();
+          return view('jobs.jobview', [
+            'jobs'=>$jobs,
+            'applicable'=>$applicable,
+
+          ]);
   }
 
 }

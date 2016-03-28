@@ -18,9 +18,15 @@ class OddJobsController extends Controller
       public function index(){
 
         $oddjobs = OddJobs::all();
-
+        $uid= auth()->user()->id;
+        $applicable=DB::table('user_info')
+                    ->where('user_info.user_id' ,'=',$uid)
+                    ->join('skills', 'user_info.user_id','=','skills.user_id')
+                    ->select('user_info.*','skills.*')
+                    ->get();
         return view('jobs.oddjobs',[
           'oddjobs'=> $oddjobs,
+          'applicable'=> $applicable
         ]);
 
       }

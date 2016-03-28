@@ -4,7 +4,7 @@
   <div class="container ">
     <div class="row">
 
-      @include('layouts.emmenu')
+      @include('layouts.menu')
 
 
       <div class="col-md-10">

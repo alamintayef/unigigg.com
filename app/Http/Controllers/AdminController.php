@@ -24,6 +24,10 @@ use App\Model\Student\Reference;
 class AdminController extends Controller
 {
     //
+    public function __construct()
+    {
+      $this->middleware('auth');
+    }
     public function index()
     {
       $alluser = User::all();
@@ -31,6 +35,28 @@ class AdminController extends Controller
       return view('admin.userboard',[
         'alluser' => $alluser,
       ]);
+
+    }
+    public function studentemview($id)
+    {
+      $profile = UserInfo::where('user_id','=', $id)->get();
+      $skill = Skills::where('user_id','=', $id)->get();
+      $education = Education::where('user_id','=', $id)->get();
+      $exps = Experience::where('user_id','=', $id)->get();
+      $refs = Reference::where('user_id','=', $id)->get();
+      $images = Image::where('user_id','=', $id)->orderBy('created_at', 'desc')->limit(1)->get();
+      return view('student.studentemview', [
+        'profile'=>$profile,
+        'skill'=>$skill,
+        'education'=> $education,
+        'exps'=> $exps,
+        'refs'=> $refs,
+        'images'=> $images,
+
+
+
+      ]);
+
 
     }
     public function unistore(Request $request)
@@ -42,7 +68,7 @@ class AdminController extends Controller
     $university->university = $request->university;
     $university->save();
     notify()->flash('Added Successfully! ', 'success', [
-       
+
      ]);
 
     return redirect('/home');

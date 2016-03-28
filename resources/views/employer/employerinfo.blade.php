@@ -4,20 +4,21 @@
   <div class="container ">
     <div class="row">
       @include('layouts.emmenu')
-      <div class="col-md-8">
-        <div class="well">
-          <h4 class="text-info">Build Company Profile</h4>
-        </div>
-        <h1 class="well well-lg">Basic info</h1>
+      <div class="col-md-8 ">
+        <div class="panel whiteproper pad">
+          <h4 class="textb">Build Company Profile</h4>
+
+        <h2 class="textb">Basic info</h2>
         @if (notify()->ready())
           <div class="alert alert-{{notify()->type()}}">
             {{notify()->message()}}
           </div>
         @endif
-      
+        </div>
 
 
-        <div class="col-md-8">
+
+        <div class="panel whiteproper pad">
           {!! Form::open(array('url' => '/employerinfo')) !!}
           @if($errors->any())
           <div class="alert alert-danger">
@@ -71,7 +72,7 @@
 
 
             {!! Form::close() !!}
-            @include('student.image')
+            @include('student.forms.image')
           </div>
 
 

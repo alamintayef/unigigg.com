@@ -6,10 +6,10 @@
 
       @include('layouts.menu')
 
-      <div class="col-md-10" style="font-size:12px;">
+      <div class="col-md-10 " style="font-size:12px;">
         @if(count($jobs)>0)
           @foreach($jobs as $job)
-            <div class="col-md-3 col-md-offset-1" style="background-color:white;">
+            <div class="col-md-3 col-md-offset-1 panel whiteproper">
 
               <h5 >{{$job->job_name}}</h5>
 
@@ -26,18 +26,20 @@
                   <form class="form-control" action="{{url('show/jobs',$job->job_id)}}" method="GET">
                     {!! csrf_field() !!}
 
-                    <button type="submit" name="button" class="btn btn-default btn-mini pull-right">view</button>
+                    <button type="submit" name="button" class="btn btn-default btn-lg">view</button>
 
                   </form>
 
 
             </div>
+              <br>
 
           @endforeach
         @endif
 
 
       </div>
+
     </div>
   </div>
 @endsection

@@ -42,10 +42,15 @@
             </td>
               @endif
             <td>
-              <button type="button" name="button">View Profile</button>
+              <form class="pull-right" action="{{url('/aprofile',$users->id)}}" method="GET">
+                {!! csrf_field() !!}
+                <button type="submit" class="btn btn-primary">
+                  <i class="fa fa-user"></i> view profile
+                </button>
+              </form>
             </td>
             <td>
-              
+
             </td>
 
 

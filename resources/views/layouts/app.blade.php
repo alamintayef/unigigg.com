@@ -49,7 +49,10 @@
           color:white;
         }
         .pad{
-          padding:50px
+          padding:50px;
+        }
+        .padsmall{
+          padding:20px;
         }
         .pb{
           padding-bottom: 100px;

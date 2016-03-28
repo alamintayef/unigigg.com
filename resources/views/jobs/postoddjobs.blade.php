@@ -79,9 +79,9 @@
       </div>
       <div class="col-md-3 col-sm-offset-1 whiteproper panel">
 
-              <h4 >Instructions</h4>
+              <h4 >Instructions</h4 >
 
-              <p>
+              <p>unun
 
               </p>
 

@@ -24,7 +24,7 @@ class ChakriController extends Controller
     }
     public function store(Request $request)
     {
-    
+
 
       $input = $request->all();
 
@@ -72,9 +72,15 @@ class ChakriController extends Controller
             ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
             ->orderBy('created_at', 'desc')
             ->get();
-
-            return view('jobs.jobview', [
+      $uid= auth()->user()->id;
+      $applicable=DB::table('user_info')
+                  ->where('user_info.user_id' ,'=',$uid)
+                  ->join('skills', 'user_info.user_id','=','skills.user_id')
+                  ->select('user_info.*','skills.*')
+                  ->get();
+            return view('jobs.chakriview', [
               'jobs'=>$jobs,
+              'applicable'=>$applicable,
 
             ]);
     }

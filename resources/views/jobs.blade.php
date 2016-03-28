@@ -6,7 +6,7 @@
 
       @include('layouts.emmenu')
 
-      <div class="col-md-10" style="font-size:12px;">
+      <div class="col-md-10" style="font-size:12px; padding:5px">
         @if(count($jobs)>0)
           @foreach($jobs as $job)
             <div class="col-md-3 col-md-offset-1" style="background-color:white;">
@@ -23,7 +23,7 @@
               <!-- Check if its recruter or not-->
 
 
-                  <form class="form-control" action="{{url('show/jobs',$job->job_id)}}" method="GET">
+                  <form class="form-control" action="{{url('show/ejobs',$job->job_id)}}" method="GET">
                     {!! csrf_field() !!}
 
                     <button type="submit" name="button" class="btn btn-default btn-mini pull-right">view</button>
@@ -32,7 +32,7 @@
 
 
             </div>
-
+            <br>
           @endforeach
         @endif
 

@@ -4,7 +4,7 @@
   <div class="container ">
     <div class="row ">
       @include('layouts.emmenu')
-      <div class="col-md-8 whiteproper col-md-offset-1">
+      <div class="col-md-8 whiteproper col-md-offset-1 panel">
         <div >
           <h4 class="text-info">Shortlisted Candidates</h4>
 

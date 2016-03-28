@@ -40,7 +40,7 @@ class RefController extends Controller
          'text' => 'It\'s really great to see you again',
        ]);
 
-       return redirect('/userinfo');
+       return redirect('/refs');
     }
 
     public function destroy($id)

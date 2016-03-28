@@ -13,7 +13,14 @@
   </style>
   <div class="container ">
     <div class="row">
-      <a href="{{url('whoapplied')}}">Go Back</a>
+      @if(Auth::user()->type==2)
+        <a href="{{url('whoapplied')}}">Go Back</a>
+      @elseif(Auth::user()->type==1)
+        <a href="{{url('home')}}">Go Back</a>
+      @else
+        <a href="{{url('admin')}}">Go Back</a>
+      @endif
+
       <div class="col-md-10">
 
         <div class="panel panel-blue" >
@@ -37,11 +44,7 @@
                 <p>
                   University :{{$view->institute}}
                 </p>
-                <p>
-                  National id :{{$view->NId}}
-                </p>
-
-
+              
               </div>
             @endforeach
 

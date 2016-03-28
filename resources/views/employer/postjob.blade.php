@@ -4,20 +4,20 @@
   <div class="container ">
     <div class="row">
       @include('layouts.emmenu')
-      <div class="col-md-6">
-        <div class="well">
-          <h4 class="text-info">Post a Job</h4>
+      <div class="col-md-6 ">
+        <div class="well panel whiteproper" >
+          <h4>Post A Job</h4>
           @if (notify()->ready())
             <div class="alert alert-{{notify()->type()}}">
               {{notify()->message()}}
             </div>
           @endif
-        
+
         </div>
 
 
 
-          <div class="col-md-10">
+          <div class="col-md-12 panel whiteproper textb pad">
             {!! Form::open(array('url' => '/postjobs', 'file'=>true)) !!}
             @if($errors->any())
             <div class="alert alert-danger">
@@ -77,6 +77,14 @@
 
 
 
+      </div>
+      <div class="col-md-3 col-xs-offset-1 panel whiteproper pad">
+        <h5>Your Jobs</h5>
+        <small>Please visit <a href="{{url('/postedjobs')}}">posted jobs</a> to view full job detailss</small>
+        @foreach($postedjobs as $jobs)
+          <li>{{$jobs->job_name}}</li>
+
+        @endforeach
       </div>
       </div>
       </div>

@@ -35,7 +35,7 @@ class InterestController extends Controller
           'text' => 'It\'s really great to see you again',
         ]);
 
-        return redirect('/userinfo');
+        return redirect('/interest');
     }
     public function destroy($id)
     {
