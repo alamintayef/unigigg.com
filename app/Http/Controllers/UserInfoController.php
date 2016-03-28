@@ -35,9 +35,9 @@ namespace App\Http\Controllers;
               'passing_date' => 'required|date',
               'mobile' => 'required|max:14|min:11',
               'universityId' => 'required|max:20',
-              'NId' => 'required|max:17|min:13',
+              'NId' => 'max:17|min:13',
               'facebookId' => 'required|url',
-            //  'LinkedInId' => 'url',
+              'LinkedInId' => 'url',
               'youtube'=> 'max:255'
             ]);
 
@@ -78,7 +78,7 @@ namespace App\Http\Controllers;
           'passing_date' => 'required|date',
           'mobile' => 'required|max:14|min:11',
           'universityId' => 'required|max:20',
-          'NId' => 'required|max:17|min:13',
+          'NId' => 'max:17|min:13',
           'facebookId' => 'required|url',
           'LinkedInId' => 'url',
           'youtube'=> 'max:255'

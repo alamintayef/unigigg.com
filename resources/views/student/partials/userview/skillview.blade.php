@@ -1,5 +1,7 @@
 <div  >
 
+  @if(count($skill)>0)
+
 
   <h4>Your Skills</h4>
   <button  class="btn btn-success" type="button" name="button">Verify</button>
@@ -102,6 +104,8 @@
     </p>
 
   @endforeach
+  @else
+    <h4>Nothing added</h4>
 
 </div>
 
@@ -124,4 +128,5 @@
     </div>
   </div>
 </div>
+@endif
 <!-- Modal ends -->

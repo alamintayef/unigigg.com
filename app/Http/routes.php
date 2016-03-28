@@ -37,6 +37,8 @@ Route::get('emailview', function()
 {
    return view('email.welcomeemail');
 });
+Route::get('/jobs/view','PublicController@publicboard');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

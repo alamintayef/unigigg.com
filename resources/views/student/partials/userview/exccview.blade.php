@@ -1,5 +1,5 @@
 <div >
-
+  @if(count($extracs)>0)
   @foreach ($extracs as $excc)
   <h5>Extra Curricular Activities</h5>
   <table class="table table-striped table-hover">
@@ -46,6 +46,9 @@
                 </form>
               </table>
             @endforeach
+          @else
+            <h4>Nothing added</h4>
+          @endif
           </tbody>
         </table>
       </div>

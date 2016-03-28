@@ -41,13 +41,12 @@ class ChakriController extends Controller
             ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
             ->orderBy('created_at', 'desc')
             ->get();
-      $applied = DB::table('student_applieds')
-              ->select('student_applieds.*')
-              ->get();
+
+
 
       return view('chakri', [
         'jobs'=>$jobs,
-        'applied'=> $applied,
+
 
       ]);
     }

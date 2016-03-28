@@ -1,5 +1,7 @@
 <div >
 
+  @if(count($interest)>0)
+
 
   <h4>Your interest</h4>
 
@@ -15,5 +17,8 @@
     </div>
 
   @endforeach
+  @else
+    <h4>Nothing added</h4>
+  @endif
 
 </div>

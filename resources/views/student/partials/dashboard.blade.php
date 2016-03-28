@@ -19,7 +19,7 @@
           @include('student.partials.userview.infoview')
           <br>
           <br>
-        
+
           @if(count($education)>0)
           @include('student.partials.userview.eduview')
         @endif
@@ -48,9 +48,9 @@
             </div>
 
             <div class="tab-pane fade" id="experience">
-                @if(count($experiences)>0)
+
                 @include('student.partials.userview.expview')
-              @endif
+              
             </div>
             <div class="tab-pane fade" id="interest">
                   @include('student.partials.userview.interestview')

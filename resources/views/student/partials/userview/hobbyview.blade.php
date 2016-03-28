@@ -1,7 +1,7 @@
 <!-- Hobbies-->
 <div >
 
-
+  @if(count($hobbies)>0)
   <h4>Your Hobbies</h4>
 
   @foreach ($hobbies as $hobby)
@@ -38,5 +38,8 @@
     </p>
 
   @endforeach
+@else
+  <h4>Nothing added</h4>
+@endif
 
 </div>
