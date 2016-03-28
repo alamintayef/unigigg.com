@@ -51,7 +51,7 @@ class JobsController extends Controller
            'text' => 'It\'s really great to see you again',
          ]);
 
-         return redirect('/postjobs');
+         return redirect('/postedjobs');
 
 
     }

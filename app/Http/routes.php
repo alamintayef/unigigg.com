@@ -57,6 +57,9 @@ Route::group(['middleware' => ['web']], function () {
       Route::post('university', 'AdminController@unistore');
       Route::get('/aprofile/{id}', 'AdminController@studentemview');
 
+      //payment
+      Route::get('payment','BillController@index');
+      Route::post('payment/store/bkash','BillController@store');
 
       Route::get('/employer/login','EmployerController@login');
 

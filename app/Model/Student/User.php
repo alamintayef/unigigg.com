@@ -91,5 +91,10 @@ class User extends Authenticatable
         return $this->hasMany(Reference::class);
 
     }
+    public function bill()
+    {
+        return $this->hasMany(Billing::class);
+
+    }
 
 }
