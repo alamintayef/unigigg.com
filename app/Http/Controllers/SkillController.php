@@ -15,9 +15,14 @@ class SkillController extends Controller
   {
     $this->middleware('auth');
   }
-  public function index()
+  public function index(Request $request)
   {
-    return view('student.skill');
+    $uid = auth()->user()->id;
+    $skill = Skills::where('user_id', $uid)->orderBy('created_at', 'desc')->get();
+
+    return view('student.skill', [
+      'skill'=>$skill,
+    ]);
   }
 
   public function store(Request $request)
@@ -69,5 +74,6 @@ class SkillController extends Controller
 
     return redirect('/shortlists');
   }
+
 
 }

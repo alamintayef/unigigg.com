@@ -1,5 +1,5 @@
 
-          </div>
+
 
           {!! Form::open(array('url' => '/userstore')) !!}
           <div class="md-col-8 whiteproper pad">
@@ -18,7 +18,7 @@
             <span><small>Provide your living area in Dhaka</small></span>
           </div>
           <div class="form-group">
-            {!! Form::label('post_code', 'post_code', ['class' => 'control-label']) !!}
+            {!! Form::label('post_code', 'Post Code', ['class' => 'control-label']) !!}
             {!! Form::text('post_code', null, ['class' => 'form-control']) !!}
           </div>
           <div class="form-group">

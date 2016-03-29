@@ -1,7 +1,7 @@
 <footer class="footer" style="background-color:#ffffff; padding:26px">
   <div class="container">
     <div class="col-md-4">
-      <img src="/images/unigig-logo.png" alt="" height="100px" width="100px" />
+      <h3><i class="fa fa-graduation-cap text-primary"></i>unigigg</h3>
       <p>
       We are on a mission to help employers attract young talent, and for our talents to find the right internship and job opportunities.
       </p>

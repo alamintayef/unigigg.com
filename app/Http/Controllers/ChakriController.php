@@ -22,10 +22,11 @@ class ChakriController extends Controller
     {
       $this->middleware('auth');
     }
+
     public function store(Request $request)
     {
-      $limit=2;
 
+      $limit=10;
       $uid= auth()->user()->id;
       $joblimit=StudentApplied::where('user_id','=' ,$uid)->get();
       if (count($joblimit)>$limit) {
@@ -79,7 +80,7 @@ class ChakriController extends Controller
             ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
             ->orderBy('created_at', 'desc')
             ->get();
-      $limit=2;
+      $limit=10;
       $uid= auth()->user()->id;
       $joblimit=StudentApplied::where('user_id','=' ,$uid)->get();
       $applicable=DB::table('user_info')

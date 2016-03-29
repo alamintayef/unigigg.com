@@ -1,9 +1,8 @@
+<hr>
 <div class="padsmall">
+
   <h5>Your interest</h5>
   @if(count($interest)>0)
-
-
-
 
   @foreach ($interest as $interests)
     <div class="col-md-12 col-md-8-offset-1 well-sm ">
@@ -22,3 +21,4 @@
   @endif
 
 </div>
+<hr>

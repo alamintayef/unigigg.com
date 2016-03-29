@@ -96,5 +96,10 @@ class User extends Authenticatable
         return $this->hasMany(Billing::class);
 
     }
+    public function vprofile()
+    {
+        return $this->hasMany(Vprofile::class);
+
+    }
 
 }

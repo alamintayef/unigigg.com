@@ -93,7 +93,7 @@
                 You can validate your profile for free <br>
                 Generating CV is free.
                 <small><sub>Basicall you fill in your data and then <br> you can download the cv in different formats any time you want</sub> Great right</small><br>
-              <strong></strong>  Validating skills takes time that's why we charge a flat rate of Tk.200 to validate all your skills.</strong>
+              <strong></strong>  Validating skills takes time that's why we charge a flat rate of Tk.500 to validate all your skills everythng you request us.</strong>
               </p>
             </div>
 

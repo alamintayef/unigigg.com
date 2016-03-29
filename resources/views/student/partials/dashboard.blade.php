@@ -25,7 +25,7 @@
           @include('student.partials.userview.infoview')
           <br>
 
-          <div class="col-md-10 panel whiteproper">
+          <div class="col-md-12 panel whiteproper">
         <h3 class="padsmall textb">Data Details</h3>
           @if(count($education)>0)
             @include('student.partials.userview.eduview')

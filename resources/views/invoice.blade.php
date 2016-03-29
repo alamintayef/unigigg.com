@@ -2,7 +2,12 @@
 <html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
 
+
+
+
+  </script>
   <title>CV</title>
   <style>
   #header {
@@ -10,7 +15,9 @@
     color:white;
     text-ah5gn:center;
     padding:5px;
+
   }
+
   #nav {
     h5ne-height:30px;
     background-color:#eeeeee;
@@ -18,6 +25,9 @@
     width:100px;
     float:left;
     padding:5px;
+  }
+  body{
+    padding: 50px;
   }
   #section {
     width:350px;
@@ -32,42 +42,42 @@
     padding:5px;
   }
   td {
-  width:180px;
-  font:12pt arial;}
+    width:180px;
+    font:12pt arial;}
 
-td.leftAlign {text-align:left;}
-td.rightAlign {text-align:right;}
-td.center {text-align:center;}
-td.justify {text-align:justify;}
-  </style>
+    td.leftAlign {text-align:left;}
+    td.rightAlign {text-align:right;}
+    td.center {text-align:center;}
+    td.justify {text-align:justify;}
+    </style>
 
 
-</head>
-<body >
+  </head>
+  <body onload="window.print()" >
 
-  <main  >
-    <div id="details">
-      <div id="invoice">
-        @foreach($data as $user)
-          <h2>{{$user->fname}} {{$user->lname}}</h2>
-        {{$user->mobile}}<br>
-          {{$user->area}}<br>
-        @endforeach
-        <hr>
+    <main  class="pad">
+      <div id="details">
+        <div id="invoice">
+          @foreach($data as $user)
+            <h2>{{$user->fname}} {{$user->lname}}</h2>
+            {{$user->mobile}}<br>
+            {{$user->area}}<br>
+          @endforeach
+          <hr>
 
+        </div>
       </div>
-    </div>
-  </main>
+    </main>
 
 
 
 
 
-      <h3>Education</h3>
-      <div   >
-        @foreach($education as $edu )
-          <table  >
-          <tr>
+    <h3>Education</h3>
+    <div   >
+      @foreach($education as $edu )
+        <table >
+          <thead>
             <th>
               Degree
             </th>
@@ -80,84 +90,90 @@ td.justify {text-align:justify;}
             <th>
               Result
             </th>
-            </tr>
-            <tr>
-
-                <td class="center">
-                  {{$edu->Degree_name}}
-                </td>
+          </thead>
+          <tbody>
 
 
-          <td class="center">
+          <tr>
+
+            <td class="center">
+              {{$edu->Degree_name}}
+            </td>
+
+
+            <td class="center">
               {{$edu->Degree_institute}}
-          </td>
-          <td class="center">
-            {{$edu->Degree_end_date}}
-          </td>
-          <td class="center">
-            {{$edu->Degree_result}}
-          </td>
-            </tr>
+            </td>
+            <td class="center">
+              {{$edu->Degree_end_date}}
+            </td>
+            <td class="center">
+              {{$edu->Degree_result}}
+            </td>
+          </tr>
+          </tbody>
+        </table>
 
-          </table>
 
 
-
-        @endforeach
+      @endforeach
 
 
     </div>
     <hr>
+
     <h3>Skills</h3>
-    <div style="float:right;">
+    <div >
       @foreach($skill as $skills )
-        {{$skills->skill_name}},
+       {{$skills->skill_name}},
 
       @endforeach
     </div>
     <hr>
     @if(count($exps)>0)
-    <h3>Experiences</h3>
-    <div >
+      <h3>Experiences</h3>
+      <div >
         @foreach($exps as $exp )
-    <p>
-      <strong>Title:</strong> {{$exp->exp_name}}<br>
-      <strong>Description</strong>:<br>
-        {{$exp->exp_description}}<br>
-      <small><strong>start date :</strong></small> {{$exp->exp_start_date}} <small><strong>end date :</strong></small> {{$exp->exp_end_date}}
-    </p>
-    @endforeach
+          <p>
+            <strong>Title:</strong> {{$exp->exp_name}}<br>
+            <strong>Description</strong>:<br>
+            {{$exp->exp_description}}<br>
+            <small><strong>start date :</strong></small> {{$exp->exp_start_date}} <small><strong>end date :</strong></small> {{$exp->exp_end_date}}
+          </p>
+        @endforeach
 
-    </div>
-      @endif
-      <hr>
-      @if(count($refs)>0)
+      </div>
+    @endif
+    <hr>
+    @if(count($refs)>0)
       <h3>References</h3>
       <div >
         @foreach($refs as $ref )
-    <p>
-      <strong>Referred By</strong> {{$ref->referred_by}}<br>
-      <strong>Description</strong>:<br>
-        {{$ref->reference_description}}<br>
-      <small><strong>Contact : </strong>{{$ref->referee_number}}</small>  </p>
-    @endforeach
-  @endif
+          <p>
+            <strong>Referred By</strong> {{$ref->referred_by}}<br>
+            <strong>Description</strong>:<br>
+            {{$ref->reference_description}}<br>
+            <small><strong>Contact : </strong>{{$ref->referee_number}}</small>  </p>
+          @endforeach
+        @endif
       </div>
       <hr>
       @if(count($extras)>0)
-      <h3>Extra Curricular</h3>
-      <div >
-        @foreach($extras as $excc )
-    <p>
-      <strong>Referred By</strong> {{$excc->excc_name}}<br>
-      <strong>Description</strong>:<br>
-        {{$excc->excc_description}}<br>
-        <small><strong>start date :</strong></small> {{$excc->excc_start_date}} <small><strong>end date :</strong></small> {{$excc->exp_end_date}}
-      @endforeach
-  @endif
-      </div>
+        <h3>Extra Curricular</h3>
+        <div >
+          @foreach($extras as $excc )
+            <p>
+              <strong>Referred By</strong> {{$excc->excc_name}}<br>
+              <strong>Description</strong>:<br>
+              {{$excc->excc_description}}<br>
+              <small><strong>start date :</strong></small> {{$excc->excc_start_date}} <small><strong>end date :</strong></small> {{$excc->exp_end_date}}
+            @endforeach
+          @endif
 
-
-
+        </div>
   </body>
-  </html>
+
+
+
+
+      </html>

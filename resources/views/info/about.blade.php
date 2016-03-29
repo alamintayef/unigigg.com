@@ -28,7 +28,7 @@
         </div>
         <br>
 
-        <!-- Team -->
+        <!-- Team --
         <div class="col-md-10" >
           <h2 class="text-primary">Team</h2>
         </div>
@@ -78,5 +78,6 @@
 
     </div>
     <hr>
+  -->
     @include('layouts.footer')
   @endsection

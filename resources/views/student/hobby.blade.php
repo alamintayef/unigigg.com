@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  
+
   <div class="container ">
     <div class="row">
       @include('layouts.menu')
@@ -18,6 +18,7 @@
           <li><a href="{{url('interest')}}">Interests</a></li>
           <li class="active"><a href="{{url('hobby')}}">Hobbies</a></li>
           <li><a href="{{url('fun')}}">About You</a></li>
+            <li><a href="{{url('vdoprofile')}}">Video Profile</a></li>
 
         </ul>
 

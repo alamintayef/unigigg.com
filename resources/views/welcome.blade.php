@@ -29,11 +29,11 @@ body{
 </div>
 
 <div class="container-fluid white center " id="content2" >
-  <div class="row" style="padding : 50px;">
+  <div class="row pad">
     <div class="col-sm-5 pull-left">
       <h1 class="text-primary"y>Talent <i class="fa fa-graduation-cap"></i></h1>
       <p>
-        Talents Be Career ready
+        Be Career ready
       </p>
       <p>
         <ul class="list-group">

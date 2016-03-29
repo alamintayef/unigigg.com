@@ -37,11 +37,8 @@
           <h2 class="textw">Pricing and Information</h2>
           <div class="col-md-4 pull-left">
             <h3 class="textw"> Job Seekers</h3>
-            <ul class="list-group">
-              <li class="list-group-item">Getting a Job cost only Tk.200</li>
-              <li class="list-group-item">You can pay upfront for 3 months and get upto 10 jobs for Tk.1500</li>
-              <li class="list-group-item">Minimum job offering Tk.1000</li>
-            </ul>
+
+            <img src="http://recruitmentlobby.com/files/userfiles/images/marketing_icon_free.png" alt="" />
           </div>
           <div class="col-md-4">
             <p class="textw">
@@ -61,7 +58,7 @@
             <h3 class="textw">Job Providers</h3>
             <ul class="list-group ">
               <li class="list-group-item">Posting a Jobs is Free</li>
-              <li class="list-group-item">You Can Post 5 Jobs a Month, Above that Tk.100/per Post</li>
+              <li class="list-group-item">We Charge 10% of job offering</li>
               <li class="list-group-item">Minimum job offering Tk.1000</li>
             </ul>
           </div>

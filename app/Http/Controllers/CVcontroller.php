@@ -36,9 +36,19 @@ class CVcontroller extends Controller
           $exps = Experience::where('user_id', '=', $user_id)->get();
           $refs = Reference::where('user_id', '=', $user_id)->get();
           $extras = ExtraCur::where('user_id', '=', $user_id)->get();
-          $view =  \View::make('invoice', compact('data', 'education', 'skill', 'refs','exps','extras'))->render();
-          $pdf = \App::make('dompdf.wrapper');
-          $pdf->loadHTML($view)->setPaper('a4', 'potrait');
-          return $pdf->stream('invoice');
+        return view('invoice',[
+          'data'=> $data,
+          'education'=>$education,
+          'skill'=>$skill,
+          'exps'=>$exps,
+          "refs"=>$refs,
+          'extras'=>$extras,
+
+        ]);
+
+        //  $view =  \View::make('invoice', compact('data', 'education', 'skill', 'refs','exps','extras'))->render();
+        //  $pdf = \App::make('dompdf.wrapper');
+        //  $pdf->loadHTML($view)->setPaper('a4', 'potrait');
+        //  return $pdf->stream('invoice');
     }
 }

@@ -110,6 +110,8 @@ Route::group(['middleware' => 'web'], function () {
       Route::post('/userstore', 'UserInfoController@store');
     //  Route::get('/userupdate/{id}', 'UserInfoController@update');
       Route::post('/userupdate/{id}', 'UserInfoController@update');
+      Route::get('/vdoprofile','UserInfoController@vprofileshow');
+      Route::post('/vdostore','UserInfoController@vprofilestore');
   //skills
       Route::get('/skill', 'SkillController@index');
       Route::post('/skillstore', 'SkillController@store');

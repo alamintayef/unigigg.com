@@ -63,7 +63,6 @@ namespace App\Http\Controllers;
         }
         else {
 
-
         $request->user()->userinfo()->create([
             'fname' => $request->fname,
             'lname' => $request->lname,
@@ -127,6 +126,43 @@ namespace App\Http\Controllers;
         $userinfo->save();
         return redirect('home');
 
+      }
+
+      public function vprofilestore(Request $request)
+      {
+
+
+          $this->validate($request, [
+            'vdourl' => 'required|',
+
+          ]);
+          $uid= auth()->user()->id;
+          $entrylimit=Vprofile::where('user_id','=' ,$uid)->get();
+          if(count($entrylimit)>0)
+          {
+          $vprofile = Vprofile::findorFail($uid);
+          $vprofile->vdourl = $request->vdourl;
+          }
+          else {
+            $request->user()->vprofile()->create([
+              'vdourl' => $request->skill_name,
+
+            ]);
+          }
+
+          notify()->flash('Added Successfully!', 'success', [
+            'timer' => 3000,
+            'text' => 'It\'s really great to see you again',
+          ]);
+
+
+          return redirect('/home');
+
+        }
+      
+      public function vprofileshow()
+      {
+        return view('student.vprofileview');
       }
 
 

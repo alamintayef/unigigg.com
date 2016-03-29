@@ -28,6 +28,7 @@
             <button type="submit" class="btn btn-info">
               <i class="fa fa-tasks"></i> Generate CV
             </button>
+            <small class="textb">Pressing this button will take to print your cv. You can save it as pdf</small>
           </form>
           <hr>
       @endforeach

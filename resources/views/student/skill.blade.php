@@ -17,6 +17,7 @@
           <li><a href="{{url('interest')}}">Interests</a></li>
           <li><a href="{{url('hobby')}}">Hobbies</a></li>
           <li><a href="{{url('fun')}}">About You</a></li>
+          <li><a href="{{url('vdoprofile')}}">Video Profile</a></li>
         </ul>
 
 
@@ -40,6 +41,16 @@
 
 
       </div>
+    </div>
+    <div class="col-md-3 panel whiteproper">
+      <h5 class="textb">Skills you added</h5>
+      @foreach($skill as $skills)
+
+        <ul class="list-group">
+          <li class="list-group-item">{{$skills->skill_name}}</li>
+        </ul>
+      @endforeach
+
     </div>
   </div>
 </div>

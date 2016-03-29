@@ -22,7 +22,7 @@
 
     </div>
     <div class="form-group">
-      <label for="skill_experience" class="control-label">Skill Experience</label>
+      <label for="skill_experience" class="control-label">Skill Experience <sub>in years</sub></label>
       <select class="form-control" name="skill_experience" id="select">
           <option value="1">1</option>
           <option value="2">2</option>
