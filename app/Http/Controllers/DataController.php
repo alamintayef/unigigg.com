@@ -16,18 +16,17 @@ use App\Model\Student\Reference;
 use App\Model\Student\Image;
 use App\Model\Student\EmInfo;
 use App\Model\Student\Jobs;
-
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
-class CVcontroller extends Controller
+class DataController extends Controller
 {
     //
     public function __construct()
     {
       $this->middleware('auth');
-    }
 
+
+    }
     public function createPdf(){
           $user_id= auth()->user()->id;
           $data = UserInfo::where('user_id', '=', $user_id)->get();
@@ -36,20 +35,9 @@ class CVcontroller extends Controller
           $exps = Experience::where('user_id', '=', $user_id)->get();
           $refs = Reference::where('user_id', '=', $user_id)->get();
           $extras = ExtraCur::where('user_id', '=', $user_id)->get();
-      /*
-        return view('invoice',[
-          'data'=> $data,
-          'education'=>$education,
-          'skill'=>$skill,
-          'exps'=>$exps,
-          "refs"=>$refs,
-          'extras'=>$extras,
-
-        ]);*/
-
-         $view =  \View::make('invoice', compact('data', 'education', 'skill', 'refs','exps','extras'))->render();
-          $pdf = \App::make('dompdf.wrapper');
-          $pdf->loadHTML($view)->setPaper('a4', 'potrait');
-          return $pdf->stream('invoice');
-    }
+          $view =  \View::make('invoice', compact('data', 'education', 'skill', 'refs','exps','extras'))->render();
+           $pdf = \App::make('dompdf.wrapper');
+           $pdf->loadHTML($view)->setPaper('a4', 'potrait');
+           return $pdf->stream('cv.pdf');
+      }
 }

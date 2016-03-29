@@ -63,6 +63,7 @@
             {{$user->mobile}}<br>
             {{$user->area}}<br>
           @endforeach
+          {{Auth::user()->email}}
           <hr>
 
         </div>

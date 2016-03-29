@@ -23,7 +23,7 @@
       <a class="btn btn-primary " href="{{url('userinfo')}}"> <i class="fa fa-edit"></i>Edit Info</a></div>
 
           <hr>
-          <form action="{{url('pdf',$users->user_id)}}" method="POST">
+          <form action="{{url('pdf')}}" method="get">
             {!! csrf_field() !!}
             <button type="submit" class="btn btn-info">
               <i class="fa fa-tasks"></i> Generate CV
