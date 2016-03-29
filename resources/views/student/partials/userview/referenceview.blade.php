@@ -1,7 +1,8 @@
-<div >
+<div class="padsmall">
   <h4>References</h4>
-  <button  class="btn btn-success" type="button" name="button">Verify</button>
-</div>
+@if(count($refs)>0)
+
+
 
 @foreach($refs as $ref)
 
@@ -62,3 +63,7 @@
 
 
 @endforeach
+</div>
+@else
+  <h4>No Reference added yet</h4>
+@endif

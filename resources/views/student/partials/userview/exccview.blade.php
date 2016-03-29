@@ -1,7 +1,8 @@
-<div >
+<div class="padsmall col-md-12" >
+  <h5>Extra Curricular Activities</h5>
   @if(count($extracs)>0)
   @foreach ($extracs as $excc)
-  <h5>Extra Curricular Activities</h5>
+
   <table class="table table-striped table-hover">
     <thead>
       <tr>

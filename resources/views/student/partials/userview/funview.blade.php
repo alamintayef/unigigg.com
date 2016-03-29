@@ -1,6 +1,6 @@
-<div>
+<div class="padsmall col-md-12">
 
-
+  <h5>About you</h5>
   <!--about your self -->
   @if(count($funs)>0)
 

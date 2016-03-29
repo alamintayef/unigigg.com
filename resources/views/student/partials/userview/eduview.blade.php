@@ -1,4 +1,4 @@
-<div class="" style="font-size:13px;">
+<div class="padsmall col-md-12" style="font-size:13px;">
 
 
   <h5>Education</h5>

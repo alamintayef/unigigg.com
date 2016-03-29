@@ -1,4 +1,4 @@
-<div >
+<div class="padsmall" >
 
 
   <p>
@@ -7,7 +7,7 @@
       @foreach ($infos as $users)
         <p>
 
-            <iframe width="400" height="250" src="https://www.youtube.com/embed/{{$users->youtube}}
+            <iframe class="pull-right" width="400" height="250" src="https://www.youtube.com/embed/{{$users->youtube}}
             " frameborder="0" allowfullscreen></iframe>'
             <hr>
             You Have Applied to :  {{count($joblimit)}} jobs

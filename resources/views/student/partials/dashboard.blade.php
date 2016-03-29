@@ -2,86 +2,61 @@
   <div class="row">
     @include('layouts.menu')
 
-    <div class="col-md-10 ">
-      <div class="panel panel-primary">
-        <div class="panel-heading">Dashboard</div>
+    <div class="col-md-10  ">
+      <div class="panel padsmall">
+        <div class="panel-heading"><h4 class="textb">Dashboard</h4></div>
         @if(Session::has('flash_message'))
-<div class="alert alert-success"><em> {!! session('flash_message') !!}</em></div>
-@endif
-        <div class="panel-body">
+          <div class="alert alert-success"><em> {!! session('flash_message') !!}</em></div>
+        @endif
+
           <h4 class="well">Welcome onboard <strong>{{Auth::user()->name}}</strong></h4>
-          
+
           @if(count($joblimit)>2)
-          <div class="alert alert-danger">
-            You have already applied to 3 jobs
-          </div>
+            <div class="alert alert-danger">
+              You have already applied to 3 jobs
+            </div>
           @endif
-          <div class="col-md-5">
+
 
             @include('student.partials.userview.imageview')
 
-          </div>
 
-          <br>
 
           @include('student.partials.userview.infoview')
           <br>
-          <br>
 
+          <div class="col-md-10 panel whiteproper">
+        <h3 class="padsmall textb">Data Details</h3>
           @if(count($education)>0)
-          @include('student.partials.userview.eduview')
-        @endif
-        <br>
-          <br>
-            <br>
+            @include('student.partials.userview.eduview')
+          @endif
 
 
 
-          <h3>Show Data</h3>
 
-          <ul class="nav nav-tabs">
-            <li class="active"><a href="#skill" data-toggle="tab" aria-expanded="true">Skill</a></li>
 
-            <li class=""><a href="#experience" data-toggle="tab" aria-expanded="false">Experience</a></li>
-            <li class=""><a href="#interest" data-toggle="tab" aria-expanded="false">Interest</a></li>
-            <li class=""><a href="#extra" data-toggle="tab" aria-expanded="false">Extra Curricular</a></li>
-            <li class=""><a href="#hobby" data-toggle="tab" aria-expanded="false">Hobbies</a></li>
-            <li class=""><a href="#funview" data-toggle="tab" aria-expanded="false">About</a></li>
-          </ul>
-          <div style="height:1000px;" id="myTabContent" class="tab-content" >
-            <div class="tab-pane fade active in" id="skill">
 
-              @include('student.partials.userview.skillview')
 
-            </div>
+      @include('student.partials.userview.skillview')
 
-            <div class="tab-pane fade" id="experience">
+      @include('student.partials.userview.expview')
+      @include('student.partials.userview.interestview')
 
-                @include('student.partials.userview.expview')
+      @include('student.partials.userview.exccview')
 
-            </div>
-            <div class="tab-pane fade" id="interest">
-                  @include('student.partials.userview.interestview')
-            </div>
-            <div class="tab-pane fade" id="extra">
-                  @include('student.partials.userview.exccview')
-            </div>
-            <div class="tab-pane fade" id="hobby">
-                  @include('student.partials.userview.hobbyview')
-            </div>
-            <div class="tab-pane fade" id="funview">
-                  @include('student.partials.userview.funview')
-            </div>
-          </div>
-
+      @include('student.partials.userview.hobbyview')
+      @include('student.partials.userview.funview')
         </div>
 
-      </div>
-    </div>
+
+
+
+</div>
+</div>
 
 
 
 
 
-  </div>
+</div>
 </div>
