@@ -25,11 +25,18 @@ class ImageController extends Controller
 
     public function store(Request $request){
   		// Store records process
+      $this->validate($request, [
+        'filePath' => 'required|image|mimes:jpeg,jpg,bmp,png,gif',
+       ]);
+            $uid= auth()->user()->id;
+            $entrylimit=Image::where('user_id','=' ,$uid)->get();
+            if (count($entrylimit)>0) {
+              update($uid);
+            }else {
+
 
             $image = new Image();
-            $this->validate($request, [
-              'filePath' => 'required|image|mimes:jpeg,jpg,bmp,png,gif',
-             ]);
+
              if($request->hasFile('filePath')) {
                      $file = Input::file('filePath');
                      //getting timestamp
@@ -49,6 +56,8 @@ class ImageController extends Controller
                     'timer' => 3000,
                     'text' => 'It\'s really great to see you again',
                   ]);
+
+                }
 
                   return redirect('/image');
         }

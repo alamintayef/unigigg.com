@@ -55,9 +55,14 @@
                           <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                         </div>
                         @if(count($applicable)>0)
+                          @if(count($joblimit)>$limit)
+                            <p class="text-danger">
+                              Sorry You can not apply to this job as you have already applied to {{count($joblimit)}} job
+                            </p>
+                          @else
+                                <button type="submit" name="button" class="btn btn-success">Apply</button>
+                          @endif
 
-                            <button type="submit" name="button" class="btn btn-success">Apply</button>
-                        
 
                         @else
                           <p class="text-danger">

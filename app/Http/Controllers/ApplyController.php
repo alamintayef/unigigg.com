@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
+use App\Model\Student\StudentApplied;
 use App\Model\Student\UserInfo;
 use App\Model\Student\Experience;
 use App\Model\Student\ExtraCur;

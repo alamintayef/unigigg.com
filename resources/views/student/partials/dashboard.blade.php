@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     @include('layouts.menu')
-    
+
     <div class="col-md-10 ">
       <div class="panel panel-primary">
         <div class="panel-heading">Dashboard</div>
@@ -9,7 +9,13 @@
 <div class="alert alert-success"><em> {!! session('flash_message') !!}</em></div>
 @endif
         <div class="panel-body">
-          <h4 class="well">Welcome onboard <strong>{{Auth::user()->name}}</strong>   </h4>
+          <h4 class="well">Welcome onboard <strong>{{Auth::user()->name}}</strong></h4>
+          
+          @if(count($joblimit)>2)
+          <div class="alert alert-danger">
+            You have already applied to 3 jobs
+          </div>
+          @endif
           <div class="col-md-5">
 
             @include('student.partials.userview.imageview')

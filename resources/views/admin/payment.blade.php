@@ -3,11 +3,13 @@
 <div class="container">
 <div class="row">
 
+<div class="col-md-8 center">
 
 
-  <div class="panel-body">
+
+  <div class="panel whiteproper pad">
     <h4>Add you payment information</h4>
-    <small>You can add</small>
+    <small>You can use any bkash number. Just bkash the fee and add the number with transaction id</small>
       {!! Form::open(array('url' => '/payment/store/bkash')) !!}
       @if(count($errors)>0)
         <div class="alert alert-danger">
@@ -30,6 +32,7 @@
       {!! Form::text('transaction_id', null, ['class' => 'form-control']) !!}
     </div>
       {!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}
+  </div>
   </div>
 </div>
 </div>

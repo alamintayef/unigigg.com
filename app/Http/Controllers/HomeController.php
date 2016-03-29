@@ -20,6 +20,7 @@ use App\Model\Student\EmInfo;
 use App\Model\Student\Jobs;
 use App\Model\Student\OddJobs;
 use App\Model\Student\Reference;
+use App\Model\Student\StudentApplied;
 class HomeController extends Controller
 {
     /**
@@ -50,6 +51,8 @@ class HomeController extends Controller
       $funs = FunFacts::where('user_id', $request->user()->id)->get();
       $images = Image::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->limit(1)->get();
       $refs = Reference::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->limit(3)->get();
+      $joblimit=StudentApplied::where('user_id', $request->user()->id)->get();
+
       //employer
       $eminfos = EmInfo::where('user_id', $request->user()->id)->get();
       //admin
@@ -68,6 +71,7 @@ class HomeController extends Controller
         'funs'=>$funs,
         'refs'=>$refs,
         'images'=>$images,
+        'joblimit'=>$joblimit,
         //employer
         'eminfos'=>$eminfos,
         'allusers' => $allusers,

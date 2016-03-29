@@ -146,6 +146,10 @@
 
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Sign Out</a></li>
+                                @if(Auth::user()->type===1)
+                                  <li><a href="{{ url('/payment') }}"><i class="fa fa-btn fa-money"></i>Payment</a></li>
+                                @endif
+
                             </ul>
                         </li>
                     @endif
