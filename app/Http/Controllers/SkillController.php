@@ -40,12 +40,12 @@ class SkillController extends Controller
       'skill_experience' => $request->skill_experience,
     ]);
     notify()->flash('Added Successfully!', 'success', [
-      'timer' => 3000,
-      'text' => 'It\'s really great to see you again',
+      'timer' => 2000,
+      'text' => 'Add more to be better',
     ]);
 
 
-    return redirect('/skill');
+    return redirect('/home');
 
   }
   public function destroy($id)

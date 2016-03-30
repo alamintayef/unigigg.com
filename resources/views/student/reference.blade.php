@@ -4,9 +4,9 @@
   <div class="container ">
     <div class="row">
       @include('layouts.menu')
-      <div class="col-md-8">
+      <div class="col-md-7">
 
-        <ul class="nav nav-pills whiteproper">
+        <ul class="nav nav-pills panel whiteproper">
           <li ><a href="{{url('userinfo')}}">Basic Information</a></li>
           <li ><a href="{{url('image')}}">Profile Pic</a></li>
           <li ><a href="{{url('edu')}}">Degree</a></li>

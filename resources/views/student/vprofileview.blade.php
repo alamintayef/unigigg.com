@@ -4,9 +4,9 @@
   <div class="container ">
     <div class="row">
       @include('layouts.menu')
-      <div class="col-md-8">
+      <div class="col-md-7">
 
-        <ul class="nav nav-pills whiteproper">
+        <ul class="nav nav-pills panel whiteproper">
           <li ><a href="{{url('userinfo')}}">Basic Information</a></li>
           <li ><a href="{{url('image')}}">Profile Pic</a></li>
           <li ><a href="{{url('edu')}}">Degree</a></li>
@@ -20,8 +20,6 @@
           <li><a href="{{url('vdoprofile')}}">Video Profile</a></li>
         </ul>
 
-
-          <div class="well">
 
             @if(count($errors)>0)
               <div class="alert alert-danger">
@@ -38,13 +36,26 @@
 
 
             @include('student.forms.vprofile')
+            <div class="col-md-3 panel whiteproper padsmall pull-right">
+
+                <h4 class="textb">Instructions</h4>
+                <p>
+                  Upload a video introduction yours on youtube and paste in link here.
+                </p>
+                <p>
+                  how to get video id <br>
+                  <small>https://www.youtube.com/watch?v=<span class="text-success">rz66fpmIZCQ</span></small>
+                  <br>The highlighted green part is your video id.Copy it and paste it here
+                </p>
+
+              </div>
 
 
-      </div>
     </div>
 
   </div>
 </div>
+
 
 
 @endsection

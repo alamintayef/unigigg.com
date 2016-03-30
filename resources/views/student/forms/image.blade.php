@@ -1,5 +1,5 @@
 
-      <div class="panel-body whiteproper">
+      <div class="panel-body panel whiteproper">
 
       {!! Form::open(array('url' => '/imagestore','files'=>true)) !!}
 

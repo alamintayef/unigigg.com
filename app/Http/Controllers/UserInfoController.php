@@ -37,7 +37,7 @@ namespace App\Http\Controllers;
           'NId' => 'max:17|min:13',
           'facebookId' => 'required|url',
           'LinkedInId' => 'url',
-          'youtube'=> 'max:255'
+
         ]);
 
         $uid= auth()->user()->id;
@@ -57,7 +57,7 @@ namespace App\Http\Controllers;
           $userinfo->NId = $request->NId;
           $userinfo->facebookId = $request->facebookId;
           $userinfo->LinkedInId = $request->LinkedInId;
-          $userinfo->youtube = $request->youtube;
+
           $userinfo->save();
 
         }
@@ -76,7 +76,7 @@ namespace App\Http\Controllers;
             'NId' => $request->NId,
             'facebookId' => $request->facebookId,
             'LinkedInId' => $request->LinkedInId,
-            'youtube' => $request->youtube,
+          
           ]);
         }
 
@@ -159,7 +159,7 @@ namespace App\Http\Controllers;
           return redirect('/home');
 
         }
-      
+
       public function vprofileshow()
       {
         return view('student.vprofileview');

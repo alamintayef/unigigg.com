@@ -1,15 +1,13 @@
 
 
-    <div class="panel panel-default">
-      <div class="panel-heading"><a class="btn btn-primary  btn-lg" data-toggle="collapse" href="#collapse3">Vedio Profile</a></div>
-      <div id="collapse3" class="panel-collapse collapse">
-          <div class="panel-body">
+
+    <div class="col-md-8 padsmall panel">
 
     {!! Form::open(array('url' => '/vdostore')) !!}
 
 
     <div class="form-group">
-      {!! Form::label('vdourl', 'Vedio Url:', ['class' => 'control-label']) !!}
+      {!! Form::label('vdourl', 'Video ID:', ['class' => 'control-label']) !!}
       {!! Form::text('vdourl', null, ['class' => 'form-control']) !!}
     </div>
 
@@ -19,6 +17,6 @@
  {!! Form::close() !!}
 
 </div>
-</div>
+
 
 </div>

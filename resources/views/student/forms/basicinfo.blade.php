@@ -2,7 +2,7 @@
 
 
           {!! Form::open(array('url' => '/userstore')) !!}
-          <div class="md-col-8 whiteproper pad">
+          <div class="md-col-8 panel whiteproper pad">
 
           <div class="form-group">
             {!! Form::label('fname', 'First Name', ['class' => 'control-label']) !!}
@@ -59,10 +59,7 @@
             {!! Form::label('LinkedInId', 'LinkedIn ID:', ['class' => 'control-label']) !!}
             {!! Form::text('LinkedInId', null, ['class' => 'form-control']) !!}
           </div>
-          <div class="form-group">
-            {!! Form::label('youtube', 'Video Profile', ['class' => 'control-label']) !!}
-            {!! Form::text('youtube', null, ['class' => 'form-control']) !!}
-          </div>
+        
 
 
 

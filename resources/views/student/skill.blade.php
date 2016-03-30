@@ -4,9 +4,9 @@
   <div class="container ">
     <div class="row">
       @include('layouts.menu')
-      <div class="col-md-8">
+      <div class="col-md-7">
 
-        <ul class="nav nav-pills whiteproper">
+        <ul class="nav nav-pills panel whiteproper">
           <li ><a href="{{url('userinfo')}}">Basic Information</a></li>
           <li ><a href="{{url('image')}}">Profile Pic</a></li>
           <li ><a href="{{url('edu')}}">Degree</a></li>
@@ -31,10 +31,18 @@
               </div>
             @endif
             @if (notify()->ready())
-              <div class="alert alert-{{notify()->type()}}">
-                {{notify()->message()}}
-              </div>
-            @endif
+            <script>
+          swal({
+              title: "{!! notify()->message() !!}",
+              text: "{!! notify()->option('text') !!}",
+              type: "{{ notify()->type() }}",
+              @if (notify()->option('timer'))
+                  timer: {{ notify()->option('timer') }},
+                  showConfirmButton: false
+              @endif
+          });
+      </script>
+  @endif
 
 
             @include('student.forms.skills')
@@ -42,7 +50,7 @@
 
       </div>
     </div>
-    <div class="col-md-3 panel whiteproper">
+    <div class="col-md-2 panel whiteproper">
       <h5 class="textb">Skills you added</h5>
       @foreach($skill as $skills)
 

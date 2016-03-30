@@ -7,8 +7,7 @@
       @foreach ($infos as $users)
         <p>
 
-            <iframe class="pull-right" width="400" height="250" src="https://www.youtube.com/embed/{{$users->youtube}}
-            " frameborder="0" allowfullscreen></iframe>'
+            <iframe class="embed-responsive-item pull-right" width="400" height="250" src="https://www.youtube.com/embed/{{$users->youtube}}" frameborder="0" allowfullscreen></iframe>
             <hr>
             You Have Applied to :  {{count($joblimit)}} jobs
           <hr>
@@ -28,7 +27,6 @@
             <button type="submit" class="btn btn-info">
               <i class="fa fa-tasks"></i> Generate CV
             </button>
-            <small class="textb">Pressing this button will take to print your cv. You can save it as pdf</small>
           </form>
           <hr>
       @endforeach

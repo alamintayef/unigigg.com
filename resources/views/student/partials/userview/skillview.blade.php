@@ -4,7 +4,7 @@
 
     @foreach ($skill as $skills)
       <p>
-        <table class="table table-bordered table-responsive justify" style="text-align:center;">
+        <table class="table table-bordered table-responsive " style="text-align:center;">
           <thead>
             <th>
               Skill
