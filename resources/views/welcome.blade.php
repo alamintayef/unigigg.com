@@ -28,10 +28,10 @@ body{
     </div>
 </div>
 
-<div class="container-fluid white center " id="content2" >
+<div class="container-fluid white center " >
   <div class="row pad">
     <div class="col-sm-5 pull-left">
-      <h1 class="text-primary"y>Talent <i class="fa fa-graduation-cap"></i></h1>
+      <h1 class="text-primary wow bounceInUp" data-wow-duration="2s" data-wow-delay="5s">Talent <i class="fa fa-graduation-cap"></i></h1>
       <p>
         Be Career ready
       </p>

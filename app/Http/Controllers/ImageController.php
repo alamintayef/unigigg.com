@@ -12,82 +12,78 @@ use Illuminate\Support\Facades\Input;
 
 class ImageController extends Controller
 {
-    //
-    public function __construct()
-    {
-      $this->middleware('auth');
+  //
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
+  public function index()
+  {
+    return view('student.propic');
+  }
+
+
+  public function store(Request $request){
+    // Store records process
+    $this->validate($request, [
+      'filePath' => 'required|image|mimes:jpeg,jpg,bmp,png,gif',
+    ]);
+
+
+
+    $image = new Image();
+
+    if($request->hasFile('filePath')) {
+      $file = Input::file('filePath');
+      //getting timestamp
+      $timestamp = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString());
+
+      $name = $timestamp. '-' .$file->getClientOriginalName();
+
+      $image->filePath = $name;
+
+      $file->move('files/images/', $name);
     }
-    public function index()
-    {
-      return view('student.propic');
+
+    $request->user()->images()->create([
+      'filePath' => $name,
+    ]);
+    notify()->flash('Added Successfully! Go to Dashboard', 'success', [
+      'timer' => 3000,
+      'text' => 'It\'s really great to see you again',
+    ]);
+
+
+
+    return redirect('/image');
+  }
+  public function update($id, Request $request)
+  {
+    $image = Image::findOrFail($id);
+
+    $this->validate($request, [
+      'filePath' => 'required',
+
+    ]);
+
+    if($request->hasFile('filePath')) {
+      $file = Input::file('filePath');
+      //getting timestamp
+      $timestamp = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString());
+
+      $name = $timestamp. '-' .$file->getClientOriginalName();
+
+      $image->filePath = $name;
+
+      $file->move(public_path().'/images/', $name);
     }
 
-
-    public function store(Request $request){
-  		// Store records process
-      $this->validate($request, [
-        'filePath' => 'required|image|mimes:jpeg,jpg,bmp,png,gif',
-       ]);
-            $uid= auth()->user()->id;
-            $entrylimit=Image::where('user_id','=' ,$uid)->get();
-            if (count($entrylimit)>0) {
-              update($uid);
-            }else {
-
-
-            $image = new Image();
-
-             if($request->hasFile('filePath')) {
-                     $file = Input::file('filePath');
-                     //getting timestamp
-                     $timestamp = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString());
-
-                     $name = $timestamp. '-' .$file->getClientOriginalName();
-
-                     $image->filePath = $name;
-
-                     $file->move(public_path().'/images/', $name);
-                 }
-
-                 $request->user()->images()->create([
-                     'filePath' => $name,
-                 ]);
-                 notify()->flash('Added Successfully! Go to Dashboard', 'success', [
-                    'timer' => 3000,
-                    'text' => 'It\'s really great to see you again',
-                  ]);
-
-                }
-
-                  return redirect('/image');
-        }
-        public function update($id, Request $request)
-        {
-            $image = Image::findOrFail($id);
-
-            $this->validate($request, [
-                'filePath' => 'required',
-
-            ]);
-
-            if($request->hasFile('filePath')) {
-                    $file = Input::file('filePath');
-                    //getting timestamp
-                    $timestamp = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString());
-
-                    $name = $timestamp. '-' .$file->getClientOriginalName();
-
-                    $image->filePath = $name;
-
-                    $file->move(public_path().'/images/', $name);
-                }
-
-                $request->user()->images()->create([
-                    'filePath' => $name,
-                ]);
+    $request->user()->images()->create([
+      'filePath' => $name,
+    ]);
 
 
 
-            return redirect('home');
-        }
+    return redirect('home');
+  }
 }

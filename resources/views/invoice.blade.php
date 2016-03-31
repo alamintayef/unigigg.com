@@ -78,7 +78,7 @@
     <div   >
       @foreach($education as $edu )
         <table >
-          <thead>
+            <tr>
             <th>
               Degree
             </th>
@@ -91,8 +91,7 @@
             <th>
               Result
             </th>
-          </thead>
-          <tbody>
+          </tr>
 
 
           <tr>
@@ -112,7 +111,7 @@
               {{$edu->Degree_result}}
             </td>
           </tr>
-          </tbody>
+        
         </table>
 
 

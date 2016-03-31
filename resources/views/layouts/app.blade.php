@@ -10,15 +10,19 @@
   <title>unigigg | Get Empowered | Get Hired | Get Recognized</title>
 
   <!-- Fonts -->
+
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" media="screen" title="no title" charset="utf-8">
+
   <!-- Styles -->
   {!! Html::script('js/sweetalert.min.js') !!}
   {!! Html::style('css/rotating-card.css') !!}
   {!! Html::style('css/paper.css') !!}
   {!! Html::style('css/sweetalert.css') !!}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/paper/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
   {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
   <link href="{!! asset('css/paper.css') !!}" media="all" rel="stylesheet" type="text/css" />
@@ -113,7 +117,7 @@
         <a class="navbar-brand text-primary" href="{{ url('/home') }}" >
           <i class="fa fa-home "></i>
         </a>
-      
+
 
         <!-- Right Side Of Navbar -->
         <ul class="nav navbar-nav navbar-right">
@@ -173,6 +177,7 @@
 <script type="text/javascript" src="{!! asset('js/stellar.js') !!}"></script></script>
 <script src="https://cdn.jsdelivr.net/jquery.stellar/0.6.2/jquery.stellar.min.js"></script>
 <script src="//fast.eager.io/V77aiwbirP.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 
 </script>
 {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}

@@ -67,7 +67,6 @@
 
             @endforeach
         </select>
-        <small>Choose Preferred University, If you have any. <span class="text-danger">Please insert full University name</span></small>
       </div>
       <div class="form-group">
         {!! Form::submit('Post Job', array( 'class'=>'btn btn-success form-control' )) !!}

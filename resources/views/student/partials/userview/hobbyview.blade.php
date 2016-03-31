@@ -39,7 +39,7 @@
 
   @endforeach
 @else
-  <h4>Nothing added <small>Build Profile</small></h4>
+  <h4>Nothing added </h4>
 @endif
 
 </div>

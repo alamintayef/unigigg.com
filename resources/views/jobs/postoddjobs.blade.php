@@ -8,10 +8,6 @@
 
           <h2 class="textb">Post Eccentric Jobs</h2>
 
-
-
-
-
         {!! Form::open(array('url' => '/eccentricJobspost')) !!}
         @if($errors->any())
           <div class="alert alert-danger">
@@ -44,7 +40,7 @@
 
           <label for="type">Offering(TK):</label>
           <select class="form-control" id="select" name="offering">
-            <option value="500-1000">1000</option>
+            <option value="1000">1000</option>
             <option value="1000-3000">1000-3000</option>
             <option value="3000-5000">3000-5000</option>
             <option value="5000-10000">5000-10000</option>
@@ -59,31 +55,22 @@
           <label for="university" class="control-label">University</label>
           <select class="form-control" name="university" id="select">
             @foreach($uni as $unis)
-
               <option value="{{$unis->university}}">{{$unis->university}}</option>
-
-              @endforeach
+            @endforeach
           </select>
-          <small>Choose Preferred University, If you have any. <span class="text-danger">Please insert full University name</span></small>
         </div>
         <div class="form-group">
           {!! Form::submit('Post Job', array( 'class'=>'btn btn-success form-control' )) !!}
         </div>
-
         {!! Form::close() !!}
-
       </div>
-
-
-
-      </div>
+    </div>
       <div class="col-md-3 col-sm-offset-1 whiteproper panel">
 
-              <h4 >Instructions</h4 >
+          <h4 >Instructions</h4 >
+          <p>
 
-              <p>unun
-
-              </p>
+          </p>
 
       </div>
     </div>

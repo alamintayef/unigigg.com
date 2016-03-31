@@ -15,8 +15,8 @@ return [
     */
 
     'mailgun' => [
-        'domain' => env('postmaster@www.unigigg.com'),
-        'secret' => env('key-20a16c60b0ed7d606d1e5143563dfb3f'),
+        'domain' => env('postmaster@sandbox998800905b3d4c73b3b0c39dbb861860.mailgun.org'),
+        'secret' => env('key-f746be41a53b35c0ea00c69866e80722'),
     ],
 
     'mandrill' => [

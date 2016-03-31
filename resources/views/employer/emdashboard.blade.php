@@ -17,9 +17,9 @@
               @if(count($images)>0)
                 @foreach($images as $image)
                   <img src="{!!'/images/'.$image->filePath !!}" alt="propic" height="200px" width="200px" style="border-radius:30%;" />
-
+                  
                 @endforeach
-            
+
               @endif
             </div>
 
@@ -32,7 +32,7 @@
                 <div class="jumbotron">
 
 
-                  <h4>Company Details</h4><button type="button" name="button" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</button>
+                  <h4>Company Details</h4><a href="{{url('employerinfo')}}" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
 
                   @foreach ($eminfos as $eminfo)
                     <p>

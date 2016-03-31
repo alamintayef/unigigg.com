@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Validator;
 use App\Http\Controllers\Controller;
-
+use App\Model\Student\EmInfo;
 
 
 class EmployerInfoController extends Controller
@@ -31,20 +31,39 @@ class EmployerInfoController extends Controller
                  'company_size'=>'required',
                  'company_description'=>'required',
              ]);
+             $uid= auth()->user()->id;
+             $entrylimit=EmInfo::where('user_id','=' ,$uid)->get();
+            if(count($entrylimit)>0)
+            {
 
-             $request->user()->eminfo()->create([
-                 'company_name' => $request->company_name,
-                 'company_phone'=> $request->company_phone,
-                 'company_email'=> $request->company_email,
-                 'company_address' => $request->company_address,
-                 'company_type' => $request->company_type,
-                 'company_size' => $request->company_size,
-                 'company_description' => $request->company_description,
+              $EmInfo = EmInfo::findorFail($uid);
+              $EmInfo->company_name = $request->company_name;
+              $EmInfo->company_phone = $request->company_phone;
+              $EmInfo->company_email = $request->company_email;
+              $EmInfo->company_address = $request->company_address;
+              $EmInfo->company_type = $request->company_type;
+              $EmInfo->company_size = $request->company_size;
+              $EmInfo->company_description = $request->company_description;
 
-             ]);
-             notify()->flash('Added Successfully! Go to Dashboard', 'success', [
-                'timer' => 3000,
-                'text' => 'It\'s really great to see you again',
+
+              $EmInfo->save();
+            }
+            else {
+              $request->user()->eminfo()->create([
+                  'company_name' => $request->company_name,
+                  'company_phone'=> $request->company_phone,
+                  'company_email'=> $request->company_email,
+                  'company_address' => $request->company_address,
+                  'company_type' => $request->company_type,
+                  'company_size' => $request->company_size,
+                  'company_description' => $request->company_description,
+
+              ]);
+            }
+
+             notify()->flash('Added Successfully! ', 'success', [
+                'timer' => 2000,
+                'text' => 'Please Check the Dashboard',
               ]);
 
               return redirect('/employerinfo');
