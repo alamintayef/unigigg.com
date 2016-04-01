@@ -24,14 +24,23 @@
       <div class="col-md-10">
 
         <div class="panel panel-blue" >
-
-
-
-            <div class="panel-heading">
+          <div class="panel-heading">
               <div class="pull-right pl">
                 @foreach($images as $image)
-                <img src="{!!'files/images/'.$image->filePath !!}" alt="propic" height="100px" width="100px" style="border-radius:50%;" />
-
+                <img src="{!!' /files/images/'.$image->filePath !!}" alt="propic" height="100px" width="100px" style="border-radius:50%;" />
+              @endforeach
+              <br>
+              <br>
+              @foreach($user as $users)
+                @if($users->verified===1)
+                  <p class="text-success">
+                    Verified
+                  </p>
+                @else
+                  <p class="text-danger">
+                    Not Verified
+                  </p>
+                @endif
               @endforeach
             </div>
               @foreach($profile as $view )
@@ -72,15 +81,6 @@
                       {{$skills->skill_level}}
                     </td>
 
-                    @if($skills->varified===0)
-                      <td class="text-danger td">
-                        Not Verified
-                      </td>
-                    @else
-                      <td class="td text-success">
-                        Verified
-                      </td>
-                    @endif
                   </tr>
                 </tbody>
               </table>

@@ -22,6 +22,11 @@ class OddAppliedController extends Controller
 
       OddApplied::create($input);
 
+      notify()->flash('Applied Successfully!', 'success', [
+         'timer' => 2000,
+
+       ]);
+
       return redirect('/home');
     }
 

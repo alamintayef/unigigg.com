@@ -32,9 +32,19 @@
                 @endforeach
               </div>
             @endif
-            @if(Session::has('flash_message'))
-    <div class="alert alert-success"><em> {!! session('flash_message') !!}</em></div>
-@endif
+            @if (notify()->ready())
+              <script>
+              swal({
+                title: "{!! notify()->message() !!}",
+                text: "{!! notify()->option('text') !!}",
+                type: "{{ notify()->type() }}",
+                @if (notify()->option('timer'))
+                timer: {{ notify()->option('timer') }},
+                showConfirmButton: false
+                @endif
+              });
+              </script>
+            @endif
 
 
             @include('student.forms.hobby')

@@ -55,11 +55,15 @@
                           <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                         </div>
                         @if(count($applicable)>0)
-                          <button type="submit" name="button" class="btn btn-success">Apply</button>
+
+
+                            <button type="submit" name="button" class="btn btn-success">Apply</button>
+                        
                         @else
                           <p class="text-danger">
                             Fill Profile Information to apply to jobs
                           </p>
+                        @endforeach
 
                         @endif
 

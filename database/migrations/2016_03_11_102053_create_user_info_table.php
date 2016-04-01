@@ -27,7 +27,7 @@ class CreateUserInfoTable extends Migration
             $table->string('NId');
             $table->string('facebookId')->nullable();
             $table->string('LinkedInId')->nullable();
-            $table->string('youtube')->nullable();
+        
             $table->timestamps();
         });
 

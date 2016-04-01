@@ -14,12 +14,14 @@ use App\Model\Student\Hobbies;
 use App\Model\Student\Education;
 use App\Model\Student\Interest;
 use App\Model\Student\User;
+use App\Model\Student\Billing;
 use App\Model\Student\FunFacts;
 use App\Model\Student\Image;
 use App\Model\Student\EmInfo;
 use App\Model\Student\Jobs;
 use App\Model\Student\University;
 use App\Model\Student\Reference;
+use DB;
 
 class AdminController extends Controller
 {
@@ -39,6 +41,7 @@ class AdminController extends Controller
     }
     public function studentemview($id)
     {
+      $user = User::where('id','=',$id)->get();
       $profile = UserInfo::where('user_id','=', $id)->get();
       $skill = Skills::where('user_id','=', $id)->get();
       $education = Education::where('user_id','=', $id)->get();
@@ -52,12 +55,9 @@ class AdminController extends Controller
         'exps'=> $exps,
         'refs'=> $refs,
         'images'=> $images,
-
-
+        'user' => $user,
 
       ]);
-
-
     }
     public function unistore(Request $request)
     {
@@ -67,10 +67,32 @@ class AdminController extends Controller
     $university = new University;
     $university->university = $request->university;
     $university->save();
-    notify()->flash('Added Successfully! ', 'success', [
-
+    notify()->flash('Added Successfully! Go to Dashboard', 'success', [
+       'timer' => 1000,
+       'text' => '! Congrats',
      ]);
 
     return redirect('/home');
+    }
+    public function verification(){
+
+      $varreqs = DB::table('users')
+              ->join('billings', 'users.id', '=', 'billings.user_id')
+              ->select('users.*','billings.*')
+              ->get();
+      return view('admin.verification',[
+        'varreqs' => $varreqs,
+      ]);
+
+    }
+
+    public function verify($id){
+
+
+      DB::table('users')
+                  ->where('id', $id)
+                  ->update(['verified' => '1']);
+
+        return redirect('verification')   ;
     }
 }

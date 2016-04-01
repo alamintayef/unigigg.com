@@ -113,6 +113,11 @@ class OddJobsController extends Controller
           'university' => $request->university,
 
         ]);
+        notify()->flash('Posted Successfully!', 'success', [
+           'timer' => 1000,
+           'text' => 'Thank you for posting the job',
+
+         ]);
 
         return redirect('/home');
 

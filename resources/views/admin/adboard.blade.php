@@ -38,7 +38,7 @@
 
       </div>
         </div>
-      <div class="col-md-4 pull-left whiteproper">
+      <div class="col-sm-4 pull-left whiteproper panel">
         <div class="panel-body">
 
             {!! Form::open(array('url' => '/university')) !!}
@@ -59,6 +59,13 @@
             {!! Form::text('university', null, ['class' => 'form-control']) !!}
           </div>
             {!! Form::submit('Add', ['class' => 'btn btn-primary']) !!}
+        </div>
+
+      </div>
+      <div class="col-sm-4 pull-left whiteproper panel col-md-offset-1">
+        <div class="panel-body">
+          <a href="{{url('verification')}}">Show Verification Request</a>
+
         </div>
 
       </div>

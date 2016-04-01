@@ -52,6 +52,7 @@ class ApplyController extends Controller
     }
     public function studentemview($id)
     {
+      $user = User::where('id','=',$id)->get();
       $profile = UserInfo::where('user_id','=', $id)->get();
       $skill = Skills::where('user_id','=', $id)->get();
       $education = Education::where('user_id','=', $id)->get();
@@ -65,6 +66,7 @@ class ApplyController extends Controller
         'exps'=> $exps,
         'refs'=> $refs,
         'images'=> $images,
+        'user' => $user,
 
 
 

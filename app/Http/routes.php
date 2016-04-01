@@ -56,6 +56,8 @@ Route::group(['middleware' => ['web']], function () {
       Route::get('admin','AdminController@index');
       Route::post('university', 'AdminController@unistore');
       Route::get('/aprofile/{id}', 'AdminController@studentemview');
+      Route::get('verification', 'AdminController@verification');
+      Route::post('verify/{id}', 'AdminController@verify');
 
       //payment
       Route::get('payment','BillController@index');

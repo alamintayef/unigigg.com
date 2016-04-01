@@ -12,7 +12,7 @@ class BillController extends Controller
     public function __construct()
     {
       $this->middleware('auth');
-    
+
 
     }
     public function index()
@@ -32,8 +32,12 @@ class BillController extends Controller
             'transaction_id' => $request->transaction_id,
 
         ]);
-        Session::flash('flash_message','Recorded Successfully. We will contact you within 24 hours .');
+        notify()->flash('Recorded Successfully!', 'success', [
+           'timer' => 3000,
+           'text' => 'We will contact you within 24 hours and validate your profile with 48 hours ! ',
+         ]);
 
-        return redirect('/home');
+
+        return redirect('/payment');
     }
 }

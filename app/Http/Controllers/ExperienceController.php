@@ -38,7 +38,7 @@ class ExperienceController extends Controller
         ]);
         notify()->flash('Added Successfully! Go to Dashboard', 'success', [
            'timer' => 3000,
-           'text' => 'It\'s really great to see you again',
+           
          ]);
 
          return redirect('/experience');
@@ -47,6 +47,10 @@ class ExperienceController extends Controller
     {
       $var = Experience::where('experience_id','=',$id);
       $var->delete();
+      notify()->flash('Deleted Successfully!', 'success', [
+         'timer' => 2000,
+
+       ]);
 
       return redirect('/home');
 

@@ -32,7 +32,7 @@ class InterestController extends Controller
         ]);
        notify()->flash('Added Successfully! Go to Dashboard', 'success', [
           'timer' => 3000,
-          'text' => 'It\'s really great to see you again',
+
         ]);
 
         return redirect('/interest');
@@ -41,6 +41,10 @@ class InterestController extends Controller
     {
       $interest = Interest::where('interest_id','=',$id);
       $interest->delete();
+      notify()->flash('Deleted Successfully!', 'success', [
+         'timer' => 1000,
+
+       ]);
 
       return redirect('/home');
 

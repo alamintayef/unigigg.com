@@ -42,6 +42,8 @@ class JobsController extends Controller
             'job_location' => $request->job_location,
             'job_description' => $request->job_description,
             'job_reqs' => $request->job_reqs,
+            'job_education_reqs'=> $request->job_education_reqs,
+            'job_skill_reqs'=>$request->job_skill_reqs,
             'job_reqs_additional' => $request->job_reqs_additional,
             'job_start_date' => $request->job_start_date,
             'job_last_date_application' => $request->job_last_date_application,
@@ -49,8 +51,8 @@ class JobsController extends Controller
 
         ]);
         notify()->flash('Added Successfully! Check Posted Jobs', 'success', [
-           'timer' => 3000,
-           'text' => 'It\'s really great to see you again',
+           'timer' => 1000,
+           'text' => 'Great. Thank you for posting a job',
          ]);
 
          return redirect('/postedjobs');
@@ -119,6 +121,7 @@ class JobsController extends Controller
                 ->join('skills', 'user_info.user_id','=','skills.user_id')
                 ->select('user_info.*','skills.*')
                 ->get();
+  
           return view('jobs.jobview', [
             'jobs'=>$jobs,
             'applicable'=>$applicable,

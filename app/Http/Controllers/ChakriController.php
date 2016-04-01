@@ -16,6 +16,7 @@ use App\Model\Student\Education;
 use App\Model\Student\Interest;
 use App\Model\Student\Reference;
 use App\Model\Student\Image;
+use App\Model\Student\User;
 use Session;
 class ChakriController extends Controller
 {
@@ -32,7 +33,10 @@ class ChakriController extends Controller
       $uid= auth()->user()->id;
       $joblimit=StudentApplied::where('user_id','=' ,$uid)->get();
       if (count($joblimit)>$limit) {
-        Session::flash('flash_message','Sorry you cannot apply.');
+        notify()->flash('Sorry!', 'error', [
+           'timer' => 3000,
+           'text' => 'You have Already reached you limit ! ',
+         ]);
       }
       else{
 
@@ -63,6 +67,7 @@ class ChakriController extends Controller
     }
     public function studentemview($id)
     {
+      $user = User::where('id','=',$id)->get();
       $profile = UserInfo::where('user_id','=', $id)->get();
       $skill = Skills::where('user_id','=', $id)->get();
       $education = Education::where('user_id','=', $id)->get();
@@ -75,7 +80,9 @@ class ChakriController extends Controller
         'education'=> $education,
         'exps'=> $exps,
         'refs'=> $refs,
-          'images'=> $images,
+        'images'=> $images,
+        'user' => $user,
+
 
 
       ]);

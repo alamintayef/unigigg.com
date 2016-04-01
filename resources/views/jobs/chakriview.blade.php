@@ -55,9 +55,9 @@
                           <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                         </div>
                         @if(count($applicable)>0)
-                          @if(count($joblimit)>$limit)
+                          @if(Auth::user()->verified===0)
                             <p class="text-danger">
-                              Sorry You can not apply to this job as you have already applied to {{count($joblimit)}} job
+                              You need to verify your profile to apply
                             </p>
                           @else
                                 <button type="submit" name="button" class="btn btn-success">Apply</button>
@@ -80,7 +80,7 @@
 
             </div>
           @endforeach
-          
+
         @endif
       </div>
     </div>

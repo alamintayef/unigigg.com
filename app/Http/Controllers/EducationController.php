@@ -28,10 +28,10 @@ class EducationController extends Controller
 
           $this->validate($request, [
             'Degree_name'=> 'required|min:3|max:255',
-            'Degree_type'=> 'required|max:10',
+          //  'Degree_type'=> 'required|max:10',
             'Degree_start_date'=> 'required',
             'Degree_end_date'=> 'required',
-            'Degree_institute'=> 'required|max:50',
+          //  'Degree_institute'=> 'required|max:50',
             'Degree_result'=>'required',
 
 
@@ -47,8 +47,8 @@ class EducationController extends Controller
           ]);
 
           notify()->flash('Added Successfully! Go to Dashboard', 'success', [
-             'timer' => 3000,
-             'text' => 'It\'s really great to see you again',
+             'timer' => 2000,
+
            ]);
 
            return redirect('/edu');

@@ -38,8 +38,8 @@ class FunFactsController extends Controller
 
         ]);
         notify()->flash('Added Successfully! Go to Dashboard', 'success', [
-           'timer' => 3000,
-           'text' => 'It\'s really great to see you again',
+           'timer' => 2000,
+           'text' => 'Awesome',
          ]);
 
          return redirect('/fun');

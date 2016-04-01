@@ -41,6 +41,10 @@ class HobbyController extends Controller
     {
       $var = Hobbies::where('hobbies_id','=',$id);
       $var->delete();
+      notify()->flash('Deleted Successfully!', 'success', [
+         'timer' => 2000,
+
+       ]);
 
       return redirect('/home');
 

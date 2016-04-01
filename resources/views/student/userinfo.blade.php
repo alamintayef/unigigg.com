@@ -17,34 +17,42 @@
           <li><a href="{{url('interest')}}">Interests</a></li>
           <li><a href="{{url('hobby')}}">Hobbies</a></li>
           <li><a href="{{url('fun')}}">About You</a></li>
-            <li><a href="{{url('vdoprofile')}}">Video Profile</a></li>
+          <li><a href="{{url('vdoprofile')}}">Video Profile</a></li>
 
         </ul>
 
 
-          <div class="well">
+        <div class="well">
 
-            @if(count($errors)>0)
-              <div class="alert alert-danger">
-                @foreach($errors->all() as $error)
-                  <p>{{ $error }}</p>
-                @endforeach
-              </div>
-            @endif
-            @if (notify()->ready())
-              <div class="alert alert-{{notify()->type()}}">
-                {{notify()->message()}}
-              </div>
-            @endif
+          @if(count($errors)>0)
+            <div class="alert alert-danger">
+              @foreach($errors->all() as $error)
+                <p>{{ $error }}</p>
+              @endforeach
+            </div>
+          @endif
+          @if (notify()->ready())
+            <script>
+            swal({
+              title: "{!! notify()->message() !!}",
+              text: "{!! notify()->option('text') !!}",
+              type: "{{ notify()->type() }}",
+              @if (notify()->option('timer'))
+              timer: {{ notify()->option('timer') }},
+              showConfirmButton: false
+              @endif
+            });
+            </script>
+          @endif
 
 
-            @include('student.forms.basicinfo')
+          @include('student.forms.basicinfo')
 
 
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 
 @endsection

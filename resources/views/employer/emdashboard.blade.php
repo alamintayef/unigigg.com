@@ -10,6 +10,19 @@
 
           <div class="panel-body">
             <div>
+              @if (notify()->ready())
+                <script>
+                swal({
+                  title: "{!! notify()->message() !!}",
+                  text: "{!! notify()->option('text') !!}",
+                  type: "{{ notify()->type() }}",
+                  @if (notify()->option('timer'))
+                  timer: {{ notify()->option('timer') }},
+                  showConfirmButton: false
+                  @endif
+                });
+                </script>
+              @endif
 
               <div style="text-align:center;">
 
@@ -17,7 +30,7 @@
               @if(count($images)>0)
                 @foreach($images as $image)
                   <img src="{!!'/images/'.$image->filePath !!}" alt="propic" height="200px" width="200px" style="border-radius:30%;" />
-                  
+
                 @endforeach
 
               @endif

@@ -38,8 +38,8 @@ class ExtraCurController extends Controller
 
         ]);
         notify()->flash('Added Successfully! Go to Dashboard', 'success', [
-           'timer' => 3000,
-           'text' => 'It\'s really great to see you again',
+           'timer' => 2000,
+
          ]);
 
          return redirect('/excc');
@@ -48,7 +48,10 @@ class ExtraCurController extends Controller
     {
       $var = ExtraCur::where('excc_id','=',$id);
       $var->delete();
+      notify()->flash('Deleted Successfully!', 'success', [
+         'timer' => 2000,
 
+       ]);
       return redirect('/home');
 
     }

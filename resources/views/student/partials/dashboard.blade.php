@@ -5,12 +5,34 @@
     <div class="col-md-10  ">
       <div class="panel padsmall">
         <div class="panel-heading"><h4 class="textb">Dashboard</h4></div>
-        @if(Session::has('flash_message'))
-          <div class="alert alert-success"><em> {!! session('flash_message') !!}</em></div>
+        @if (notify()->ready())
+          <script>
+          swal({
+            title: "{!! notify()->message() !!}",
+            text: "{!! notify()->option('text') !!}",
+            type: "{{ notify()->type() }}",
+            @if (notify()->option('timer'))
+            timer: {{ notify()->option('timer') }},
+            showConfirmButton: false
+            @endif
+          });
+          </script>
         @endif
+          <div class="col-md-12">
+            <div class="col-md-8 pull-left">
+                <h4>Welcome onboard <strong>{{Auth::user()->name}}</strong></h4>
+            </div>
+            <div class="col-md-4 pull-right">
+              @if(Auth::user()->verified===0)
+                <h5 class="text-danger">Not verified</h5>
+              @else
+                <h5 class="text-success">verified</h5>
+              @endif
+              <a class="btn btn-success " href="{{ url('/payment') }}"><i class="fa fa-btn fa-check-square-o"></i>Verify Profile</a>
 
-          <h4 class="well">Welcome onboard <strong>{{Auth::user()->name}}</strong></h4>
 
+            </div>
+          </div>
           @if(count($joblimit)>2)
             <div class="alert alert-danger">
               You have already applied to 3 jobs
@@ -26,24 +48,14 @@
 
           </div>
 
-
-
-
-
           @include('student.partials.userview.infoview')
           <br>
 
           <div class="col-md-12 panel whiteproper">
-        <h3 class="padsmall textb">Data Details</h3>
+        <h3 class="padsmall textb">Your Details</h3>
           @if(count($education)>0)
             @include('student.partials.userview.eduview')
           @endif
-
-
-
-
-
-
 
       @include('student.partials.userview.skillview')
 

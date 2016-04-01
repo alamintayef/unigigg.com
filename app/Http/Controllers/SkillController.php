@@ -52,9 +52,9 @@ class SkillController extends Controller
   {
     $skill = Skills::where('skill_id','=',$id);
     $skill->delete();
-    notify()->flash('Added Successfully!', 'Danger', [
-      'timer' => 3000,
-      'text' => 'It\'s really great to see you again',
+    notify()->flash('Deleted Successfully!', 'Danger', [
+      'timer' => 1000,
+
     ]);
 
     return redirect('/home');
@@ -64,16 +64,16 @@ class SkillController extends Controller
   {
     $this->validate($request, [
       'skill_proof' => 'url',
-
     ]);
 
     DB::table('skills')
-          ->where('skill_id', $id)
-          ->update(['skill_proof' => $request->skill_proof]);
+    ->where('skill_id', $id)
+    ->update(['skill_proof' => $request->skill_proof]
+  );
 
 
-    return redirect('/shortlists');
-  }
+  return redirect('/home');
+}
 
 
 }

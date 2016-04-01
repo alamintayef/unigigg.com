@@ -71,6 +71,11 @@ class AuthController extends Controller
            $m->to($data['email'], $data['name'])->subject('Welcome to unigigg');
        });
 
+       notify()->flash('Welcome!', 'success', [
+          'timer' => 2000,
+
+        ]);
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
