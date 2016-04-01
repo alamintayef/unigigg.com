@@ -24,9 +24,21 @@
                       <li>Location: {{$jobs->job_location}}</li>
                       <li>Salary: {{$jobs->job_salary}}</li>
                       <div class="well">
+                      <p>
                         Description: {{$jobs->job_description}}
-                        <br>
+                          </p>
+                        <p>
                         Requirements :{{$jobs->job_reqs}}
+                          </p>
+                          <p>
+                            Educational Requirements: {{$jobs->job_education_reqs}}
+                          </p>
+                          <p>
+                            Skill Requirements: {{$jobs->job_skill_reqs}}
+                          </p>
+                          <p>
+                            Additional Requirements: {{$jobs->job_reqs_additional}}
+                          </p>
                       </div>
                     </div>
 

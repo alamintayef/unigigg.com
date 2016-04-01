@@ -27,6 +27,8 @@ class JobsController extends Controller
             'job_location' => 'required',
             'job_description' => 'required',
             'job_reqs' => 'required',
+            'job_education_reqs' => 'required',
+            'job_skill_reqs' => 'required',
             'job_reqs_additional' => 'required',
             'job_start_date' => 'required|date',
             'job_last_date_application' => 'required|date',

@@ -16,9 +16,17 @@
               You have already applied to 3 jobs
             </div>
           @endif
+          <div class="col-md-12">
+            <div class="col-md-4 pull-left">
+                @include('student.partials.userview.imageview')
+            </div>
+            <div class="col-md-6 pull-right">
+              @include('student.partials.userview.vview')
+            </div>
+
+          </div>
 
 
-            @include('student.partials.userview.imageview')
 
 
 

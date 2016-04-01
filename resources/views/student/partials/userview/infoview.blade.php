@@ -7,8 +7,6 @@
       @foreach ($infos as $users)
         <p>
 
-            <iframe class="embed-responsive-item pull-right" width="400" height="250" src="https://www.youtube.com/embed/{{$users->youtube}}" frameborder="0" allowfullscreen></iframe>
-            <hr>
             You Have Applied to :  {{count($joblimit)}} jobs
           <hr>
           <h6>Phone : {{$users->mobile}}</h6>

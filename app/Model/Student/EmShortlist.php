@@ -9,8 +9,8 @@ class EmShortlist extends Model
     //
     protected $table='em_shortlists';
     protected $fillable = [
-      'user_id', 'shortlisted_for_job_id',
+      'user_id','shortlistedby' ,'shortlisted_for_job_id',
     ];
 
-    protected $hidden = ['user_id', 'shortlisted_for_job_id',];
+    protected $hidden = ['user_id','shortlistedby' ,'shortlisted_for_job_id',];
 }

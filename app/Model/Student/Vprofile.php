@@ -8,7 +8,9 @@ class Vprofile extends Model
 {
     //
     protected $table='vprofiles';
-    protected $fillable='vdourl';
+    protected $fillable=[
+      'vdourl',
+    ];
 
     public function user()
     {

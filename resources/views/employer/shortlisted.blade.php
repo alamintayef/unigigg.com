@@ -4,14 +4,15 @@
   <div class="container ">
     <div class="row ">
       @include('layouts.emmenu')
-      <div class="col-md-8 whiteproper col-md-offset-1 panel">
+      <div class="col-md-10 whiteproper  panel">
         <div >
-          <h4 class="text-info">Shortlisted Candidates</h4>
-
+          <h4 class="text-info">Shortlisted Candidates </h4>
+          <h5>Finalized Candidates :  {{$shortlistlimit}}</h5>
         </div>
 
 
         @foreach( $shortlisted as $shortlist )
+
         @if($shortlist->user_id===Auth::user()->id)
           @if($shortlist->job_name===$shortlist->job_name)
 

@@ -30,6 +30,55 @@ class OddJobsController extends Controller
         ]);
 
       }
+      public function tuitions()
+      {
+        $tuitions = OddJobs::where('type','=', 'Tution')->get();
+            $uid= auth()->user()->id;
+        $applicable=DB::table('user_info')
+                    ->where('user_info.user_id' ,'=',$uid)
+                    ->join('skills', 'user_info.user_id','=','skills.user_id')
+                    ->select('user_info.*','skills.*')
+                    ->get();
+        return view('jobs.tuitions',[
+          'tuitions'=> $tuitions,
+          'applicable'=> $applicable
+        ]);
+
+
+      }
+      public function assignements()
+      {
+        $assignements = OddJobs::where('type','=', 'Assignment')->get();
+            $uid= auth()->user()->id;
+        $applicable=DB::table('user_info')
+                    ->where('user_info.user_id' ,'=',$uid)
+                    ->join('skills', 'user_info.user_id','=','skills.user_id')
+                    ->select('user_info.*','skills.*')
+                    ->get();
+        return view('jobs.assignement',[
+          'assignements'=> $assignements,
+          'applicable'=> $applicable
+        ]);
+
+      }
+
+      public function others()
+      {
+        $others = OddJobs::where('type','=', 'Others')->get();
+            $uid= auth()->user()->id;
+        $applicable=DB::table('user_info')
+                    ->where('user_info.user_id' ,'=',$uid)
+                    ->join('skills', 'user_info.user_id','=','skills.user_id')
+                    ->select('user_info.*','skills.*')
+                    ->get();
+        return view('jobs.others',[
+          'others'=> $others,
+          'applicable'=> $applicable
+        ]);
+
+
+      }
+
       public function postjobs()
       {
         $uni= DB::table('universities')->select('universities.*')->orderBy('university', 'ASC')->get();

@@ -16,7 +16,7 @@ class PublicController extends Controller
             ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
             ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
             ->orderByRaw("RAND()")->get();
-          
+
       $applied = DB::table('student_applieds')
               ->select('student_applieds.*')
               ->get();

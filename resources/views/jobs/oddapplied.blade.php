@@ -19,8 +19,7 @@
             </div>
             <div class="panel-body">
               <p class="col-md-4">
-                <iframe width="250" height="150" src="https://www.youtube.com/embed/{{$seek->youtube}}" frameborder="0" allowfullscreen></iframe>
-
+              
               </p>
 
               <p class="col-md-4">

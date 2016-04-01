@@ -14,17 +14,19 @@ class CreateJobsTable extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->increments('job_id');
-            $table->integer('user_id')->index();
+            $table->integer('user_id')->unsigned()->index();
             $table->string('job_name');
             $table->string('job_type');
             $table->string('job_salary');
             $table->string('job_location');
             $table->text('job_description');
             $table->text('job_reqs');
+            $table->text('job_education_reqs');
+            $table->text('job_education_reqs');
             $table->text('job_reqs_additional');
             $table->date('job_start_date');
             $table->date('job_last_date_application');
-          //  $table->foreign('employer_eid')->references('eid')->on('em_users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

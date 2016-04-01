@@ -5,15 +5,15 @@
       <a href="{{url('home')}}"><h4 class="text-primary"><i class="fa fa-arrow-left"></i> Go Back </h4></a>
       <div >
             <ul class="nav nav-pills panel whiteproper nav-justified">
-                <li class="active"><a href="{{url('eccentricJobs')}}">All</a></li>
-                <li ><a href="{{url('tuitions')}}">Tutions</a></li>
-                <li ><a href="{{url('assignements')}}">Assignments</a></li>
-                <li ><a href="{{url('others')}}">Others</a></li>
+              <li ><a href="{{url('eccentricJobs')}}">All</a></li>
+              <li class="active" ><a href="{{url('tuitions')}}">Tutions</a></li>
+              <li ><a href="{{url('assignements')}}">Assignments</a></li>
+              <li ><a href="{{url('others')}}">Others</a></li>
             </ul>
       </div>
-      @if(count($oddjobs)>0)
+      @if(count($tuitions)>0)
 
-        @foreach($oddjobs as $jobs)
+        @foreach($tuitions as $jobs)
           <div class="col-md-3 col-md-offset-1 textb whiteproper panel padsmall">
           <fieldset>
               <h6>{{$jobs->title}}</h6>

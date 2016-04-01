@@ -15,8 +15,6 @@
 
         </div>
 
-
-
         <div class="col-md-12 panel whiteproper textb pad">
           {!! Form::open(array('url' => '/postjobs', 'file'=>true)) !!}
           @if($errors->any())
@@ -28,7 +26,7 @@
           @endif
 
           <div class="form-group">
-            {!! Form::label('job_name', 'Tltle:') !!}
+            {!! Form::label('job_name', 'Tltle:') !!}<span class="text-danger">*</span>
             {!! Form::text('job_name', null, ['class'=>'form-control']) !!}
           </div>
 
@@ -43,49 +41,42 @@
             </select>
           </div>
           <div class="form-group">
-            {!! Form::label('job_salary', 'Salary:') !!}
+            {!! Form::label('job_salary', 'Salary Offering:') !!}<span class="text-danger">*</span>
             {!! Form::text('job_salary', null, ['class'=>'form-control'] ) !!}
           </div>
           <div class="form-group">
-            {!! Form::label('job_location', 'Location:') !!}
+            {!! Form::label('job_location', 'Location:') !!}<span class="text-danger">*</span>
             {!! Form::text('job_location', null, ['class'=>'form-control'] ) !!}
           </div>
 
           <div class="form-group">
-            {!! Form::label('job_description', 'Job Description:') !!}
-            {!! Form::textarea('job_description', null, ['class'=>'form-control', 'rows'=>4] ) !!}
+            {!! Form::label('job_description', 'Job Description:') !!}<span class="text-danger">*</span>
+            {!! Form::textarea('job_description', null, ['class'=>'form-control', 'rows'=>2] ) !!}
+            <small class="ssmal">Describe what the job is all about. e.g. Responsibilities</small>
           </div>
 
           <div class="form-group">
-            {!! Form::label('job_reqs', 'Job Requirments:') !!}
+            {!! Form::label('job_reqs', 'Job Requirments:') !!}<span class="text-danger">*</span>
             {!! Form::textarea('job_reqs', null, ['class'=>'form-control', 'rows'=>2] ) !!}
+            <small class="ssmal">Basic Requirments</small>
           </div>
           <div class="form-group">
-            <h5>Skill Sets</h5>
-            <small>Technical Skills</small><br>
-            {!! Form::label('webdev', 'Web Develoment') !!}
-            {!! Form::checkbox('webdev', 'value', false) !!}
-
-            {!! Form::label('webdev', 'Android') !!}
-            {!! Form::checkbox('webdev', 'value', false) !!}
-
-            {!! Form::label('webdev', 'Windows Phone') !!}
-            {!! Form::checkbox('webdev', 'value', false) !!}
-
-            {!! Form::label('webdev', 'IOS') !!}
-            {!! Form::checkbox('webdev', 'value', false) !!}
-            <br>
-            <small>Office Skills</small><br>
-            {!! Form::label('msoffice', 'MS-Office') !!}
-            {!! Form::checkbox('msoffice', 'value', false) !!}
-            {!! Form::label('googledocs', 'Google Docs') !!}
-            {!! Form::checkbox('googledocs', 'value', false) !!}
+            {!! Form::label('job_education_reqs', 'Educational Requirments:') !!}<span class="text-danger">*</span>
+            {!! Form::textarea('job_education_reqs', null, ['class'=>'form-control', 'rows'=>2] ) !!}
+            <small class="ssmal">e.g. BSc in Computer Science, Bachelors in Business Administration</small>
+          </div>
+          <div class="form-group">
+            {!! Form::label('job_skill_reqs', 'Skill Requirments:') !!}<span class="text-danger">*</span>
+            {!! Form::textarea('job_skill_reqs', null, ['class'=>'form-control', 'rows'=>2] ) !!}
+            <small class="ssmal">Insert the specific skill set you are looking for. e.g. MS-Office, Php, Java, Accounting</small>
           </div>
 
           <div class="form-group">
-            {!! Form::label('job_reqs_additional', 'Additional Requirments:') !!}
+            {!! Form::label('job_reqs_additional', 'Additional Requirments: ') !!}
             {!! Form::textarea('job_reqs_additional', null, ['class'=>'form-control', 'rows'=>2] ) !!}
+            <small class="ssmal">If you have and specific additional requirments</small>
           </div>
+
           <div class="form-group">
             {!! Form::label('job_start_date', 'Commencing Date:') !!}
             {!! Form::date('job_start_date', null, ['class'=>'form-control'] ) !!}

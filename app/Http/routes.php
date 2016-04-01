@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    
+
     return view('welcome');
 });
 Route::get('/recruiter', function () {
@@ -96,6 +96,12 @@ Route::group(['middleware' => ['web']], function () {
       Route::post('eccentricJobspost','OddJobsController@postjob');
       Route::get('eccentricJobsApplied', 'OddJobsController@whoapplied');
       Route::get('eccentricJobsAppliedem', 'JobsController@oddwhoapplied');
+
+      //EccentricJobs Classification
+      Route::get('eccentricJobs','OddJobsController@index');
+      Route::get('tuitions','OddJobsController@tuitions');
+      Route::get('assignements','OddJobsController@assignements');
+      Route::get('others','OddJobsController@others');
 
 
 });

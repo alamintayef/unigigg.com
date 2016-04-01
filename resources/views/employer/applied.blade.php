@@ -6,7 +6,7 @@
     @include('layouts.emmenu')
       <div class="col-md-10">
         <div class="well">
-          <h4 class="text-info">Applied Candidates</h4>
+          <h4 class="textb">Applied Candidates</h4>
         </div>
 
 
@@ -20,7 +20,6 @@
             </div>
             <div class="panel-body">
               <p class="col-md-4">
-                <iframe width="250" height="150" src="https://www.youtube.com/embed/{{$seek->youtube}}" frameborder="0" allowfullscreen></iframe>
 
               </p>
 
@@ -49,6 +48,7 @@
                 {!! csrf_field() !!}
                 <input type="hidden" name="user_id" value="{{$seek->id}}">
                 <input type="hidden" name="shortlisted_for_job_id" value="{{$seek->job_id}}">
+                <input type="hidden" name="shortlistedby" value="{{Auth::user()->id}}">
                 <button type="submit" class="btn btn-warning ">
                   <i class="fa fa-bookmark"></i> Shortlist
                 </button>

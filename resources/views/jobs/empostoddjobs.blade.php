@@ -30,7 +30,7 @@
 
           <label for="type">Catagory</label>
             <select class="form-control" id="select" name="type">
-              <option value="Tution">Tution</option>
+              <option value="Tution">Tuition</option>
               <option value="Assignment">Assignment Help</option>
               <option value="Others">Others</option>
 

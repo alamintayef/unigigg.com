@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
     use Illuminate\Http\Request;
     use App\Model\Student\UserInfo;
+    use App\Model\Student\Vprofile;
     use App\Http\Requests;
     use App\Http\Controllers\Controller;
     use DB;
@@ -76,7 +77,7 @@ namespace App\Http\Controllers;
             'NId' => $request->NId,
             'facebookId' => $request->facebookId,
             'LinkedInId' => $request->LinkedInId,
-          
+
           ]);
         }
 
@@ -133,7 +134,7 @@ namespace App\Http\Controllers;
 
 
           $this->validate($request, [
-            'vdourl' => 'required|',
+            'vdourl' => 'required',
 
           ]);
           $uid= auth()->user()->id;
@@ -145,7 +146,7 @@ namespace App\Http\Controllers;
           }
           else {
             $request->user()->vprofile()->create([
-              'vdourl' => $request->skill_name,
+              'vdourl' => $request->vdourl,
 
             ]);
           }
