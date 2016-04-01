@@ -9,8 +9,8 @@ class UserInfo extends Model
     //
     protected $table ='user_info';
     protected $fillable = [
-      'fname','lname','area','post_code','other'
-      ,'institute','passing_date','mobile','universityId','NId','facebookId','LinkedInId','youtube',
+      'fname','lname','area','post_code',
+      'institute','passing_date','mobile','universityId','NId','facebookId','LinkedInId',
     ];
 
    public function user()

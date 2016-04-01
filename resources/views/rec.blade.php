@@ -75,10 +75,10 @@
 
       <h2 class="center">Pricing</h2>
       <h4 class="center">Posting a Job is Completely Free</h4>
-      <h5 class="center">Pay Less, Get More</h5>
+      <h5 class="center">You’ll only be charged when you finalize applicants who match your requirements</h5>
 
 
-      <div class="col-md-3 ">
+      <div class="col-md-4 ">
 
         <!-- PRICE ITEM -->
         <div class="panel price panel-white">
@@ -89,8 +89,8 @@
             <p class="lead" style="font-size:20px"><strong>Tk.1000 / Hire</strong></p>
           </div>
           <ul class="list-group list-group-flush text-center">
-            <li class="list-group-item"><i class="icon-ok text-success"></i> Self Serving</li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i> Charged Per Hire</li>
+            <li class="list-group-item"><i class="icon-ok text-success"></i>Self Serve</li>
+            <li class="list-group-item"><i class="icon-ok text-success"></i>Better For &lt; 10 Hires </li>
             <li class="list-group-item"><i class="icon-ok text-success"></i> 27/7 support</li>
           </ul>
 
@@ -100,64 +100,49 @@
 
       </div>
 
-      <div class=" col-md-3">
+      <div class=" col-md-4">
 
         <!-- PRICE ITEM -->
         <div class="panel price panel-white">
           <div class="panel-heading arrow_box text-center">
-          <h5>Pay Per Quarter</h5>
+          <h5>Pay Up Front and Save</h5>
           </div>
           <div class="panel-body text-center">
-            <p class="lead" style="font-size:20px"><strong>Tk.4000 / 3-month</strong></p>
+            <p class="lead" style="font-size:20px"><strong>Contact Us for the pricing</strong></p>
           </div>
           <ul class="list-group list-group-flush text-center">
             <li class="list-group-item"><i class="icon-ok text-success"></i> Dedicated Account Manager</li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i> For 5 Application</li>
+            <li class="list-group-item"><i class="icon-ok text-success"></i> Suited for &gt; 10 Hires</li>
             <li class="list-group-item"><i class="icon-ok text-success"></i> 27/7 support</li>
           </ul>
 
         </div>
+      <h4 class="text-success">  Best Value </h4>
         <!-- /PRICE ITEM -->
 
 
       </div>
 
-        <div class=" col-md-3">
+        <div class=" col-md-4">
 
         <!-- PRICE ITEM -->
         <div class="panel price panel-white">
           <div class="panel-heading arrow_box text-center">
-          <h5>Pay Upfront Yearly</h5>
+          <h5>Corporate</h5>
           </div>
           <div class="panel-body text-center">
-            <p class="lead" style="font-size:20px"><strong>Tk. 10000 / Year</strong></p>
+            <p class="lead" style="font-size:20px"><strong>Contact Us for the pricing</strong></p>
           </div>
           <ul class="list-group list-group-flush text-center">
             <li class="list-group-item"><i class="icon-ok text-success"></i> Dedicated Account Manager</li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i> 15 Applicants</li>
+            <li class="list-group-item"><i class="icon-ok text-success"></i> No Limit on Hiring</li>
             <li class="list-group-item"><i class="icon-ok text-success"></i> 27/7 support</li>
           </ul>
 
         </div>
           </div>
         <!-- /PRICE ITEM -->
-        <div class=" col-md-3">
 
-        <!-- PRICE ITEM -->
-        <div class="panel price panel-white ">
-          <div class="panel-heading arrow_box text-center">
-          <h5>Internship</h5>
-          </div>
-          <div class="panel-body text-center">
-            <p class="lead" style="font-size:20px"><strong>Tk. 500 / Intern</strong></p>
-          </div>
-          <ul class="list-group list-group-flush text-center">
-            <li class="list-group-item"><i class="icon-ok text-success"></i> Self Serve</li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i> Charger Per Hire</li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i> 27/7 support</li>
-          </ul>
-
-        </div>
         <!-- /PRICE ITEM -->
 
 

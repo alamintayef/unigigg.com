@@ -14,6 +14,8 @@ use App\Model\Student\Skills;
 use App\Model\Student\Hobbies;
 use App\Model\Student\Education;
 use App\Model\Student\Interest;
+use App\Model\Student\Reference;
+use App\Model\Student\Image;
 use Session;
 class ChakriController extends Controller
 {
@@ -64,10 +66,16 @@ class ChakriController extends Controller
       $profile = UserInfo::where('user_id','=', $id)->get();
       $skill = Skills::where('user_id','=', $id)->get();
       $education = Education::where('user_id','=', $id)->get();
+      $exps = Experience::where('user_id','=', $id)->get();
+      $refs = Reference::where('user_id','=', $id)->get();
+        $images = Image::where('user_id','=', $id)->orderBy('created_at', 'desc')->limit(1)->get();
       return view('student.studentemview', [
         'profile'=>$profile,
         'skill'=>$skill,
         'education'=> $education,
+        'exps'=> $exps,
+        'refs'=> $refs,
+          'images'=> $images,
 
 
       ]);

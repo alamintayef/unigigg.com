@@ -45,7 +45,7 @@ namespace App\Http\Controllers;
         $entrylimit=UserInfo::where('user_id','=' ,$uid)->get();
         if(count($entrylimit)>0){
 
-          $userinfo = UserInfo::findorFail($uid);
+          $userinfo = UserInfo::where('user_id','=' , $uid)->first();
           $userinfo->fname = $request->fname;
           $userinfo->lname = $request->lname;
           $userinfo->area = $request->area;
@@ -81,9 +81,12 @@ namespace App\Http\Controllers;
           ]);
         }
 
+        notify()->flash('Added Successfully! Go to Dashboard', 'success', [
+           'timer' => 3000,
+           'text' => 'Basic Information Done ! Congrats',
+         ]);
 
-
-            return redirect('home');
+          return redirect('home');
       }
 
       public function edit($id)

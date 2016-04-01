@@ -47,6 +47,13 @@
                   <small>https://www.youtube.com/watch?v=<span class="text-success">rz66fpmIZCQ</span></small>
                   <br>The highlighted green part is your video id.Copy it and paste it here
                 </p>
+                <p>
+                  Upload a video of yours on youtube containing your introduction
+                  in 30 seconds. A simple video reveals a lot about you then a CV, thats why we ask for video intro.
+                </p>
+                <p>
+                  Exclude your contact details. Focus only on your self on the video
+                </p>
 
               </div>
 

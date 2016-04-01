@@ -14,7 +14,7 @@
     background-color:black;
     color:white;
     text-ah5gn:center;
-    padding:5px;
+
 
   }
 
@@ -25,6 +25,9 @@
     width:100px;
     float:left;
     padding:5px;
+  }
+  .right{
+      text-align: right;
   }
   body{
     padding: 50px;
@@ -60,10 +63,10 @@
         <div id="invoice">
           @foreach($data as $user)
             <h2>{{$user->fname}} {{$user->lname}}</h2>
-            {{$user->mobile}}<br>
+          <small>  {{$user->mobile}}<br>
             {{$user->area}}<br>
           @endforeach
-          {{Auth::user()->email}}
+          {{Auth::user()->email}}</small>
           <hr>
 
         </div>
@@ -77,42 +80,10 @@
     <h3>Education</h3>
     <div   >
       @foreach($education as $edu )
-        <table >
-            <tr>
-            <th>
-              Degree
-            </th>
-            <th>
-              Institute
-            </th>
-            <th>
-              Passing Year
-            </th>
-            <th>
-              Result
-            </th>
-          </tr>
+    <strong>  Degree : </strong>{{$edu->Degree_name}}<strong> Institute :</strong> <span class="right">{{$edu->Degree_institute}}</span><br>
+    <strong>  Passing Year: </strong> {{$edu->Degree_end_date}} <strong>Result:</strong>{{$edu->Degree_result}}<br>
 
 
-          <tr>
-
-            <td class="center">
-              {{$edu->Degree_name}}
-            </td>
-
-
-            <td class="center">
-              {{$edu->Degree_institute}}
-            </td>
-            <td class="center">
-              {{$edu->Degree_end_date}}
-            </td>
-            <td class="center">
-              {{$edu->Degree_result}}
-            </td>
-          </tr>
-        
-        </table>
 
 
 

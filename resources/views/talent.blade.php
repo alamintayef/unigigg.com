@@ -90,10 +90,9 @@
               <h4 class="textw">Pricing</h4>
               <p>
                 Hey do not worry about pricing, Getting a regular job and internship is free <br>
-                You can validate your profile for free <br>
-                Generating CV is free.
+                Generating CV is free.<br>
                 <small><sub>Basicall you fill in your data and then <br> you can download the cv in different formats any time you want</sub> Great right</small><br>
-              <strong></strong>  Validating skills takes time that's why we charge a flat rate of Tk.500 to validate all your skills everythng you request us.</strong>
+              <strong></strong>  Validating profile and skills takes time that's why we charge a flat rate of Tk.500 to validate all your skills everytime you request us.</strong>
               </p>
             </div>
 

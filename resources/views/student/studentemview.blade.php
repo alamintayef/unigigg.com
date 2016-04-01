@@ -30,7 +30,7 @@
             <div class="panel-heading">
               <div class="pull-right pl">
                 @foreach($images as $image)
-                <img src="{!!'/images/'.$image->filePath !!}" alt="propic" height="100px" width="100px" style="border-radius:50%;" />
+                <img src="{!!'files/images/'.$image->filePath !!}" alt="propic" height="100px" width="100px" style="border-radius:50%;" />
 
               @endforeach
             </div>
@@ -44,7 +44,7 @@
                 <p>
                   University :{{$view->institute}}
                 </p>
-              
+
               </div>
             @endforeach
 

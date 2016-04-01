@@ -21,7 +21,7 @@ body
                             <i class="fa fa-user"></i>
 
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                                <input type="text" class="form-control" name="name" value="{{ old('name') }}" >
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -51,7 +51,7 @@ body
                             <i class="fa fa-key"></i>
 
                             <div class="col-md-6">
-                                <input type="password" class="form-control" name="password">
+                                <input type="password" class="form-control" name="password" placeholder="Min 8 characters">
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">

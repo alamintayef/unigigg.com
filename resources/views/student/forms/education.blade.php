@@ -18,8 +18,13 @@
     </div>
     <div class="form-group">
       {!! Form::label('Degree_type', 'Degree Level:', ['class' => 'control-label']) !!}
-      {!! Form::text('Degree_type', null, ['class' => 'form-control']) !!}
-      <small>E,G: SSC, HSC, BSC,MSC,PHD</small>
+      <select class="form-control" name="institute" id="select">
+        <option value="Secondary">Secondary</option>
+        <option value="Higher Secondary">Higher Secondary</option>
+        <option value="Under Graduate">Under Graduate</option>
+        <option value="Graduate">Graduate</option>
+      </select>
+
     </div>
     <div class="form-group">
       {!! Form::label('Degree_start_date', 'Start Date:', ['class' => 'control-label']) !!}
@@ -30,14 +35,9 @@
       {!! Form::date('Degree_end_date', null, ['class' => 'form-control']) !!}
     </div>
     <div class="form-group">
-      <label for="Degree_institute" class="control-label">Institute</label>
-      <select class="form-control" name="Degree_institute" id="select">
-        @foreach($uni as $unis)
-
-          <option value="{{$unis->university}}">{{$unis->university}}</option>
-
-          @endforeach
-      </select>
+      {!! Form::label('Degree_institute', 'Institute:', ['class' => 'control-label']) !!}
+      {!! Form::text('Degree_institute', null, ['class' => 'form-control']) !!}
+      <small class="text-danger">Please insert the full Institute name</small>
     </div>
     <div class="form-group">
       {!! Form::label('Degree_result', 'Degree_result:', ['class' => 'control-label']) !!}

@@ -32,15 +32,15 @@
       </a>
       <ul class="dropdown-menu" role="menu">
       <li class="list-group-item">
-        <a href="{{url('eccentricJobspost')}}"><strong><i class="fa fa-edit"></i> Post an Eccentric Job</strong></a>
+        <a href="{{url('eccentricJobspost')}}"><strong>Post an Eccentric Job</strong></a>
 
       </li>
       <li class="list-group-item">
-        <a href="{{url('eccentricJobs')}}"><strong><i class="fa fa-edit"></i>Eccentric Job</strong></a>
+        <a href="{{url('eccentricJobs')}}"><strong>Eccentric Job</strong></a>
 
       </li>
       <li class="list-group-item">
-        <a href="{{url('eccentricJobsiApplied')}}"><strong><i class="fa fa-edit"></i>Applied Jobs</strong></a>
+        <a href="{{url('eccentricJobsiApplied')}}"><strong>Applied Jobs</strong></a>
 
       </li>
       <!--
@@ -50,7 +50,7 @@
       </li>
     -->
       <li class="list-group-item">
-        <a href="{{url('eccentricJobsApplied')}}"><strong><i class="fa fa-edit"></i>Applied for Your Job</strong></a>
+        <a href="{{url('eccentricJobsApplied')}}"><strong>Applied for Your Job</strong></a>
 
       </li>
     </ul>
