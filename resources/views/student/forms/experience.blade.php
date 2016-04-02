@@ -23,7 +23,12 @@
     </div>
     <div class="form-group">
       {!! Form::label('exp_description', 'Tell Us Something About it:', ['class' => 'control-label']) !!}
-      {!! Form::textarea('exp_description', null, ['class' => 'form-control' ,'row'=>'3',]) !!}
+      {!! Form::textarea('exp_description', null, ['class' => 'form-control' ,'rows'=>2,]) !!}
+    </div>
+    <div class="form-group">
+      {!! Form::label('exp_validation', 'Validate Experience:', ['class' => 'control-label']) !!}
+      {!! Form::text('exp_validation', null, ['class' => 'form-control']) !!}
+      <small>You can add a phone number, email or even an url to validate your Experience</small>
     </div>
     @if($errors->any())
     <div class="alert alert-danger">

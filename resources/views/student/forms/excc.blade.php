@@ -7,7 +7,7 @@
 
     {!! Form::open(array('url' => '/exccstore')) !!}
 
-
+    <small class="text-danger">Every field is required</small>
     <div class="form-group">
       {!! Form::label('excc_name', 'Title:', ['class' => 'control-label']) !!}
       {!! Form::text('excc_name', null, ['class' => 'form-control']) !!}
@@ -23,7 +23,7 @@
     </div>
     <div class="form-group">
       {!! Form::label('excc_description', 'Tell Us Something About it:', ['class' => 'control-label']) !!}
-      {!! Form::textarea('excc_description', null, ['class' => 'form-control' ,'row'=>'3',]) !!}
+      {!! Form::textarea('excc_description', null, ['class' => 'form-control' ,'rows'=>'2',]) !!}
     </div>
     @if($errors->any())
     <div class="alert alert-danger">

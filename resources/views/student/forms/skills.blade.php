@@ -4,7 +4,9 @@
     <div class="panel-heading"><a class="btn btn-primary btn-lg" data-toggle="collapse" href="#collapse1">Add Skills</a></div>
       <div id="collapse1" class="panel-collapse collapse">
       <div class="panel-body">
-
+        <p>
+          <small class="text-danger">Every field is required</small>
+        </p>
     {!! Form::open(array('url' => '/skillstore')) !!}
 
 
@@ -33,7 +35,12 @@
       </select>
 
     </div>
-
+    <div class="form-group">
+      {!! Form::label('skill_proof', 'Skill Validator:', ['class' => 'control-label']) !!}
+      {!! Form::text('skill_proof', null, ['class' => 'form-control']) !!}
+      <small>Upload your skills proof to dropbox/ googledrive/ ondrive and share the link here</small><br>
+      <small>i,e You have MS-powerpoint skill. So do a good powerpoint slide upload it in the cloud and share it</small>
+    </div>
 
 
     {!! Form::submit('Add', ['class' => 'btn btn-primary']) !!}

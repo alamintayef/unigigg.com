@@ -30,6 +30,7 @@ class SkillController extends Controller
     $this->validate($request, [
       'skill_name' => 'required|max:50',
       'skill_experience' => 'required|max:2|min:1',
+      'skill_proof' => 'required|url',
 
 
     ]);
@@ -38,42 +39,30 @@ class SkillController extends Controller
       'skill_name' => $request->skill_name,
       'skill_level' => $request->skill_level,
       'skill_experience' => $request->skill_experience,
+      'skill_proof' => $request->skill_proof,
     ]);
     notify()->flash('Added Successfully!', 'success', [
       'timer' => 2000,
-      'text' => 'Add more to be better',
+
     ]);
 
 
-    return redirect('/home');
+    return redirect('/skill');
 
   }
   public function destroy($id)
   {
     $skill = Skills::where('skill_id','=',$id);
     $skill->delete();
-    notify()->flash('Deleted Successfully!', 'Danger', [
-      'timer' => 1000,
+    notify()->flash('Deleted Successfully!', 'success', [
+      'timer' => 2000,
 
     ]);
 
     return redirect('/home');
 
   }
-  public function add_skill_proof($id,Request $request)
-  {
-    $this->validate($request, [
-      'skill_proof' => 'url',
-    ]);
 
-    DB::table('skills')
-    ->where('skill_id', $id)
-    ->update(['skill_proof' => $request->skill_proof]
-  );
-
-
-  return redirect('/home');
-}
 
 
 }

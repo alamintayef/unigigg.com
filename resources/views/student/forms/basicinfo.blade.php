@@ -68,7 +68,7 @@
           </div>
           <div class="form-group">
             {!! Form::label('LinkedInId', 'LinkedIn ID:', ['class' => 'control-label']) !!}
-            {!! Form::text('LinkedInId','http://', ['class' => 'form-control']) !!}
+            {!! Form::text('LinkedInId',null, ['class' => 'form-control']) !!}
             <small class="text-danger">Optional</small>
           </div>
 

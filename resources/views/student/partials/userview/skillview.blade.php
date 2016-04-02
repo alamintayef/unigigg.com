@@ -17,12 +17,6 @@
             </th>
 
             <th>
-              Show Skill Work
-
-              <sub>  <small>Add a project link</small></sub>
-
-            </th>
-            <th>
               Skill Proof
             </th>
             <th>
@@ -47,28 +41,6 @@
                 {{$skills->skill_experience}} Years
               </td>
 
-              <td>
-
-                <form class="" action="{{url('skills',$skills->skill_id)}}" method="POST">
-
-
-                  {!! csrf_field() !!}
-                  <div class="form-group">
-                    {!! Form::label('skill_proof', 'Add Project URL:', ['class' => 'control-label']) !!}
-                    {!! Form::text('skill_proof', 'http://', ['class' => 'form-control']) !!}
-                  </div>
-                  <div class="form-group">
-                    {!! Form::submit('Add/Update', ['class' => 'btn btn-primary btn-sm']) !!}
-                  </div>
-                  @if($errors->any())
-                    <div class="alert alert-danger">
-                      @foreach($errors->all() as $error)
-                        <p>{{ $error }}</p>
-                      @endforeach
-                    </div>
-                  @endif
-
-                </td>
                 @if(count($skills->skill_proof)>0)
                   <td>
                     <a href="{{$skills->skill_proof}}" target="_blank">{{$skills->skill_name}}</a>

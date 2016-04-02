@@ -13,14 +13,14 @@ class CreateFunFactsTable extends Migration
     public function up()
     {
         Schema::create('fun_facts', function (Blueprint $table) {
-            $table->increments('fun_id');
-            $table->integer('user_id')->index();
-            $table->string('fun_facts');
-            $table->string('inspiration_qot');
-            $table->text('Why_you');
-            $table->text('Why_not_you');
+            $table->increments('id');
+            $table->integer('user_id')->unsigned()->index();
+            $table->text('fun_facts')->nullable();
+            $table->text('inspiration_qot')->nullable();
+            $table->text('Why_you')->nullable();
+            $table->text('Why_not_you')->nullable();
 
-          //  $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -9,7 +9,7 @@ class UserInfo extends Model
     //
     protected $table ='user_info';
     protected $fillable = [
-      'fname','lname','area','post_code',
+      'fname','lname','area','post_code','other',
       'institute','passing_date','mobile','universityId','NId','facebookId','LinkedInId',
     ];
 

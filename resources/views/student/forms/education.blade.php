@@ -18,7 +18,7 @@
     </div>
     <div class="form-group">
       {!! Form::label('Degree_type', 'Degree Level:', ['class' => 'control-label']) !!}
-      <select class="form-control" name="institute" id="select">
+      <select class="form-control" name="Degree_type" id="select">
         <option value="Secondary">Secondary</option>
         <option value="Higher Secondary">Higher Secondary</option>
         <option value="Under Graduate">Under Graduate</option>
@@ -40,7 +40,7 @@
       <small class="text-danger">Please insert the full Institute name</small>
     </div>
     <div class="form-group">
-      {!! Form::label('Degree_result', 'Degree_result:', ['class' => 'control-label']) !!}
+      {!! Form::label('Degree_result', 'Result:', ['class' => 'control-label']) !!}
       {!! Form::text('Degree_result', null, ['class' => 'form-control']) !!}
     </div>
 

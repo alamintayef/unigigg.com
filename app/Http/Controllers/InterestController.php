@@ -31,7 +31,7 @@ class InterestController extends Controller
 
         ]);
        notify()->flash('Added Successfully! Go to Dashboard', 'success', [
-          'timer' => 3000,
+          'timer' => 2000,
 
         ]);
 

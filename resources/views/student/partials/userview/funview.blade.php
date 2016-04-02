@@ -1,11 +1,11 @@
 <div class="padsmall col-md-12">
 
-  <h5>About you</h5>
+  <h4>About you</h4>
   <!--about your self -->
   @if(count($funs)>0)
 
 
-  <h3>About You</h3>
+
   @foreach($funs as $fun)
     <p>
       {{$fun->fun_facts}}

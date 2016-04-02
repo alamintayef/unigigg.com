@@ -30,22 +30,22 @@ namespace App\Http\Controllers;
           'lname' => 'required|max:255|min:4',
           'area' =>'required',
           'post_code' => 'required|max:4|min:4',
-          //'other'=>'max:255',
+          'other'=>'max:255',
           'institute' => 'required|max:255|min:10',
           'passing_date' => 'required|date',
           'mobile' => 'required|max:14|min:11',
           'universityId' => 'required|max:20',
-          //'NId' => 'max:17|min:13',
+          'NId' => 'max:17|min:13',
           'facebookId' => 'required|url',
           'LinkedInId' => 'url',
 
         ]);
 
         $uid= auth()->user()->id;
-        $entrylimit=UserInfo::where('user_id','=' ,$uid)->get();
+        $entrylimit=UserInfo::where('user_id', '=' , $uid)->get();
         if(count($entrylimit)>0){
 
-          $userinfo = UserInfo::where('user_id','=' , $uid)->first();
+          $userinfo = UserInfo::where('user_id', '=' , $uid)->first();
           $userinfo->fname = $request->fname;
           $userinfo->lname = $request->lname;
           $userinfo->area = $request->area;

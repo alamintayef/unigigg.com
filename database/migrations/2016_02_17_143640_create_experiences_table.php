@@ -14,12 +14,13 @@ class CreateExperiencesTable extends Migration
     {
         Schema::create('experiences', function (Blueprint $table) {
             $table->increments('exp_id');
-            $table->integer('user_id')->index();
+            $table->integer('user_id')->unsigned()->index();
             $table->string('exp_name');
             $table->date('exp_start_date');
             $table->date('exp_end_date');
             $table->text('exp_description');
-            //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('exp_validation')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

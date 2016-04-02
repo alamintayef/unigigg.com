@@ -39,7 +39,7 @@
                 {{$excc->excc_description}}
               </td>
               <table>
-                <form action="{{url('excc',$excc->excc_id)}}" method="POST">
+                <form action="{{url('excc',$excc->extra_id)}}" method="POST">
                   {!! csrf_field() !!}
                   <button type="submit" class="btn btn-danger ">
                     <i class="fa fa-cross"></i> Delete

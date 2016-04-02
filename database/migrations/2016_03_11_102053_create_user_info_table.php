@@ -17,17 +17,17 @@ class CreateUserInfoTable extends Migration
             $table->integer('user_id')->index();
             $table->string('fname');
             $table->string('lname');
-            $table->string('area');
+            $table->string('area')->nullable();
             $table->integer('post_code');
-            $table->string('other');
+            $table->string('other')->nullable();
             $table->string('institute');
             $table->date('passing_date');
             $table->string('mobile');
             $table->string('universityId');
-            $table->string('NId');
+            $table->string('NId')->nullable();
             $table->string('facebookId')->nullable();
             $table->string('LinkedInId')->nullable();
-        
+
             $table->timestamps();
         });
 

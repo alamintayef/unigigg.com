@@ -33,7 +33,10 @@ class HobbyController extends Controller
             'hobbies_related_work' => $request->hobbies_related_work,
 
         ]);
-        Session::flash('flash_message','Hobby successfully added.');
+        notify()->flash('Added Successfully!', 'success', [
+           'timer' => 2000,
+           'text' => 'Add More or Check Dashboard'
+         ]);
 
         return redirect('/hobby');
     }

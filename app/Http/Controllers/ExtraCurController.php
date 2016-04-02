@@ -46,7 +46,7 @@ class ExtraCurController extends Controller
     }
     public function destroy($id)
     {
-      $var = ExtraCur::where('excc_id','=',$id);
+      $var = ExtraCur::where('extra_id','=',$id);
       $var->delete();
       notify()->flash('Deleted Successfully!', 'success', [
          'timer' => 2000,

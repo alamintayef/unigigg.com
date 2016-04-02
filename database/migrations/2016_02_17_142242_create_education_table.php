@@ -14,15 +14,15 @@ class CreateEducationTable extends Migration
     {
         Schema::create('education', function (Blueprint $table) {
             $table->increments('education_id');
-            $table->integer('user_id')->index();
+            $table->integer('user_id')->unsigned()->index();
             $table->string('Degree_name');
-            $table->string('Degree_type');
+            $table->string('Degree_type')->nullable();
             $table->date('Degree_start_date');
             $table->date('Degree_end_date');
             $table->string('Degree_institute');
             $table->float('Degree_result');
           //  $table->boolean('Degree_v')->default(false);
-          //  $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

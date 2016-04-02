@@ -26,6 +26,7 @@ class ExperienceController extends Controller
             'exp_start_date' => 'required|date',
             'exp_end_date' => 'required|date',
             'exp_description' => 'required',
+            'exp_validation' => 'required',
 
         ]);
 
@@ -34,18 +35,19 @@ class ExperienceController extends Controller
             'exp_start_date' => $request->exp_start_date,
             'exp_end_date' => $request->exp_end_date,
             'exp_description' => $request->exp_description,
+            'exp_validation'  => $request->exp_validation,
 
         ]);
         notify()->flash('Added Successfully! Go to Dashboard', 'success', [
-           'timer' => 3000,
-           
+           'timer' => 2000,
+
          ]);
 
          return redirect('/experience');
     }
     public function destroy($id)
     {
-      $var = Experience::where('experience_id','=',$id);
+      $var = Experience::where('exp_id','=',$id);
       $var->delete();
       notify()->flash('Deleted Successfully!', 'success', [
          'timer' => 2000,

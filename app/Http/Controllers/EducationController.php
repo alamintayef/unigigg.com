@@ -31,7 +31,7 @@ class EducationController extends Controller
           //  'Degree_type'=> 'required|max:10',
             'Degree_start_date'=> 'required',
             'Degree_end_date'=> 'required',
-          //  'Degree_institute'=> 'required|max:50',
+          // 'Degree_institute'=> 'required|max:50',
             'Degree_result'=>'required',
 
 
@@ -48,7 +48,7 @@ class EducationController extends Controller
 
           notify()->flash('Added Successfully! Go to Dashboard', 'success', [
              'timer' => 2000,
-
+             'text' => 'Add More',
            ]);
 
            return redirect('/edu');
@@ -66,10 +66,10 @@ class EducationController extends Controller
 
       $this->validate($request, [
         'Degree_name'=> 'required|min:3|max:255',
-        'Degree_type'=> 'required|max:10',
+      //  'Degree_type'=> 'required|max:10',
         'Degree_start_date'=> 'required',
         'Degree_end_date'=> 'required',
-        'Degree_institute'=> 'required|max:50',
+      //  'Degree_institute'=> 'required|max:50',
         'Degree_result'=>'required',
 
 
@@ -85,7 +85,10 @@ class EducationController extends Controller
       $edu->Degree_institute = $request->Degree_institute;
       $edu->Degree_result = $request->Degree_result;
       $edu->save();
+      notify()->flash('Updated Successfully!', 'success', [
+         'timer' => 2000,
 
+       ]);
 
       return redirect('/home');
 
@@ -94,9 +97,14 @@ class EducationController extends Controller
     }
     public function destroy($id)
     {
-      $edu = Education::where('education_id','=',$id);
+      $edu = Education::where('id','=',$id);
 
       $edu->delete();
+      notify()->flash('Deleted Successfully!', 'success', [
+         'timer' => 2000,
+
+       ]);
+
 
       return redirect('/home');
 
