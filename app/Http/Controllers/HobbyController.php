@@ -16,7 +16,11 @@ class HobbyController extends Controller
     }
     public function index()
     {
-      return view('student.hobby');
+      $uid = auth()->user()->id;
+      $var = Hobbies::where('user_id', $uid)->orderBy('created_at', 'desc')->get();
+      return view('student.hobby',[
+        'var' =>$var,
+      ]);
     }
 
 

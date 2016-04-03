@@ -51,6 +51,15 @@
 
       </div>
     </div>
+    <div class="col-md-2 panel whiteproper">
+      <h5 class="textb">References from</h5>
+      @foreach($var as $refs)
+        <ul class="list-group">
+          <li class="list-group-item">{{$refs->referred_by}}</li>
+        </ul>
+      @endforeach
+
+    </div>
   </div>
 </div>
 

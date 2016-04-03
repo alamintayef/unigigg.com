@@ -16,7 +16,11 @@ class ExperienceController extends Controller
     }
     public function index()
     {
-      return view('student.experience');
+      $uid = auth()->user()->id;
+      $var = Experience::where('user_id', $uid)->orderBy('created_at', 'desc')->get();
+      return view('student.experience',[
+        'var' =>$var,
+      ]);
     }
 
     public function store(Request $request)

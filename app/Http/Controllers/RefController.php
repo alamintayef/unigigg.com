@@ -16,7 +16,11 @@ class RefController extends Controller
     }
     public function index()
     {
-      return view('student.reference');
+      $uid = auth()->user()->id;
+      $var = Reference::where('user_id', $uid)->orderBy('created_at', 'desc')->get();
+      return view('student.reference',[
+        'var' => $var,
+      ]);
     }
 
     public function store(Request $request)
@@ -37,7 +41,7 @@ class RefController extends Controller
 
       notify()->flash('Added Successfully! Go to Dashboard', 'success', [
          'timer' => 3000,
-         'text' => 'It\'s really great to see you again',
+         'text' => 'Thank you',
        ]);
 
        return redirect('/refs');

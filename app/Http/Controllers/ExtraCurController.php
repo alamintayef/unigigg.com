@@ -17,7 +17,11 @@ class ExtraCurController extends Controller
 
     public function index()
     {
-      return view('student.excc');
+      $uid = auth()->user()->id;
+      $var = ExtraCur::where('user_id', $uid)->orderBy('created_at', 'desc')->get();
+      return view('student.excc',[
+        'var' =>$var,
+      ]);
     }
 
     public function store(Request $request)

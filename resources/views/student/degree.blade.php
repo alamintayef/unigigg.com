@@ -51,6 +51,15 @@
 
       </div>
     </div>
+    <div class="col-md-2 panel whiteproper">
+      <h5 class="textb">Degrees you added</h5>
+      @foreach($var as $edu)
+        <ul class="list-group">
+          <li class="list-group-item">{{$edu->Degree_name}}</li>
+        </ul>
+      @endforeach
+
+    </div>
   </div>
 </div>
 

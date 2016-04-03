@@ -16,7 +16,11 @@ class InterestController extends Controller
     }
     public function index()
     {
-      return view('student.interest');
+      $uid = auth()->user()->id;
+      $var = Interest::where('user_id', $uid)->orderBy('created_at', 'desc')->get();
+      return view('student.interest',[
+        'var' =>$var,
+      ]);
     }
 
     public function store(Request $request)

@@ -72,7 +72,7 @@ class AuthController extends Controller
        });
 
        notify()->flash('Welcome!', 'success', [
-          'timer' => 2000,
+          'timer' => 3000,
 
         ]);
 

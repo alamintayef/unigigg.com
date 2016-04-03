@@ -19,7 +19,13 @@ class EducationController extends Controller
     public function index()
     {
       $uni= DB::table('universities')->select('universities.*')->orderBy('university', 'ASC')->get();
-      return view('student.degree',['uni'=> $uni]);
+      $uid = auth()->user()->id;
+      $var = Education::where('user_id', $uid)->orderBy('created_at', 'asc')->get();
+
+      return view('student.degree',[
+        'uni'=> $uni,
+        'var' => $var,
+      ]);
     }
 
 

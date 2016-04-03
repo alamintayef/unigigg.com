@@ -52,6 +52,15 @@
 
       </div>
     </div>
+    <div class="col-md-2 panel whiteproper">
+      <h5 class="textb">Hobbies</h5>
+      @foreach($var as $hobby)
+        <ul class="list-group">
+          <li class="list-group-item">{{$hobby->hobbies_name}}</li>
+        </ul>
+      @endforeach
+
+    </div>
   </div>
 </div>
 

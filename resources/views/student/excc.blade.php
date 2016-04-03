@@ -51,6 +51,15 @@
 
       </div>
     </div>
+    <div class="col-md-2 panel whiteproper">
+      <h5 class="textb">Experiences you added</h5>
+      @foreach($var as $excc)
+        <ul class="list-group">
+          <li class="list-group-item">{{$excc->excc_name}}</li>
+        </ul>
+      @endforeach
+
+    </div>
   </div>
 </div>
 
