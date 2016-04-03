@@ -2,9 +2,10 @@
   <div class="container">
     <div class="col-md-4">
       <h3><i class="fa fa-graduation-cap text-primary"></i>unigigg</h3>
-      <p>
-      We are on a mission to help employers attract young talent, and for our talents to find the right internship and job opportunities.
-      </p>
+      <h5>
+      <br>
+      We are on a mission to help our youth build better future and help employers attract proactive talents.
+    </h5>
 
     </div>
     <div class="col-md-4">

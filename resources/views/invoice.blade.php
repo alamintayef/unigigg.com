@@ -7,62 +7,65 @@
 
 
 
-  </script>
-  <title>CV</title>
-  <style>
-  #header {
-    background-color:black;
-    color:white;
-    text-ah5gn:center;
+</script>
+<title>CV</title>
+<style>
+#header {
+  background-color:black;
+  color:white;
+  text-ah5gn:center;
 
 
-  }
+}
 
-  #nav {
-    h5ne-height:30px;
-    background-color:#eeeeee;
-    height:300px;
-    width:100px;
-    float:left;
-    padding:5px;
-  }
-  .right{
-      text-align: right;
-  }
-  body{
-    padding: 50px;
-  }
-  #section {
-    width:350px;
-    float:left;
-    padding:10px;
-  }
-  #footer {
-    background-color:black;
-    color:white;
-    clear:both;
-    text-ah5gn:center;
-    padding:5px;
-  }
-  td {
-    width:180px;
-    font:12pt arial;}
+#nav {
+  h5ne-height:30px;
+  background-color:#eeeeee;
+  height:300px;
+  width:100px;
+  float:left;
+  padding:5px;
+}
+.right{
+  text-align: right;
+}
+body{
+  padding: 25px;
+}
+#section {
+  width:350px;
+  float:left;
+  padding:10px;
+}
+.smallpad{
+  padding: 5px;
+}
+#footer {
+  background-color:black;
+  color:white;
+  clear:both;
+  text-ah5gn:center;
+  padding:5px;
+}
+td {
+  width:180px;
+  font:12pt arial;}
 
-    td.leftAlign {text-align:left;}
-    td.rightAlign {text-align:right;}
-    td.center {text-align:center;}
-    td.justify {text-align:justify;}
-    </style>
+  td.leftAlign {text-align:left;}
+  td.rightAlign {text-align:right;}
+  td.center {text-align:center;}
+  td.justify {text-align:justify;}
+  </style>
 
 
-  </head>
-  <body onload="window.print()" >
+</head>
+<body onload="window.print()" >
 
-    <main  class="pad">
-      <div id="details">
-        <div id="invoice">
-          @foreach($data as $user)
-            <h2>{{$user->fname}} {{$user->lname}}</h2>
+  <main  class="pad">
+    <div id="details">
+      <div id="invoice" class="right">
+        @foreach($data as $user)
+          <h2>{{$user->fname}} {{$user->lname}}</h2>
           <small>  {{$user->mobile}}<br>
             {{$user->area}}<br>
           @endforeach
@@ -78,14 +81,10 @@
 
 
     <h3>Education</h3>
-    <div   >
+    <div >
       @foreach($education as $edu )
-    <strong>  Degree : </strong>{{$edu->Degree_name}}<strong> Institute :</strong> <span class="right">{{$edu->Degree_institute}}</span><br>
-    <strong>  Passing Year: </strong> {{$edu->Degree_end_date}} <strong>Result:</strong>{{$edu->Degree_result}}<br>
-
-
-
-
+        <strong >  Degree : </strong> <span class="smallpad"> {{$edu->Degree_name}}</span><strong> Institute :</strong> <span class="smallpad">{{$edu->Degree_institute}}</span><br>
+        <strong >  Passing Year: </strong> <span class="smallpad">{{$edu->Degree_end_date}} </span><strong> Result:</strong><span class="smallpad">{{$edu->Degree_result}}</span><br>
 
       @endforeach
 
@@ -96,7 +95,7 @@
     <h3>Skills</h3>
     <div >
       @foreach($skill as $skills )
-       {{$skills->skill_name}},
+        {{$skills->skill_name}},
 
       @endforeach
     </div>
@@ -142,7 +141,7 @@
           @endif
 
         </div>
-  </body>
+      </body>
 
 
 

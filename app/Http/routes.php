@@ -52,7 +52,28 @@ Route::get('/jobs/view','PublicController@publicboard');
 
 Route::group(['middleware' => ['web']], function () {
       //
-      //admin
+      Route::get('/jobs/view','PublicController@publicboard');
+      Route::get('/', function () {
+
+          return view('welcome');
+      });
+      Route::get('/recruiter', function () {
+          return view('rec');
+      });
+      Route::get('/talent', function () {
+          return view('talent');
+      });
+
+      Route::get('/about', function () {
+          return view('info.about');
+      });
+      Route::get('/terms&services', function () {
+          return view('info.term');
+      });
+      Route::get('/eccentric', function () {
+          return view('eccentric');
+      });
+        //admin
       Route::get('admin','AdminController@index');
       Route::post('university', 'AdminController@unistore');
       Route::get('/aprofile/{id}', 'AdminController@studentemview');

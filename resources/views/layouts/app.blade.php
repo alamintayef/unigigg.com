@@ -85,6 +85,7 @@
   </style>
 </head>
 <body id="app-layout">
+  @if(Auth::guest())
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -98,35 +99,26 @@
         </button>
 
         <!-- Branding Image -->
-        @if(Auth::guest())
+
 
           <a class="navbar-brand text-primary" href="{{ url('/') }}" >
-            <i class="fa fa-graduation-cap text-primary"></i>  unigigg <sub>alpha</sub>
-          </a>
-
-        @else
-
-          <a class="navbar-brand text-primary" href="{{ url('/') }}" >
-            <i class="fa fa-graduation-cap text-primary"></i>  unigigg<sub><small>alpha</small></sub>
+            <i class="fa fa-graduation-cap text-primary"></i>  unigigg<sub>alpha</sub>
           </a>
 
 
-        @endif
 
 
       </div>
 
       <div class="collapse navbar-collapse" id="app-navbar-collapse">
         <!-- Left Side Of Navbar -->
-        <a class="navbar-brand text-primary" href="{{ url('/home') }}" >
-          <i class="fa fa-home "></i>
-        </a>
+
 
 
         <!-- Right Side Of Navbar -->
         <ul class="nav navbar-nav navbar-right">
           <!-- Authentication Links -->
-          @if (Auth::guest())
+
 
             <ul class="nav navbar-nav">
               <li ><a href="{{ url('/jobs') }}">Post A Job <sub><small>it's free</small></sub></a></li>
@@ -144,29 +136,64 @@
             <li class="divider"></li>
             <li><a href="{{ url('/login') }}"> | <i class="fa fa-sign-in"></i> Sign in</a></li>
 
-
-            <!--
-            <li><a href="{{ url('/register') }}">Register</a></li>
-
-            <li><a href="{{ url('employer/register') }}">Employer Register</a></li>
-          -->
-        @else
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-              <i class="fa fa-btn fa-user"></i>  {{ Auth::user()->name }} <span class="caret"></span>
-            </a>
-
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Sign Out</a></li>
-
-
-            </ul>
-          </li>
-        @endif
       </ul>
     </div>
   </div>
 </nav>
+@else
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+
+      <!-- Collapsed Hamburger -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+        <span class="sr-only">Toggle Navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Branding Image -->
+    <a class="navbar-brand text-primary" href="{{ url('/') }}" >
+          <i class="fa fa-graduation-cap text-primary"></i>  unigigg<sub><small>alpha</small></sub>
+        </a>
+
+    </div>
+
+    <div class="collapse navbar-collapse" id="app-navbar-collapse">
+      <!-- Left Side Of Navbar -->
+
+          <a class="navbar-brand text-primary" href="{{ url('/home') }}" >
+            <i class="fa fa-home "></i>
+          </a>
+
+
+
+
+      <!-- Right Side Of Navbar -->
+      <ul class="nav navbar-nav navbar-right">
+        <!-- Authentication Links -->
+
+
+          <ul class="nav navbar-nav">
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            <i class="fa fa-btn fa-user"></i>  {{ Auth::user()->name }} <span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Sign Out</a></li>
+
+
+          </ul>
+        </li>
+
+    </ul>
+  </div>
+</div>
+</nav>
+@endif
 
 @yield('content')
 

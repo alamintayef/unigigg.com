@@ -14,8 +14,14 @@
           {!! Form::text('Degree_name', null, ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
-          {!! Form::label('Degree_type', 'Tell Us Someting About Your Degree:', ['class' => 'control-label']) !!}
-          {!! Form::text('Degree_type', null, ['class' => 'form-control']) !!}
+          {!! Form::label('Degree_type', 'Degree Level:', ['class' => 'control-label']) !!}
+          <select class="form-control" name="Degree_type" id="select">
+            <option value="Secondary">Secondary</option>
+            <option value="Higher Secondary">Higher Secondary</option>
+            <option value="Under Graduate">Under Graduate</option>
+            <option value="Graduate">Graduate</option>
+          </select>
+
         </div>
         <div class="form-group">
           {!! Form::label('Degree_start_date', 'Start Date:', ['class' => 'control-label']) !!}
@@ -26,12 +32,13 @@
           {!! Form::date('Degree_end_date', null, ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
-          {!! Form::label('Degree_institute', 'Degree Institute:', ['class' => 'control-label']) !!}
+          {!! Form::label('Degree_institute', 'Institute:', ['class' => 'control-label']) !!}
           {!! Form::text('Degree_institute', null, ['class' => 'form-control']) !!}
+          <small class="text-danger">Please insert the full Institute name</small>
         </div>
         <div class="form-group">
-          {!! Form::label('Degree_result', 'Degree_result:', ['class' => 'control-label']) !!}
-          {!! Form::number('Degree_result', null, ['class' => 'form-control']) !!}
+          {!! Form::label('Degree_result', 'Result:', ['class' => 'control-label']) !!}
+          {!! Form::text('Degree_result', null, ['class' => 'form-control']) !!}
         </div>
 
       @if($errors->any())
