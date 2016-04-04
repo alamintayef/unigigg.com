@@ -76,6 +76,8 @@ Route::group(['middleware' => ['web']], function () {
         //admin
       Route::get('admin','AdminController@index');
       Route::post('university', 'AdminController@unistore');
+      Route::get('area', 'AdminController@getarea');
+      Route::post('area', 'AdminController@areastore');
       Route::get('/aprofile/{id}', 'AdminController@studentemview');
       Route::get('verification', 'AdminController@verification');
       Route::post('verify/{id}', 'AdminController@verify');

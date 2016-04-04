@@ -3,6 +3,13 @@
   <div class="row">
     <h3>Welcome <strong class="primary">{{ Auth::user()->name }}
     </strong> Super admin</h3>
+    @if(count($errors)>0)
+      <div class="alert alert-danger">
+        @foreach($errors->all() as $error)
+          <p>{{ $error }}</p>
+        @endforeach
+      </div>
+    @endif
   </div>
   <div class="col-sm-4 pull-letf">
     <div class="panel">
@@ -38,17 +45,11 @@
 
       </div>
         </div>
-      <div class="col-sm-4 pull-left whiteproper panel">
+      <div class="col-sm-4 whiteproper panel">
         <div class="panel-body">
 
             {!! Form::open(array('url' => '/university')) !!}
-            @if(count($errors)>0)
-              <div class="alert alert-danger">
-                @foreach($errors->all() as $error)
-                  <p>{{ $error }}</p>
-                @endforeach
-              </div>
-            @endif
+
             @if (notify()->ready())
               <div class="alert alert-{{notify()->type()}}">
                 {{notify()->message()}}
@@ -62,10 +63,14 @@
         </div>
 
       </div>
+      <!-- area -->
+
+
+
       <div class="col-sm-4 pull-left whiteproper panel col-md-offset-1">
         <div class="panel-body">
           <a href="{{url('verification')}}">Show Verification Request</a>
-
+          <a href="{{url('area')}}">Add area</a>
         </div>
 
       </div>

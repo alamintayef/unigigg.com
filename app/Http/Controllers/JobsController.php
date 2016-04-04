@@ -51,9 +51,10 @@ class JobsController extends Controller
 
         ]);
         notify()->flash('Added Successfully! Check Posted Jobs', 'success', [
-           'timer' => 1000,
+           'timer' => 2000,
            'text' => 'Great. Thank you for posting a job',
          ]);
+      
 
          return redirect('/postedjobs');
 
@@ -121,7 +122,7 @@ class JobsController extends Controller
                 ->join('skills', 'user_info.user_id','=','skills.user_id')
                 ->select('user_info.*','skills.*')
                 ->get();
-  
+
           return view('jobs.jobview', [
             'jobs'=>$jobs,
             'applicable'=>$applicable,

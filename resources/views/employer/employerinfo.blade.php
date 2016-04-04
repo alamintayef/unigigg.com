@@ -8,25 +8,30 @@
         <div class="panel whiteproper pad">
           <h4 class="textb">Build Company Profile</h4>
 
-        <h2 class="textb">Basic info</h2>
-        @if (notify()->ready())
-          <div class="alert alert-{{notify()->type()}}">
-            {{notify()->message()}}
-          </div>
-        @endif
+          <h2 class="textb">Basic information</h2>
         </div>
-
-
-
+        @if (notify()->ready())
+          <script>
+          swal({
+            title: "{!! notify()->message() !!}",
+            text: "{!! notify()->option('text') !!}",
+            type: "{{ notify()->type() }}",
+            @if (notify()->option('timer'))
+            timer: {{ notify()->option('timer') }},
+            showConfirmButton: false
+            @endif
+          });
+          </script>
+        @endif
         <div class="panel whiteproper pad">
           {!! Form::open(array('url' => '/employerinfo')) !!}
           @if($errors->any())
-          <div class="alert alert-danger">
+            <div class="alert alert-danger">
               @foreach($errors->all() as $error)
-                  <p>{{ $error }}</p>
+                <p>{{ $error }}</p>
               @endforeach
-          </div>
-        @endif
+            </div>
+          @endif
 
           <div class="form-group">
             {!! Form::label('company_name', 'Company Name:') !!}
@@ -47,51 +52,39 @@
 
           <div class="form-group">
             <label for="company_type">Company Type</label>
-              <select class="form-control" id="select" name="company_type">
-                <option value="StartUp">StartUp</option>
-                <option value="SMB">SMB</option>
-                <option value="MNC">MNC</option>
-                <option value="NGO">NGO</option>
-                <option value="Govt">Govt</option>
-              </select>
-            </div>
-            <div class="form-group">
-              {!! Form::label('company_size', 'Size:') !!}
-              {!! Form::text('company_size', null, ['class'=>'form-control'] ) !!}
-            </div>
-
-            <div class="form-group">
-              {!! Form::label('company_description', 'Description:') !!}
-              {!! Form::textarea('company_description', null, ['class'=>'form-control', 'rows'=>2] ) !!}
-            </div>
-
-
-            <div class="form-group">
-              {!! Form::submit('Save', array( 'class'=>'btn btn-success form-control' )) !!}
-            </div>
-
-
-            {!! Form::close() !!}
-            @include('student.forms.image')
+            <select class="form-control" id="select" name="company_type">
+              <option value="StartUp">StartUp</option>
+              <option value="SMB">SMB</option>
+              <option value="MNC">MNC</option>
+              <option value="NGO">NGO</option>
+              <option value="Govt">Govt</option>
+            </select>
           </div>
-          @if (notify()->ready())
-    <script>
-        swal({
-            title: "{!! notify()->message() !!}",
-            text: "{!! notify()->option('text') !!}",
-            type: "{{ notify()->type() }}",
-            @if (notify()->option('timer'))
-                timer: {{ notify()->option('timer') }},
-                showConfirmButton: false
-            @endif
-        });
-    </script>
-@endif
+          <div class="form-group">
+            {!! Form::label('company_size', 'Size:') !!}
+            {!! Form::text('company_size', null, ['class'=>'form-control'] ) !!}
+          </div>
+
+          <div class="form-group">
+            {!! Form::label('company_description', 'Description:') !!}
+            {!! Form::textarea('company_description', null, ['class'=>'form-control', 'rows'=>2] ) !!}
+          </div>
 
 
+          <div class="form-group">
+            {!! Form::submit('Save', array( 'class'=>'btn btn-success form-control' )) !!}
+          </div>
 
+
+          {!! Form::close() !!}
+          @include('student.forms.image')
         </div>
+
+
+
+
       </div>
     </div>
+  </div>
 
-  @endsection
+@endsection

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\Student\Jobs;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use DB;
 class EmployerController extends Controller
 {
     //
@@ -22,10 +22,19 @@ class EmployerController extends Controller
     }
     public function postjobs(Request $request)
     {
+
       $postedjobs = Jobs::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->get();
+      $uid= auth()->user()->id;
+      $postable=DB::table('em_infos')
+                  ->where('em_infos.user_id' ,'=',$uid)
+                  ->select('user_info.*')
+                  ->count();
+    
       return view('employer.postjob', [
         'postedjobs'=>$postedjobs,
+        'postable' => $postable,
       ]);
+
 
     }
 

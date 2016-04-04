@@ -7,10 +7,25 @@
       <div class="col-md-6 ">
         <div class="well panel whiteproper" >
           <h4>Post A Job</h4>
+          @if(count($postable)>0)
+            Welcome
+          @else
+            <p class="text-danger">
+              Please build company profile to post a job <a href="{{url('employerinfo')}}"> Build Profile</a>
+            </p>
+          @endif
           @if (notify()->ready())
-            <div class="alert alert-{{notify()->type()}}">
-              {{notify()->message()}}
-            </div>
+            <script>
+            swal({
+              title: "{!! notify()->message() !!}",
+              text: "{!! notify()->option('text') !!}",
+              type: "{{ notify()->type() }}",
+              @if (notify()->option('timer'))
+              timer: {{ notify()->option('timer') }},
+              showConfirmButton: false
+              @endif
+            });
+            </script>
           @endif
 
         </div>
@@ -85,11 +100,18 @@
             {!! Form::label('job_last_date_application', 'Last Date Of Application') !!}
             {!! Form::date('job_last_date_application', null, ['class'=>'form-control'] ) !!}
           </div>
+          @if(count($postable)>0)
+            @if(Auth::user()->verfied===0)
+              sir please wait untill company profile is verified
+            @else
+              <div class="form-group">
+                {!! Form::submit('Post Job', array( 'class'=>'btn btn-success form-control' )) !!}
+              </div>
+            @endif
 
-          <div class="form-group">
-            {!! Form::submit('Post Job', array( 'class'=>'btn btn-success form-control' )) !!}
-          </div>
-
+          @else
+            <small class="text-danger">Please build company profile to post a job</small>
+          @endif
           {!! Form::close() !!}
         </div>
 

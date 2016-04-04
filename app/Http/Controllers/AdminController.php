@@ -20,6 +20,7 @@ use App\Model\Student\Image;
 use App\Model\Student\EmInfo;
 use App\Model\Student\Jobs;
 use App\Model\Student\University;
+use App\Model\Student\Area;
 use App\Model\Student\Reference;
 use DB;
 
@@ -74,6 +75,28 @@ class AdminController extends Controller
 
     return redirect('/home');
     }
+    public function getarea()
+    {
+        $area = Area::all();
+        return view('admin.area',['area'=>$area,]);
+    }
+
+    public function areastore(Request $request)
+    {
+      $this->validate($request, [
+        'area'=> 'required',
+      ]);
+    $area = new Area;
+    $area->area = $request->area;
+    $area->save();
+    notify()->flash('Added Successfully! Go to Dashboard', 'success', [
+       'timer' => 1000,
+       'text' => '! Congrats',
+     ]);
+
+    return redirect('/area');
+    }
+
     public function verification(){
 
       $varreqs = DB::table('users')

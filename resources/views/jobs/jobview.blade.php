@@ -58,13 +58,11 @@
 
 
                             <button type="submit" name="button" class="btn btn-success">Apply</button>
-                        
+
                         @else
                           <p class="text-danger">
                             Fill Profile Information to apply to jobs
                           </p>
-                        @endforeach
-
                         @endif
 
 

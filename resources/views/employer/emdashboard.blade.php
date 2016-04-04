@@ -39,8 +39,17 @@
             <h3>Welcome <strong class="primary">{{ Auth::user()->name }}
               </strong> The Recruiter</h3>
             </div>
+            @if(Auth::user()->verified===0)
+             <p class=" text-danger pull-right">
+               Not  verfied
+             </p>
+            @else
+              <p class="text-success pull-right">
+               Verfied
+              </p>
+            @endif
 
-            <div class="Jumbotron">
+            <div >
               @if(count($eminfos)>0)
                 <div class="jumbotron">
 
