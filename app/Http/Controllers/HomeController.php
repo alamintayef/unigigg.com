@@ -59,7 +59,8 @@ class HomeController extends Controller
       //employer
       $eminfos = EmInfo::where('user_id', $request->user()->id)->get();
       //admin
-      $allusers = User::all();
+      $allusers = User::where('type','=',1);
+      $allemployer = User::where('type','=',2);
       $allJobs = Jobs::all();
       $allOddJobs = OddJobs::all();
 
@@ -79,6 +80,7 @@ class HomeController extends Controller
         //employer
         'eminfos'=>$eminfos,
         'allusers' => $allusers,
+        'allemployer'=>$allemployer,
         'allJobs' => $allJobs,
         'allOddJobs' => $allOddJobs,
     ]);

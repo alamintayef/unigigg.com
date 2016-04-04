@@ -22,16 +22,11 @@ body{
 <body>
   <div class="col-md-6 center">
 
-    <h3> Welcome {{$data['name']}},</h3>
-    Thank you for joining Unigig, and welcome. Now that you have an account, <br>
-    the first thing you’ll want to do is build up your profile. To do that <a href="http://www.unigigg.com" class="btn link btn-lg">Sign In</a> .<br>
-
-    I would love to hear more about how you’re using Unigigg.<br> We’re here to build an amazing experience. If you have any questions or comments, just email me at tayef@unigigg.com.<br><br>
-
-    Tayef,<br>
-    Co-Founder, <br>
-    tayef@unigigg.com
-
+    <h3>Hello Admin  !<h3>
+    I am {{$user->name}},
+    I would like to verify my profile.
+    My Email is   : {{$user->email}}
+    MY User ID is : {{$user->id}}
 
   </div>
 

@@ -9,13 +9,13 @@
           Name
         </th>
         <th>
-          Type
+          Email
         </th>
         <th>
           Profile
         </th>
         <th>
-          Delete
+          Verification
         </th>
       </thead>
       <tbody>
@@ -27,22 +27,12 @@
           <td>
             {{$users->name}}
           </td>
-          @if($users->type===1)
             <td>
-              Talent
+            {{$users->email}}
             </td>
 
-          @elseif($users->type===2)
             <td>
-              Employer
-            </td>
-            @else
-            <td>
-              its you the Super Admin
-            </td>
-              @endif
-            <td>
-              <form class="pull-right" action="{{url('/aprofile',$users->id)}}" method="GET">
+              <form  action="{{url('/aprofile',$users->id)}}" method="GET">
                 {!! csrf_field() !!}
                 <button type="submit" class="btn btn-primary">
                   <i class="fa fa-user"></i> view profile
@@ -50,7 +40,11 @@
               </form>
             </td>
             <td>
-
+              @if($users->verified===0)
+                  <button type="button" name="button" class="btn-danger">Not Verified</button>
+              @else
+                <button type="button" name="button" class="btn-success">Verified</button>
+              @endif
             </td>
 
 

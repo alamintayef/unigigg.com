@@ -27,9 +27,9 @@ class EmployerController extends Controller
       $uid= auth()->user()->id;
       $postable=DB::table('em_infos')
                   ->where('em_infos.user_id' ,'=',$uid)
-                  ->select('user_info.*')
+                  ->select('em_info.*')
                   ->count();
-    
+
       return view('employer.postjob', [
         'postedjobs'=>$postedjobs,
         'postable' => $postable,

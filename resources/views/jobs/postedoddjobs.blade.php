@@ -15,22 +15,25 @@
 
                   <div class="panel panel-primary">
                     <div class="panel-heading">
-                      <h3 class="panel-title">{{$jobs->job_name}}</h3>
+                      <h3 class="panel-title">{{$jobs->title}}</h3>
                     </div>
                     <div class="panel-body">
                       <Type: {{$jobs->job_type}}</li>
-                      <li>Location: {{$jobs->job_location}}</li>
-                      <li>Salary: {{$jobs->job_salary}}</li>
+                      <li>Location: {{$jobs->area}}</li>
+                      <li>Salary: {{$jobs->offering}}</li>
                       <div class="well">
-                        Description: {{$jobs->job_description}}
-                        {{$jobs->job_reqs}}
+                        Description: {{$jobs->description}}
+                        <br>
+                        {{$jobs->university}}
+                        <br>
+                        {{$jobs->job_expires}}
                       </div>
 
 
                     </div>
 
                     <div class="panel-footer">
-                      <form action="{{url('postjobs',$jobs->job_id)}}" method="POST">
+                      <form action="{{url('/deleteoddjobs',$jobs->odd_id)}}" method="POST">
                         {!! csrf_field() !!}
                         <button type="submit" class="btn btn-danger btn-sm btn-block-sm">
                           <i class="fa fa-user"></i> Remove

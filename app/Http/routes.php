@@ -80,6 +80,7 @@ Route::group(['middleware' => ['web']], function () {
       Route::post('area', 'AdminController@areastore');
       Route::get('/aprofile/{id}', 'AdminController@studentemview');
       Route::get('verification', 'AdminController@verification');
+      Route::get('employerlist', 'AdminController@employer');
       Route::post('verify/{id}', 'AdminController@verify');
 
       //payment
@@ -121,6 +122,8 @@ Route::group(['middleware' => ['web']], function () {
       Route::post('eccentricJobspost','OddJobsController@postjob');
       Route::get('eccentricJobsApplied', 'OddJobsController@whoapplied');
       Route::get('eccentricJobsAppliedem', 'JobsController@oddwhoapplied');
+      Route::get('postedoddjobs','OddJobsController@postedones');
+      Route::post('deleteoddjobs/{id}','OddJobsController@destroy');
 
       //EccentricJobs Classification
       Route::get('eccentricJobs','OddJobsController@index');

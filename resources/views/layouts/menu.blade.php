@@ -43,14 +43,17 @@
         <a href="{{url('eccentricJobsiApplied')}}"><strong>Applied Jobs</strong></a>
 
       </li>
-      <!--
+
       <li class="list-group-item">
-        <a href="{{url('eccentricJobsApplied')}}"><strong><i class="fa fa-edit"></i>Jobs Posted By You</strong></a>
+        <a href="{{url('postedoddjobs')}}"><strong>Jobs Posted By You</strong></a>
 
       </li>
-    -->
       <li class="list-group-item">
-        <a href="{{url('eccentricJobsApplied')}}"><strong>Applied for Your Job</strong></a>
+        <a href="{{url('postedoddjobs')}}"><strong>Jobs Posted By You</strong></a>
+
+      </li>
+      <li class="list-group-item">
+        <a href="{{url('eccentricJobsApplied')}}"><strong>Applied For your Jobs</strong></a>
 
       </li>
     </ul>

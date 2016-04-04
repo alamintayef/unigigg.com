@@ -40,12 +40,14 @@
               </strong> The Recruiter</h3>
             </div>
             @if(Auth::user()->verified===0)
-             <p class=" text-danger pull-right">
-               Not  verfied
+             <p class="  pull-right">
+               <button type="button" class="btn btn-danger" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="" aria-describedby="popover936988">Not Verified</button>
+
              </p>
             @else
-              <p class="text-success pull-right">
-               Verfied
+              <p class=" pull-right">
+                <button type="button" class="btn btn-success" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="" aria-describedby="popover936988">Verified</button>
+
               </p>
             @endif
 

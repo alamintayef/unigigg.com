@@ -14,10 +14,10 @@ class CreateStudentAppliedsTable extends Migration
     {
         Schema::create('student_applieds', function (Blueprint $table) {
               $table->increments('applied_id');
-              $table->integer('applied_for_job_id');
-              $table->integer('user_id')->index();
-            //  $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            //  $table->foreign('applied_for_job_id')->references('job_id')->on('jobs')->onDelete('cascade');
+              $table->integer('applied_for_job_id')->unsigned();
+              $table->integer('user_id')->unsigned()->index();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+             $table->foreign('applied_for_job_id')->references('job_id')->on('jobs')->onDelete('cascade');
               $table->timestamps();
         });
     }

@@ -22,10 +22,11 @@ class CreateJobsTable extends Migration
             $table->text('job_description');
             $table->text('job_reqs');
             $table->text('job_education_reqs');
-            $table->text('job_education_reqs');
+            $table->text('job_skill_reqs');
             $table->text('job_reqs_additional');
             $table->date('job_start_date');
             $table->date('job_last_date_application');
+            $table->date('job_expires');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

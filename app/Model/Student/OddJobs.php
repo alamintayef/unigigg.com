@@ -9,7 +9,7 @@ class OddJobs extends Model
 
   protected $table="odd_jobs";
   protected $fillable = [
-     'title','type','description','offering','area','university',
+     'title','type','description','offering','area','university','job_expires',
 
 
  ];

@@ -1,6 +1,4 @@
-
-
-    <div class="panel panel-default">
+  <div class="panel panel-default">
       <div class="panel-heading"><a class="btn btn-primary btn-lg" data-toggle="collapse" href="#collapseExp">Add Experiences</a></div>
         <div id="collapseExp" class="panel-collapse collapse">
           <div class="panel-body">
@@ -18,6 +16,7 @@
       {!! Form::date('exp_start_date', null, ['class' => 'form-control']) !!}
     </div>
     <div class="form-group">
+
       {!! Form::label('exp_end_date', 'End Date:', ['class' => 'control-label']) !!}
       {!! Form::date('exp_end_date', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}
     </div>

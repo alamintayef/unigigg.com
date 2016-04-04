@@ -13,7 +13,7 @@ class CreateEducationTable extends Migration
     public function up()
     {
         Schema::create('education', function (Blueprint $table) {
-            $table->increments('education_id');
+            $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
             $table->string('Degree_name');
             $table->string('Degree_type')->nullable();
@@ -21,7 +21,6 @@ class CreateEducationTable extends Migration
             $table->date('Degree_end_date');
             $table->string('Degree_institute');
             $table->float('Degree_result');
-          //  $table->boolean('Degree_v')->default(false);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

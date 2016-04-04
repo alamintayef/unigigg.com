@@ -9,7 +9,7 @@ use App\Model\Student\UserInfo;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
-
+use Carbon\Carbon;
 class JobsController extends Controller
 {
     //
@@ -20,6 +20,10 @@ class JobsController extends Controller
 
     public function store(Request $request)
     {
+        $current = Carbon::now();
+
+        // add 30 days to the current time
+        $jobExpires = $current->addDays(2);
         $this->validate($request, [
             'job_name' => 'required|max:255',
             'job_type' => 'required',
@@ -47,6 +51,7 @@ class JobsController extends Controller
             'job_reqs_additional' => $request->job_reqs_additional,
             'job_start_date' => $request->job_start_date,
             'job_last_date_application' => $request->job_last_date_application,
+            'job_expires' => $jobExpires,
 
 
         ]);
@@ -54,7 +59,7 @@ class JobsController extends Controller
            'timer' => 2000,
            'text' => 'Great. Thank you for posting a job',
          ]);
-      
+
 
          return redirect('/postedjobs');
 

@@ -14,12 +14,12 @@ class CreateExtraCursTable extends Migration
     {
         Schema::create('extra_curs', function (Blueprint $table) {
             $table->increments('extra_id');
-            $table->integer('user_id')->index();
+            $table->integer('user_id')->unsigned()->index();
             $table->string('excc_name');
             $table->date('excc_start_date');
             $table->date('excc_end_date');
             $table->text('excc_description');
-            //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

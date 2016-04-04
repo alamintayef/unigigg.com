@@ -31,16 +31,25 @@
             <td>
               {{$verify->transaction_id}}
             </td>
-            <td>
-              <form class="form-group" action="{{url('/verify',$verify->id)}}" method="POST">
-                {!! csrf_field() !!}
-                <button type="submit" class="btn btn-success">
-                  <i class="fa fa-check"></i> Verify
+            @if($verify->verified===1)
+              <td>
+                <button type="button" class="btn-success">
+                  Already Verified
                 </button>
-              </form>
-            </td>
-          </tr>
-        </tbody>
+              </td>
+            @else
+              <td>
+                <form class="form-group" action="{{url('/verify',$verify->id)}}" method="POST">
+                  {!! csrf_field() !!}
+                  <button type="submit" class="btn btn-success">
+                    <i class="fa fa-check"></i> Verify
+                  </button>
+                </form>
+              </td>
+            </tr>
+          </tbody>
+            @endif
+
           @endforeach
       </table>
 

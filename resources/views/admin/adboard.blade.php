@@ -25,6 +25,18 @@
   <div class="col-sm-4 center">
     <div class="panel">
       <div class="panel-heading">
+        Users
+      </div>
+      <div class="panel-body">
+        <h4><a href="{{url('employerlist')}}">Employer board</a> <br>Total Users :  {{count($allemployer)}}</h4>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-sm-4 center">
+    <div class="panel">
+      <div class="panel-heading">
         Jobs
       </div>
       <div class="panel-body">
@@ -34,7 +46,7 @@
     </div>
     </div>
 
-    <div class="col-sm-4 pull-right">
+    <div class="col-sm-4 center">
       <div class="panel">
         <div class="panel-heading">
            Eccnetric Jobs
@@ -69,7 +81,7 @@
 
       <div class="col-sm-4 pull-left whiteproper panel col-md-offset-1">
         <div class="panel-body">
-          <a href="{{url('verification')}}">Show Verification Request</a>
+          <a href="{{url('verification')}}">Show Verification Request</a><br>
           <a href="{{url('area')}}">Add area</a>
         </div>
 

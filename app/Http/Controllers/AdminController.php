@@ -33,11 +33,21 @@ class AdminController extends Controller
     }
     public function index()
     {
-      $alluser = User::all();
+      $alluser = DB::table('users')->where('type',1)->get();
 
       return view('admin.userboard',[
         'alluser' => $alluser,
       ]);
+
+    }
+    public function employer()
+    {
+      $allemployer = DB::table('users')->where('type',2)->get();
+
+      return view('admin.employerboard',[
+        'allemployer' => $allemployer,
+      ]);
+
 
     }
     public function studentemview($id)

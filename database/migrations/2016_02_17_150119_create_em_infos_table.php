@@ -14,7 +14,7 @@ class CreateEmInfosTable extends Migration
     {
         Schema::create('em_infos', function (Blueprint $table) {
             $table->increments('em_infos_id');
-            $table->integer('user_id')->index();
+            $table->integer('user_id')->unsigned()->index();
             $table->string('company_name');
             $table->string('company_phone');
             $table->string('company_email');
@@ -22,7 +22,7 @@ class CreateEmInfosTable extends Migration
             $table->string('company_type');
             $table->string('company_size');
             $table->string('company_description');
-            //$table->foreign('employer_eid')->references('eid')->on('em_users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -18,6 +18,7 @@ class Jobs extends Model
       'job_reqs_additional',
       'job_start_date',
       'job_last_date_application',
+      'job_expires',
     ];
 
     public function user()
