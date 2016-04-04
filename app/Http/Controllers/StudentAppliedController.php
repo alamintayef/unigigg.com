@@ -31,8 +31,7 @@ class StudentAppliedController extends Controller
             ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
             ->select('student_applieds.*', 'em_infos.company_name','jobs.job_last_date_application', 'jobs.job_name','jobs.job_id')
             ->get();
-
-
+      
       return view('student.whereiapplied', [
         'applied'=>$applied,
       ]);

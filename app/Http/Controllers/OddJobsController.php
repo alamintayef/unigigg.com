@@ -79,18 +79,27 @@ class OddJobsController extends Controller
 
       }
 
-      public function postjobs()
+      public function postjobs(Request $request)
       {
+        $postedjobs = OddJobs::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->get();
         $uni= DB::table('universities')->select('universities.*')->orderBy('university', 'ASC')->get();
-        return view('jobs.postoddjobs',['uni'=> $uni]);
+        return view('jobs.postoddjobs',[
+          'uni'=> $uni,
+          'postedjobs'=>$postedjobs,
+        ]);
 
       }
-      public function empostjobs()
+      public function empostjobs(Request $request)
       {
+        $postedjobs = OddJobs::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->get();
         $uni= DB::table('universities')->select('universities.*')->orderBy('university', 'ASC')->get();
-        return view('jobs.empostoddjobs',['uni'=> $uni]);
+        return view('jobs.empostoddjobs',[
+          'uni'=> $uni,
+          'postedjobs'=>$postedjobs,
+        ]);
 
       }
+
       public function postjob(Request $request)
       {
         $this->validate($request, [

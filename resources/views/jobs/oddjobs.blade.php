@@ -4,65 +4,61 @@
     <div class="row ft ">
       <a href="{{url('home')}}"><h4 class="text-primary"><i class="fa fa-arrow-left"></i> Go Back </h4></a>
       <div >
-            <ul class="nav nav-pills panel whiteproper nav-justified">
-                <li class="active"><a href="{{url('eccentricJobs')}}">All</a></li>
-                <li ><a href="{{url('tuitions')}}">Tutions</a></li>
-                <li ><a href="{{url('assignements')}}">Assignments</a></li>
-                <li ><a href="{{url('others')}}">Others</a></li>
-            </ul>
+        <ul class="nav nav-pills panel whiteproper nav-justified">
+          <li class="active"><a href="{{url('eccentricJobs')}}">All</a></li>
+          <li ><a href="{{url('tuitions')}}">Tutions</a></li>
+          <li ><a href="{{url('assignements')}}">Assignments</a></li>
+          <li ><a href="{{url('others')}}">Others</a></li>
+        </ul>
       </div>
       @if(count($oddjobs)>0)
 
         @foreach($oddjobs as $jobs)
           <div class="col-md-3 col-md-offset-1 textb whiteproper panel padsmall">
-          <fieldset>
+            <fieldset>
               <h6>{{$jobs->title}}</h6>
 
-            <div class="textb">
-              <strong>{{$jobs->type}}</strong>
-              <p>
-                {{$jobs->description}}
-              </p>
-              <strong>{{$jobs->offering}}</strong>/
-              <strong>{{$jobs->area}}</strong>
+              <div class="textb">
+                <strong>{{$jobs->type}}</strong>
+                <p>
+                  {{$jobs->description}}
+                </p>
+                <strong>{{$jobs->offering}}</strong>/
+                <strong>{{$jobs->area}}</strong>
 
 
 
-              @if(Auth::user()->id!=$jobs->user_id)
-                <form class="form-inline" action="{{url('apply/eccentric')}}" method="post">
-                  {!! csrf_field() !!}
-                  <div class="form-group">
+                @if(Auth::user()->id!=$jobs->user_id)
+                  <form class="form-inline" action="{{url('apply/eccentric')}}" method="post">
+                    {!! csrf_field() !!}
+                    <div class="form-group">
                       <input type="hidden" name="applied_for_odd_id" value="{{$jobs->odd_id}}">
-                  </div>
-                  <div class="form-group">
-                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-                  </div>
-                  @if(count($applicable)>0)
+                    </div>
+                    <div class="form-group">
+                      <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                    </div>
+                    @if(Auth::user()->type===2)
+                      Sorry Recruiters cannot apply to jobs
+                    @else
+                      @if(count($applicable)>0)
                         <button type="submit" name="button" class="btn btn-success btn-sm">Apply</button>
-                  @else
-                    <p class="text-danger">
-                      Please fill profile information to apply
-                    </p>
-                  @endif
-
-
-
-                  <p>
-
-                  @if($jobs->user_id===Auth::user()->id)
-                    You posted this job
-                  @else
-
+                      @else
+                        <p class="text-danger">
+                          Please fill profile information to apply
+                        </p>
+                      @endif
+                    @endif
+                    <p>
                     Posted By  {{$jobs->user_id}}
-                  @endif
-                  </p>
-                </form>
-            @endif
+
+                    </p>
+                  </form>
+                @endif
 
 
 
-            </div>
-          </fieldset>
+              </div>
+            </fieldset>
           </div>
         @endforeach
 

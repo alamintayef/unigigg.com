@@ -73,6 +73,15 @@
           </p>
 
       </div>
+      <div class="col-md-3 col-xs-offset-1 center panel whiteprope pad">
+        <h5>Jobs Posted By You</h5>
+        @foreach($postedjobs as $jobs)
+        {{$jobs->title}}<br>
+
+        @endforeach
+
+
+      </div>
     </div>
   </div>
 @endsection

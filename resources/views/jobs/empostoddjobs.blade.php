@@ -6,29 +6,29 @@
       @include('layouts.emmenu')
       <div class="col-md-6">
 
-          <h2>Post Eccentric Jobs</h2>
+        <h2>Post Eccentric Jobs</h2>
 
 
 
 
-      {!! Form::open(array('url' => '/eccentricJobspost')) !!}
-      @if($errors->any())
-      <div class="alert alert-danger">
-          @foreach($errors->all() as $error)
+        {!! Form::open(array('url' => '/eccentricJobspost')) !!}
+        @if($errors->any())
+          <div class="alert alert-danger">
+            @foreach($errors->all() as $error)
               <p>{{ $error }}</p>
-          @endforeach
-      </div>
-    @endif
-    <div class="whiteproper pad">
+            @endforeach
+          </div>
+        @endif
+        <div class="whiteproper pad">
 
 
-      <div class="form-group">
-        {!! Form::label('title', 'Job Title:', ['class' => 'control-label']) !!}
-        {!! Form::text('title', null, ['class' => 'form-control']) !!}
-      </div>
-      <div class="form-group">
+          <div class="form-group">
+            {!! Form::label('title', 'Job Title:', ['class' => 'control-label']) !!}
+            {!! Form::text('title', null, ['class' => 'form-control']) !!}
+          </div>
+          <div class="form-group">
 
-          <label for="type">Catagory</label>
+            <label for="type">Catagory</label>
             <select class="form-control" id="select" name="type">
               <option value="Tution">Tuition</option>
               <option value="Assignment">Assignment Help</option>
@@ -36,14 +36,14 @@
 
             </select>
 
-      </div>
-      <div class="form-group">
-        {!! Form::label('description', 'Job Description:', ['class' => 'control-label']) !!}
-        {!! Form::textarea('description', null, ['class' => 'form-control', 'rows'=> 2]) !!}
-      </div>
-      <div class="form-group">
+          </div>
+          <div class="form-group">
+            {!! Form::label('description', 'Job Description:', ['class' => 'control-label']) !!}
+            {!! Form::textarea('description', null, ['class' => 'form-control', 'rows'=> 2]) !!}
+          </div>
+          <div class="form-group">
 
-          <label for="type">Offering(Tk):</label>
+            <label for="type">Offering(Tk):</label>
             <select class="form-control" id="select" name="offering">
               <option value="500-1000">1000</option>
               <option value="1000-3000">1000-3000</option>
@@ -53,30 +53,40 @@
 
             </select>
 
+          </div>
+          <div class="form-group">
+            {!! Form::label('area', 'Location:', ['class' => 'control-label']) !!}
+            {!! Form::text('area', null, ['class' => 'form-control']) !!}
+          </div>
+          <div class="form-group">
+            <label for="university" class="control-label">University</label>
+            <select class="form-control" name="university" id="select">
+              @foreach($uni as $unis)
+
+                <option value="{{$unis->university}}">{{$unis->university}}</option>
+
+              @endforeach
+            </select>
+          </div>
+          <div class="form-group">
+            {!! Form::submit('Post Job', array( 'class'=>'btn btn-success form-control' )) !!}
+          </div>
+
+        </div>
+
+
+
       </div>
-      <div class="form-group">
-        {!! Form::label('area', 'Location:', ['class' => 'control-label']) !!}
-        {!! Form::text('area', null, ['class' => 'form-control']) !!}
+      <div class="col-md-3 col-xs-offset-1 panel whiteproper pad">
+        <h5>Jobs Posted By You</h5>
+        @foreach($postedjobs as $jobs)
+        {{$jobs->title}}
+        <br>
+
+        @endforeach
+
+
       </div>
-      <div class="form-group">
-        <label for="university" class="control-label">University</label>
-        <select class="form-control" name="university" id="select">
-          @foreach($uni as $unis)
-
-            <option value="{{$unis->university}}">{{$unis->university}}</option>
-
-            @endforeach
-        </select>
-      </div>
-      <div class="form-group">
-        {!! Form::submit('Post Job', array( 'class'=>'btn btn-success form-control' )) !!}
-      </div>
-
-</div>
-
-
-
     </div>
-  </div>
   </div>
 @endsection

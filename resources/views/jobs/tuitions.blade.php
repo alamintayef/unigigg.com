@@ -37,12 +37,18 @@
                   <div class="form-group">
                     <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                   </div>
+                  @if(Auth::user()->type===2)
+                      <small class="text-warning">  Sorry Recruiters cannot apply to jobs</small>
+                  @else
+
+
                   @if(count($applicable)>0)
                         <button type="submit" name="button" class="btn btn-success btn-sm">Apply</button>
                   @else
                     <p class="text-danger">
                       Please fill profile information to apply
                     </p>
+                  @endif
                   @endif
 
 

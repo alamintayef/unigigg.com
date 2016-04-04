@@ -1,3 +1,8 @@
+<style media="screen">
+  body{
+    font-family: 'Raleway';
+  }
+</style>
 <div class="container">
   <div class="row">
     @include('layouts.menu')
@@ -33,11 +38,7 @@
 
             </div>
           </div>
-          @if(count($joblimit)>2)
-            <div class="alert alert-danger">
-              You have already applied to 3 jobs
-            </div>
-          @endif
+      
           <div class="col-md-12">
             <div class="col-md-4 pull-left">
                 @include('student.partials.userview.imageview')

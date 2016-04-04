@@ -26,7 +26,7 @@ class ShortlistController extends Controller
 
       EmShortlist::create($input);
 
-      return redirect('/home');
+      return redirect('/shortlists');
     }
 
     public function shortlistview()
@@ -38,15 +38,20 @@ class ShortlistController extends Controller
                     ->get();
       $id = auth()->user()->id;
       $shortlistlimit = DB::table('em_shortlists')
-              ->select('em_shortlists.shortlistedby')
+              ->select('em_shortlists.*')
               ->where('shortlistedby',$id)
               ->where('finalized',1)
-              ->count();
-
-
+              ->sum('finalized');
+      $jobcount = DB::table('jobs')
+                ->select('jobs.*')
+                ->where('user_id', $id)
+                ->count();
+      $limit= $jobcount*5;
     return view('employer.shortlisted', [
         'shortlisted'=>$shortlisted,
         'shortlistlimit' => $shortlistlimit,
+        'jobcount' => $jobcount,
+        'limit' =>$limit,
 
         ]);
 

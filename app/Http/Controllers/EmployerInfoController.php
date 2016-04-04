@@ -36,7 +36,7 @@ class EmployerInfoController extends Controller
             if(count($entrylimit)>0)
             {
 
-              $EmInfo = EmInfo::findorFail($uid);
+              $EmInfo = EmInfo::where('user_id', '=' , $uid)->first();
               $EmInfo->company_name = $request->company_name;
               $EmInfo->company_phone = $request->company_phone;
               $EmInfo->company_email = $request->company_email;
