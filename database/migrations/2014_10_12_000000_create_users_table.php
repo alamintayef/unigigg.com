@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 60);
             $table->tinyInteger('type');
             $table->boolean('verified')->default(0);
+            $table->integer('subs_type')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

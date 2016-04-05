@@ -79,10 +79,11 @@
 
 
 
-      <div class="col-sm-4 pull-left whiteproper panel col-md-offset-1">
+      <div class="col-sm-4 pull-right whiteproper panel col-md-offset-1">
         <div class="panel-body">
           <a href="{{url('verification')}}">Show Verification Request</a><br>
-          <a href="{{url('area')}}">Add area</a>
+          <a href="{{url('area')}}">Add area</a><br>
+          <a href="{{url('call/for/in')}}">Call For interview Request</a>
         </div>
 
       </div>

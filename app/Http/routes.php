@@ -89,11 +89,13 @@ Route::group(['middleware' => ['web']], function () {
       Route::get('/aprofile/{id}', 'AdminController@studentemview');
       Route::get('verification', 'AdminController@verification');
       Route::get('employerlist', 'AdminController@employer');
+      Route::get('call/for/in', 'AdminController@callforinterview');
       Route::post('verify/{id}', 'AdminController@verify');
 
       //payment
       Route::get('payment','BillController@index');
       Route::post('payment/store/bkash','BillController@store');
+      Route::post('payment/call/for/interview','BillController@employerreqstore');
 
       Route::get('/employer/login','EmployerController@login');
 
@@ -140,7 +142,7 @@ Route::group(['middleware' => ['web']], function () {
       Route::get('others','OddJobsController@others');
 
 
-
+      //call for interview
       Route::get('call','ShortlistController@callforinterview');
 
 
@@ -209,5 +211,5 @@ Route::group(['middleware' => 'web'], function () {
   // jobsapplied
 
       Route::get('/eccentricJobsiApplied', 'OddJobsController@oddwhereiapplied');
-      Route::post('/removeapplication/{id}', 'StudentAppliedController@destroy');
+      Route::post('/remove/application/{id}', 'StudentAppliedController@destroy');
 });

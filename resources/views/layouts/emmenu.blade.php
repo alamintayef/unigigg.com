@@ -37,9 +37,6 @@
 
         </li>
       </ul>
-
-
-
     </li>
   </li>
   <li class="list-group-item">
@@ -52,4 +49,8 @@
   <li class="list-group-item">
     <a href="{{url('whoapplied')}}"><strong><i class="small material-icons">supervisor_account</i> Applied</strong></a>
   </ul>
+  <li class="list-group-item">
+    <a href="#"><strong>Subscription</strong></a>
+
+  </li>
 </div>

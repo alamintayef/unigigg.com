@@ -128,4 +128,15 @@ class AdminController extends Controller
 
         return redirect('verification')   ;
     }
+    public function callforinterview()
+    {
+      $call = DB::table('em_shortlists')
+          ->join('user_info', 'em_shortlists.user_id', '=', 'user_info.user_id')
+          ->join('em_infos', 'em_shortlists.shortlistedby', '=', 'em_infos.user_id')
+          ->select('user_info.fname', 'user_info.mobile', 'user_info.lname','em_infos.company_name')
+          ->get();
+          return view('admin.c4in', [
+            'call' => $call,
+          ]);
+    }
 }

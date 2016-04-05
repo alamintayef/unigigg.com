@@ -77,12 +77,15 @@ class ShortlistController extends Controller
 
     public function callforinterview()
     {
-      $call = DB::table('em_shortlists')
-          ->join('user_info', 'em_shortlists.user_id', '=', 'user_info.user_id')
-          ->select('user_info.fname', 'user_info.mobile', 'user_info.lname')
-          ->get();
-          return view('student.callforinterview', [
-            'call' => $call,
-          ]);
+      $employer = auth()->user();
+
+      if($employer->subs_type===0)
+      {
+        return view('employer.appointment.paynsetappointment');
+      }else
+      {
+        return view('employer.appointment.setappointment');
+      }
+
     }
 }

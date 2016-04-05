@@ -56,6 +56,7 @@
         <a href="{{url('eccentricJobsApplied')}}"><strong>Applied For your Jobs</strong></a>
 
       </li>
+
     </ul>
 
 

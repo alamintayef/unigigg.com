@@ -17,14 +17,10 @@
           <th>
             Last date of Application
           </th>
-
-
         </thead>
 
         @foreach($applied as $apply)
             @if($apply->user_id===Auth::user()->id)
-
-
 
         <tbody>
           <tr>
@@ -39,7 +35,7 @@
                 {{$apply->job_last_date_application}}
             </td>
             <td>
-              <form action="{{url('removeapplication',$apply->applied_id)}}" method="POST">
+              <form action="{{url('remove/application',$apply->applied_id)}}" method="POST">
                 {!! csrf_field() !!}
                 <button type="submit" class="btn btn-danger">
                   <i class="fa fa-user"></i> Remove

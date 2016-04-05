@@ -48,4 +48,34 @@ class BillController extends Controller
 
         return redirect('/payment');
     }
+
+
+    public function employerreqstore(Request $request)
+    {
+        $this->validate($request, [
+
+            'identifier' => 'required|min:8|max:20',
+            'transaction_id' => 'required',
+
+        ]);
+        $request->user()->c4i()->create([
+            'identifier' => $request->identifier,
+            'transaction_id' => $request->transaction_id,
+          ]);
+        $id = auth()->user()->id;
+        $user= User::findorFail($id);
+        Mail::send('email.Verify',[ 'user' =>  $user ], function ($m) use ($user) {
+        $m->from('callforinterview@unigigg.com', 'Call for interview');
+
+        $m->to('tayef@unigigg.com')->subject('Call for interview');
+      });
+        notify()->flash('Recorded Successfully!', 'success', [
+           'timer' => 3000,
+           'text' => 'Thank you ! ',
+         ]);
+
+
+
+        return redirect('/home');
+    }
 }
