@@ -150,6 +150,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Codecourse\Notify\NotifyServiceProvider::class,
+        Limatheus\SmsGateway\SmsGatewayServiceProvider::class,
 
 
 
@@ -216,7 +217,8 @@ return [
         'Form'      => Collective\Html\FormFacade::class,
         'Html'      => Collective\Html\HtmlFacade::class,
         'PDF'       => Barryvdh\DomPDF\Facade::class,
-        'Notify' => Codecourse\Notify\Facades\Notify::class,
+        'Notify'    => Codecourse\Notify\Facades\Notify::class,
+        'SMSGateway'=> Limatheus\SmsGateway\Facade::class,
 
 
 

@@ -91,7 +91,6 @@
             {!! Form::textarea('job_reqs_additional', null, ['class'=>'form-control', 'rows'=>2] ) !!}
             <small class="ssmal">If you have and specific additional requirments</small>
           </div>
-
           <div class="form-group">
             {!! Form::label('job_start_date', 'Commencing Date:') !!}
             {!! Form::date('job_start_date', null, ['class'=>'form-control'] ) !!}
@@ -105,7 +104,7 @@
               Sir Please Wait Untill the profile is verified
             @else
               <div class="form-group">
-                
+
                   {!! Form::submit('Post Job', array( 'class'=>'btn btn-success form-control' )) !!}
                 </div>
             @endif

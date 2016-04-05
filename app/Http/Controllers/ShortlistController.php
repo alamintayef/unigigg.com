@@ -74,4 +74,15 @@ class ShortlistController extends Controller
 
       return redirect('/shortlists');
     }
+
+    public function callforinterview()
+    {
+      $call = DB::table('em_shortlists')
+          ->join('user_info', 'em_shortlists.user_id', '=', 'user_info.user_id')
+          ->select('user_info.fname', 'user_info.mobile', 'user_info.lname')
+          ->get();
+          return view('student.callforinterview', [
+            'call' => $call,
+          ]);
+    }
 }

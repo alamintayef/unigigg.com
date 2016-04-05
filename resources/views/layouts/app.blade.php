@@ -17,6 +17,10 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" media="screen" title="no title" charset="utf-8">
 
+  <!-- jqurey -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <!-- Styles -->
   {!! Html::script('js/sweetalert.min.js') !!}
   {!! Html::style('css/rotating-card.css') !!}
@@ -208,7 +212,7 @@
 <script src="//fast.eager.io/V77aiwbirP.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 
-</script>
+
 {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>

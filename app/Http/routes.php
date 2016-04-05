@@ -37,7 +37,14 @@ Route::get('emailview', function()
 {
    return view('email.welcomeemail');
 });
+
+Route::get('auto', function()
+{
+   return view('sms');
+});
+
 Route::get('/jobs/view','PublicController@publicboard');
+Route::get('/sms', 'PublicController@sendsms');
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +60,7 @@ Route::get('/jobs/view','PublicController@publicboard');
 Route::group(['middleware' => ['web']], function () {
       //
       Route::get('/jobs/view','PublicController@publicboard');
+
       Route::get('/', function () {
 
           return view('welcome');
@@ -130,6 +138,10 @@ Route::group(['middleware' => ['web']], function () {
       Route::get('tuitions','OddJobsController@tuitions');
       Route::get('assignements','OddJobsController@assignements');
       Route::get('others','OddJobsController@others');
+
+
+
+      Route::get('call','ShortlistController@callforinterview');
 
 
 });

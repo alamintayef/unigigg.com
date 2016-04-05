@@ -8,7 +8,7 @@
         <div >
           <h4 class="textb">Shortlisted Candidates </h4>
           <form class="" action="" method="post">
-              <button type="button" name="button" class="pull-right btn btn-default"> Call for Interview</button>
+              <a type="button" name="button" class="pull-right btn btn-default" href="{{url('call')}}"> Call for Interview</a>
           </form>
 
           <h5>Finalized Candidates :  {{$shortlistlimit}}</h5>
