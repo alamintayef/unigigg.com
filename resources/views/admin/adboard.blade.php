@@ -78,10 +78,16 @@
 
       <div class="col-sm-4 panel">
         <div class="panel-body">
-          <a href="{{url('verification')}}">Show Verification Request</a><br>
-          <a href="{{url('area')}}">Add area</a><br>
-          <a href="{{url('call/for/in')}}">Call For interview Request</a><br>
-          <a href="{{url('managejobs')}}">Cron Jobs</a>
+          <ul class="list-group">
+            <li class="list-group-item"><a href="{{url('verification')}}">Show Verification Request</a</li>
+           <li class="list-group-item">  <a href="{{url('area')}}">Add area</a></li>
+           <li class="list-group-item">  <a href="{{url('managejobs')}}">Cron Jobs</a></li>
+           <li class="list-group-item">  <a href="{{url('manage/odd/jobs')}}">Eccentric Cron Jobs</a></li>
+           <li class="list-group-item"><a href="{{url('call/for/in')}}">Call For interview Request</a></li>
+          </ul>
+
+
+
         </div>
 
       </div>

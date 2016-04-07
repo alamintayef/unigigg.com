@@ -44,6 +44,7 @@ Route::get('auto', function()
 });
 
 Route::get('/jobs/view','PublicController@publicboard');
+Route::get('/jobs/view/eccentric','PublicController@publiceccentricboard');
 Route::get('/sms', 'PublicController@sendsms');
 
 /*
@@ -95,7 +96,8 @@ Route::group(['middleware' => ['web']], function () {
       Route::get('call/for/in', 'AdminController@callforinterview');
       Route::post('verify/{id}', 'AdminController@verify');
       Route::get('managejobs','AdminController@managejobs');
-    
+      Route::get('manage/odd/jobs','AdminController@manageoddjobs');
+
 
       //payment
       Route::get('payment','BillController@index');

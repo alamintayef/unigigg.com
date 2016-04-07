@@ -23,6 +23,7 @@ use App\Model\Student\University;
 use App\Model\Student\Area;
 use App\Model\Student\Reference;
 use App\Model\Student\Vprofile;
+use App\Model\Student\OddJobs;
 use DB;
 use SMSGateway;
 use Carbon\Carbon;
@@ -140,11 +141,19 @@ class AdminController extends Controller
 
         return redirect('verification')   ;
     }
-
+    // Job Cron
     public function managejobs(){
 
       $jobs = Jobs::where('job_expires','=', Carbon::today())->get();
       return view('admin.jobcron', [
+        'jobs'=>$jobs,
+      ]);
+    }
+  // Eccentric Job Cron
+    public function manageoddjobs(){
+
+      $jobs = OddJobs::where('job_expires','=', Carbon::yesterday())->get();
+      return view('admin.eccjobcron', [
         'jobs'=>$jobs,
       ]);
     }

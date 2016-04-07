@@ -59,7 +59,7 @@
 
             <div >
               @if(count($eminfos)>0)
-                <div class="jumbotron">
+                <div class="panel pad">
 
 
                   <h4>Company Details</h4><a href="{{url('employerinfo')}}" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>

@@ -30,6 +30,21 @@ class PublicController extends Controller
 
     ]);
   }
+  public function publiceccentricboard(Request $request)
+  {
+
+    $jobs = DB::table('odd_jobs')
+    ->join('users', 'odd_jobs.user_id', '=', 'users.id')
+    ->select('odd_jobs.*', 'users.name')
+    ->orderByRaw("RAND()")->get();
+
+
+    return view('info.publiceccentric', [
+      'jobs'=>$jobs,
+
+
+    ]);
+  }
   public function sendsms()
   {
 

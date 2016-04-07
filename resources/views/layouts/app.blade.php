@@ -35,7 +35,7 @@
   body {
     font-family: 'Raleway';
     background-color: 	#f7f7f7;
-    font-size: 14px;
+    font-size: 12px;
     padding-top: 100px;
 
   }
@@ -125,7 +125,7 @@
 
 
             <ul class="nav navbar-nav">
-              <li ><a  data-toggle="modal" data-target="#myModal">Post A Job <sub><small>with a call</small></sub></a></li>
+              <li ><a   data-toggle="modal" data-target="#myModal">Post A Job <sub><small>with a call</small></sub></a></li>
               <li ><a href="{{ url('/recruiter') }}">Recruiter</a></li>
               <li>
                 <a  href="#" class="dropdown-toggle  text-primary" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -211,7 +211,8 @@
       <div class="modal-body">
         <h5>Call us on : 01987847548</h5>
         <p>
-          You can just call us, tell job details and we'll let you know within 48 hours.
+          Just call us, tell job details and we'll let you know within 48 hours
+          You can Also SMS us. We'll call you back.
         </p>
       </div>
       <div class="modal-footer">
