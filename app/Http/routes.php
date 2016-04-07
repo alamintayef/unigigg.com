@@ -81,6 +81,9 @@ Route::group(['middleware' => ['web']], function () {
       Route::get('/eccentric', function () {
           return view('eccentric');
       });
+
+
+
         //admin
       Route::get('admin','AdminController@index');
       Route::post('university', 'AdminController@unistore');
@@ -91,6 +94,8 @@ Route::group(['middleware' => ['web']], function () {
       Route::get('employerlist', 'AdminController@employer');
       Route::get('call/for/in', 'AdminController@callforinterview');
       Route::post('verify/{id}', 'AdminController@verify');
+      Route::get('managejobs','AdminController@managejobs');
+    
 
       //payment
       Route::get('payment','BillController@index');

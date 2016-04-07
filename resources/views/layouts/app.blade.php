@@ -125,7 +125,7 @@
 
 
             <ul class="nav navbar-nav">
-              <li ><a href="{{ url('/jobs') }}">Post A Job <sub><small>it's free</small></sub></a></li>
+              <li ><a  data-toggle="modal" data-target="#myModal">Post A Job <sub><small>with a call</small></sub></a></li>
               <li ><a href="{{ url('/recruiter') }}">Recruiter</a></li>
               <li>
                 <a  href="#" class="dropdown-toggle  text-primary" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -201,7 +201,26 @@
 
 @yield('content')
 
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="">Call Us To Post a Job</h4>
+      </div>
+      <div class="modal-body">
+        <h5>Call us on : 01987847548</h5>
+        <p>
+          You can just call us, tell job details and we'll let you know within 48 hours.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- JavaScripts -->
 

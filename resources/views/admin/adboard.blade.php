@@ -80,7 +80,8 @@
         <div class="panel-body">
           <a href="{{url('verification')}}">Show Verification Request</a><br>
           <a href="{{url('area')}}">Add area</a><br>
-          <a href="{{url('call/for/in')}}">Call For interview Request</a>
+          <a href="{{url('call/for/in')}}">Call For interview Request</a><br>
+          <a href="{{url('managejobs')}}">Cron Jobs</a>
         </div>
 
       </div>

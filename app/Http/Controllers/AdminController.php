@@ -25,6 +25,7 @@ use App\Model\Student\Reference;
 use App\Model\Student\Vprofile;
 use DB;
 use SMSGateway;
+use Carbon\Carbon;
 
 class AdminController extends Controller
 {
@@ -139,6 +140,16 @@ class AdminController extends Controller
 
         return redirect('verification')   ;
     }
+
+    public function managejobs(){
+
+      $jobs = Jobs::where('job_expires','=', Carbon::today())->get();
+      return view('admin.jobcron', [
+        'jobs'=>$jobs,
+      ]);
+    }
+
+
 
 
 

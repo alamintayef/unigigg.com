@@ -48,7 +48,7 @@
                         <button type="submit" class="btn btn-danger btn-sm btn-block-sm">
                           <i class="fa fa-user"></i> Remove
                         </button>
-                        <h6 class="pull-right textb">Posted on : {{$jobs->created_at}}</h6>
+                        <h6 class="pull-right textb">Expires on : {{$jobs->job_expires}}</h6>
                       </form>
 
 
