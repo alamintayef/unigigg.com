@@ -35,18 +35,24 @@
 
               @endif
             </div>
-
+            @if(Auth::user()->subs_type===0)
+              <button type="button" name="button" class="btn-default">Pay As You Go</button>
+            @elseif(Auth::user()->subs_type===1)
+              <button type="button" name="button" class="btn-default">Limited Pack</button>
+            @else
+              <button type="button" name="button" class="btn-default">Unlimited Pack Subscribed</button>
+            @endif
             <h3>Welcome <strong class="primary">{{ Auth::user()->name }}
               </strong> The Recruiter</h3>
             </div>
             @if(Auth::user()->verified===0)
              <p class="  pull-right">
-               <button type="button" class="btn btn-danger" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="" aria-describedby="popover936988">Not Verified</button>
+               <button type="button" class=" btn-danger" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="" aria-describedby="popover936988">Not Verified</button>
 
              </p>
             @else
               <p class=" pull-right">
-                <button type="button" class="btn btn-success" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="" aria-describedby="popover936988">Verified</button>
+                <button type="button" class=" btn-success">Verified</button>
 
               </p>
             @endif

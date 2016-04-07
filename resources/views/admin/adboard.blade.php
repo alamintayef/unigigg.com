@@ -11,7 +11,7 @@
       </div>
     @endif
   </div>
-  <div class="col-sm-4 pull-letf">
+  <div class="col-sm-4 pull-left">
     <div class="panel">
       <div class="panel-heading">
         Users
@@ -57,7 +57,7 @@
 
       </div>
         </div>
-      <div class="col-sm-4 whiteproper panel">
+      <div class="col-sm-4 panel">
         <div class="panel-body">
 
             {!! Form::open(array('url' => '/university')) !!}
@@ -75,11 +75,8 @@
         </div>
 
       </div>
-      <!-- area -->
 
-
-
-      <div class="col-sm-4 pull-right whiteproper panel col-md-offset-1">
+      <div class="col-sm-4 panel">
         <div class="panel-body">
           <a href="{{url('verification')}}">Show Verification Request</a><br>
           <a href="{{url('area')}}">Add area</a><br>

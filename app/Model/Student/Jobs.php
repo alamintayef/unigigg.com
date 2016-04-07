@@ -15,6 +15,8 @@ class Jobs extends Model
       'job_location',
       'job_description',
       'job_reqs',
+      'job_education_reqs',
+      'Job_skill_reqs',
       'job_reqs_additional',
       'job_start_date',
       'job_last_date_application',

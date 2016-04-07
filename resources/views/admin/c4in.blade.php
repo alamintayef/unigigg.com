@@ -7,13 +7,16 @@
       <table class="table">
         <thead>
           <th>
-          Call Request
+          Name
           </th>
           <th>
-            Number
+          Number
           </th>
           <th>
           Request By
+          </th>
+          <th>
+            Requested for
           </th>
           <th>
             Call
@@ -30,6 +33,9 @@
             </td>
             <td>
               {{$calls->company_name}}
+            </td>
+            <td>
+              {{$calls->job_name}}
             </td>
             <td>
               call and sms

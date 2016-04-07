@@ -10,6 +10,7 @@
     <div class="col-md-10  ">
       <div class="panel padsmall">
         <div class="panel-heading"><h4 class="textb">Dashboard</h4></div>
+
         @if (notify()->ready())
           <script>
           swal({
@@ -33,12 +34,18 @@
               @else
                 <h5 class="text-success">verified</h5>
               @endif
-              <a class="btn btn-success " href="{{ url('/payment') }}"><i class="fa fa-btn fa-check-square-o"></i>Verify Profile</a>
 
+              <a class="btn btn-success " href="{{ url('/payment') }}"><i class="fa fa-btn fa-check-square-o"></i>Verify Profile</a> <br>
+              @if(Auth::user()->subs_type===0)
+                <button type="button" name="button" class="btn-default">Free</button>
+
+              @else
+                <button type="button" name="button" class="btn-default btn-lg">Subscribed for 6 months</button>
+              @endif
 
             </div>
           </div>
-      
+
           <div class="col-md-12">
             <div class="col-md-4 pull-left">
                 @include('student.partials.userview.imageview')

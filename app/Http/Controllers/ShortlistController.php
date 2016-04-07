@@ -38,7 +38,8 @@ class ShortlistController extends Controller
                     ->get();
       $id = auth()->user()->id;
       $shortlistlimit = DB::table('em_shortlists')
-              ->select('em_shortlists.*')
+              ->join('jobs', 'em_shortlists.shortlisted_for_job_id', '=', 'jobs.job_id')
+              ->select('em_shortlists.*','jobs.*')
               ->where('shortlistedby',$id)
               ->where('finalized',1)
               ->sum('finalized');
@@ -84,7 +85,16 @@ class ShortlistController extends Controller
         return view('employer.appointment.paynsetappointment');
       }else
       {
-        return view('employer.appointment.setappointment');
+        $call = DB::table('em_shortlists')
+            ->join('user_info', 'em_shortlists.user_id', '=', 'user_info.user_id')
+            ->join('em_infos', 'em_shortlists.shortlistedby', '=', 'em_infos.user_id')
+            ->join('jobs', 'em_shortlists.shortlisted_for_job_id', '=', 'jobs.job_id')
+            ->select('user_info.fname', 'user_info.mobile', 'user_info.lname','em_infos.company_name','jobs.job_name')
+            ->get();
+
+            return view('employer.appointment.setappointment', [
+              'call'=>$call,
+            ]);
       }
 
     }

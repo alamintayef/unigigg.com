@@ -50,15 +50,62 @@ class ChakriController extends Controller
             ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
             ->orderBy('created_at', 'desc')
             ->get();
-
-
-
-      return view('chakri', [
+            return view('chakri', [
         'jobs'=>$jobs,
 
 
       ]);
     }
+    public function internships(Request $request)
+    {
+        $jobs=  DB::table('jobs')
+               ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
+               ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
+               ->where('job_type', 'internship')
+               ->orderBy('created_at', 'desc')
+               ->get();
+               return view('chakri.internship', [
+           'jobs'=>$jobs,
+         ]);
+    }
+    public function fulltime(Request $request)
+    {
+        $jobs=  DB::table('jobs')
+               ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
+               ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
+               ->where('job_type', 'fulltime')
+               ->orderBy('created_at', 'desc')
+               ->get();
+               return view('chakri.fulltime', [
+           'jobs'=>$jobs,
+         ]);
+    }
+    public function parttime(Request $request)
+    {
+        $jobs=  DB::table('jobs')
+               ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
+               ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
+               ->where('job_type', 'parttime')
+               ->orderBy('created_at', 'desc')
+               ->get();
+               return view('chakri.parttime', [
+           'jobs'=>$jobs,
+         ]);
+    }
+    public function onetime(Request $request)
+    {
+        $jobs=  DB::table('jobs')
+               ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
+               ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
+               ->where('job_type', 'onetime')
+               ->orderBy('created_at', 'desc')
+               ->get();
+               return view('chakri.onetime', [
+           'jobs'=>$jobs,
+         ]);
+    }
+
+
     public function studentemview($id)
     {
       $user = User::where('id','=',$id)->get();

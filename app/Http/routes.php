@@ -115,6 +115,12 @@ Route::group(['middleware' => ['web']], function () {
       Route::get('/jobs', 'JobsController@jobboard');
       Route::get('/chakri', 'ChakriController@chakriboard');
       Route::get('/show/ejobs/{id}','JobsController@showjobs');
+
+  //Chakri
+      Route::get('/internships', 'ChakriController@internships');
+      Route::get('/fulltime', 'ChakriController@fulltime');
+      Route::get('/parttime', 'ChakriController@parttime');
+      Route::get('/onetime', 'ChakriController@onetime');
   //show who applied
       Route::get('/whoapplied', 'ApplyController@showApplied');
   //shortlist

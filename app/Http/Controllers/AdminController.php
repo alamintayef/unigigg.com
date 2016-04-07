@@ -22,7 +22,9 @@ use App\Model\Student\Jobs;
 use App\Model\Student\University;
 use App\Model\Student\Area;
 use App\Model\Student\Reference;
+use App\Model\Student\Vprofile;
 use DB;
+use SMSGateway;
 
 class AdminController extends Controller
 {
@@ -58,8 +60,12 @@ class AdminController extends Controller
       $education = Education::where('user_id','=', $id)->get();
       $exps = Experience::where('user_id','=', $id)->get();
       $refs = Reference::where('user_id','=', $id)->get();
+      $interest = Interest::where('user_id','=', $id)->get();
+      $hobby =Hobbies::where('user_id','=', $id)->get();
+      $about =FunFacts::where('user_id','=', $id)->get();
       $images = Image::where('user_id','=', $id)->orderBy('created_at', 'desc')->limit(1)->get();
-      return view('student.studentemview', [
+      $vdo =Vprofile::where('user_id','=', $id)->get();
+      return view('admin.talentprofile', [
         'profile'=>$profile,
         'skill'=>$skill,
         'education'=> $education,
@@ -67,6 +73,9 @@ class AdminController extends Controller
         'refs'=> $refs,
         'images'=> $images,
         'user' => $user,
+        'interest' => $interest,
+        'hobby'=> $hobby,
+        'about'=> $about,
 
       ]);
     }
@@ -106,7 +115,7 @@ class AdminController extends Controller
 
     return redirect('/area');
     }
-
+    //SHOW VERIFICATION REQUEST
     public function verification(){
 
       $varreqs = DB::table('users')
@@ -119,6 +128,8 @@ class AdminController extends Controller
 
     }
 
+    //VERIFY
+
     public function verify($id){
 
 
@@ -128,13 +139,29 @@ class AdminController extends Controller
 
         return redirect('verification')   ;
     }
+
+
+
     public function callforinterview()
     {
       $call = DB::table('em_shortlists')
           ->join('user_info', 'em_shortlists.user_id', '=', 'user_info.user_id')
           ->join('em_infos', 'em_shortlists.shortlistedby', '=', 'em_infos.user_id')
-          ->select('user_info.fname', 'user_info.mobile', 'user_info.lname','em_infos.company_name')
+          ->join('jobs', 'em_shortlists.shortlisted_for_job_id', '=', 'jobs.job_id')
+          ->select('user_info.fname', 'user_info.mobile', 'user_info.lname','em_infos.company_name','jobs.job_name')
           ->get();
+          /*
+            $deviceID = '20198';
+          foreach ($call as $calls) {
+
+            $number = $calls->mobile;
+
+            $message = 'You have been called for an interview for '.$calls->job_name.' by '.$calls->company_name. '';
+          }
+
+
+          $message =  SMSGateway::sendMessageToNumber($number, $message, $deviceID);
+          */
           return view('admin.c4in', [
             'call' => $call,
           ]);

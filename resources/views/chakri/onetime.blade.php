@@ -9,11 +9,11 @@
       <div class="col-md-10 " style="font-size:12px;">
         <div >
           <ul class="nav nav-pills panel whiteproper nav-justified">
-            <li class="active"><a href="{{url('eccentricJobs')}}">All</a></li>
+            <li ><a href="{{url('chakri')}}">All</a></li>
             <li ><a href="{{url('internships')}}">Internships</a></li>
             <li ><a href="{{url('fulltime')}}">Full-Time</a></li>
             <li ><a href="{{url('parttime')}}">Part-Time</a></li>
-            <li ><a href="{{url('onetime')}}">One-Time</a></li>
+            <li class="active"><a href="{{url('onetime')}}">One-Time</a></li>
           </ul>
         </div>
         @if(count($jobs)>0)

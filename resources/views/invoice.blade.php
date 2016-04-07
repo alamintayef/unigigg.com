@@ -32,6 +32,10 @@
 body{
   padding: 25px;
 }
+.supersmall{
+  text-align: right;
+  font-size: 8px;
+}
 #section {
   width:350px;
   float:left;
@@ -139,6 +143,9 @@ td {
               <small><strong>start date :</strong></small> {{$excc->excc_start_date}} <small><strong>end date :</strong></small> {{$excc->exp_end_date}}
             @endforeach
           @endif
+          <div class="supersmall">
+            <small>Gerenated by unigigg.com</small>
+          </div>
 
         </div>
       </body>

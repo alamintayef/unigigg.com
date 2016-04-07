@@ -9,7 +9,7 @@
       <div class="col-md-10" style="font-size:12px; padding:5px">
         @if(count($jobs)>0)
           @foreach($jobs as $job)
-            <div class="col-md-3 col-md-offset-1" style="background-color:white;">
+            <div class="col-md-3 col-md-offset-1 panel" style="background-color:white;">
 
               <h5 >{{$job->job_name}}</h5>
 
