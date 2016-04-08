@@ -53,7 +53,7 @@
 
       </li>
       <li class="list-group-item">
-        <a href="{{url('eccentricJobsApplied')}}"><strong>Applied For your Jobs</strong></a>
+        <a href="{{url('eccentric/jobs/whoapplied')}}"><strong>Applied For your Jobs</strong></a>
 
       </li>
 

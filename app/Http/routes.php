@@ -143,10 +143,14 @@ Route::group(['middleware' => ['web']], function () {
       Route::get('eccentricJobs','OddJobsController@index');
       Route::get('eccentricJobspost','OddJobsController@postjobs');
       Route::post('eccentricJobspost','OddJobsController@postjob');
-      Route::get('eccentricJobsApplied', 'OddJobsController@whoapplied');
-      Route::get('eccentricJobsAppliedem', 'JobsController@oddwhoapplied');
+
+      Route::get('eccentric/jobs/whoapplied', 'OddJobsController@whoapplied');
       Route::get('postedoddjobs','OddJobsController@postedones');
       Route::post('deleteoddjobs/{id}','OddJobsController@destroy');
+
+      //eccentricJobs shortlists
+
+      Route::post('/eccentric/shortlist','OddShortlistController@store');
 
       //EccentricJobs Classification
       Route::get('eccentricJobs','OddJobsController@index');

@@ -33,7 +33,7 @@
 
         </li>
         <li class="list-group-item">
-          <a href="{{url('eccentricJobsAppliedem')}}">See Applied</strong></a>
+          <a href="{{url('eccentric/jobs/whoapplied')}}">See Applied</strong></a>
 
         </li>
       </ul>

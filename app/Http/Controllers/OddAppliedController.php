@@ -29,5 +29,13 @@ class OddAppliedController extends Controller
 
       return redirect('/home');
     }
+    public function destroy($id)
+    {
+      $var = OddApplied::where('id','=',$id);
+      $var->delete();
+
+      return redirect('/shortlists');
+
+    }
 
 }

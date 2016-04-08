@@ -23,4 +23,5 @@ class OddShortlistController extends Controller
 
       return redirect('/shortlists');
     }
+    
 }

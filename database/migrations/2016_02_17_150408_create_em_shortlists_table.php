@@ -17,6 +17,7 @@ class CreateEmShortlistsTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->integer('shortlistedby');
             $table->integer('shortlisted_for_job_id')->unsigned();
+            $table->boolean('finalized')->default(0);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('shortlisted_for_job_id')->references('job_id')->on('jobs')->onDelete('cascade');
             $table->timestamps();
