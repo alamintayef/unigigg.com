@@ -9,9 +9,9 @@ class OddApplied extends Model
     //
     protected $table='odd_applieds';
     protected $fillable=[
-      'applied_for_odd_id','user_id',
+      'applied_for_job_id','user_id',
     ];
     protected $hidden=[
-      'applied_for_odd_id','user_id',
+      'applied_for_job_id','user_id',
     ];
 }

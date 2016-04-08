@@ -103,7 +103,7 @@ class JobsController extends Controller
 
     $applied = DB::table('odd_applieds')
     ->join('user_info', 'odd_applieds.user_id', '=', 'user_info.user_id')
-    ->join('odd_jobs', 'odd_applieds.applied_for_odd_id', '=', 'odd_jobs.odd_id')
+    ->join('odd_jobs', 'odd_applieds.applied_for_job_id', '=', 'odd_jobs.odd_id')
     ->select('odd_applieds.*', 'user_info.*','odd_jobs.odd_id', 'odd_jobs.title','odd_jobs.user_id')
     ->get();
 

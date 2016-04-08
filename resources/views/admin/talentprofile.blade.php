@@ -60,7 +60,7 @@
                 @if($users->subs_type===0)
                   <p class="text-warning">
                     Free
-                    <form class="form-group" action="{{url('/verify',$verify->id)}}" method="POST">
+                    <form class="form-group" action="{{url('/verify',$users->id)}}" method="POST">
                       {!! csrf_field() !!}
                       <button type="submit" class="btn btn-success">
                         <i class="fa fa-check"></i> Change
@@ -82,7 +82,10 @@
               <div >
 
                 <p>
-                  University :{{$view->institute}}
+                  University :{{$view->institute}}<br>
+                  NID :{{$view->NId}}<br>
+                  Facebook :<a href="{{$view->facebookId}}"> Facebook</a> <br>
+                  LINKEDIN :{{$view->LinkedInId}}
                 </p>
 
               </div>

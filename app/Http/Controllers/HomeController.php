@@ -23,6 +23,8 @@ use App\Model\Student\Reference;
 use App\Model\Student\StudentApplied;
 use App\Model\Student\Vprofile;
 
+use Carbon\Carbon;
+
 class HomeController extends Controller
 {
     /**
@@ -64,6 +66,8 @@ class HomeController extends Controller
       $allJobs = Jobs::all();
       $allOddJobs = OddJobs::all();
 
+
+
     return view('home', [
         'infos' => $infos,
         'skill' =>$skill,
@@ -83,6 +87,7 @@ class HomeController extends Controller
         'allemployer'=>$allemployer,
         'allJobs' => $allJobs,
         'allOddJobs' => $allOddJobs,
+        
     ]);
 
     }

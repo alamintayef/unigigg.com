@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Mail;
+use Carbon\Carbon;
 class AuthController extends Controller
 {
     /*
@@ -75,12 +76,17 @@ class AuthController extends Controller
           'timer' => 3000,
 
         ]);
+        $current = Carbon::now();
+
+        // add 30 days to the current time
+        $freeExpires = $current->addDays(30);
 
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'type' => $data['type'],
+            'expireson'=> $freeExpires,
         ]);
     }
 }

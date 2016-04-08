@@ -19,9 +19,6 @@
           </th>
         </thead>
         <tbody>
-
-
-
           @foreach($allemployer as $users)
             <tr>
               <td>

@@ -1,7 +1,7 @@
 <style media="screen">
   body{
     font-family: 'Raleway';
-    
+
   }
 </style>
 <div class="container">
@@ -35,10 +35,10 @@
               @else
                 <h5 class="text-success">verified</h5>
               @endif
-
-              <a class="btn btn-success " href="{{ url('/payment') }}"><i class="fa fa-btn fa-check-square-o"></i>Verify Profile</a> <br>
+                Free Subscription Expires on : <strong> {{Auth::user()->expireson}}</strong>
+              <a class="btn btn-success btn-sm " href="{{ url('/payment') }}"><i class="fa fa-btn fa-check-square-o"></i>Verify Profile</a> <br>
               @if(Auth::user()->subs_type===0)
-                <button type="button" name="button" class="btn-default">Free</button>
+
 
               @else
                 <button type="button" name="button" class="btn-default btn-lg">Subscribed for 6 months</button>

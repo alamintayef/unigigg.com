@@ -32,7 +32,7 @@
                   <form class="form-inline" action="{{url('apply/eccentric')}}" method="post">
                     {!! csrf_field() !!}
                     <div class="form-group">
-                      <input type="hidden" name="applied_for_odd_id" value="{{$jobs->odd_id}}">
+                      <input type="hidden" name="applied_for_job_id" value="{{$jobs->odd_id}}">
                     </div>
                     <div class="form-group">
                       <input type="hidden" name="user_id" value="{{Auth::user()->id}}">

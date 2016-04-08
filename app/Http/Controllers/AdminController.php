@@ -139,7 +139,7 @@ class AdminController extends Controller
                   ->where('id', $id)
                   ->update(['verified' => '1']);
 
-        return redirect('verification')   ;
+        return redirect('admin')   ;
     }
     // Job Cron
     public function managejobs(){

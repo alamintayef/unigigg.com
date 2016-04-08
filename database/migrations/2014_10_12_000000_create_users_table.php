@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->tinyInteger('type');
             $table->boolean('verified')->default(0);
             $table->integer('subs_type')->default(0);
+            $table->date('expireson');
             $table->rememberToken();
             $table->timestamps();
         });

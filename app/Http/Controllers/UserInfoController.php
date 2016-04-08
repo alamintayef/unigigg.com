@@ -20,7 +20,11 @@ namespace App\Http\Controllers;
 
 
         $uni= DB::table('universities')->select('universities.*')->orderBy('university', 'ASC')->get();
-        return view('student.userinfo',['uni'=> $uni]);
+        $userinfo= DB::table('user_info')->select('user_info.*')->get();
+        return view('student.userinfo',[
+          'uni'=> $uni,
+          'userinfo'=> $userinfo,
+        ]);
 
       }
       public function store(Request $request)
@@ -86,7 +90,7 @@ namespace App\Http\Controllers;
            'text' => 'Basic Information Done ! Congrats',
          ]);
 
-          return redirect('userinfo');
+          return redirect('home');
       }
 
       public function edit($id)

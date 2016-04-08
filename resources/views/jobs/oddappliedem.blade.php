@@ -11,40 +11,22 @@
 
         @foreach( $applied as $seek )
           @if($seek->user_id===Auth::user()->id)
-          <div class="panel panel-default">
-            <div class="panel-heading">
+          <div class="panel padsmall">
+            <h4>{{$seek->fname}} {{$seek->lname}}</h4> <strong >Applied for</strong> : {{$seek->title}}
 
-              <h4>{{$seek->fname}} {{$seek->lname}}</h4>
 
-            </div>
-            <div class="panel-body">
-              <p class="col-md-4">
-                <iframe width="250" height="150" src="https://www.youtube.com/embed/{{$seek->youtube}}" frameborder="0" allowfullscreen></iframe>
-
-              </p>
-
-              <p class="col-md-4">
-                <strong >Applied for</strong> : {{$seek->title}}
                 <strong>Institute</strong>: {{$seek->institute}}
-              </p>
 
 
-            </div>
-
-            <div class="panel-footer">
-
-
-              <p class="inline">
-
-
-              <form action="{{url('/profile',$seek->id)}}" method="GET">
+              <form  class=" form-inline pull-right">
+                <form class="form-inline" action="{{url('/profile',$seek->id)}}" method="GET">
                 {!! csrf_field() !!}
                 <button type="submit" class="btn btn-info btn-sm btn-block-sm">
                   <i class="fa fa-user"></i> view profile
                 </button>
               </form>
-            </P>
-              <!--
+
+
               <form action="{{url('shortlist')}}" method="post">
                 {!! csrf_field() !!}
                 <input type="hidden" name="user_id" value="{{$seek->id}}">
@@ -53,8 +35,8 @@
                   <i class="fa fa-user"></i> Shortlist
                 </button>
               </form>
-              </p>
-            -->
+            </form>
+
 
 
             </div>

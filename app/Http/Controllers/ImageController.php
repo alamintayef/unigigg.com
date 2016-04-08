@@ -9,7 +9,7 @@ use Validator;
 use App\Model\Student\Image;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
-
+use Redirect;
 class ImageController extends Controller
 {
   //
@@ -48,14 +48,14 @@ class ImageController extends Controller
     $request->user()->images()->create([
       'filePath' => $name,
     ]);
-    notify()->flash('Added Successfully! Go to Dashboard', 'success', [
+    notify()->flash('Added Successfully!', 'success', [
       'timer' => 3000,
-      
+
     ]);
 
 
 
-    return redirect('/image');
+    return Redirect::to('home');
   }
   public function update($id, Request $request)
   {
