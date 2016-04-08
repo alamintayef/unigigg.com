@@ -50,8 +50,12 @@ class ChakriController extends Controller
             ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
             ->orderBy('created_at', 'desc')
             ->get();
+            $already = DB::table('student_applieds')
+                      ->join('jobs', 'student_applieds.applied_for_job_id','=','jobs.job_id')
+                      ->get();
             return view('chakri', [
         'jobs'=>$jobs,
+        'already'=>$already,
 
 
       ]);
@@ -137,6 +141,7 @@ class ChakriController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
 
+
       $uid= auth()->user()->id;
 
       $applicable=DB::table('user_info')
@@ -147,6 +152,7 @@ class ChakriController extends Controller
             return view('jobs.chakriview', [
               'jobs'=>$jobs,
               'applicable'=>$applicable,
+
 
 
             ]);

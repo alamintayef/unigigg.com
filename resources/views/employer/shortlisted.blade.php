@@ -13,6 +13,9 @@
 
           <h5>Finalized Candidates :  {{$shortlistlimit}}</h5>
           <h6>Remaining {{$limit-$shortlistlimit}}</h6>
+          @if($shortlistlimit>0)
+            Sorry you have filled the shortlist Quota
+          @endif
 
 
         </div>

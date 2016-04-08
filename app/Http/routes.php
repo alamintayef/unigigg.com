@@ -145,6 +145,7 @@ Route::group(['middleware' => ['web']], function () {
       Route::post('eccentricJobspost','OddJobsController@postjob');
 
       Route::get('eccentric/jobs/whoapplied', 'OddJobsController@whoapplied');
+      Route::post('eccentric/jobs/whoapplied/delete', 'OddJobsController@destroy');
       Route::get('postedoddjobs','OddJobsController@postedones');
       Route::post('deleteoddjobs/{id}','OddJobsController@destroy');
 

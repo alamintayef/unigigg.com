@@ -34,7 +34,7 @@ class OddAppliedController extends Controller
       $var = OddApplied::where('id','=',$id);
       $var->delete();
 
-      return redirect('/shortlists');
+      return redirect('/eccentric/jobs/whoapplied');
 
     }
 

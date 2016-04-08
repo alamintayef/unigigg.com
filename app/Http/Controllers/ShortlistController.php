@@ -39,10 +39,7 @@ class ShortlistController extends Controller
       $id = auth()->user()->id;
       $shortlistlimit = DB::table('em_shortlists')
               ->join('jobs', 'em_shortlists.shortlisted_for_job_id', '=', 'jobs.job_id')
-              ->select('em_shortlists.*','jobs.*')
-              ->where('shortlistedby',$id)
-              ->where('finalized',1)
-              ->sum('finalized');
+              ->count();
       $jobcount = DB::table('jobs')
                 ->select('jobs.*')
                 ->where('user_id', $id)

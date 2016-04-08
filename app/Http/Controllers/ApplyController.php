@@ -42,10 +42,12 @@ class ApplyController extends Controller
             ->join('jobs', 'student_applieds.applied_for_job_id', '=', 'jobs.job_id')
             ->select('student_applieds.*', 'user_info.*','jobs.job_id', 'jobs.job_name','jobs.user_id')
             ->get();
-
-
+    $already = DB::table('student_applieds')
+              ->join('em_shortlists', 'student_applieds.applied_for_job_id','=','em_shortlists.shortlisted_for_job_id')
+              ->get();
       return view('employer.applied', [
         'applied'=>$applied,
+        'already' => $already,
 
       ]);
 

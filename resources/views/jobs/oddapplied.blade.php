@@ -23,13 +23,22 @@
                 <strong>Institute</strong>: {{$seek->institute}}
 
 
-
-                <form class="pull-right" action="{{url('/profile',$seek->id)}}" method="GET">
+                <div class="pull-right col-md-2">
+                  <form  action="{{url('/profile',$seek->id)}}" method="GET">
+                  {!! csrf_field() !!}
+                  <button type="submit" class="btn btn-info btn-sm btn-block-sm">
+                    <i class="fa fa-user"></i> view profile
+                  </button>
+                </form>
+                <form  action="{{url('/eccentric/jobs/whoapplied/delete',$seek->id)}}" method="GET">
                 {!! csrf_field() !!}
                 <button type="submit" class="btn btn-info btn-sm btn-block-sm">
-                  <i class="fa fa-user"></i> view profile
+                  <i class="fa fa-trash-o"></i> Remove
                 </button>
               </form>
+
+                </div>
+
 
               <form action="{{url('shortlist')}}" method="post">
                 {!! csrf_field() !!}

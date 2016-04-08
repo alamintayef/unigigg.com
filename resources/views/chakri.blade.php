@@ -34,9 +34,12 @@
 
                   <form class="form-control" action="{{url('show/jobs',$job->job_id)}}" method="GET">
                     {!! csrf_field() !!}
+                    @if($already)
+                      <h6>Already applied</h6>
+                    @else
 
                     <button type="submit" name="button" class="btn btn-default btn-lg">view</button>
-
+                    @endif
                   </form>
 
 
