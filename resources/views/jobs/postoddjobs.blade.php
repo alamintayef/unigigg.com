@@ -49,15 +49,24 @@
         </div>
         <div class="form-group">
           {!! Form::label('area', 'Location:', ['class' => 'control-label']) !!}
-          {!! Form::text('area', null, ['class' => 'form-control']) !!}
+          <br>
+        <!--  {!! Form::text('area', null, ['class' => 'form-control']) !!}-->
+          <input name="area" class="form-control" list="arealist" />
+          <datalist id="arealist">
+            @foreach($area as $areas)
+              <option>{{$areas->area}}</option>
+              @endforeach
+          </datalist>
         </div>
         <div class="form-group">
-          <label for="university" class="control-label">University</label>
-          <select class="form-control" name="university" id="select">
+          <label for="university" class="control-label">University</label><br>
+          <input name="university" class="form-control " list="unilist" />
+          <datalist id="unilist">
             @foreach($uni as $unis)
-              <option value="{{$unis->university}}">{{$unis->university}}</option>
-            @endforeach
-          </select>
+              <option>{{$unis->university
+              }}</option>
+              @endforeach
+          </datalist>
         </div>
         <div class="form-group">
           {!! Form::submit('Post Job', array( 'class'=>'btn btn-success form-control' )) !!}
@@ -78,12 +87,14 @@
 
         @foreach($postedjobs as $jobs)
         {{$jobs->title}}<br>
-    
+
 
         @endforeach
+
 
 
       </div>
     </div>
   </div>
+
 @endsection

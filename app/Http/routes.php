@@ -129,7 +129,7 @@ Route::group(['middleware' => ['web']], function () {
       Route::get('/parttime', 'ChakriController@parttime');
       Route::get('/onetime', 'ChakriController@onetime');
   //show who applied
-      Route::get('/whoapplied', 'ApplyController@showApplied');
+      Route::get('/whoapplied/{id}', 'ApplyController@showApplied');
   //shortlist
       Route::post('/shortlist','ShortlistController@store');
       Route::get('/shortlists/{id}','ShortlistController@shortlistview');

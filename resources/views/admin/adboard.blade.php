@@ -11,53 +11,7 @@
       </div>
     @endif
   </div>
-  <div class="col-sm-4 pull-left">
-    <div class="panel">
-      <div class="panel-heading">
-        Users
-      </div>
-      <div class="panel-body">
-        <h4><a href="admin">User board</a> <br>Total Users :  {{count($allusers)}}</h4>
-      </div>
-
-    </div>
-  </div>
-  <div class="col-sm-4 center">
-    <div class="panel">
-      <div class="panel-heading">
-        Users
-      </div>
-      <div class="panel-body">
-        <h4><a href="{{url('employerlist')}}">Employer board</a> <br>Total Users :  {{count($allemployer)}}</h4>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="col-sm-4 center">
-    <div class="panel">
-      <div class="panel-heading">
-        Jobs
-      </div>
-      <div class="panel-body">
-        <h4><br>Total Jobs : {{count($allJobs)}}</h4>
-      </div>
-
-    </div>
-    </div>
-
-    <div class="col-sm-4 center">
-      <div class="panel">
-        <div class="panel-heading">
-           Eccnetric Jobs
-        </div>
-        <div class="panel-body">
-          <h4><br>Total Eccentric Jobs : {{count($allOddJobs)}}</h4>
-        </div>
-
-      </div>
-        </div>
-      <div class="col-sm-4 panel">
+      <div class="col-sm-4 panel col-md-offset-1">
         <div class="panel-body">
 
             {!! Form::open(array('url' => '/university')) !!}
@@ -76,19 +30,20 @@
 
       </div>
 
-      <div class="col-sm-4 panel">
-        <div class="panel-body">
+      <div class="col-sm-4 panel col-sm-offset-1">
+
           <ul class="list-group">
             <li class="list-group-item"><a href="{{url('verification')}}">Show Verification Request</a</li>
            <li class="list-group-item">  <a href="{{url('area')}}">Add area</a></li>
            <li class="list-group-item">  <a href="{{url('managejobs')}}">Cron Jobs</a></li>
            <li class="list-group-item">  <a href="{{url('manage/odd/jobs')}}">Eccentric Cron Jobs</a></li>
            <li class="list-group-item"><a href="{{url('call/for/in')}}">Call For interview Request</a></li>
+           <li class="list-group-item"><a href="admin">User board</a></li>
+           <li class="list-group-item">Total Eccentric Jobs : {{count($allOddJobs)}}</li>
+           <li class="list-group-item">Total Jobs : {{count($allJobs)}}</li>
+           <li class="list-group-item"><a href="{{url('employerlist')}}">Employer board</a></li>
           </ul>
 
-
-
-        </div>
 
       </div>
 

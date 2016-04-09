@@ -89,12 +89,14 @@ class OddJobsController extends Controller
 
       public function postjobs(Request $request)
       {
+        $area = DB::table('areas')->select('areas.*')->orderBy('area', 'ASC')->get();
         $postedjobs = OddJobs::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->get();
         $uni= DB::table('universities')->select('universities.*')->orderBy('university', 'ASC')->get();
 
         return view('jobs.postoddjobs',[
           'uni'=> $uni,
           'postedjobs'=>$postedjobs,
+          'area' => $area,
 
         ]);
 

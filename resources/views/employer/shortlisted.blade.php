@@ -9,8 +9,9 @@
           @if(count($shortlisted)>0)
 
           <h4 class="textb">Shortlisted Candidates </h4>
+          <a href="{{url('/postedjobs')}}"><h5> <i class="fa fa-arrow-left"></i> Go Back</h5></a>
           <form class="" action="" method="post">
-              <a type="button" name="button" class="pull-right btn btn-default" href="{{url('call')}}"> Call for Interview</a>
+              <a type="button" name="button" class="pull-right btn btn-default" href="{{url('call')}}"> <i class="fa fa-phone-square"></i> Call for Interview</a>
           </form>
 
           @foreach( $shortlisted as $shortlist )
@@ -37,7 +38,7 @@
                     <td>
                       {{$shortlist->fname}} {{$shortlist->lname}}
                     </td>
-                  
+
                     <td>
                       <form action="{{url('shortlist',$shortlist->em_shortlist_id)}}" method="POST">
                         {!! csrf_field() !!}

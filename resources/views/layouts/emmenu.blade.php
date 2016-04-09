@@ -22,11 +22,8 @@
         <strong>Eccentric-Jobs <span class="caret"></span></strong>
         </a>
         <ul class="dropdown-menu" role="menu">
-
-
         <li class="list-group-item">
           <a href="{{url('eccentricJobspostem')}}"><strong>Post an Eccentric Job</strong></a>
-
         </li>
         <li class="list-group-item">
           <a href="{{url('eccentricJobs')}}"><strong>Eccentric Job</strong></a>
@@ -39,16 +36,11 @@
       </ul>
     </li>
   </li>
-  <li class="list-group-item">
-    <a href="shortlists"><strong><i class="fa fa-star"></i> Shortlisted</strong></a>
 
-  </li>
   <li class="list-group-item">
     <a href="{{url('postedjobs')}}"><strong><i class="small material-icons">shopping_basket</i> Posted Jobs</strong></a>
   </ul>
-  <li class="list-group-item">
-    <a href="{{url('whoapplied')}}"><strong><i class="small material-icons">supervisor_account</i> Applied</strong></a>
-  </ul>
+
   <li class="list-group-item">
     <a href="#"><strong>Subscription</strong></a>
 

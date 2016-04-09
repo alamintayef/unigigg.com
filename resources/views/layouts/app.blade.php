@@ -18,14 +18,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" media="screen" title="no title" charset="utf-8">
 
   <!-- jqurey -->
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <!-- Styles -->
+
   {!! Html::script('js/sweetalert.min.js') !!}
+  {!! Html::script('js/prism.js') !!}
+  {!! Html::script('js/index.js') !!}
+  {!! Html::script('js/awesomplete.js') !!}
+  <!--- Css -->
   {!! Html::style('css/rotating-card.css') !!}
   {!! Html::style('css/paper.css') !!}
   {!! Html::style('css/sweetalert.css') !!}
+  {!! Html::style('css/prism.css') !!}
+  {!! Html::style('css/awesomplete.css') !!}
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/paper/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
@@ -35,7 +38,7 @@
   body {
     font-family: 'Raleway';
     background-color: 	#f7f7f7;
-    font-size: 12px;
+    font-size: 13px;
     padding-top: 100px;
 
   }

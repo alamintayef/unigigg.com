@@ -15,15 +15,14 @@
 
 
 
-                  <div class="panel panel-primary">
-                    <div class="panel-heading">
+                  <div class="panel padsmall">
+
                       <h3 class="panel-title">{{$jobs->job_name}}</h3>
-                    </div>
-                    <div class="panel-body">
+
                       <Type: {{$jobs->job_type}}</li>
                       <li>Location: {{$jobs->job_location}}</li>
                       <li>Salary: {{$jobs->job_salary}}</li>
-                      <div class="well">
+
                       <p>
                         Description: {{$jobs->job_description}}
                           </p>
@@ -39,10 +38,10 @@
                           <p>
                             Additional Requirements: {{$jobs->job_reqs_additional}}
                           </p>
-                      </div>
-                    </div>
 
-                    <div class="panel-footer">
+
+
+
                       <form class="form-inline" action="{{url('postjobs',$jobs->job_id)}}" method="POST">
                         {!! csrf_field() !!}
                         <button type="submit" class="btn btn-danger btn-sm btn-block-sm">
@@ -54,12 +53,17 @@
                       <form class="pull-right" action="{{url('/shortlists',$jobs->job_id)}}" method="GET">
                         {!! csrf_field() !!}
                         <button type="submit" class="btn btn-primary btn-sm">
-                          <i class="fa fa-user"></i> show Shortlisted
+                          <i class="fa fa-star"></i> show Shortlisted
+                        </button>
+                      </form>
+                      <form class="pull-right" action="{{url('/whoapplied',$jobs->job_id)}}" method="GET">
+                        {!! csrf_field() !!}
+                        <button type="submit" class="btn btn-primary btn-sm">
+                          <i class="fa fa-paper-plane"></i> Show Applied
                         </button>
                       </form>
 
 
-                    </div>
                   </div>
 
 
@@ -70,3 +74,6 @@
 
 
         </div>
+      </div>
+    </div>
+  </div>      
