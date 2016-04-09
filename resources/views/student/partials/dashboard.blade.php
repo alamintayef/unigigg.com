@@ -31,11 +31,12 @@
             </div>
             <div class="col-md-4 pull-right">
               @if(Auth::user()->verified===0)
-                <h5 class="text-danger">Not verified</h5>
+                <h5 class="text-danger">Not Verified</h5>
               @else
-                <h5 class="text-success">verified</h5>
+                <h5 class="text-success">Verified</h5>
               @endif
-                Free Subscription Expires on : <strong> {{Auth::user()->expireson}}</strong>
+              Free Subscription Expires on : <strong> {{Auth::user()->expireson}}</strong>
+              <br>
               <a class="btn btn-success btn-sm " href="{{ url('/payment') }}"><i class="fa fa-btn fa-check-square-o"></i>Verify Profile</a> <br>
               @if(Auth::user()->subs_type===0)
 

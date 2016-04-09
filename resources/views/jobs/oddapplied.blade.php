@@ -24,30 +24,25 @@
 
 
                 <div class="pull-right col-md-2">
+                  <form  action="{{url('/eccentric/jobs/whoapplied/delete',$seek->id)}}" method="GET">
+                  {!! csrf_field() !!}
+                  <button type="submit" class="btn btn-danger btn-sm btn-block-sm">
+                    <i class="fa fa-trash-o"></i> Remove
+                  </button>
+                </form>
                   <form  action="{{url('/profile',$seek->id)}}" method="GET">
                   {!! csrf_field() !!}
-                  <button type="submit" class="btn btn-info btn-sm btn-block-sm">
+                  <button type="submit" class="btn btn-info btn-sm btn-block">
                     <i class="fa fa-user"></i> view profile
                   </button>
                 </form>
-                <form  action="{{url('/eccentric/jobs/whoapplied/delete',$seek->id)}}" method="GET">
-                {!! csrf_field() !!}
-                <button type="submit" class="btn btn-info btn-sm btn-block-sm">
-                  <i class="fa fa-trash-o"></i> Remove
-                </button>
-              </form>
+
 
                 </div>
-
-
-              <form action="{{url('shortlist')}}" method="post">
-                {!! csrf_field() !!}
-                <input type="hidden" name="user_id" value="{{$seek->id}}">
-                <input type="hidden" name="shortlisted_for_job_id" value="{{$seek->odd_id}}">
+                <br>
                 <button type="submit" class="btn btn-success btn-sm btn-block-sm">
                   <i class="fa fa-phone"></i> Call For Interview
                 </button>
-              </form>
 
 
 

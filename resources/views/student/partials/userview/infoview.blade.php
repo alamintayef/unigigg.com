@@ -7,7 +7,8 @@
       @foreach ($infos as $users)
         <p>
 
-            You Have Applied to :  {{count($joblimit)}} jobs
+            You Have Applied to :  {{count($joblimit)}} jobs <br>
+            You Have Applied to :  {{count($oddjoblimit)}} Eccentric jobs
           <hr>
           <h6>Phone : {{$users->mobile}}</h6>
           <h6>Institute: {{$users->institute}}</h6>

@@ -48,10 +48,7 @@
         <a href="{{url('postedoddjobs')}}"><strong>Jobs Posted By You</strong></a>
 
       </li>
-      <li class="list-group-item">
-        <a href="{{url('postedoddjobs')}}"><strong>Jobs Posted By You</strong></a>
-
-      </li>
+      
       <li class="list-group-item">
         <a href="{{url('eccentric/jobs/whoapplied')}}"><strong>Applied For your Jobs</strong></a>
 

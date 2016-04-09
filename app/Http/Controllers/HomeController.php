@@ -19,6 +19,7 @@ use App\Model\Student\Image;
 use App\Model\Student\EmInfo;
 use App\Model\Student\Jobs;
 use App\Model\Student\OddJobs;
+use App\Model\Student\OddApplied;
 use App\Model\Student\Reference;
 use App\Model\Student\StudentApplied;
 use App\Model\Student\Vprofile;
@@ -57,6 +58,7 @@ class HomeController extends Controller
       $refs = Reference::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->limit(3)->get();
       $vdo = Vprofile::where('user_id', $request->user()->id)->get();
       $joblimit=StudentApplied::where('user_id', $request->user()->id)->get();
+      $oddjoblimit=OddApplied::where('user_id', $request->user()->id)->get();
 
       //employer
       $eminfos = EmInfo::where('user_id', $request->user()->id)->get();
@@ -80,6 +82,7 @@ class HomeController extends Controller
         'refs'=>$refs,
         'images'=>$images,
         'joblimit'=>$joblimit,
+        'oddjoblimit' => $oddjoblimit,
        'vdo' => $vdo,
         //employer
         'eminfos'=>$eminfos,
@@ -87,7 +90,7 @@ class HomeController extends Controller
         'allemployer'=>$allemployer,
         'allJobs' => $allJobs,
         'allOddJobs' => $allOddJobs,
-        
+
     ]);
 
     }
