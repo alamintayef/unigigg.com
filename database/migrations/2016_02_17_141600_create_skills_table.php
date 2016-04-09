@@ -19,8 +19,9 @@ class CreateSkillsTable extends Migration
             $table->string('skill_level');
             $table->integer('skill_experience');
             $table->string('skill_proof');
+            $table->boolean('varified')->default(0);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            //$table->boolean('basic_v');
+            //
             //$table->boolean('advance_v');
             $table->timestamps();
         });

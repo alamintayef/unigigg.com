@@ -18,9 +18,9 @@ namespace App\Http\Controllers;
       public function create()
       {
 
-
+        $uid= auth()->user()->id;
         $uni= DB::table('universities')->select('universities.*')->orderBy('university', 'ASC')->get();
-        $userinfo= DB::table('user_info')->select('user_info.*')->get();
+        $userinfo= DB::table('user_info')->select('user_info.*')->where('user_id',$uid )->get();
         return view('student.userinfo',[
           'uni'=> $uni,
           'userinfo'=> $userinfo,

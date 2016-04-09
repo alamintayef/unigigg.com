@@ -122,7 +122,7 @@ class AdminController extends Controller
 
       $varreqs = DB::table('users')
               ->join('billings', 'users.id', '=', 'billings.user_id')
-              ->select('users.*','billings.*')
+              ->select('users.name','users.id','users.verified','billings.bkash_number','billings.transaction_id')
               ->get();
       return view('admin.verification',[
         'varreqs' => $varreqs,

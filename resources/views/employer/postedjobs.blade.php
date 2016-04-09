@@ -48,7 +48,14 @@
                         <button type="submit" class="btn btn-danger btn-sm btn-block-sm">
                           <i class="fa fa-user"></i> Remove
                         </button>
+
                         <h6 class="pull-right textb">Expires on : {{$jobs->job_expires}}</h6>
+                      </form>
+                      <form class="pull-right" action="{{url('/shortlists',$jobs->job_id)}}" method="GET">
+                        {!! csrf_field() !!}
+                        <button type="submit" class="btn btn-primary btn-sm">
+                          <i class="fa fa-user"></i> show Shortlisted
+                        </button>
                       </form>
 
 

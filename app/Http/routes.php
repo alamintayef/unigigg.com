@@ -132,7 +132,7 @@ Route::group(['middleware' => ['web']], function () {
       Route::get('/whoapplied', 'ApplyController@showApplied');
   //shortlist
       Route::post('/shortlist','ShortlistController@store');
-      Route::get('/shortlists','ShortlistController@shortlistview');
+      Route::get('/shortlists/{id}','ShortlistController@shortlistview');
       Route::post('/shortlist/{id}','ShortlistController@destroy');
 
   //Finalize

@@ -43,9 +43,7 @@
                   <i class="fa fa-user"></i> view profile
                 </button>
               </form>
-              @if($already)
-                <h6>Already Shortlisted</h6>
-              @else
+
                 <form action="{{url('shortlist')}}" method="post">
                   {!! csrf_field() !!}
                   <input type="hidden" name="user_id" value="{{$seek->id}}">
@@ -56,7 +54,6 @@
                   </button>
                 </form>
 
-              @endif
 
 
 

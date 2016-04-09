@@ -26,15 +26,15 @@ class ShortlistController extends Controller
 
       EmShortlist::create($input);
 
-      return redirect('/shortlists');
+      return redirect('/postedjobs');
     }
 
-    public function shortlistview()
+    public function shortlistview($id)
     {
       $shortlisted = DB::table('em_shortlists')
                     ->join('user_info', 'em_shortlists.user_id', '=', 'user_info.user_id')
-                    ->join('jobs', 'em_shortlists.shortlisted_for_job_id', '=', 'jobs.job_id')
-                    ->select('em_shortlists.*', 'user_info.fname','user_info.lname', 'jobs.job_name','jobs.user_id')
+                    ->select('em_shortlists.*', 'user_info.fname','user_info.lname')
+                    ->where('em_shortlists.shortlisted_for_job_id', $id)
                     ->get();
       $id = auth()->user()->id;
       $shortlistlimit = DB::table('em_shortlists')
@@ -59,7 +59,7 @@ class ShortlistController extends Controller
       $var = EmShortlist::where('em_shortlist_id','=',$id);
       $var->delete();
 
-      return redirect('/shortlists');
+      return redirect('/postedjobs');
 
     }
 
@@ -70,7 +70,7 @@ class ShortlistController extends Controller
             ->update(['finalized' => 1]);
 
 
-      return redirect('/shortlists');
+      return redirect('/postedjobs');
     }
 
     public function callforinterview()

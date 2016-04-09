@@ -40,7 +40,8 @@ class ApplyController extends Controller
       $applied = DB::table('student_applieds')
             ->join('user_info', 'student_applieds.user_id', '=', 'user_info.user_id')
             ->join('jobs', 'student_applieds.applied_for_job_id', '=', 'jobs.job_id')
-            ->select('student_applieds.*', 'user_info.*','jobs.job_id', 'jobs.job_name','jobs.user_id')
+            ->join('users' ,'student_applieds.user_id','=','users.id')
+            ->select('student_applieds.*', 'user_info.*','users.id','jobs.job_id', 'jobs.job_name','jobs.user_id')
             ->get();
     $already = DB::table('student_applieds')
               ->join('em_shortlists', 'student_applieds.applied_for_job_id','=','em_shortlists.shortlisted_for_job_id')

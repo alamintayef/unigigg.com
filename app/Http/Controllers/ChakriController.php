@@ -17,6 +17,7 @@ use App\Model\Student\Interest;
 use App\Model\Student\Reference;
 use App\Model\Student\Image;
 use App\Model\Student\User;
+use App\Model\Student\Jobs;
 use Session;
 class ChakriController extends Controller
 {
@@ -44,7 +45,7 @@ class ChakriController extends Controller
 
     public function chakriboard(Request $request)
     {
-
+      $id = auth()->user()->id;
       $jobs = DB::table('jobs')
             ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
             ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
@@ -52,10 +53,12 @@ class ChakriController extends Controller
             ->get();
             $already = DB::table('student_applieds')
                       ->join('jobs', 'student_applieds.applied_for_job_id','=','jobs.job_id')
-                      ->get();
-            return view('chakri', [
+                      ->first();
+
+      return view('chakri', [
         'jobs'=>$jobs,
-        'already'=>$already,
+        'already' => $already,
+
 
 
       ]);
@@ -68,8 +71,10 @@ class ChakriController extends Controller
                ->where('job_type', 'internship')
                ->orderBy('created_at', 'desc')
                ->get();
+
                return view('chakri.internship', [
            'jobs'=>$jobs,
+           
          ]);
     }
     public function fulltime(Request $request)
@@ -80,8 +85,10 @@ class ChakriController extends Controller
                ->where('job_type', 'fulltime')
                ->orderBy('created_at', 'desc')
                ->get();
+
                return view('chakri.fulltime', [
            'jobs'=>$jobs,
+
          ]);
     }
     public function parttime(Request $request)
@@ -92,8 +99,10 @@ class ChakriController extends Controller
                ->where('job_type', 'parttime')
                ->orderBy('created_at', 'desc')
                ->get();
+
                return view('chakri.parttime', [
            'jobs'=>$jobs,
+
          ]);
     }
     public function onetime(Request $request)
@@ -104,8 +113,10 @@ class ChakriController extends Controller
                ->where('job_type', 'onetime')
                ->orderBy('created_at', 'desc')
                ->get();
+
                return view('chakri.onetime', [
            'jobs'=>$jobs,
+
          ]);
     }
 

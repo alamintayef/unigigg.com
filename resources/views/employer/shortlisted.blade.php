@@ -6,28 +6,16 @@
       @include('layouts.emmenu')
       <div class="col-md-10 whiteproper  panel">
         <div >
+          @if(count($shortlisted)>0)
+
           <h4 class="textb">Shortlisted Candidates </h4>
           <form class="" action="" method="post">
               <a type="button" name="button" class="pull-right btn btn-default" href="{{url('call')}}"> Call for Interview</a>
           </form>
 
-          <h5>Finalized Candidates :  {{$shortlistlimit}}</h5>
-          <h6>Remaining {{$limit-$shortlistlimit}}</h6>
-          @if($shortlistlimit>0)
-            Sorry you have filled the shortlist Quota
-          @endif
-
-
-        </div>
-        @if($shortlistlimit>$limit)
-          Sorry call the finalized one first
-        @else
-
-
-
           @foreach( $shortlisted as $shortlist )
 
-            @if($shortlist->user_id===Auth::user()->id)
+
 
 
               <table class="table  ">
@@ -35,9 +23,7 @@
                   <th>
                     Candidate Name
                   </th>
-                  <th>
-                    Shortlisted For
-                  </th>
+
 
                   <th>
                     Remove
@@ -51,11 +37,7 @@
                     <td>
                       {{$shortlist->fname}} {{$shortlist->lname}}
                     </td>
-                    <td>
-                      {{$shortlist->job_name}}
-                    </td>
-
-
+                  
                     <td>
                       <form action="{{url('shortlist',$shortlist->em_shortlist_id)}}" method="POST">
                         {!! csrf_field() !!}
@@ -87,11 +69,15 @@
                 </tbody>
 
 
-              @endif
+
             @endforeach
-          @endif
+
+
         </table>
 
+                  @else
+                    You did not shortlisted anyone
+                  @endif
 
       </div>
     </div>
