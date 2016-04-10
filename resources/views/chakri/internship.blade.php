@@ -14,6 +14,7 @@
             <li ><a href="{{url('fulltime')}}">Full-Time</a></li>
             <li ><a href="{{url('parttime')}}">Part-Time</a></li>
             <li ><a href="{{url('onetime')}}">One-Time</a></li>
+              <li>@include('search.search',['url'=>'search'])</li>
           </ul>
         </div>
         @if(count($jobs)>0)
@@ -37,7 +38,7 @@
 
 
                 <button type="submit" name="button" class="btn btn-default btn-lg">view</button>
-        
+
               </form>
 
 

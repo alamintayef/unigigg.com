@@ -16,11 +16,16 @@
             <small class="text-danger">Required</small>
           </div>
           <div class="form-group">
-            {!! Form::label('area', 'Address', ['class' => 'control-label']) !!}
-            {!! Form::text('area', null, ['class' => 'form-control']) !!}
-            <span><small>Provide your living area in Dhaka</small></span>
+            {!! Form::label('area', 'Location:', ['class' => 'control-label']) !!}
+            <input name="area" class="form-control" list="arealist" />
+            <datalist id="arealist">
+              @foreach($area as $areas)
+                <option>{{$areas->area}}</option>
+              @endforeach
+            </datalist>
+
               <small class="text-danger">Required</small>
-          </div>
+            </div>
           <div class="form-group">
             {!! Form::label('post_code', 'Post Code', ['class' => 'control-label']) !!}
             {!! Form::text('post_code', null, ['class' => 'form-control']) !!}

@@ -5,11 +5,11 @@
       <a href="{{url('home')}}"><h4 class="text-primary"><i class="fa fa-arrow-left"></i> Go Back </h4></a>
       <div >
         <ul class="nav nav-pills panel whiteproper nav-justified">
-          <li class="active"><a href="{{url('eccentricJobs')}}">All</a></li>
+          <li ><a href="{{url('eccentricJobs')}}">All</a></li>
           <li ><a href="{{url('tuitions')}}">Tutions</a></li>
           <li ><a href="{{url('assignements')}}">Assignments</a></li>
-          <li ><a href="{{url('others')}}">Others</a></li>
-          <li>@include('search.search',['url'=>'searcharea'])</li>
+          <li class="active"><a href="{{url('others')}}">Others</a></li>
+          <li>@include('search.search',['url'=>'searchtuition'])</li>
 
         </ul>
       </div>

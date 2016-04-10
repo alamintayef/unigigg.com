@@ -11,24 +11,30 @@
       </div>
     @endif
   </div>
-      <div class="col-sm-4 panel col-md-offset-1">
-        <div class="panel-body">
+  <div class="jumbotron">
+    @if (notify()->ready())
+      <script>
+      swal({
+        title: "{!! notify()->message() !!}",
+        text: "{!! notify()->option('text') !!}",
+        type: "{{ notify()->type() }}",
+        @if (notify()->option('timer'))
+        timer: {{ notify()->option('timer') }},
+        showConfirmButton: false
+        @endif
+      });
+      </script>
+    @endif
+    <div class="col-md-3  panel ">
+      {!! Form::open(['method'=>'GET','url'=>'search','class'=>'form-inline'])  !!}
+        <input type="text" class="form-control" name="search" placeholder="Search...">
+        <button class="btn btn-default-sm" type="submit">
+          <i class="fa fa-search"></i> Search
+          </button>
+      {!! Form::close() !!}
 
-            {!! Form::open(array('url' => '/university')) !!}
+  </div>
 
-            @if (notify()->ready())
-              <div class="alert alert-{{notify()->type()}}">
-                {{notify()->message()}}
-              </div>
-            @endif
-          <div class="form-group">
-            {!! Form::label('university', 'Add University:', ['class' => 'control-label']) !!}
-            {!! Form::text('university', null, ['class' => 'form-control']) !!}
-          </div>
-            {!! Form::submit('Add', ['class' => 'btn btn-primary']) !!}
-        </div>
-
-      </div>
 
       <div class="col-sm-4 panel col-sm-offset-1">
 
@@ -42,6 +48,8 @@
            <li class="list-group-item">Total Eccentric Jobs : {{count($allOddJobs)}}</li>
            <li class="list-group-item">Total Jobs : {{count($allJobs)}}</li>
            <li class="list-group-item"><a href="{{url('employerlist')}}">Employer board</a></li>
+           <li class="list-group-item"><a href="{{url('search')}}">search</a></li>
+           <li class="list-group-item"><a href="{{url('adduniversity')}}">adduniversity</a></li>
           </ul>
 
 

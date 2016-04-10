@@ -19,11 +19,13 @@ namespace App\Http\Controllers;
       {
 
         $uid= auth()->user()->id;
+        $area= DB::table('areas')->select('areas.*')->orderBy('area', 'ASC')->get();
         $uni= DB::table('universities')->select('universities.*')->orderBy('university', 'ASC')->get();
         $userinfo= DB::table('user_info')->select('user_info.*')->where('user_id',$uid )->get();
         return view('student.userinfo',[
           'uni'=> $uni,
           'userinfo'=> $userinfo,
+          'area' => $area,
         ]);
 
       }

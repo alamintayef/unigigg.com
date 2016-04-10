@@ -85,7 +85,7 @@ Route::group(['middleware' => ['web']], function () {
 
 
 
-        //admin
+      //admin
       Route::get('admin','AdminController@index');
       Route::post('university', 'AdminController@unistore');
       Route::get('area', 'AdminController@getarea');
@@ -97,6 +97,9 @@ Route::group(['middleware' => ['web']], function () {
       Route::post('verify/{id}', 'AdminController@verify');
       Route::get('managejobs','AdminController@managejobs');
       Route::get('manage/odd/jobs','AdminController@manageoddjobs');
+      Route::get('adduniversity', 'AdminController@adduni');
+      Route::get('search','AdminController@search');
+
 
 
       //payment
@@ -155,8 +158,12 @@ Route::group(['middleware' => ['web']], function () {
 
       //EccentricJobs Classification
       Route::get('eccentricJobs','OddJobsController@index');
+      Route::get('searcharea','SearchController@searcharea');
+      Route::get('searchtuition','SearchController@searchtuition');
       Route::get('tuitions','OddJobsController@tuitions');
+      Route::get('searchassignment','SearchController@searchassignment');
       Route::get('assignements','OddJobsController@assignements');
+      Route::get('searchother','SearchController@searchassignment');
       Route::get('others','OddJobsController@others');
 
 

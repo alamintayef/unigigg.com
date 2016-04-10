@@ -9,6 +9,7 @@
               <li ><a href="{{url('tuitions')}}">Tutions</a></li>
               <li class="active"><a href="{{url('assignements')}}">Assignments</a></li>
               <li ><a href="{{url('others')}}">Others</a></li>
+              <li>@include('search.search',['url'=>'searchassignment'])</li>
             </ul>
       </div>
       @if(count($assignements)>0)

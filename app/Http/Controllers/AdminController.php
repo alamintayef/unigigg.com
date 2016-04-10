@@ -28,6 +28,7 @@ use DB;
 use SMSGateway;
 use Carbon\Carbon;
 
+
 class AdminController extends Controller
 {
     //
@@ -157,11 +158,28 @@ class AdminController extends Controller
         'jobs'=>$jobs,
       ]);
     }
+    public function adduni()
+    {
+      return view('admin.adduni');
+    }
 
+    public function search(Request $request)
+    {
+      $this->validate($request, [
+        'search'=> 'required',
+      ]);
+       $search = \Request::get('search');
 
+       $skill = DB::table('skills')
+              ->join('users', 'skills.user_id', '=','users.id')
+              ->select('skills.*','users.*')
+              ->where('skill_name','like','%'.$search.'%')
+              ->get();
 
-
-
+      return view('admin.search.search',[
+          'skill'=> $skill,
+        ]);
+    }
     public function callforinterview()
     {
       $call = DB::table('em_shortlists')
