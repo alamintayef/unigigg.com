@@ -11,16 +11,14 @@ class EmailController extends Controller
     //
     public function welcomeEmail(Request $request)
  {
-     $users = User::find(1);
-    // foreach($users as $user) {
-
-
-     Mail::send('email.welcomeemail', ['user' => $users], function ($m) use ($users) {
+     $users = User::all();
+     foreach($users as $user) {
+       Mail::send('email.interview', ['user' => $user], function ($m) use ($user) {
          $m->from('tayef@unigigg.com', 'Tayef from unigigg');
 
-         $m->to($users->email, $users->name)->subject('Welcome to unigigg');
+         $m->to($user->email, $user->name)->subject('Welcome to unigigg');
      });
-  // };
+  }
 
      return redirect('/');
 

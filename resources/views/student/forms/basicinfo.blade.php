@@ -38,13 +38,14 @@
           </div>
           <div class="form-group">
             <label for="institute" class="control-label">Institute</label>
-            <select class="form-control" name="institute" id="select">
+          <input name="institute" class="form-control" list="unilist" />
+              <datalist id="unilist">
               @foreach($uni as $unis)
 
                 <option value="{{$unis->university}}">{{$unis->university}}</option>
 
                 @endforeach
-            </select>
+              </datalist>
               <small class="text-danger">Required</small>
           </div>
           <div class="form-group">

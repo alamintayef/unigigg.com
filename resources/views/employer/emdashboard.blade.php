@@ -79,6 +79,8 @@
 
                   @endforeach
 
+                  <h4>You have posted {{$jobcount}} jobs</h4>
+
                 </div>
               @endif
 

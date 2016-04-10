@@ -18,6 +18,9 @@
           </ul>
         </div>
         @if(count($jobs)>0)
+
+
+        @if(count($jobs)>0)
           @foreach($jobs as $job)
             <div class="col-md-3 col-md-offset-1 panel whiteproper">
 
@@ -49,7 +52,9 @@
 
           @endforeach
         @endif
-
+      @else
+        <h4>Sorry Nothing Found ...  :'( </h4>
+      @endif
 
       </div>
 

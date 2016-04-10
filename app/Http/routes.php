@@ -124,6 +124,7 @@ Route::group(['middleware' => ['web']], function () {
   //Jobs
       Route::get('/jobs', 'JobsController@jobboard');
       Route::get('/chakri', 'ChakriController@chakriboard');
+      Route::get('search/charki', 'ChakriController@chakrisearch');
       Route::get('/show/ejobs/{id}','JobsController@showjobs');
 
   //Chakri
@@ -169,6 +170,7 @@ Route::group(['middleware' => ['web']], function () {
 
       //call for interview
       Route::get('call','ShortlistController@callforinterview');
+      Route::post('callthem/{id}','EmployerController@callforinterview');
 
 
 });

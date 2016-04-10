@@ -17,6 +17,7 @@ class EmployerInfoController extends Controller
     }
   public function index()
   {
+    
        return view('employer.employerinfo');
    }
    public function store(Request $request){

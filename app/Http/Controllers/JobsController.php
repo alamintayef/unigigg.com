@@ -68,8 +68,11 @@ class JobsController extends Controller
     public function show(Request $request)
     {
       $postedjobs = Jobs::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->get();
+      
       return view('employer.postedjobs', [
         'postedjobs'=>$postedjobs,
+
+
       ]);
     }
     public function jobboard(Request $request)

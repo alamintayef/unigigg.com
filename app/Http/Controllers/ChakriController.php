@@ -46,23 +46,39 @@ class ChakriController extends Controller
     public function chakriboard(Request $request)
     {
       $id = auth()->user()->id;
+
       $jobs = DB::table('jobs')
             ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
             ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
             ->orderBy('created_at', 'desc')
             ->get();
-            $already = DB::table('student_applieds')
-                      ->join('jobs', 'student_applieds.applied_for_job_id','=','jobs.job_id')
-                      ->first();
+
 
       return view('chakri', [
         'jobs'=>$jobs,
-        'already' => $already,
+
 
 
 
       ]);
     }
+    public function chakrisearch()
+    {
+      $search = \Request::get('search');
+      $jobs = DB::table('jobs')
+            ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
+            ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
+            ->where('jobs.job_name','like','%'.$search.'%')
+            ->orWhere('jobs.job_location','like','%'.$search.'%')
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+            return view('chakri.regularchakri.chakrisearch',[
+              'jobs'=>$jobs
+            ]);
+
+    }
+
     public function internships(Request $request)
     {
         $jobs=  DB::table('jobs')
@@ -74,7 +90,7 @@ class ChakriController extends Controller
 
                return view('chakri.internship', [
            'jobs'=>$jobs,
-           
+
          ]);
     }
     public function fulltime(Request $request)

@@ -10,16 +10,11 @@
 
           <h4 class="textb">Shortlisted Candidates </h4>
           <a href="{{url('/postedjobs')}}"><h5> <i class="fa fa-arrow-left"></i> Go Back</h5></a>
-          <form class="" action="" method="post">
-              <a type="button" name="button" class="pull-right btn btn-default" href="{{url('call')}}"> <i class="fa fa-phone-square"></i> Call for Interview</a>
-          </form>
+
 
           @foreach( $shortlisted as $shortlist )
 
-
-
-
-              <table class="table  ">
+            <table class="table ">
                 <thead>
                   <th>
                     Candidate Name
@@ -53,6 +48,12 @@
                         <p>
                           Finalized
                         </p>
+                        <td>
+                          <form class="" action="{{url('callthem',$shortlist->shortlisted_for_job_id)}}" method="post">
+                            {!! csrf_field() !!}
+                          <button type="submit" name="button" class="btn btn-default"><i class="fa fa-phone-square"></i> Call for Interview</button>
+                          </form>
+                        </td>
                       @else
 
                         <form action="{{url('finalize',$shortlist->em_shortlist_id)}}" method="POST">
@@ -61,10 +62,12 @@
                             <i class="fa fa-check"></i>Finalize
                           </button>
                         </form>
+                        </td>
 
 
                       @endif
-                    </td>
+
+
 
                   </tr>
                 </tbody>
