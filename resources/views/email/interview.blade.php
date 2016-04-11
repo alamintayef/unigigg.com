@@ -1,6 +1,6 @@
-<h1>Hello {{$call->fname}} </h1>
+<h1>Hello {{$calls->fname}} </h1>
 <p>
-    you been called on an interview for {{$call->title}} by {{$call->name}}.<br>
-    You may please call and confirm the appointment 
+    you been called on an interview for {{$calls->title}} by {{$calls->name}}.<br>
+    You may please call and confirm the appointment
 
 </p>

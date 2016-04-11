@@ -13,7 +13,7 @@ class EmailController extends Controller
  {
      $users = User::all();
      foreach($users as $user) {
-       Mail::send('email.interview', ['user' => $user], function ($m) use ($user) {
+       Mail::send('email.test', ['user' => $user], function ($m) use ($user) {
          $m->from('tayef@unigigg.com', 'Tayef from unigigg');
 
          $m->to($user->email, $user->name)->subject('Welcome to unigigg');
