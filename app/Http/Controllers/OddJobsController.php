@@ -212,7 +212,7 @@ class OddJobsController extends Controller
 
       $user= DB::table('user_info')->select('user_info.mobile')->where('user_id',$uid)->get();
         //----------------------------------------------------------
-        $deviceID = '20198';
+      /*  $deviceID = '20198';
         foreach ($calls as $call) {
 
           $number = $call->mobile;
@@ -220,6 +220,7 @@ class OddJobsController extends Controller
           $message = 'Congrats! '.$call->fname.' '.$call->lname.' You have been selected for an interview by '.$call->name.' for '.$call->title.'. Please Check your Mail';
         }
         $message =  SMSGateway::sendMessageToNumber($number, $message, $deviceID);
+        */
       foreach($calls as $call) {
           Mail::send('email.interview', ['call' =>$call], function ($m) use ($call) {
             $m->from('tayef@unigigg.com', 'Tayef from unigigg');

@@ -36,7 +36,7 @@
 
 
             <td>
-              <form action="{{url('removeapplication',$apply->id)}}" method="POST">
+              <form action="{{url('removeapplication',$apply->o_a_id)}}" method="POST">
                 {!! csrf_field() !!}
                 <button type="submit" class="btn btn-danger">
                   <i class="fa fa-user"></i> Remove
