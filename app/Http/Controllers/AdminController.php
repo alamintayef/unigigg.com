@@ -34,7 +34,7 @@ class AdminController extends Controller
     //
     public function __construct()
     {
-      $this->middleware('auth');
+      $this->middleware(['auth','employer']);
     }
     public function index()
     {
@@ -150,6 +150,18 @@ class AdminController extends Controller
         'jobs'=>$jobs,
       ]);
     }
+    public function deletejobs($id)
+    {
+      $jobs = Jobs::where('job_id','=',$id);
+
+      $jobs->delete();
+      notify()->flash('Deleted Successfully!', 'success', [
+        'timer' => 2000,
+
+      ]);
+
+      return redirect('/managejobs');
+    }
   // Eccentric Job Cron
     public function manageoddjobs(){
 
@@ -158,6 +170,16 @@ class AdminController extends Controller
         'jobs'=>$jobs,
       ]);
     }
+    public function destroy($id)
+    {
+      $jobs = OddJobs::where('odd_id','=',$id);
+
+      $jobs->delete();
+
+
+      return redirect('/postedjobs');
+
+  }
     public function adduni()
     {
       return view('admin.adduni');

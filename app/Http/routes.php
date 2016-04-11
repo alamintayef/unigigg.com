@@ -96,7 +96,9 @@ Route::group(['middleware' => ['web']], function () {
       Route::get('call/for/in', 'AdminController@callforinterview');
       Route::post('verify/{id}', 'AdminController@verify');
       Route::get('managejobs','AdminController@managejobs');
+      Route::post('admindeletejobs/{id}','AdminController@deletejobs');
       Route::get('manage/odd/jobs','AdminController@manageoddjobs');
+      Route::post('admindeleteoddjobs/{id}','AdminController@destroy');
       Route::get('adduniversity', 'AdminController@adduni');
       Route::get('search','AdminController@search');
 
@@ -119,7 +121,7 @@ Route::group(['middleware' => ['web']], function () {
   //Post Jobs
       Route::get('/postjobs', 'EmployerController@postjobs');
       Route::post('/postjobs', 'JobsController@store');
-      Route::post('postjobs/{id}','JobsController@destroy');
+      Route::post('deletejobs/{id}','JobsController@destroy');
       Route::get('/postedjobs', 'JobsController@show');
   //Jobs
       Route::get('/jobs', 'JobsController@jobboard');
@@ -171,6 +173,7 @@ Route::group(['middleware' => ['web']], function () {
       //call for interview
       Route::get('call','ShortlistController@callforinterview');
       Route::post('callthem/{id}','EmployerController@callforinterview');
+      Route::get('callforodd/{id}','OddJobsController@callforodd');
 
 
 });

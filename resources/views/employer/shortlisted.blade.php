@@ -19,8 +19,6 @@
                   <th>
                     Candidate Name
                   </th>
-
-
                   <th>
                     Remove
                   </th>
@@ -48,15 +46,9 @@
                         <p>
                           Finalized
                         </p>
-                        <td>
-                          <form class="" action="{{url('callthem',$shortlist->shortlisted_for_job_id)}}" method="post">
-                            {!! csrf_field() !!}
-                          <button type="submit" name="button" class="btn btn-default"><i class="fa fa-phone-square"></i> Call for Interview</button>
-                          </form>
-                        </td>
                       @else
 
-                        <form action="{{url('finalize',$shortlist->em_shortlist_id)}}" method="POST">
+                        <form action="{{url('finalize',$shortlist->shortlisted_for_job_id)}}" method="POST">
                           {!! csrf_field() !!}
                           <button type="submit" class="btn btn-success btn-sm btn-block-sm">
                             <i class="fa fa-check"></i>Finalize
@@ -64,15 +56,10 @@
                         </form>
                         </td>
 
-
                       @endif
-
-
 
                   </tr>
                 </tbody>
-
-
 
             @endforeach
 

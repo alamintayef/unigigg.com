@@ -26,23 +26,32 @@
                 <div class="pull-right col-md-2">
                   <form  action="{{url('/eccentric/jobs/whoapplied/delete',$seek->id)}}" method="GET">
                   {!! csrf_field() !!}
-                  <button type="submit" class="btn btn-danger btn-sm btn-block-sm">
-                    <i class="fa fa-trash-o"></i> Remove
+                  <button type="submit" class="btn btn-danger btn-block btn-sm">
+                    <i class="fa fa-trash-o"></i> Delete
                   </button>
                 </form>
                   <form  action="{{url('/profile',$seek->id)}}" method="GET">
                   {!! csrf_field() !!}
-                  <button type="submit" class="btn btn-info btn-sm btn-block">
-                    <i class="fa fa-user"></i> view profile
+                  <button type="submit" class="btn btn-info btn-block btn-sm ">
+                    <i class="fa fa-user"></i> Profile
                   </button>
                 </form>
 
 
                 </div>
                 <br>
-                <button type="submit" class="btn btn-success btn-sm btn-block-sm">
-                  <i class="fa fa-phone"></i> Call For Interview
-                </button>
+                @if($seek->called===0)
+                  <form  action="{{url('/callforodd',$seek->id)}}" method="GET">
+                  {!! csrf_field() !!}
+                  <button type="submit" class="btn btn-default btn-sm ">
+                    <i class="fa fa-phone"></i> Call for interview
+                  </button>
+                  <small><em>Pressing call for interview will notify the candidate and show you their number</em></small>
+                </form>
+                @else
+                  Already Notified
+                @endif
+
 
 
 

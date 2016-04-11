@@ -16,6 +16,7 @@ class CreateOddAppliedsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
             $table->integer('applied_for_job_id');
+            $table->boolean('called')->default(0);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

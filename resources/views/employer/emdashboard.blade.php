@@ -79,7 +79,7 @@
 
                   @endforeach
 
-                  <h4>You have posted {{$jobcount}} jobs</h4>
+                  <h5>You have posted <em> {{$jobcount}} </em>jobs</h5>
 
                 </div>
               @endif

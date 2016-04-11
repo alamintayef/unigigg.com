@@ -21,7 +21,7 @@ use App\Model\Student\FunFacts;
 use App\Model\Student\Image;
 use App\Model\Student\EmInfo;
 use App\Model\Student\Jobs;
-
+use Mail;
 class ApplyController extends Controller
 {
     //
@@ -44,13 +44,12 @@ class ApplyController extends Controller
             ->join('users' ,'student_applieds.user_id','=','users.id')
             ->select('student_applieds.*', 'user_info.*','users.id','jobs.job_id', 'jobs.job_name','jobs.user_id')
             ->get();
-    $already = DB::table('student_applieds')
-              ->join('em_shortlists', 'student_applieds.applied_for_job_id','=','em_shortlists.shortlisted_for_job_id')
-              ->get();
-      return view('employer.applied', [
-        'applied'=>$applied,
-        'already' => $already,
+     $uid= auth()->user()->id;
+     $email = auth()->user()->email;
 
+   
+     return view('employer.applied', [
+        'applied'=>$applied,
       ]);
 
     }

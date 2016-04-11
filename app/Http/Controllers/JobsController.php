@@ -68,7 +68,7 @@ class JobsController extends Controller
     public function show(Request $request)
     {
       $postedjobs = Jobs::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->get();
-      
+
       return view('employer.postedjobs', [
         'postedjobs'=>$postedjobs,
 
@@ -96,7 +96,10 @@ class JobsController extends Controller
       $jobs = Jobs::where('job_id','=',$id);
 
       $jobs->delete();
+      notify()->flash('Deleted Successfully!', 'success', [
+        'timer' => 2000,
 
+      ]);
 
       return redirect('/postedjobs');
 
@@ -109,6 +112,7 @@ class JobsController extends Controller
     ->join('odd_jobs', 'odd_applieds.applied_for_job_id', '=', 'odd_jobs.odd_id')
     ->select('odd_applieds.*', 'user_info.*','odd_jobs.odd_id', 'odd_jobs.title','odd_jobs.user_id')
     ->get();
+    
 
 
     return view('jobs.oddappliedem', [

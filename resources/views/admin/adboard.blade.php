@@ -23,7 +23,7 @@
        <li class="list-group-item">Total Eccentric Jobs : {{count($allOddJobs)}}</li>
        <li class="list-group-item">Total Jobs : {{count($allJobs)}}</li>
        <li class="list-group-item"><a href="{{url('employerlist')}}">Employer board</a></li>
-       <li class="list-group-item"><a href="{{url('search')}}">search</a></li>
+      
        <li class="list-group-item"><a href="{{url('adduniversity')}}">adduniversity</a></li>
       </ul>
 

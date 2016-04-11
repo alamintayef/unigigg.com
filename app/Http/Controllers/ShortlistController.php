@@ -35,7 +35,7 @@ class ShortlistController extends Controller
                     ->join('user_info', 'em_shortlists.user_id', '=', 'user_info.user_id')
                     ->select('em_shortlists.*', 'user_info.fname','user_info.lname')
                     ->where('em_shortlists.shortlisted_for_job_id', $id)
-                  
+
                     ->get();
       $id = auth()->user()->id;
       $shortlistlimit = DB::table('em_shortlists')
@@ -67,11 +67,11 @@ class ShortlistController extends Controller
     public function finalize($id)
     {
       DB::table('em_shortlists')
-            ->where('em_shortlist_id', $id)
+            ->where('em_shortlists.shortlisted_for_job_id', $id)
             ->update(['finalized' => 1]);
 
 
-      return redirect('/postedjobs');
+      return redirect('postedjobs');
     }
 
     public function callforinterview()

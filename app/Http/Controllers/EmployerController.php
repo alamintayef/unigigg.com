@@ -14,7 +14,7 @@ class EmployerController extends Controller
     //
     public function index()
     {
-    
+
       return view('home');
     }
 
@@ -36,7 +36,7 @@ class EmployerController extends Controller
       return view('employer.postjob', [
         'postedjobs'=>$postedjobs,
         'postable' => $postable,
-        'area' => $area,
+      
       ]);
 
 

@@ -27,6 +27,10 @@ class Employer
            {
              return $next($request);
            }
+           elseif(Auth::user()->type==3)
+           {
+             return $next($request);
+           }
            else {
              return redirect()->guest('home');
            }

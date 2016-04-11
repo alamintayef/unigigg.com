@@ -7,6 +7,7 @@ use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
+use SMSGateway;
 class OddJobsController extends Controller
 {
       //
@@ -181,11 +182,36 @@ class OddJobsController extends Controller
       public function destroy($id)
       {
         $jobs = OddJobs::where('odd_id','=',$id);
-
         $jobs->delete();
-
-
         return redirect('/postedjobs');
 
+    }
+
+    public function callforodd($id)
+    {
+      $uid = auth()->user()->id;
+      DB::table('odd_applieds')
+                  ->where('user_id', $id)
+                  ->update(['called' => '1']);
+      $call = DB::table('odd_applieds')
+          ->join('user_info', 'odd_applieds.user_id', '=', 'user_info.user_id')
+          ->join('odd_jobs', 'odd_applieds.applied_for_job_id','=', 'odd_jobs.odd_id')
+          ->join('users', 'odd_jobs.user_id','=','users.id')
+          ->select('user_info.fname','user_info.lname', 'user_info.mobile','odd_jobs.title','users.name')
+          ->where('user_info.user_id',$id)
+          ->get();
+
+        $deviceID = '20198';
+        foreach ($call as $calls) {
+
+          $number = $calls->mobile;
+
+          $message = 'Congrats! '.$calls->fname.' '.$calls->lname.' You have been called for an interview by '.$calls->name.' for '.$calls->title.'. Please Check your Mail';
+        }
+
+
+        $message =  SMSGateway::sendMessageToNumber($number, $message, $deviceID);
+
+        return redirect('eccentric/jobs/whoapplied');
     }
 }

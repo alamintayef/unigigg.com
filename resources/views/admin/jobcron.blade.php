@@ -22,7 +22,7 @@
                   <td>{{ $job->job_name }}</td>
                   <td>{{ $job->created_at }}</td>
                   <td>
-                    <form class="form-inline" action="{{url('postjobs',$job->job_id)}}" method="POST">
+                    <form class="form-inline" action="{{url('admindeletejobs',$job->job_id)}}" method="POST">
                       {!! csrf_field() !!}
                       <button type="submit" class="btn btn-danger btn-sm btn-block-sm">
                         <i class="fa fa-trash-o"></i> Remove
