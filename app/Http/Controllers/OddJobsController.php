@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use SMSGateway;
+use Mail;
 class OddJobsController extends Controller
 {
       //
@@ -185,32 +186,47 @@ class OddJobsController extends Controller
         $jobs->delete();
         return redirect('/postedjobs');
 
-    }
+      }
+      public function whoapplieddelete($id){
+        $applied = DB::table('odd_applieds')
+        ->select('odd_applieds.*')
+        ->where('o_a_id','=',$id);
+        $applied->delete();
+        return redirect('eccentric/jobs/whoapplied');
+      }
 
     public function callforodd($id)
     {
       $uid = auth()->user()->id;
       DB::table('odd_applieds')
-                  ->where('user_id', $id)
+                  ->where('o_a_id', $id)
                   ->update(['called' => '1']);
-      $call = DB::table('odd_applieds')
+      $calls = DB::table('odd_applieds')
           ->join('user_info', 'odd_applieds.user_id', '=', 'user_info.user_id')
           ->join('odd_jobs', 'odd_applieds.applied_for_job_id','=', 'odd_jobs.odd_id')
           ->join('users', 'odd_jobs.user_id','=','users.id')
-          ->select('user_info.fname','user_info.lname', 'user_info.mobile','odd_jobs.title','users.name')
-          ->where('user_info.user_id',$id)
+          ->select('user_info.fname','user_info.lname', 'user_info.mobile','odd_jobs.title','users.name','users.email')
+          ->where('odd_applieds.o_a_id',$id)
+
           ->get();
 
+      $user= DB::table('user_info')->select('user_info.mobile')->where('user_id',$uid)->get();
+        //----------------------------------------------------------
         $deviceID = '20198';
-        foreach ($call as $calls) {
+        foreach ($calls as $call) {
 
-          $number = $calls->mobile;
+          $number = $call->mobile;
 
-          $message = 'Congrats! '.$calls->fname.' '.$calls->lname.' You have been called for an interview by '.$calls->name.' for '.$calls->title.'. Please Check your Mail';
+          $message = 'Congrats! '.$call->fname.' '.$call->lname.' You have been selected for an interview by '.$call->name.' for '.$call->title.'. Please Check your Mail';
         }
-
-
         $message =  SMSGateway::sendMessageToNumber($number, $message, $deviceID);
+      foreach($calls as $call) {
+          Mail::send('email.interview', ['call' =>$call], function ($m) use ($call) {
+            $m->from('tayef@unigigg.com', 'Tayef from unigigg');
+
+            $m->to($call->email)->subject('Interview Alert');
+        });
+      }
 
         return redirect('eccentric/jobs/whoapplied');
     }

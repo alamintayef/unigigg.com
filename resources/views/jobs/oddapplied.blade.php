@@ -24,7 +24,7 @@
 
 
                 <div class="pull-right col-md-2">
-                  <form  action="{{url('/eccentric/jobs/whoapplied/delete',$seek->id)}}" method="GET">
+                  <form  action="{{url('eccentricjobswhoapplieddelete',$seek->o_a_id)}}" method="post">
                   {!! csrf_field() !!}
                   <button type="submit" class="btn btn-danger btn-block btn-sm">
                     <i class="fa fa-trash-o"></i> Delete
@@ -41,7 +41,7 @@
                 </div>
                 <br>
                 @if($seek->called===0)
-                  <form  action="{{url('/callforodd',$seek->id)}}" method="GET">
+                  <form  action="{{url('/callforodd',$seek->o_a_id)}}" method="GET">
                   {!! csrf_field() !!}
                   <button type="submit" class="btn btn-default btn-sm ">
                     <i class="fa fa-phone"></i> Call for interview
@@ -52,18 +52,13 @@
                   Already Notified
                 @endif
 
-
-
-
-
             </div>
+          @endif
 
+    @endforeach
           </div>
-              @endif
 
-        @endforeach
 
 
       </div>
     </div>
-  </div>
