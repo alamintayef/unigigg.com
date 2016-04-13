@@ -135,10 +135,11 @@ Route::group(['middleware' => ['web']], function () {
       Route::get('/parttime', 'ChakriController@parttime');
       Route::get('/onetime', 'ChakriController@onetime');
   //show who applied
-      Route::get('/whoapplied/{id}', 'ApplyController@showApplied');
+      Route::get('/whoapplied/{id}', ['as'=>'whoapplied','uses'=> 'ApplyController@showApplied']);
   //shortlist
       Route::post('/shortlist','ShortlistController@store');
-      Route::get('/shortlists/{id}','ShortlistController@shortlistview');
+      Route::get('/shortlists/{id}',['as'=>'shortlists', 'uses'=> 'ShortlistController@shortlistview']);
+    //  Route::get('states/{id}/regions/{capital}', ['as' => 'regions', 'uses' => 'RegionController@index'])
       Route::post('/shortlist/{id}','ShortlistController@destroy');
 
   //Finalize

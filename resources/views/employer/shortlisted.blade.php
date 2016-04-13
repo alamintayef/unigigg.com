@@ -35,9 +35,12 @@
                     <td>
                       <form action="{{url('shortlist',$shortlist->em_shortlist_id)}}" method="POST">
                         {!! csrf_field() !!}
+
                         <button type="submit" class="btn btn-info btn-sm ">
                           <i class="fa fa-user"></i> Remove
                         </button>
+                        <input type="hidden" name="user_id" value="{{$shortlist->user_id}}">
+                        <input type="hidden" name="shortlisted_for_job_id" value="{{$shortlist->shortlisted_for_job_id}}">
                       </form>
                     </td>
                     <td>

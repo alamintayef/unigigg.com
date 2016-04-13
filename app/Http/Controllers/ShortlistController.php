@@ -10,7 +10,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Model\Student\User;
 use DB;
-
+use Redirect;
 class ShortlistController extends Controller
 {
     //
@@ -21,12 +21,18 @@ class ShortlistController extends Controller
 
     public function store(Request $request)
     {
-
+      $id = $request->shortlisted_for_job_id;
+      $uid = $request->user_id;
       $input = $request->all();
 
       EmShortlist::create($input);
 
-      return redirect('/postedjobs');
+      DB::table('student_applieds')
+            ->where('student_applieds.applied_for_job_id', $id)
+            ->where('student_applieds.user_id', $uid)
+            ->update(['already' => '1']);
+
+      return Redirect::route('whoapplied', $id);
     }
 
     public function shortlistview($id)
@@ -35,7 +41,6 @@ class ShortlistController extends Controller
                     ->join('user_info', 'em_shortlists.user_id', '=', 'user_info.user_id')
                     ->select('em_shortlists.*', 'user_info.fname','user_info.lname')
                     ->where('em_shortlists.shortlisted_for_job_id', $id)
-
                     ->get();
       $id = auth()->user()->id;
       $shortlistlimit = DB::table('em_shortlists')
@@ -55,10 +60,17 @@ class ShortlistController extends Controller
         ]);
 
     }
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
+
       $var = EmShortlist::where('em_shortlist_id','=',$id);
       $var->delete();
+      $sid = $request->shortlisted_for_job_id;
+      $uid = $request->user_id;
+      DB::table('student_applieds')
+          ->where('student_applieds.applied_for_job_id', $sid)
+          ->where('student_applieds.user_id', $uid)
+            ->update(['already' => '0']);
 
       return redirect('/postedjobs');
 
@@ -71,7 +83,7 @@ class ShortlistController extends Controller
             ->update(['finalized' => 1]);
 
 
-      return redirect('postedjobs');
+      return Redirect::route('shortlists', $id);
     }
 
     public function callforinterview()

@@ -43,19 +43,23 @@
                   <i class="fa fa-user"></i> view profile
                 </button>
               </form>
+                @if($seek->already===0)
+                  <form action="{{url('shortlist')}}" method="post">
+                    {!! csrf_field() !!}
+                    <input type="hidden" name="user_id" value="{{$seek->id}}">
+                    <input type="hidden" name="shortlisted_for_job_id" value="{{$seek->job_id}}">
+                    <input type="hidden" name="shortlistedby" value="{{Auth::user()->id}}">
+                    <button type="submit" class="btn btn-primary ">
+                      <i class="fa fa-bookmark"></i> Shortlist
+                    </button>
+                  </form>
+                @else
+                  <h6 class="textb">Already Shortlisted</h6>
 
-                <form action="{{url('shortlist')}}" method="post">
-                  {!! csrf_field() !!}
-                  <input type="hidden" name="user_id" value="{{$seek->id}}">
-                  <input type="hidden" name="shortlisted_for_job_id" value="{{$seek->job_id}}">
-                  <input type="hidden" name="shortlistedby" value="{{Auth::user()->id}}">
-                  <button type="submit" class="btn btn-warning ">
-                    <i class="fa fa-bookmark"></i> Shortlist
-                  </button>
-                </form>
 
 
 
+                  @endif
 
               </p>
 

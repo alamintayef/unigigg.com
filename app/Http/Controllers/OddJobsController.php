@@ -208,16 +208,15 @@ class OddJobsController extends Controller
           ->select('user_info.fname','user_info.lname', 'user_info.mobile','odd_jobs.title','users.name','users.email')
           ->where('odd_applieds.o_a_id',$id)
           ->first();
-
+          
 
         //----------------------------------------------------------
       /*  $deviceID = '20198';
-        foreach ($calls as $call) {
 
-          $number = $call->mobile;
 
-          $message = 'Congrats! '.$call->fname.' '.$call->lname.' You have been selected for an interview by '.$call->name.' for '.$call->title.'. Please Check your Mail';
-        }
+          $number = $calls->mobile;
+
+          $message = 'Congrats! '.$call->fname.' '.$call->lname.' You have been selected for an interview, for the job called '.$call->title.'. Please Check your Mail';
 
         $message =  SMSGateway::sendMessageToNumber($number, $message, $deviceID);
         */
