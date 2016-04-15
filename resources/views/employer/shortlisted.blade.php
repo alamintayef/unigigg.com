@@ -49,6 +49,12 @@
                         <p>
                           Finalized
                         </p>
+                        <form class="pull-right" action="{{url('callthem',$shortlist->em_shortlist_id)}}" method="POST">
+                          {!! csrf_field() !!}
+                          <button type="submit" class="btn btn-default btn-sm">
+                            <i class="fa fa-phone"></i> call-for-interview
+                          </button>
+                        </form>
                       @else
 
                         <form action="{{url('finalize',$shortlist->shortlisted_for_job_id)}}" method="POST">

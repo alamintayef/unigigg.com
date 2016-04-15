@@ -42,12 +42,13 @@ class ApplyController extends Controller
             ->join('user_info', 'student_applieds.user_id', '=', 'user_info.user_id')
             ->join('jobs', 'student_applieds.applied_for_job_id', '=', 'jobs.job_id')
             ->join('users' ,'student_applieds.user_id','=','users.id')
-            ->select('student_applieds.*', 'user_info.*','users.id','jobs.job_id', 'jobs.job_name','jobs.user_id')
+            ->join('vprofiles', 'users.id','=', 'vprofiles.user_id')
+            ->select('student_applieds.*', 'user_info.*','users.id','jobs.job_id', 'jobs.job_name','jobs.user_id','vprofiles.vdourl')
             ->get();
      $uid= auth()->user()->id;
      $email = auth()->user()->email;
 
-   
+
      return view('employer.applied', [
         'applied'=>$applied,
       ]);

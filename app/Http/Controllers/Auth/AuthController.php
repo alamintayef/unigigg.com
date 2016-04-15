@@ -7,7 +7,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-use Mail;
+use Mailgun;
 use Carbon\Carbon;
 class AuthController extends Controller
 {
@@ -66,7 +66,7 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-           Mail::send('email.welcomeemail',[ 'data' =>  $data ], function ($m) use ($data) {
+           Mailgun::send('email.welcomeemail',[ 'data' =>  $data ], function ($m) use ($data) {
            $m->from('tayef@unigigg.com', 'Tayef from unigigg');
 
            $m->to($data['email'], $data['name'])->subject('Welcome to unigigg');

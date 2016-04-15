@@ -14,7 +14,7 @@
   <div class="container ">
     <div class="row">
       @if(Auth::user()->type==2)
-        <a href="{{url('whoapplied')}}">Go Back</a>
+        <a href="{{URL::previous()}}">Go Back</a>
       @elseif(Auth::user()->type==1)
         <a href="{{url('home')}}">Go Back</a>
       @else
@@ -33,13 +33,13 @@
               <br>
               @foreach($user as $users)
                 @if($users->verified===1)
-                  <p class="text-success">
+                  <h6 class="text-success">
                     Verified
-                  </p>
+                  </h6>
                 @else
-                  <p class="text-danger">
+                  <h6 class="text-danger">
                     Not Verified
-                  </p>
+                  </h6>
                 @endif
               @endforeach
             </div>
@@ -51,39 +51,18 @@
               <div >
 
                 <p>
-                  University :{{$view->institute}}
+                <b>  University:</b> <em><b> {{$view->institute}} </b></em>
                 </p>
 
               </div>
             @endforeach
 
             <h4>Skills</h4>
-            <table class="table ft">
-              <thead>
-                <th>
-                  Title
-                </th>
-                <th>
-                  Level
-                </th>
-                <th>
-                  Verification
-                </th>
-              </thead>
+
             @foreach($skill as $skills)
 
-                <tbody>
-                  <tr>
-                    <td class="td">
-                      {{$skills->skill_name}}
-                    </td>
-                    <td class="td">
-                      {{$skills->skill_level}}
-                    </td>
+            <strong>Skills :</strong> {{$skills->skill_name}} , <strong>Level: </strong>{{$skills->skill_level}} <br>
 
-                  </tr>
-                </tbody>
-              </table>
             @endforeach
 
             <h4>Education</h4>

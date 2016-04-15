@@ -59,7 +59,7 @@
                           <i class="fa fa-paper-plane"></i> Show Applied
                         </button>
                       </form>
-                      <form class="pull-right" action="{{url('callthem',$jobs->job_id)}}" method="POST">
+                      <form class="pull-right" action="{{url('callthem/all',$jobs->job_id)}}" method="POST">
                         {!! csrf_field() !!}
                         <button type="submit" class="btn btn-default btn-sm">
                           <i class="fa fa-phone"></i> call-for-interview

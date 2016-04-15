@@ -20,7 +20,7 @@
             </div>
             <div class="panel-body">
               <p class="col-md-4">
-
+              <iframe width="260" height="115" src="https://www.youtube.com/embed/{{$seek->vdourl}}" frameborder="0" allowfullscreen></iframe>
               </p>
 
               <p class="col-md-4">
@@ -43,7 +43,7 @@
                   <i class="fa fa-user"></i> view profile
                 </button>
               </form>
-                @if($seek->already===0)
+              @if($seek->already===0)
                   <form action="{{url('shortlist')}}" method="post">
                     {!! csrf_field() !!}
                     <input type="hidden" name="user_id" value="{{$seek->id}}">
@@ -53,13 +53,9 @@
                       <i class="fa fa-bookmark"></i> Shortlist
                     </button>
                   </form>
-                @else
+              @else
                   <h6 class="textb">Already Shortlisted</h6>
-
-
-
-
-                  @endif
+              @endif
 
               </p>
 
@@ -67,7 +63,7 @@
             </div>
 
           </div>
-              @endif
+         @endif
 
         @endforeach
 

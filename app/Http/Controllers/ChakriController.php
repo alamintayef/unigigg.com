@@ -174,7 +174,8 @@ class ChakriController extends Controller
       $applicable=DB::table('user_info')
                   ->where('user_info.user_id' ,'=',$uid)
                   ->join('skills', 'user_info.user_id','=','skills.user_id')
-                  ->select('user_info.*','skills.*')
+                  ->join('education', 'education.user_id','=','skills.user_id')
+                  ->select('user_info.*','skills.*','education.*')
                   ->get();
             return view('jobs.chakriview', [
               'jobs'=>$jobs,

@@ -8,7 +8,8 @@ use App\Model\Student\Area;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
-use Mail;
+use Mailgun;
+use SMSGateway;
 class EmployerController extends Controller
 {
     //
@@ -36,7 +37,7 @@ class EmployerController extends Controller
       return view('employer.postjob', [
         'postedjobs'=>$postedjobs,
         'postable' => $postable,
-      
+
       ]);
 
 
@@ -44,36 +45,62 @@ class EmployerController extends Controller
 
     public function callforinterview($id)
     {
+      $calls = DB::table('em_shortlists')
+          ->join('user_info', 'em_shortlists.user_id', '=', 'user_info.user_id')
+          ->join('users', 'em_shortlists.user_id','=','users.id')
+          ->join('em_infos', 'em_shortlists.shortlistedby', '=', 'em_infos.user_id')
+          ->join('jobs', 'em_shortlists.shortlisted_for_job_id', '=', 'jobs.job_id')
+          ->select('user_info.fname', 'user_info.mobile', 'user_info.lname','em_infos.company_name','jobs.job_name','users.email','em_infos.company_phone')
+          ->where('em_shortlists.em_shortlist_id', $id)
+          ->first();
+          Mailgun::send('email.regular', ['calls' => $calls], function ($m) use ($calls) {
+              $m->from('call@unigigg.com', 'Interview call from unigigg');
+
+              $m->to($calls->email)->subject('Congrats!');
+          });
+
+
+          $deviceID = '20198';
+
+
+            $number = $calls->mobile;
+
+            $message = 'You have been called for an interview for '.$calls->job_name.' by '.$calls->company_name. 'please check your mail. -unigigg.com';
+            $message =  SMSGateway::sendMessageToNumber($number, $message, $deviceID);
+
+          return redirect('home');
+
+    }
+
+    public function callforinterviewall($id)
+    {
       $call = DB::table('em_shortlists')
           ->join('user_info', 'em_shortlists.user_id', '=', 'user_info.user_id')
           ->join('users', 'em_shortlists.user_id','=','users.id')
           ->join('em_infos', 'em_shortlists.shortlistedby', '=', 'em_infos.user_id')
           ->join('jobs', 'em_shortlists.shortlisted_for_job_id', '=', 'jobs.job_id')
-          ->select('user_info.fname', 'user_info.mobile', 'user_info.lname','em_infos.company_name','jobs.job_name','users.email')
+          ->select('user_info.fname', 'user_info.mobile', 'user_info.lname','em_infos.company_name','jobs.job_name','users.email','em_infos.company_phone')
           ->where('em_shortlists.shortlisted_for_job_id', $id)
-          ->where('finalized',1)
           ->get();
 
-
           foreach ($call as $calls) {
-          Mail::send('email.interview', ['call' => $calls], function ($m) use ($calls) {
-              $m->from('call@unigigg.com', 'Interview call from unigigg');
+              Mailgun::send('email.regular', ['calls' => $calls], function ($m) use ($calls) {
+                  $m->from('call@unigigg.com', 'Interview call from unigigg');
 
-              $m->to($calls->email)->subject('Congrats!');
-          });
-        }
-          /*
+                  $m->to($calls->email)->subject('Congrats!');
+              });
+                }
+          foreach ($call as $calls) {
+
           $deviceID = '20198';
-          foreach ($call as $calls) {
+
 
             $number = $calls->mobile;
 
-            $message = 'You have been called for an interview for '.$calls->job_name.' by '.$calls->company_name. '';
-          }
+            $message = 'You have been called for an interview for '.$calls->job_name.' by '.$calls->company_name. 'please check your mail. -unigigg.com';
+              }
+            $message =  SMSGateway::sendMessageToNumber($number, $message, $deviceID);
 
-
-          $message =  SMSGateway::sendMessageToNumber($number, $message, $deviceID);
-          */
           return redirect('home');
 
     }

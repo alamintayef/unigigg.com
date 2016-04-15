@@ -54,7 +54,7 @@
                         <div class="form-group">
                           <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                         </div>
-                        @if(count($applicable)>0)
+                        @if(count($applicable)>2)
                           @if(Auth::user()->verified===0)
                             <p class="text-danger">
                               You need to verify your profile to apply

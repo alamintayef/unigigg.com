@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use SMSGateway;
-use Mail;
+use Mailgun;
 class OddJobsController extends Controller
 {
       //
@@ -208,7 +208,7 @@ class OddJobsController extends Controller
           ->select('user_info.fname','user_info.lname', 'user_info.mobile','odd_jobs.title','users.name','users.email')
           ->where('odd_applieds.o_a_id',$id)
           ->first();
-          
+
 
         //----------------------------------------------------------
       /*  $deviceID = '20198';
@@ -221,7 +221,7 @@ class OddJobsController extends Controller
         $message =  SMSGateway::sendMessageToNumber($number, $message, $deviceID);
         */
 
-          Mail::send('email.interview', ['calls' =>$calls], function ($m) use ($calls) {
+          Mailgun::send('email.interview', ['calls' =>$calls], function ($m) use ($calls) {
             $m->from('tayef@unigigg.com', 'Tayef from unigigg');
 
             $m->to($calls->email)->subject('Interview Alert');

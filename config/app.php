@@ -151,6 +151,7 @@ return [
         Barryvdh\DomPDF\ServiceProvider::class,
         Codecourse\Notify\NotifyServiceProvider::class,
         Limatheus\SmsGateway\SmsGatewayServiceProvider::class,
+        Bogardo\Mailgun\MailgunServiceProvider::class,
 
 
 
@@ -219,6 +220,7 @@ return [
         'PDF'       => Barryvdh\DomPDF\Facade::class,
         'Notify'    => Codecourse\Notify\Facades\Notify::class,
         'SMSGateway'=> Limatheus\SmsGateway\Facade::class,
+        'Mailgun' => Bogardo\Mailgun\Facades\Mailgun::class,
 
 
 

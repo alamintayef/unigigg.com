@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Model\Student\User;
 use App\Http\Requests;
-use Mail;
+use Mailgun;
 class BillController extends Controller
 {
     //
@@ -34,7 +34,7 @@ class BillController extends Controller
         ]);
         $id = auth()->user()->id;
         $user= User::findorFail($id);
-        Mail::send('email.Verify',[ 'user' =>  $user ], function ($m) use ($user) {
+        Mailgun::send('email.Verify',[ 'user' =>  $user ], function ($m) use ($user) {
         $m->from('verification@unigigg.com', 'Verification Request');
 
         $m->to('tayef@unigigg.com')->subject('Please Verify My Profile');

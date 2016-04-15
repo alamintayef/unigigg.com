@@ -174,6 +174,7 @@ Route::group(['middleware' => ['web']], function () {
       //call for interview
       Route::get('call','ShortlistController@callforinterview');
       Route::post('callthem/{id}','EmployerController@callforinterview');
+      Route::post('callthem/all/{id}','EmployerController@callforinterviewall');
       Route::get('callforodd/{id}','OddJobsController@callforodd');
 
 

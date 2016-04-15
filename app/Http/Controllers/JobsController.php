@@ -112,7 +112,7 @@ class JobsController extends Controller
     ->join('odd_jobs', 'odd_applieds.applied_for_job_id', '=', 'odd_jobs.odd_id')
     ->select('odd_applieds.*', 'user_info.*','odd_jobs.odd_id', 'odd_jobs.title','odd_jobs.user_id')
     ->get();
-    
+
 
 
     return view('jobs.oddappliedem', [
@@ -132,7 +132,8 @@ class JobsController extends Controller
     $applicable=DB::table('user_info')
                 ->where('user_info.user_id' ,'=',$uid)
                 ->join('skills', 'user_info.user_id','=','skills.user_id')
-                ->select('user_info.*','skills.*')
+                ->join('education', 'education.user_id','=','skills.user_id')
+                ->select('user_info.*','skills.*','education.*')
                 ->get();
 
           return view('jobs.jobview', [
