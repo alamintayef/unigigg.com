@@ -96,12 +96,13 @@ Route::group(['middleware' => ['web']], function () {
       Route::post('area', 'AdminController@areastore');
 
       // view Profile
-      Route::get('/aprofile/{id}', 'AdminController@studentemview');
+      Route::get('/aprofile/{id}', 'AdminController@studentadminview');
       Route::get('verification', 'AdminController@verification');
       Route::get('employerlist', 'AdminController@employer');
 
-      //call for interview
-      Route::get('call/for/in', 'AdminController@callforinterview');
+      //call for interview by admin
+      Route::get('call/for/in', 'AdminController@ShowInterviewRequest');
+      Route::post('call/for/interview/{id}', 'AdminController@callallforinterview');
 
       //verify
       Route::post('verify/{id}', 'AdminController@verify');

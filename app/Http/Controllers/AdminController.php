@@ -25,6 +25,7 @@ use App\Model\Student\Reference;
 use App\Model\Student\Vprofile;
 use App\Model\Student\OddJobs;
 use DB;
+use Mailgun;
 use SMSGateway;
 use Carbon\Carbon;
 
@@ -55,7 +56,7 @@ class AdminController extends Controller
 
 
     }
-    public function studentemview($id)
+    public function studentadminview($id)
     {
       $user = User::where('id','=',$id)->get();
       $profile = UserInfo::where('user_id','=', $id)->get();
@@ -203,14 +204,16 @@ class AdminController extends Controller
           'skill'=> $skill,
         ]);
     }
-    public function callforinterview()
+    public function ShowInterviewRequest()
     {
-      $call = DB::table('em_shortlists')
-          ->join('user_info', 'em_shortlists.user_id', '=', 'user_info.user_id')
-          ->join('em_infos', 'em_shortlists.shortlistedby', '=', 'em_infos.user_id')
-          ->join('jobs', 'em_shortlists.shortlisted_for_job_id', '=', 'jobs.job_id')
-          ->select('user_info.fname', 'user_info.mobile', 'user_info.lname','em_infos.company_name','jobs.job_name')
-          ->get();
+
+      $interviewcall = DB:: table('call_for_interviews')
+                    ->join('em_infos', 'call_for_interviews.user_id', '=', 'em_infos.user_id')
+                    ->join('jobs', 'call_for_interviews.job_id', '=', 'jobs.job_id')
+
+                    ->select('em_infos.*','jobs.*','call_for_interviews.*')
+                    ->get();
+
           /*
             $deviceID = '20198';
           foreach ($call as $calls) {
@@ -224,7 +227,33 @@ class AdminController extends Controller
           $message =  SMSGateway::sendMessageToNumber($number, $message, $deviceID);
           */
           return view('admin.c4in', [
-            'call' => $call,
+            'interviewcall' => $interviewcall,
           ]);
+    }
+
+    public function callallforinterview($id)
+    {
+      DB::table('jobs')
+                  ->where('job_id', $id)
+                  ->update(['paid' => '1']);
+      $call = DB::table('em_shortlists')
+            ->join('call_for_interviews','em_shortlists.shortlisted_for_job_id','=','call_for_interviews.job_id')
+            ->join('jobs','em_shortlists.shortlisted_for_job_id','=','jobs.job_id')
+            ->join('users','em_shortlists.user_id','=','users.id')
+            ->join('user_info','users.id','=','user_info.user_id')
+            ->join('em_infos','call_for_interviews.user_id','=','em_infos.user_id')
+            ->select('users.email','em_shortlists.shortlisted_for_job_id','jobs.job_name','em_infos.company_name','em_infos.company_phone','user_info.fname','user_info.lname','call_for_interviews.appointment')
+            ->where('em_shortlists.shortlisted_for_job_id','=',$id)
+            ->get();
+          foreach ($call as $calls)
+          {
+
+            Mailgun::send('email.admin.callforinterviewbyadmin',[ 'calls' =>  $calls ], function ($m) use ($calls)
+            {
+              $m->from('callforinterview@unigigg.com', 'Congrats ! You have been selected for and Interview');
+              $m->to($calls->email)->subject('Call for interview Request');
+            });
+          }
+      return redirect('call/for/in');
     }
 }
