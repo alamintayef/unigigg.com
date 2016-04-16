@@ -198,6 +198,7 @@ class OddJobsController extends Controller
     public function callforodd($id)
     {
       $uid = auth()->user()->id;
+
       DB::table('odd_applieds')
                   ->where('o_a_id', $id)
                   ->update(['called' => '1']);
@@ -208,7 +209,8 @@ class OddJobsController extends Controller
           ->select('user_info.fname','user_info.lname', 'user_info.mobile','odd_jobs.title','users.name','users.email')
           ->where('odd_applieds.o_a_id',$id)
           ->first();
-
+      }
+  
 
         //----------------------------------------------------------
       /*  $deviceID = '20198';

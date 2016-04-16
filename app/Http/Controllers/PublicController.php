@@ -45,6 +45,16 @@ class PublicController extends Controller
 
     ]);
   }
+  
+  public function viewme($useremail)
+  {
+    $user= DB::table('users')->select('users.*')->where('email','=',$useremail)->first();
+
+    return view('info.viewme',[
+      'user' => $user,
+    ]);
+  }
+
   public function sendsms()
   {
 

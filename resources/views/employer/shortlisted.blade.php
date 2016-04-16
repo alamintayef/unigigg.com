@@ -46,15 +46,26 @@
                     <td>
 
                       @if($shortlist->finalized===1)
+                        @if(Auth::user()->subs_type===0)
                         <p>
                           Finalized
                         </p>
-                        <form class="pull-right" action="{{url('callthem',$shortlist->em_shortlist_id)}}" method="POST">
-                          {!! csrf_field() !!}
-                          <button type="submit" class="btn btn-default btn-sm">
-                            <i class="fa fa-phone"></i> call-for-interview
-                          </button>
-                        </form>
+
+                        @else
+                          <p>
+                            Finalized
+                          </p>
+                          @if($shortlist->called===0)
+                          <form class="pull-right" action="{{url('callthem',$shortlist->em_shortlist_id)}}" method="POST">
+                            {!! csrf_field() !!}
+                            <button type="submit" class="btn btn-default btn-sm">
+                              <i class="fa fa-phone"></i> call-for-interview
+                            </button>
+                          </form>
+                        @else
+                          <h4 class="textb">Already Notified</h4>
+                        @endif
+                      @endif
                       @else
 
                         <form action="{{url('finalize',$shortlist->shortlisted_for_job_id)}}" method="POST">

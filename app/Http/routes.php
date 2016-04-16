@@ -46,6 +46,7 @@ Route::get('auto', function()
 Route::get('/jobs/view','PublicController@publicboard');
 Route::get('/jobs/view/eccentric','PublicController@publiceccentricboard');
 Route::get('/sms', 'PublicController@sendsms');
+Route::get('profile/{useremail}','PublicController@viewme');
 
 /*
 |--------------------------------------------------------------------------
@@ -87,22 +88,36 @@ Route::group(['middleware' => ['web']], function () {
 
       //admin
       Route::get('admin','AdminController@index');
+      // add university
       Route::post('university', 'AdminController@unistore');
+      Route::get('adduniversity', 'AdminController@adduni');
+      //add area
       Route::get('area', 'AdminController@getarea');
       Route::post('area', 'AdminController@areastore');
+
+      // view Profile
       Route::get('/aprofile/{id}', 'AdminController@studentemview');
       Route::get('verification', 'AdminController@verification');
       Route::get('employerlist', 'AdminController@employer');
+
+      //call for interview
       Route::get('call/for/in', 'AdminController@callforinterview');
+
+      //verify
       Route::post('verify/{id}', 'AdminController@verify');
+      //managejobs
       Route::get('managejobs','AdminController@managejobs');
       Route::post('admindeletejobs/{id}','AdminController@deletejobs');
       Route::get('manage/odd/jobs','AdminController@manageoddjobs');
       Route::post('admindeleteoddjobs/{id}','AdminController@destroy');
-      Route::get('adduniversity', 'AdminController@adduni');
+      // admin search
       Route::get('search','AdminController@search');
 
+      // admin end ---------------------------------------------------
 
+
+      //Appointment
+      Route::get('setappointment/{id}','BillController@appointment');
 
       //payment
       Route::get('payment','BillController@index');

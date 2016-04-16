@@ -59,13 +59,22 @@
                           <i class="fa fa-paper-plane"></i> Show Applied
                         </button>
                       </form>
-                      <form class="pull-right" action="{{url('callthem/all',$jobs->job_id)}}" method="POST">
+
+                      @if(Auth::user()->subs_type===0)
+                        <form class="pull-right" action="{{url('/setappointment',$jobs->job_id)}}" method="GET">
+
+                        <button type="submit" class="btn btn-default btn-sm">
+                          <i class="fa fa-phone"></i> call Shortlisted
+                        </button>
+                      </form>
+                      @else
+                        <form class="pull-right" action="{{url('callthem/all',$jobs->job_id)}}" method="POST">
                         {!! csrf_field() !!}
                         <button type="submit" class="btn btn-default btn-sm">
                           <i class="fa fa-phone"></i> call-for-interview
                         </button>
                       </form>
-
+                    @endif
 
                   </div>
 

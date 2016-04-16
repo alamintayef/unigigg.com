@@ -43,6 +43,7 @@ class EmployerController extends Controller
 
     }
 
+    // Call All Shorlisted Candidates one by one
     public function callforinterview($id)
     {
       $calls = DB::table('em_shortlists')
@@ -53,24 +54,31 @@ class EmployerController extends Controller
           ->select('user_info.fname', 'user_info.mobile', 'user_info.lname','em_infos.company_name','jobs.job_name','users.email','em_infos.company_phone')
           ->where('em_shortlists.em_shortlist_id', $id)
           ->first();
+
+          DB::table('em_shortlists')
+                      ->where('em_shortlist_id', $id)
+                      ->update(['called' => '1']);
+
           Mailgun::send('email.regular', ['calls' => $calls], function ($m) use ($calls) {
               $m->from('call@unigigg.com', 'Interview call from unigigg');
 
               $m->to($calls->email)->subject('Congrats!');
           });
 
-
-          $deviceID = '20198';
+          //SMS
+            $deviceID = '20198';
 
 
             $number = $calls->mobile;
 
-            $message = 'You have been called for an interview for '.$calls->job_name.' by '.$calls->company_name. 'please check your mail. -unigigg.com';
+            $message = 'You have been called for an interview for '.$calls->job_name.' by '.$calls->company_name. ' please check your mail. unigigg.com';
             $message =  SMSGateway::sendMessageToNumber($number, $message, $deviceID);
 
           return redirect('home');
 
     }
+
+    // Call All Shorlisted Candidates
 
     public function callforinterviewall($id)
     {
@@ -83,16 +91,25 @@ class EmployerController extends Controller
           ->where('em_shortlists.shortlisted_for_job_id', $id)
           ->get();
 
-          foreach ($call as $calls) {
+          DB::table('em_shortlists')
+                      ->where('shortlisted_for_job_id', $id)
+                      ->update(['called' => '1']);
+
+
+
+          foreach ($call as $calls)
+          {
               Mailgun::send('email.regular', ['calls' => $calls], function ($m) use ($calls) {
                   $m->from('call@unigigg.com', 'Interview call from unigigg');
 
                   $m->to($calls->email)->subject('Congrats!');
               });
-                }
-          foreach ($call as $calls) {
+          }
+          // SMS
+          foreach ($call as $calls)
+          {
 
-          $deviceID = '20198';
+            $deviceID = '20198';
 
 
             $number = $calls->mobile;

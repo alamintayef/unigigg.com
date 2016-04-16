@@ -195,8 +195,9 @@ class AdminController extends Controller
        $skill = DB::table('skills')
               ->join('users', 'skills.user_id', '=','users.id')
               ->select('skills.*','users.*')
-              ->where('skill_name','like','%'.$search.'%')
+              ->where('skill_name','like','%'.$search.',%','and', 'like','%'.$search.'%')
               ->get();
+
 
       return view('admin.search.search',[
           'skill'=> $skill,

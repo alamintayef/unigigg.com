@@ -9,7 +9,7 @@ class CallForInterview extends Model
     //
     protected $table ='call_for_interviews';
     protected $fillable =[
-      'appointment', 'time','identifier','transaction_id',
+      'appointment', 'time','identifier','transaction_id','job_id',
     ];
 
     public function user()

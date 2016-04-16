@@ -3,15 +3,17 @@
 <div class="container">
 <div class="row">
 
-<div class="col-md-8">
+<div class="col-md-10">
 
+    <div class="col-md-3">
 
-    <div class="col-md-8 center">
+    </div>
+    <div class="col-md-8 ">
   <div class="panel whiteproper pad">
     <h4>Set Appointment </h4>
-    <small>Admin will notify all the finalized candidates for you</small>
+    <small>Admin Will Notify all the candidates for you.</small>
 
-      {!! Form::open(array('url' => 'payment/call/for/interview')) !!}
+    {!! Form::open(array('url' => 'payment/call/for/interview')) !!}
       @if(count($errors)>0)
         <div class="alert alert-danger">
           @foreach($errors->all() as $error)
@@ -41,16 +43,19 @@
       {!! Form::text('appoint_time', null, ['class' => 'form-control']) !!}
     </div>
     <div class="form-group">
-      {!! Form::label('identifier', 'Proof of Payment:', ['class' => 'control-label']) !!}
+      {!! Form::label('identifier', 'Bkash Number:', ['class' => 'control-label']) !!}
       {!! Form::text('identifier', null, ['class' => 'form-control']) !!}
     </div>
     <div class="form-group">
       {!! Form::label('transaction_id', 'Transaction ID:', ['class' => 'control-label']) !!}
       {!! Form::text('transaction_id', null, ['class' => 'form-control']) !!}
     </div>
+    <input type="hidden" name="job_id" value="{{$job->job_id}}">
 
 
-      {!! Form::submit('Confirm', ['class' => 'btn btn-primary']) !!}
+  {!! Form::submit('Confirm', ['class' => 'btn btn-primary']) !!}
+
+  {!! Form::close() !!}
   </div>
   </div>
   </div>
