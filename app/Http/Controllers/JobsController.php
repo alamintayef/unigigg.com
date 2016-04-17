@@ -33,7 +33,7 @@ class JobsController extends Controller
             'job_reqs' => 'required',
             'job_education_reqs' => 'required',
             'job_skill_reqs' => 'required',
-            'job_reqs_additional' => 'required',
+
             'job_start_date' => 'required|date',
             'job_last_date_application' => 'required|date',
 
@@ -52,6 +52,7 @@ class JobsController extends Controller
             'job_start_date' => $request->job_start_date,
             'job_last_date_application' => $request->job_last_date_application,
             'job_expires' => $jobExpires,
+            'paid' => $request->paid,
 
 
         ]);

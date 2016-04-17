@@ -26,21 +26,40 @@
             <button class="btn-success">verified</button>
           @endif
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
           <h4>Jobs Posted By {{$employer->company_name}}</h4>
-          @foreach($jobsposted as $posted)
-            Postion:<em>{{$posted->job_name}}</em><br>
-            Type:<em> {{$posted->job_type}}</em><br>
-            @if($posted->paid===1)
-              paid
-            @else
-              Not Yet
+          <table class="table">
+            <thead>
+              <th>Postion</th>
+              <th>Type</th>
+              <th>Paid</th>
+            </thead>
+
+        @foreach($jobsposted as $posted)
+            <tbody>
+
+            <td>
+              <em>{{$posted->job_name}}</em>
+            </td>
+            <td>
+          <em> {{$posted->job_type}}</em>
+            </td>
+            <td>
+              @if($posted->paid===1)
+                paid
+            </td>
+              <td>
+              @else
+                Not Yet
+              </td>
             @endif
-            <br>
+
+              </tbody>
+                @endforeach
+          </table>
 
 
 
-          @endforeach
         </div>
 
 

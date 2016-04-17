@@ -23,7 +23,7 @@ class CreateJobsTable extends Migration
             $table->text('job_reqs');
             $table->text('job_education_reqs');
             $table->text('job_skill_reqs');
-            $table->text('job_reqs_additional');
+            $table->text('job_reqs_additional')->nullable();
             $table->date('job_start_date');
             $table->date('job_last_date_application');
             $table->date('job_expires');
