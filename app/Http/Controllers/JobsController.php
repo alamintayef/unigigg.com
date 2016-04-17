@@ -127,7 +127,7 @@ class JobsController extends Controller
           ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
           ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
           ->orderBy('created_at', 'desc')
-          ->get();
+          ->first();
     $uid= auth()->user()->id;
     $applicable=DB::table('user_info')
                 ->where('user_info.user_id' ,'=',$uid)

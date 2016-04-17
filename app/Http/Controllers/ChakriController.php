@@ -145,7 +145,7 @@ class ChakriController extends Controller
       $education = Education::where('user_id','=', $id)->get();
       $exps = Experience::where('user_id','=', $id)->get();
       $refs = Reference::where('user_id','=', $id)->get();
-        $images = Image::where('user_id','=', $id)->orderBy('created_at', 'desc')->limit(1)->get();
+      $images = Image::where('user_id','=', $id)->orderBy('created_at', 'desc')->limit(1)->get();
       return view('student.studentemview', [
         'profile'=>$profile,
         'skill'=>$skill,
@@ -161,12 +161,12 @@ class ChakriController extends Controller
     }
     public function showjobs($id)
     {
-      $jobs = DB::table('jobs')
+      $job = DB::table('jobs')
             ->where('jobs.job_id','=', $id)
             ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
             ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
             ->orderBy('created_at', 'desc')
-            ->get();
+            ->first();
 
 
       $uid= auth()->user()->id;
@@ -178,7 +178,7 @@ class ChakriController extends Controller
                   ->select('user_info.*','skills.*','education.*')
                   ->get();
             return view('jobs.chakriview', [
-              'jobs'=>$jobs,
+              'job'=>$job,
               'applicable'=>$applicable,
 
 

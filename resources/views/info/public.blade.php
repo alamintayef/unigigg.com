@@ -21,26 +21,76 @@
         <hr>
         @if(count($jobs)>0)
           @foreach($jobs as $job)
-            <div class="col-md-3 col-md-offset-1" style="background-color:white;">
+            <div class="col-md-3 col-md-offset-1">
+              <div class="card-container">
+                     <div class="card">
+                         <div class="front">
+                              <!--
+                             <div class="cover">
+                                 <img src="https://www.irononsticker.com/images/Kung%20Fu%20Panda%205.jpg"/>
+                             </div>
+                             -->
 
-              <h5 >{{$job->job_name}}</h5>
 
-                Type: {{$job->job_type}}
-                <br>Location: {{$job->job_location}}
-                <br>Salary: {{$job->job_salary}}<br>
+                             <div class="content">
+                                 <div class="main">
+                                     <h3 class="name"> {{$job->job_name}} </h3>
+                                     <p class="profession"> Type: {{$job->job_type}}</p>
 
-              <strong>Posted By {{$job->company_name}}</strong><br>
-              <strong>Posted on {{$job->created_at}}</strong>
+                                     <p class="text-center">  <br>Location: {{$job->job_location}}
+                                       <br>Salary: {{$job->job_salary}}<br>
+
+                                     <strong>Posted By {{$job->company_name}}</strong><br>
+                                     <strong>Posted on {{$job->created_at}}</strong>
+                                   </p>
+                                 </div>
+                                 <div class="footer">
+                                     <div class="rating">
+                                         <i class="fa fa-mail-forward"></i> Auto Rotation
+                                     </div>
+                                 </div>
+                             </div>
+                         </div> <!-- end front panel -->
+                         <div class="back">
+                             <div class="header">
+                                 <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+                             </div>
+                             <div class="content">
+                                 <div class="main">
+                                     <h4 class="text-center">Job Description</h4>
+                                     <p class="text-center">{{$job->job_expires}}.</p>
+
+                                     <div class="stats-container">
+                                       <form class="form-control" action="{{url('show/ejobs',$job->job_id)}}" method="GET">
+                                         {!! csrf_field() !!}
+
+                                         <button type="submit" name="button" class="btn btn-default btn-mini pull-right">view</button>
+
+                                       </form>
+                                     </div>
+
+                                 </div>
+                             </div>
+                             <div class="footer">
+                                 <div class="social-links text-center">
+                                     <a href="http://creative-tim.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                                     <a href="http://creative-tim.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+                                     <a href="http://creative-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                                 </div>
+                             </div>
+                         </div> <!-- end back panel -->
+                     </div> <!-- end card -->
+                 </div> <!-- end card-container -->
+
+
+
+
+
 
               <!-- Check if its recruter or not-->
 
 
-                  <form class="form-control" action="{{url('show/ejobs',$job->job_id)}}" method="GET">
-                    {!! csrf_field() !!}
 
-                    <button type="submit" name="button" class="btn btn-default btn-mini pull-right">view</button>
-
-                  </form>
 
 
             </div>

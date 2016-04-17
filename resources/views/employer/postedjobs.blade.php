@@ -60,6 +60,7 @@
                         </button>
                       </form>
 
+
                       @if(Auth::user()->subs_type===0)
                         <form class="pull-right" action="{{url('/setappointment',$jobs->job_id)}}" method="GET">
 

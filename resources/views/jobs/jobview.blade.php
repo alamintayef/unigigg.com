@@ -9,9 +9,9 @@
 
       <div class="col-md-10">
         <div class="panel">
-          @if(count($jobs)>0)
+          @if(count($job)>0)
 
-            @foreach($jobs as $job)
+
               <h3 class="textb  padsmall">Title: {{$job->job_name}}</h3>
             </div>
             <div class="col-md-12">
@@ -73,7 +73,7 @@
               </div>
 
             </div>
-          @endforeach
+    
         @endif
       </div>
     </div>

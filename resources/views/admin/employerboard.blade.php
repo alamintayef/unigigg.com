@@ -28,7 +28,7 @@
                 {{$users->email}}
               </td>
               <td>
-                <form  action="{{url('/aprofile',$users->id)}}" method="GET">
+                <form  action="{{url('/employer/profile',$users->id)}}" method="GET">
                   {!! csrf_field() !!}
                   <button type="submit" class="btn btn-primary">
                     <i class="fa fa-user"></i> view profile

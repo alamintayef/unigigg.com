@@ -97,6 +97,7 @@ Route::group(['middleware' => ['web']], function () {
 
       // view Profile
       Route::get('/aprofile/{id}', 'AdminController@studentadminview');
+      Route::get('/employer/profile/{id}','AdminController@employerview');
       Route::get('verification', 'AdminController@verification');
       Route::get('employerlist', 'AdminController@employer');
 

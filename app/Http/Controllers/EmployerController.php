@@ -67,10 +67,7 @@ class EmployerController extends Controller
 
           //SMS
             $deviceID = '20198';
-
-
             $number = $calls->mobile;
-
             $message = 'You have been called for an interview for '.$calls->job_name.' by '.$calls->company_name. ' please check your mail. unigigg.com';
             $message =  SMSGateway::sendMessageToNumber($number, $message, $deviceID);
 
@@ -87,7 +84,7 @@ class EmployerController extends Controller
           ->join('users', 'em_shortlists.user_id','=','users.id')
           ->join('em_infos', 'em_shortlists.shortlistedby', '=', 'em_infos.user_id')
           ->join('jobs', 'em_shortlists.shortlisted_for_job_id', '=', 'jobs.job_id')
-          ->select('user_info.fname', 'user_info.mobile', 'user_info.lname','em_infos.company_name','jobs.job_name','users.email','em_infos.company_phone')
+          ->select('user_info.fname','user_info.lname', 'user_info.mobile', 'user_info.lname','em_infos.company_name','jobs.job_name','users.email','em_infos.company_phone')
           ->where('em_shortlists.shortlisted_for_job_id', $id)
           ->get();
 

@@ -56,6 +56,21 @@ class AdminController extends Controller
 
 
     }
+    public function employerview($id)
+    {
+      $employer = DB::table('users')
+                ->join('em_infos','users.id','=','em_infos.user_id')
+                ->select('users.*','em_infos.*')
+                ->first();
+      $jobsposted = DB::table('jobs')->select('jobs.*')->where('user_id',$employer->id)->get();
+        return view('employer.employerview',[
+          'employer' => $employer,
+          'jobsposted' =>$jobsposted,
+        ]);
+    }
+
+
+    // Student Profile view
     public function studentadminview($id)
     {
       $user = User::where('id','=',$id)->get();
