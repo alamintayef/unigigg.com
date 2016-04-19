@@ -36,7 +36,7 @@ body
                             <i class="fa fa-envelope"></i>
 
                             <div class="col-md-6">
-                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <input type="email" id='email' class=" form-control" name="email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -101,6 +101,19 @@ body
         </div>
     </div>
 </div>
+<script type="text/javascript">
+var email = document.getElementById("email");
+var emailplete = new Awesomplete(email, {
+  minChars:1,
+  autoFirst:true,
+  list: ["facebook.com", "gmail.com","hotmail.com", "live.com","yahoo.com"],
+  data: function (text, input) {
+    return input.slice(0, input.indexOf("@")) + "@" + text;
+  },
+  filter: Awesomplete.FILTER_STARTSWITH
+});
+</script>
+
 
 @include('layouts.footer')
 @endsection

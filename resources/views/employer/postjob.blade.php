@@ -62,9 +62,16 @@
             {!! Form::text('job_salary', null, ['class'=>'form-control'] ) !!}
           </div>
           <div class="form-group">
-            {!! Form::label('job_location', 'Location:') !!}<span class="text-danger">*</span>
-            {!! Form::text('job_location', null, ['class'=>'form-control'] ) !!}
-          </div>
+            {!! Form::label('job_location', 'Location:', ['class' => 'control-label']) !!}
+            <input name="job_location" class="awesomplete form-control" list="arealist" />
+            <datalist id="arealist">
+              @foreach($area as $areas)
+                <option>{{$areas->area}}</option>
+              @endforeach
+            </datalist>
+
+              <small class="text-danger">Required</small>
+            </div>
 
           <div class="form-group">
             {!! Form::label('job_description', 'Job Description:') !!}<span class="text-danger">*</span>
@@ -84,53 +91,59 @@
            </datalist>
             <small class="ssmal">e.g. Bachelors, Masters, PHD</small>
           </div>
-          <script type="text/javascript">
 
-          new Awesomplete($$('input[data-multiple]'), {
-	filter: function(text, input) {
-		return Awesomplete.FILTER_CONTAINS(text, input.match(/[^,]*$/)[0]);
-	},
-
-	replace: function(text) {
-		var before = this.input.value.match(/^.+,\s*|/)[0];
-		this.input.value = before + text + ", ";
-	}
-});
-
-          </script>
 
           <div class="form-group">
             {!! Form::label('major', 'Major:', ['class' => 'control-label']) !!}
-            <input name="major" id='major' class="awesomplete form-control" list="majorlist"  />
-            <datalist id="majorlist">
-             <option>Computer Science</option>
-             <option>Business Administration</option>
-             <option>Electrical</option>
-             <option>Environmental Science</option>
-             <option>Architecture</option>
-             <option>Pharmacy</option>
-            </datalist>
+            <input name="major" id='major' class="awesomplete form-control" />
+
+            <script type="text/javascript">
+            var major = document.getElementById("major");
+            var autocompletemajor=new Awesomplete(major, {
+            minChars: 1,
+            autoFirst: true
+            });
+              autocompletemajor.list =['Computer Science', 'Business Administration', 'Economics','Mathemtics']
+            </script>
             <small class="text-danger">Required</small>
             </div>
             <div class="form-group">
               {!! Form::label('cgpa', 'Minimum CGPA:', ['class' => 'control-label']) !!}
-              <input name="cgpa" id='cgpa' class="awesomplete form-control" list="cgpalist"  />
-              <datalist id="cgpalist">
-               <option>2</option>
-               <option>2.5</option>
-               <option>2.75</option>
-               <option>3</option>
-               <option>3.25</option>
-               <option>3.5</option>
-              </datalist>
+              <input name="cgpa" id='cgpa' class="awesomplete form-control" />
+
               <small class="text-danger">Required</small>
               </div>
+              <script type="text/javascript">
+              var cgpa = document.getElementById("cgpa");
+              var autocompletecgpa=new Awesomplete(cgpa, {
+              minChars: 1,
+              autoFirst: true
+              });
+              autocompletecgpa.list = ['2','2.5','2.75','3','3.25','3.5']
+              </script>
           <hr>
           <div class="form-group">
             {!! Form::label('job_skill_reqs', 'Skill Requirments:') !!}<span class="text-danger">*</span>
-            {!! Form::text('job_skill_reqs', null, ['class'=>'form-control', 'rows'=>2 , 'id'=> 'job_skill_reqs']) !!}
+          <input name="job_skill_reqs" id='job_skill_reqs' class="awesomplete form-control" data-multiple  />
             <small class="ssmal">Insert the specific skill set you are looking for. e.g. MS-Office, Php, Java, Accounting</small>
           </div>
+          <script type="text/javascript">
+          var input = document.getElementById("job_skill_reqs");
+          var autocomplete=new Awesomplete(input, {
+          minChars: 1,
+          autoFirst: true,
+          filter: function(text, input) {
+            return Awesomplete.FILTER_CONTAINS(text, input.match(/[^,]*$/)[0]);
+          },
+
+          replace: function(text) {
+            var before = this.input.value.match(/^.+,\s*|/)[0];
+            this.input.value = before + text + ", ";
+          }
+        });
+        autocomplete.list =['C', 'C++', 'JavaScript','MS-Office','Accounting','Python','Php','Laravel','NodeJs']
+
+          </script>
 
 
           </script>

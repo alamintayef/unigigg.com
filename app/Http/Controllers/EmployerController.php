@@ -41,7 +41,7 @@ class EmployerController extends Controller
     }
     public function postjobs(Request $request)
     {
-
+      $area  = Area::all();
       $postedjobs = Jobs::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->get();
       $uid= auth()->user()->id;
       $postable=DB::table('em_infos')
@@ -52,6 +52,7 @@ class EmployerController extends Controller
       return view('employer.postjob', [
         'postedjobs'=>$postedjobs,
         'postable' => $postable,
+        'area' =>$area,
 
       ]);
 
