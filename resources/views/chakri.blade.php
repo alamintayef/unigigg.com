@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container">
+  <div class="container" id="chakri">
     <div class="row">
 
       @include('layouts.menu')
@@ -50,4 +50,10 @@
 
     </div>
   </div>
+  <script type="text/javascript">
+  (function ($) {
+    $('#chakri').smoothState();
+ }) (jQuery);
+
+  </script>
 @endsection

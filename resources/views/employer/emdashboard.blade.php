@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container">
+  <div class="container" id="dash">
     <div class="row">
       @include('layouts.emmenu')
       <div class="col-md-10 ">
@@ -59,7 +59,7 @@
 
             <div >
               @if(count($eminfos)>0)
-                <div class="panel pad">
+                <div class="pad">
 
 
                   <h4>Company Details</h4><a href="{{url('employerinfo')}}" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
@@ -94,6 +94,12 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript">
+  (function ($) {
+    $('#dash').smoothState();
+})(jQuery);
+
+  </script>
 
 
 @endsection

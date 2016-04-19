@@ -30,7 +30,7 @@
                   </p>
                   <hr>
                   <p>
-                    <strong>Requirements: </strong> {{$job->major}}
+                    <strong>Educational Requirements: </strong>{{$job->min_edu_level}} / {{$job->major}} / {{$job->cgpa}}
                   </p>
                   <p>
                     <strong>  Additional Requirements: </strong>  {{$job->job_reqs_additional}}

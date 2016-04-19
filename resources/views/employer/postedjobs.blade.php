@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container ">
+  <div class="container " id="postedjob">
     <div class="row">
       @include('layouts.emmenu')
       <div class="col-md-10">
-        <div class="well">
-          <h4 class="text-info">Jobs Posted by You</h4>
+        <div class="panel whiteproper padsmall">
+          <h4 class="textb"><i class="fa fa-briefcase"></i> Jobs Posted by You</h4>
         </div>
         <div class="col-md-12">
           @if(count($postedjobs)>0)
@@ -92,3 +92,8 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript">
+  (function ($) {
+  $('#postedjob').smoothState();
+})(jQuery);
+  </script>

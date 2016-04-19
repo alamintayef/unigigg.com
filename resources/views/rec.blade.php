@@ -6,7 +6,7 @@
   text-align:center;
 }
 </style>
-  <div class="container pad pb">
+  <div class="container pad pb" id="rec">
       <div class="row" >
         <div class="pull left center">
           <blockquote class="center blockquote-reverse">
@@ -154,6 +154,12 @@
     <h4>  Hiring for Eccentric Job is free <a href="eccentric">Learn more.</a>
       </h4>
   </div>
+  <script type="text/javascript">
+  (function ($) {
+    $('#rec').smoothState();
+ }) (jQuery);
+
+  </script>
 
   @include('layouts.footer')
   @endsection

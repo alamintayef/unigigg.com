@@ -44,13 +44,14 @@
               @endforeach
             </div>
               @foreach($profile as $view )
-          
+              <h3 class="textb">{{$view->fname}}   {{$view->lname}}</h3>
+
             </div>
             <div class="panel-body ft pl">
               <div >
 
                 <p>
-                <b>  University:</b> <em><b> {{$view->institute}} </b></em>
+                <b>  University:</b> <b> {{$view->institute}} </b><br> <b>  Contact:</b> <b> {{$view->mobile}} </b>
                 </p>
 
               </div>

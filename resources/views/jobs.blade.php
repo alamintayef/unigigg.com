@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container">
+  <div class="container" id="jobs">
     <div class="row">
 
       @include('layouts.emmenu')
@@ -40,4 +40,9 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript">
+  (function ($) {
+  $('#jobs').smoothState();
+})(jQuery);
+  </script>
 @endsection

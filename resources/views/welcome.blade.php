@@ -9,8 +9,9 @@ body{
 
 
 <div class="container" id="content"  >
-    <div class="row">
-      <div  style="height:550px; text-align:center;">
+    <div class="row ">
+      <div style="height:550px; text-align:center;">
+
         <br>
         <br>
         <br>
@@ -88,8 +89,16 @@ body{
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  (function ($) {
+    $('#content').smoothState();
+ }) (jQuery);
+</script>
+<script type="text/javascript">
+$(".parallaxer").parallaxer();
 
 
+</script>
 
 
 @include('layouts.footer')

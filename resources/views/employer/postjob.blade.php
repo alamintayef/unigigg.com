@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container ">
+
+
+  <div class="container " id="postjob">
     <div class="row">
       @include('layouts.emmenu')
       <div class="col-md-6 ">
@@ -73,8 +75,8 @@
           <hr>
           <div class="form-group">
             {!! Form::label('min_edu_level', 'Minimum Degree Level:', ['class' => 'control-label']) !!}
-            <input name="min_edu_level" class="form-control" list="levellist"  />
-            <datalist id="levellist" data-multiple>
+            <input name="min_edu_level" class="awesomplete form-control" list="levellist" data-multiple  />
+            <datalist id="levellist">
              <option>Bachelors</option>
              <option>Masters</option>
              <option>HSC</option>
@@ -82,10 +84,24 @@
            </datalist>
             <small class="ssmal">e.g. Bachelors, Masters, PHD</small>
           </div>
+          <script type="text/javascript">
+
+          new Awesomplete($$('input[data-multiple]'), {
+	filter: function(text, input) {
+		return Awesomplete.FILTER_CONTAINS(text, input.match(/[^,]*$/)[0]);
+	},
+
+	replace: function(text) {
+		var before = this.input.value.match(/^.+,\s*|/)[0];
+		this.input.value = before + text + ", ";
+	}
+});
+
+          </script>
 
           <div class="form-group">
             {!! Form::label('major', 'Major:', ['class' => 'control-label']) !!}
-            <input name="major" id='major' class="form-control" list="majorlist" data-multiple />
+            <input name="major" id='major' class="awesomplete form-control" list="majorlist"  />
             <datalist id="majorlist">
              <option>Computer Science</option>
              <option>Business Administration</option>
@@ -98,7 +114,7 @@
             </div>
             <div class="form-group">
               {!! Form::label('cgpa', 'Minimum CGPA:', ['class' => 'control-label']) !!}
-              <input name="cgpa" id='cgpa' class="form-control" list="cgpalist" data-multiple />
+              <input name="cgpa" id='cgpa' class="awesomplete form-control" list="cgpalist"  />
               <datalist id="cgpalist">
                <option>2</option>
                <option>2.5</option>
@@ -112,11 +128,13 @@
           <hr>
           <div class="form-group">
             {!! Form::label('job_skill_reqs', 'Skill Requirments:') !!}<span class="text-danger">*</span>
-            {!! Form::textarea('job_skill_reqs', null, ['class'=>'form-control', 'rows'=>2] ) !!}
+            {!! Form::text('job_skill_reqs', null, ['class'=>'form-control', 'rows'=>2 , 'id'=> 'job_skill_reqs']) !!}
             <small class="ssmal">Insert the specific skill set you are looking for. e.g. MS-Office, Php, Java, Accounting</small>
           </div>
 
-          <div class="form-group">
+
+          </script>
+      <div class="form-group">
             {!! Form::label('job_reqs_additional', 'Additional Requirments: ') !!}
             {!! Form::textarea('job_reqs_additional', null, ['class'=>'form-control', 'rows'=>2] ) !!}
             <small class="ssmal">If you have and specific additional requirments</small>
@@ -129,6 +147,7 @@
             {!! Form::label('job_last_date_application', 'Last Date Of Application') !!}
             {!! Form::date('job_last_date_application', null, ['class'=>'form-control'] ) !!}
           </div>
+
           @if($postable>0)
             @if(Auth::user()->verified===0)
               Sir Please wait untill the profile is verified
@@ -164,6 +183,13 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript">
+  (function ($) {
+    $('#postjob').smoothState();
+})(jQuery);
+
+  </script>
+
 
 
 @endsection

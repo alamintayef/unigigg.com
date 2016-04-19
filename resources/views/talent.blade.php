@@ -7,7 +7,7 @@
 
   }
 </style>
-        <div class="container-fluid center pad">
+        <div class="container-fluid center pad" id="talent">
             <div class="row ">
               <blockquote class="pull-left blockquote-reverse textw">
                         <p>
@@ -126,5 +126,12 @@
               </div>
             </div>
           </div>
+
+          <script type="text/javascript">
+          (function ($) {
+            $('#talent').smoothState();
+         }) (jQuery);
+
+          </script>
   @include('layouts.footer')
   @endsection

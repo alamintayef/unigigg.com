@@ -1,12 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container ">
+  <div class="container " id="applied">
     <div class="row">
     @include('layouts.emmenu')
       <div class="col-md-10">
-        <div class="well">
+        <div class="panel whiteproper padsmall">
           <h4 class="textb">Applied Candidates</h4>
+          <a href="{{url('postedjobs')}}">Go Back</a>
         </div>
 
 
@@ -36,13 +37,22 @@
 
               <p class="inline">
 
+                @if(Auth::user()->subs_type!=0)
+                  <form class="pull-right" action="{{url('/talent/profile/paid',$seek->id)}}" method="GET">
+                    {!! csrf_field() !!}
+                    <button type="submit" class="btn btn-info">
+                      <i class="fa fa-user"></i> view profile
+                    </button>
+                  </form>
+                @else
+                  <form class="pull-right" action="{{url('/talent/profile',$seek->id)}}" method="GET">
+                    {!! csrf_field() !!}
+                    <button type="submit" class="btn btn-info">
+                      <i class="fa fa-user"></i> view profile
+                    </button>
+                  </form>
+                @endif
 
-              <form class="pull-right" action="{{url('/profile',$seek->id)}}" method="GET">
-                {!! csrf_field() !!}
-                <button type="submit" class="btn btn-info">
-                  <i class="fa fa-user"></i> view profile
-                </button>
-              </form>
               @if($seek->already===0)
                   <form action="{{url('shortlist')}}" method="post">
                     {!! csrf_field() !!}
@@ -70,3 +80,10 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript">
+
+  (function ($) {
+  $('#applied').smoothState();
+})(jQuery);
+
+  </script>

@@ -150,6 +150,8 @@ Route::group(['middleware' => ['web']], function () {
       Route::get('search/charki', 'ChakriController@chakrisearch');
       Route::get('/show/ejobs/{id}','JobsController@showjobs');
 
+  // Talent Profile
+    Route::get('talent/profile/paid/{id}', 'EmployerController@studentemview');
   //Chakri
       Route::get('/internships', 'ChakriController@internships');
       Route::get('/fulltime', 'ChakriController@fulltime');
@@ -256,7 +258,8 @@ Route::group(['middleware' => 'web'], function () {
       Route::post('/apply/eccentric', 'OddAppliedController@store');
 
   //shows talent profile
-      Route::get('/profile/{id}', 'ApplyController@studentemview');
+      Route::get('talent/profile/{id}', 'ApplyController@studentemview');
+
       Route::get('/eprofile/{id}', 'ChakriController@studentemview');
       Route::get('/jobsapplied', 'StudentAppliedController@index');
       Route::get('/show/jobs/{id}','ChakriController@showjobs');
