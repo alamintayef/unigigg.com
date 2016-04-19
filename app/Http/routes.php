@@ -43,6 +43,10 @@ Route::get('auto', function()
    return view('sms');
 });
 
+Route::get('/vlog', function(){
+   return view('vlog.layouts');
+});
+
 Route::get('/jobs/view','PublicController@publicboard');
 Route::get('/jobs/view/eccentric','PublicController@publiceccentricboard');
 Route::get('/sms', 'PublicController@sendsms');

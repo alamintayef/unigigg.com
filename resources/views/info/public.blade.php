@@ -30,8 +30,6 @@
                                  <img src="https://www.irononsticker.com/images/Kung%20Fu%20Panda%205.jpg"/>
                              </div>
                              -->
-
-
                              <div class="content">
                                  <div class="main">
                                      <h3 class="name"> {{$job->job_name}} </h3>
@@ -94,7 +92,7 @@
 
 
             </div>
-            <br>
+
           @endforeach
 
         @endif

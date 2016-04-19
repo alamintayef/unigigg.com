@@ -11,9 +11,9 @@
 
 <table class="table  table-hover" >
   <thead>
-  <th>skills</th>
+  <th>Result</th>
   <th>
-    Experience
+    Degree Name
   </th>
   <th>
     User Name
@@ -22,8 +22,12 @@
   <tbody>
     @foreach($skill as $skills)
       <tr>
-        <td>{{ $skills->skill_name }}</td>
-        <td>{{ $skills->skill_experience }}</td>
+        <td>
+          {{$skills->Degree_result}}
+        </td>
+        <td>
+          {{$skills->Degree_name}}
+        </td>
         <td>{{ $skills->name }}</td>
       </tr>
     @endforeach
@@ -32,7 +36,7 @@
 
 @else
   <p>
-    Nothing found . . . 
+    Nothing found . . .
   </p>
 
 @endif

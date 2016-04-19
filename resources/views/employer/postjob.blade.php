@@ -70,16 +70,46 @@
             <small class="ssmal">Describe what the job is all about. e.g. Responsibilities</small>
           </div>
 
+          <hr>
           <div class="form-group">
-            {!! Form::label('job_reqs', 'Job Requirments:') !!}<span class="text-danger">*</span>
-            {!! Form::textarea('job_reqs', null, ['class'=>'form-control', 'rows'=>2] ) !!}
-            <small class="ssmal">Basic Requirments</small>
+            {!! Form::label('min_edu_level', 'Minimum Degree Level:', ['class' => 'control-label']) !!}
+            <input name="min_edu_level" class="form-control" list="levellist"  />
+            <datalist id="levellist" data-multiple>
+             <option>Bachelors</option>
+             <option>Masters</option>
+             <option>HSC</option>
+             <option>Graduating Soon</option>
+           </datalist>
+            <small class="ssmal">e.g. Bachelors, Masters, PHD</small>
           </div>
+
           <div class="form-group">
-            {!! Form::label('job_education_reqs', 'Educational Requirments:') !!}<span class="text-danger">*</span>
-            {!! Form::textarea('job_education_reqs', null, ['class'=>'form-control', 'rows'=>2] ) !!}
-            <small class="ssmal">e.g. BSc in Computer Science, Bachelors in Business Administration</small>
-          </div>
+            {!! Form::label('major', 'Major:', ['class' => 'control-label']) !!}
+            <input name="major" id='major' class="form-control" list="majorlist" data-multiple />
+            <datalist id="majorlist">
+             <option>Computer Science</option>
+             <option>Business Administration</option>
+             <option>Electrical</option>
+             <option>Environmental Science</option>
+             <option>Architecture</option>
+             <option>Pharmacy</option>
+            </datalist>
+            <small class="text-danger">Required</small>
+            </div>
+            <div class="form-group">
+              {!! Form::label('cgpa', 'Minimum CGPA:', ['class' => 'control-label']) !!}
+              <input name="cgpa" id='cgpa' class="form-control" list="cgpalist" data-multiple />
+              <datalist id="cgpalist">
+               <option>2</option>
+               <option>2.5</option>
+               <option>2.75</option>
+               <option>3</option>
+               <option>3.25</option>
+               <option>3.5</option>
+              </datalist>
+              <small class="text-danger">Required</small>
+              </div>
+          <hr>
           <div class="form-group">
             {!! Form::label('job_skill_reqs', 'Skill Requirments:') !!}<span class="text-danger">*</span>
             {!! Form::textarea('job_skill_reqs', null, ['class'=>'form-control', 'rows'=>2] ) !!}

@@ -30,7 +30,7 @@
                   </p>
                   <hr>
                   <p>
-                    <strong>Requirements: </strong> {{$job->job_reqs}}
+                    <strong>Requirements: </strong> {{$job->major}}
                   </p>
                   <p>
                     <strong>  Additional Requirements: </strong>  {{$job->job_reqs_additional}}
@@ -54,13 +54,18 @@
                         <div class="form-group">
                           <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                         </div>
+
                         @if(count($applicable)>2)
                           @if(Auth::user()->verified===0)
                             <p class="text-danger">
                               You need to verify your profile to apply
                             </p>
                           @else
+                              @if($reqMatch->Degree_result>=$job->cgpa)
                                 <button type="submit" name="button" class="btn btn-success">Apply</button>
+                              @else
+                                <h6 class="text-danger">Sorry you does not fulfill the minimum job criteria</h6>
+                              @endif
                           @endif
 
 

@@ -20,8 +20,9 @@ class CreateJobsTable extends Migration
             $table->string('job_salary');
             $table->string('job_location');
             $table->text('job_description');
-            $table->text('job_reqs');
-            $table->text('job_education_reqs');
+            $table->text('min_edu_level')->nullable();
+            $table->text('major')->nullable();
+            $table->float('cgpa')->nullable();
             $table->text('job_skill_reqs');
             $table->text('job_reqs_additional')->nullable();
             $table->date('job_start_date');

@@ -177,9 +177,14 @@ class ChakriController extends Controller
                   ->join('education', 'education.user_id','=','skills.user_id')
                   ->select('user_info.*','skills.*','education.*')
                   ->get();
+
+      $reqMatch = DB::table('education')
+                  ->select('education.Degree_result')
+                  ->where('user_id','=', $uid)->first();
             return view('jobs.chakriview', [
               'job'=>$job,
               'applicable'=>$applicable,
+              'reqMatch' => $reqMatch,
 
 
 

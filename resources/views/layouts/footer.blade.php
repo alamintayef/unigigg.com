@@ -13,7 +13,7 @@
       <h5><a href="{{url('about')}}">About Us</a></h5>
       <h5><a href="#">Faqs <sub>Coming Soon</sub> </a><br></h5>
       <h5><a href="{{url('terms&services')}}">Terms and Conditions</a></h5>
-      <h5><a href="#">Vlog</a></h5>
+      <h5><a href="{{url('vlog')}}">Vlog</a></h5>
       <h5><a href="{{url('recruiter')}}">Recruiter</a></h5>
       <h5><a href="{{url('talent')}}">Talent</a></h5>
 

@@ -208,10 +208,10 @@ class AdminController extends Controller
       ]);
        $search = \Request::get('search');
 
-       $skill = DB::table('skills')
-              ->join('users', 'skills.user_id', '=','users.id')
-              ->select('skills.*','users.*')
-              ->where('skill_name','like','%'.$search.',%','and', 'like','%'.$search.'%')
+       $skill = DB::table('education')
+              ->join('users', 'education.user_id', '=','users.id')
+              ->select('education.*','users.*')
+              ->where('Degree_result','>=',$search)
               ->get();
 
 
