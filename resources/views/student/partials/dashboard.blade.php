@@ -9,7 +9,7 @@
     @include('layouts.menu')
 
     <div class="col-md-10  ">
-      <div class="panel padsmall">
+      <div class="card card-raised padsmall">
         <div class="panel-heading"><h4 class="textb">Dashboard</h4></div>
 
         @if (notify()->ready())
@@ -37,7 +37,7 @@
               @endif
               Free Subscription Expires on : <strong> {{Auth::user()->expireson}}</strong>
               <br>
-              <a class="btn btn-success btn-sm " href="{{ url('/payment') }}"><i class="fa fa-btn fa-check-square-o"></i>Verify Profile</a> <br>
+              <a class="btn btn-success raised btn-sm " href="{{ url('/payment') }}"><i class="fa fa-btn fa-check-square-o"></i>Verify Profile</a> <br>
               @if(Auth::user()->subs_type===0)
 
 

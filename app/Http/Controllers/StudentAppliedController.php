@@ -29,9 +29,9 @@ class StudentAppliedController extends Controller
       $applied = DB::table('student_applieds')
             ->join('jobs', 'student_applieds.applied_for_job_id', '=', 'jobs.job_id')
             ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
-            ->select('student_applieds.*', 'em_infos.company_name','jobs.job_last_date_application', 'jobs.job_name','jobs.job_id')
+            ->select('student_applieds.*', 'em_infos.company_name','jobs.job_last_date_application', 'jobs.job_name', 'jobs.job_id')
             ->get();
-      
+
       return view('student.whereiapplied', [
         'applied'=>$applied,
       ]);

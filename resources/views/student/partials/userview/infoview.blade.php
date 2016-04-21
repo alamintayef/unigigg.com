@@ -18,12 +18,12 @@
         <h5>University ID :{{$users->universityId}}</h5>
         Facebook: Id:
         <a href="{{$users->facebookId}}" target="_blank">{{$users->fname}}</a><br>
-      <a class="btn btn-primary " href="{{url('userinfo')}}"> <i class="fa fa-edit"></i>Edit Info</a></div>
+      <a class="btn btn-default raised  " href="{{url('userinfo')}}"> <i class="fa fa-edit"></i>Edit Info</a></div>
 
           <hr>
           <form action="{{url('pdf')}}" method="get">
             {!! csrf_field() !!}
-            <button type="submit" class="btn btn-info">
+            <button type="submit" class="btn btn-info raised ">
               <i class="fa fa-tasks"></i> Generate CV
             </button>
           </form>

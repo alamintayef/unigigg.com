@@ -8,7 +8,7 @@
 </style>
   <div class="container pad pb" id="rec">
       <div class="row" >
-        <div class="pull left center">
+        <div class="pull left center panel padsmall">
           <blockquote class="center blockquote-reverse">
                     <strong></strong>it is not possible to manufacture talent, you have to recruit them in the first place</strong>
           </blockquote>
@@ -63,11 +63,19 @@
 </div>
 <div class="container-fluid pb pad whiteproper">
   <div class="row center">
-    <h2>How We Help You</h2>
-    <h3>We help you to :</h3>
-    <h4>Identify proactive new employees with specific skills</h4>
-    <h3>We help you to :</h3>
-    <h4>Expedite the lengthy hiring process</h4>
+    <div class="col-md-3"></div>
+
+    <div class="panel padsmall white col-md-5">
+
+      <h2>How We Help You</h2>
+      <h3>We help you to :</h3>
+      <h4>Identify proactive employees with specific skills</h4>
+      <h3>We help you to :</h3>
+      <h4>Expedite the lengthy hiring process</h4>
+
+    </div>
+    <div class="col-md-3"></div>
+
   </div>
 
 </div>

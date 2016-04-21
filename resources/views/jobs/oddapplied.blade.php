@@ -30,7 +30,7 @@
                     <i class="fa fa-trash-o"></i> Delete
                   </button>
                 </form>
-                  <form  action="{{url('/profile',$seek->id)}}" method="GET">
+                  <form  action="{{url('talent/profile/eccentric',$seek->id)}}" method="GET">
                   {!! csrf_field() !!}
                   <button type="submit" class="btn btn-info btn-block btn-sm ">
                     <i class="fa fa-user"></i> Profile
@@ -46,7 +46,7 @@
                   <button type="submit" class="btn btn-default btn-sm ">
                     <i class="fa fa-phone"></i> Call for interview
                   </button>
-                  <small><em>Pressing call for interview will notify the candidate and show you their number</em></small>
+                  <small><em>Pressing call for interview will notify the candidate and send them your number</em></small>
                 </form>
                 @else
                   Already Notified

@@ -83,7 +83,7 @@
 
 
 
-          {!! Form::submit('Add', ['class' => 'btn btn-primary']) !!}
+          {!! Form::submit('Add', ['class' => 'btn btn-primary btn-raised btn-sm']) !!}
 
           {!! Form::close() !!}
 

@@ -11,7 +11,7 @@ body
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2" style="padding:50px;">
-            <div class="panel panel-primary">
+            <div class="card card-raised panel-primary">
                 <div class="panel-heading"><h3 style="color:white;">Hello, Recruiter !</h3></div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
@@ -81,7 +81,7 @@ body
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary btn-raised">
                                     <i class="fa fa-btn fa-user"></i>Register
                                 </button>
                             </div>

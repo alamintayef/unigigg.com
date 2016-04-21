@@ -21,7 +21,7 @@ body{
         <br>
         <h3 style="text-align:center;color:white;">Get <strong>Empowered</strong>.Get <strong>Hired</strong>.Get <strong>Recognized.</strong></h3>
         <h5 style="text-align:center;color:white;">CONNECTING YOUNG TALENTS WITH THE EMPLOYERS</h5>
-        <a class="btn btn-default btn-lg" href="{{url('jobs/view')}}">Find a Gigg/Internship</a>
+        <a class="btn btn-default btn-raised btn-lg" href="{{url('jobs/view')}}">Find a Gigg/Internship</a>
 
 
       </div>
@@ -78,13 +78,8 @@ body{
         <br>
         <h2 style="color:white;">Eccentric Jobs</h2>
         <h4 style="color:white;">Find out what you like doing best, and get someone to pay you for it.</h4>
-        <a href="eccentric" class="btn btn-default btn-lg">Learn More</a>
-        <script type="text/javascript">
-        $.stellar({
-            horizontalScrolling: false,
-            responsive: true
-        });
-        </script>
+        <a href="eccentric" class="btn btn-default btn-raised ">Learn More</a>
+
 
     </div>
   </div>
@@ -94,11 +89,7 @@ body{
     $('#content').smoothState();
  }) (jQuery);
 </script>
-<script type="text/javascript">
-$(".parallaxer").parallaxer();
 
-
-</script>
 
 
 @include('layouts.footer')

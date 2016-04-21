@@ -39,7 +39,8 @@ class ShortlistController extends Controller
     {
       $shortlisted = DB::table('em_shortlists')
                     ->join('user_info', 'em_shortlists.user_id', '=', 'user_info.user_id')
-                    ->select('em_shortlists.*', 'user_info.fname','user_info.lname')
+                    ->join('jobs', 'em_shortlists.shortlisted_for_job_id', '=', 'jobs.job_id')
+                    ->select('em_shortlists.*', 'user_info.fname','user_info.lname','jobs.paid')
                     ->where('em_shortlists.shortlisted_for_job_id', $id)
                     ->get();
       $id = auth()->user()->id;

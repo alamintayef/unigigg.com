@@ -15,8 +15,12 @@
           @if($seek->user_id===Auth::user()->id)
           <div class="panel panel-default">
             <div class="panel-heading">
+              @if($seek->paid!=0)
+                <h4>{{$seek->fname}} {{$seek->lname}}</h4>
+              @else
+                {{$seek->user_id}}
+              @endif
 
-              <h4>{{$seek->fname}} {{$seek->lname}}</h4>
 
             </div>
             <div class="panel-body">

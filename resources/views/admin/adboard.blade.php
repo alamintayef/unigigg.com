@@ -23,7 +23,14 @@
        <li class="list-group-item">Total Eccentric Jobs : {{count($allOddJobs)}}</li>
        <li class="list-group-item">Total Jobs : {{count($allJobs)}}</li>
        <li class="list-group-item"><a href="{{url('employerlist')}}">Employer board</a></li>
-      
+       <li class="list-group-item">
+         {!! Form::open(['method'=>'GET','url'=>'search','class'=>'form-inline'])  !!}
+           <input type="text" class="form-control" name="search" placeholder="Search...">
+           <button class="btn btn-default-sm" type="submit">
+             <i class="fa fa-search"></i>
+             </button>
+         {!! Form::close() !!}
+       </li>
        <li class="list-group-item"><a href="{{url('adduniversity')}}">adduniversity</a></li>
       </ul>
 
@@ -43,15 +50,7 @@
       });
       </script>
     @endif
-    <div class="col-md-3  panel ">
-      {!! Form::open(['method'=>'GET','url'=>'search','class'=>'form-inline'])  !!}
-        <input type="text" class="form-control" name="search" placeholder="Search...">
-        <button class="btn btn-default-sm" type="submit">
-          <i class="fa fa-search"></i> Search
-          </button>
-      {!! Form::close() !!}
 
-  </div>
 
 
 

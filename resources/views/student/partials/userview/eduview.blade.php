@@ -20,12 +20,12 @@
 
 
 
-          <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+          <button type="submit" class="btn btn-raised btn-sm btn-primary" data-toggle="modal" data-target="#myModal">
             <i class="fa fa-edit"></i>  Edit
           </button>
           <form class="pull-right" action="{{url('edudel',$edu->id)}}" method="POST">
             {!! csrf_field() !!}
-            <button type="submit" class="btn btn-danger">
+            <button type="submit" class="btn btn-raised btn-danger btn-sm">
               <i class="fa fa-trash"></i> Delete
             </button>
           </form>

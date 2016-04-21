@@ -72,6 +72,12 @@ class AuthController extends Controller
            $m->to($data['email'], $data['name'])->subject('Welcome to unigigg');
        });
 
+      Mailgun::send('email.admin.informadmin',[ 'data' =>  $data ], function ($m) use ($data) {
+       $m->from('tayef@unigigg.com', 'Tayef from unigigg');
+
+       $m->to('sarkeralaminnsu@gmail.com')->subject('A New User Just Signed Up');
+     });
+
        notify()->flash('Welcome!', 'success', [
           'timer' => 3000,
 

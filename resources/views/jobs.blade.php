@@ -26,7 +26,7 @@
                   <form class="form-control" action="{{url('show/ejobs',$job->job_id)}}" method="GET">
                     {!! csrf_field() !!}
 
-                    <button type="submit" name="button" class="btn btn-default btn-mini pull-right">view</button>
+                    <button type="submit" name="button" class="btn btn-default btn-raised btn-xs pull-right">view</button>
 
                   </form>
 

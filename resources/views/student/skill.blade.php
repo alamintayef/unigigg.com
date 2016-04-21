@@ -50,7 +50,7 @@
 
       </div>
     </div>
-    <div class="col-md-2 panel whiteproper">
+    <div class="col-md-2 card raised whiteproper">
       <h5 class="textb">Skills you added</h5>
       @foreach($skill as $skills)
 

@@ -42,7 +42,15 @@
   </ul>
 
   <li class="list-group-item">
-    <a href="#"><strong>Subscription</strong></a>
+    <a href=""><strong>Subscription</strong></a><sub>@if(Auth::user()->subs_type===0)
+      pay as you go
+    @elseif(Auth::user()->subs_type===1)
+      <em class="textb">15 Hiring</em>
+    @elseif(Auth::user()->subs_type===2)
+      Unlimited
+    @else
+      Special Tier
+    @endif</sub>
 
   </li>
 </div>

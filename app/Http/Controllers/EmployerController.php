@@ -131,6 +131,10 @@ class EmployerController extends Controller
               }
             $message =  SMSGateway::sendMessageToNumber($number, $message, $deviceID);
 
+            notify()->flash('Notified!', 'success', [
+              'timer' => 2000,
+
+            ]);
           return redirect('home');
 
     }

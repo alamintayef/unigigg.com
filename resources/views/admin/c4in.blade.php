@@ -53,16 +53,22 @@
               {{$calls->transaction_id}}
             </td>
             <td>
-              <form  action="{{url('call/for/interview',$calls->job_id)}}" method="POST">
-              {!! csrf_field() !!}
-              <button type="submit" class="btn btn-default btn-sm">
-                <i class="fa fa-phone"></i> Notify
-              </button>
-            </form>
+              @if($calls->paid===0)
+                <form  action="{{url('call/for/interview',$calls->job_id)}}" method="POST">
+                {!! csrf_field() !!}
+                <button type="submit" class="btn btn-default btn-sm">
+                  <i class="fa fa-phone"></i> Notify
+                </button>
+              </form>
+              @else
+                Already Notified
+
+              @endif
+
             </td>
           @endforeach
         </table>
     </div>
     </div>
-
+@include('errors.notify')
   </div>

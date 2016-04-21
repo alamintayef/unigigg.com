@@ -259,7 +259,7 @@ Route::group(['middleware' => 'web'], function () {
 
   //shows talent profile
       Route::get('talent/profile/{id}', 'ApplyController@studentemview');
-
+      Route::get('talent/profile/eccentric/{id}', 'OddAppliedController@studentemview');
       Route::get('/eprofile/{id}', 'ChakriController@studentemview');
       Route::get('/jobsapplied', 'StudentAppliedController@index');
       Route::get('/show/jobs/{id}','ChakriController@showjobs');

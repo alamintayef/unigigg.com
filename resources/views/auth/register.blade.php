@@ -10,13 +10,13 @@ body
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2" style="padding:50px;">
-            <div class="panel panel-primary">
+            <div class="card card-raised ">
                 <div class="panel-heading"><h4 style="color:white;">Hi ! Talent <i class="fa fa-smile-o"></i></h4></div>
-                <div class="panel-body">
+                <div class="card-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {!! csrf_field() !!}
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }} ">
                             <label class="col-md-4 control-label">Name</label>
                             <i class="fa fa-user"></i>
 
@@ -83,7 +83,7 @@ body
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary btn-raised">
                                     <i class="fa fa-btn paper-plane"></i>SignUp
                                 </button>
                             </div>

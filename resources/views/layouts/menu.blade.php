@@ -1,4 +1,4 @@
-<div class="col-md-2">
+<div class="col-md-2 ">
   <ul class="list-group">
     <li class="list-group-item">
       <a href="{{url('home')}}"><strong><i class="fa fa-dashboard"></i> Dashboard</strong></a>
@@ -48,7 +48,7 @@
         <a href="{{url('postedoddjobs')}}"><strong>Jobs Posted By You</strong></a>
 
       </li>
-      
+
       <li class="list-group-item">
         <a href="{{url('eccentric/jobs/whoapplied')}}"><strong>Applied For your Jobs</strong></a>
 

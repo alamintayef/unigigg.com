@@ -124,7 +124,7 @@ class JobsController extends Controller
   }
   public function showjobs($id)
   {
-    $jobs = DB::table('jobs')
+    $job = DB::table('jobs')
           ->where('jobs.job_id','=', $id)
           ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
           ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
@@ -139,7 +139,7 @@ class JobsController extends Controller
                 ->get();
 
           return view('jobs.jobview', [
-            'jobs'=>$jobs,
+            'job'=>$job,
             'applicable'=>$applicable,
 
           ]);

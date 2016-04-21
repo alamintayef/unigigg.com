@@ -43,7 +43,7 @@
     </div>
 
 
-    {!! Form::submit('Add', ['class' => 'btn btn-primary']) !!}
+    {!! Form::submit('Add', ['class' => 'btn btn-success btn-sm btn-raised']) !!}
 
  {!! Form::close() !!}
 

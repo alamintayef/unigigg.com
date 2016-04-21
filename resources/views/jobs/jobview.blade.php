@@ -30,7 +30,11 @@
                   </p>
                   <hr>
                   <p>
-                    <strong>Requirements: </strong> {{$job->job_reqs}}
+                    <strong>Requirements: </strong>  <ol class="breadcrumb">
+                      <li>{{$job->min_edu_level}}</li>
+                      <li>{{$job->major}}</li>
+                      <li>{{$job->cgpa}}</li>
+                    </ol>
                   </p>
                   <p>
                     <strong>  Additional Requirements: </strong>  {{$job->job_reqs_additional}}
@@ -73,7 +77,7 @@
               </div>
 
             </div>
-    
+
         @endif
       </div>
     </div>

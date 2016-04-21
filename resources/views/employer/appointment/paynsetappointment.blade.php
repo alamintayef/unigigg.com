@@ -9,7 +9,7 @@
 
     </div>
     <div class="col-md-8 ">
-  <div class="panel whiteproper pad">
+  <div class="card-raised whiteproper pad">
     <h4>Set Appointment </h4>
     <small>Admin Will Notify all the candidates for you.</small>
 
@@ -36,7 +36,7 @@
       @endif
     <div class="form-group">
       {!! Form::label('appointment', 'Appointment Date:', ['class' => 'control-label']) !!}
-      {!! Form::date('appointment', null, ['class' => 'form-control']) !!}
+      {!! Form::date('appointment', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}
     </div>
     <div class="form-group">
       {!! Form::label('appoint_time', 'Time:', ['class' => 'control-label']) !!}

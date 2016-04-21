@@ -257,7 +257,7 @@ class AdminController extends Controller
             ->join('users','em_shortlists.user_id','=','users.id')
             ->join('user_info','users.id','=','user_info.user_id')
             ->join('em_infos','call_for_interviews.user_id','=','em_infos.user_id')
-            ->select('users.email','em_shortlists.shortlisted_for_job_id','jobs.job_name','em_infos.company_name','em_infos.company_phone','user_info.fname','user_info.lname','call_for_interviews.appointment')
+            ->select('users.email','em_shortlists.shortlisted_for_job_id','jobs.job_name','em_infos.company_name','em_infos.company_phone','user_info.fname','user_info.lname','call_for_interviews.appointment','jobs.paid')
             ->where('em_shortlists.shortlisted_for_job_id','=',$id)
             ->get();
           foreach ($call as $calls)
@@ -269,6 +269,22 @@ class AdminController extends Controller
               $m->to($calls->email)->subject('Call for interview Request');
             });
           }
+          foreach ($call as $calls)
+          {
+
+            $deviceID = '20198';
+
+
+            $number = $calls->mobile;
+
+            $message = 'You have been called for an interview for '.$calls->job_name.' by '.$calls->company_name. 'please check your mail. -unigigg.com';
+              }
+            $message =  SMSGateway::sendMessageToNumber($number, $message, $deviceID);
+
+          notify()->flash('Notified!', 'success', [
+            'timer' => 2000,
+
+          ]);
       return redirect('call/for/in');
     }
 }

@@ -11,7 +11,7 @@ body
     <div class="row">
         <div class="col-md-8 col-md-offset-2" style="padding:100px;">
 
-            <div class="panel panel-default" >
+            <div class="card card-raised" >
                 <div class="panel-heading text-primary"><h4>Sign in</h4></div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
@@ -59,7 +59,7 @@ body
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-success raised">
                                     <i class="fa fa-btn fa-sign-in"></i>Signin
                                 </button>
 

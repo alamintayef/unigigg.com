@@ -62,7 +62,7 @@
                 <td>
                   <form action="{{url('skill',$skills->skill_id)}}" method="POST">
                     {!! csrf_field() !!}
-                    <button type="submit" class="btn btn-danger">
+                    <button type="submit" class="btn btn-danger btn-sm btn-raised">
                       <i class="fa fa-cross"></i> Delete
                     </button>
                   </form>
@@ -76,7 +76,7 @@
     @else
       <h5>Nothing added</h5>
       <p>
-        You need to add a skill proof related to the skill. Before adding a skill please upload related document to google drive / github / onedrive / dropbox then share the link so that we can verfiy your skills and give feedback 
+        You need to add a skill proof related to the skill. Before adding a skill please upload related document to google drive / github / onedrive / dropbox then share the link so that we can verfiy your skills and give feedback
       </p>
 
 

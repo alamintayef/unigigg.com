@@ -29,7 +29,12 @@
                 <tbody>
                   <tr>
                     <td>
-                      {{$shortlist->fname}} {{$shortlist->lname}}
+                      @if($shortlist->paid===0)
+                            {{$shortlist->user_id}}
+                      @else
+                          {{$shortlist->fname}} {{$shortlist->lname}}
+                      @endif
+
                     </td>
 
                     <td>
@@ -77,8 +82,21 @@
                         </td>
 
                       @endif
+                      @if($shortlist->paid === 0)
+                        After Paying you can view full profile
+                      @else
+                        <form class="pull-right" action="{{url('talent/profile/paid',$shortlist->user_id)}}" method="GET">
+                          {!! csrf_field() !!}
+                          <button type="submit" class="btn btn-info">
+                            <i class="fa fa-user"></i> view profile
+                          </button>
+                        </form>
+                      @endif
+                    <td>
 
+                    </td>
                   </tr>
+
                 </tbody>
 
             @endforeach
@@ -94,9 +112,9 @@
     </div>
   </div>
   <script type="text/javascript">
-  (function ($) {
-  $('#shortlisted').smoothState();
-})(jQuery);
+      (function ($) {
+      $('#shortlisted').smoothState();
+    })(jQuery);
 
   </script>
 @endsection

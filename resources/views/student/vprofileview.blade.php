@@ -10,14 +10,14 @@
           <li ><a href="{{url('userinfo')}}">Basic Information</a></li>
           <li ><a href="{{url('image')}}">Profile Pic</a></li>
           <li ><a href="{{url('edu')}}">Degree</a></li>
-          <li class="active" ><a href="{{url('skill')}}">Skills</a></li>
+          <li  ><a href="{{url('skill')}}">Skills</a></li>
           <li ><a href="{{url('experience')}}">Experience</a></li>
           <li ><a href="{{url('refs')}}">Reference</a></li>
           <li ><a href="{{url('excc')}}">Extra-Curricular</a></li>
           <li><a href="{{url('interest')}}">Interests</a></li>
           <li><a href="{{url('hobby')}}">Hobbies</a></li>
           <li><a href="{{url('fun')}}">About You</a></li>
-          <li><a href="{{url('vdoprofile')}}">Video Profile</a></li>
+          <li class="active"><a href="{{url('vdoprofile')}}">Video Profile</a></li>
         </ul>
 
 
@@ -44,7 +44,7 @@
 
 
             @include('student.forms.vprofile')
-            <div class="col-md-3 panel whiteproper padsmall pull-right">
+            <div class="col-md-3 panel card-raised whiteproper padsmall pull-right">
 
                 <h4 class="textb">Instructions</h4>
                 <p>

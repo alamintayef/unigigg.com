@@ -23,32 +23,35 @@
 
       <div class="col-md-10">
 
-        <div class="panel panel-blue" >
+        <div class="card card-raised" >
           <div class="panel-heading">
               <div class="pull-right pl">
-
+                @foreach($images as $image)
+                <img class="card-raised" src="{!!' /files/images/'.$image->filePath !!}" alt="propic" height="100px" width="100px"  />
+              @endforeach
               <br>
               <br>
               @foreach($user as $users)
                 @if($users->verified===1)
-                  <h6 class="pl textw label-success">
+                  <h6 class="text-success">
                     Verified
                   </h6>
                 @else
-                  <h6 class="pl textw label-danger">
+                  <h6 class="text-danger">
                     Not Verified
                   </h6>
                 @endif
               @endforeach
             </div>
               @foreach($profile as $view )
+              <h3 class="textb">{{$view->fname}}   {{$view->lname}}</h3>
 
             </div>
             <div class="panel-body ft pl">
               <div >
 
                 <p>
-                <b>  University:</b> <em><b> {{$view->institute}} </b></em>
+                <b>  University:</b> <b> {{$view->institute}} </b><br> <b>  Contact:</b> <b> {{$view->mobile}} </b>
                 </p>
 
               </div>

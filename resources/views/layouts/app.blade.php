@@ -9,9 +9,10 @@
   <meta http-equiv="Page-Enter" content="revealTrans(Duration=2.0,Transition=12)">
   <title>unigigg | Get Empowered | Get Hired | Get Recognized</title>
 
-  <!-- Fonts -->
+  <!-- Fonts--->
 
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway" />
+
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -23,28 +24,31 @@
 
 
 
-  <!-- -->
+  <!--js -->
 
   {!! Html::script('js/sweetalert.min.js') !!}
   {!! Html::script('js/prism.js') !!}
   {!! Html::script('js/index.js') !!}
   {!! Html::script('js/awesomplete.js') !!}
   {!! Html::script('js/jquery.parallaxer.js') !!}
+  {!! Html::script('js/mat/bootstrap-datepicker.js') !!}
   <!--- Css -->
   {!! Html::style('css/rotating-card.css') !!}
   {!! Html::style('css/paper.css') !!}
+  {!! Html::style('css/style.css') !!}
   {!! Html::style('css/sweetalert.css') !!}
   {!! Html::style('css/prism.css') !!}
   {!! Html::style('css/awesomplete.css') !!}
   {!! Html::style('css/jquery.parallaxer.css') !!}
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/paper/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
   {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
   <style>
   body {
-    font-family: 'Raleway', serif;
+    font-family: 'Raleway', sans-serif;
     background-color: 	#f7f7f7;
     font-size: 13px;
     padding-top: 100px;
@@ -98,77 +102,9 @@
   }
 
   </style>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
- <script>
- $(function() {
-   var availableTags = [
-     "ActionScript",
-     "AppleScript",
-     "Asp",
-     "BASIC",
-     "C",
-     "C++",
-     "Clojure",
-     "COBOL",
-     "ColdFusion",
-     "Erlang",
-     "Fortran",
-     "Groovy",
-     "Haskell",
-     "Java",
-     "JavaScript",
-     "Lisp",
-     "Perl",
-     "PHP",
-     "Python",
-     "Ruby",
-     "Scala",
-     "Scheme"
-   ];
-   function split( val ) {
-     return val.split( /,\s*/ );
-   }
-   function extractLast( term ) {
-     return split( term ).pop();
-   }
-
-   $( "#tags" )
-     // don't navigate away from the field on tab when selecting an item
-     .bind( "keydown", function( event ) {
-       if ( event.keyCode === $.ui.keyCode.TAB &&
-           $( this ).autocomplete( "instance" ).menu.active ) {
-         event.preventDefault();
-       }
-     })
-     .autocomplete({
-       minLength: 0,
-       source: function( request, response ) {
-         // delegate back to autocomplete, but extract the last term
-         response( $.ui.autocomplete.filter(
-           availableTags, extractLast( request.term ) ) );
-       },
-       focus: function() {
-         // prevent value inserted on focus
-         return false;
-       },
-       select: function( event, ui ) {
-         var terms = split( this.value );
-         // remove the current input
-         terms.pop();
-         // add the selected item
-         terms.push( ui.item.value );
-         // add placeholder to get the comma-and-space at the end
-         terms.push( "" );
-         this.value = terms.join( ", " );
-         return false;
-       }
-     });
- });
- </script>
-
 
 </head>
 <body id="app-layout">
@@ -189,7 +125,7 @@
 
 
           <a class="navbar-brand text-primary" href="{{ url('/') }}" >
-            <i class="fa fa-graduation-cap text-primary"></i>  unigigg<sub>alpha</sub>
+            <i class="fa fa-graduation-cap text-primary "></i>  unigigg<sub>alpha</sub>
           </a>
 
 
