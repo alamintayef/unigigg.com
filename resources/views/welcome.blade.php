@@ -37,14 +37,14 @@ body{
         Be Career ready
       </p>
       <p>
-        <ul class="list-group">
+        <ul class="list-group card card-raised">
           <li class="list-group-item"><i class="fa fa-user"></i> Create a gig profile</li>
           <li class="list-group-item" ><i class="fa fa-plus-square"></i> Add your Awesome Skills</li>
           <li class="list-group-item"><i class="fa fa-check"></i> Validate Skills</li>
           <li class="list-group-item"><i class="fa fa-search"></i>Sit Back and get Searched</li>
           <li class="list-group-item"><i class="fa fa-smile-o fa-2x"></i> <a href="{{url('register')}}">Sign up</a> Its Free</li>
         </ul>
-        <h4><a href="{{url('talent')}}">Learn More <sub><small>Suggested</small></sub></a></h4>
+        <h4><a href="{{url('talent')}}">Learn More</a></h4>
 
 
 
@@ -57,7 +57,7 @@ body{
           Recruiter find proactive employees
       </p>
         <p>
-          <ul class="list-group">
+          <ul class="list-group card card-raised">
             <li class="list-group-item"><i class="fa fa-user"></i> Create a gig profile</li>
             <li class="list-group-item" ><i class="fa fa-plus-square"></i> Add Company Infomation</li>
             <li class="list-group-item"><i class="fa fa-edit"></i> Post Jobs Defining your exact Requirements</li>

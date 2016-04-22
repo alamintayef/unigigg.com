@@ -29,8 +29,8 @@
               </p>
 
               <p class="col-md-4">
-                <strong >Applied for</strong> : {{$seek->job_name}}
-                <strong>Institute</strong>: {{$seek->institute}}
+                <strong >Applied for</strong> : {{$seek->job_name}} <br>
+                <strong>Institute</strong>: {{$seek->institute}} <br>
               </p>
 
 

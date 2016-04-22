@@ -59,7 +59,7 @@
                                      <p class="text-center">{{$job->job_expires}}.</p>
 
                                      <div class="stats-container">
-                                       <form class="form-control" action="{{url('show/ejobs',$job->job_id)}}" method="GET">
+                                       <form class="form-control" action="{{url('/show/jobs',$job->job_id)}}" method="GET">
                                          {!! csrf_field() !!}
 
                                          <button type="submit" name="button" class="btn btn-default btn-mini pull-right">view</button>
@@ -70,11 +70,7 @@
                                  </div>
                              </div>
                              <div class="footer">
-                                 <div class="social-links text-center">
-                                     <a href="http://creative-tim.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
-                                     <a href="http://creative-tim.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
-                                     <a href="http://creative-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
-                                 </div>
+
                              </div>
                          </div> <!-- end back panel -->
                      </div> <!-- end card -->

@@ -66,7 +66,8 @@ Route::get('profile/{useremail}','PublicController@viewme');
 Route::group(['middleware' => ['web']], function () {
       //
       Route::get('/jobs/view','PublicController@publicboard');
-
+    
+      Route::get('/jobs/view/eccentric','PublicController@publiceccentricboard');
       Route::get('/', function () {
 
           return view('welcome');

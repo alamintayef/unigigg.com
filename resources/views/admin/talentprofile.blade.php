@@ -47,8 +47,8 @@
               @endforeach
 
 
-              @foreach($user as $users)
-                @if($users->verified===1)
+
+                @if($user->verified===1)
                   <p class="text-success">
                     Verified
                   </p>
@@ -57,10 +57,10 @@
                     Not Verified
                   </p>
                 @endif
-                @if($users->subs_type===0)
+                @if($user->subs_type===0)
                   <p class="text-warning">
                     Free
-                    <form class="form-group" action="{{url('/verify',$users->id)}}" method="POST">
+                    <form class="form-group" action="{{url('/verify',$user->id)}}" method="POST">
                       {!! csrf_field() !!}
                       <button type="submit" class="btn btn-success">
                         <i class="fa fa-check"></i> Change
@@ -72,9 +72,9 @@
                     Subscribed
                   </p>
                 @endif
-              @endforeach
+
             </div>
-              @foreach($profile as $view )
+
               <h3 class="textb">{{$view->fname}}   {{$view->lname}}</h3>
 
             </div>
@@ -89,7 +89,7 @@
                 </p>
 
               </div>
-            @endforeach
+
 
             <h4>Skills</h4>
             <table class="table ft">
@@ -114,11 +114,15 @@
                     <td class="td">
                       {{$skills->skill_level}}
                     </td>
+                    <td>
+                      Verified
+                    </td>
 
                   </tr>
                 </tbody>
+                  @endforeach
               </table>
-            @endforeach
+
 
             <h4>Education</h4>
 
@@ -163,6 +167,10 @@
             {{$ref->reference_description}}<br>
           <small><strong>Contact : </strong>{{$ref->referee_number}}</small>  </p>
         @endforeach
+
+          </div>
+          <div class="center card card-raised padsmall">
+            <iframe width="460" height="275" src="https://www.youtube.com/embed/{{$vdo->vdourl}}" frameborder="0" allowfullscreen></iframe>
 
           </div>
 

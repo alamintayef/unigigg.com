@@ -73,8 +73,8 @@ class AdminController extends Controller
     // Student Profile view
     public function studentadminview($id)
     {
-      $user = User::where('id','=',$id)->get();
-      $profile = UserInfo::where('user_id','=', $id)->get();
+      $user = User::where('id','=',$id)->first();
+      $view = UserInfo::where('user_id','=', $id)->first();
       $skill = Skills::where('user_id','=', $id)->get();
       $education = Education::where('user_id','=', $id)->get();
       $exps = Experience::where('user_id','=', $id)->get();
@@ -83,9 +83,9 @@ class AdminController extends Controller
       $hobby =Hobbies::where('user_id','=', $id)->get();
       $about =FunFacts::where('user_id','=', $id)->get();
       $images = Image::where('user_id','=', $id)->orderBy('created_at', 'desc')->limit(1)->get();
-      $vdo =Vprofile::where('user_id','=', $id)->get();
+      $vdo =Vprofile::where('user_id','=', $id)->first();
       return view('admin.talentprofile', [
-        'profile'=>$profile,
+        'view'=>$view,
         'skill'=>$skill,
         'education'=> $education,
         'exps'=> $exps,
@@ -95,6 +95,7 @@ class AdminController extends Controller
         'interest' => $interest,
         'hobby'=> $hobby,
         'about'=> $about,
+        'vdo' => $vdo
 
       ]);
     }
