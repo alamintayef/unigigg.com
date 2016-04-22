@@ -156,8 +156,35 @@ class AdminController extends Controller
                   ->where('id', $id)
                   ->update(['verified' => '1']);
 
-        return redirect('admin')   ;
+      $verified = DB::table('user_info')->select('user_info.*')->where('user_id',$id)->first();
+
+      $deviceID = '20198';
+      $number = $verified->mobile;
+
+      $message = 'Congratulations ! '.$verified->fname.' '.$verified->lname. ' Your profile has been verified successfully, You can now apply to regular jobs. Regards unigigg team ';
+
+      $message =  SMSGateway::sendMessageToNumber($number, $message, $deviceID);
+
+      notify()->flash('Notified!', 'success', [
+        'timer' => 2000,
+
+      ]);
+      return redirect('admin')   ;
     }
+    //undo verification
+    public function undoverify($id)
+    {
+      DB::table('users')
+                  ->where('id', $id)
+                  ->update(['verified' => '0']);
+
+                  notify()->flash('Reverted successfully!', 'success', [
+                    'timer' => 2000,
+
+                  ]);
+          return redirect('verification')   ;
+    }
+
     // Job Cron
     public function managejobs(){
 
@@ -257,7 +284,7 @@ class AdminController extends Controller
             ->join('users','em_shortlists.user_id','=','users.id')
             ->join('user_info','users.id','=','user_info.user_id')
             ->join('em_infos','call_for_interviews.user_id','=','em_infos.user_id')
-            ->select('users.email','em_shortlists.shortlisted_for_job_id','jobs.job_name','em_infos.company_name','em_infos.company_phone','user_info.fname','user_info.lname','call_for_interviews.appointment','jobs.paid')
+            ->select('users.email','em_shortlists.shortlisted_for_job_id','jobs.job_name','em_infos.company_name','em_infos.company_phone','user_info.fname','user_info.lname','user_info.mobile','call_for_interviews.appointment','jobs.paid')
             ->where('em_shortlists.shortlisted_for_job_id','=',$id)
             ->get();
           foreach ($call as $calls)
@@ -266,7 +293,7 @@ class AdminController extends Controller
             Mailgun::send('email.admin.callforinterviewbyadmin',[ 'calls' =>  $calls ], function ($m) use ($calls)
             {
               $m->from('callforinterview@unigigg.com', 'Congrats ! You have been selected for and Interview');
-              $m->to($calls->email)->subject('Call for interview Request');
+              $m->to($calls->email)->subject('Call for interview');
             });
           }
           foreach ($call as $calls)
@@ -277,14 +304,29 @@ class AdminController extends Controller
 
             $number = $calls->mobile;
 
-            $message = 'You have been called for an interview for '.$calls->job_name.' by '.$calls->company_name. 'please check your mail. -unigigg.com';
+            $message = 'You have been called for an interview for '.$calls->job_name.' by '.$calls->company_name. 'please check your mail. unigigg.com';
               }
             $message =  SMSGateway::sendMessageToNumber($number, $message, $deviceID);
 
-          notify()->flash('Notified!', 'success', [
-            'timer' => 2000,
 
-          ]);
+          $employer = DB::table('jobs')
+                      ->join('users', 'jobs.user_id','=','users.id')
+                      ->join('em_infos','users.id', '=', 'em_infos.user_id')
+                      ->select('jobs.job_name', 'users.email', 'em_infos.company_name')
+                      ->where('jobs.job_id',$id)->first();
+
+                      Mailgun::send('email.admin.callrequestok',[ 'employer' =>  $employer ], function ($m) use ($employer)
+                      {
+                        $m->from('callforinterview@unigigg.com', 'Congrats ! Your request has been processed successfully');
+                        $m->to($employer->email)->subject('Your Request has been processed');
+                      });
+
+
+                                notify()->flash('Notified!', 'success', [
+                                  'timer' => 2000,
+
+                                ]);
+
       return redirect('call/for/in');
     }
 }

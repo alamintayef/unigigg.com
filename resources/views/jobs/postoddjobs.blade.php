@@ -7,7 +7,9 @@
       <div class="col-md-6 whiteproper panel">
 
         <h2 class="textb">Post Eccentric Jobs</h2>
+<style media="screen">
 
+</style>
         {!! Form::open(array('url' => '/eccentricJobspost')) !!}
         @if($errors->any())
           <div class="alert alert-danger">
@@ -27,8 +29,9 @@
             <select class="form-control" id="select" name="type">
               <option value="Tution">Tuition</option>
               <option value="Assignment">Assignment Help</option>
-              <option value="Others">Others</option>
-
+              <option value="Research Assistant">Research Assistant</option>
+              <option value="Photography">Photo Graphy</option>
+              <option value="Other">Other</option>
             </select>
 
           </div>

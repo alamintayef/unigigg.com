@@ -111,6 +111,7 @@ Route::group(['middleware' => ['web']], function () {
 
       //verify
       Route::post('verify/{id}', 'AdminController@verify');
+      Route::post('undo/verify/{id}', 'AdminController@undoverify');
       //managejobs
       Route::get('managejobs','AdminController@managejobs');
       Route::post('admindeletejobs/{id}','AdminController@deletejobs');
