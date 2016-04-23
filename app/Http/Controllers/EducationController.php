@@ -75,7 +75,7 @@ class EducationController extends Controller
       //  'Degree_type'=> 'required|max:10',
         'Degree_start_date'=> 'required',
         'Degree_end_date'=> 'required',
-      //  'Degree_institute'=> 'required|max:50',
+       'Degree_institute'=> 'required|max:50',
         'Degree_result'=>'required',
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Model\Student\Jobs;
 use App\Model\Student\User;
+use App\Model\Student\Area;
 use App\Model\Student\UserInfo;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -67,13 +68,58 @@ class JobsController extends Controller
 
 
     }
+    public function update(Request $request, $id)
+    {
+
+      $this->validate($request, [
+          'job_name' => 'required|max:255',
+          'job_type' => 'required',
+          'job_salary' => 'required|min:4|max:12',
+          'job_location' => 'required',
+          'job_description' => 'required',
+          'min_edu_level' => 'required',
+          'major' => 'required',
+          'cgpa' => 'required',
+          'job_skill_reqs' => 'required',
+          'job_start_date' => 'required|date',
+          'job_last_date_application' => 'required|date',
+
+      ]);
+
+
+      $jobs = Jobs::where('job_id',$id);
+      $jobs->job_name = $request->job_name;
+      $jobs->job_type = $request->job_type;
+      $jobs->job_salary = $request->job_salary;
+      $jobs->job_location = $request->job_location;
+      $jobs->job_description = $request->job_description;
+      $jobs->min_edu_level =$request->min_edu_level;
+      $jobs->major = $request->major;
+      $jobs->cgpa = $request->cgpa;
+      $jobs->job_skill_reqs=$request->job_skill_reqs;
+      $jobs->job_reqs_additional = $request->job_reqs_additional;
+      $jobs->job_start_date = $request->job_start_date;
+      $jobs->job_last_date_application = $request->job_last_date_application;
+      $jobs->save();
+      notify()->flash('Updated Successfully!', 'success', [
+         'timer' => 2000,
+
+       ]);
+
+      return redirect('/home');
+
+
+
+    }
+
+
     public function show(Request $request)
     {
       $postedjobs = Jobs::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->get();
-
+      $area =Area::all();
       return view('employer.postedjobs', [
         'postedjobs'=>$postedjobs,
-
+        'area'=> $area,
 
       ]);
     }

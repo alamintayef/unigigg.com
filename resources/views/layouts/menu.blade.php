@@ -59,7 +59,11 @@
 
 
   </li>
-
+  <!--
+  <li class="list-group-item"> <strong>
+    <a  href="{{ url('/password/reset') }}">Change Password</a></strong>
+  </li>
+-->
 
 
   </ul>

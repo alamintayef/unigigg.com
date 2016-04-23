@@ -11,7 +11,7 @@ body
     <div class="row">
         <div class="col-md-8 col-md-offset-2" style="padding:50px;">
             <div class="card card-raised ">
-                <div class="panel-heading"><h4 style="color:white;">Hi ! Talent <i class="fa fa-smile-o"></i></h4></div>
+                <div class="panel-heading"><h4 class="textb">Hi ! Talent <i class="fa fa-smile-o"></i></h4></div>
                 <div class="card-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {!! csrf_field() !!}
@@ -93,7 +93,11 @@ body
                           <p>
                           <strong>*</strong><small>By signing up you agree to our Terms and Conditions and Privacy Policy</small>
                           </p>
-                            </div>
+                          <p class="">
+                            Already signed up ? <a href="{{url('login')}}">Sign In</a><br>
+                            Not A Talent ? Signup as  <a href="{{url('employer/register')}}">Recruiter</a>
+                          </p>
+                          </div>
                         </div>
                     </form>
                 </div>

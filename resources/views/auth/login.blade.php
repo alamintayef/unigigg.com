@@ -64,6 +64,13 @@ body
                                 </button>
 
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+                                <br>
+                                Not Signed up yet ?
+
+                                <a class="link" href="{{ url('/register') }}">sign up</a>
+
+
+
                             </div>
                         </div>
                     </form>

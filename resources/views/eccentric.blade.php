@@ -23,7 +23,7 @@
           <h4 class="textw">Tutions</h4>
           <h4 class="textw">Photography</h4>
           <h4 class="textw">Content Writing</h4>
-          <h4 class="textw">And Many more small jobs..</h4>
+          <h4 class="textw">And Many more jobs..</h4>
           <p class="textw">
             are not counted as jobs in our society. But hey every jobs is a job and helps us to grow and gain experience. So why not list them
           </p>
