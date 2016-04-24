@@ -1,6 +1,9 @@
 
 <div class="container">
   <div class="row">
+    <div class="col-md-10 card-raised">
+
+
     <h3>Welcome <strong class="primary">{{ Auth::user()->name }}
     </strong> Super admin</h3>
     @if(count($errors)>0)
@@ -10,7 +13,7 @@
         @endforeach
       </div>
     @endif
-  </div>
+
   <div class="col-sm-4 panel col-sm-offset-1">
 
       <ul class="list-group">
@@ -36,7 +39,11 @@
 
 
   </div>
-  <div class="jumbotron">
+  <div class="col-md-4 card-raised col-md-offset-1 whiteproper">
+    <a href="{{url('admin/create/user')}}" class="btn btn-link"><i class="fa fa-plus"></i> Create <i class="fa fa-user"></i></a>
+
+  </div>
+
     @if (notify()->ready())
       <script>
       swal({
@@ -58,5 +65,6 @@
 
 
 
+</div>
 </div>
 </div>

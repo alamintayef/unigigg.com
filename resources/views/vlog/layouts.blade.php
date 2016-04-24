@@ -5,9 +5,10 @@
     <div class="col-md-12">
       <div class="col-md-2 panel center">
         <ul class="list-group">
-          <li class="list-group-item"><a href="#">Inspiration</a></li>
-          <li class="list-group-item">Tutorial</li>
+          <li class="list-group-item"><a href="{{url('vlog')}}">Inspiration</a></li>
+          <li class="list-group-item"><a href="{{url('interview')}}">Interview Hacks</li>
           <li class="list-group-item">Life Hacks</li>
+            <li class="list-group-item">Tutorial</li>
         </ul>
 
       </div>

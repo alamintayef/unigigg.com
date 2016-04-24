@@ -41,7 +41,7 @@ class AdminController extends Controller
     {
       $alluser = DB::table('users')->where('type',1)->get();
 
-      return view('admin.userboard',[
+      return view('admin.user.userboard',[
         'alluser' => $alluser,
       ]);
 

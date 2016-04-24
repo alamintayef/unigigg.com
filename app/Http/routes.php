@@ -42,10 +42,14 @@ Route::get('auto', function()
 {
    return view('sms');
 });
-
+//vlog
 Route::get('/vlog', function(){
    return view('vlog.layouts');
 });
+Route::get('/interview', function(){
+   return view('vlog.interview');
+});
+
 
 Route::get('/jobs/view','PublicController@publicboard');
 Route::get('/jobs/view/eccentric','PublicController@publiceccentricboard');
@@ -66,7 +70,7 @@ Route::get('profile/{useremail}','PublicController@viewme');
 Route::group(['middleware' => ['web']], function () {
       //
       Route::get('/jobs/view','PublicController@publicboard');
-    
+
       Route::get('/jobs/view/eccentric','PublicController@publiceccentricboard');
       Route::get('/', function () {
 
@@ -120,6 +124,10 @@ Route::group(['middleware' => ['web']], function () {
       Route::post('admindeleteoddjobs/{id}','AdminController@destroy');
       // admin search
       Route::get('search','AdminController@search');
+
+      //add user
+      Route::get('admin/create/user','AdminUserController@index');
+      Route::post('admin/create/user','AdminUserController@createUser');
 
       // admin end ---------------------------------------------------
 
