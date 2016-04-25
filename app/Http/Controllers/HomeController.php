@@ -23,6 +23,7 @@ use App\Model\Student\OddApplied;
 use App\Model\Student\Reference;
 use App\Model\Student\StudentApplied;
 use App\Model\Student\Vprofile;
+use App\Model\Student\University;
 
 use Carbon\Carbon;
 
@@ -64,10 +65,11 @@ class HomeController extends Controller
       $eminfos = EmInfo::where('user_id', $request->user()->id)->get();
       $jobcount = DB::table('jobs')->select('jobs.*')->where('user_id', $request->user()->id)->count();
       //admin
-      $allusers = User::where('type','=',1);
-      $allemployer = User::where('type','=',2);
+      $allusers = User::where('type','=',1)->count();
+      $allemployer = User::where('type','=',2)->count();
       $allJobs = Jobs::all();
       $allOddJobs = OddJobs::all();
+      $uni = University::all()->count();
 
 
 
@@ -95,6 +97,7 @@ class HomeController extends Controller
         'allemployer'=>$allemployer,
         'allJobs' => $allJobs,
         'allOddJobs' => $allOddJobs,
+        'uni' => $uni,
 
     ]);
 

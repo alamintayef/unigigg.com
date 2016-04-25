@@ -128,6 +128,8 @@ Route::group(['middleware' => ['web']], function () {
       //add user
       Route::get('admin/create/user','AdminUserController@index');
       Route::post('admin/create/user','AdminUserController@createUser');
+      //Delete user
+      Route::post('admin/delete/user/{id}', 'AdminUserController@deleleUser');
 
       // admin end ---------------------------------------------------
 

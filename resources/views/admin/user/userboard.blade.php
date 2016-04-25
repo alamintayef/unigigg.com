@@ -19,6 +19,9 @@
             <th>
               Verification
             </th>
+            <th>
+              Delete
+            </th>
           </thead>
           <tbody>
 
@@ -47,6 +50,14 @@
                   @else
                     <button type="button" name="button" class="btn-success">Verified</button>
                   @endif
+                </td>
+                <td>
+                  <form  action="{{url('admin/delete/user',$users->id)}}" method="POST">
+                    {!! csrf_field() !!}
+                    <button type="submit" class="btn btn-danger">
+                      <i class="fa fa-trash"></i> Delete
+                    </button>
+                  </form>
                 </td>
 
 

@@ -50,4 +50,18 @@ class AdminUserController extends Controller
        ]);
       return redirect('home');
     }
+
+    public function deleleUser($id)
+    {
+      $user = User::findorFail($id);
+      $user->delete();
+
+      notify()->flash('Deleted Successfully!', 'success', [
+         'timer' => 1000,
+
+       ]);
+
+         return redirect('home');
+
+    }
 }
