@@ -10,7 +10,7 @@ body{
 
 <div class="container" id="content"  >
     <div class="row ">
-      <div style="height:550px; text-align:center;">
+      <div  style="height:550px; text-align:center;">
 
         <br>
         <br>
@@ -21,7 +21,7 @@ body{
         <br>
         <h3 style="text-align:center;color:white;">Get <strong>Empowered</strong>.Get <strong>Hired</strong>.Get <strong>Recognized.</strong></h3>
         <h5 style="text-align:center;color:white;">CONNECTING YOUNG TALENTS WITH THE EMPLOYERS</h5>
-        <a class="btn btn-default btn-raised btn-lg" href="{{url('jobs/view')}}">Find a Gigg/Internship</a>
+        <a class="btn btn-default btn-lg " href="{{url('jobs/view')}}"><span>Find a Gigg/Internship</span></a>
 
 
       </div>

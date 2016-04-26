@@ -72,7 +72,7 @@ class EducationController extends Controller
 
       $this->validate($request, [
         'Degree_name'=> 'required|min:3|max:255',
-      //  'Degree_type'=> 'required|max:10',
+      // 'Degree_type'=> 'required|max:10',
         'Degree_start_date'=> 'required',
         'Degree_end_date'=> 'required',
        'Degree_institute'=> 'required|max:50',

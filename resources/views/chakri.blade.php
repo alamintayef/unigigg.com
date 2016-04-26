@@ -19,7 +19,8 @@
         </div>
         @if(count($jobs)>0)
           @foreach($jobs as $job)
-            <div class="col-md-3 col-md-offset-1 card card-raised whiteproper">
+
+            <div class="col-md-3 col-md-offset-1 whiteproper card-raised padsmall">
 
               <h5 >{{$job->job_name}}</h5>
 
@@ -32,17 +33,14 @@
 
               <!-- Check if its recruter or not-->
 
-
                   <form class="form-control" action="{{url('show/jobs',$job->job_id)}}" method="GET">
                     {!! csrf_field() !!}
                     <button type="submit" name="button" class="btn btn-default raised">view</button>
                   </form>
-
-
             </div>
-              <br>
 
           @endforeach
+
         @endif
 
 

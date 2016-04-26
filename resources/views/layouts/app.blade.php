@@ -29,7 +29,7 @@
   {!! Html::script('js/sweetalert.min.js') !!}
   {!! Html::script('js/prism.js') !!}
   {!! Html::script('js/index.js') !!}
-    {!! Html::script('js/parsley.min.js') !!}
+  {!! Html::script('js/parsley.min.js') !!}
   {!! Html::script('js/awesomplete.js') !!}
   {!! Html::script('js/jquery.parallaxer.js') !!}
   {!! Html::script('js/mat/bootstrap-datepicker.js') !!}
@@ -37,6 +37,7 @@
   {!! Html::style('css/rotating-card.css') !!}
   {!! Html::style('css/paper.css') !!}
   {!! Html::style('css/style.css') !!}
+
   {!! Html::style('css/sweetalert.css') !!}
   {!! Html::style('css/prism.css') !!}
   {!! Html::style('css/awesomplete.css') !!}
@@ -145,7 +146,7 @@
 
 
             <ul class="nav navbar-nav">
-              <li ><a   data-toggle="modal" data-target="#myModal"><i class="fa fa-phone-square"></i> Post A Job <sub><small>with a call</small></sub></a></li>
+              <li ><a  class="btn btn-link"  data-toggle="modal" data-target="#myModal"><i class="fa fa-phone-square"></i> Post A Job <sub><small>with a call</small></sub></a></li>
               <li ><a href="{{ url('/recruiter') }}">Recruiter</a></li>
               <li>
                 <a  href="#" class="dropdown-toggle  text-primary" data-toggle="dropdown" role="button" aria-expanded="false">
