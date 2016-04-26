@@ -53,9 +53,9 @@
     @endif</sub>
 
   </li>
-  <!--
+
   <li class="list-group-item"> <strong>
-    <a  href="{{ url('/password/reset') }}">Change Password</a></strong>
+    <a  href="{{ url('change/password') }}">Change Password</a></strong>
   </li>
--->
+
 </div>

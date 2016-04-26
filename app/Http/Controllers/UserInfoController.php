@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
     use Illuminate\Http\Request;
     use App\Model\Student\UserInfo;
     use App\Model\Student\Vprofile;
+    use App\Model\Student\User;
     use App\Http\Requests;
     use App\Http\Controllers\Controller;
     use DB;
@@ -152,6 +153,7 @@ namespace App\Http\Controllers;
           {
           $vprofile = Vprofile::findorFail($uid);
           $vprofile->vdourl = $request->vdourl;
+
           }
           else {
             $request->user()->vprofile()->create([
@@ -173,6 +175,36 @@ namespace App\Http\Controllers;
       public function vprofileshow()
       {
         return view('student.vprofileview');
+      }
+
+      public function Change()
+      {
+        return view('admin.user.passchange');
+      }
+
+
+
+      public function PrimaryInfoUpdate(Request $request)
+      {
+
+        $this->validate($request, [
+          'password' => 'required|confirmed|min:8',
+
+        ]);
+        $user = auth()->user()->id;
+        $pass=$request->password;
+        DB::table('users')->where('id',$user)->update(['password' => bcrypt($pass)]);
+
+
+        notify()->flash('Updated Successfully!', 'success', [
+          'timer' => 3000,
+          'text' => 'It\'s really great to see you again',
+        ]);
+
+
+        return redirect('/home');
+
+
       }
 
 

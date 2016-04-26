@@ -10,9 +10,10 @@
         "laravelcollective/html": "5.2.*",
         "barryvdh/laravel-dompdf": "0.6.*",
         "codecourse/notify": "^1.1",
-        "guzzlehttp/guzzle": "~5.3|~6.0",
+        "guzzlehttp/guzzle": "~5.3|6.2",
         "limatheus/smsgateway": "^1.0",
         "bogardo/mailgun": "4.0.*"
+
 
 
 

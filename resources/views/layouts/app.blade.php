@@ -29,6 +29,7 @@
   {!! Html::script('js/sweetalert.min.js') !!}
   {!! Html::script('js/prism.js') !!}
   {!! Html::script('js/index.js') !!}
+    {!! Html::script('js/parsley.min.js') !!}
   {!! Html::script('js/awesomplete.js') !!}
   {!! Html::script('js/jquery.parallaxer.js') !!}
   {!! Html::script('js/mat/bootstrap-datepicker.js') !!}

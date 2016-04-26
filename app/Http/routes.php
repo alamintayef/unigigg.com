@@ -131,6 +131,11 @@ Route::group(['middleware' => ['web']], function () {
       //Delete user
       Route::post('admin/delete/user/{id}', 'AdminUserController@deleleUser');
 
+
+      //passchange
+      Route::get('change/password','UserInfoController@Change');
+      Route::post('change/user/password','UserInfoController@PrimaryInfoUpdate');
+
       // admin end ---------------------------------------------------
 
 
