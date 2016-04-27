@@ -1,6 +1,7 @@
 <style media="screen">
-  body{
-    font-family: 'Raleway';
+  #font{
+    font-family: 'Courier';
+
 
   }
 </style>
@@ -8,7 +9,7 @@
   <div class="row">
     @include('layouts.menu')
 
-    <div class="col-md-10  ">
+    <div class="col-md-10 " id="font">
       <div class="card card-raised padsmall">
         <div class="panel-heading"><h4 class="textb">Dashboard</h4></div>
 

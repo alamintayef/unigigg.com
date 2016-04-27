@@ -14,7 +14,8 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway" />
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Courier">
+      <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" media="screen" title="no title" charset="utf-8">
 
@@ -58,7 +59,7 @@
   }
   .nav
   {
-    font-size: 15px;
+    font-size: 13px;
   }
   .ssmal{
     font-size: 10px;

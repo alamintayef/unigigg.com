@@ -22,6 +22,6 @@
 
   @endforeach
 @else
-  <h4>Nothing Added</h4>
+    <p>Nothing added</p>
 @endif
 </div>

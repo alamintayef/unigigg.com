@@ -48,7 +48,7 @@
               </table>
             @endforeach
           @else
-            <h4>Nothing added</h4>
+            <p>Nothing added</p>
           @endif
           </tbody>
         </table>

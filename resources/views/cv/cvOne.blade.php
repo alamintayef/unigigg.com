@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
+  @if(count($info)>0)
 <head>
+
 <title>{{$info->fname}} {{$info->lname}}</title>
 
 <meta name="viewport" content="width=device-width"/>
@@ -10,6 +12,7 @@
 
   {!! Html::style('css/cvOne.css') !!}
 	{!! Html::style('css/style.css') !!}
+
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
 
 <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
@@ -20,7 +23,7 @@
 </head>
 <body id="top">
   <a href="https://www.facebook.com/sharer/sharer.php?u=www.unigigg.com/profile/{{$user->name}}" target="_blank">
-  <button type="button" name="button">Share</button>
+  <button type="button" class="btn btn-link" name="button"><i class="fa fa-facebook"></i>Share <i class="fa fa-share"></i></button>
 </a>
 <div id="cv" class="instaFade">
 	<div class="mainDetails">
@@ -126,4 +129,11 @@
 </div>
 
 </body>
+
+
+  @else
+    <p>
+      Nothing Added Yet
+    </p>
+  @endif
 </html>

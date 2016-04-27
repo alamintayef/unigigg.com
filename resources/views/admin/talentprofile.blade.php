@@ -37,12 +37,21 @@
 
 
               @foreach($about as $info)
+                @if(count($info)>0)
+
                 <div class="well">
                   {{$info->fun_facts}}<br>
                   {{$info->inspiration_qot}}<br>
                   {{$info->Why_you}}<br>
                   {{$info->Why_not_you}}<br>
                 </div>
+
+                                @else
+                                  <p>
+                                    Nothing Added Yet`
+                                  </p>
+
+                                @endif
 
               @endforeach
 
@@ -74,6 +83,7 @@
                 @endif
 
             </div>
+            @if(count($view)>0)
 
               <h3 class="textb">{{$view->fname}}   {{$view->lname}}</h3>
 
@@ -90,6 +100,10 @@
 
               </div>
 
+                          @else
+                            Nothing added
+                          @endif
+            @if(count($skill)>0)
 
             <h4>Skills</h4>
             <table class="table ft">
@@ -124,6 +138,11 @@
               </table>
 
 
+            @else
+              Nothing added
+            @endif
+            @if(count($education)>0)
+
             <h4>Education</h4>
 
             @foreach($education as $edu )
@@ -144,8 +163,15 @@
 
               @endforeach
 
+                          @else
+                            nothing added
+                          @endif
+
             </div>
             <hr>
+            @if(count($exps)>0)
+
+
             <h4 class="pl">Experiences</h4>
             <div class="pl">
                 @foreach($exps as $exp )
@@ -158,6 +184,10 @@
             </p>
             @endforeach
           </div>
+            @endif
+            @if(count($refs)>0)
+
+
           <h4 class="pl">References</h4>
           <div class="pl" >
             @foreach($refs as $ref )
@@ -167,12 +197,16 @@
             {{$ref->reference_description}}<br>
           <small><strong>Contact : </strong>{{$ref->referee_number}}</small>  </p>
         @endforeach
-
+            @endif
           </div>
+          @if(count($vdo)>0)
+
+
           <div class="center card card-raised padsmall">
             <iframe width="460" height="275" src="https://www.youtube.com/embed/{{$vdo->vdourl}}" frameborder="0" allowfullscreen></iframe>
 
           </div>
+                  @endif
 
 
 

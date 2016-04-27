@@ -2,8 +2,16 @@
 @section('content')
 <style media="screen">
 body{
-  background-image:url(http://www.louisdumont.com/temp/bulb_test.jpg);
+  background-image:url(files/images/empty.jpg);
+  /*
+    http://www.louisdumont.com/temp/bulb_test.jpg
 
+  */
+
+}
+#content3
+{
+  background-image:url(files/images/board.jpg);
 }
 </style>
 
@@ -12,6 +20,10 @@ body{
     <div class="row ">
       <div  style="height:550px; text-align:center;">
 
+        <br>
+        <br>
+        <br>
+        <br>
         <br>
         <br>
         <br>
@@ -71,14 +83,19 @@ body{
   </div>
 
 </div>
-<div class="container pad" id="content3" data-stellar-background-ratio="0.5">
+<div class="container-fluid pad" id="content3" data-stellar-background-ratio="0.5">
   <div class="row" style="text-align:center">
+        <br>
+        <br>
         <br>
         <br>
         <br>
         <h2 style="color:white;">Eccentric Jobs</h2>
         <h4 style="color:white;">Find out what you like doing best, and get someone to pay you for it.</h4>
-        <a href="eccentric" class="btn btn-default btn-raised ">Learn More</a>
+        <a href="eccentric" class="btn btn-default btn-lg raised ">Learn More</a>
+        <br>
+        <br>
+        <br>
 
 
     </div>

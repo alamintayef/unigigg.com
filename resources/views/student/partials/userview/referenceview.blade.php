@@ -65,5 +65,5 @@
 @endforeach
 </div>
 @else
-  <h4>No Reference added yet</h4>
+  <p>Nothing added</p>
 @endif
