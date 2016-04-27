@@ -6,9 +6,12 @@
 <meta name="viewport" content="width=device-width"/>
 <meta name="description" content="The Curriculum Vitae from unigigg.com."/>
 <meta charset="UTF-8">
+  <script src="//fast.eager.io/V77aiwbirP.js"></script>
 
   {!! Html::style('css/cvOne.css') !!}
 	{!! Html::style('css/style.css') !!}
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+
 <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
 
 <!--[if lt IE 9]>
@@ -16,6 +19,9 @@
 <![endif]-->
 </head>
 <body id="top">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=www.unigigg.com/profile/{{$user->name}}" target="_blank">
+  <button type="button" name="button">Share</button>
+</a>
 <div id="cv" class="instaFade">
 	<div class="mainDetails">
 		<div id="headshot" class="quickFade">
@@ -24,14 +30,15 @@
 
 		<div id="name">
 			<h2 class="quickFade delayTwo">{{$info->fname}} {{$info->lname}}</h2>
-			<h4 class="quickFade delayThree">{{$info->institute}}</h4>
+
+
 		</div>
 
 		<div id="contactDetails" class="quickFade delayFour">
 			<ul>
-				<li>e: <a href="mailto:joe@bloggs.com" target="_blank">{{$user->email}}</a></li>
-				<li>w: <a href="http://www.unigigg.com/profile/{{$user->email}}" target="_blank">www.unigigg.com</a></li>
-				<li>m: {{$info->mobile}}</li>
+				<li><i class="fa fa-envelope"></i>: {{$user->email}}</li>
+        	<li><i class="fa fa-map-marker"></i>: {{$info->area}}</li>
+				<li><i class="fa fa-phone"></i>: {{$info->mobile}}</li>
 			</ul>
 		</div>
 		<div class="clear"></div>
@@ -61,10 +68,10 @@
 
 
 				<article>
-					<h2>{{$education->Degree_institute}}</h2>
-					<p class="subDetails">{{$education->Degree_type}} in {{$education->Degree_name}}</p>
-					<p>{{$education->Degree_start_date}} {{$education->Degree_end_date}}
-						{{$education->Degree_result}}
+					<h2>{{$education->Degree_type}} in {{$education->Degree_name}}</h2>
+					<p class="subDetails">{{$education->Degree_institute}}</p>
+					<p>Start : {{$education->Degree_start_date}}  Passing : {{$education->Degree_end_date}}
+						Result:{{$education->Degree_result}}
 					</p>
 				</article>
 					@endforeach

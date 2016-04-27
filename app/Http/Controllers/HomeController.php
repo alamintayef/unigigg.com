@@ -60,6 +60,7 @@ class HomeController extends Controller
       $vdo = Vprofile::where('user_id', $request->user()->id)->get();
       $joblimit=StudentApplied::where('user_id', $request->user()->id)->get();
       $oddjoblimit=OddApplied::where('user_id', $request->user()->id)->get();
+      $user=User::where('id', $request->user()->id)->first();
 
       //employer
       $eminfos = EmInfo::where('user_id', $request->user()->id)->get();
@@ -88,6 +89,7 @@ class HomeController extends Controller
         'images'=>$images,
         'joblimit'=>$joblimit,
         'oddjoblimit' => $oddjoblimit,
+        'user' => $user,
        'vdo' => $vdo,
         //employer
         'eminfos'=>$eminfos,

@@ -21,16 +21,20 @@
       <a class="btn btn-default raised  " href="{{url('userinfo')}}"> <i class="fa fa-edit"></i>Edit Info</a></div>
 
           <hr>
-          <form action="{{url('pdf')}}" method="get">
+          <form class="form-inline" action="{{url('pdf')}}" method="get">
             {!! csrf_field() !!}
             <button type="submit" class="btn btn-info raised ">
               <i class="fa fa-tasks"></i> Generate CV
             </button>
+
           </form>
           <hr>
+
       @endforeach
 
+
   @endif
+        <a href="{{url('/profile',$user->name)}}"> CV</a>
 
 
 

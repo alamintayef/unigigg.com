@@ -59,11 +59,11 @@ class EducationController extends Controller
 
            return redirect('/edu');
     }
-    public function updateview(){
+    public function updateview($id){
 
+      $edu = Education::findorFail($id);
 
-
-      return view('student.partials.update.eduview');
+      return view('student.partials.update.eduview')->with('edu',$edu);
 
     }
 

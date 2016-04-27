@@ -1,18 +1,22 @@
+@extends('layouts.app')
 
+@section('content')
 
+<div class="container">
+<div class="card card-raised pad">
 
-
-    <form class="" action="{{url('edupdate',$edu->id)}}" method="POST">
-      <div class="well">
+    <form class="form-horizontal" action="{{url('edupdate',$edu->id)}}" method="POST">
+      <div class="card-header">
         <span class="text-danger">Every Field is required</span>
       </div>
 
 
         {!! csrf_field() !!}
-    
+
+
             <div class="form-group">
               {!! Form::label('Degree_name', 'Major:', ['class' => 'control-label']) !!}
-              {!! Form::text('Degree_name', null, ['class' => 'form-control']) !!}
+              {!! Form::text('Degree_name', $edu->Degree_name, ['class' => 'form-control']) !!}
             </div>
             <div class="form-group">
               {!! Form::label('Degree_type', 'Degree Level:', ['class' => 'control-label']) !!}
@@ -26,20 +30,20 @@
             </div>
             <div class="form-group">
               {!! Form::label('Degree_start_date', 'Start Date:', ['class' => 'control-label']) !!}
-              {!! Form::date('Degree_start_date', null, ['class' => 'form-control']) !!}
+              {!! Form::date('Degree_start_date', $edu->Degree_start_date, ['class' => 'form-control']) !!}
             </div>
             <div class="form-group">
               {!! Form::label('Degree_end_date', 'Expected / Passing Date:', ['class' => 'control-label']) !!}
-              {!! Form::date('Degree_end_date', null, ['class' => 'form-control']) !!}
+              {!! Form::date('Degree_end_date', $edu->Degree_end_date, ['class' => 'form-control']) !!}
             </div>
             <div class="form-group">
               {!! Form::label('Degree_institute', 'Institute:', ['class' => 'control-label']) !!}
-              {!! Form::text('Degree_institute', null, ['class' => 'form-control']) !!}
+              {!! Form::text('Degree_institute', $edu->Degree_institute, ['class' => 'form-control']) !!}
               <small class="text-danger">Please insert the full Institute name</small>
             </div>
             <div class="form-group">
               {!! Form::label('Degree_result', 'Result:', ['class' => 'control-label']) !!}
-              {!! Form::text('Degree_result', null, ['class' => 'form-control']) !!}
+              {!! Form::text('Degree_result', $edu->Degree_result, ['class' => 'form-control']) !!}
             </div>
 
 
@@ -56,3 +60,7 @@
       {!! Form::submit('update', ['class' => 'btn btn-primary']) !!}
 
     </form>
+  </div>
+
+</div>
+@stop

@@ -19,10 +19,12 @@
         <div class="panel-footer">
 
 
-
-          <button type="submit" class="btn btn-raised btn-sm btn-primary" data-toggle="modal" data-target="#myModal">
+          <form class="pull-left" action="{{url('edupdate',$edu->id)}}" method="GET">
+            {!! csrf_field() !!}
+          <button type="submit" class="btn btn-raised btn-sm btn-primary" >
             <i class="fa fa-edit"></i>  Edit
           </button>
+        </form>
           <form class="pull-right" action="{{url('edudel',$edu->id)}}" method="POST">
             {!! csrf_field() !!}
             <button type="submit" class="btn btn-raised btn-danger btn-sm">
@@ -33,33 +35,10 @@
         </div>
 
 
-
-
-
-
-
   </div>
 
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Update Information</h4>
-          </div>
-          <div class="modal-body">
-            @include('student.partials.update.eduview')
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- Modal ends -->
   @endforeach
 </div>

@@ -250,6 +250,7 @@ Route::group(['middleware' => 'web'], function () {
   // Education
       Route::get('/edu','EducationController@index');
       Route::post('/edustore', 'EducationController@store');
+      Route::get('/edupdate/{id}','EducationController@updateview');
       Route::post('/edupdate/{id}','EducationController@update');
       Route::post('/edudel/{id}','EducationController@destroy');
   //Image
