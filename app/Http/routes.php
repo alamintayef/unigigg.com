@@ -51,10 +51,11 @@ Route::get('/interview', function(){
 });
 
 
-Route::get('/jobs/view','PublicController@publicboard');
-Route::get('/jobs/view/eccentric','PublicController@publiceccentricboard');
-Route::get('/sms', 'PublicController@sendsms');
-Route::get('profile/{useremail}','PublicController@viewme');
+    Route::get('/jobs/view','PublicController@publicboard');
+    Route::get('/jobs/view/eccentric','PublicController@publiceccentricboard');
+    Route::get('/sms', 'PublicController@sendsms');
+    Route::get('profile/{useremail}','PublicController@viewme');
+    Route::get('blog', 'PublicController@showBlog');
 
 /*
 |--------------------------------------------------------------------------
@@ -286,4 +287,10 @@ Route::group(['middleware' => 'web'], function () {
 
       Route::get('/eccentricJobsiApplied', 'OddJobsController@oddwhereiapplied');
       Route::post('/remove/application/{id}', 'StudentAppliedController@destroy');
+
+
+  //blog
+      Route::get('blog/post', 'BlogController@index');
+      Route::post('blog/post/create', 'BlogController@store');
+      Route::get('blog', 'PublicController@showBlog');
 });

@@ -63,6 +63,9 @@
   <li class="list-group-item"> <strong>
     <a  href="{{ url('change/password') }}">Change Password</a></strong>
   </li>
+  <li class="list-group-item"> <strong>
+    <a  href="{{ url('blog/post') }}">Post a article</a></strong>
+  </li>
 
 
 

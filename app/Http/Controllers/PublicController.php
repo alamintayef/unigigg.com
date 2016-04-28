@@ -77,6 +77,15 @@ class PublicController extends Controller
   $message =  SMSGateway::sendMessageToNumber($number, $message, $deviceID);
   return redirect('/');
   }
+  public function showBlog()
+  {
+    $blog = DB::table('blogs')
+          ->join('users','blogs.user_id','=','users.id')
+          ->select('blogs.*','users.name')->get();
+
+    return view('blog.allblog')->with('blog',$blog);
+
+  }
 
 
 }

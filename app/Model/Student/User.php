@@ -106,5 +106,10 @@ class User extends Authenticatable
         return $this->hasMany(Vprofile::class);
 
     }
+    public function blog()
+    {
+        return $this->hasMany(Blog::class);
+
+    }
 
 }

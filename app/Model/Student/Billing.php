@@ -9,6 +9,7 @@ class Billing extends Model
     //
     protected $table='billings';
     protected $fillable = [
+  
       'bkash_number',
       'transaction_id',
     ];
