@@ -57,7 +57,7 @@ body
                 <div class="main">
                   <h4 class="text-center">Job Description</h4>
                   <p class="textb text-center">
-                    {{$job->job_description}}
+                    {!! $job->job_description !!}
                   </p>
                   <p class="text-center">{{$job->job_expires}}.</p>
 

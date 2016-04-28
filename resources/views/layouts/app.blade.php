@@ -59,7 +59,7 @@
   }
   .nav
   {
-    font-size: 13px;
+    font-size: 15px;
   }
   .ssmal{
     font-size: 10px;

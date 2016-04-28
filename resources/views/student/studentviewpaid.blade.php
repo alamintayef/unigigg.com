@@ -11,7 +11,13 @@
   width:150px;
   }
   </style>
-  <div class="container ">
+  <script type="text/javascript">
+  (function ($) {
+    $('#svp').smoothState();
+ }) (jQuery);
+
+  </script>
+  <div class="container " id="svp">
     <div class="row">
       @if(Auth::user()->type==2)
         <a href="{{URL::previous()}}">Go Back</a>

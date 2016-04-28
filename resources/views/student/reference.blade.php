@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container ">
+  <script type="text/javascript">
+  (function ($) {
+    $('#ref').smoothState();
+ }) (jQuery);
+
+  </script>
+  <div class="container" id="ref">
     <div class="row">
       @include('layouts.menu')
       <div class="col-md-7">

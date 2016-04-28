@@ -25,7 +25,7 @@
                       <li>Salary: {{$jobs->job_salary}}</li>
 
                       <p>
-                        Description: {{$jobs->job_description}}
+                        Description: {!! $jobs->job_description !!}
                           </p>
                         <p>
                       Minimum Education Level :{{$jobs->min_edu_level}}
@@ -40,7 +40,7 @@
                             Skill Requirements: {{$jobs->job_skill_reqs}}
                           </p>
                           <p>
-                            Additional Requirements: {{$jobs->job_reqs_additional}}
+                            Additional Requirements: {!! $jobs->job_reqs_additional !!}
                           </p>
 
                       <form class="form-inline" action="{{url('deletejobs',$jobs->job_id)}}" method="POST">

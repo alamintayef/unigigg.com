@@ -14,8 +14,8 @@
           </blockquote>
           <h3>We Curate Talent for you</h3>
           <p class="center">
-            Creating Skills does not really help unless it is matched with the perfect opportunity.<br>
-            That's why we started <strong>unigigg</strong>, where we help our young talents to build their <br>
+            Creating skills does not really help unless it is matched with the perfect opportunity.<br>
+            That's why we started <strong>unigigg</strong>, where we help our young talents to build and display their <br>
             skills and find out what they do best. Then we try to match them with the opportunity.
           </p>
 
@@ -28,7 +28,7 @@
   <div class="col-md-4 col-md-offset-1">
     <h4 class="textw">1. Create a profile</h4>
     <p>
-      Create a Company Profile with all the necessary Information
+      Create a company profile with all the necessary information
     </p>
   </div>
 
@@ -45,7 +45,7 @@
     <h4 class="textw">3. Curating Starts</h4>
     <p>
       Sit back, watch the applications roll in <br>
-      <small>You can also Search through our database and shortlist</small>
+      <small>You can also search through our database and shortlist</small>
 
     </p>
 
@@ -54,7 +54,7 @@
     <h4 class="textw">4. Shortlist. Finalize. Pay</h4>
     <p>
       After you shortlist a bunch of applicants, you finalize them for interview <br>
-      <small>After Finalizing You pay us can we fix the interview for you according to you time</small>
+      <small>After Finalizing You pay us. Then notify the candidates for interview according to your time</small>
 
     </p>
 
@@ -67,10 +67,10 @@
 
     <div class="panel padsmall white col-md-5">
 
-      <h2>How We Help You</h2>
+
       <h3>We help you to :</h3>
       <h4>Identify proactive employees with specific skills</h4>
-      <h3>We help you to :</h3>
+    
       <h4>Expedite the lengthy hiring process</h4>
 
     </div>

@@ -4,7 +4,7 @@
 <style media="screen">
 body
     {
-    background-image: url(files/images/empty.jpg);
+    background-image: url(files/images/blackboard.jpg);
     }
 </style>
 <div class="container">
