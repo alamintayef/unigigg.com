@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use App\Model\Student\User;
 use Validator;
 
+
 class AdminUserController extends Controller
 {
     //
@@ -62,6 +63,62 @@ class AdminUserController extends Controller
        ]);
 
          return redirect('home');
+
+    }
+    public function notifyuserAbout($email)
+    {
+      $user= DB::table('users')->where('email','=',$email)->select('users.*')->first();
+      Mailgun::send('email.notify.notifyinfo',[ 'user' =>  $user ], function ($m) use ($user)
+      {
+        $m->from('callforinterview@unigigg.com', 'Get Noticed ! By telling More about you');
+        $m->to($user->email)->subject('Call for interview');
+      });
+
+      notify()->flash('Notifed Successfully!', 'success', [
+         'timer' => 1000,
+
+       ]);
+      return redirect('home');
+
+    }
+    public function notifyuserInfo($email)
+    {
+      $user= DB::table('users')->where('email','=',$email)->select('users.*')->first();
+      Mailgun::send('email.notify.notifyinfo',[ 'user' =>  $user ], function ($m) use ($user)
+      {
+        $m->from('callforinterview@unigigg.com', 'Build up your profile');
+        $m->to($user->email)->subject('Call for interview');
+      });
+
+    }
+    public function notifyuserEducation($email)
+    {
+      $user= DB::table('users')->where('email','=',$email)->select('users.*')->first();
+      Mailgun::send('email.admin.callforinterviewbyadmin',[ 'user' =>  $user ], function ($m) use ($user)
+      {
+        $m->from('callforinterview@unigigg.com', 'Congrats ! You have been selected for and Interview');
+        $m->to($user->email)->subject('Call for interview');
+      });
+
+    }
+    public function notifyuserExperience($email)
+    {
+      $user= DB::table('users')->where('email','=',$email)->select('users.*')->first();
+      Mailgun::send('email.admin.callforinterviewbyadmin',[ 'user' =>  $user ], function ($m) use ($user)
+      {
+        $m->from('callforinterview@unigigg.com', 'Congrats ! You have been selected for and Interview');
+        $m->to($user->email)->subject('Call for interview');
+      });
+
+    }
+    public function notifyuserSkill($email)
+    {
+      $user= DB::table('users')->where('email','=',$email)->select('users.*')->first();
+      Mailgun::send('email.admin.callforinterviewbyadmin',[ 'user' =>  $user ], function ($m) use ($user)
+      {
+        $m->from('callforinterview@unigigg.com', 'Congrats ! You have been selected for and Interview');
+        $m->to($user->email)->subject('Call for interview');
+      });
 
     }
 }

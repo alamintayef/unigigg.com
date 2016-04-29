@@ -131,6 +131,12 @@ Route::group(['middleware' => ['web']], function () {
       Route::post('admin/create/user','AdminUserController@createUser');
       //Delete user
       Route::post('admin/delete/user/{id}', 'AdminUserController@deleleUser');
+      //notify user
+      Route::post('notify/user/education/{email}','AdminUserController@notifyuserEducation');
+      Route::post('notify/user/experience/{email}','AdminUserController@notifyuserExperience');
+      Route::post('notify/user/about/{email}','AdminUserController@notifyuserAbout');
+      Route::post('notify/user/info/{email}','AdminUserController@notifyuserInfo');
+      Route::post('notify/user/skill/{email}','AdminUserController@notifyuserSkill');
 
 
       //passchange
