@@ -70,8 +70,8 @@ class AdminUserController extends Controller
       $user= DB::table('users')->where('email','=',$email)->select('users.*')->first();
       Mailgun::send('email.notify.notifyinfo',[ 'user' =>  $user ], function ($m) use ($user)
       {
-        $m->from('callforinterview@unigigg.com', 'Get Noticed ! By telling More about you');
-        $m->to($user->email)->subject('Call for interview');
+        $m->from('@unigigg.com', 'Get Noticed ! By telling More about you');
+        $m->to($user->email)->subject('Hi ! Tell us more about you');
       });
 
       notify()->flash('Notifed Successfully!', 'success', [

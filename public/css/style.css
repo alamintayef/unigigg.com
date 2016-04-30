@@ -1,16 +1,263 @@
+.rotate{
+-webkit-transform: rotate(-20deg);
+   -moz-transform: rotate(-20deg);
+   -o-transform: rotate(-20deg);
+   -ms-transform: rotate(-20deg);
+   transform: rotate(-20deg);
+}
 
+/*3d buttn */
+.btn3d {
+    position:relative;
+    top: -6px;
+    border:0;
+     transition: all 40ms linear;
+     margin-top:10px;
+     margin-bottom:10px;
+     margin-left:2px;
+     margin-right:2px;
+}
+.btn3d:active:focus,
+.btn3d:focus:hover,
+.btn3d:focus {
+    -moz-outline-style:none;
+         outline:medium none;
+}
+.btn3d:active, .btn3d.active {
+    top:2px;
+}
+.btn3d.btn-white {
+    color: #666666;
+    box-shadow:0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(-205,-205,-205,0.10) inset, 0 8px 0 0 #f5f5f5, 0 8px 8px 1px rgba(0,0,0,.2);
+    background-color:#fff;
+}
+.btn3d.btn-white:active, .btn3d.btn-white.active {
+    color: #666666;
+    box-shadow:0 0 0 1px #ebebeb inset, 0 0 0 1px rgba(-205,-205,-205,0.15) inset, 0 1px 3px 1px rgba(0,0,0,.1);
+    background-color:#fff;
+}
+.btn3d.btn-default {
+    color: #666666;
+    box-shadow:0 0 0 1px #ebebeb inset, 0 0 0 2px rgba(-205,-205,-205,0.10) inset, 0 8px 0 0 #BEBEBE, 0 8px 8px 1px rgba(0,0,0,.2);
+    background-color:#f9f9f9;
+}
+.btn3d.btn-default:active, .btn3d.btn-default.active {
+    color: #666666;
+    box-shadow:0 0 0 1px #ebebeb inset, 0 0 0 1px rgba(-205,-205,-205,0.15) inset, 0 1px 3px 1px rgba(0,0,0,.1);
+    background-color:#f9f9f9;
+}
+.btn3d.btn-primary {
+    box-shadow:0 0 0 1px #417fbd inset, 0 0 0 2px rgba(-205,-205,-205,0.15) inset, 0 8px 0 0 #4D5BBE, 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#4274D7;
+}
+.btn3d.btn-primary:active, .btn3d.btn-primary.active {
+    box-shadow:0 0 0 1px #417fbd inset, 0 0 0 1px rgba(-205,-205,-205,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+    background-color:#4274D7;
+}
+.btn3d.btn-success {
+    box-shadow:0 0 0 1px #31c--200 inset, 0 0 0 2px rgba(-205,-205,-205,0.15) inset, 0 8px 0 0 #5eb924, 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#78d739;
+}
+.btn3d.btn-success:active, .btn3d.btn-success.active {
+    box-shadow:0 0 0 1px #--20cd00 inset, 0 0 0 1px rgba(-205,-205,-205,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+    background-color: #78d739;
+}
+.btn3d.btn-info {
+    box-shadow:0 0 0 1px #00a5c3 inset, 0 0 0 2px rgba(-205,-205,-205,0.15) inset, 0 8px 0 0 #348FD2, 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#39B3D7;
+}
+.btn3d.btn-info:active, .btn3d.btn-info.active {
+    box-shadow:0 0 0 1px #00a5c3 inset, 0 0 0 1px rgba(-205,-205,-205,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+    background-color: #39B3D7;
+}
+.btn3d.btn-warning {
+    box-shadow:0 0 0 1px #d79a47 inset, 0 0 0 2px rgba(-205,-205,-205,0.15) inset, 0 8px 0 0 #D79A34, 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#FEAF20;
+}
+.btn3d.btn-warning:active, .btn3d.btn-warning.active {
+    box-shadow:0 0 0 1px #d79a47 inset, 0 0 0 1px rgba(-205,-205,-205,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+    background-color: #FEAF20;
+}
+.btn3d.btn-danger {
+    box-shadow:0 0 0 1px #b93802 inset, 0 0 0 2px rgba(-205,-205,-205,0.15) inset, 0 8px 0 0 #AA0000, 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#D73814;
+}
+.btn3d.btn-danger:active, .btn3d.btn-danger.active {
+    box-shadow:0 0 0 1px #b93802 inset, 0 0 0 1px rgba(-205,-205,-205,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+    background-color: #D73814;
+}
+.btn3d.btn-magick {
+    color: #fff;
+    box-shadow:0 0 0 1px #9a00cd inset, 0 0 0 2px rgba(-205,-205,-205,0.15) inset, 0 8px 0 0 #9823d5, 0 8px 8px 1px rgba(0,0,0,0.5);
+    background-color:#bb39d7;
+}
+.btn3d.btn-magick:active, .btn3d.btn-magick.active {
+    box-shadow:0 0 0 1px #9a00cd inset, 0 0 0 1px rgba(-205,-205,-205,0.15) inset, 0 1px 3px 1px rgba(0,0,0,0.3);
+    background-color: #bb39d7;
+}
+
+
+/*3d button ends */
+
+
+/*
+Fade content bs-carousel with hero headers
+Code snippet by maridlcrmn (Follow me on Twitter @maridlcrmn) for Bootsnipp.com
+Image credits: unsplash.com
+*/
+
+/********************************/
+/*       Fade Bs-carousel       */
+/********************************/
+.fade-carousel {
+    position: relative;
+    height: 100vh;
+}
+.fade-carousel .carousel-inner .item {
+    height: 100vh;
+}
+.fade-carousel .carousel-indicators > li {
+    margin: 0 2px;
+    background-color: #f39c12;
+    border-color: #f39c12;
+    opacity: .7;
+}
+.fade-carousel .carousel-indicators > li.active {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+}
+
+/********************************/
+/*          Hero Headers        */
+/********************************/
+.hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+      -webkit-transform: translate3d(-50%,-50%,0);
+         -moz-transform: translate3d(-50%,-50%,0);
+          -ms-transform: translate3d(-50%,-50%,0);
+           -o-transform: translate3d(-50%,-50%,0);
+              transform: translate3d(-50%,-50%,0);
+}
+.hero h1 {
+    font-size: 6em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.fade-carousel .carousel-inner .item .hero {
+    opacity: 0;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s;
+        -ms-transition: 2s all ease-in-out .1s;
+         -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
+}
+.fade-carousel .carousel-inner .item.active .hero {
+    opacity: 1;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s;
+        -ms-transition: 2s all ease-in-out .1s;
+         -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
+}
+
+/********************************/
+/*            Overlay           */
+/********************************/
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #080d15;
+    opacity: .7;
+}
+
+/********************************/
+/*          Custom Buttons      */
+/********************************/
+.btn.btn-lg {padding: 10px 40px;}
+.btn.btn-hero,
+.btn.btn-hero:hover,
+.btn.btn-hero:focus {
+    color: #f5f5f5;
+    background-color: #1abc9c;
+    border-color: #1abc9c;
+    outline: none;
+    margin: 20px auto;
+}
+
+/********************************/
+/*       Slides backgrounds     */
+/********************************/
+.fade-carousel .slides .slide-1,
+.fade-carousel .slides .slide-2,
+.fade-carousel .slides .slide-3 {
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+
+}
+.fade-carousel .slides .slide-1 {
+  background-image: url(https://ununsplash.imgix.net/photo-1416339134316-0e91dc9ded92?q=75&fm=jpg&s=883a422e10fc4149893984019f63c818);
+}
+.fade-carousel .slides .slide-2 {
+  background-image: url(https://ununsplash.imgix.net/photo-1416339684178-3a239570f315?q=75&fm=jpg&s=c39d9a3bf66d6566b9608a9f1f3765af);
+}
+.fade-carousel .slides .slide-3 {
+  background-image: url(https://ununsplash.imgix.net/photo-1416339276121-ba1dfa199912?q=75&fm=jpg&s=9bf9f2ef5be5cb5eee5-205e7765cb327);
+}
+
+/********************************/
+/*          Media Queries       */
+/********************************/
+@media screen and (min-width: 980px){
+    .hero { width: auto; }
+}
+@media screen and (max-width: 640px){
+    .hero h1 { font-size: 4em; }
+}
+
+#homepage-hero {
+/*
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+  font-family: "Montserrat", sans-serif;
+
+  http://www.bestbuyinsurance.ca/wp-content/uploads/2015/11/motorcycle_147504974.jpg
+
+  */
+  background: url(files/images/work.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#dark-section {
+  background: #333333 url(http://bagpakk.csag.co//images/dark-bg.jpg) repeat fixed;
+}
 
 .raised {
-  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px -20px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 }
 
 /*           Animations              */
 .animation-transition-general, .carousel .carousel-indicators li {
-  -webkit-transition: all 300ms linear;
-  -moz-transition: all 300ms linear;
-  -o-transition: all 300ms linear;
-  -ms-transition: all 300ms linear;
-  transition: all 300ms linear;
+  -webkit-transition: all --200ms linear;
+  -moz-transition: all --200ms linear;
+  -o-transition: all --200ms linear;
+  -ms-transition: all --200ms linear;
+  transition: all --200ms linear;
 }
 
 .animation-transition-slow {
@@ -73,7 +320,7 @@
   padding: 15px;
 }
 .card .card-body {
-  height: 30%;
+  height: --20%;
   padding: 18px;
 }
 .card .card-footer {
@@ -83,14 +330,14 @@
 .card .card-footer button, .card .card-footer a {
   margin: 0 !important;
   position: relative;
-  bottom: 25px;
+  bottom: -20px;
   width: auto;
 }
 .card .card-footer button:first-child, .card .card-footer a:first-child {
   left: -15px;
 }
 .card .header {
-  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px -20px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
   margin: 15px;
   border-radius: 3px;
   padding: 15px 0;
@@ -116,23 +363,23 @@
 }
 
 .card-raised {
-  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px -20px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 }
 
 .card-signup .header {
-  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px -20px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
   margin-left: 20px;
   margin-right: 20px;
   margin-top: -40px;
   padding: 20px 0;
 }
 .card-signup .text-divider {
-  margin-top: 30px;
+  margin-top: --20px;
   margin-bottom: 0px;
   text-align: center;
 }
 .card-signup .content {
-  padding: 0px 30px 0px 10px;
+  padding: 0px --20px 0px 10px;
 }
 .card-signup .checkbox {
   margin-top: 20px;
@@ -154,10 +401,10 @@
 }
 
 .card-nav-tabs {
-  margin-top: 45px;
+  margin-top: ---20px;
 }
 .card-nav-tabs .header {
-  margin-top: -30px;
+  margin-top: ---20px;
 }
 .card-nav-tabs .nav-tabs {
   background: transparent;

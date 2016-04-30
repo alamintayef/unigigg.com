@@ -2,22 +2,43 @@
 @section('content')
 <style media="screen">
 body{
-  background-image:url(http://www.louisdumont.com/temp/bulb_test.jpg);
 
+  background: url(files/images/cover.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+#overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: #080d15;
+  opacity: .7;
+}
+.homepage-hero {
+/*
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+  font-family: "Montserrat", sans-serif;
 
+  http://www.bestbuyinsurance.ca/wp-content/uploads/2015/11/motorcycle_147504974.jpg
+
+  */
+  background: url(files/images/work.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
   /*
-    http://www.louisdumont.com/temp/bulb_test.jpg
+ http://www.louisdumont.com/temp/bulb_test.jpg
 
   */
 
 }
-
 </style>
 
-
-<div class="container" id="content"  >
+<div class="container">
     <div class="row ">
-      <div  style="height:550px; text-align:center;">
+      <div  class="center">
 
         <br>
         <br>
@@ -29,11 +50,26 @@ body{
         <br>
         <br>
         <br>
-        <br>
-        <h3 style="text-align:center;color:white;">Get <strong>Empowered</strong>.Get <strong>Hired</strong>.Get <strong>Recognized.</strong></h3>
-        <h5 style="text-align:center;color:white;">CONNECTING YOUNG TALENTS WITH THE EMPLOYERS</h5>
-        <a class="btn btn-default btn-lg " href="{{url('jobs/view')}}"><span>Find a Gigg/Internship <i class="fa fa-paper-plane"></i></span></a>
 
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <a class="btn3d btn btn-default font-cor" href="{{url('jobs/view')}}"><span>Find a Gigg/Internship <i class="fa fa-paper-plane"></i></span></a>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+                <br>
+                <br>
+                <br>
+                <br>
 
       </div>
 
@@ -43,7 +79,7 @@ body{
 <div class="container-fluid white center " >
   <div class="row pad">
     <div class="col-sm-5 pull-left">
-      <h1 class="text-primary wow bounceInUp" data-wow-duration="2s" data-wow-delay="5s">Talent <i class="fa fa-graduation-cap"></i></h1>
+      <h1 class="text-primary wow bounceInUp" >Talent <i class="fa fa-graduation-cap"></i></h1>
       <p>
         Be Career ready
       </p>
@@ -82,15 +118,15 @@ body{
   </div>
 
 </div>
-<div class="container-fluid pad" id="content3" >
+<div class="container-fluid pad homepage-hero" >
   <div class="row center" >
         <br>
         <br>
         <br>
         <br>
         <br>
-        <h2 style="color:white;">Eccentric Jobs</h2>
-        <h4 style="color:white;">Find out what you like doing best, and get someone to pay you for it.</h4>
+        <h2 class="textw">Eccentric Jobs</h2>
+        <h4 class="textw">Find out what you like doing best, and get someone to pay you for it.</h4>
         <a href="eccentric" class="btn btn-default btn-lg raised ">Learn More</a>
         <br>
         <br>

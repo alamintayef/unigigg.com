@@ -48,10 +48,9 @@
 
     </div>
   </div>
-  <script type="text/javascript">
-  (function ($) {
-    $('#chakri').smoothState();
- }) (jQuery);
-
+    <script type="text/javascript">
+    (function ($) {
+      $('#chakri').smoothState();
+   }) (jQuery);
   </script>
 @endsection

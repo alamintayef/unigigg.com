@@ -4,7 +4,7 @@
 <style media="screen">
   body
   {
-    background-image: url(http://tweakmytwitter.com/backgrounds/images/bg/2257.jpg);
+    background: url(http://www.jsrent.com/wp-content/uploads/2015/03/job-hunting.jpg) no-repeat center center fixed;
   }
 </style>
 
