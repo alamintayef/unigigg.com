@@ -4,7 +4,10 @@
 <style media="screen">
 body
     {
-    background-image: url(files/images/blackboard.jpg);
+    background: url(files/images/blackboard.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     }
 </style>
 <div class="container">

@@ -12,7 +12,7 @@
   <!-- Fonts--->
 
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway" />
-
+  <link href='https://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Courier">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=">
@@ -60,8 +60,8 @@
 
   }
   .font-cor{
-    font-family: 'Courier';
-    font-size: 20px;
+    font-family: 'Coming Soon', cursive;
+    font-size: 15px;
   }
   .nav
   {
@@ -156,6 +156,7 @@
             <ul class="nav navbar-nav">
               <li ><a  class="btn btn-link"  data-toggle="modal" data-target="#myModal"><i class="fa fa-phone-square"></i> Post A Job <sub><small>with a call</small></sub></a></li>
               <li ><a href="{{ url('/recruiter') }}">Recruiter</a></li>
+              <li ><a href="{{ url('/talent') }}">Talent</a></li>
               <li>
                 <a  href="#" class="dropdown-toggle  text-primary" data-toggle="dropdown" role="button" aria-expanded="false">
                   <i class="fa fa-btn fa-sign-up"></i> Sign Up <span class="caret"></span>

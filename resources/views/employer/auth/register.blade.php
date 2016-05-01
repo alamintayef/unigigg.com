@@ -4,24 +4,28 @@
 <style media="screen">
 body
     {
-      background-color: 	#dfe3ee;
+      background: url(http://s32.postimg.org/ejzpwglet/work.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
     }
 </style>
 
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2" style="padding:50px;">
-            <div class="card card-raised panel-primary">
-                <div class="panel-heading"><h3 style="color:white;">Hello, Recruiter !</h3></div>
+            <div class="card card-raised panel">
+                <div class="panel-heading"><h3>Hello, Recruiter !</h3></div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {!! csrf_field() !!}
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }} ">
                             <label class="col-md-4 control-label">Name</label>
+                            <i class="fa fa-user"></i>
 
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                                <input type="text" class="form-control" name="name" value="{{ old('name') }}" >
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -33,9 +37,10 @@ body
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">E-Mail Address</label>
+                            <i class="fa fa-envelope"></i>
 
                             <div class="col-md-6">
-                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <input type="email" id='email' class=" form-control" name="email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -47,6 +52,7 @@ body
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Password</label>
+                            <i class="fa fa-key"></i>
 
                             <div class="col-md-6">
                                 <input type="password" class="form-control" name="password" placeholder="Min 8 characters">
@@ -61,6 +67,7 @@ body
 
                         <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Confirm Password</label>
+                            <i class="fa fa-key"></i>
 
                             <div class="col-md-6">
                                 <input type="password" class="form-control" name="password_confirmation">
@@ -73,8 +80,6 @@ body
                             </div>
                         </div>
 
-
-
                         <div class="form-group">
                           <input type="hidden" name="type" value="2">
                         </div>
@@ -82,7 +87,7 @@ body
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary btn-raised">
-                                    <i class="fa fa-btn fa-user"></i>Register
+                                    <i class="fa fa-btn fa-user"></i>SIGNUP
                                 </button>
                             </div>
                         </div>

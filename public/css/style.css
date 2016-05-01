@@ -5,7 +5,30 @@
    -ms-transform: rotate(-20deg);
    transform: rotate(-20deg);
 }
+#student-price{
 
+  background: url(http://s32.postimg.org/6du0ehiw5/blank_price_tag.jpg) no-repeat center center fixed;
+
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+
+#student-vdo{
+
+  background: url(http://www.buzzbyq.com/wp-content/uploads/2012/11/Business-Video-Solutions1.jpg) no-repeat center center fixed;
+
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+.fontbig{
+  font-size: 2em;
+}
 /*3d buttn */
 .btn3d {
     position:relative;
@@ -229,16 +252,21 @@ Image credits: unsplash.com
 @media screen and (max-width: 640px){
     .hero h1 { font-size: 4em; }
 }
+@font-face {
+  font-family: 'tayef';
+  src: url(Kingthings_Trypewriter_2.ttf);
+
+}
 
 #homepage-hero {
-/*
+
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
   font-family: "Montserrat", sans-serif;
-
+  /*
   http://www.bestbuyinsurance.ca/wp-content/uploads/2015/11/motorcycle_147504974.jpg
 
   */
-  background: url(files/images/work.jpg) no-repeat center center fixed;
+  background: url(http://www.bestbuyinsurance.ca/wp-content/uploads/2015/11/motorcycle_147504974.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;

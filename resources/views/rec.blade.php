@@ -9,14 +9,12 @@
   <div class="container pad pb" id="rec">
       <div class="row" >
         <div class="pull left center panel padsmall">
-          <blockquote class="center blockquote-reverse">
+
                     <strong></strong>it is not possible to manufacture talent, you have to recruit them in the first place</strong>
-          </blockquote>
+
           <h3>We Curate Talent for you</h3>
           <p class="center">
-            Creating skills does not really help unless it is matched with the perfect opportunity.<br>
-            That's why we started <strong>unigigg</strong>, where we help our young talents to build and display their <br>
-            skills and find out what they do best. Then we try to match them with the opportunity.
+
           </p>
 
 
@@ -61,24 +59,7 @@
   </div>
 
 </div>
-<div class="container-fluid pb pad whiteproper">
-  <div class="row center">
-    <div class="col-md-3"></div>
 
-    <div class="panel padsmall white col-md-5">
-
-
-      <h3>We help you to :</h3>
-      <h4>Identify proactive employees with specific skills</h4>
-    
-      <h4>Expedite the lengthy hiring process</h4>
-
-    </div>
-    <div class="col-md-3"></div>
-
-  </div>
-
-</div>
   <div class="container-fluid white center pad">
 
       <h2 class="center">Pricing</h2>
@@ -156,6 +137,24 @@
 
       </div>
 
+
+    </div>
+    <div class="container-fluid pb pad whiteproper">
+      <div class="row center">
+        <div class="col-md-3"></div>
+
+        <div class="panel padsmall white col-md-5">
+
+
+          <h3>We help you to :</h3>
+          <h4>Identify proactive employees with specific skills</h4>
+
+          <h4>Expedite the lengthy hiring process</h4>
+
+        </div>
+        <div class="col-md-3"></div>
+
+      </div>
 
     </div>
     <div class="center pad">

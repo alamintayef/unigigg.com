@@ -4,7 +4,10 @@
 <style media="screen">
 body
     {
-      background-image: url(files/images/work.jpg);
+      background: url(http://s32.postimg.org/ejzpwglet/work.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
     }
 </style>
 <div class="container">
@@ -84,7 +87,7 @@ body
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary btn-raised">
-                                    <i class="fa fa-btn paper-plane"></i>SignUp
+                                    <i class="fa fa-user"></i> SignUp
                                 </button>
                             </div>
                         </div>
@@ -94,7 +97,7 @@ body
                           <strong>*</strong><small>By signing up you agree to our Terms and Conditions and Privacy Policy</small>
                           </p>
                           <p class="">
-                            Already signed up ? <a href="{{url('login')}}">Sign In</a><br>
+                            Already signed up ? <a href="{{url('login')}}"> </i> Sign In</a><br>
                             Not A Talent ? Signup as  <a href="{{url('employer/register')}}">Recruiter</a>
                           </p>
                           </div>
