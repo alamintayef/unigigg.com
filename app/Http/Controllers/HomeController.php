@@ -57,7 +57,7 @@ class HomeController extends Controller
       $funs = FunFacts::where('user_id', $request->user()->id)->get();
       $images = Image::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->limit(1)->get();
       $refs = Reference::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->limit(3)->get();
-      $vdo = Vprofile::where('user_id', $request->user()->id)->get();
+      $vdo = Vprofile::where('user_id', $request->user()->id)->first();
       $joblimit=StudentApplied::where('user_id', $request->user()->id)->get();
       $oddjoblimit=OddApplied::where('user_id', $request->user()->id)->get();
       $user=User::where('id', $request->user()->id)->first();

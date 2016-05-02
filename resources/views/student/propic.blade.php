@@ -15,7 +15,7 @@
         <ul class="nav nav-pills panel whiteproper">
           <li ><a href="{{url('userinfo')}}">Basic Information</a></li>
           <li  class="active" ><a href="{{url('Image')}}">Profile Pic</a></li>
-          <li ><a href="{{url('edu')}}">Degree</a></li>
+          <li ><a href="{{url('edu')}}">Education</a></li>
           <li ><a href="{{url('skill')}}">Skills</a></li>
           <li><a href="{{url('experience')}}">Experience</a></li>
           <li><a href="{{url('refs')}}">Reference</a></li>
