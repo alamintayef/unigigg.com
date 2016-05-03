@@ -11,7 +11,7 @@
     <div class="col-md-4">
       <br>
       <h5><a href="{{url('about')}}">About Us</a></h5>
-      <h5><a href="#">Faqs <sub>Coming Soon</sub> </a><br></h5>
+      <h5><a href="faqs">Faqs </a><br></h5>
       <h5><a href="{{url('terms&services')}}">Terms and Conditions</a></h5>
       <h5><a href="{{url('vlog')}}">Vlog</a></h5>
         <h5><a href="{{url('blog')}}">Blog</a></h5>

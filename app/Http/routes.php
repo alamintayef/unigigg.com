@@ -25,6 +25,9 @@ Route::get('/talent', function () {
 Route::get('/about', function () {
     return view('info.about');
 });
+Route::get('/faqs', function () {
+    return view('faqs.faqs');
+});
 Route::get('/terms&services', function () {
     return view('info.term');
 });
@@ -93,7 +96,9 @@ Route::group(['middleware' => ['web']], function () {
       Route::get('/eccentric', function () {
           return view('eccentric');
       });
-
+      Route::get('/faqs', function () {
+          return view('faqs.faqs');
+      });
 
 
       //admin
@@ -299,4 +304,13 @@ Route::group(['middleware' => 'web'], function () {
       Route::get('blog/post', 'BlogController@index');
       Route::post('blog/post/create', 'BlogController@store');
       Route::get('blog', 'PublicController@showBlog');
+
+
+  //
+  Route::get('/vlog', function(){
+     return view('vlog.layouts');
+  });
+  Route::get('/interview', function(){
+     return view('vlog.interview');
+  });
 });

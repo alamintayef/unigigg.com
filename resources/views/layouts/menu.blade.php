@@ -19,8 +19,24 @@
     <a href="{{url('jobsapplied')}}"><strong>Jobs Applied</strong></a>
 
   </li>
-  <li class="list-group-item">
-    <a href="http://blog.unigigg.com"><strong>Resources</strong></a>
+  <li class="list-group-item dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+      <strong> <i class="fa fa-btn fa-tasks"></i> Resources <span class="caret"></span></strong>
+      </a>
+      <ul class="dropdown-menu" role="menu">
+      <li class="list-group-item">
+        <a href="{{url('vlog')}}"><strong>Vlog</strong></a>
+
+      </li>
+      <li class="list-group-item">
+        <a href="{{url('blog')}}"><strong>Blog</strong></a>
+
+      </li>
+
+
+    </ul>
+
+
 
   </li>
   <li class="list-group-item">
