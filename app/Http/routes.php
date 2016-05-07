@@ -52,6 +52,9 @@ Route::get('/vlog', function(){
 Route::get('/interview', function(){
    return view('vlog.interview');
 });
+Route::get('/github', function(){
+   return view('vlog.github');
+});
 
 
     Route::get('/jobs/view','PublicController@publicboard');
@@ -98,6 +101,9 @@ Route::group(['middleware' => ['web']], function () {
       });
       Route::get('/faqs', function () {
           return view('faqs.faqs');
+      });
+      Route::get('/github', function(){
+         return view('vlog.github');
       });
 
 

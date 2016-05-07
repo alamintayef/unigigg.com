@@ -262,11 +262,12 @@ Image credits: unsplash.com
 
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
   font-family: "Montserrat", sans-serif;
+  padding-bottom: 50px;
   /*
   http://www.bestbuyinsurance.ca/wp-content/uploads/2015/11/motorcycle_147504974.jpg
 
   */
-  background: url(http://www.bestbuyinsurance.ca/wp-content/uploads/2015/11/motorcycle_147504974.jpg) no-repeat center center fixed;
+  background: url(http://s32.postimg.org/rw4jxkg1x/dontjust.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;

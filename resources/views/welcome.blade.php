@@ -7,17 +7,11 @@ body{
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-#overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    background-color: #080d15;
-    opacity: .7;
-  }
+
 
   /*
   http://www.louisdumont.com/temp/bulb_test.jpg
+  http://s32.postimg.org/rg1efg31h/cover2w.jpg
 
   */
 
@@ -110,7 +104,7 @@ body{
     <br>
     <br>
     <h2 class="textw">Eccentric Jobs</h2>
-    <h4 class="textw">Find out what you like doing best, and get someone to pay you for it.</h4>
+    <h3 class="textw"><b>Find out what you like doing best, and get someone to pay you for it.</b></h3>
     <a href="eccentric" class="btn btn-default btn-lg raised ">Learn More</a>
     <br>
     <br>
@@ -120,12 +114,13 @@ body{
   </div>
 </div>
 </div>
+<!--
 <script type="text/javascript">
 (function ($) {
   $('#content').smoothState();
 }) (jQuery);
 </script>
-
+-->
 
 
 @include('layouts.footer')

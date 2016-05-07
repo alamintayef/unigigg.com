@@ -8,7 +8,7 @@
           <li class="list-group-item"><a href="{{url('vlog')}}">Inspiration</a></li>
           <li class="list-group-item"><a href="{{url('interview')}}">Interview Hacks</li>
           <li class="list-group-item">Life Hacks</li>
-          <li class="list-group-item">Tutorial</li>
+          <li class="list-group-item"><a href="{{url('github')}}">Tutorial</a></li>
         </ul>
 
       </div>

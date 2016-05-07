@@ -5,6 +5,9 @@
     <div class="row">
       <div class="col-md-10 panel padsmall">
         <div class="col-md-4">
+          @if(count($employer)>0)
+
+
           {{$employer->company_name}} <br>
           {{$employer->company_phone}}<br>
           {{$employer->company_description}}<br>
@@ -26,6 +29,7 @@
             <button class="btn-success">verified</button>
           @endif
         </div>
+
         <div class="col-md-6">
           <h4>Jobs Posted By {{$employer->company_name}}</h4>
           <table class="table">
@@ -65,6 +69,13 @@
 
 
       </div>
+    @else
+      <div class="card card-raised">
+        Nothing added
+      <a href="{{url('employerlist')}}"></a>
+      </div>
+
+    @endif
 
     </div>
 

@@ -25,11 +25,11 @@
       </a>
       <ul class="dropdown-menu" role="menu">
       <li class="list-group-item">
-        <a href="{{url('vlog')}}"><strong>Vlog</strong></a>
+        <a href="{{url('vlog')}}"><i class="fa fa-video-camera"></i> <strong>Vlog</strong></a>
 
       </li>
       <li class="list-group-item">
-        <a href="{{url('blog')}}"><strong>Blog</strong></a>
+        <a href="{{url('blog')}}"><i class="fa fa-file-text"></i> <strong>Blog</strong></a>
 
       </li>
 
