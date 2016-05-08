@@ -148,8 +148,18 @@ class AdminController extends Controller
       ]);
 
     }
+    //VERIFY employer
+    public function employerverify($id){
+      DB::table('users')
+                  ->where('id', $id)
+                  ->update(['verified' => '1']);
+                  notify()->flash('Done!', 'success', [
+                    'timer' => 2000,
 
-    //VERIFY
+                  ]);
+                  return redirect('employerlist')   ;
+    }
+    //VERIFY students
 
     public function verify($id){
 

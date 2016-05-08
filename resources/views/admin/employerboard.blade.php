@@ -36,13 +36,27 @@
                 </form>
               </td>
               <td>
-                <form  action="{{url('/aprofile',$users->id)}}" method="GET">
+                <form  action="{{url('verify/employer',$users->id)}}" method="POST">
                   {!! csrf_field() !!}
                   <button type="submit" class="btn btn-primary">
                     <i class="fa fa-check-circle"></i> Verify
                   </button>
                 </form>
               </td>
+              @if($users->verified===0)
+                <td>
+                  <p class="text-danger">
+                    Not verified
+                  </p>
+                </td>
+              @else
+                <td>
+                  <p class="text-success">
+                   verified
+                  </p>
+                </td>
+              @endif
+
 
 
 

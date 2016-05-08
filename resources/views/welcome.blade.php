@@ -96,7 +96,7 @@ body{
   </div>
 
 </div>
-<div class="container-fluid pad" id="homepage-hero" >
+<div class="container-fluid" id="homepage-hero" >
   <div class="row center" >
     <br>
     <br>
@@ -105,7 +105,13 @@ body{
     <br>
     <h2 class="textw">Eccentric Jobs</h2>
     <h3 class="textw"><b>Find out what you like doing best, and get someone to pay you for it.</b></h3>
-    <a href="eccentric" class="btn btn-default btn-lg raised ">Learn More</a>
+    <a href="eccentric" class="btn btn-default btn-lg font-cor ">Learn More</a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <br>
     <br>
     <br>

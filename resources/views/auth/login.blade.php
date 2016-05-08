@@ -4,7 +4,7 @@
 <style media="screen">
 body
     {
-    background: url(files/images/blackboard.jpg) no-repeat center center fixed;
+    background: url(http://s32.postimg.org/ei440a18l/blackboard.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -o-background-size: cover;
     background-size: cover;

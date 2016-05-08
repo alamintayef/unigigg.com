@@ -72,7 +72,7 @@
             {!! Form::label('facebookId', 'Facebook ID:', ['class' => 'control-label']) !!}
             {!! Form::text('facebookId', null, ['class' => 'form-control']) !!}
               <small class="text-danger">Required</small>
-            <small>Please use the full link like http://ww.facebook.com/yourid</small>
+            <small>Please use the full link like http://www.facebook.com/yourid</small>
           </div>
           <div class="form-group">
             {!! Form::label('LinkedInId', 'LinkedIn ID:', ['class' => 'control-label']) !!}

@@ -82,13 +82,14 @@
           <hr>
           <div class="form-group">
             {!! Form::label('min_edu_level', 'Minimum Degree Level:', ['class' => 'control-label']) !!}
-            <input name="min_edu_level" class="awesomplete form-control" list="levellist" data-multiple  />
+            <select name="min_edu_level" class="awesomplete form-control" list="levellist" data-multiple  />
             <datalist id="levellist">
              <option>Bachelors</option>
              <option>Masters</option>
              <option>HSC</option>
              <option>Graduating Soon</option>
            </datalist>
+         </select>
             <small class="ssmal">e.g. Bachelors, Masters, PHD</small>
           </div>
 

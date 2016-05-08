@@ -25,7 +25,7 @@
           <h4 class="textw">Content Writing</h4>
           <h4 class="textw">And Many more jobs..</h4>
           <p class="textw">
-            are not counted as jobs in our society. But hey every jobs is a job and helps us to grow and gain experience. So why not list them
+           Every jobs is a job and helps us to grow and gain experience.
           </p>
         </div>
 
@@ -36,7 +36,7 @@
         <div class="center">
           <h2 class="textw">Pricing and Information</h2>
           <div class="col-md-4 pull-left">
-            <h3 class="textw"> Job Seekers</h3>
+            <h3 class="textw"><i class="fa fa-graduation-cap"></i> Talent</h3>
             <ul class="list-group ">
               <li class="list-group-item">First 3 Month Free</li>
               <li class="list-group-item">Tk.500 subscription fee for 6 months</li>
@@ -44,9 +44,7 @@
             </ul>
           </div>
           <div class="col-md-4">
-            <p class="textw">
-              Our aim is to bring down the ridiculously high cost of getting this kind of job through different media
-            </p>
+
             <h4 class="textw">Types of Jobs you can post</h4>
             <h5 class="textw">Tuitions</h5>
             <h5 class="textw">Assignments</h5>
@@ -58,7 +56,7 @@
           </div>
 
           <div class="col-md-4 pull-right">
-            <h3 class="textw">Job Providers</h3>
+            <h3 class="textw"><i class="fa fa-users"></i> Recruiter</h3>
             <ul class="list-group ">
               <li class="list-group-item">Posting a Jobs is Free</li>
               <li class="list-group-item">Premium Service per post cost Tk.100</li>
