@@ -44,12 +44,12 @@
     <div class="panel panel-default">
       <div class="panel-heading" role="tab" id="heading3">
         <h4 class="panel-title">
-          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapseThree">
+          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
             What makes Unigigg unique from traditional job portals?
           </a>
         </h4>
       </div>
-      <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
         <div class="panel-body">
           At Unigigg, we are your companions to help you to take the first step in your professional career. We are here to find you the perfect fit to blast off your career. We help you to not only showcase your skills for the right job but also get them validated which help you land your dream job. We also provide eccentric jobs which help you to gain specialized skills
         </div>
@@ -63,7 +63,7 @@
           </a>
         </h4>
       </div>
-      <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+      <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
         <div class="panel-body">
           We are very proactive in searching the perfect internship/job for you. We source some of the most interesting and unique opportunities in Bangladesh. From Startup internships to Big Corporations internships, private tuitions to photography gigs, we have them all. Check out all the jobs
           We are actively sourcing for the most interesting and unique opportunities. From startup internships to MNC internships, marketing jobs to tech gigs, we got it all. Check out the full spectrum of opportunities here.
@@ -78,7 +78,7 @@
           </a>
         </h4>
       </div>
-      <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+      <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
         <div class="panel-body">
           We have a mission to make you career ready by the time you enter the job market and we are actively preparing resources for you to get the competitive edge. Have a look at the resources for you here.
         </div>
@@ -92,7 +92,7 @@
           </a>
         </h4>
       </div>
-      <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
+      <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
         <div class="panel-body">
           There is no time like now. Got a vacation? Apply now. Got few classes this semester? Apply now. Our employers hire throughout the year and actively seek young talents like you. So the best time to apply for an internship/job is now. The more experience you gather more the chance you get to your dream jobs. Apply for internships/jobs here.
         </div>
@@ -123,7 +123,7 @@
 <div class="panel panel-default">
   <div class="panel-heading" role="tab" id="headingOne">
     <h4 class="panel-title">
-      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapser1" aria-expanded="true" aria-controls="collapseOne">
+      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapser1" aria-expanded="false" aria-controls="collapseOne">
         Why Unigigg ?
       </a>
     </h4>
@@ -152,7 +152,7 @@
 <div class="panel panel-default">
   <div class="panel-heading" role="tab" id="headingThree">
     <h4 class="panel-title">
-      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapserThree" aria-expanded="false" aria-controls="collapseThree">
+      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapser4" aria-expanded="false" aria-controls="collapseThree">
         Who can I hire?
       </a>
     </h4>
@@ -166,7 +166,7 @@
 <div class="panel panel-default">
   <div class="panel-heading" role="tab" id="headingThree">
     <h4 class="panel-title">
-      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapser4" aria-expanded="false" aria-controls="collapseThree">
+      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapserThree" aria-expanded="false" aria-controls="collapseThree">
         How much does it cost to hire on Unigigg?
       </a>
     </h4>

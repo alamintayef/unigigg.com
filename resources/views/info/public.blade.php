@@ -28,11 +28,13 @@ body
             <div class="card-container">
               <div class="card">
                 <div class="front">
-                  <!--
+
                   <div class="cover">
-                  <img src="https://www.irononsticker.com/images/Kung%20Fu%20Panda%205.jpg"/>
-                </div>
-              -->
+
+                    <img src="http://photos.gograph.com/thumbs/CSP/CSP894/k8940822.jpg" alt="logo" height="100px" width="100px"/>
+
+                  </div>
+
               <div class="content">
                 <div class="main">
                   <h3 class="name"> {{$job->job_name}} </h3>

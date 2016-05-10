@@ -8,6 +8,7 @@ namespace App\Http\Controllers;
     use App\Http\Requests;
     use App\Http\Controllers\Controller;
     use DB;
+
     class UserInfoController extends Controller
     {
       //
@@ -138,26 +139,36 @@ namespace App\Http\Controllers;
         return redirect('home');
 
       }
+      public function getYouTubeIdFromURL($url)
+      {
+      $url_string = parse_url($url, PHP_URL_QUERY);
+      parse_str($url_string, $args);
+      return isset($args['v']) ? $args['v'] : false;
+      }
+
+
 
       public function vprofilestore(Request $request)
       {
-
 
           $this->validate($request, [
             'vdourl' => 'required',
 
           ]);
-          $uid= auth()->user()->id;
+          $url =$request->vdourl;
+          $uid = auth()->user()->id;
           $entrylimit=Vprofile::where('user_id','=' ,$uid)->get();
           if(count($entrylimit)>0)
           {
-          $vprofile = Vprofile::findorFail($uid);
-          $vprofile->vdourl = $request->vdourl;
+          $vprofile = Vprofile::where('user_id','=' ,$uid)->get();
+
+          $vprofile->vdourl = $this->getYouTubeIdFromURL($url);
+          $vprofile->save();
 
           }
           else {
             $request->user()->vprofile()->create([
-              'vdourl' => $request->vdourl,
+              'vdourl' => $this->getYouTubeIdFromURL($url),
 
             ]);
           }

@@ -18,7 +18,7 @@ body{
 }
 </style>
 
-<div class="container">
+<div class="container foo">
   <div class="row ">
     <div  class="center">
 
@@ -61,10 +61,10 @@ body{
 <div class="container-fluid white center " >
   <div class="row pad">
     <div class="col-sm-5 pull-left">
-      <h1 class="text-primary wow bounceInUp" >Talent<i class="fa fa-graduation-cap"></i></h1>
+      <h1 class="text-primary foo" >Talent<i class="fa fa-graduation-cap"></i></h1>
 
       <p>
-        <ul class="list-group card card-raised">
+        <ul class="list-group card card-raised bar">
           <li class="list-group-item"><i class="fa fa-user"></i> Create a Gig Profile</li>
           <li class="list-group-item" ><i class="fa fa-plus-square"></i> Add Awesome Skills</li>
           <li class="list-group-item"><i class="fa fa-check"></i> Validate Skills</li>
@@ -79,10 +79,10 @@ body{
       </p>
     </div>
     <div class="col-sm-5 pull-right" >
-      <h1 class="text-primary">Recruiter <i class="fa fa-users"></i></h1>
+      <h1 class="text-primary foo">Recruiter <i class="fa fa-users"></i></h1>
 
       <p>
-        <ul class="list-group card card-raised">
+        <ul class="list-group card card-raised bar">
           <li class="list-group-item"><i class="fa fa-user"></i> Create a Gig Profile</li>
           <li class="list-group-item" ><i class="fa fa-plus-square"></i> Add Company Infomation</li>
           <li class="list-group-item"><i class="fa fa-edit"></i> Post Jobs Defining Exact Requirements</li>
@@ -96,16 +96,16 @@ body{
   </div>
 
 </div>
-<div class="container-fluid" id="homepage-hero" >
+<div class="cover container-fluid" id="homepage-hero" >
   <div class="row center" >
     <br>
     <br>
     <br>
     <br>
     <br>
-    <h2 class="textw">Eccentric Jobs</h2>
-    <h3 class="textw"><b>Find out what you like doing best, and get someone to pay you for it.</b></h3>
-    <a href="eccentric" class="btn btn-default btn-lg font-cor ">Learn More</a>
+    <h2 class="textw efoo">Eccentric Jobs</h2>
+    <h3 class="textw efoo"><b>Find out what you like doing best, and get someone to pay you for it.</b></h3>
+    <a href="eccentric" class="btn btn-default btn-lg font-cor efoo ">Learn More</a>
     <br>
     <br>
     <br>
@@ -127,7 +127,12 @@ body{
 }) (jQuery);
 </script>
 -->
-
+<script type="text/javascript">
+window.sr = ScrollReveal({ duration: 1500 });
+sr.reveal('.foo');
+sr.reveal('.bar');
+sr.reveal('.efoo');
+</script>
 
 @include('layouts.footer')
 @endsection
