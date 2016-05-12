@@ -42,15 +42,18 @@
               <datalist id="unilist">
               @foreach($uni as $unis)
 
-                <option value="{{$unis->university}}">{{$unis->university}}</option>
+                <p value="{{$unis->university}}">{{$unis->university}}</p>
 
                 @endforeach
               </datalist>
               <small class="text-danger">Required</small>
           </div>
           <div class="form-group">
-            {!! Form::label('passing_date', 'Passing Year :', ['class' => 'control-label']) !!}
-            {!! Form::date('passing_date', null, ['class' => 'form-control']) !!}
+            {!! Form::label('passing_date', 'Expected/Passing Year :', ['class' => 'control-label']) !!}
+
+            {!! Form::date('passing_date', null, ['class' => 'form-control','id'=>'passing_date']) !!}
+
+
               <small class="text-danger">Required</small>
           </div>
           <div class="form-group">
@@ -86,5 +89,3 @@
           {!! Form::submit('Add', ['class' => 'btn btn-primary btn-raised btn-sm']) !!}
 
           {!! Form::close() !!}
-
-        </div>

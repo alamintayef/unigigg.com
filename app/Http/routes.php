@@ -46,9 +46,7 @@ Route::get('auto', function()
    return view('sms');
 });
 //vlog
-Route::get('/vlog', function(){
-   return view('vlog.layouts');
-});
+Route::get('/vlog', 'PublicController@showVlog');
 Route::get('/interview', function(){
    return view('vlog.interview');
 });
@@ -77,7 +75,7 @@ Route::get('/github', function(){
 Route::group(['middleware' => ['web']], function () {
       //
       Route::get('/jobs/view','PublicController@publicboard');
-
+      Route::get('/vlog','PublicController@showVlog');
       Route::get('/jobs/view/eccentric','PublicController@publiceccentricboard');
       Route::get('/', function () {
 
@@ -109,6 +107,9 @@ Route::group(['middleware' => ['web']], function () {
 
       //admin
       Route::get('admin','AdminController@index');
+      //addvdo
+      Route::get('addvdo','AdminController@addvlogvdo');
+      Route::post('add/vdo', 'AdminController@vlogvdostore');
       // add university
       Route::post('university', 'AdminController@unistore');
       Route::get('adduniversity', 'AdminController@adduni');
@@ -314,10 +315,5 @@ Route::group(['middleware' => 'web'], function () {
 
 
   //
-  Route::get('/vlog', function(){
-     return view('vlog.layouts');
-  });
-  Route::get('/interview', function(){
-     return view('vlog.interview');
-  });
+
 });

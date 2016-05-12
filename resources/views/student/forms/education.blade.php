@@ -7,17 +7,17 @@
       {!! Form::label('Degree_name', 'Major:', ['class' => 'control-label']) !!}
       <input name="Degree_name" list='major' class="awesomplete form-control" />
       <datalist id="major">
-            <option>Computer Science And Engineering</option>
-            <option>Business Administration</option>
-            <option>Economics</option>
-            <option>English</option>
-            <option>Mechanical Engineering</option>
-            <option>Textile Engineering</option>
-            <option>Electrical Engineering</option>
-            <option>Science</option>
-            <option>Commerce</option>
-            <option>Arts</option>
-            <option>Fine Arts</option>
+            <p>Computer Science And Engineering</p>
+            <p>Business Administration</p>
+            <p>Economics</p>
+            <p>English</p>
+            <p>Mechanical Engineering</p>
+            <p>Textile Engineering</p>
+            <p>Electrical Engineering</p>
+            <p>Science</p>
+            <p>Commerce</p>
+            <p>Arts</p>
+            <p>Fine Arts</p>
 
       </datalist>
 

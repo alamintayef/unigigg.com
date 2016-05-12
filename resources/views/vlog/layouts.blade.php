@@ -10,13 +10,15 @@
           <li class="list-group-item">Life Hacks</li>
         <li class="list-group-item"><a href="{{url('github')}}">Tutorial</a></li>
         </ul>
-
       </div>
       <div class="panel pad col-md-8 col-md-offset-1">
-        <div class="embed-responsive embed-responsive-16by9 raised">
-        <iframe class="embed-responsive-item" width="660" height="315" src="https://www.youtube.com/embed/dOHcZWGEURc" frameborder="0" allowfullscreen></iframe>
+      @foreach($vdos as $vdo)
+          <div class="embed-responsive embed-responsive-16by9 raised">
+        <iframe class="embed-responsive-item" width="660" height="315" src="https://www.youtube.com/embed/{{$vdo->vlogurl}}" frameborder="0" allowfullscreen></iframe>
         </div>
         <hr>
+      @endforeach
+        <!---
         <div class="embed-responsive embed-responsive-16by9 raised">
         <iframe class="embed-responsive-item" width="660" height="315" src="https://www.youtube.com/embed/guXkoXga0Qs" frameborder="0" allowfullscreen></iframe>
         </div>
@@ -47,6 +49,7 @@
         <em>Master Oogway</em>
         <small>Kung Fu Panda</small>
         <hr>
+      -->
       </div>
 
     </div>

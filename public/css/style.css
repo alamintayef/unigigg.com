@@ -15,6 +15,21 @@
 
 }
 
+#logoback{
+  background: url(http://s32.postimg.org/irntogjlx/empty.jpg) no-repeat center center fixed;
+
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+
+}
+.logo:hover
+{
+  filter: none; /* IE6-9 */
+  -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+}
+
 
 #student-vdo{
 

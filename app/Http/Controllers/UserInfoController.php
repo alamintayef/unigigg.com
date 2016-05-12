@@ -160,7 +160,7 @@ namespace App\Http\Controllers;
           $entrylimit=Vprofile::where('user_id','=' ,$uid)->get();
           if(count($entrylimit)>0)
           {
-          $vprofile = Vprofile::where('user_id','=' ,$uid)->get();
+          $vprofile = Vprofile::where('user_id','=' ,$uid)->first();
 
           $vprofile->vdourl = $this->getYouTubeIdFromURL($url);
           $vprofile->save();

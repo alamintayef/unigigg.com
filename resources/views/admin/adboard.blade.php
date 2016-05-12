@@ -26,6 +26,7 @@
        <li class="list-group-item">Total Eccentric Jobs : {{count($allOddJobs)}}</li>
        <li class="list-group-item">Total Jobs : {{count($allJobs)}}</li>
        <li class="list-group-item"><a href="{{url('employerlist')}}">Employer board</a><span class="badge"> {{$allemployer}} </span></li>
+       <li class="list-group-item"><a href="{{url('addvdo')}}">Add video</a</li>
        <li class="list-group-item">
          {!! Form::open(['method'=>'GET','url'=>'search','class'=>'form-inline'])  !!}
            <input type="text" class="form-control" name="search" placeholder="Search...">

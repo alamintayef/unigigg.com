@@ -87,6 +87,14 @@ class PublicController extends Controller
     return view('blog.allblog')->with('blog',$blog);
 
   }
+  public function showVlog()
+  {
+    $vdos = DB::table('vlogvdos')->select('vlogvdos.*')->get();
+    return view('vlog.layouts',[
+      'vdos' => $vdos,
+    ]);
+
+  }
 
 
 }

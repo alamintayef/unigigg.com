@@ -17,6 +17,7 @@
         <iframe class="embed-responsive-item" width="560" height="285" src="https://www.youtube.com/embed/videoseries?list=PL3kwbCtbsEXx3a4nKg6tzg4132qs0fARU" frameborder="0" allowfullscreen></iframe>
         </div>
         <hr>
+
         <div class="embed-responsive embed-responsive-16by9">
         <iframe class="embed-responsive-item" width="560" height="285" src="https://www.youtube.com/embed/UXwW6I3-bUA?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
@@ -32,7 +33,7 @@
         <div class="embed-responsive embed-responsive-16by9">
         <iframe class="embed-responsive-item" width="560" height="285" src="https://www.youtube-nocookie.com/embed/wLu_R4mXOvc?rel=0" frameborder="0" allowfullscreen></iframe>
         </div>
-
+        
 
     </div>
 

@@ -23,13 +23,33 @@
   <!-- jqurey -->
   <script src="https://cdn.jsdelivr.net/jquery.smoothstate/0.7.2/jquery.smoothState.min.js"></script>
 
+  <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
+  <script>
+      webshims.setOptions('forms-ext', {types: 'date'});
+  webshims.polyfill('forms forms-ext');
+  </script>
 
+<script>
+    ChatraID = 'sjunCQBzAYta2fZXP';
+    (function(d, w, c) {
+        var n = d.getElementsByTagName('script')[0],
+            s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = (d.location.protocol === 'https:' ? 'https:': 'http:')
+            + '//call.chatra.io/chatra.js';
+        n.parentNode.insertBefore(s, n);
+    })(document, window, 'Chatra');
+</script>
 
 
   <!--js -->
 
   {!! Html::script('js/sweetalert.min.js') !!}
   {!! Html::script('js/prism.js') !!}
+
   {!! Html::script('js/index.js') !!}
   {!! Html::script('js/parsley.min.js') !!}
   {!! Html::script('js/awesomplete.js') !!}
@@ -115,6 +135,7 @@
 
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src="//load.sumome.com/" data-sumo-site-id="79713ef64a547e6957b04c95a8e49c51d903a0a06c631de8bebd3aaa78b44098" async="async"></script>
 
 </head>
 <body id="app-layout">

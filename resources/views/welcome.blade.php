@@ -119,8 +119,43 @@ body{
 
   </div>
 </div>
-</div>
-<!--
+<div class="container-fluid center whiteproper  padsmall" >
+  <h3 class="font-cor padsmall"> People We Work With</h2>
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner logofoo">
+
+      <div class="item active container ">
+          <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/v6yho8rwl/7teen.jpg" alt="...">
+          <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://jobs.hifipublic.com/wp-content/uploads/2014/09/Blue-Scheme-Logo.jpg" alt="...">
+          <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/yvdkmkvut/download.jpg" alt="...">
+          <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/dkl2ffk1x/FInal_Amar_Bike_Logo_Page_01.png" alt="...">
+          <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="https://e27.co/img/startups/2238/logo-1430124641.png" alt="...">
+      </div>
+
+      <div class="item container ">
+        <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/618uhkg5h/datarace.png" alt="...">
+        <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://jobs.hifipublic.com/wp-content/uploads/2014/09/Blue-Scheme-Logo.jpg" alt="...">
+        <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/yvdkmkvut/download.jpg" alt="...">
+        <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/dkl2ffk1x/FInal_Amar_Bike_Logo_Page_01.png" alt="...">
+        <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="https://e27.co/img/startups/2238/logo-1430124641.png" alt="...">
+        </div>
+
+
+    </div>
+
+      <div align="center" style="margin-top:20px;">
+      <!-- Controls -->
+            <a class="left" href="#carousel-example-generic" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right" href="#carousel-example-generic" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+      </div>
+
+  </div>
+</div><!--
 <script type="text/javascript">
 (function ($) {
   $('#content').smoothState();
@@ -128,10 +163,14 @@ body{
 </script>
 -->
 <script type="text/javascript">
+  $('.carousel').carousel()
+</script>
+<script type="text/javascript">
 window.sr = ScrollReveal({ duration: 1500 });
 sr.reveal('.foo');
 sr.reveal('.bar');
 sr.reveal('.efoo');
+sr.reveal('.logofoo')
 </script>
 
 @include('layouts.footer')

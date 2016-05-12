@@ -1,10 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+  <!--
   <script type="text/javascript">
   (function ($) {
     $('#userinfo').smoothState();
  }) (jQuery);
+ -->
 
   </script>
   <div class="container " id="userinfo">

@@ -341,4 +341,45 @@ class AdminController extends Controller
 
       return redirect('call/for/in');
     }
+
+    public function getYouTubeIdFromURL($url)
+    {
+    $url_string = parse_url($url, PHP_URL_QUERY);
+    parse_str($url_string, $args);
+    return isset($args['v']) ? $args['v'] : false;
+    }
+
+
+
+    public function vlogvdostore(Request $request)
+    {
+
+        $this->validate($request, [
+          'vlogurl' => 'required',
+
+        ]);
+        $url =$request->vlogurl;
+
+          $request->user()->vlogvdo()->create([
+            'vlogurl' => $this->getYouTubeIdFromURL($url),
+            'catagory' => $request->catagory,
+
+
+          ]);
+
+
+        notify()->flash('Added Successfully!', 'success', [
+          'timer' => 3000,
+          'text' => 'It\'s really great to see you again',
+        ]);
+
+
+        return redirect('/home');
+
+      }
+
+    public function addvlogvdo()
+    {
+      return view('admin.addvlogvdo');
+    }
 }
