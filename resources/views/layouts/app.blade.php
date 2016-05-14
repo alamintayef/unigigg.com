@@ -55,6 +55,7 @@
   {!! Html::script('js/awesomplete.js') !!}
   {!! Html::script('js/jquery.parallaxer.js') !!}
   {!! Html::script('js/mat/bootstrap-datepicker.js') !!}
+  {!! Html::script('js/tooltipdrop.js') !!}
   <!--- Css -->
   {!! Html::style('css/rotating-card.css') !!}
   {!! Html::style('css/paper.css') !!}
@@ -75,7 +76,7 @@
     font-family: 'Raleway', sans-serif;
     background-color: 	#f7f7f7;
     font-size: 13px;
-    padding-top: 100px;
+    margin-top: 50px;
 
 
   }

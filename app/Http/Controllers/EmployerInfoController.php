@@ -17,7 +17,7 @@ class EmployerInfoController extends Controller
     }
   public function index()
   {
-    
+
        return view('employer.employerinfo');
    }
    public function store(Request $request){
@@ -33,8 +33,8 @@ class EmployerInfoController extends Controller
                  'company_description'=>'required',
              ]);
              $uid= auth()->user()->id;
-             $entrylimit=EmInfo::where('user_id','=' ,$uid)->get();
-            if(count($entrylimit)>0)
+             $entrylimit=EmInfo::where('user_id','=' ,$uid)->count();
+            if($entrylimit>0)
             {
 
               $EmInfo = EmInfo::where('user_id', '=' , $uid)->first();
@@ -45,11 +45,9 @@ class EmployerInfoController extends Controller
               $EmInfo->company_type = $request->company_type;
               $EmInfo->company_size = $request->company_size;
               $EmInfo->company_description = $request->company_description;
-
-
               $EmInfo->save();
             }
-            else {
+            else{
               $request->user()->eminfo()->create([
                   'company_name' => $request->company_name,
                   'company_phone'=> $request->company_phone,

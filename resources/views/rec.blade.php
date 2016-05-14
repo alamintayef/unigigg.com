@@ -13,6 +13,7 @@
                     <strong></strong>it is not possible to manufacture talent, you have to recruit them in the first place</strong>
 
           <h3>We Curate Talent for you</h3>
+          <h4>HR Solution for startups and SMEs</h4>
           <p class="center">
 
           </p>

@@ -50,10 +50,10 @@ namespace App\Http\Controllers;
         ]);
 
         $uid= auth()->user()->id;
-        $entrylimit=UserInfo::where('user_id', '=' , $uid)->get();
+        $entrylimit=UserInfo::where('user_id', '=' ,$uid)->get();
         if(count($entrylimit)>0){
 
-          $userinfo = UserInfo::where('user_id', '=' , $uid)->first();
+          $userinfo = UserInfo::where('user_id', '=' ,$uid)->first();
           $userinfo->fname = $request->fname;
           $userinfo->lname = $request->lname;
           $userinfo->area = $request->area;

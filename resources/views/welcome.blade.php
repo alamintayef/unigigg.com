@@ -18,7 +18,7 @@ body{
 }
 </style>
 
-<div class="container foo">
+<div class="container-fluid  foo" id="cover" >
   <div class="row ">
     <div  class="center">
 
@@ -120,7 +120,7 @@ body{
   </div>
 </div>
 <div class="container-fluid center whiteproper  padsmall" >
-  <h3 class="font-cor padsmall"> People We Work With</h2>
+  <h3 class="font-cor padsmall" style="font-size:3.2em;"> People We Work With</h2>
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Wrapper for slides -->
     <div class="carousel-inner logofoo">
@@ -131,6 +131,7 @@ body{
           <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/yvdkmkvut/download.jpg" alt="...">
           <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/dkl2ffk1x/FInal_Amar_Bike_Logo_Page_01.png" alt="...">
           <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="https://e27.co/img/startups/2238/logo-1430124641.png" alt="...">
+          <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/5i9g50vxx/13233332_10209234151228216_840004034_n.jpg" alt="...">
       </div>
 
       <div class="item container ">

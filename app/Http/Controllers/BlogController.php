@@ -21,8 +21,8 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required|unique',
-            'body' => 'required'
+            'title' => 'required|unique:blogs',
+            'body' => 'required',
 
         ]);
 
