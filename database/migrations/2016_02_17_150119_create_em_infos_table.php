@@ -13,7 +13,7 @@ class CreateEmInfosTable extends Migration
     public function up()
     {
         Schema::create('em_infos', function (Blueprint $table) {
-            $table->increments('em_infos_id');
+            $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
             $table->string('company_name');
             $table->string('company_phone');

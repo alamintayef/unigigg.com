@@ -7,6 +7,10 @@ body{
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
 
 
   /*
@@ -18,7 +22,7 @@ body{
 }
 </style>
 
-<div class="container-fluid  foo" id="cover" >
+<div class="container foo" id="cover" >
   <div class="row ">
     <div  class="center">
 

@@ -65,7 +65,14 @@
   {!! Html::style('css/prism.css') !!}
   {!! Html::style('css/awesomplete.css') !!}
   {!! Html::style('css/jquery.parallaxer.css') !!}
+
+  <script src="https://cdn.jsdelivr.net/jquery.tubular/1.0.1/jquery.tubular.1.0.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" media="screen" title="no title" charset="utf-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
   <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.1.4/scrollreveal.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.min.js" charset="utf-8"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/paper/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
@@ -76,7 +83,8 @@
     font-family: 'Raleway', sans-serif;
     background-color: 	#f7f7f7;
     font-size: 13px;
-    margin-top: 50px;
+    margin-top: 100px;
+
 
 
   }
@@ -84,11 +92,17 @@
     font-family: 'Coming Soon', cursive;
     font-size: 15px;
   }
+  .font-corb{
+    font-family: 'Coming Soon', cursive;
+
+  }
   .nav
   {
     font-size: 15px;
 
+
   }
+
   .ssmal{
     font-size: 10px;
   }
@@ -154,21 +168,13 @@
           </button>
 
           <!-- Branding Image -->
-
-
           <a class="navbar-brand text-primary" href="{{ url('/') }}" >
             <i class="fa fa-graduation-cap text-primary "></i>  unigigg<sub>alpha</sub>
           </a>
-
-
-
-
         </div>
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
           <!-- Left Side Of Navbar -->
-
-
 
           <!-- Right Side Of Navbar -->
           <ul class="nav navbar-nav navbar-right">
@@ -180,6 +186,18 @@
               <li ><a href="{{ url('/recruiter') }}">Recruiter</a></li>
               <li ><a href="{{ url('/talent') }}">Talent</a></li>
               <li>
+                <a  href="#" class="dropdown-toggle  text-primary " data-toggle="dropdown" role="button" aria-expanded="false">
+                  <i class="fa fa-btn fa-sign-up"></i> Resources <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-user"></i>Tutorials</a></li>
+                  <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-users"></i>Blog</a></li>
+                  <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-users"></i>FAQs</a></li>
+                  <li><a href="{{ url('vlog') }}"><i class="fa fa-btn fa-users"></i>Training</a></li>
+                  <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-users"></i>Competitions</a></li>
+                </ul>
+              </li>
+              <li>
                 <a  href="#" class="dropdown-toggle  text-primary" data-toggle="dropdown" role="button" aria-expanded="false">
                   <i class="fa fa-btn fa-sign-up"></i> Sign Up <span class="caret"></span>
                 </a>
@@ -190,7 +208,7 @@
               </li>
             </ul>
             <li class="divider"></li>
-            <li><a href="{{ url('/login') }}"> | <i class="fa fa-sign-in"></i> Sign in</a></li>
+            <li><a href="{{ url('/login') }}"><i class="fa fa-sign-in"></i> Sign in</a></li>
 
           </ul>
         </div>
@@ -232,6 +250,18 @@
 
 
             <ul class="nav navbar-nav">
+              <li>
+                <a  href="#" class="dropdown-toggle  text-primary option animated wobble" data-toggle="dropdown" role="button" aria-expanded="false">
+                  <i class="fa fa-btn fa-sign-up"></i> Resources <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu " role="menu">
+                  <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-user"></i>Tutorials</a></li>
+                  <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-users"></i>Blog</a></li>
+                  <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-users"></i>FAQs</a></li>
+                  <li><a href="{{ url('vlog') }}"><i class="fa fa-btn fa-users"></i>Training</a></li>
+                  <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-users"></i>Competitions</a></li>
+                </ul>
+              </li>
 
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

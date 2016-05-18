@@ -74,6 +74,7 @@ Route::get('/github', function(){
 
 Route::group(['middleware' => ['web']], function () {
       //
+      Route::get('blog', 'PublicController@showBlog');
       Route::get('/jobs/view','PublicController@publicboard');
       Route::get('/vlog','PublicController@showVlog');
       Route::get('/jobs/view/eccentric','PublicController@publiceccentricboard');
