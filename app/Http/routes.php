@@ -88,7 +88,6 @@ Route::group(['middleware' => ['web']], function () {
       Route::get('/talent', function () {
           return view('talent');
       });
-
       Route::get('/about', function () {
           return view('info.about');
       });

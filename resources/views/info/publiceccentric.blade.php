@@ -28,11 +28,10 @@
                          <div class="front">
 
 
-                           @else
                              <div class="cover">
                                  <img src="https://www.irononsticker.com/images/Kung%20Fu%20Panda%205.jpg"/>
                              </div>
-                             @endif
+                      
 
                                <!--
                              <div class="user">

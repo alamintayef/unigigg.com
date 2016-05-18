@@ -13,9 +13,7 @@
         <br>
         <br>
         <br>
-
-
-        <div class="center ">
+        <div class="center">
           <h3 class="textw">We Promote Eccentric Jobs at Unigigg</h3>
           <h5 class="textw">Jobs that are not counted as jobs in our society can be identified as eccentric jobs or odd jobs</h5>
         </div>
@@ -28,7 +26,6 @@
            Every jobs is a job and helps us to grow and gain experience.
           </p>
         </div>
-
       </div>
     </div>
     <div class="container-fluid blue pb">
@@ -63,7 +60,6 @@
               <li class="list-group-item">Minimum job offering Tk.1000</li>
             </ul>
           </div>
-
         </div>
 
       </div>
