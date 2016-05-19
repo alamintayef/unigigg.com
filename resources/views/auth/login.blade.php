@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+  <script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
 <style media="screen">
+/*
 body
     {
     background: url(http://s32.postimg.org/ei440a18l/blackboard.jpg) no-repeat center center fixed;
@@ -9,6 +11,16 @@ body
     -o-background-size: cover;
     background-size: cover;
     }
+    */
+    body{
+    background: url(http://mymaplist.com/img/parallax/back.png);
+    background-color: #444;
+    background: url(http://mymaplist.com/img/parallax/pinlayer2.png),url(http://mymaplist.com/img/parallax/pinlayer1.png),url(http://mymaplist.com/img/parallax/back.png);
+}
+
+.vertical-offset-100{
+    padding-top:100px;
+}
 </style>
 <div class="container">
     <div class="row">
@@ -82,5 +94,18 @@ body
         </div>
     </div>
 </div>
+<script type="text/javascript">
+$(document).ready(function(){
+$(document).mousemove(function(e){
+   TweenLite.to($('body'),
+      .5,
+      { css:
+          {
+              backgroundPosition: ""+ parseInt(event.pageX/8) + "px "+parseInt(event.pageY/'12')+"px, "+parseInt(event.pageX/'15')+"px "+parseInt(event.pageY/'15')+"px, "+parseInt(event.pageX/'30')+"px "+parseInt(event.pageY/'30')+"px"
+          }
+      });
+});
+});
+</script>
 @include('layouts.footer')
 @endsection

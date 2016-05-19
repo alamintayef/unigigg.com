@@ -56,12 +56,15 @@
   {!! Html::script('js/jquery.parallaxer.js') !!}
   {!! Html::script('js/mat/bootstrap-datepicker.js') !!}
   {!! Html::script('js/tooltipdrop.js') !!}
+
+
   <!--- Css -->
   {!! Html::style('css/rotating-card.css') !!}
   {!! Html::style('css/paper.css') !!}
   {!! Html::style('css/style.css') !!}
 
   {!! Html::style('css/sweetalert.css') !!}
+  
   {!! Html::style('css/prism.css') !!}
   {!! Html::style('css/awesomplete.css') !!}
   {!! Html::style('css/jquery.parallaxer.css') !!}

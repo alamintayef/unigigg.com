@@ -8,16 +8,38 @@
 body{
   /*https://images.unsplash.com/photo-1422393462206-207b0fbd8d6b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=b09f84e8e8fd58ee91faf817b9f903d7
   http://www.userzoom.com/wp-content/uploads/2015/04/Recruitingpng.png*/
-  background: url(http://www.userzoom.com/wp-content/uploads/2015/04/Recruitingpng.png) no-repeat center center fixed;
+  background: url(https://images.unsplash.com/uploads/1412739483594d16c8046/a9a53469?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=7383aaaa5d52a5970a0818a219e43b40) no-repeat center center fixed;
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-color: rgba(0, 0, 255, 0.3);  /* blue with opacity */
+
+
+  /* blue with opacity */
   top: 0;
   width: 100%;
   height: 100%;
   z-index: -10;
 
+}
+.carousel-content {
+    color:black;
+    display:flex;
+    align-items:center;
+    padding: 20px;
+    background:
+        rgba(0, 0, 0, 0.3);
+
+}
+
+#text-carousel {
+  width: 100%;
+  height: auto;
+  padding: 50px;
+}
+.bg{
+  background-color: #ffffff;
+  opacity: 0.8;
+  filter: alpha(opacity=60);
 }
 }
 
@@ -57,29 +79,76 @@ body{
 </div>
 </div>
 --->
+<br>
+<br><br>
+<div id="text-carousel" class="carousel slide" data-ride="carousel">
+  <!-- Wrapper for slides -->
+  <div class="row">
+      <div class="col-xs-offset-3 col-xs-6 foo">
+          <div class="carousel-inner">
+              <div class="item active">
+                  <div class="carousel-content">
+                      <div>
+                        <h1 class="textw font-corb ">HR Solution for startups and SMEs</h1>
+                      </div>
+                  </div>
+              </div>
+              <div class="item">
+                  <div class="carousel-content">
+                      <div>
+                        <h1 class="textw font-corb ">Hire Better <br> Hire Fast</h1>
+                      </div>
+                  </div>
+              </div>
+              <div class="item">
+                  <div class="carousel-content">
+                      <div>
+                        <h1 class="textw font-corb ">HR Solution for startups and SMEs</h1>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+  </div>
+  <!-- Controls <a class="left carousel-control" href="#text-carousel" data-slide="prev">
+  <span class="glyphicon glyphicon-chevron-left"></span>
+</a>
+<a class="right carousel-control" href="#text-carousel" data-slide="next">
+  <span class="glyphicon glyphicon-chevron-right"></span>
+</a>
+ -->
+
+</div>
+<br>
+<br><br>
+<br>
+<br><br>
+<br>
+<br><br>
+<!--
   <div class="container pad pb" id="rec">
       <div class="row" >
         <div class="pull left center  pad">
           <br>
           <br>
-
-
           <br>
+          <div class="bg">
+
           <div class="card card-raised pad">
             <strong class="">it is not possible to manufacture talent, you have to recruit them in the first place</strong>
 
             <h1 class=" font-corb ">HR Solution for startups and SMEs</h1>
           </div>
-
-
-
+          </div>
 
       </div>
     </div>
   </div>
+-->
   <div class="container pad pb whiteproper">
       <div class="row">
-        <div class="col-md-4 pull left  padsmall">
+        <div class="col-md-4 pull left  padsmall foo">
 
 
           <strong class="">it is not possible to manufacture talent, you have to recruit them in the first place</strong>
@@ -89,22 +158,22 @@ body{
 
 
       </div>
-      <div class="col-md-8" >
+      <div class="col-md-8 foo" >
       <img src="http://s32.postimg.org/8d29hrxxx/Recruit.jpg" alt="" />
       </div>
     </div>
   </div>
 
   <div class="container-fluid blue pad textw">
-    <h3 class="center textw">How it Works</h3>
-  <div class="col-md-4 col-md-offset-1">
+    <h3 class="center textw foo">How it Works</h3>
+  <div class="col-md-4 col-md-offset-1 bar">
     <h4 class="textw">1. Create a profile</h4>
     <p>
       Create a company profile with all the necessary information
     </p>
   </div>
 
-  <div class="col-md-4 col-md-offset-1">
+  <div class="col-md-4 col-md-offset-1 bar">
     <h4 class="textw">2. Post a Job</h4>
     <p>
       Post job specifying exact needs, target university, area <br>
@@ -113,7 +182,7 @@ body{
     </p>
 
   </div>
-  <div class="col-md-4 col-md-offset-1">
+  <div class="col-md-4 col-md-offset-1 bar">
     <h4 class="textw">3. Curating Starts</h4>
     <p>
       Sit back, watch the applications roll in <br>
@@ -122,7 +191,7 @@ body{
     </p>
 
   </div>
-  <div class="col-md-4 col-md-offset-1">
+  <div class="col-md-4 col-md-offset-1 bar">
     <h4 class="textw">4. Shortlist. Finalize. Pay</h4>
     <p>
       After you shortlist a bunch of applicants, you finalize them for interview <br>
@@ -136,12 +205,12 @@ body{
 
   <div class="container-fluid white center pad">
 
-      <h2 class="center">Pricing</h2>
-      <h4 class="center">Posting a Job is Completely Free</h4>
-      <h5 class="center">You’ll only be charged when you finalize applicants who match your requirements</h5>
+      <h2 class="center foo">Pricing</h2>
+      <h4 class="center foo">Posting a Job is Completely Free</h4>
+      <h5 class="center foo">You’ll only be charged when you finalize applicants who match your requirements</h5>
 
 
-      <div class="col-md-4 ">
+      <div class="col-md-4 foo ">
 
         <!-- PRICE ITEM -->
         <div class="panel price panel-white">
@@ -163,7 +232,7 @@ body{
 
       </div>
 
-      <div class=" col-md-4">
+      <div class=" col-md-4 foo">
 
         <!-- PRICE ITEM -->
         <div class="panel price panel-white">
@@ -186,7 +255,7 @@ body{
 
       </div>
 
-        <div class=" col-md-4">
+        <div class=" col-md-4 foo">
 
         <!-- PRICE ITEM -->
         <div class="panel price panel-white">
@@ -240,6 +309,13 @@ body{
   (function ($) {
     $('#rec').smoothState();
  }) (jQuery);
+
+
+  </script>
+  <script type="text/javascript">
+  window.sr = ScrollReveal({ duration: 1500 });
+  sr.reveal('.foo');
+  sr.reveal('.bar');
 
   </script>
 

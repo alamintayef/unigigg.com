@@ -77,12 +77,12 @@
 
 
     <div class="page-header center">
-        <h1 id="timeline" class=" cneter font-corb">How it Works</h1>
+        <h1 id="timeline" class=" textw font-corb">How it Works</h1>
     </div>
     <ul class="timeline">
         <li>
           <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
-          <div class="timeline-panel">
+          <div class="timeline-panel foo">
             <div class="timeline-heading">
               <h4 class="timeline-title">Create a Profile</h4>
               <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago via Twitter</small></p>
@@ -94,7 +94,7 @@
         </li>
         <li class="timeline-inverted">
           <div class="timeline-badge warning"><i class="glyphicon glyphicon-film"></i></div>
-          <div class="timeline-panel">
+          <div class="timeline-panel bar">
             <div class="timeline-heading">
               <h4 class="timeline-title">Upload a Video Resume</h4>
             </div>
@@ -105,7 +105,7 @@
         </li>
         <li>
           <div class="timeline-badge danger"><i class="glyphicon glyphicon-ok-circle"></i></div>
-          <div class="timeline-panel">
+          <div class="timeline-panel foo">
             <div class="timeline-heading">
               <h4 class="timeline-title">Validate Profile</h4>
             </div>
@@ -116,7 +116,7 @@
         </li>
         <li class="timeline-inverted">
           <div class="timeline-badge info"><i class="glyphicon glyphicon-thumbs-up"></i></div>
-          <div class="timeline-panel">
+          <div class="timeline-panel bar">
             <div class="timeline-heading">
               <h4 class="timeline-title">Get Hired</h4>
             </div>
@@ -201,10 +201,6 @@
          sr.reveal('.bar');
 
          </script>
-         <script type="text/javascript">
-         $().ready(function() {
-    $('#wrapper').tubular({videoId: 'AUnvybbXm1w'}); // where idOfYourVideo is the YouTube ID.
-});
-         </script>
+
   @include('layouts.footer')
   @endsection
