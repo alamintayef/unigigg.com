@@ -82,7 +82,7 @@ class PublicController extends Controller
   {
     $blog = DB::table('blogs')
           ->join('users','blogs.user_id','=','users.id')
-          ->select('blogs.*','users.name')->get();
+          ->select('blogs.*','users.name')->orderBy('created_at','desc')->take(10)->get();
 
     return view('blog.allblog')->with('blog',$blog);
 

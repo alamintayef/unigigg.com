@@ -3,10 +3,11 @@
 <style media="screen">
 body{
 
-  background: url(http://s32.postimg.org/rg1efg31h/cover2w.jpg) no-repeat center center fixed;
+  background: url(http://s32.postimg.org/rg1efg31h/cover2w.jpg) no-repeat center center fixed rgba(0, 0, 0, 0.5);
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
   top: 0;
   width: 100%;
   height: 100%;
@@ -19,6 +20,9 @@ body{
 
   */
 
+}
+.ecc{
+  background-color: rgba(0, 0, 0, 0.2);
 }
 </style>
 
@@ -46,7 +50,9 @@ body{
       <br>
       <br>
       <a class="btn btn-default font-cor" href="{{url('jobs/view')}}"><b>Find a Gigg / Internship <i class="fa fa-paper-plane"></i><sub><small class="ssmal">click here</small></sub></b></a>
+      <span class="element">
 
+      </span>
       <br>
       <br>
       <br>
@@ -100,31 +106,37 @@ body{
   </div>
 
 </div>
+
 <div class="cover container-fluid" id="homepage-hero" >
   <div class="row center" >
+      <div class="ecc">
     <br>
     <br>
     <br>
     <br>
     <br>
+
+
+
     <h2 class="textw efoo">Eccentric Jobs</h2>
     <h3 class="textw efoo"><b>Find out what you like doing best, and get someone to pay you for it.</b></h3>
     <a href="eccentric" class="btn btn-default btn-lg font-cor efoo ">Learn More</a>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    </div>
   </div>
 </div>
+
 <div class="container-fluid center whiteproper  padsmall" >
-  <h3 class="font-cor padsmall" style="font-size:3.2em;"> People We Work With</h2>
+  <h3 class="padsmall" style="font-size:3.2em;"> People We Work With</h2>
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Wrapper for slides -->
     <div class="carousel-inner logofoo">
@@ -177,6 +189,16 @@ sr.reveal('.bar');
 sr.reveal('.efoo');
 sr.reveal('.logofoo')
 </script>
+<script>
+  $(function(){
+      $(".element").typed({
+        strings: ["First sentence.", "Second sentence."],
+        typeSpeed: .5
+      });
+  });
+</script>
+
+
 
 @include('layouts.footer')
 @endsection

@@ -8,11 +8,14 @@
       -o-background-size: cover;
       background-size: cover;
       color:#fff;
-    	background-color:rgba(255, 0, 0, 0.5);;
+    	background-color:rgba(255, 0, 0, 0.5);
       top: 0;
       width: 100%;
       height: 100%;
       z-index: -10;
+    }
+    .price{
+      background-color: rgba(0, 0, 0, 0.5);
     }
   </style>
 
@@ -57,20 +60,6 @@
 
           </div>
 
-          <div class="container-fluid center pad " id="student-vdo">
-
-            <div class="col-md-4 textw foo">
-              <h3 class="textw ">Video Profile</h3>
-              <p class="textw fontbig pb ">
-                You will be asked to upload a video clip introducing yourself in 30 seconds.<br>
-                A simple video reveals a lot about you than a CV.
-
-              </p>
-
-            </div>
-
-
-          </div>
 
     <div class="container-fluid" id="timelinebg">
       <div class="col-md-12 pad">
@@ -130,7 +119,7 @@
       </div>
 </div>
           <div class="container-fluid  center pad" id="student-price">
-            <div class="col-md-6 pad fontbig">
+            <div class="col-md-6 pad fontbig price">
               <h3 class="textw">Whats Free</h3>
               <ul class="list-inline">
                 <h4><strong>

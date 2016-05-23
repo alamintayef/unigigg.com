@@ -22,6 +22,7 @@
 
   <!-- jqurey -->
   <script src="https://cdn.jsdelivr.net/jquery.smoothstate/0.7.2/jquery.smoothState.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js" type="text/javascript"></script>
 
   <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
   <script>
@@ -45,18 +46,22 @@
 </script>
 
 
+
   <!--js -->
 
   {!! Html::script('js/sweetalert.min.js') !!}
   {!! Html::script('js/prism.js') !!}
 
   {!! Html::script('js/index.js') !!}
+  {!! Html::script('js/typed.js') !!}
   {!! Html::script('js/parsley.min.js') !!}
   {!! Html::script('js/awesomplete.js') !!}
   {!! Html::script('js/jquery.parallaxer.js') !!}
   {!! Html::script('js/mat/bootstrap-datepicker.js') !!}
   {!! Html::script('js/tooltipdrop.js') !!}
-
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//cdn.ckeditor.com/4.5.8/standard/ckeditor.js"></script>
+  <script src="js/typed.js" type="text/javascript"></script>
 
   <!--- Css -->
   {!! Html::style('css/rotating-card.css') !!}
@@ -64,8 +69,9 @@
   {!! Html::style('css/style.css') !!}
 
   {!! Html::style('css/sweetalert.css') !!}
-  
+
   {!! Html::style('css/prism.css') !!}
+
   {!! Html::style('css/awesomplete.css') !!}
   {!! Html::style('css/jquery.parallaxer.css') !!}
 
@@ -182,22 +188,21 @@
           <!-- Right Side Of Navbar -->
           <ul class="nav navbar-nav navbar-right">
             <!-- Authentication Links -->
-
-
             <ul class="nav navbar-nav">
-              <li ><a  class="btn btn-link"  data-toggle="modal" data-target="#myModal"><i class="fa fa-phone-square"></i> Post A Job <sub><small>with a call</small></sub></a></li>
-              <li ><a href="{{ url('/recruiter') }}">Recruiter</a></li>
-              <li ><a href="{{ url('/talent') }}">Talent</a></li>
+              <li ><a href="#" class="btn btn-link"  data-toggle="modal" data-target="#myModal"><i class="fa fa-phone-square"></i> Post A Job <sub><small>with a call</small></sub></a></li>
+              <li ><a href="{{ url('/recruiter') }}"> Recruiter</a></li>
+              <li ><a href="{{ url('/talent') }}"> Talent</a></li>
               <li>
-                <a  href="#" class="dropdown-toggle  text-primary " data-toggle="dropdown" role="button" aria-expanded="false">
-                  <i class="fa fa-btn fa-sign-up"></i> Resources <span class="caret"></span>
+                <a  href="#" class="dropdown-toggle text-primary " data-toggle="dropdown" role="button" aria-expanded="false">
+                  <i class="fa fa-btn fa-lightbulb-o"></i> Resources <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-user"></i>Tutorials</a></li>
-                  <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-users"></i>Blog</a></li>
-                  <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-users"></i>FAQs</a></li>
-                  <li><a href="{{ url('vlog') }}"><i class="fa fa-btn fa-users"></i>Training</a></li>
-                  <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-users"></i>Competitions</a></li>
+
+                  <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-paperclip"></i>Blog</a></li>
+                  <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-rocket"></i>Competitions</a></li>
+                  <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-question-circle"></i>FAQs</a></li>
+                  <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-sitemap"></i>Tutorials</a></li>
+                  <li><a href="{{ url('vlog') }}"><i class="fa fa-btn fa-tablet"></i>Training</a></li>
                 </ul>
               </li>
               <li>
@@ -258,15 +263,17 @@
 
             <ul class="nav navbar-nav">
               <li>
-                <a  href="#" class="dropdown-toggle  text-primary option animated wobble" data-toggle="dropdown" role="button" aria-expanded="false">
-                  <i class="fa fa-btn fa-sign-up"></i> Resources <span class="caret"></span>
+                <a  href="#" class="dropdown-toggle  text-primary" data-toggle="dropdown" role="button" aria-expanded="false">
+                  <i class="fa fa-btn fa-lightbulb-o"></i> Resources <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu " role="menu">
-                  <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-user"></i>Tutorials</a></li>
-                  <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-users"></i>Blog</a></li>
-                  <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-users"></i>FAQs</a></li>
-                  <li><a href="{{ url('vlog') }}"><i class="fa fa-btn fa-users"></i>Training</a></li>
-                  <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-users"></i>Competitions</a></li>
+
+                                    <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-paperclip"></i>Blog</a></li>
+                                    <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-rocket"></i>Competitions</a></li>
+                                    <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-question-circle"></i>FAQs</a></li>
+                                    <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-sitemap"></i>Tutorials</a></li>
+                                    <li><a href="{{ url('vlog') }}"><i class="fa fa-btn fa-tablet"></i>Training</a></li>
+
                 </ul>
               </li>
 

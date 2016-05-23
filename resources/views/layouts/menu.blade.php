@@ -1,4 +1,5 @@
-<div class="col-md-2 ">
+
+<div class="col-md-2 nav ">
   <ul class="list-group">
     <li class="list-group-item">
       <a href="{{url('home')}}"><strong><i class="fa fa-dashboard"></i> Dashboard</strong></a>

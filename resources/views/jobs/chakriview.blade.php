@@ -8,23 +8,21 @@
 
 
       <div class="col-md-10">
-        <div class="panel">
+
           @if(count($job)>0)
+          <div class="panel">
 
-
-              <h3 class="textb  padsmall">Title: {{$job->job_name}}</h3>
+          <h3 class="textb padsmall">Title: {{$job->job_name}}</h3>
             </div>
             <div class="col-md-12">
 
-              <div class="panel panel-default">
+              <div class="panel panel-primary">
                 <div class="panel-heading">
                   Type: {{$job->job_type}}
                   <li>Location: {{$job->job_location}}</li>
                   <li>Salary: {{$job->job_salary}}</li>
                 </div>
-                <div class="panel-body">
-
-
+                <div class="panel-body ">
                   <p>
                     <strong>Description: </strong>{{$job->job_description}}
                   </p>
@@ -64,14 +62,14 @@
                               @if($reqMatch->Degree_result>=$job->cgpa)
                                 <button type="submit" name="button" class="btn btn-success">Apply</button>
                               @else
-                                <h6 class="text-danger">Sorry you does not fulfill the minimum job criteria</h6>
+                                <h6 class="text-danger">Sorry you do not fulfill the minimum job criteria</h6>
                               @endif
                           @endif
 
 
                         @else
                           <p class="text-danger">
-                            Fill Profile Information to apply to jobs
+                            Fill Profile information to apply to jobs
                           </p>
 
                         @endif

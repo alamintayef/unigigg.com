@@ -41,6 +41,7 @@ body{
   opacity: 0.8;
   filter: alpha(opacity=60);
 }
+
 }
 
 </style>
@@ -84,26 +85,27 @@ body{
 <div id="text-carousel" class="carousel slide" data-ride="carousel">
   <!-- Wrapper for slides -->
   <div class="row">
-      <div class="col-xs-offset-3 col-xs-6 foo">
+
+      <div class="col-md-offset-3 col-md-6 foo">
           <div class="carousel-inner">
               <div class="item active">
                   <div class="carousel-content">
                       <div>
-                        <h1 class="textw font-corb ">HR Solution for startups and SMEs</h1>
+                        <h1 class="textw ">HR Solution for startups and SMEs</h1>
                       </div>
                   </div>
               </div>
               <div class="item">
                   <div class="carousel-content">
                       <div>
-                        <h1 class="textw font-corb ">Hire Better <br> Hire Fast</h1>
+                        <h1 class="textw ">Hire Better,Hire Fast, Hire Efficiently</h1>
                       </div>
                   </div>
               </div>
               <div class="item">
                   <div class="carousel-content">
                       <div>
-                        <h1 class="textw font-corb ">HR Solution for startups and SMEs</h1>
+                        <h1 class="textw ">HR Solution for startups and SMEs</h1>
                       </div>
                   </div>
               </div>
@@ -111,6 +113,7 @@ body{
           </div>
       </div>
   </div>
+
   <!-- Controls <a class="left carousel-control" href="#text-carousel" data-slide="prev">
   <span class="glyphicon glyphicon-chevron-left"></span>
 </a>
@@ -150,10 +153,7 @@ body{
       <div class="row">
         <div class="col-md-4 pull left  padsmall foo">
 
-
-          <strong class="">it is not possible to manufacture talent, you have to recruit them in the first place</strong>
-
-          <h1 class=" font-corb">We Curate Talent For You</h1>
+          <h1 class="">We Curate Talent For You</h1>
 
 
 
