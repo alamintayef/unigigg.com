@@ -3,7 +3,7 @@
 <style media="screen">
 body{
 
-  background: url(http://s32.postimg.org/rg1efg31h/cover2w.jpg) no-repeat center center fixed rgba(0, 0, 0, 0.5);
+  background: url(http://s32.postimg.org/rg1efg31h/cover2w.jpg) no-repeat center center fixed ;
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;

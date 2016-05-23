@@ -75,6 +75,7 @@
   {!! Html::style('css/awesomplete.css') !!}
   {!! Html::style('css/jquery.parallaxer.css') !!}
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js" charset="utf-8"></script>
   <script src="https://cdn.jsdelivr.net/jquery.tubular/1.0.1/jquery.tubular.1.0.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js" charset="utf-8"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" media="screen" title="no title" charset="utf-8">
@@ -83,7 +84,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.min.js" charset="utf-8"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/paper/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.min.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
   {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
@@ -103,15 +104,11 @@
   }
   .font-corb{
     font-family: 'Coming Soon', cursive;
-
   }
   .nav
   {
     font-size: 15px;
-
-
   }
-
   .ssmal{
     font-size: 10px;
   }
@@ -141,7 +138,6 @@
   .pb{
     padding-bottom: 100px;
   }
-
   .fa-btn {
     margin-right: 6px;
   }
@@ -190,19 +186,20 @@
             <!-- Authentication Links -->
             <ul class="nav navbar-nav">
               <li ><a href="#" class="btn btn-link"  data-toggle="modal" data-target="#myModal"><i class="fa fa-phone-square"></i> Post A Job <sub><small>with a call</small></sub></a></li>
-              <li ><a href="{{ url('/recruiter') }}"> Recruiter</a></li>
-              <li ><a href="{{ url('/talent') }}"> Talent</a></li>
+              <li ><a href="{{ url('/recruiter') }}" class="animsition-link"  data-animsition-out-class="fade-out-right"
+  data-animsition-out-duration="2000"> Recruiter</a></li>
+              <li ><a href="{{ url('/talent') }}" class="animsition-link"> Talent</a></li>
               <li>
                 <a  href="#" class="dropdown-toggle text-primary " data-toggle="dropdown" role="button" aria-expanded="false">
                   <i class="fa fa-btn fa-lightbulb-o"></i> Resources <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
 
-                  <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-paperclip"></i>Blog</a></li>
-                  <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-rocket"></i>Competitions</a></li>
-                  <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-question-circle"></i>FAQs</a></li>
-                  <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-sitemap"></i>Tutorials</a></li>
-                  <li><a href="{{ url('vlog') }}"><i class="fa fa-btn fa-tablet"></i>Training</a></li>
+                  <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-paperclip animsition-link"></i>Blog</a></li>
+                  <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-rocket animsition-link"></i>Competitions</a></li>
+                  <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-question-circle animsition-link"></i>FAQs</a></li>
+                  <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-sitemap animsition-link"></i>Tutorials</a></li>
+                  <li><a href="{{ url('vlog') }}"><i class="fa fa-btn fa-tablet animsition-link"></i>Training</a></li>
                 </ul>
               </li>
               <li>
