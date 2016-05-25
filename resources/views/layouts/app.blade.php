@@ -59,6 +59,7 @@
   {!! Html::script('js/jquery.parallaxer.js') !!}
   {!! Html::script('js/mat/bootstrap-datepicker.js') !!}
   {!! Html::script('js/tooltipdrop.js') !!}
+
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="//cdn.ckeditor.com/4.5.8/standard/ckeditor.js"></script>
   <script src="js/typed.js" type="text/javascript"></script>
@@ -67,6 +68,7 @@
   {!! Html::style('css/rotating-card.css') !!}
   {!! Html::style('css/paper.css') !!}
   {!! Html::style('css/style.css') !!}
+
 
   {!! Html::style('css/sweetalert.css') !!}
 
@@ -196,10 +198,10 @@
                 <ul class="dropdown-menu" role="menu">
 
                   <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-paperclip animsition-link"></i>Blog</a></li>
-                  <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-rocket animsition-link"></i>Competitions</a></li>
+                  <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-rocket animsition-link"></i>Competitions</a></li>
                   <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-question-circle animsition-link"></i>FAQs</a></li>
-                  <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-sitemap animsition-link"></i>Tutorials</a></li>
-                  <li><a href="{{ url('vlog') }}"><i class="fa fa-btn fa-tablet animsition-link"></i>Training</a></li>
+                  <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-sitemap animsition-link"></i>Tutorials</a></li>
+                  <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-tablet animsition-link"></i>Training</a></li>
                 </ul>
               </li>
               <li>
@@ -265,12 +267,11 @@
                 </a>
                 <ul class="dropdown-menu " role="menu">
 
-                                    <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-paperclip"></i>Blog</a></li>
-                                    <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-rocket"></i>Competitions</a></li>
-                                    <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-question-circle"></i>FAQs</a></li>
-                                    <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-sitemap"></i>Tutorials</a></li>
-                                    <li><a href="{{ url('vlog') }}"><i class="fa fa-btn fa-tablet"></i>Training</a></li>
-
+                  <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-paperclip animsition-link"></i>Blog</a></li>
+                  <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-rocket animsition-link"></i>Competitions</a></li>
+                  <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-question-circle animsition-link"></i>FAQs</a></li>
+                  <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-sitemap animsition-link"></i>Tutorials</a></li>
+                  <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-tablet animsition-link"></i>Training</a></li>
                 </ul>
               </li>
 

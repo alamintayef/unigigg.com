@@ -57,9 +57,9 @@
                   Upload a video introduction yours on youtube and paste in link here.
                 </p>
                 <p>
-                  how to get video id <br>
-                  <small>https://www.youtube.com/watch?v=<span class="text-success">rz66fpmIZCQ</span></small>
-                  <br>The highlighted green part is your video id.Copy it and paste it here
+                  Example: <br>
+                  <small><span class="text-success">https://www.youtube.com/watch?v=rz66fpmIZCQ</span></small>
+
                 </p>
                 <p>
                   Upload a video of yours on youtube containing your introduction

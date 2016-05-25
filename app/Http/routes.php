@@ -40,11 +40,16 @@ Route::get('emailview', function()
 {
    return view('email.welcomeemail');
 });
+Route::get('coming/soon', function()
+{
+   return view('coming');
+});
 
 Route::get('auto', function()
 {
    return view('sms');
 });
+
 //vlog
 Route::get('/vlog', 'PublicController@showVlog');
 Route::get('/interview', function(){
