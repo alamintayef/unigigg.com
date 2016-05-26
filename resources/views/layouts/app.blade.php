@@ -153,6 +153,7 @@
     background-image: url(http://cdn1.theodysseyonline.com/files/2016/01/23/635891727862807756463608822_inspiration.jpg);
   }
 
+
   </style>
 
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -261,19 +262,23 @@
 
 
             <ul class="nav navbar-nav">
-              <li>
-                <a  href="#" class="dropdown-toggle  text-primary" data-toggle="dropdown" role="button" aria-expanded="false">
-                  <i class="fa fa-btn fa-lightbulb-o"></i> Resources <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu " role="menu">
+              @if(Auth::user()->type===1)
 
-                  <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-paperclip animsition-link"></i>Blog</a></li>
-                  <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-rocket animsition-link"></i>Competitions</a></li>
-                  <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-question-circle animsition-link"></i>FAQs</a></li>
-                  <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-sitemap animsition-link"></i>Tutorials</a></li>
-                  <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-tablet animsition-link"></i>Training</a></li>
-                </ul>
-              </li>
+                <li>
+                  <a  href="#" class="dropdown-toggle  text-primary" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <i class="fa fa-btn fa-lightbulb-o"></i> Resources <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu " role="menu">
+
+                    <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-paperclip animsition-link"></i>Blog</a></li>
+                    <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-rocket animsition-link"></i>Competitions</a></li>
+                    <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-question-circle animsition-link"></i>FAQs</a></li>
+                    <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-sitemap animsition-link"></i>Tutorials</a></li>
+                    <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-tablet animsition-link"></i>Training</a></li>
+                  </ul>
+                </li>
+              @endif
+
 
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

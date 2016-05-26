@@ -14,21 +14,22 @@ body{
   z-index: -10;
 
 
-  /*
+/*
   http://www.louisdumont.com/temp/bulb_test.jpg
   http://s32.postimg.org/rg1efg31h/cover2w.jpg
 
   */
 
 }
+
 .ecc{
   background-color: rgba(0, 0, 0, 0.2);
 }
 </style>
 
-<div class="container foo" id="cover" >
+<div class="container-fluid" id="cover" >
   <div class="row ">
-    <div  class="center">
+    <div  class="center foo">
 
       <br>
       <br>

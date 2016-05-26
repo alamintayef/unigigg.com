@@ -51,6 +51,12 @@
   background-size: cover;
 
 }
+#cover{
+  background: url(http://s32.postimg.org/rg1efg31h/cover2w.jpg) no-repeat center center fixed ;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 #curate-talent{
 
   background-image: : url(http://s32.postimg.org/kejczs9lh/Recruit.jpg);
