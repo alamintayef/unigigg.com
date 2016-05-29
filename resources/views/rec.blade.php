@@ -91,36 +91,28 @@ body{
               <div class="item active">
                   <div class="carousel-content">
                       <div>
-                        <h1 class="textw ">HR Solution for startups and SMEs</h1>
+                        <h2 class="textw ">HR Solution For Startups and SMEs</h2>
                       </div>
                   </div>
               </div>
               <div class="item">
                   <div class="carousel-content">
                       <div>
-                        <h1 class="textw ">Hire Better,Hire Fast, Hire Efficiently</h1>
+                        <h2 class="textw ">Hire Better,Hire Fast, Hire Efficiently</h2>
                       </div>
                   </div>
               </div>
-              <div class="item">
-                  <div class="carousel-content">
-                      <div>
-                        <h1 class="textw ">HR Solution for startups and SMEs</h1>
-                      </div>
-                  </div>
-              </div>
-
           </div>
       </div>
   </div>
 
-  <!-- Controls <a class="left carousel-control" href="#text-carousel" data-slide="prev">
+<a class="left carousel-control" href="#text-carousel" data-slide="prev">
   <span class="glyphicon glyphicon-chevron-left"></span>
 </a>
 <a class="right carousel-control" href="#text-carousel" data-slide="next">
   <span class="glyphicon glyphicon-chevron-right"></span>
 </a>
- -->
+
 
 </div>
 <br>
@@ -223,7 +215,7 @@ body{
           <ul class="list-group list-group-flush text-center">
             <li class="list-group-item"><i class="icon-ok text-success"></i>Self Serve</li>
             <li class="list-group-item"><i class="icon-ok text-success"></i>Better For &lt; 10 Hires </li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i> 27/7 support</li>
+            <li class="list-group-item"><i class="icon-ok text-success"></i> 24/7 support</li>
           </ul>
 
         </div>
@@ -245,7 +237,7 @@ body{
           <ul class="list-group list-group-flush text-center">
             <li class="list-group-item"><i class="icon-ok text-success"></i> Dedicated Account Manager</li>
             <li class="list-group-item"><i class="icon-ok text-success"></i> Suited for &gt; 10 Hires</li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i> 27/7 support</li>
+            <li class="list-group-item"><i class="icon-ok text-success"></i> 24/7 support</li>
           </ul>
 
         </div>
@@ -268,7 +260,7 @@ body{
           <ul class="list-group list-group-flush text-center">
             <li class="list-group-item"><i class="icon-ok text-success"></i> Dedicated Account Manager</li>
             <li class="list-group-item"><i class="icon-ok text-success"></i> No Limit on Hiring</li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i> 27/7 support</li>
+            <li class="list-group-item"><i class="icon-ok text-success"></i> 24/7 support</li>
           </ul>
 
         </div>

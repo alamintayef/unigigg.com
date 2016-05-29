@@ -62,6 +62,13 @@
   background-image: : url(http://s32.postimg.org/kejczs9lh/Recruit.jpg);
 
 }
+#talent{
+  background: url(http://s33.postimg.org/os2cacwbj/talent.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
 
 #logoback{
   background: url(http://s32.postimg.org/irntogjlx/empty.jpg) no-repeat center center fixed;
@@ -213,10 +220,11 @@
 
 #homepage-hero {
 
-  text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+
   font-family: "Raleway", sans-serif;
 
   /*
+  http://s33.postimg.org/5r3u2r8nz/background1.jpg
   http://www.bestbuyinsurance.ca/wp-content/uploads/2015/11/motorcycle_147504974.jpg
   http://s32.postimg.org/rw4jxkg1x/dontjust.jpg
   http://s32.postimg.org/kgx1ebqo5/glasses.jpg
@@ -616,4 +624,23 @@
             left: -14px;
             right: auto;
         }
+}
+
+/*video background */
+#background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(polina.jpg) no-repeat;
+    background-size: cover;
+}
+.container h1 {
+  color: white;
 }

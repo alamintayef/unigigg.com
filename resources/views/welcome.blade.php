@@ -1,4 +1,12 @@
 @extends('layouts.app')
+<script type="text/javascript">
+$.preloadImages = function() {
+for (var i = 0; i < arguments.length; i++) {
+  $("<img />").attr("src", arguments[i]);
+}
+}
+$.preloadImages("http://s32.postimg.org/rg1efg31h/cover2w.jpg");
+</script>
 @section('content')
 <style media="screen">
 body{
@@ -120,7 +128,7 @@ body{
 
 
     <h2 class="textw efoo">Eccentric Jobs</h2>
-    <h3 class="textw efoo"><b>Find out what you like doing best, and get someone to pay you for it.</b></h3>
+    <h3 class="textw efoo">Find out what you like doing best, and get someone to pay you for it.</h3>
     <a href="eccentric" class="btn btn-default btn-lg font-cor efoo ">Learn More</a>
 
     <br>

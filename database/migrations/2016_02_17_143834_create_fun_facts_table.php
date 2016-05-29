@@ -19,7 +19,7 @@ class CreateFunFactsTable extends Migration
             $table->text('inspiration_qot')->nullable();
             $table->text('Why_you')->nullable();
             $table->text('Why_not_you')->nullable();
-
+            $table->float('expected_salary')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

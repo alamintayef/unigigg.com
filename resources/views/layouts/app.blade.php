@@ -76,7 +76,7 @@
 
   {!! Html::style('css/awesomplete.css') !!}
   {!! Html::style('css/jquery.parallaxer.css') !!}
-
+  <script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js" charset="utf-8"></script>
   <script src="https://cdn.jsdelivr.net/jquery.tubular/1.0.1/jquery.tubular.1.0.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js" charset="utf-8"></script>
