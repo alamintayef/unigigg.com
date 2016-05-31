@@ -1,4 +1,4 @@
-<div class="col-md-2 ">
+<div class="col-md-2">
 <div class="navbar-header">
 <button type="button" class="navbar-toggle collapsed btn btn-xs" data-toggle="collapse" data-target="#app-nav-collapse">
   <span class="sr-only">Toggle Navigation</span>
@@ -44,7 +44,7 @@
   </li>
   <li class="list-group-item dropdown">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-      <strong> <i class="fa fa-btn fa-tasks"></i>  Eccentric-Jobs <span class="caret"></span></strong>
+      <strong>   Eccentric-Jobs <span class="caret"></span></strong>
       </a>
       <ul class="dropdown-menu" role="menu">
       <li class="list-group-item">

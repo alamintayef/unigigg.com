@@ -11,7 +11,7 @@ $.preloadImages("http://s32.postimg.org/rg1efg31h/cover2w.jpg");
 <style media="screen">
 body{
 
-  background: url(http://s32.postimg.org/rg1efg31h/cover2w.jpg) no-repeat center center fixed ;
+  background-image: url(http://s32.postimg.org/rg1efg31h/cover2w.jpg) no-repeat center center fixed  ;
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
@@ -31,13 +31,23 @@ body{
 }
 
 .ecc{
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 </style>
-
-<div class="container-fluid" id="cover" >
+<div class="container-fluid" id="cover">
   <div class="row ">
     <div  class="center foo">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
 
       <br>
       <br>
@@ -47,21 +57,10 @@ body{
       <br>
       <br>
       <br>
-      <br>
-      <br>
+      <a href="#search" class="btn btn-default"><i class="fa fa-search fa-1x"></i>Search</a>
+      <a class="btn btn-default font-cor" href="{{url('jobs/view')}}"><b>Find a Gigg / Internship <i class="fa fa-search-plus"></i></b></a>
+      <a class="btn btn-default font-cor" href="{{url('jobs/view')}}"><b>Post a Job <i class="fa fa-paper-plane"></i><sub><small class="ssmal">click here</small></sub></b></a>
 
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <a class="btn btn-default font-cor" href="{{url('jobs/view')}}"><b>Find a Gigg / Internship <i class="fa fa-paper-plane"></i><sub><small class="ssmal">click here</small></sub></b></a>
-      <span class="element">
-
-      </span>
       <br>
       <br>
       <br>

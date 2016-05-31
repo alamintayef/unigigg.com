@@ -8,7 +8,6 @@
   <meta name="name" content="First Online Youth Employment Platform in Bangladesh">
   <meta http-equiv="Page-Enter" content="revealTrans(Duration=2.0,Transition=12)">
   <title>unigigg | Get Empowered | Get Hired | Get Recognized</title>
-
   <!-- Fonts--->
 
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway" />
@@ -19,7 +18,6 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" media="screen" title="no title" charset="utf-8">
-
   <!-- jqurey -->
   <script src="https://cdn.jsdelivr.net/jquery.smoothstate/0.7.2/jquery.smoothState.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js" type="text/javascript"></script>
@@ -44,65 +42,62 @@
         n.parentNode.insertBefore(s, n);
     })(document, window, 'Chatra');
 </script>
-
-
-
   <!--js -->
-
   {!! Html::script('js/sweetalert.min.js') !!}
   {!! Html::script('js/prism.js') !!}
-
   {!! Html::script('js/index.js') !!}
-  {!! Html::script('js/typed.js') !!}
-  {!! Html::script('js/parsley.min.js') !!}
   {!! Html::script('js/awesomplete.js') !!}
-  {!! Html::script('js/jquery.parallaxer.js') !!}
-  {!! Html::script('js/mat/bootstrap-datepicker.js') !!}
-  {!! Html::script('js/tooltipdrop.js') !!}
+
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="//cdn.ckeditor.com/4.5.8/standard/ckeditor.js"></script>
-  <script src="js/typed.js" type="text/javascript"></script>
-
   <!--- Css -->
   {!! Html::style('css/rotating-card.css') !!}
   {!! Html::style('css/paper.css') !!}
   {!! Html::style('css/style.css') !!}
-
-
   {!! Html::style('css/sweetalert.css') !!}
-
   {!! Html::style('css/prism.css') !!}
-
   {!! Html::style('css/awesomplete.css') !!}
   {!! Html::style('css/jquery.parallaxer.css') !!}
-  <script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js" charset="utf-8"></script>
-  <script src="https://cdn.jsdelivr.net/jquery.tubular/1.0.1/jquery.tubular.1.0.js" charset="utf-8"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js" charset="utf-8"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" media="screen" title="no title" charset="utf-8">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
   <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.1.4/scrollreveal.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js" charset="utf-8"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.min.js" charset="utf-8"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/paper/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.min.css" media="screen" title="no title" charset="utf-8">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
   {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+  <script type="text/javascript">
+  $(function () {
+    $('a[href="#search"]').on('click', function(event) {
+        event.preventDefault();
+        $('#search').addClass('open');
+        $('#search > form > input[type="search"]').focus();
+    });
+
+    $('#search, #search button.close').on('click keyup', function(event) {
+        if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+            $(this).removeClass('open');
+        }
+    });
+
+
+    //Do not include! This prevents the form from submitting for DEMO purposes only!
+    $('form').submit(function(event) {
+        event.preventDefault();
+        return false;
+    })
+});
+
+  </script>
 
   <style>
   body {
     font-family: 'Raleway', sans-serif;
     background-color: 	#f7f7f7;
     font-size: 13px;
-    margin-top: 100px;
+    margin-top: 50px;
+}
 
-
-
-  }
   .font-cor{
     font-family: 'Coming Soon', cursive;
-    font-size: 15px;
+    font-size: 13px;
   }
   .font-corb{
     font-family: 'Coming Soon', cursive;
@@ -110,7 +105,9 @@
   .nav
   {
     font-size: 15px;
+
   }
+
   .ssmal{
     font-size: 10px;
   }
@@ -152,6 +149,10 @@
   .student{
     background-image: url(http://cdn1.theodysseyonline.com/files/2016/01/23/635891727862807756463608822_inspiration.jpg);
   }
+  .transparentbg
+  {
+    background-color: rgba(0, 0, 0, 0.5);;
+  }
 
 
   </style>
@@ -162,8 +163,10 @@
 
 </head>
 <body id="app-layout">
+
   @if(Auth::guest())
-    <nav class="navbar navbar-default navbar-fixed-top">
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
 
@@ -188,16 +191,14 @@
           <ul class="nav navbar-nav navbar-right">
             <!-- Authentication Links -->
             <ul class="nav navbar-nav">
-              <li ><a href="#" class="btn btn-link"  data-toggle="modal" data-target="#myModal"><i class="fa fa-phone-square"></i> Post A Job <sub><small>with a call</small></sub></a></li>
-              <li ><a href="{{ url('/recruiter') }}" class="animsition-link"  data-animsition-out-class="fade-out-right"
-  data-animsition-out-duration="2000"> Recruiter</a></li>
-              <li ><a href="{{ url('/talent') }}" class="animsition-link"> Talent</a></li>
+              <li><a href="#">Jobs</a></li>
+              <li ><a href="{{ url('/recruiter') }}" > Recruiter</a></li>
+              <li ><a href="{{ url('/talent') }}" > Talent</a></li>
               <li>
                 <a  href="#" class="dropdown-toggle text-primary " data-toggle="dropdown" role="button" aria-expanded="false">
                   <i class="fa fa-btn fa-lightbulb-o"></i> Resources <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
-
                   <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-paperclip animsition-link"></i>Blog</a></li>
                   <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-rocket animsition-link"></i>Competitions</a></li>
                   <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-question-circle animsition-link"></i>FAQs</a></li>
@@ -215,10 +216,10 @@
                 </ul>
               </li>
             </ul>
-            <li class="divider"></li>
+
             <li><a href="{{ url('/login') }}"><i class="fa fa-sign-in"></i> Sign in</a></li>
 
-          </ul>
+            </ul>
         </div>
       </div>
     </nav>
@@ -237,7 +238,7 @@
 
           <!-- Branding Image -->
           <a class="navbar-brand text-primary" href="{{ url('/') }}" >
-            <i class="fa fa-graduation-cap text-primary"></i>  unigigg<sub><small>alpha</small></sub>
+            <i class="fa fa-graduation-cap text-primary"></i>unigigg<sub><small>alpha</small></sub>
           </a>
 
         </div>
@@ -330,7 +331,13 @@
     <script src="https://cdn.jsdelivr.net/jquery.stellar/0.6.2/jquery.stellar.min.js"></script>
     <script src="//fast.eager.io/V77aiwbirP.js"></script>
 
-
+    <div id="search">
+        <button type="button" class="close">×</button>
+        <form>
+            <input type="search" value="" placeholder="type keyword(s) here" />
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
 
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
   </body>

@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container allbody">
   <div class="row">
     @include('layouts.menu')
 

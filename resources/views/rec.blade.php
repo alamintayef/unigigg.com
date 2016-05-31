@@ -143,9 +143,9 @@ body{
 -->
   <div class="container pad pb whiteproper">
       <div class="row">
-        <div class="col-md-4 pull left  padsmall foo">
+        <div class="col-md-4 pull left padsmall foo">
 
-          <h1 class="">We Curate Talent For You</h1>
+          <h1>We Curate Talent For You</h1>
 
 
 

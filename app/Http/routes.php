@@ -62,6 +62,7 @@ Route::get('/github', function(){
 
     Route::get('/jobs/view','PublicController@publicboard');
     Route::get('/jobs/view/eccentric','PublicController@publiceccentricboard');
+    Route::get('/view/jobs/{id}','PublicController@showjobs');
     Route::get('/sms', 'PublicController@sendsms');
     Route::get('profile/{useremail}','PublicController@viewme');
     Route::get('blog', 'PublicController@showBlog');
@@ -79,7 +80,8 @@ Route::get('/github', function(){
 
 Route::group(['middleware' => ['web']], function () {
       //
-      Route::get('blog', 'PublicController@showBlog');
+      Route::get('/view/jobs/{id}','PublicController@showjobs');
+      Route::get('blog','PublicController@showBlog');
       Route::get('/jobs/view','PublicController@publicboard');
       Route::get('/vlog','PublicController@showVlog');
       Route::get('/jobs/view/eccentric','PublicController@publiceccentricboard');

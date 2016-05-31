@@ -95,6 +95,21 @@ class PublicController extends Controller
     ]);
 
   }
+  public function showjobs($title)
+  {
+    $job = DB::table('jobs')
+          ->where('jobs.job_name','=', $title)
+          ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
+          ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
+          ->orderBy('created_at', 'desc')
+          ->first();
+
+          return view('jobs.jobviewpublic', [
+            'job'=>$job,
+
+
+          ]);
+  }
 
 
 }

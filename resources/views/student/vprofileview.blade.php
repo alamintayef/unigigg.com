@@ -7,7 +7,7 @@
  }) (jQuery);
 
   </script>
-  <div class="container " id="vprofile">
+  <div class="container" id="vprofile">
     <div class="row">
       @include('layouts.menu')
       <div class="col-md-7">

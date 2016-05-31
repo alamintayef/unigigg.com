@@ -6,7 +6,7 @@
       background-image: url(http://wallpapercave.com/wp/NNo5yub.jpg);
     }
   </style>
-  <div class="container pad pb" id="eccentric">
+  <div class="container pad pb " id="eccentric">
       <div class="row" >
         <br>
         <br>
