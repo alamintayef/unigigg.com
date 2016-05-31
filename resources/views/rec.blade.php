@@ -91,28 +91,36 @@ body{
               <div class="item active">
                   <div class="carousel-content">
                       <div>
-                        <h2 class="textw ">HR Solution For Startups and SMEs</h2>
+                        <h1 class="textw ">HR Solution for startups and SMEs</h1>
                       </div>
                   </div>
               </div>
               <div class="item">
                   <div class="carousel-content">
                       <div>
-                        <h2 class="textw ">Hire Better,Hire Fast, Hire Efficiently</h2>
+                        <h1 class="textw ">Hire Better,Hire Fast, Hire Efficiently</h1>
                       </div>
                   </div>
               </div>
+              <div class="item">
+                  <div class="carousel-content">
+                      <div>
+                        <h1 class="textw ">HR Solution for startups and SMEs</h1>
+                      </div>
+                  </div>
+              </div>
+
           </div>
       </div>
   </div>
 
-<a class="left carousel-control" href="#text-carousel" data-slide="prev">
+  <!-- Controls <a class="left carousel-control" href="#text-carousel" data-slide="prev">
   <span class="glyphicon glyphicon-chevron-left"></span>
 </a>
 <a class="right carousel-control" href="#text-carousel" data-slide="next">
   <span class="glyphicon glyphicon-chevron-right"></span>
 </a>
-
+ -->
 
 </div>
 <br>
@@ -143,9 +151,9 @@ body{
 -->
   <div class="container pad pb whiteproper">
       <div class="row">
-        <div class="col-md-4 pull left padsmall foo">
+        <div class="col-md-4 pull left  padsmall foo">
 
-          <h1>We Curate Talent For You</h1>
+          <h1 class="">We Curate Talent For You</h1>
 
 
 
@@ -215,7 +223,7 @@ body{
           <ul class="list-group list-group-flush text-center">
             <li class="list-group-item"><i class="icon-ok text-success"></i>Self Serve</li>
             <li class="list-group-item"><i class="icon-ok text-success"></i>Better For &lt; 10 Hires </li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i> 24/7 support</li>
+            <li class="list-group-item"><i class="icon-ok text-success"></i> 27/7 support</li>
           </ul>
 
         </div>
@@ -237,7 +245,7 @@ body{
           <ul class="list-group list-group-flush text-center">
             <li class="list-group-item"><i class="icon-ok text-success"></i> Dedicated Account Manager</li>
             <li class="list-group-item"><i class="icon-ok text-success"></i> Suited for &gt; 10 Hires</li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i> 24/7 support</li>
+            <li class="list-group-item"><i class="icon-ok text-success"></i> 27/7 support</li>
           </ul>
 
         </div>
@@ -260,7 +268,7 @@ body{
           <ul class="list-group list-group-flush text-center">
             <li class="list-group-item"><i class="icon-ok text-success"></i> Dedicated Account Manager</li>
             <li class="list-group-item"><i class="icon-ok text-success"></i> No Limit on Hiring</li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i> 24/7 support</li>
+            <li class="list-group-item"><i class="icon-ok text-success"></i> 27/7 support</li>
           </ul>
 
         </div>

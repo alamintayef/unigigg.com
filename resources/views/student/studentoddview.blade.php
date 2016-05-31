@@ -17,7 +17,7 @@
  }) (jQuery);
 
   </script>
-  <div class="container allbody" id="sov">
+  <div class="container " id="sov">
     <div class="row">
       @if(Auth::user()->type==2)
         <a href="{{URL::previous()}}">Go Back</a>

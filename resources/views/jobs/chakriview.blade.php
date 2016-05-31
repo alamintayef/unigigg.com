@@ -24,14 +24,14 @@
                 </div>
                 <div class="panel-body ">
                   <p>
-                    <strong>Description: </strong>{!! $job->job_description !!}
+                    <strong>Description: </strong>{{$job->job_description}}
                   </p>
                   <hr>
                   <p>
                     <strong>Educational Requirements: </strong>{{$job->min_edu_level}} / {{$job->major}} / {{$job->cgpa}}
                   </p>
                   <p>
-                    <strong>  Additional Requirements: </strong>  {!! $job->job_reqs_additional !!}
+                    <strong>  Additional Requirements: </strong>  {{$job->job_reqs_additional}}
                   </p>
                   <p>
                     <strong>  Application Deadline: </strong>  {{$job->job_last_date_application}}

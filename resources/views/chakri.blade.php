@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container allbody" id="chakri">
+  <div class="container" id="chakri">
     <div class="row">
 
       @include('layouts.menu')

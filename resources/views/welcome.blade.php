@@ -1,17 +1,9 @@
 @extends('layouts.app')
-<script type="text/javascript">
-$.preloadImages = function() {
-for (var i = 0; i < arguments.length; i++) {
-  $("<img />").attr("src", arguments[i]);
-}
-}
-$.preloadImages("http://s32.postimg.org/rg1efg31h/cover2w.jpg");
-</script>
 @section('content')
 <style media="screen">
 body{
 
-  background-image: url(http://s32.postimg.org/rg1efg31h/cover2w.jpg) no-repeat center center fixed  ;
+  background: url(http://s32.postimg.org/rg1efg31h/cover2w.jpg) no-repeat center center fixed ;
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
@@ -22,22 +14,22 @@ body{
   z-index: -10;
 
 
-/*
+  /*
   http://www.louisdumont.com/temp/bulb_test.jpg
   http://s32.postimg.org/rg1efg31h/cover2w.jpg
 
   */
 
 }
-
 .ecc{
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 </style>
-<div class="container-fluid" id="cover">
+
+<div class="container foo" id="cover" >
   <div class="row ">
-    <div  class="center foo">
-      <br>
+    <div  class="center">
+
       <br>
       <br>
       <br>
@@ -57,9 +49,8 @@ body{
       <br>
       <br>
       <br>
-      <a href="#search" class="btn btn-default"><i class="fa fa-search fa-1x"></i>Search</a>
+      <a class="btn btn-default font-cor" href="#search"><i class="fa fa-search"></i>Search</a>
       <a class="btn btn-default font-cor" href="{{url('jobs/view')}}"><b>Find a Gigg / Internship <i class="fa fa-search-plus"></i></b></a>
-      <a class="btn btn-default font-cor" href="{{url('jobs/view')}}"><b>Post a Job <i class="fa fa-paper-plane"></i><sub><small class="ssmal">click here</small></sub></b></a>
 
       <br>
       <br>
@@ -127,7 +118,7 @@ body{
 
 
     <h2 class="textw efoo">Eccentric Jobs</h2>
-    <h3 class="textw efoo">Find out what you like doing best, and get someone to pay you for it.</h3>
+    <h3 class="textw efoo"><b>Find out what you like doing best, and get someone to pay you for it.</b></h3>
     <a href="eccentric" class="btn btn-default btn-lg font-cor efoo ">Learn More</a>
 
     <br>
@@ -180,6 +171,7 @@ body{
       </div>
 
   </div>
+
 </div><!--
 <script type="text/javascript">
 (function ($) {

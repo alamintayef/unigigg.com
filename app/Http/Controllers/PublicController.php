@@ -21,13 +21,10 @@ class PublicController extends Controller
     ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type','images.filePath')
     ->orderByRaw("RAND()")->get();
 
-    $applied = DB::table('student_applieds')
-    ->select('student_applieds.*')
-    ->get();
-
+  
     return view('info.public', [
       'jobs'=>$jobs,
-      'applied'=> $applied,
+
 
     ]);
   }

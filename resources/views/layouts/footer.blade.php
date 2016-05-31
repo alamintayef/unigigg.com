@@ -9,9 +9,8 @@
 
     </div>
     <div class="col-md-4">
-
+      <br>
       <h5><a href="{{url('about')}}">About Us</a></h5>
-      <h5><a href="{{url('coming/soon')}}">Team</a></h5>
       <h5><a href="faqs">Faqs </a><br></h5>
       <h5><a href="{{url('terms&services')}}">Terms and Conditions</a></h5>
       <h5><a href="{{url('vlog')}}">Vlog</a></h5>
@@ -30,14 +29,6 @@
         Mirpur,Dhaka-1216 <br>
 
       </p>
-      <!-- Start of StatCounter Code for Default Guide -->
-l
-<noscript><div class="statcounter"><a title="web statistics"
-href="http://statcounter.com/" target="_blank"><img
-class="statcounter"
-src="//c.statcounter.com/10985134/0/af7ba994/0/" alt="web
-statistics"></a></div></noscript>
-<!-- End of StatCounter Code for Default Guide -->
 
     </div>
 

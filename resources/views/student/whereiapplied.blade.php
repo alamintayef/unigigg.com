@@ -7,7 +7,7 @@
  }) (jQuery);
 
   </script>
-<div class="container " id="whereapplied">
+<div class="container" id="whereapplied">
   <div class="row">
     @include('layouts.menu')
 

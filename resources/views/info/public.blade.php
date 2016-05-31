@@ -14,8 +14,8 @@ body
 <div class="container">
   <div class="row pad">
 
-    <div class="col-md-12 " style="font-size:12px; padding:5px">
-      <div class="transparentbg" >
+    <div class="col-md-12" style="font-size:12px; padding:5px">
+      <div >
         <ul class="nav nav-pills  nav-justified">
           <li class="active"><a href="{{url('jobs/view')}}"><strong class="textw">Regular Jobs</strong></a></li>
           <li ><a href="{{url('jobs/view/eccentric')}}"><strong class="textw">Eccentric Jobs </strong></a></li>
@@ -28,13 +28,13 @@ body
             <div class="card-container">
               <div class="card">
                 <div class="front">
-                  <!--
+
                   <div class="cover">
 
                     <img src="http://photos.gograph.com/thumbs/CSP/CSP894/k8940822.jpg" alt="logo" height="100px" width="100px"/>
 
                   </div>
-                -->
+
               <div class="content">
                 <div class="main">
                   <h3 class="name"> {{$job->job_name}} </h3>
@@ -67,9 +67,10 @@ body
                   <p class="text-center">{{$job->job_expires}}.</p>
 
                   <div class="stats-container">
-                    <form class="form-control" action="{{url('/view/jobs',$job->job_name)}}" method="GET">
+                    <form class="form-control" action="{{url('/show/jobs',$job->job_id)}}" method="GET">
+                      {!! csrf_field() !!}
 
-                      <button type="submit" class="btn btn-default btn-mini pull-right">view</button>
+                      <button type="submit" name="button" class="btn btn-default btn-mini pull-right">view</button>
 
                     </form>
                   </div>
