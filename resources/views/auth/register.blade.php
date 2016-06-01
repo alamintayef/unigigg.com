@@ -4,17 +4,20 @@
 <style media="screen">
 body
     {
-      background: url(http://s32.postimg.org/ejzpwglet/work.jpg) no-repeat center center fixed;
+      background: url(http://s33.postimg.org/5r3u2r8nz/background1.jpg) no-repeat center center fixed;
       -webkit-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
+    }
+    .excel{
+      background-color: rgba(0, 0, 0, 0.7);
     }
 </style>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2" style="padding:50px;">
-            <div class="card card-raised ">
-                <div class="panel-heading"><h4 class="textb">Hi ! Talent <i class="fa fa-smile-o"></i></h4></div>
+            <div class="card card-raised excel textw">
+                <div class="panel-heading center"><h3 class="textw">Hi ! Talent </h3></div>
                 <div class="card-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {!! csrf_field() !!}
@@ -24,7 +27,7 @@ body
                             <i class="fa fa-user"></i>
 
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="name" value="{{ old('name') }}" >
+                                <input type="text" class="form-control textw" name="name" value="{{ old('name') }}" >
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -39,7 +42,7 @@ body
                             <i class="fa fa-envelope"></i>
 
                             <div class="col-md-6">
-                                <input type="email" id='email' class=" form-control" name="email" value="{{ old('email') }}">
+                                <input type="email" id='email' class=" form-control textw" name="email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -54,7 +57,7 @@ body
                             <i class="fa fa-key"></i>
 
                             <div class="col-md-6">
-                                <input type="password" class="form-control" name="password" placeholder="Min 8 characters">
+                                <input type="password" class="form-control textw" name="password" placeholder="Min 8 characters">
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -69,7 +72,7 @@ body
                             <i class="fa fa-key"></i>
 
                             <div class="col-md-6">
-                                <input type="password" class="form-control" name="password_confirmation">
+                                <input type="password" class="form-control textw" name="password_confirmation">
 
                                 @if ($errors->has('password_confirmation'))
                                     <span class="help-block">

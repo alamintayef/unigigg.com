@@ -644,6 +644,11 @@
 .container h1 {
   color: white;
 }
+.bg{
+  background-color: #ffffff;
+  opacity: 0.8;
+  filter: alpha(opacity=60);
+}
 
 /* full Search */
 
@@ -706,39 +711,36 @@
     position: fixed;
     top: 15px;
     right: 15px;
-    color: #fff;
+    color: #000000;
 	background-color: #428bca;
 	border-color: #357ebd;
 	opacity: 1;
 	padding: 10px 17px;
 	font-size: 27px;
 }
+/*dropdown*/
+.show-on-hover > ul.dropdown-menu {
+    display: none;
+   -webkit-transition: all 1s ease-in-out;
+	-o-transition: all 1s ease-in-out;
+	transition: all 1s ease-in-out;
+}
+.show-on-hover:hover > ul.dropdown-menu {
+    display: block;
+}
 
-/* slider */
-pre {
-     tab-size: 8;
- }
+/* btn-effect*/
 
- @media screen and (max-width: 768px) {
-     .side-collapse-container{
-         width:100%;
-         position:relative;
-         left:0;
-         transition:left .4s;
-     }
-     .side-collapse-container.out{
-         left:200px;
-     }
-     .side-collapse {
-         top:50px;
-         bottom:0;
-         left:0;
-         width:200px;
-         position:fixed;
-         overflow:hidden;
-         transition:width .4s;
-     }
-     .side-collapse.in {
-         width:0;
-     }
- }
+.btn-change{
+
+    background: #fff;
+
+    box-shadow: 0 0 1px #ccc;
+    -webkit-transition: all 0.5s ease-in-out;
+    border: 0px;
+    color: #fff;
+}
+.btn-change:hover{
+    -webkit-transform: scale(1.1);
+    background: #blue;
+}

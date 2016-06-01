@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.employernav')
 
 @section('content')
 <style media="screen">
@@ -36,11 +36,7 @@ body{
   height: auto;
   padding: 50px;
 }
-.bg{
-  background-color: #ffffff;
-  opacity: 0.8;
-  filter: alpha(opacity=60);
-}
+
 
 }
 
@@ -91,38 +87,32 @@ body{
               <div class="item active">
                   <div class="carousel-content">
                       <div>
-                        <h1 class="textw ">HR Solution for startups and SMEs</h1>
+                        <h2 class="textw ">HR Solution For Startups and SMEs</h2>
                       </div>
                   </div>
               </div>
               <div class="item">
                   <div class="carousel-content">
                       <div>
-                        <h1 class="textw ">Hire Better,Hire Fast, Hire Efficiently</h1>
+                        <h2 class="textw ">Hire Better,Hire Fast, Hire Efficiently</h2>
                       </div>
                   </div>
               </div>
-              <div class="item">
-                  <div class="carousel-content">
-                      <div>
-                        <h1 class="textw ">HR Solution for startups and SMEs</h1>
-                      </div>
-                  </div>
-              </div>
-
           </div>
       </div>
   </div>
 
-  <!-- Controls <a class="left carousel-control" href="#text-carousel" data-slide="prev">
+<a class="left carousel-control" href="#text-carousel" data-slide="prev">
   <span class="glyphicon glyphicon-chevron-left"></span>
 </a>
 <a class="right carousel-control" href="#text-carousel" data-slide="next">
   <span class="glyphicon glyphicon-chevron-right"></span>
 </a>
- -->
+
 
 </div>
+<br>
+<br><br>
 <br>
 <br><br>
 <br>
@@ -151,9 +141,9 @@ body{
 -->
   <div class="container pad pb whiteproper">
       <div class="row">
-        <div class="col-md-4 pull left  padsmall foo">
+        <div class="col-md-4 pull left padsmall foo">
 
-          <h1 class="">We Curate Talent For You</h1>
+          <h2>We Curate Talent For You</h2>
 
 
 
@@ -164,7 +154,7 @@ body{
     </div>
   </div>
 
-  <div class="container-fluid blue pad textw">
+  <div class="container-fluid transparentbg pad textw">
     <h3 class="center textw foo">How it Works</h3>
   <div class="col-md-4 col-md-offset-1 bar">
     <h4 class="textw">1. Create a profile</h4>
@@ -223,7 +213,7 @@ body{
           <ul class="list-group list-group-flush text-center">
             <li class="list-group-item"><i class="icon-ok text-success"></i>Self Serve</li>
             <li class="list-group-item"><i class="icon-ok text-success"></i>Better For &lt; 10 Hires </li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i> 27/7 support</li>
+            <li class="list-group-item"><i class="icon-ok text-success"></i> 24/7 support</li>
           </ul>
 
         </div>
@@ -245,7 +235,7 @@ body{
           <ul class="list-group list-group-flush text-center">
             <li class="list-group-item"><i class="icon-ok text-success"></i> Dedicated Account Manager</li>
             <li class="list-group-item"><i class="icon-ok text-success"></i> Suited for &gt; 10 Hires</li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i> 27/7 support</li>
+            <li class="list-group-item"><i class="icon-ok text-success"></i> 24/7 support</li>
           </ul>
 
         </div>
@@ -268,7 +258,7 @@ body{
           <ul class="list-group list-group-flush text-center">
             <li class="list-group-item"><i class="icon-ok text-success"></i> Dedicated Account Manager</li>
             <li class="list-group-item"><i class="icon-ok text-success"></i> No Limit on Hiring</li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i> 27/7 support</li>
+            <li class="list-group-item"><i class="icon-ok text-success"></i> 24/7 support</li>
           </ul>
 
         </div>

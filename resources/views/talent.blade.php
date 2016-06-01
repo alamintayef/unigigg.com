@@ -3,26 +3,19 @@
 @section('content')
   <style media="screen">
     body{
-      background: url(http://hdwallpaperbackgrounds.net/wp-content/uploads/2015/07/3D-Inspirational-Movtivation-Words-Wallpapers.jpg) no-repeat center center fixed;
+      background: url(http://s33.postimg.org/os2cacwbj/talent.jpg) no-repeat center center fixed;
       -webkit-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
-      color:#fff;
-    	background-color:rgba(255, 0, 0, 0.5);
-      top: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -10;
     }
     .price{
       background-color: rgba(0, 0, 0, 0.5);
     }
+    .carsol{
+      background-color: rgba(0, 0, 0, 0.1);
+    }
   </style>
-
-
-
-
-        <div class="container-fluid center pad" id="talent">
+    <div class="container-fluid center pad " id="talent">
             <div class="row ">
               <br>
               <br>
@@ -40,83 +33,47 @@
               <br>
               <br>
               <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <!--
-              <h2  class="title textb option animated bounceIn " data-in-effect="flash" data-out-effect="flash"><strong>We Curate Jobs for You</strong> </h2>
+              <div id="text-carousel" class="carousel slide carsol" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                <div class="row">
 
-              <p class="fontbig pb">
-              <strong>  Here @unigigg we believe everyone is special at something.  We do not believe that university degrees <br>
-                defines you. You can be good at anything you want.The power is in you but you need to realize it.
-                </strong>
-              </p>
-              -->
-
+                    <div class="col-md-offset-3 col-md-6 foo">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="carousel-content">
+                                    <div>
+                                      <h2 class="textw "> Get Hired Faster</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="carousel-content">
+                                    <div>
+                                      <h2 class="textw ">Gain Experience</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <a class="left carousel-control" href="#text-carousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+              <a class="right carousel-control" href="#text-carousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>
+              </div>
             </div>
 
           </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
 
 
-    <div class="container-fluid" id="timelinebg">
-      <div class="col-md-12 pad">
-
-
-    <div class="page-header center">
-        <h1 id="timeline" class=" textw font-corb">How it Works</h1>
-    </div>
-    <ul class="timeline">
-        <li>
-          <div class="timeline-badge"><i class="glyphicon glyphicon-user"></i></div>
-          <div class="timeline-panel foo">
-            <div class="timeline-heading">
-              <h4 class="timeline-title">Create a Profile</h4>
-            </div>
-            <div class="timeline-body">
-              <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-            </div>
-          </div>
-        </li>
-        <li class="timeline-inverted">
-          <div class="timeline-badge warning"><i class="glyphicon glyphicon-film"></i></div>
-          <div class="timeline-panel bar">
-            <div class="timeline-heading">
-              <h4 class="timeline-title">Upload a Video Resume</h4>
-            </div>
-            <div class="timeline-body">
-              <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="timeline-badge danger"><i class="glyphicon glyphicon-ok-circle"></i></div>
-          <div class="timeline-panel foo">
-            <div class="timeline-heading">
-              <h4 class="timeline-title">Validate Profile</h4>
-            </div>
-            <div class="timeline-body">
-              <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-            </div>
-          </div>
-        </li>
-        <li class="timeline-inverted">
-          <div class="timeline-badge info"><i class="glyphicon glyphicon-thumbs-up"></i></div>
-          <div class="timeline-panel bar">
-            <div class="timeline-heading">
-              <h4 class="timeline-title">Get Hired</h4>
-            </div>
-            <div class="timeline-body">
-              <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-            </div>
-          </div>
-        </li>
-
-    </ul>
-      </div>
-</div>
           <div class="container-fluid  center pad" id="student-price">
             <div class="col-md-6 pad fontbig price">
               <h3 class="textw">Whats Free</h3>

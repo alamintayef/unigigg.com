@@ -11,8 +11,8 @@
   <div class="container">
     <div class="row pad">
 
-      <div class="col-md-12" style="font-size:12px; padding:5px">
-        <div >
+      <div class="col-md-12 " style="font-size:12px; padding:5px">
+        <div class="transparentbg" >
           <ul class="nav nav-pills nav-justified">
             <li ><a href="{{url('jobs/view')}}"><strong class="textw">Regular Jobs</strong></a></li>
             <li class="active"><a href="{{url('jobs/view/eccentric')}}"><strong class="textw">Eccentric Jobs </strong></a></li>
@@ -26,12 +26,11 @@
               <div class="card-container">
                      <div class="card">
                          <div class="front">
-
-
-                             <div class="cover">
+                           <!--
+                            <div class="cover">
                                  <img src="https://www.irononsticker.com/images/Kung%20Fu%20Panda%205.jpg"/>
                              </div>
-                      
+                           -->
 
                                <!--
                              <div class="user">

@@ -15,7 +15,7 @@ body
     <div class="row">
         <div class="col-md-8 col-md-offset-2" style="padding:50px;">
             <div class="card card-raised panel">
-                <div class="panel-heading"><h3>Hello, Recruiter !</h3></div>
+                <div class="panel-heading center"><h3>Hello, Recruiter !</h3></div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {!! csrf_field() !!}

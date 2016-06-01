@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
+
 <style media="screen">
 /*
 body
@@ -11,24 +11,29 @@ body
     -o-background-size: cover;
     background-size: cover;
     }
-    */
-    body{
-    background: url(http://mymaplist.com/img/parallax/back.png);
-    background-color: #444;
-    background: url(http://mymaplist.com/img/parallax/pinlayer2.png),url(http://mymaplist.com/img/parallax/pinlayer1.png),url(http://mymaplist.com/img/parallax/back.png);
+*
+body{
+    background: url(http://s33.postimg.org/8jxddi0in/how_much_time_we_have_infographic.png) no-repeat center center fixed;
+
+/*
+    background: url(http://s33.postimg.org/vee5ynti7/how_much_time_we_have_infographic.png),url(http://s33.postimg.org/vee5ynti7/how_much_time_we_have_infographic.png),url(http://s33.postimg.org/vee5ynti7/how_much_time_we_have_infographic.png);
+
+}
+*/
+.bp{
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
-.vertical-offset-100{
-    padding-top:100px;
-}
 </style>
-<div class="container">
+<video autoplay loop muted poster="screenshot.jpg" id="background">
+   <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4">
+</video>
+<div class="container" id="login">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2" style="padding:100px;">
-
-            <div class="card card-raised" >
-                <div class="panel-heading text-primary"><h4>Sign in</h4></div>
-                <div class="panel-body">
+        <div class="col-md-8 col-md-offset-2 pad" >
+          <div class="card card-raised bp" >
+                <div class="panel-heading"><h4 class="textw">Sign in</h4></div>
+                <div class="panel-body textw">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {!! csrf_field() !!}
 
@@ -78,13 +83,11 @@ body
                                     <i class="fa fa-btn fa-sign-in"></i>Signin
                                 </button>
 
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+                                <a  href="{{ url('/password/reset') }}">Forgot Your Password?</a>
                                 <br>
                                 Not Signed up yet ?
 
                                 <a class="link" href="{{ url('/register') }}">sign up</a>
-
-
 
                             </div>
                         </div>
@@ -94,6 +97,12 @@ body
         </div>
     </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <script type="text/javascript">
 $(document).ready(function(){
 $(document).mousemove(function(e){
