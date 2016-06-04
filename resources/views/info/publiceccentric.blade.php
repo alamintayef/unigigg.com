@@ -8,7 +8,7 @@
   }
 </style>
 
-  <div class="container">
+  <div class="container padtop">
     <div class="row pad">
 
       <div class="col-md-12 " style="font-size:12px; padding:5px">
@@ -16,6 +16,9 @@
           <ul class="nav nav-pills nav-justified">
             <li ><a href="{{url('jobs/view')}}"><strong class="textw">Regular Jobs</strong></a></li>
             <li class="active"><a href="{{url('jobs/view/eccentric')}}"><strong class="textw">Eccentric Jobs </strong></a></li>
+            <li><form class="form-inline center" action="index.html" method="post">
+              <input type="search" class="form-control" name="name" value=""> <button type="button" class=" btn-change textb " name="button"><i class="fa fa-search">Search</i></button>
+            </form></li>
           </ul>
         </div>
         <hr>
@@ -65,10 +68,9 @@
                                      <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
 
                                      <div class="stats-container">
-                                       <form class="form-control" action="{{url('show/ejobs',$job->odd_id)}}" method="GET">
-                                         {!! csrf_field() !!}
+                                       <form class="form-control" action="{{url('/view/odd/jobs',$job->title)}}" method="GET">
 
-                                         <button type="submit" name="button" class="btn btn-default btn-mini pull-right">view</button>
+                                         <button type="submit" class="btn btn-default btn-mini pull-right">view</button>
 
                                        </form>
                                      </div>

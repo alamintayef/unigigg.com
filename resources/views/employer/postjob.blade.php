@@ -3,7 +3,7 @@
 @section('content')
 
 
-  <div class="container " id="postjob">
+  <div class="container padtop " id="postjob">
     <div class="row">
       @include('layouts.emmenu')
       <div class="col-md-6 ">

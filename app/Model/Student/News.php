@@ -12,4 +12,8 @@ class News extends Model
      'hosted_by','news_slug'
 
  ];
+ public function user()
+ {
+     return $this->belongsTo(User::class);
+ }
 }

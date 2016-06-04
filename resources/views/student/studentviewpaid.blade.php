@@ -1,4 +1,4 @@
-@extends('layouts.app')
+padtop@extends('layouts.app')
 
 @section('content')
 <style media="screen">
@@ -17,7 +17,7 @@
  }) (jQuery);
 
   </script>
-  <div class="container " id="svp">
+  <div class="container padtop" id="svp">
     <div class="row">
       @if(Auth::user()->type==2)
         <a href="{{URL::previous()}}">Go Back</a>

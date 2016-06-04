@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container">
+  <div class="container padtop">
     <div class="row">
       <div class="pull-center">
         <h2>About <strong class="text-primary">Us</strong></h2>

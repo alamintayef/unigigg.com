@@ -13,6 +13,7 @@ $.preloadImages("http://s32.postimg.org/rg1efg31h/cover2w.jpg");
 <style media="screen">
 body{
 
+  /*
   background-image: url(http://s32.postimg.org/rg1efg31h/cover2w.jpg) no-repeat center center fixed  ;
   -webkit-background-size: cover;
   -o-background-size: cover;
@@ -24,7 +25,6 @@ body{
   z-index: -10;
 
 
-/*
   http://www.louisdumont.com/temp/bulb_test.jpg
   http://s32.postimg.org/rg1efg31h/cover2w.jpg
 
@@ -39,10 +39,10 @@ body{
 <div class="">
 
 
-<div class="container-fluid" id="cover">
+<div class="container-fluid ecc" id="cover">
 
   <div class="row ">
-    <div  class="center foo">
+    <div class="center ">
       <br>
       <br>
       <br>
@@ -62,15 +62,17 @@ body{
       <br>
       <br>
       <br>
-      <a href="#search" class="btn btn-default btn-change font-cor"><i class="fa fa-search fa-1x"></i>Search</a>
+      <div class="foo">
+
+
+      <a href="#search" class="btn btn-default btn-change font-cor"></b><i class="fa fa-search fa-1x"></i> Search Jobs</b></a>
       <a class="btn btn-default font-cor btn-change" href="{{url('jobs/view')}}"><b>Find a Gigg / Internship <i class="fa fa-search-plus"></i></b></a>
-      <a class="btn btn-default font-cor btn-change" href="{{url('jobs/view')}}"><b>Post a Job <i class="fa fa-paper-plane"></i><sub><small class="ssmal">click here</small></sub></b></a>
-
+      <a class="btn btn-default font-cor btn-change" href="{{url('jobs/view')}}"><b>Post a Job <i class="fa fa-pencil"></i></b></a>
+      </div>
       <br>
       <br>
       <br>
       <br>
-
       <br>
       <br>
       <br>
@@ -80,6 +82,37 @@ body{
 
   </div>
 </div>
+<!--
+<div class="container pad" id="features">
+	<div class="row">
+    <h2 class="center">How it Works</h2>
+		<div class="col-md-3 feature">
+    	    <i class="glyphicon glyphicon-user"></i>
+            <h3>Create a Gig Profile</h3>
+            <div class="title_border"></div>
+            <p>Add all your awesome skills and acheiments, make a great profile that you can display publicly</p>
+		</div>
+        <div class="col-md-3 feature">
+            <i class="glyphicon glyphicon-facetime-video"></i>
+            <h3>Upload Your Video Resume</h3>
+            <div class="title_border"></div>
+            <p>Tell us something more about you.Give a short introduction of yourself</p>
+		</div>
+        <div class="col-md-3 feature">
+            <i class="glyphicon glyphicon-briefcase"></i>
+            <h3>Validate Profile and Skills</h3>
+            <div class="title_border"></div>
+            <p>Praediximus enim Montium sub ipso vivendi termino his vocabulis appellatos fabricarum culpasse tribunos ut adminicula futurae molitioni pollicitos</p>
+		</div>
+        <div class="col-md-3 feature">
+            <i class="glyphicon glyphicon-briefcase"></i>
+            <h3>Get Hired</h3>
+            <div class="title_border"></div>
+            <p>Praediximus enim Montium sub ipso vivendi termino his vocabulis appellatos fabricarum culpasse tribunos ut adminicula futurae molitioni pollicitos</p>
+    	</div>
+	</div>
+</div>
+-->
 <div class="container-fluid" id="timelinebg">
   <div class="col-md-12 pad">
 
@@ -135,6 +168,7 @@ body{
 </ul>
   </div>
 </div>
+<!--
 <div class="container-fluid white center " >
   <div class="row pad">
     <div class="col-sm-5 pull-left">
@@ -168,7 +202,7 @@ body{
   </div>
 
 </div>
-
+-->
 <div class="cover container-fluid" id="homepage-hero" >
   <div class="row center" >
       <div class="ecc">
@@ -202,19 +236,19 @@ body{
 
       <div class="item active container ">
           <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/v6yho8rwl/7teen.jpg" alt="...">
-          <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://jobs.hifipublic.com/wp-content/uploads/2014/09/Blue-Scheme-Logo.jpg" alt="...">
+          <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s33.postimg.org/ksxxfm3tr/Blue_Scheme_Logo.jpg" alt="...">
           <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/yvdkmkvut/download.jpg" alt="...">
           <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/dkl2ffk1x/FInal_Amar_Bike_Logo_Page_01.png" alt="...">
-          <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="https://e27.co/img/startups/2238/logo-1430124641.png" alt="...">
+          <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s33.postimg.org/gwzraz1sv/logo.png" alt="...">
           <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/5i9g50vxx/13233332_10209234151228216_840004034_n.jpg" alt="...">
       </div>
 
       <div class="item container ">
-        <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/618uhkg5h/datarace.png" alt="...">
-        <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://jobs.hifipublic.com/wp-content/uploads/2014/09/Blue-Scheme-Logo.jpg" alt="...">
+        <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s33.postimg.org/9xgnehvj3/logo_1430124641.png" alt="...">
+        <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s33.postimg.org/ksxxfm3tr/Blue_Scheme_Logo.jpg" alt="...">
         <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/yvdkmkvut/download.jpg" alt="...">
         <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/dkl2ffk1x/FInal_Amar_Bike_Logo_Page_01.png" alt="...">
-        <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="https://e27.co/img/startups/2238/logo-1430124641.png" alt="...">
+        <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s33.postimg.org/v47zjeiu7/logo_1456081131.png" alt="...">
         </div>
 
 

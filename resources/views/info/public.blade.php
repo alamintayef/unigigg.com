@@ -11,7 +11,7 @@ body
 }
 </style>
 
-<div class="container">
+<div class="container padtop">
   <div class="row pad">
 
     <div class="col-md-12 " style="font-size:12px; padding:5px">
@@ -19,6 +19,9 @@ body
         <ul class="nav nav-pills  nav-justified">
           <li class="active"><a href="{{url('jobs/view')}}"><strong class="textw">Regular Jobs</strong></a></li>
           <li ><a href="{{url('jobs/view/eccentric')}}"><strong class="textw">Eccentric Jobs </strong></a></li>
+          <li><form class="form-inline center" action="index.html" method="post">
+            <input type="search" class="form-control" name="name" value=""> <button type="button" class=" btn-change textb " name="button"><i class="fa fa-search">Search</i></button>
+          </form></li>
         </ul>
       </div>
       <hr>

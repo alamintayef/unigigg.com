@@ -12,7 +12,7 @@
 
 
   </style>
-<div class="container " style="height:600px;">
+<div class="container padtop " style="height:600px;">
   <div class="row">
     <div class="col-md-3 box pad">
       <h2 class="textw foo">We are working on it</h2>

@@ -15,6 +15,22 @@ Route::get('/', function () {
 
     return view('welcome');
 });
+Route::get('competitions', function () {
+
+    return view('competitions');
+});
+Route::get('trainings', function () {
+
+    return view('training');
+});
+Route::get('events', function () {
+
+    return view('news');
+});
+Route::get('competitions', function () {
+
+    return view('competitions');
+});
 Route::get('/recruiter', function () {
     return view('rec');
 });
@@ -62,7 +78,8 @@ Route::get('/github', function(){
 
     Route::get('/jobs/view','PublicController@publicboard');
     Route::get('/jobs/view/eccentric','PublicController@publiceccentricboard');
-    Route::get('/view/jobs/{id}','PublicController@showjobs');
+    Route::get('/view/jobs/{title}','PublicController@showjobs');
+    Route::get('/view/odd/jobs/{title}','PublicController@showEccentricJobs');
     Route::get('/sms', 'PublicController@sendsms');
     Route::get('profile/{useremail}','PublicController@viewme');
     Route::get('blog', 'PublicController@showBlog');
@@ -80,7 +97,8 @@ Route::get('/github', function(){
 
 Route::group(['middleware' => ['web']], function () {
       //
-      Route::get('/view/jobs/{id}','PublicController@showjobs');
+      Route::get('/view/jobs/{title}','PublicController@showjobs');
+      Route::get('/view/odd/jobs/{title}','PublicController@showEccentricJobs');
       Route::get('blog','PublicController@showBlog');
       Route::get('/jobs/view','PublicController@publicboard');
       Route::get('/vlog','PublicController@showVlog');

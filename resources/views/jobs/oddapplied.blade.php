@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container ">
+  <div class="container padtop">
     <div class="row">
       @if(Auth::user()->type===1)
           @include('layouts.menu')

@@ -93,7 +93,7 @@
 }
 
   .font-cor{
-    font-family: 'Coming Soon', cursive;
+    font-family: 'Raleway', cursive;
     font-size: 16px;
   }
   .font-corb{
@@ -189,33 +189,33 @@
           <ul class="nav navbar-nav navbar-right">
             <!-- Authentication Links -->
             <ul class="nav navbar-nav">
-              <li><a href="#">Jobs</a></li>
-              <li class="btn-change"><a href="{{ url('/recruiter') }}"><b>Recruiter</b></a></li>
-              <li ><a href="{{ url('/talent') }}" > Talent</a></li>
+              <li><a href="#" class="hvr-underline-from-center">Jobs</a></li>
+              <li class="btn-change hvr-underline-from-center"><a href="{{ url('/recruiter') }}">Recruiter Site</a></li>
+
               <li class="show-on-hover">
-                <a  href="#" class="dropdown-toggle text-primary " data-toggle="dropdown" role="button" aria-expanded="false"  aria-haspopup="true">
+                <a  href="#" class="dropdown-toggle text-primary hvr-underline-from-center" data-toggle="dropdown" role="button" aria-expanded="false"  aria-haspopup="true">
                   <i class="fa fa-btn fa-lightbulb-o"></i> Resources <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu" >
-                  <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-paperclip animsition-link"></i>Blog</a></li>
-                  <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-rocket animsition-link"></i>Competitions</a></li>
-                  <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-question-circle animsition-link"></i>FAQs</a></li>
-                  <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-sitemap animsition-link"></i>Tutorials</a></li>
-                  <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-tablet animsition-link"></i>Training</a></li>
+                  <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-paperclip hvr-shutter-out-horizontal"></i>Blog</a></li>
+                  <li><a href="{{ url('competitions') }}"><i class="fa fa-btn fa-rocket hvr-shutter-out-horizontal"></i>Competitions</a></li>
+                  <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-question-circle hvr-shutter-out-horizontal"></i>FAQs</a></li>
+                  <li><a href="{{ url('events') }}"><i class="fa fa-btn fa-sitemap hvr-shutter-out-horizontal"></i>Tutorials</a></li>
+                  <li><a href="{{ url('trainings') }}"><i class="fa fa-btn fa-tablet hvr-shutter-out-horizontal"></i>Training</a></li>
                 </ul>
               </li>
               <li class="show-on-hover">
-                <a  href="#" class="dropdown-toggle  text-primary" data-toggle="dropdown" role="button" aria-expanded="false">
+                <a  href="#" class="dropdown-toggle  hvr-underline-from-center" data-toggle="dropdown" role="button" aria-expanded="false">
                   <i class="fa fa-btn fa-sign-up"></i> Sign Up <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a href="{{ url('/register') }}"><i class="fa fa-btn fa-user"></i>Talent</a></li>
-                  <li><a href="{{ url('employer/register') }}"><i class="fa fa-btn fa-users"></i>Employer</a></li>
+                  <li><a href="{{ url('/register') }}" class="hvr-shutter-out-horizontal"><i class="fa fa-btn fa-user"></i>Talent</a></li>
+                  <li><a href="{{ url('employer/register') }}" class="hvr-shutter-out-horizontal"><i class="fa fa-btn fa-users"></i>Employer</a></li>
                 </ul>
               </li>
             </ul>
 
-            <li><a href="{{ url('/login') }}"><i class="fa fa-sign-in"></i> Sign in</a></li>
+            <li><a href="{{ url('/login') }}" class="hvr-underline-from-center"><i class="fa fa-sign-in"></i> Sign in</a></li>
 
             </ul>
         </div>
@@ -332,15 +332,19 @@
     <div id="search">
         <button type="button" class="close textw">×</button>
         <form>
-            <input type="search" value="" placeholder="type keyword(s) here" />
+            <input type="search" value="" placeholder="type skill(s) here" />
+            <button class="btn btn-primary" onclick="myFunction()">Find Me Jobs</button>
 
-
-            <button type="submit" class="btn btn-primary">Search</button>
             <p>
               Search Jobs
             </p>
         </form>
     </div>
+    <script>
+function myFunction() {
+     swal("We are working on It!", "Thank you for trying out :D")
+}
+</script>
 
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
   </body>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container" id="jobs">
+  <div class="container padtop" id="jobs">
     <div class="row">
 
       @include('layouts.emmenu')

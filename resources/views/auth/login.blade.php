@@ -28,7 +28,7 @@ body{
 <video autoplay loop muted poster="screenshot.jpg" id="background">
    <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4">
 </video>
-<div class="container" id="login">
+<div class="container padtop" id="login">
     <div class="row">
         <div class="col-md-8 col-md-offset-2 pad" >
           <div class="card card-raised bp" >
@@ -42,7 +42,7 @@ body{
                             <i class="fa fa-envelope"></i>
                             <div class="col-md-6">
 
-                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <input type="email" class="form-control textw" name="email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -57,7 +57,7 @@ body{
                               <i class="fa fa-key"></i>
                             <div class="col-md-6">
 
-                                <input type="password" class="form-control" name="password">
+                                <input type="password" class="form-control textw" name="password">
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">

@@ -110,6 +110,18 @@ class PublicController extends Controller
 
           ]);
   }
+  public function showEccentricJobs($title)
+  {
+    $job = DB::table('odd_jobs')
+          ->where('odd_jobs.title','=', $title)
+          ->join('users', 'odd_jobs.user_id', '=', 'users.id')
+          ->select('odd_jobs.*', 'users.name')
+          ->orderBy('created_at', 'desc')
+          ->first();
 
+          return view('jobs.OddJobsPublicView', [
+            'job'=>$job,
+          ]);
+  }
 
 }

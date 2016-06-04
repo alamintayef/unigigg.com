@@ -7,7 +7,7 @@
  }) (jQuery);
 
   </script>
-  <div class="container" id="degree">
+  <div class="container padtop" id="degree">
     <div class="row">
       @include('layouts.menu')
       <div class="col-md-7">

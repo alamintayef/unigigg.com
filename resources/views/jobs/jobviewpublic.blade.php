@@ -2,7 +2,7 @@
 @if(count($job)>0)
 <title>{{$job->job_name}}</title>
 @section('content')
-  <div class="container-fluid  ">
+  <div class="container-fluid padtop  ">
     <div class="row">
       <div class="col-md-1">
 
@@ -43,7 +43,7 @@
                     <hr>
                   <a href="{{url('login')}}" class="btn btn-link">Apply</a><br>
                   share the post on
-                  <a href="https://www.facebook.com/sharer/sharer.php?u=unigigg.dev/view/jobs/{{$job->job_name}}?button=" target="_blank" ><i class="fa fa-facebook"></i></a>
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=www.unigigg.com/view/jobs/{{$job->job_name}}?button=" target="_blank" ><i class="fa fa-facebook"></i></a>
 
 
                     </div>

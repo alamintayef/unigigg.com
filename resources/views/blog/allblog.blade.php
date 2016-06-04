@@ -10,7 +10,7 @@
 
   </style>
 
-<div class="container center" id="font">
+<div class="container center padtop" id="font">
   <div class="row">
     <div class="col-lg-12 padsmall">
         @foreach($blog as $blogs)

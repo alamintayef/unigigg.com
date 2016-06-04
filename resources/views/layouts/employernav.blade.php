@@ -190,8 +190,8 @@
             <!-- Authentication Links -->
             <ul class="nav navbar-nav">
               <li><a href="#">Jobs</a></li>
-            
-              <li ><a href="{{ url('/talent') }}" > Talent</a></li>
+
+              <li ><a href="{{ url('/talent') }}" class="btn-change">Talent</a></li>
               <li class="show-on-hover">
                 <a  href="#" class="dropdown-toggle text-primary " data-toggle="dropdown" role="button" aria-expanded="false"  aria-haspopup="true">
                   <i class="fa fa-btn fa-lightbulb-o"></i> Resources <span class="caret"></span>

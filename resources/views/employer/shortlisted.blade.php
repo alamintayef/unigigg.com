@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container" id="shortlisted">
+  <div class="container padtop" id="shortlisted">
     <div class="row ">
       @include('layouts.emmenu')
       <div class="col-md-10 whiteproper  panel">

@@ -7,7 +7,7 @@
  }) (jQuery);
 
   </script>
-  <div class="container" id="skill">
+  <div class="container padtop" id="skill">
     <div class="row">
       @include('layouts.menu')
       <div class="col-md-7">

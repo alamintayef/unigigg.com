@@ -13,4 +13,8 @@ class Training extends Model
        'payment_method',
 
    ];
+   public function user()
+   {
+       return $this->belongsTo(User::class);
+   }
 }
