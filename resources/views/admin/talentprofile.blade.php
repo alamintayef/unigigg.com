@@ -14,7 +14,7 @@
   width:150px;
 }
 </style>
-<div class="container ">
+<div class="container padtop">
   <div class="row">
     @if(Auth::user()->type==2)
       <a href="{{url('whoapplied')}}">Go Back</a>

@@ -18,7 +18,7 @@ class Jobs extends Model
       'major',
       'cgpa',
       'job_education_reqs',
-      'Job_skill_reqs',
+      'job_skill_reqs',
       'job_reqs_additional',
       'job_start_date',
       'job_last_date_application',
@@ -30,6 +30,11 @@ class Jobs extends Model
     {
       return $this->belongsTo(User::class);
 
+    }
+
+    public function jobSkills()
+    {
+       return $this->hasMany(jobSkills::class);
     }
 
 

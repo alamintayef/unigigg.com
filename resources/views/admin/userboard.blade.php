@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container">
+  <div class="container padtop">
     <div class="row">
       <div class="card card-raised">
 
@@ -19,13 +19,16 @@
             <th>
               Verification
             </th>
+            <th>
+              Points
+            </th>
           </thead>
           <tbody>
 
 
-
-            @foreach($alluser as $users)
               <tr>
+            @foreach($alluser as $users)
+
                 <td>
                   {{$users->name}}
                 </td>
@@ -34,7 +37,7 @@
                 </td>
 
                 <td>
-                  <form  action="{{url('/aprofile',$users->id)}}" method="GET">
+                  <form  action="{{url('/aprofile',$users->name)}}" method="GET">
                     {!! csrf_field() !!}
                     <button type="submit" class="btn btn-primary">
                       <i class="fa fa-user"></i> view profile
@@ -50,8 +53,14 @@
                 </td>
 
 
-              </tr>
+
             @endforeach
+            <td>
+              
+            </td>
+            </tr>
+
+
 
           </tbody>
         </table>

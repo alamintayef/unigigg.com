@@ -21,8 +21,7 @@
   <body>
     <p>
       Dear {{$user->name}},<br>
-      We hope you are doing good. Its been a long time since you have joined unigigg, but for some reason <br>
-      you did not fill your profile basic information properly. If you need any help please do inform us. We will be happy to help.<br>
+      We hope you are doing good. Your profile is seems incomplete,please fill up your profile as it will be used as your public resume.If you need any help please do inform us @ info@unigigg.com. We will be happy to help.<br>
 
       Best,
       tayef,

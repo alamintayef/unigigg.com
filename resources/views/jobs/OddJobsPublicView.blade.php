@@ -38,7 +38,7 @@
                     <hr>
                   <a href="{{url('login')}}" class="btn btn-link">Apply</a><br>
                   share the post on
-                  <a href="https://www.facebook.com/sharer/sharer.php?u=www.unigigg.com/view/jobs/{{$job->title}}?button=" target="_blank" ><i class="fa fa-facebook"></i></a>
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=www.unigigg.com/view/odd/jobs/{{$job->title}}?button=" target="_blank" ><i class="fa fa-facebook"></i></a>
 
 
                     </div>

@@ -11,24 +11,29 @@
 
 <table class="table  table-hover" >
   <thead>
-  <th>Result</th>
-  <th>
-    Degree Name
-  </th>
-  <th>
-    User Name
-  </th>
+    <th>
+      Job Name
+    </th>
+    <th>
+      Skills Required
+    </th>
+
   </thead>
   <tbody>
     @foreach($skill as $skills)
       <tr>
+        <td>{{ $skills->job_name }}</td>
         <td>
-          {{$skills->Degree_result}}
+          {{$skills->job_skill_reqs}}
         </td>
         <td>
-          {{$skills->Degree_name}}
+          <form class="form-control" action="{{url('/view/jobs',$skills->job_name)}}" method="GET">
+
+            <button type="submit" class="btn btn-default btn-mini pull-right">view</button>
+
+          </form>
         </td>
-        <td>{{ $skills->name }}</td>
+
       </tr>
     @endforeach
   </tbody>

@@ -83,7 +83,7 @@ Route::get('/github', function(){
     Route::get('/sms', 'PublicController@sendsms');
     Route::get('profile/{useremail}','PublicController@viewme');
     Route::get('blog', 'PublicController@showBlog');
-
+    Route::get('search/people','PublicController@search');
 /*
 |--------------------------------------------------------------------------
 | Application Routes

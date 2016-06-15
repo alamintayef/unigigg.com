@@ -7,8 +7,6 @@ for (var i = 0; i < arguments.length; i++) {
 }
 $.preloadImages("http://s32.postimg.org/rg1efg31h/cover2w.jpg");
 </script>
-
-
 @section('content')
 <style media="screen">
 body{
@@ -31,7 +29,6 @@ body{
   */
 
 }
-
 .ecc{
   background-color: rgba(0, 0, 0, 0.3);
 }
@@ -63,12 +60,15 @@ body{
       <br>
       <br>
       <div class="foo">
-
-
       <a href="#search" class="btn btn-default btn-change font-cor"></b><i class="fa fa-search fa-1x"></i> Search Jobs</b></a>
       <a class="btn btn-default font-cor btn-change" href="{{url('jobs/view')}}"><b>Find a Gigg / Internship <i class="fa fa-search-plus"></i></b></a>
-      <a class="btn btn-default font-cor btn-change" href="{{url('jobs/view')}}"><b>Post a Job <i class="fa fa-pencil"></i></b></a>
+      <a class="btn btn-default font-cor btn-change" onclick="myFunction();"><b>Post a Job <i class="fa fa-pencil"></i></b></a>
       </div>
+      <script>
+          function myFunction() {
+               swal("We are working on It!", "Thank you for trying out :D")
+          }
+      </script>
       <br>
       <br>
       <br>
@@ -77,12 +77,40 @@ body{
       <br>
       <br>
       <br>
-
     </div>
-
   </div>
 </div>
 <!--
+<div class="container-fluid pad whiteproper">
+  <h2 class="center">Find <i class="fa fa-search fa-2x"></i>Jobs</h2>
+  <div class="row">
+    <div class="col-md-2 col-md-offset-1 ">
+      <i class="fa fa-edit fa-4x"></i><br>
+      <h3 class="btn-change">Full Time</h3>
+    </div>
+    <div class="col-md-2 ">
+      <i class="fa fa-edit fa-4x"></i><br>
+    <h3 class="btn-change">Part Time </h3>
+    </div>
+    <div class="col-md-2">
+      <i class="fa fa-edit fa-4x"></i><br>
+    <h3 class="btn-change">Internship</h3>
+    </div>
+    <div class="col-md-2">
+      <i class="fa fa-edit fa-4x"></i><br>
+    <h3 class="btn-change">Tuitions</h3>
+    </div>
+    <div class="col-md-2">
+      <i class="fa fa-edit fa-4x"></i><br>
+    <h3 class=" textb btn-change">Quick Jobs</h3>
+    </div>
+
+
+
+  </div>
+
+</div>
+
 <div class="container pad" id="features">
 	<div class="row">
     <h2 class="center">How it Works</h2>
@@ -249,6 +277,8 @@ body{
         <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/yvdkmkvut/download.jpg" alt="...">
         <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/dkl2ffk1x/FInal_Amar_Bike_Logo_Page_01.png" alt="...">
         <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s33.postimg.org/v47zjeiu7/logo_1456081131.png" alt="...">
+
+
         </div>
 
 

@@ -331,12 +331,13 @@
 
     <div id="search">
         <button type="button" class="close textw">×</button>
-        <form>
-            <input type="search" value="" placeholder="type skill(s) here" />
-            <button class="btn btn-primary" onclick="myFunction()">Find Me Jobs</button>
+        <form role="form" method="GET" action="{{ url('/search/people') }}">
+              {!! csrf_field() !!}
+            <input type="search" name="search" value="" placeholder="type skill(s) here" />
+            <button type="submit" class="btn btn-primary" >Find Me Jobs</button>
 
             <p>
-              Search Jobs
+              Search People
             </p>
         </form>
     </div>

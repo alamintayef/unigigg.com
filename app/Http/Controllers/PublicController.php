@@ -17,8 +17,8 @@ class PublicController extends Controller
 
     $jobs = DB::table('jobs')
     ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
-    ->join('images', 'em_infos.user_id', '=', 'images.user_id')
-    ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type','images.filePath')
+
+    ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
     ->orderByRaw("RAND()")->get();
 
     $applied = DB::table('student_applieds')
@@ -122,6 +122,24 @@ class PublicController extends Controller
           return view('jobs.OddJobsPublicView', [
             'job'=>$job,
           ]);
+  }
+
+  public function search(Request $request)
+  {
+    $this->validate($request, [
+      'search'=> 'required',
+    ]);
+     $search = \Request::get('search');
+
+     $skill = DB::table('jobs')
+            ->select('jobs.*')
+            ->where('job_skill_reqs','like','%'.$search.'%')
+            ->get();
+
+
+    return view('search.people',[
+        'skill'=> $skill,
+      ]);
   }
 
 }

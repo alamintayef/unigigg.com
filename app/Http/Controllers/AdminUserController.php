@@ -61,22 +61,24 @@ class AdminUserController extends Controller
          'timer' => 1000,
 
        ]);
-
-         return redirect('home');
+       return redirect('home');
 
     }
+
+    public function usercount(){
+      
+    }
+
     public function notifyuserAbout($email)
     {
       $user= DB::table('users')->where('email','=',$email)->select('users.*')->first();
       Mailgun::send('email.notify.notifyinfo',[ 'user' =>  $user ], function ($m) use ($user)
       {
-        $m->from('@unigigg.com', 'Get Noticed ! By telling More about you');
+        $m->from('info@unigigg.com', 'Get Noticed ! By telling More about you');
         $m->to($user->email)->subject('Hi ! Tell us more about you');
       });
-
       notify()->flash('Notifed Successfully!', 'success', [
          'timer' => 1000,
-
        ]);
       return redirect('home');
 
@@ -86,9 +88,14 @@ class AdminUserController extends Controller
       $user= DB::table('users')->where('email','=',$email)->select('users.*')->first();
       Mailgun::send('email.notify.notifyinfo',[ 'user' =>  $user ], function ($m) use ($user)
       {
-        $m->from('callforinterview@unigigg.com', 'Build up your profile');
-        $m->to($user->email)->subject('Call for interview');
+        $m->from('info@unigigg.com', 'Build up your profile');
+        $m->to($user->email)->subject('Complete your profile to get Hired !');
       });
+      notify()->flash('Notifed Successfully!', 'success', [
+         'timer' => 1000,
+
+       ]);
+      return redirect('home');
 
     }
     public function notifyuserEducation($email)
@@ -96,9 +103,14 @@ class AdminUserController extends Controller
       $user= DB::table('users')->where('email','=',$email)->select('users.*')->first();
       Mailgun::send('email.admin.callforinterviewbyadmin',[ 'user' =>  $user ], function ($m) use ($user)
       {
-        $m->from('callforinterview@unigigg.com', 'Congrats ! You have been selected for and Interview');
-        $m->to($user->email)->subject('Call for interview');
+        $m->from('info@unigigg.com', 'Hey ! Show us your awesome Academic Qualification');
+        $m->to($user->email)->subject('Update Education Information');
       });
+      notify()->flash('Notifed Successfully!', 'success', [
+         'timer' => 1000,
+
+       ]);
+      return redirect('home');
 
     }
     public function notifyuserExperience($email)
@@ -106,9 +118,14 @@ class AdminUserController extends Controller
       $user= DB::table('users')->where('email','=',$email)->select('users.*')->first();
       Mailgun::send('email.admin.callforinterviewbyadmin',[ 'user' =>  $user ], function ($m) use ($user)
       {
-        $m->from('callforinterview@unigigg.com', 'Congrats ! You have been selected for and Interview');
-        $m->to($user->email)->subject('Call for interview');
+        $m->from('info@unigigg.com', 'Congrats ! You have been selected for and Interview');
+        $m->to($user->email)->subject('Show us what you have got! Add experience to your profile');
       });
+      notify()->flash('Notifed Successfully!', 'success', [
+         'timer' => 1000,
+
+       ]);
+      return redirect('home');
 
     }
     public function notifyuserSkill($email)
@@ -119,6 +136,11 @@ class AdminUserController extends Controller
         $m->from('callforinterview@unigigg.com', 'Congrats ! You have been selected for and Interview');
         $m->to($user->email)->subject('Call for interview');
       });
+      notify()->flash('Notifed Successfully!', 'success', [
+         'timer' => 1000,
+
+       ]);
+      return redirect('home');
 
     }
 }

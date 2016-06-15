@@ -38,6 +38,7 @@ class ChakriController extends Controller
         'timer' => 2000,
 
       ]);
+      
 
 
       return redirect('/home');
