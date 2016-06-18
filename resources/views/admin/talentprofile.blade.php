@@ -40,8 +40,8 @@
 
 
                 <div class="well">
-                  {{$info->fun_facts}}<br>
-                  {{$info->inspiration_qot}}<br>
+                  {!! $info->fun_facts !!}<br>
+                  {!! $info->inspiration_qot !!}<br>
                   {{$info->Why_you}}<br>
                   {{$info->Why_not_you}}<br>
                 </div>
@@ -59,9 +59,6 @@
 
 
             @endif
-
-
-
             @if($user->verified===1)
               <p class="text-success">
                 Verified
@@ -98,9 +95,10 @@
 
               <p>
                 University :{{$view->institute}}<br>
+                Phone Number : {{$view->mobile}}
                 NID :{{$view->NId}}<br>
-                Facebook :<a href="{{ $view->facebookId }}"> Facebook</a> <br>
-                LINKEDIN :{{ $view->LinkedInId }}
+                Facebook : <a href="{{ $view->facebookId }}"> Facebook</a> <br>
+                LINKEDIN : {{ $view->LinkedInId }}
               </p>
 
             </div>
@@ -140,9 +138,15 @@
                     <td class="td">
                       {{$skills->skill_level}}
                     </td>
-                    <td>
-                      Verified
-                    </td>
+
+                      <td>
+                        @if($users->varified===0)
+                          <button type="button" name="button" class="btn-danger">Not Verified</button>
+                        @else
+                          <button type="button" name="button" class="btn-success">Verified</button>
+                        @endif
+                      </td>
+
 
                   </tr>
                 </tbody>
@@ -206,7 +210,7 @@
           <form class="form-group" action="{{url('notify/user/experience',$user->email)}}" method="POST">
             {!! csrf_field() !!}
             <button type="submit" class="btn btn-sm raised btn-primary">
-              <i class="fa fa-check"></i> Notify for education
+              <i class="fa fa-check"></i> Notify for Experience
             </button>
           </form>
         @endif
