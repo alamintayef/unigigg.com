@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-<div class="card card-raised pad">
+<div class="card card-raised padtop pad">
 
     <form class="form-horizontal" action="{{url('edupdate',$edu->id)}}" method="POST">
       <div class="card-header">

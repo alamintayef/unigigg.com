@@ -145,11 +145,11 @@
               <small class="text-danger">Required</small>
             </div>
 
-          <div class="form-group">
-            {!! Form::label('job_description', 'Job Description:') !!}<span class="text-danger">*</span>
-            {!! Form::textarea('job_description', null, ['class'=>'form-control', 'rows'=>2] ) !!}
-            <small class="ssmal">Describe what the job is all about. e.g. Responsibilities</small>
-          </div>
+            <div class="form-group">
+              {!! Form::label('job_description', 'Job Description:') !!}<span class="text-danger">*</span>
+              {!! Form::textarea('job_description', null, ['class'=>'form-control', 'rows'=>2, 'id'=> 'job_description'] ) !!}
+              <small class="ssmal">Describe what the job is all about. e.g. Responsibilities</small>
+            </div>
 
           <hr>
           <div class="form-group">
@@ -213,15 +213,15 @@
               this.input.value = before + text + ", ";
             }
         });
-        autocomplete.list =['C', 'C++', 'JavaScript','MS-Office','Accounting','Python','Php','Laravel','NodeJs']
+        autocomplete.list =['C', 'C++', 'JavaScript','MS-Office','Accounting','Python','Php','Laravel','NodeJs','HTML','Django','Java', 'ASP.NET','Marketing','Finance','Writing','Graphic Desing','Web Design'
 
           </script>
 
-      <div class="form-group">
-            {!! Form::label('job_reqs_additional', 'Additional Requirments: ') !!}
-            {!! Form::textarea('job_reqs_additional', null, ['class'=>'form-control', 'rows'=>2] ) !!}
-            <small class="ssmal">If you have and specific additional requirments</small>
-          </div>
+          <div class="form-group">
+                {!! Form::label('job_reqs_additional', 'Additional Requirments: ') !!}
+                {!! Form::textarea('job_reqs_additional', null, ['class'=>'form-control', 'rows'=>2,'id'=> 'job_reqs_additional'] ) !!}
+                <small class="ssmal">If you have and specific additional requirments</small>
+              </div>
           <div class="form-group">
             {!! Form::label('job_start_date', 'Commencing Date:') !!}
             {!! Form::date('job_start_date', null, ['class'=>'form-control'] ) !!}
@@ -249,4 +249,35 @@
   (function ($) {
   $('#postedjob').smoothState();
   })(jQuery);
+  </script>
+  <script src="//cdn.ckeditor.com/4.5.8/basic/ckeditor.js"></script>
+  <script type="text/javascript">
+   CKEDITOR.replace( 'job_reqs_additional' );
+   CKEDITOR.replace( 'job_description' );
+
+  </script>
+  <script type="text/javascript">
+  var input = document.getElementById("job_skill_reqs");
+  var autocomplete=new Awesomplete(input, {
+  minChars: 1,
+  autoFirst: true,
+  filter: function(text, input) {
+    return Awesomplete.FILTER_CONTAINS(text, input.match(/[^,]*$/)[0]);
+  },
+
+  replace: function(text) {
+    var before = this.input.value.match(/^.+,\s*|/)[0];
+    this.input.value = before + text + ", ";
+  }
+});
+autocomplete.list =['C', 'C++', 'JavaScript','MS-Office','Accounting','Python','Php','Laravel','NodeJs','HTML','Django','Java', 'ASP.NET','Marketing','Finance','Writing','Graphic Desing','Web Design']
+
+  </script>
+  <script type="text/javascript">
+  var cgpa = document.getElementById("cgpa");
+  var autocompletecgpa=new Awesomplete(cgpa, {
+  minChars: 1,
+  autoFirst: true
+  });
+  autocompletecgpa.list = ['2','2.5','2.75','3','3.25','3.5']
   </script>

@@ -122,8 +122,6 @@
             <small class="ssmal">Insert the specific skill set you are looking for. e.g. MS-Office, Php, Java, Accounting</small>
           </div>
 
-
-
           </script>
       <div class="form-group">
             {!! Form::label('job_reqs_additional', 'Additional Requirments: ') !!}
@@ -200,7 +198,7 @@
     this.input.value = before + text + ", ";
   }
 });
-autocomplete.list =['C', 'C++', 'JavaScript','MS-Office','Accounting','Python','Php','Laravel','NodeJs','HTML','Django','Java', 'ASP.NET']
+autocomplete.list =['C', 'C++', 'JavaScript','MS-Office','Accounting','Python','Php','Laravel','NodeJs','HTML','Django','Java', 'ASP.NET','Marketing','Finance','Writing','Graphic Desing','Web Design']
 
   </script>
   <script type="text/javascript">
