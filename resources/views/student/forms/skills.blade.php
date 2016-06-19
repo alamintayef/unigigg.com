@@ -38,7 +38,7 @@
     <div class="form-group">
       {!! Form::label('skill_proof', 'Skill Validator:', ['class' => 'control-label']) !!}
       {!! Form::text('skill_proof', null, ['class' => 'form-control']) !!}
-      <small>Upload your skills proof to dropbox/ googledrive/ ondrive and share the link here</small><br>
+      <small>Upload your skill proof to dropbox/ googledrive/ ondrive and share the link here</small><br>
       <small>i,e You have MS-powerpoint skill. So do a good powerpoint slide upload it in the cloud and share it</small>
     </div>
 

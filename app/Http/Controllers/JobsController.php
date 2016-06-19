@@ -24,7 +24,7 @@ class JobsController extends Controller
         $current = Carbon::now();
 
         // add 30 days to the current time
-        $jobExpires = $current->addDays(2);
+        $jobExpires = $current->addDays(30);
         $this->validate($request, [
             'job_name' => 'required|max:255',
             'job_type' => 'required',

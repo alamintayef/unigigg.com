@@ -22,7 +22,7 @@
             <th>
               Delete
             </th>
-          
+
           </thead>
           <tbody>
 
@@ -65,6 +65,7 @@
 
             </tr>
             @endforeach
+            {{ $alluser->links() }}
 
 
 

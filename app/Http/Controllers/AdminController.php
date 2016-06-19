@@ -40,11 +40,11 @@ class AdminController extends Controller
     public function index()
     {
 
-      $alluser = DB::table('users')->where('type',1)->get();
+      $alluser = DB::table('users')->where('type',1)->paginate(15);
 
       return view('admin.user.userboard',[
         'alluser' => $alluser,
-        
+
       ]);
 
     }

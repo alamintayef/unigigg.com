@@ -150,14 +150,14 @@ body{
     <h3 class="center textw foo">How it Works</h3>
   <div class="col-md-4 col-md-offset-1 bar">
     <h4 class="textw">1. Create a profile</h4>
-    <p>
+    <p class="textw">
       Create a company profile with all the necessary information
     </p>
   </div>
 
   <div class="col-md-4 col-md-offset-1 bar">
     <h4 class="textw">2. Post a Job</h4>
-    <p>
+    <p class="textw">
       Post job specifying exact needs, target university, area <br>
       <small>we will notify every student that matchs with your needs</small>
 
@@ -166,7 +166,7 @@ body{
   </div>
   <div class="col-md-4 col-md-offset-1 bar">
     <h4 class="textw">3. Curating Starts</h4>
-    <p>
+    <p class="textw">
       Sit back, watch the applications roll in <br>
       <small>You can also search through our database and shortlist</small>
     </p>
@@ -174,7 +174,7 @@ body{
   </div>
   <div class="col-md-4 col-md-offset-1 bar">
     <h4 class="textw">4. Shortlist. Finalize. Pay</h4>
-    <p>
+    <p class="textw">
       After you shortlist a bunch of applicants, you finalize them for interview <br>
       <small>After Finalizing You pay us. Then notify the candidates for interview according to your time</small>
     </p>
@@ -228,8 +228,29 @@ body{
       <h4 class="center foo">Posting a Job is Completely Free</h4>
       <h5 class="center foo">You’ll only be charged when you finalize applicants who match your requirements</h5>
 
+      <div class="col-md-3 foo ">
 
-      <div class="col-md-4 foo ">
+        <!-- PRICE ITEM -->
+        <div class="panel price panel-white">
+          <div class="panel-heading arrow_box text-center">
+          <h5>Starter</h5>
+          </div>
+          <div class="panel-body text-center">
+            <p class="lead" style="font-size:20px"><strong>Free</strong></p>
+          </div>
+          <ul class="list-group list-group-flush text-center">
+            <li class="list-group-item"><i class="icon-ok text-success"></i>Self Serve</li>
+            <li class="list-group-item"><i class="icon-ok text-success"></i>Free upto 3 months</li>
+            <li class="list-group-item"><i class="icon-ok text-success"></i> 24/7 support</li>
+          </ul>
+
+        </div>
+        <!-- /PRICE ITEM -->
+
+
+      </div>
+
+      <div class="col-md-3 foo ">
 
         <!-- PRICE ITEM -->
         <div class="panel price panel-white">
@@ -251,7 +272,7 @@ body{
 
       </div>
 
-      <div class=" col-md-4 foo">
+      <div class=" col-md-3 foo">
 
         <!-- PRICE ITEM -->
         <div class="panel price panel-white">
@@ -274,7 +295,7 @@ body{
 
       </div>
 
-        <div class=" col-md-4 foo">
+        <div class=" col-md-3 foo">
 
         <!-- PRICE ITEM -->
         <div class="panel price panel-white">
