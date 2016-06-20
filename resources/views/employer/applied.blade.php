@@ -18,15 +18,17 @@
               @if($seek->paid!=0)
                 <h4>{{$seek->fname}} {{$seek->lname}}</h4>
               @else
-                {{$seek->user_id}}
+              Candidate ID :  {{$seek->id}}
               @endif
 
 
             </div>
             <div class="panel-body">
+              <!--
               <p class="col-md-4">
               <iframe width="260" height="115" src="https://www.youtube.com/embed/{{$seek->vdourl}}" frameborder="0" allowfullscreen></iframe>
               </p>
+              --->
 
               <p class="col-md-4">
                 <strong >Applied for</strong> : {{$seek->job_name}} <br>

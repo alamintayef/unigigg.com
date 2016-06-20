@@ -192,8 +192,8 @@ body{
       </div>
       <div class="col-md-4 ">
         <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="100">
-          <span class="icon bg-df circle"><i class="fa fa-diamond"></i></span>
-          <h3>Clean Code & Design</h3>
+          <span class="icon bg-df circle"><i class="fa fa-search"></i></span>
+          <h3>Talent Sourcing</h3>
           <div class="divider clearfix"></div>
           <p>Voluptatem ad provident non repudiandae beatae cupiditate amet reiciendis lorem ipsum dolor sit amet, consectetur.</p>
           <a href="page-services.html">Read More <i class="pl-5 fa fa-angle-double-right"></i></a>
@@ -202,7 +202,7 @@ body{
       <div class="col-md-4 ">
         <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="150">
           <span class="icon bg-df circle"><i class="fa fa-connectdevelop"></i></span>
-          <h3>Extremely Flexible</h3>
+          <h3>Pre-screening</h3>
           <div class="divider clearfix"></div>
           <p>Iure sequi unde hic. Sapiente quaerat sequi inventore veritatis cumque lorem ipsum dolor sit amet, consectetur.</p>
           <a href="page-services.html">Read More <i class="pl-5 fa fa-angle-double-right"></i></a>
@@ -210,8 +210,8 @@ body{
       </div>
       <div class="col-md-4 ">
         <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="200">
-          <span class="icon bg-df circle"><i class="fa fa-laptop"></i></span>
-          <h3>Latest Technologies</h3>
+          <span class="icon bg-df circle"><i class="fa fa-start"></i></span>
+          <h3>Branding</h3>
           <div class="divider clearfix"></div>
           <p>Iure sequi unde hic. Sapiente quaerat sequi inventore veritatis cumque lorem ipsum dolor sit amet, consectetur.</p>
           <a href="page-services.html">Read More <i class="pl-5 fa fa-angle-double-right"></i></a>
