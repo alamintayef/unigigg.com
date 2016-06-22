@@ -8,10 +8,10 @@
 
   @foreach($funs as $fun)
     <p>
-      {{$fun->fun_facts}}
+      {!! $fun->fun_facts !!}
     </p>
     <p>
-      {{$fun->inspiration_qot}}
+      {!! $fun->inspiration_qot !!}
     </p>
     <p>
       {{$fun->Why_you}}

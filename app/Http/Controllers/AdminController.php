@@ -63,7 +63,7 @@ class AdminController extends Controller
       $employer = DB::table('users')
                 ->join('em_infos','users.id','=','em_infos.user_id')
                 ->select('users.*','em_infos.*')
-                ->where('id',$id)
+                ->where('users.id',$id)
                 ->first();
       $jobsposted = DB::table('jobs')->select('jobs.*')->where('user_id',$id)->get();
         return view('employer.employerview',[

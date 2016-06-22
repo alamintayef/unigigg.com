@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container" id="vlog">
+<div class="container padtop" id="vlog">
   <div class="row">
     <div class="col-md-12">
       <div class="col-md-2 panel center">

@@ -60,7 +60,7 @@
                             </p>
                           @else
                               @if($reqMatch->Degree_result>=$job->cgpa)
-                                <button type="submit" name="button" class="btn btn-success">Apply</button>
+                                <button type="submit" name="submit" class="btn btn-success">Apply</button>
                               @else
                                 <h6 class="text-danger">Sorry you do not fulfill the minimum job criteria</h6>
                               @endif

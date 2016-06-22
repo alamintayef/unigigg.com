@@ -6,14 +6,14 @@
 <title>{{$info->fname}} {{$info->lname}}</title>
 
 <meta name="viewport" content="width=device-width"/>
-<meta name="description" content="The Curriculum Vitae from unigigg.com."/>
+<meta name="description" content="Resume from unigigg.com."/>
 <meta charset="UTF-8">
   <script src="//fast.eager.io/V77aiwbirP.js"></script>
 
   {!! Html::style('css/cvOne.css') !!}
-	{!! Html::style('css/style.css') !!}
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
 
 <link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
 
@@ -51,12 +51,19 @@
 		<section>
 			<article>
 				<div class="sectionTitle">
-					<h1>Personal Profile</h1>
+					<h1>About Me</h1>
 				</div>
 
 				<div class="sectionContent">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dolor metus, interdum at scelerisque in, porta at lacus. Maecenas dapibus luctus cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
-				</div>
+          @if(count($about)!=0)
+              {!! $about->fun_facts !!}
+          @else
+            <p>
+              I haven't added anything Yet
+            </p>
+          @endif
+
+				  </div>
 			</article>
 			<div class="clear"></div>
 		</section>
@@ -113,7 +120,7 @@
 			<div class="sectionContent">
 				<ul class="keySkills">
           @foreach($skills as $skill)
-            <li>{{$skill->skill_name}}</li>
+            <li><a href="{{$skill->skill_proof}}"> {{$skill->skill_name}}</a></li>
           @endforeach
 
 
@@ -121,6 +128,24 @@
 			</div>
 			<div class="clear"></div>
 		</section>
+    <section>
+      <div class="sectionTitle">
+        <h1>Extra Curricular Activities</h1>
+      </div>
+
+      <div class="sectionContent">
+        <article>
+          @foreach($extra as $xtra)
+            <h2>{{$xtra->excc_name}}</h2>
+            <p class="subDetails">{{$xtra->excc_start_date}} - {{$xtra->excc_end_date}}</p>
+            <p>{{$xtra->excc_description}}</p>
+          @endforeach
+
+        </article>
+
+      </div>
+      <div class="clear"></div>
+    </section>
 
 
 
@@ -129,8 +154,6 @@
 </div>
 
 </body>
-
-
   @else
     <p>
       Nothing Added Yet

@@ -22,8 +22,8 @@ class FunFactsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'fun_facts' => 'required|max:255',
-            'inspiration_qot' =>'required|max:255',
+            'fun_facts' => 'required|',
+            'inspiration_qot' =>'required',
             'Why_you'=> 'required',
             'Why_not_you'=> 'required',
 

@@ -18,6 +18,7 @@ use App\Model\Student\Reference;
 use App\Model\Student\Image;
 use App\Model\Student\User;
 use App\Model\Student\Jobs;
+use Mailgun;
 use Session;
 class ChakriController extends Controller
 {
@@ -31,6 +32,21 @@ class ChakriController extends Controller
     {
 
       $input = $request->all();
+
+      $uid=$request->user_id;
+      $job_id=$request->applied_for_job_id;
+      $user= DB::table('users')
+            ->where('users.id','=',$uid)
+            ->join('user_info','users.id','=','user_info.user_id')
+
+            ->select('users.*','user_info.*')
+            ->first();
+      Mailgun::send('email.notify.applicationNotification',[ 'user' =>  $user ], function ($m) use ($user)
+      {
+        $m->from('info@unigigg.com', 'Thank you for applying');
+        $m->to($user->email)->subject('Hi ! Thank you for Applying');
+      });
+
 
       StudentApplied::create($input);
 

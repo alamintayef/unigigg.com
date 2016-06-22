@@ -188,14 +188,14 @@ body{
       <div class="col-md-8 col-md-offset-2 text-center">
         <h2 class="text-uppercase">Our Services</h2>
         <div class="divider"></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam voluptas facere vero ex tempora saepe perspiciatis ducimus sequi animi.</p>
+        <p>We take the headache out for recruitment</p>
       </div>
       <div class="col-md-4 ">
         <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="100">
           <span class="icon bg-df circle"><i class="fa fa-search"></i></span>
           <h3>Talent Sourcing</h3>
           <div class="divider clearfix"></div>
-          <p>Voluptatem ad provident non repudiandae beatae cupiditate amet reiciendis lorem ipsum dolor sit amet, consectetur.</p>
+          <p>We actively source talent and help them to be career ready so that you can find the right fit for your company</p>
           <a href="page-services.html">Read More <i class="pl-5 fa fa-angle-double-right"></i></a>
         </div>
       </div>
@@ -204,16 +204,16 @@ body{
           <span class="icon bg-df circle"><i class="fa fa-connectdevelop"></i></span>
           <h3>Pre-screening</h3>
           <div class="divider clearfix"></div>
-          <p>Iure sequi unde hic. Sapiente quaerat sequi inventore veritatis cumque lorem ipsum dolor sit amet, consectetur.</p>
+          <p>All our talents skills are validated. Therefore you do not have to go through intial screening. Which saves a lot of cost and time</p>
           <a href="page-services.html">Read More <i class="pl-5 fa fa-angle-double-right"></i></a>
         </div>
       </div>
       <div class="col-md-4 ">
         <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="200">
-          <span class="icon bg-df circle"><i class="fa fa-start"></i></span>
+          <span class="icon bg-df circle"><i class="fa fa-diamond"></i></span>
           <h3>Branding</h3>
           <div class="divider clearfix"></div>
-          <p>Iure sequi unde hic. Sapiente quaerat sequi inventore veritatis cumque lorem ipsum dolor sit amet, consectetur.</p>
+          <p>We work closely with you to promote your company, make your company appealing to the youth so that you can attract proper talent </p>
           <a href="page-services.html">Read More <i class="pl-5 fa fa-angle-double-right"></i></a>
         </div>
       </div>
@@ -240,7 +240,7 @@ body{
           </div>
           <ul class="list-group list-group-flush text-center">
             <li class="list-group-item"><i class="icon-ok text-success"></i>Self Serve</li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i>Free upto 3 months</li>
+            <li class="list-group-item"><i class="icon-ok text-success"></i>First 2 Hires or 3 months</li>
             <li class="list-group-item"><i class="icon-ok text-success"></i> 24/7 support</li>
           </ul>
 

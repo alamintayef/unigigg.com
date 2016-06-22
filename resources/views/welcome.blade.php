@@ -88,32 +88,32 @@ body{
       <div class="col-md-8 col-md-offset-2 text-center">
         <h2 class="text-uppercase">Our Services</h2>
         <div class="divider"></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam voluptas facere vero ex tempora saepe perspiciatis ducimus sequi animi.</p>
+        <p>We are the only <em>Career</em> Readiness platform in Bangladesh. Our mission is to make you career ready and help you to kick start your career</p>
       </div>
       <div class="col-md-4 ">
         <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="100">
           <span class="icon bg-df circle"><i class="fa fa-diamond"></i></span>
           <h3>Public Resume</h3>
           <div class="divider clearfix"></div>
-          <p>Voluptatem ad provident non repudiandae beatae cupiditate amet reiciendis lorem ipsum dolor sit amet, consectetur.</p>
-          <a href="page-services.html">Read More <i class="pl-5 fa fa-angle-double-right"></i></a>
+          <p>Build up your digital profile, Display your profile in public. We will monitor and help you to build your perfect profile and resume. Build the profile once and use it everywhere.</p>
+          <a href="#">Read More <i class="pl-5 fa fa-angle-double-right"></i></a>
         </div>
       </div>
       <div class="col-md-4 ">
         <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="150">
           <span class="icon bg-df circle"><i class="fa fa-connectdevelop"></i></span>
-          <h3>Find Jobs</h3>
+          <h3>Job Matching</h3>
           <div class="divider clearfix"></div>
-          <p>Iure sequi unde hic. Sapiente quaerat sequi inventore veritatis cumque lorem ipsum dolor sit amet, consectetur.</p>
+          <p>We help you find jobs according to your skills. We spent time on you to make you better, make you career ready and fit for the job</p>
           <a href="page-services.html">Read More <i class="pl-5 fa fa-angle-double-right"></i></a>
         </div>
       </div>
       <div class="col-md-4 ">
         <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="200">
           <span class="icon bg-df circle"><i class="fa fa-laptop"></i></span>
-          <h3>Competitions</h3>
+          <h3>Skills Development</h3>
           <div class="divider clearfix"></div>
-          <p>Iure sequi unde hic. Sapiente quaerat sequi inventore veritatis cumque lorem ipsum dolor sit amet, consectetur.</p>
+          <p>We help you to invest in you. Most of the people do not get jobs because of not having the right skills. Here we connect you with skill development opportunities</p>
           <a href="page-services.html">Read More <i class="pl-5 fa fa-angle-double-right"></i></a>
         </div>
       </div>

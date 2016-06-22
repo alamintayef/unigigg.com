@@ -55,6 +55,8 @@ class PublicController extends Controller
     $edu = DB::table('education')->select('education.*')->where('user_id','=',$user->id)->limit(4)->get();
     $skills = DB::table('skills')->select('skills.*')->where('user_id','=',$user->id)->get();
     $exp = DB::table('experiences')->select('experiences.*')->where('user_id','=',$user->id)->get();
+    $about = DB::table('fun_facts')->select('fun_facts.*')->where('user_id','=',$user->id)->first();
+    $extra = DB:: table('extra_curs')->select('extra_curs.*')->where('user_id','=',$user->id)->get();
 
 
 
@@ -65,6 +67,8 @@ class PublicController extends Controller
       'edu' => $edu,
       'skills'=>$skills,
       'exp' => $exp,
+      'about' => $about,
+      'extra'=> $extra,
     ]);
   }
 
