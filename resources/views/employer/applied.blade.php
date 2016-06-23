@@ -24,11 +24,7 @@
 
             </div>
             <div class="panel-body">
-              <!--
-              <p class="col-md-4">
-              <iframe width="260" height="115" src="https://www.youtube.com/embed/{{$seek->vdourl}}" frameborder="0" allowfullscreen></iframe>
-              </p>
-              --->
+              
 
               <p class="col-md-4">
                 <strong >Applied for</strong> : {{$seek->job_name}} <br>

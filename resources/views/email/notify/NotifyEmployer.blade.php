@@ -19,10 +19,8 @@
   </head>
   <body>
     <p>
-      Dear {{$user->fname}} {{$user->lname}},<br>
-      Thank you for applying. We have recieved your application. <br>
-      We will make sure that your application reaches the <em>Employer</em>.<br>
-      We will get back to you soon.
+      Dear {{$employer->name}},<br>
+      Your Job titled {{$employer->job_name}} has received an new application. Please visit your profile to see the candidates
 
       Thank you for using unigigg <br>
 

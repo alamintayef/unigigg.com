@@ -140,7 +140,7 @@
                     </td>
 
                       <td>
-                        @if($users->varified===0)
+                        @if($user->varified===0)
                           <button type="button" name="button" class="btn-danger">Not Verified</button>
                         @else
                           <button type="button" name="button" class="btn-success">Verified</button>

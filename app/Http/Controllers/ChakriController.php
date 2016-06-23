@@ -38,7 +38,6 @@ class ChakriController extends Controller
       $user= DB::table('users')
             ->where('users.id','=',$uid)
             ->join('user_info','users.id','=','user_info.user_id')
-
             ->select('users.*','user_info.*')
             ->first();
       Mailgun::send('email.notify.applicationNotification',[ 'user' =>  $user ], function ($m) use ($user)
@@ -47,10 +46,22 @@ class ChakriController extends Controller
         $m->to($user->email)->subject('Hi ! Thank you for Applying');
       });
 
+      $employer_mail=DB::table('jobs')->where('job_id','=',$job_id)->select('jobs.user_id')->first();
+      $employer = DB::table('users')
+                  ->where('users.id','=',$employer_mail->user_id)
+                  ->join('jobs','users.id','=','jobs.user_id')
+                  ->select('users.*','jobs.job_name')
+                  ->first();
+      /*Mailgun::send('email.notify.NotifyEmployer',[ 'employer' =>  $employer ], function ($m) use ($employer)
+      {
+        $m->from('application@unigigg.com', 'New Job Application Submitted');
+        $m->to('sarkeralaminnnsu@gmail.com')->subject('New candidate applied for'.$employer->job_name.'');
+      });*/
+
 
       StudentApplied::create($input);
 
-      notify()->flash('Applied Successfully!', 'success', [
+      notify()->flash(''.$employer->email.'', 'success', [
         'timer' => 2000,
 
       ]);

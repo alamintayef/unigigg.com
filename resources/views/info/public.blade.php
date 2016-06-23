@@ -65,7 +65,7 @@ body
                 <div class="main">
                   <h4 class="text-center">Job Description</h4>
                   <p class="textb text-center">
-                    {!! $job->job_description !!}
+                    please click view to see the full job description
                   </p>
                   <p class="text-center">{{$job->job_expires}}.</p>
 

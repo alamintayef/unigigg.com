@@ -43,7 +43,7 @@ class ApplyController extends Controller
             ->join('jobs', 'student_applieds.applied_for_job_id', '=', 'jobs.job_id')
             ->join('users' ,'student_applieds.user_id','=','users.id')
           //  ->join('vprofiles', 'users.id','=', 'vprofiles.user_id')
-            ->select('student_applieds.*', 'user_info.*','users.id','jobs.job_id', 'jobs.job_name','jobs.user_id','jobs.paid',/*'vprofiles.vdourl'*/)
+            ->select('student_applieds.*', 'user_info.*','users.id','jobs.job_id', 'jobs.job_name','jobs.user_id','jobs.paid')
             ->get();
      $uid= auth()->user()->id;
      $email = auth()->user()->email;

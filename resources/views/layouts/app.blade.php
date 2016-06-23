@@ -5,8 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta property="og:image" content="https://s31.postimg.org/6hs3bs7m3/13413676_828901833906356_2952480689422237510_n.png"/>
   <meta name="name" content="First Online Youth Employment Platform in Bangladesh">
-    <meta name="jobs" content="Find Jobs, Tuitions , Internships">
+  <meta name="jobs" content="Find Jobs, Tuitions , Internships">
   <meta http-equiv="Page-Enter" content="revealTrans(Duration=2.0,Transition=12)">
   <title>unigigg | Get Empowered | Get Hired | Get Recognized</title>
   <!-- Fonts--->

@@ -40,6 +40,7 @@
       {!! Form::text('skill_proof', null, ['class' => 'form-control']) !!}
       <small>Upload your skill proof to dropbox/ googledrive/ ondrive and share the link here</small><br>
       <small>i,e You have MS-powerpoint skill. So do a good powerpoint slide upload it in the cloud and share it</small>
+      <small>If your skill is a soft skill like Negotiation, Communication, just put your facebook profile link or linkedinlink</small>
     </div>
 
 
