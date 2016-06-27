@@ -16,11 +16,10 @@
         @foreach($blog as $blogs)
       <div class="panel col-md-10 col-md-offset-1">
 
-        <h4>{{$blogs->title}}</h4>
-        <p>
-          {!! $blogs->body !!}
-        </p>
-        by <em>{{$blogs->name}}</em>
+
+        <h4><a href="{{url('/blog/article',$blogs->slug)}}">{{$blogs->title}}</a></h4>
+        <h5>{{ $blogs->subtitle}}</h5>
+
 
 
       </div>

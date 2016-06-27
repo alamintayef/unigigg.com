@@ -27,7 +27,7 @@ class ExtraCurController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'excc_name' => 'required|max:50',
+            'excc_name' => 'required|max:250',
             'excc_start_date' => 'required|date',
             'excc_end_date' => 'required|date',
             'excc_description' => 'required',

@@ -26,7 +26,7 @@ class ExperienceController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'exp_name' => 'required|max:50',
+            'exp_name' => 'required|max:250',
             'exp_start_date' => 'required|date',
             'exp_end_date' => 'required|date',
             'exp_description' => 'required',

@@ -1,4 +1,4 @@
-padtop@extends('layouts.app')
+@extends('layouts.app')
 
 @section('content')
 <style media="screen">

@@ -29,6 +29,7 @@ class CreateJobsTable extends Migration
             $table->date('job_last_date_application');
             $table->date('job_expires');
             $table->boolean('paid')->default(0);
+            $table->string('slug')->unique();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

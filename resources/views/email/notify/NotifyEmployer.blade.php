@@ -19,8 +19,9 @@
   </head>
   <body>
     <p>
-      Dear {{$employer->name}},<br>
-      Your Job titled {{$employer->job_name}} has received an new application. Please visit your profile to see the candidates
+      Dear <h4>{{$employer->name}}</h4><br>
+      {{$employer->email}}
+      Your Job titled  has received an new application. Please visit your profile to see the candidates
 
       Thank you for using unigigg <br>
 

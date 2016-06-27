@@ -38,6 +38,7 @@ class JobsController extends Controller
             'job_start_date' => 'required|date',
             'job_last_date_application' => 'required|date',
 
+
         ]);
 
         $request->user()->jobs()->create([
@@ -55,6 +56,7 @@ class JobsController extends Controller
             'job_last_date_application' => $request->job_last_date_application,
             'job_expires' => $jobExpires,
             'paid' => $request->paid,
+            'slug' => str_slug($request->title),
 
 
         ]);

@@ -70,7 +70,7 @@ body
                   <p class="text-center">{{$job->job_expires}}.</p>
 
                   <div class="stats-container">
-                    <form class="form-control" action="{{url('/view/jobs',$job->job_name)}}" method="GET">
+                    <form class="form-control" action="{{url('/view/jobs',$job->slug)}}" method="GET">
 
                       <button type="submit" class="btn btn-default btn-mini pull-right">view</button>
 

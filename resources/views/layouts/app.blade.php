@@ -184,7 +184,7 @@
                   <i class="fa fa-btn fa-lightbulb-o"></i> Resources <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu" >
-                  <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-paperclip hvr-shutter-out-horizontal"></i>Blog</a></li>
+                  <li><a href="{{ url('blogs') }}"><i class="fa fa-btn fa-paperclip hvr-shutter-out-horizontal"></i>Blog</a></li>
                   <li><a href="{{ url('competitions') }}"><i class="fa fa-btn fa-rocket hvr-shutter-out-horizontal"></i>Competitions</a></li>
                   <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-question-circle hvr-shutter-out-horizontal"></i>FAQs</a></li>
                   <li><a href="{{ url('events') }}"><i class="fa fa-btn fa-sitemap hvr-shutter-out-horizontal"></i>Tutorials</a></li>
@@ -256,7 +256,7 @@
                   </a>
                   <ul class="dropdown-menu " role="menu">
 
-                    <li><a href="{{ url('blog') }}"><i class="fa fa-btn fa-paperclip animsition-link"></i>Blog</a></li>
+                    <li><a href="{{ url('blogs') }}"><i class="fa fa-btn fa-paperclip animsition-link"></i>Blog</a></li>
                     <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-rocket animsition-link"></i>Competitions</a></li>
                     <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-question-circle animsition-link"></i>FAQs</a></li>
                     <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-sitemap animsition-link"></i>Tutorials</a></li>

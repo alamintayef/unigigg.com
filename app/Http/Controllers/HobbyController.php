@@ -27,7 +27,7 @@ class HobbyController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'hobbies_name' => 'required|max:20',
+            'hobbies_name' => 'required|max:200',
             'hobbies_related_work' => 'required',
 
         ]);

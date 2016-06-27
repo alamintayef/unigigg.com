@@ -26,7 +26,7 @@ class InterestController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'interest_name' => 'required|max:20',
+            'interest_name' => 'required|max:200',
 
         ]);
 

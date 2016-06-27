@@ -12,6 +12,10 @@
       {!! Form::label('title', 'Title:', ['class' => 'control-label']) !!}
       {!! Form::text('title', null, ['class' => 'form-control']) !!}
     </div>
+    <div class="form-group">
+      {!! Form::label('subtitle', 'Sub Title:', ['class' => 'control-label']) !!}
+      {!! Form::text('subtitle', null, ['class' => 'form-control']) !!}
+    </div>
 
     <div class="form-group">
       {!! Form::label('body', 'Write Post:', ['class' => 'control-label']) !!}

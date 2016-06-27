@@ -7,10 +7,10 @@
  }) (jQuery);
 
   </script>
-  <div class="container" id="hobby">
+  <div class="container padtop" id="hobby">
     <div class="row">
       @include('layouts.menu')
-      <div class="col-md-7">
+      <div class="col-md-10">
 
 
 
@@ -31,7 +31,7 @@
 
       </div>
     </div>
-  
+
   </div>
 </div>
 

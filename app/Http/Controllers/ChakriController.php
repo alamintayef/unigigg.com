@@ -40,28 +40,46 @@ class ChakriController extends Controller
             ->join('user_info','users.id','=','user_info.user_id')
             ->select('users.*','user_info.*')
             ->first();
+
+
+      /*employer
+      $employer_mail=DB::table('jobs')->where('job_id','=',$job_id)->select('jobs.user_id')->first();
+      $employer = DB::table('users')
+                        ->where('users.id','=',$employer_mail->user_id)
+                      //  ->join('jobs','users.id','=','jobs.user_id')
+                        ->select('users.*')
+                        ->first();
+      Mailgun::send('email.notify.notifyemployer',[ 'employer' =>  $employer ], function ($m) use ($employer)
+      {
+        $m->from('application@unigigg.com', 'New Job Application Submitted');
+        $m->to('sarkeralaminnsu@gmail.com')->subject('New candidate applied for');
+      });
+
+      //admin
+     Mailgun::send('email.notify.applicationNotification',[ 'user' =>  $user ], function ($m) use ($user)
+      {
+        $m->from('info@unigigg.com', 'New Job Application Submitted');
+        $m->to('tayef@unigigg.com')->subject('New Job Application Submitted');
+      });
+      */
       Mailgun::send('email.notify.applicationNotification',[ 'user' =>  $user ], function ($m) use ($user)
       {
         $m->from('info@unigigg.com', 'Thank you for applying');
         $m->to($user->email)->subject('Hi ! Thank you for Applying');
       });
 
-      $employer_mail=DB::table('jobs')->where('job_id','=',$job_id)->select('jobs.user_id')->first();
-      $employer = DB::table('users')
-                  ->where('users.id','=',$employer_mail->user_id)
-                  ->join('jobs','users.id','=','jobs.user_id')
-                  ->select('users.*','jobs.job_name')
-                  ->first();
-      /*Mailgun::send('email.notify.NotifyEmployer',[ 'employer' =>  $employer ], function ($m) use ($employer)
-      {
-        $m->from('application@unigigg.com', 'New Job Application Submitted');
-        $m->to('sarkeralaminnnsu@gmail.com')->subject('New candidate applied for'.$employer->job_name.'');
-      });*/
+
+      $this->NotifyAdmin();
+    //  $this->mailApplicant($uid);
+
+
 
 
       StudentApplied::create($input);
 
-      notify()->flash(''.$employer->email.'', 'success', [
+      $this->mailEmployer($job_id);
+
+      notify()->flash('Thank You For Applying !', 'success', [
         'timer' => 2000,
 
       ]);
@@ -71,6 +89,45 @@ class ChakriController extends Controller
 
       return redirect('/home');
     }
+
+    private function mailEmployer($id)
+    {
+      $employer_mail=DB::table('jobs')->where('job_id','=',$id)->select('jobs.user_id')->first();
+      $employer = DB::table('users')
+                        ->where('users.id','=',$employer_mail->user_id)
+                      //  ->join('jobs','users.id','=','jobs.user_id')
+                        ->select('users.*')
+                        ->first();
+      Mailgun::send('email.notify.notifyemployer',[ 'employer' =>  $employer ], function ($m) use ($employer)
+      {
+        $m->from('application@unigigg.com', 'New Job Application Submitted');
+        $m->to($employer->email)->subject('New candidate applied for');
+      });
+    }
+
+    private function mailApplicant($uid){
+
+      $user= DB::table('users')
+            ->where('users.id','=',$uid)
+            ->join('user_info','users.id','=','user_info.user_id')
+            ->select('users.*','user_info.*')
+            ->first();
+            Mailgun::send('email.notify.applicationNotification',[ 'user' =>  $user ], function ($m) use ($user)
+            {
+              $m->from('info@unigigg.com', 'Thank you for applying');
+              $m->to($user->email)->subject('Hi ! Thank you for Applying');
+            });
+
+    }
+    private function NotifyAdmin()
+    {
+      Mailgun::send('email.test',[], function ($m)
+        {
+          $m->from('info@unigigg.com', 'New Job Application Submitted');
+          $m->to('sarkeralaminnsu@gmail.com')->subject('New Job Application Submitted');
+        });
+    }
+
 
     public function chakriboard(Request $request)
     {

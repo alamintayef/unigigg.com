@@ -92,7 +92,7 @@ body{
       </div>
       <div class="col-md-4 ">
         <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="100">
-          <span class="icon bg-df circle"><i class="fa fa-diamond"></i></span>
+          <span class="icon bg-df circle"><i class="fa fa-user"></i></span>
           <h3>Public Resume</h3>
           <div class="divider clearfix"></div>
           <p>Build up your digital profile, Display your profile in public. We will monitor and help you to build your perfect profile and resume. Build the profile once and use it everywhere.</p>
@@ -112,6 +112,38 @@ body{
         <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="200">
           <span class="icon bg-df circle"><i class="fa fa-laptop"></i></span>
           <h3>Skills Development</h3>
+          <div class="divider clearfix"></div>
+          <p>We help you to invest in you. Most of the people do not get jobs because of not having the right skills. Here we connect you with skill development opportunities</p>
+          <a href="page-services.html">Read More <i class="pl-5 fa fa-angle-double-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-4 ">
+        <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="100">
+          <span class="icon bg-df circle"><i class="fa fa-diamond"></i></span>
+          <h3>Mentoring</h3>
+          <div class="divider clearfix"></div>
+          <p>Build up your digital profile, Display your profile in public. We will monitor and help you to build your perfect profile and resume. Build the profile once and use it everywhere.</p>
+          <a href="#">Read More <i class="pl-5 fa fa-angle-double-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-4 ">
+        <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="150">
+          <span class="icon bg-df circle"><i class="fa fa-connectdevelop"></i></span>
+          <h3>Competitions</h3>
+          <div class="divider clearfix"></div>
+          <p>We help you find jobs according to your skills. We spent time on you to make you better, make you career ready and fit for the job</p>
+          <a href="page-services.html">Read More <i class="pl-5 fa fa-angle-double-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-4 ">
+        <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="200">
+          <span class="icon bg-df circle"><i class="fa fa-laptop"></i></span>
+          <h3>Trainings</h3>
           <div class="divider clearfix"></div>
           <p>We help you to invest in you. Most of the people do not get jobs because of not having the right skills. Here we connect you with skill development opportunities</p>
           <a href="page-services.html">Read More <i class="pl-5 fa fa-angle-double-right"></i></a>
@@ -313,11 +345,11 @@ body{
 
       <div class="item container ">
         <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s33.postimg.org/9xgnehvj3/logo_1430124641.png" alt="...">
-        <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s33.postimg.org/ksxxfm3tr/Blue_Scheme_Logo.jpg" alt="...">
         <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/yvdkmkvut/download.jpg" alt="...">
         <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/dkl2ffk1x/FInal_Amar_Bike_Logo_Page_01.png" alt="...">
         <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s33.postimg.org/v47zjeiu7/logo_1456081131.png" alt="...">
-
+        <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="https://s32.postimg.org/walnnejj9/unifox.png" alt="...">
+        <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="https://s32.postimg.org/dtm6zppmd/tripping.png" alt="...">
 
         </div>
 

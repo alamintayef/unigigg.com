@@ -53,6 +53,7 @@ class AuthController extends Controller
         return Validator::make($data, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
+            'phone' => 'required|min:11|max:13',
             'password' => 'required|confirmed|min:8',
             'type'=> 'required',
         ]);
@@ -85,7 +86,7 @@ class AuthController extends Controller
         $current = Carbon::now();
 
         // add 30 days to the current time
-        $freeExpires = $current->addDays(30);
+        $freeExpires = $current->addDays(90);
 
         return User::create([
             'name' => $data['name'],

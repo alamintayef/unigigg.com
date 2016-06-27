@@ -41,7 +41,7 @@
 			<ul>
 				<li><i class="fa fa-envelope"></i>: {{$user->email}}</li>
         	<li><i class="fa fa-map-marker"></i>: {{$info->area}}</li>
-				<li><i class="fa fa-phone"></i>: {{$info->mobile}}</li>
+				<li><i class="fa fa-phone"></i>: Confidential</li>
 			</ul>
 		</div>
 		<div class="clear"></div>
@@ -72,6 +72,8 @@
 			<div class="sectionTitle">
 				<h1>Education</h1>
 			</div>
+      @if(count($edu)>)0)
+
 
 			<div class="sectionContent">
 				@foreach($edu as $education)
@@ -85,7 +87,9 @@
 					</p>
 				</article>
 					@endforeach
-
+        @else
+          Under Construction
+        @endif
 
 			</div>
 			<div class="clear"></div>
@@ -116,6 +120,7 @@
 			<div class="sectionTitle">
 				<h1>Key Skills</h1>
 			</div>
+      @if (count($skills)>0)
 
 			<div class="sectionContent">
 				<ul class="keySkills">
@@ -125,6 +130,10 @@
 
 
 				</ul>
+
+      @else
+        Under Construction
+      @endif
 			</div>
 			<div class="clear"></div>
 		</section>
@@ -139,6 +148,24 @@
             <h2>{{$xtra->excc_name}}</h2>
             <p class="subDetails">{{$xtra->excc_start_date}} - {{$xtra->excc_end_date}}</p>
             <p>{{$xtra->excc_description}}</p>
+          @endforeach
+
+        </article>
+
+      </div>
+      <div class="clear"></div>
+    </section>
+    <section>
+      <div class="sectionTitle">
+        <h1>References</h1>
+      </div>
+
+      <div class="sectionContent">
+        <article>
+          @foreach($ref as $reference)
+            <h2>{{$reference->referred_by}}</h2>
+            <p class="subDetails">{{$reference->reference_desciption}}</p>
+            <p>{{$reference->referee_number}}</p>
           @endforeach
 
         </article>

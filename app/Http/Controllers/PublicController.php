@@ -57,7 +57,7 @@ class PublicController extends Controller
     $exp = DB::table('experiences')->select('experiences.*')->where('user_id','=',$user->id)->get();
     $about = DB::table('fun_facts')->select('fun_facts.*')->where('user_id','=',$user->id)->first();
     $extra = DB:: table('extra_curs')->select('extra_curs.*')->where('user_id','=',$user->id)->get();
-
+    $ref  = DB:: table('references')->select('references.*')->where('user_id', '=',$user->id)->get();
 
 
     return view('cv.cvOne',[
@@ -69,6 +69,8 @@ class PublicController extends Controller
       'exp' => $exp,
       'about' => $about,
       'extra'=> $extra,
+      'ref' => $ref,
+
     ]);
   }
 
@@ -82,7 +84,7 @@ class PublicController extends Controller
   $message =  SMSGateway::sendMessageToNumber($number, $message, $deviceID);
   return redirect('/');
   }
-  public function showBlog()
+  public function showBlogs()
   {
     $blog = DB::table('blogs')
           ->join('users','blogs.user_id','=','users.id')
@@ -91,6 +93,19 @@ class PublicController extends Controller
     return view('blog.allblog')->with('blog',$blog);
 
   }
+
+  public function showBlog($slug)
+  {
+    $article = DB::table('blogs')
+            ->where('blogs.slug','=',$slug)
+            ->join('users','blogs.user_id','=','users.id')
+            ->select('blogs.*','users.name')
+            ->first();
+
+    return view('blog.article')->with('article',$article);
+
+  }
+
   public function showVlog()
   {
     $vdos = DB::table('vlogvdos')->select('vlogvdos.*')->get();
@@ -99,10 +114,10 @@ class PublicController extends Controller
     ]);
 
   }
-  public function showjobs($title)
+  public function showjobs($slug)
   {
     $job = DB::table('jobs')
-          ->where('jobs.job_name','=', $title)
+          ->where('jobs.slug','=', $slug)
           ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
           ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
           ->orderBy('created_at', 'desc')

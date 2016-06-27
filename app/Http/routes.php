@@ -78,11 +78,12 @@ Route::get('/github', function(){
 
     Route::get('/jobs/view','PublicController@publicboard');
     Route::get('/jobs/view/eccentric','PublicController@publiceccentricboard');
-    Route::get('/view/jobs/{title}','PublicController@showjobs');
+    Route::get('/view/jobs/{slug}','PublicController@showjobs');
     Route::get('/view/odd/jobs/{title}','PublicController@showEccentricJobs');
     Route::get('/sms', 'PublicController@sendsms');
     Route::get('profile/{useremail}','PublicController@viewme');
-    Route::get('blog', 'PublicController@showBlog');
+    Route::get('blogs', 'PublicController@showBlogs');
+    Route::get('blog/article/{slug}','PublicController@showBlog');
     Route::get('search/people','PublicController@search');
 /*
 |--------------------------------------------------------------------------
@@ -99,7 +100,8 @@ Route::group(['middleware' => ['web']], function () {
       //
       Route::get('/view/jobs/{title}','PublicController@showjobs');
       Route::get('/view/odd/jobs/{title}','PublicController@showEccentricJobs');
-      Route::get('blog','PublicController@showBlog');
+      Route::get('blogs','PublicController@showBlogs');
+      Route::get('blog/article/{slug}','PublicController@showBlog');
       Route::get('/jobs/view','PublicController@publicboard');
       Route::get('/vlog','PublicController@showVlog');
       Route::get('/jobs/view/eccentric','PublicController@publiceccentricboard');

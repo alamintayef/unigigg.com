@@ -28,6 +28,7 @@ class BlogController extends Controller
 
         $request->user()->blog()->create([
             'title' => $request->title,
+            'subtitle'=> $request->subtitle,
             'body' => $request->body,
             'slug' => str_slug($request->title),
 

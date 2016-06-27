@@ -17,7 +17,7 @@
       {!! Form::textarea('inspiration_qot', null, ['class' => 'form-control','rows'=>'1','id'=>'inspiration_qot']) !!}
     </div>
     <div class="form-group">
-      {!! Form::label('Why_you', 'Why People Hire You ?', ['class' => 'control-label']) !!}
+      {!! Form::label('Why_you', 'Why Should People Hire You ?', ['class' => 'control-label']) !!}
       {!! Form::textarea('Why_you', null, ['class' => 'form-control', 'rows'=>2]) !!}
     </div>
     <div class="form-group">
