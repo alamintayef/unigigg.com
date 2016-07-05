@@ -11,9 +11,9 @@
 
 <table class="table  table-hover" >
   <thead>
-  <th>Result</th>
+  
   <th>
-    Degree Name
+    Skills
   </th>
   <th>
     User Name
@@ -23,10 +23,10 @@
     @foreach($skill as $skills)
       <tr>
         <td>
-          {{$skills->Degree_result}}
+          {{$skills->skill_name}}
         </td>
         <td>
-          {{$skills->Degree_name}}
+          {{$skills->skill_experience}}
         </td>
         <td>{{ $skills->name }}</td>
       </tr>

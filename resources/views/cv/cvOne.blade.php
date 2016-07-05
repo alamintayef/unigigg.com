@@ -72,7 +72,7 @@
 			<div class="sectionTitle">
 				<h1>Education</h1>
 			</div>
-      @if(count($edu)>)0)
+      @if(count($edu)>0)
 
 
 			<div class="sectionContent">
@@ -164,7 +164,7 @@
         <article>
           @foreach($ref as $reference)
             <h2>{{$reference->referred_by}}</h2>
-            <p class="subDetails">{{$reference->reference_desciption}}</p>
+            <p class="subDetails">{{$reference->reference_description}}</p>
             <p>{{$reference->referee_number}}</p>
           @endforeach
 

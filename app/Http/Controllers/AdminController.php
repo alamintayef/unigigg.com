@@ -41,9 +41,13 @@ class AdminController extends Controller
     {
 
       $alluser = DB::table('users')->where('type',1)->paginate(15);
-
+      $count = DB::table('users')
+              ->join('skills','users.id','=','skills.user_id')
+              ->join('user_info','users.id','=','user_info.user_id')
+              ->select('users.id','skills.*','user_info.*')->get();
       return view('admin.user.userboard',[
         'alluser' => $alluser,
+        'count'   =>$count,
 
       ]);
 
@@ -172,7 +176,7 @@ class AdminController extends Controller
 
       $verified = DB::table('user_info')->select('user_info.*')->where('user_id',$id)->first();
 
-      $deviceID = '20198';
+      $deviceID = '23724';
       $number = $verified->mobile;
 
       $message = 'Congratulations ! '.$verified->fname.' '.$verified->lname. ' Your profile has been verified successfully, You can now apply to regular jobs. Regards unigigg team ';
@@ -249,14 +253,32 @@ class AdminController extends Controller
       ]);
        $search = \Request::get('search');
 
-       $skill = DB::table('education')
-              ->join('users', 'education.user_id', '=','users.id')
-              ->select('education.*','users.*')
-              ->where('Degree_result','>=',$search)
+       $skill = DB::table('skills')
+              ->join('users', 'skills.user_id', '=','users.id')
+              ->select('skills.*','users.*')
+              ->where('skill_name','=',$search)
               ->get();
 
 
       return view('admin.search.search',[
+          'skill'=> $skill,
+        ]);
+    }
+
+    public function searchManush(Request $request)
+    {
+      $this->validate($request, [
+        'search'=> 'required',
+      ]);
+       $search = \Request::get('search');
+
+       $skill = DB::table('users')
+              ->where('name','like','%'.$search.'%')
+
+              ->get();
+
+
+      return view('admin.search.searchManush',[
           'skill'=> $skill,
         ]);
     }
@@ -313,7 +335,7 @@ class AdminController extends Controller
           foreach ($call as $calls)
           {
 
-            $deviceID = '20198';
+            $deviceID = '23724';
 
 
             $number = $calls->mobile;

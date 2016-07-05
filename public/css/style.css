@@ -52,10 +52,17 @@
 
 }
 #cover{
-  background: url(http://s32.postimg.org/rg1efg31h/cover2w.jpg) no-repeat center center fixed ;
+  /*(https://s32.postimg.org/t68yhz3et/fe4a5cbf_ixlib_rb_0_3.jpg
+  https://s32.postimg.org/f53blktbp/photo_1428223501723_d821c5d00ca3_ixlib_rb_0_3.jpg
+  https://s32.postimg.org/f53blktbp/photo_1428223501723_d821c5d00ca3_ixlib_rb_0_3.jpg
+  https://s32.postimg.org/spasz1mvp/photo_1460518451285_97b6aa326961_ixlib_rb_0_3.jpg
+  */
+
+  background: url(https://s32.postimg.org/f53blktbp/photo_1428223501723_d821c5d00ca3_ixlib_rb_0_3.jpg) no-repeat center center fixed ;
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
 }
 #curate-talent{
 
@@ -1175,3 +1182,40 @@ section{
                               z-index: 1;
                               transform:rotate(-45deg);
                             }
+
+
+
+/* Latest Service Blocks*/
+
+.service-block{
+text-align: center;
+margin-top: 40px;
+border: 1px solid #f0f0f0;
+  padding: 20px;
+}
+.service-block i{
+font-size: 40px;
+color: #33AFFF;
+}
+
+.service-block h2{
+font-size: 22px;
+text-transform: uppercase;
+transition:all 0.4s ease-in-out;
+}
+.service-block:hover h2{
+color: #188b87;
+}
+.service-block p{
+font-size: 14px;
+line-height: 24px;
+color: #666;
+}
+.service-block .read-more{
+color: #188b87;
+border: 1px solid #f0f0f0;
+padding: 6px 11px;
+border-radius: 10px;
+margin-top: 10px;
+display: inline-block;
+}

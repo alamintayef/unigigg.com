@@ -82,6 +82,7 @@ Route::get('/github', function(){
     Route::get('/view/odd/jobs/{title}','PublicController@showEccentricJobs');
     Route::get('/sms', 'PublicController@sendsms');
     Route::get('profile/{useremail}','PublicController@viewme');
+    Route::get('profile/template/{useremail}','PublicController@viewmetwo');
     Route::get('blogs', 'PublicController@showBlogs');
     Route::get('blog/article/{slug}','PublicController@showBlog');
     Route::get('search/people','PublicController@search');
@@ -165,6 +166,7 @@ Route::group(['middleware' => ['web']], function () {
       Route::post('admindeleteoddjobs/{id}','AdminController@destroy');
       // admin search
       Route::get('search','AdminController@search');
+      Route::get('search/manush','AdminController@searchManush');
 
       //add user
       Route::get('admin/create/user','AdminUserController@index');

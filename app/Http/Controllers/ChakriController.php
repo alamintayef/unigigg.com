@@ -71,7 +71,7 @@ class ChakriController extends Controller
 
       $this->NotifyAdmin();
     //  $this->mailApplicant($uid);
-
+    $this->mailEmployer($job_id);
 
 
 
@@ -93,15 +93,16 @@ class ChakriController extends Controller
     private function mailEmployer($id)
     {
       $employer_mail=DB::table('jobs')->where('job_id','=',$id)->select('jobs.user_id')->first();
+      $userid= $employer_mail->user_id;
       $employer = DB::table('users')
-                        ->where('users.id','=',$employer_mail->user_id)
+                        ->where('id','=',$userid)
                       //  ->join('jobs','users.id','=','jobs.user_id')
                         ->select('users.*')
                         ->first();
-      Mailgun::send('email.notify.notifyemployer',[ 'employer' =>  $employer ], function ($m) use ($employer)
+      Mailgun::send('email.test',[ 'employer' =>  $employer ], function ($m) use ($employer)
       {
         $m->from('application@unigigg.com', 'New Job Application Submitted');
-        $m->to($employer->email)->subject('New candidate applied for');
+        $m->to($employer->email)->subject('New candidate applied for Employer');
       });
     }
 

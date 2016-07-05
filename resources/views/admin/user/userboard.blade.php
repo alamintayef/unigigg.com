@@ -4,7 +4,16 @@
   <div class="container padtop">
     <div class="row">
       <div class="card card-raised">
+        <div class="pull-right padsmall">
 
+
+        {!! Form::open(['method'=>'GET','url'=>'search/manush','class'=>'form-inline'])  !!}
+          <input type="text" class="form-control" name="search" placeholder="Search...">
+          <button class="btn btn-default-sm" type="submit">
+            <i class="fa fa-search"></i>
+            </button>
+        {!! Form::close() !!}
+        </div>
         <table class="table table-striped">
           <thead>
             <th>
@@ -22,6 +31,7 @@
             <th>
               Delete
             </th>
+        
 
           </thead>
           <tbody>
@@ -62,9 +72,10 @@
                 </td>
 
 
+              </tr>
 
-            </tr>
             @endforeach
+
             {{ $alluser->links() }}
 
 

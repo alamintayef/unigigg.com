@@ -66,12 +66,20 @@ class AuthController extends Controller
      * @return User
      */
     protected function create(array $data)
-    {
+    {     if($data['type']===1){
            Mailgun::send('email.welcomeemail',[ 'data' =>  $data ], function ($m) use ($data) {
            $m->from('tayef@unigigg.com', 'Tayef from unigigg');
 
            $m->to($data['email'], $data['name'])->subject('Welcome to unigigg');
        });
+     }else{
+       Mailgun::send('email.welcomeEmployeremail',[ 'data' =>  $data ], function ($m) use ($data) {
+       $m->from('tayef@unigigg.com', 'Tayef from unigigg');
+
+       $m->to($data['email'], $data['name'])->subject('Welcome to unigigg');
+   });
+
+     }
 
       Mailgun::send('email.admin.informadmin',[ 'data' =>  $data ], function ($m) use ($data) {
        $m->from('tayef@unigigg.com', 'Tayef from unigigg');

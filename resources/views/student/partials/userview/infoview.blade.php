@@ -35,6 +35,7 @@
     <p>Nothing added</p>
   @endif
         <a href="{{url('/profile',$user->name)}}"> CV</a>
+        <a href="{{url('profile/template',$user->name)}}">CV-2</a>
 
 
 

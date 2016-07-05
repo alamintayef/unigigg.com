@@ -8,8 +8,7 @@
   <meta name="name" content="First Online Youth Employment Platform in Bangladesh">
     <meta name="jobs" content="Find Jobs, Tuitions , Internships">
   <meta http-equiv="Page-Enter" content="revealTrans(Duration=2.0,Transition=12)">
-  <title>unigigg | Get Empowered | Get Hired | Get Recognized</title>
-  <!-- Fonts--->
+    <title>Internships & Jobs for Young Talents</title>
 
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway" />
   <link href='https://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>

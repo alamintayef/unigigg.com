@@ -9,13 +9,13 @@
   <meta name="name" content="First Online Youth Employment Platform in Bangladesh">
   <meta name="jobs" content="Find Jobs, Tuitions , Internships">
   <meta http-equiv="Page-Enter" content="revealTrans(Duration=2.0,Transition=12)">
-  <title>unigigg | Get Empowered | Get Hired | Get Recognized</title>
+  <title>Internships & Jobs for Young Talents</title>
   <!-- Fonts--->
 
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway" />
   <link href='https://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" media="screen" title="no title" charset="utf-8">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" media="screen" title="no title" charset="utf-8">
   <!-- jqurey -->

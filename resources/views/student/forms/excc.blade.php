@@ -10,7 +10,8 @@
     <small class="text-danger">Every field is required</small>
     <div class="form-group">
       {!! Form::label('excc_name', 'Title:', ['class' => 'control-label']) !!}
-      {!! Form::text('excc_name', null, ['class' => 'form-control']) !!}
+      {!! Form::text('excc_name', null, ['class' => 'form-control','placeholder'=>'Designation, Organization']) !!}
+      <small class="textb">i,e Volunteer, X Foundation</small>
     </div>
 
     <div class="form-group">

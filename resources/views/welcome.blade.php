@@ -30,16 +30,26 @@ body{
 
 }
 .ecc{
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.bighead{
+  font-size: 60px;
+  font-weight: 400;
+}
+.dirtfello{
+  color:yellow;
+}
+.green{
+  color:lightgreen;
 }
 </style>
 <div class="">
 
 
-<div class="container-fluid ecc" id="cover">
+<div class="container-fluid" id="cover">
 
   <div class="row ">
-    <div class="center ">
+    <div class="center ecc">
       <br>
       <br>
       <br>
@@ -52,12 +62,15 @@ body{
       <br>
       <br>
       <br>
+      <div class="foo">
+        <h1 class = "textw bighead">We Help <span class="dirtfello">Y</span>oung <span class="green">T</span>alents to <strike>Find</strike> Get <br> Jobs &amp; Internships</h1>
+      </div>
       <br>
       <br>
       <br>
       <br>
-      <br>
-      <br>
+
+
       <br>
       <br>
       <br>
@@ -74,19 +87,157 @@ body{
       <br>
       <br>
       <br>
-      <br>
-      <br>
+
       <br>
       <br>
       <br>
     </div>
   </div>
 </div>
+  <div class="col-md-8 col-md-offset-2 text-center padtop ">
+    <h2 class="text-uppercase">Features That Builds You</h2>
+    <div class="divider"></div>
+    <p class="foo">We are the only <em>Career</em> Readiness platform in Bangladesh. Our mission is to make you career ready and help you to kick start your career</p>
+  </div>
+<section class="services-container ">
+<div class="container">
+<div class="row">
+<div class="col-sm-4">
+<div class="service-block">
+<i class="material-icons">account_box</i>
+<h2>Public Resume</h2>
+<p>Simple service block to display services you offer. This helps your client to know what you can do for theme.</p>
+
+</div>
+</div>
+
+<div class="col-sm-4">
+<div class="service-block">
+<i class="material-icons">supervisor_account</i>
+<h2>Mentoring</h2>
+<p>Simple service block to display services you offer. This helps your client to know what you can do for theme.</p>
+
+</div>
+</div>
+
+<div class="col-sm-4">
+<div class="service-block">
+<i class="material-icons">lightbulb_outline</i>
+<h2>Skill Development</h2>
+<p>Simple service block to display services you offer. This helps your client to know what you can do for theme.</p>
+
+</div>
+</div>
+<div class="col-sm-4">
+<div class="service-block">
+<i class="material-icons">business_center</i>
+<h2>Jobs &amp; Internships</h2>
+<p>Simple service block to display services you offer. This helps your client to know what you can do for theme.</p>
+
+</div>
+</div>
+<div class="col-sm-4">
+<div class="service-block">
+<i class="material-icons">school</i>
+<h2>Training</h2>
+<p>Simple service block to display services you offer. This helps your client to know what you can do for theme.</p>
+
+</div>
+</div>
+<div class="col-sm-4">
+<div class="service-block">
+<i class="fa fa-trophy"></i>
+<h2>Comeptitions</h2>
+<p>Simple service block to display services you offer. This helps your client to know what you can do for theme.</p>
+
+</div>
+</section>
+
+<!--
+<center>
+
+<figure class="icons">
+  <figcaption>
+  <center><img src="http://icon-park.com/imagefiles/ribbon_sticker_icon_black2.png"  height="100%" alt="sample96"><br><br>
+    <h2>Public Resume</h2></center>
+    <p>Affordable solutions that helps you better serve and keep in touch with the community and your stakeholders.</p>
+  </figcaption>
+</figure>
+
+
+
+<figure class="icons">
+  <figcaption>
+  <center><img src="http://www.heidelberglehigh.org/wp-content/uploads/2012/11/government-building-icon-md.png"  height="100%" alt="sample96"><br><br>
+    <h2>Mentoring</h2></center>
+    <p>Maximize trust, transparency and communication between your municipality and residents with a professional and user-friendly platform. </p>
+  </figcaption>
+</figure>
+
+
+<figure class="icons">
+  <figcaption>
+  <center><img src="https://cdn1.iconfinder.com/data/icons/social-productivity-line-art-4/128/shopping-cart2-512.png"  height="100%" alt="sample96"><br><br>
+    <h2>Skill Development</h2></center>
+    <p>Optimize your consumers' experience and have them keep coming back. The quality of your website represents the quality of your service and products.</p>
+  </figcaption>
+</figure>
+
+<figure class="icons">
+  <figcaption>
+  <center><img src="http://files.softicons.com/download/business-icons/free-e-commerce-icons-by-design-bolts/ico/Increase-in-sale-Icon.ico"  height="100%" alt="sample96"><br><br>
+    <h2>Jobs</h2></center>
+    <p>Don't need an online store? Potential clients, vendors, and partners need to know you. Your website is a great way to tell them.</p>
+  </figcaption>
+</figure>
+
+
+<figure class="icons">
+  <figcaption>
+  <center><img src="https://cdn3.iconfinder.com/data/icons/social-icons-24/24/Instagram-128.png"  height="100%" alt="sample96"><br><br>
+    <h2>Internships</h2></center>
+    <p>Showcase your work in a stunning and clean design that highlights your brilliance. From ultra-dynamic to minimalistic, find the design that matches your masterpieces.</p>
+  </figcaption>
+</figure>
+
+
+
+<figure class="icons">
+  <figcaption>
+  <center><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSfXHQZ0ocXuUB76fNIhBCsbEhlULEaG0v8Gj0P7rKOw346dBQ5"  height="100%" alt="sample96"><br><br>
+    <h2>Training</h2></center>
+    <p>Extend learning beyond the classroom walls. Assign online quizzes, provide digital flash cards, foster digital collaboration, and more.</p>
+  </figcaption>
+</figure>
+
+
+<figure class="icons">
+  <figcaption>
+  <center><i class="fa fa-user"></i>  height="100%" alt="sample96"><br><br>
+    <h2>Competitions</h2></center>
+    <p>Share your most special day with your loved ones from all over the world with a special platform just for you.</p>
+  </figcaption>
+</figure>
+
+
+
+
+<figure class="icons">
+  <figcaption>
+  <center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzVNp5HT8-R93uKycwukIT1qyGqbYxdHO-5u5PFnL33Si6yetcmQ"  height="100%" alt="sample96"><br><br>
+    <h2>So Much More...</h2></center>
+    <p>There are many more reasons why you would need a professional designer. Whatever it is, there's a design customized to meet your demand.</p>
+  </figcaption>
+</figure>
+
+</div>
+
+
 <section>
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2 text-center">
-        <h2 class="text-uppercase">Our Services</h2>
+        <h2 class="text-uppercase">Features That Builds You</h2>
         <div class="divider"></div>
         <p>We are the only <em>Career</em> Readiness platform in Bangladesh. Our mission is to make you career ready and help you to kick start your career</p>
       </div>
@@ -100,14 +251,15 @@ body{
         </div>
       </div>
       <div class="col-md-4 ">
-        <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="150">
-          <span class="icon bg-df circle"><i class="fa fa-connectdevelop"></i></span>
-          <h3>Job Matching</h3>
+        <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="100">
+          <span class="icon bg-df circle"><i class="fa fa-diamond"></i></span>
+          <h3>Mentoring</h3>
           <div class="divider clearfix"></div>
-          <p>We help you find jobs according to your skills. We spent time on you to make you better, make you career ready and fit for the job</p>
-          <a href="page-services.html">Read More <i class="pl-5 fa fa-angle-double-right"></i></a>
+          <p>Mentoring is one of the most important part of building a successful career. Mentors guide you to take decision that will help you make your life better. We are introducting virtual mentoring from industry expert who will guide to through every step</p>
+          <a href="#">Read More <i class="pl-5 fa fa-angle-double-right"></i></a>
         </div>
       </div>
+
       <div class="col-md-4 ">
         <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="200">
           <span class="icon bg-df circle"><i class="fa fa-laptop"></i></span>
@@ -119,18 +271,48 @@ body{
       </div>
     </div>
   </div>
-  <div class="container">
-    <div class="row">
+  <div class="cover container-fluid" id="homepage-hero" >
+    <div class="row center" >
+        <div class="ecc">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h2 class="textw efoo">Eccentric Jobs</h2>
+      <h3 class="textw efoo">Find out what you like doing best, and get someone to pay you for it.</h3>
+      <a href="eccentric" class="btn btn-default btn-lg font-cor efoo ">Learn More</a>
 
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      </div>
+    </div>
+  </div>
+
+  <div class="container pad">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center">
+        <h2 class="text-uppercase">Connecting You With Opportunities</h2>
+        <div class="divider"></div>
+        <p>We are the only <em>Career</em> Readiness platform in Bangladesh. Our mission is to make you career ready and help you to kick start your career</p>
+      </div>
       <div class="col-md-4 ">
-        <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="100">
-          <span class="icon bg-df circle"><i class="fa fa-diamond"></i></span>
-          <h3>Mentoring</h3>
+        <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="150">
+          <span class="icon bg-df circle"><i class="fa fa-connectdevelop"></i></span>
+          <h3>Internships &amp; Jobs</h3>
           <div class="divider clearfix"></div>
-          <p>Build up your digital profile, Display your profile in public. We will monitor and help you to build your perfect profile and resume. Build the profile once and use it everywhere.</p>
-          <a href="#">Read More <i class="pl-5 fa fa-angle-double-right"></i></a>
+          <p>We help you find jobs according to your skills. We spent time on you to make you better, make you career ready and fit for the job</p>
+          <a href="page-services.html">Read More <i class="pl-5 fa fa-angle-double-right"></i></a>
         </div>
       </div>
+
       <div class="col-md-4 ">
         <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="150">
           <span class="icon bg-df circle"><i class="fa fa-connectdevelop"></i></span>
@@ -303,30 +485,7 @@ body{
 
 </div>
 -->
-<div class="cover container-fluid" id="homepage-hero" >
-  <div class="row center" >
-      <div class="ecc">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <h2 class="textw efoo">Eccentric Jobs</h2>
-    <h3 class="textw efoo">Find out what you like doing best, and get someone to pay you for it.</h3>
-    <a href="eccentric" class="btn btn-default btn-lg font-cor efoo ">Learn More</a>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    </div>
-  </div>
-</div>
 
 <div class="container-fluid center whiteproper  padsmall" >
   <h3 class="padsmall" style="font-size:3.2em;"> People We Work With</h2>

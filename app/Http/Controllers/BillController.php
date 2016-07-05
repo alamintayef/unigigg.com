@@ -8,6 +8,7 @@ use App\Model\Student\Jobs;
 use App\Http\Requests;
 use Mailgun;
 use DB;
+use Slack;
 class BillController extends Controller
 {
     //
@@ -39,9 +40,10 @@ class BillController extends Controller
         $user= User::findorFail($id);
         Mailgun::send('email.Verify',[ 'user' =>  $user ], function ($m) use ($user) {
         $m->from('verification@unigigg.com', 'Verification Request');
-
-        $m->to('tayef@unigigg.com')->subject('Please Verify My Profile');
+        $m->to('sarkeralaminnsu@gmail.com')->subject('Please Verify My Profile');
       });
+
+
         notify()->flash('Recorded Successfully!', 'success', [
            'timer' => 3000,
            'text' => 'We will contact you within 24 hours and validate your profile with 48 hours ! ',

@@ -73,6 +73,32 @@ class PublicController extends Controller
 
     ]);
   }
+  public function viewmetwo($useremail)
+  {
+    $user= DB::table('users')->select('users.*')->where('name','=',$useremail)->first();
+    $image = DB::table('images')->select('images.*')->where('user_id','=',$user->id)->orderBy('created_at', 'desc')->first();
+    $info = DB::table('user_info')->select('user_info.*')->where('user_id','=',$user->id)->first();
+    $edu = DB::table('education')->select('education.*')->where('user_id','=',$user->id)->limit(4)->get();
+    $skills = DB::table('skills')->select('skills.*')->where('user_id','=',$user->id)->get();
+    $exp = DB::table('experiences')->select('experiences.*')->where('user_id','=',$user->id)->get();
+    $about = DB::table('fun_facts')->select('fun_facts.*')->where('user_id','=',$user->id)->first();
+    $extra = DB:: table('extra_curs')->select('extra_curs.*')->where('user_id','=',$user->id)->get();
+    $ref  = DB:: table('references')->select('references.*')->where('user_id', '=',$user->id)->get();
+
+
+    return view('cv.cvtwo',[
+      'user' => $user,
+      'image'=> $image,
+      'info' => $info,
+      'edu' => $edu,
+      'skills'=>$skills,
+      'exp' => $exp,
+      'about' => $about,
+      'extra'=> $extra,
+      'ref' => $ref,
+
+    ]);
+  }
 
   public function sendsms()
   {

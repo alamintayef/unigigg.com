@@ -32,9 +32,49 @@ body{
   height: auto;
   padding: 50px;
 }
+.boton{
+  font-size: 15px;
+}
 }
 
 </style>
+<div class="container-fluid transparentbg">
+
+  <br>
+  <br>
+  <div class="row">
+    <div class="center">
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class=" pad">
+        <h1 class="textw">Stop Recruiting Like You are in the <strike> 90's</strike></h1>
+        <h2 class="textw">Join Unigigg for Hiring Faster and Efficiently</h2>
+        <br>
+        <a type="submit" name="button" class="btn btn-default btn-large boton" href="{{url('login')}}">Post a Job For Free</a>
+
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+
+  </div>
+
+</div>
 <!---
 <div class="container-fluid">
 <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
@@ -69,11 +109,11 @@ body{
     <a class="carousel-control right" href="#carousel" data-slide="next">›</a>
 </div>
 </div>
---->
+
 <br>
 <br><br>
 <div id="text-carousel" class="carousel slide" data-ride="carousel">
-  <!-- Wrapper for slides -->
+   Wrapper for slides
   <div class="row">
 
       <div class="col-md-offset-3 col-md-6 foo">
@@ -132,12 +172,13 @@ body{
       </div>
     </div>
   </div>
--->
+--->
   <div class="container pad pb whiteproper">
       <div class="row">
         <div class="col-md-4 pull left padsmall foo">
 
           <h2>We Curate Talent For You</h2>
+          <h3>and take the headache of recruting for you</h3>
 
         </div>
       <div class="col-md-8 foo" >
