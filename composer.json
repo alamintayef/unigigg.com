@@ -12,8 +12,7 @@
         "codecourse/notify": "^1.1",
         "guzzlehttp/guzzle": "~5.3|6.2",
         "limatheus/smsgateway": "^1.0",
-        "bogardo/mailgun": "4.0.*",
-        "maknz/slack-laravel": "^1.0"
+        "bogardo/mailgun": "4.0.*"
 
 
 

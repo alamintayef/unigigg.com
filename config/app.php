@@ -152,6 +152,7 @@ return [
         Codecourse\Notify\NotifyServiceProvider::class,
         Limatheus\SmsGateway\SmsGatewayServiceProvider::class,
         Bogardo\Mailgun\MailgunServiceProvider::class,
+        
 
 
 
@@ -224,7 +225,8 @@ return [
         'Notify'    => Codecourse\Notify\Facades\Notify::class,
         'SMSGateway'=> Limatheus\SmsGateway\Facade::class,
         'Mailgun' => Bogardo\Mailgun\Facades\Mailgun::class,
-        
+
+
 
 
 
