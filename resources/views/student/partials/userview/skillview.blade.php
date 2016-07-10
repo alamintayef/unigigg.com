@@ -74,7 +74,7 @@
 
       @endforeach
     @else
-        <p>Nothing added</p>
+        <p>No Skills Added Yet</p>
       <p>
         You need to add a skill proof related to the skill. Before adding a skill please upload related document to google drive / github / onedrive / dropbox then share the link so that we can verfiy your skills and give feedback
       </p>

@@ -32,7 +32,7 @@
 
       @endforeach
 @else
-    <p>Nothing added</p>
+    <p>Please add you profile information from <a href="{{url('userinfo')}}">Build profile</a> Tab</p>
   @endif
         <a href="{{url('/profile',$user->name)}}"> CV</a>
         <a href="{{url('profile/template',$user->name)}}">CV-2</a>

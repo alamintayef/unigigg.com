@@ -1,6 +1,5 @@
 <div class="padsmall col-md-12" >
   <h5>Experience</h5>
-  @if(count($experiences)>0)
 
   <table class="table table-striped table-hover">
     <thead>
@@ -49,8 +48,6 @@
 
           </tbody>
         </table>
-      @else
-          <p>Nothing added</p>
-      @endif
+    
 
       </div>

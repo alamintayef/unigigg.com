@@ -29,7 +29,7 @@
               Free Subscription Expires on : <strong> {{Auth::user()->expireson}}</strong>
               <br>
               <h3>
-              <a class="btn btn-success raised btn-sm " href="{{ url('/payment') }}"><i class="fa fa-btn fa-check-square-o"></i>Verify Profile</a> <i class="fa fa-question"></i></h3>
+              <a class="btn btn-success raised btn-sm " href="{{ url('/payment') }}"><i class="fa fa-btn fa-check-square-o"></i>Verify Profile</a></h3>
               @if(Auth::user()->subs_type===0)
               @else
                 <button type="button" name="button" class="btn-default btn-lg">Subscribed for 6 months</button>
@@ -61,8 +61,6 @@
       @include('student.partials.userview.interestview')
 
       @include('student.partials.userview.exccview')
-
-      @include('student.partials.userview.hobbyview')
       @include('student.partials.userview.funview')
         </div>
 

@@ -20,8 +20,8 @@
           <li><a href="{{url('experience')}}">Experience</a></li>
           <li><a href="{{url('refs')}}">Reference</a></li>
           <li><a href="{{url('excc')}}">Extra-Curricular</a></li>
-          <li  class="active"><a href="{{url('interest')}}">Interests</a></li>
-          <li><a href="{{url('hobby')}}">Hobbies</a></li>
+          <li  class="active"><a href="{{url('interest')}}">Upload CV</a></li>
+
           <li><a href="{{url('fun')}}">About You</a></li>
             <li><a href="{{url('vdoprofile')}}">Video Profile</a></li>
 
@@ -58,7 +58,7 @@
       </div>
     </div>
     <div class="col-md-2 panel whiteproper">
-      <h5 class="textb">Your Interests</h5>
+      <h5 class="textb">Your CV Link</h5>
       @foreach($var as $interest)
         <ul class="list-group">
           <li class="list-group-item">{{$interest->interest_name}}</li>

@@ -152,7 +152,6 @@ return [
         Codecourse\Notify\NotifyServiceProvider::class,
         Limatheus\SmsGateway\SmsGatewayServiceProvider::class,
         Bogardo\Mailgun\MailgunServiceProvider::class,
-        
 
 
 

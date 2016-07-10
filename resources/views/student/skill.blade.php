@@ -20,8 +20,7 @@
           <li ><a href="{{url('experience')}}">Experience</a></li>
           <li ><a href="{{url('refs')}}">Reference</a></li>
           <li ><a href="{{url('excc')}}">Extra-Curricular</a></li>
-          <li><a href="{{url('interest')}}">Interests</a></li>
-          <li><a href="{{url('hobby')}}">Hobbies</a></li>
+          <li ><a href="{{url('interest')}}">Upload CV</a></li>
           <li><a href="{{url('fun')}}">About You</a></li>
           <li><a href="{{url('vdoprofile')}}">Video Profile</a></li>
         </ul>

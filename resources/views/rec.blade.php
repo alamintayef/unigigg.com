@@ -2,9 +2,57 @@
 
 @section('content')
 <style media="screen">
+
 .center{
   text-align:center;
 }
+/*
+body{
+  background: #000;
+  padding-top: 10px;
+}
+
+h2{
+  color: lime;
+  font-family: "Courier";
+  font-size: 20px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  width: 30em;
+  animation: type 4s steps(60, end);
+}
+
+p:nth-child(2){
+  animation: type2 8s steps(60, end);
+}
+
+p a{
+  color: lime;
+  text-decoration: none;
+}
+
+span{
+  animation: blink 1s infinite;
+}
+
+@keyframes type{
+  from { width: 0; }
+}
+
+@keyframes type2{
+  0%{width: 0;}
+  50%{width: 0;}
+  100%{ width: 100; }
+}
+
+@keyframes blink{
+  to{opacity: .0;}
+}
+
+::selection{
+  background: black;
+}*/
 body{
   /*https://images.unsplash.com/photo-1422393462206-207b0fbd8d6b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=b09f84e8e8fd58ee91faf817b9f903d7
   http://www.userzoom.com/wp-content/uploads/2015/04/Recruitingpng.png*/
@@ -50,7 +98,7 @@ body{
       <br>
       <div class=" pad">
         <h1 class="textw">Stop Recruiting Like You are in the <strike> 90's</strike></h1>
-        <h2 class="textw">Join Unigigg for Hiring Faster and Efficiently</h2>
+        <h1 class="textw">Join Unigigg To Hire Faster and Efficiently</h1>
         <br>
         <a type="submit" name="button" class="btn btn-default btn-large boton" href="{{url('login')}}">Post a Job For Free</a>
 

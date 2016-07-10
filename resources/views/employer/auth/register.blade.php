@@ -51,10 +51,10 @@ body
                         </div>
                         <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Contact No.</label>
-                            <i class="fa fa-envelope"></i>
+                            <i class="fa fa-phone"></i>
 
                             <div class="col-md-6">
-                                <input type="phone" id='phone' class=" form-control textw" name="phone" value="{{ old('phone') }}">
+                                <input type="phone" id='phone' class=" form-control " name="phone" value="{{ old('phone') }}">
 
                                 @if ($errors->has('phone'))
                                     <span class="help-block">

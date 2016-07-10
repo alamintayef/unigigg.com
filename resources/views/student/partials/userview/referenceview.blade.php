@@ -1,8 +1,5 @@
 <div class="padsmall">
   <h4>References</h4>
-@if(count($refs)>0)
-
-
 
 @foreach($refs as $ref)
 
@@ -64,6 +61,3 @@
 
 @endforeach
 </div>
-@else
-  <p>Nothing added</p>
-@endif

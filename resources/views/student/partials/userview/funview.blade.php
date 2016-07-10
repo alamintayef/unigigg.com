@@ -2,8 +2,6 @@
 
   <h4>About you</h4>
   <!--about your self -->
-  @if(count($funs)>0)
-
 
 
   @foreach($funs as $fun)
@@ -21,7 +19,5 @@
     </p>
 
   @endforeach
-@else
-    <p>Nothing added</p>
-@endif
+
 </div>

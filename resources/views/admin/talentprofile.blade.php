@@ -98,7 +98,7 @@
                 Phone Number : {{$view->mobile}}
                 NID :{{$view->NId}}<br>
                 Facebook : <a href="{{ $view->facebookId }}"> Facebook</a> <br>
-                LINKEDIN : {{ $view->LinkedInId }}
+                LINKEDIN : <a href="{{ $view->LinkedInId }}"> Linkedin</a>
               </p>
 
             </div>

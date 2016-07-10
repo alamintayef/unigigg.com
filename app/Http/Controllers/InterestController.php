@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\Student\Interest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 use Session;
 class InterestController extends Controller
 {
@@ -29,6 +30,13 @@ class InterestController extends Controller
             'interest_name' => 'required|max:200',
 
         ]);
+        $uid= auth()->user()->id;
+        $entrylimit=Interest::where('user_id','=' ,$uid)->get();
+        if(count($entrylimit)>0){
+          $cv =Interest::where('user_id','=' ,$uid)->first();
+          $cv->interest_name = $request->interest_name;
+          $cv->save();
+        }
 
         $request->user()->interests()->create([
             'interest_name' => $request->interest_name,
