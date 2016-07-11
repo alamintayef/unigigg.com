@@ -31,7 +31,9 @@
             <th>
               Delete
             </th>
-        
+            <th>
+              Point
+            </th>
 
           </thead>
           <tbody>
@@ -70,7 +72,9 @@
                     </button>
                   </form>
                 </td>
-
+                <td>
+                  {{$users->profile_count}}
+                </td>
 
               </tr>
 

@@ -58,6 +58,8 @@
 
                 <p>
                 <b>  University:</b> <b> {{$view->institute}} </b><br> <b>  Contact:</b> <b> {{$view->mobile}} </b>
+                <br>
+                Facebook Profile : <a href="{{$view->facebookId}}">{{$view->fname}} {{$view->lname}}</a>
                 </p>
 
               </div>

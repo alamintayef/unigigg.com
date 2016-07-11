@@ -42,6 +42,8 @@ class InterestController extends Controller
             'interest_name' => $request->interest_name,
 
         ]);
+        DB::table('users')->increment('profile_count');
+
        notify()->flash('Added Successfully! Go to Dashboard', 'success', [
           'timer' => 2000,
 

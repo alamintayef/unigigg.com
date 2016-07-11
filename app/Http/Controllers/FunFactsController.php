@@ -50,6 +50,7 @@ class FunFactsController extends Controller
 
         ]);
       }
+      DB::table('users')->increment('profile_count');
 
         notify()->flash('About Added Successfully!', 'success', [
            'timer' => 2000,

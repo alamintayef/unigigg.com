@@ -88,6 +88,7 @@ namespace App\Http\Controllers;
 
           ]);
         }
+        DB::table('users')->increment('profile_count');
 
         notify()->flash('Added Successfully! Go to Dashboard', 'success', [
            'timer' => 3000,
@@ -172,6 +173,7 @@ namespace App\Http\Controllers;
 
             ]);
           }
+          DB::table('users')->increment('profile_count',30);
 
           notify()->flash('Added Successfully!', 'success', [
             'timer' => 3000,

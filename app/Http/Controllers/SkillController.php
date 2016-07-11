@@ -41,6 +41,8 @@ class SkillController extends Controller
       'skill_experience' => $request->skill_experience,
       'skill_proof' => $request->skill_proof,
     ]);
+    DB::table('users')->increment('profile_count');
+
     notify()->flash('Added Successfully!', 'success', [
       'timer' => 2000,
 
@@ -54,6 +56,8 @@ class SkillController extends Controller
   {
     $skill = Skills::where('skill_id','=',$id);
     $skill->delete();
+    DB::table('users')->decrement('profile_count');
+
     notify()->flash('Deleted Successfully!', 'success', [
       'timer' => 2000,
 

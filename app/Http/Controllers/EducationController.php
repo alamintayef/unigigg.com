@@ -51,6 +51,7 @@ class EducationController extends Controller
               'Degree_institute'=> $request->Degree_institute,
               'Degree_result'=> $request->Degree_result,
           ]);
+          DB::table('users')->increment('profile_count');
 
           notify()->flash('Added Successfully! Go to Dashboard', 'success', [
              'timer' => 2000,
@@ -106,6 +107,8 @@ class EducationController extends Controller
       $edu = Education::where('id','=',$id);
 
       $edu->delete();
+      DB::table('users')->decrement('profile_count');
+
       notify()->flash('Deleted Successfully!', 'success', [
          'timer' => 2000,
 
