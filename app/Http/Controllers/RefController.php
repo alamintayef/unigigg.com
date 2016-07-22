@@ -38,7 +38,8 @@ class RefController extends Controller
         'reference_description' => $request->reference_description,
         'referee_number' => $request->referee_number,
       ]);
-
+      $uid = auth()->user()->id;
+    DB::table('users')->where('id','=',$uid)->increment('profile_count');
       notify()->flash('Added Successfully! Go to Dashboard', 'success', [
          'timer' => 3000,
          'text' => 'Thank you',

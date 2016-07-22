@@ -186,5 +186,21 @@ class PublicController extends Controller
         'skill'=> $skill,
       ]);
   }
+  public function chakrisearch()
+  {
+    $search = \Request::get('search');
+    $jobs = DB::table('jobs')
+          ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
+          ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
+          ->where('jobs.job_name','like','%'.$search.'%')
+          ->orWhere('jobs.job_location','like','%'.$search.'%')
+          ->orderBy('created_at', 'desc')
+          ->get();
+
+          return view('chakri.regularchakri.publicCharkiSearch',[
+            'jobs'=>$jobs
+          ]);
+
+  }
 
 }

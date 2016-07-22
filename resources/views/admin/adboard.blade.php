@@ -25,7 +25,9 @@
        <li class="list-group-item"><a href="admin">User board</a> <span class="badge"> {{$allusers}}</span></li>
        <li class="list-group-item">Total Eccentric Jobs : {{count($allOddJobs)}}</li>
        <li class="list-group-item">Total Jobs : {{count($allJobs)}}</li>
-        <li class="list-group-item"><a href="{{url('addvdo')}}">Add video</a</li>
+      <li class="list-group-item"><a href="{{url('addvdo')}}">Add video</a</li>
+      <li class="list-group-item"><a href="{{url('add/competition')}}">Add Competition</a</li>
+      <li class="list-group-item"><a href="{{url('add/training')}}">Add Training</a</li>
        <li class="list-group-item"><a href="{{url('employerlist')}}">Employer board</a><span class="badge"> {{$allemployer}} </span></li>
 
        <li class="list-group-item">

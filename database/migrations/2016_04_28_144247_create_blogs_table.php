@@ -19,7 +19,7 @@ class CreateBlogsTable extends Migration
           $table->integer('user_id')->unsigned()->index();
           $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
           $table->string('title')->unique();
-          $table->text('subtitle')
+          $table->text('subtitle');
           $table->text('body');
           $table->string('slug')->unique();
           $table->timestamps();

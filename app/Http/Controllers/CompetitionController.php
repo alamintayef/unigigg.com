@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Model\student\Competition;
 use App\Http\Requests;
 
 class CompetitionController extends Controller
@@ -11,7 +11,15 @@ class CompetitionController extends Controller
     //
     public function __construct()
     {
-      $this->middleware('auth');
+
+      $this->middleware('employer');
+    }
+
+    public function index(){
+      $competition= Competition::all();
+      return view('competitions.addCompetition',[
+        'competition' => $competition,
+      ]);
     }
     public function store(Request $request)
     {
@@ -25,7 +33,7 @@ class CompetitionController extends Controller
 
         ]);
 
-        $request->user()->competition()->create([
+        Competition::create([
             'title' => $request->title,
             'description' => $request->description,
             'competition_slug' => str_slug($request->title),
@@ -35,11 +43,12 @@ class CompetitionController extends Controller
             'organized_by'=>$request->organized_by,
 
         ]);
+
         notify()->flash('Added Successfully!', 'success', [
            'timer' => 2000,
            'text' => 'Thank you'
          ]);
 
-        return redirect('/home');
+        return redirect('/add/competition');
     }
 }

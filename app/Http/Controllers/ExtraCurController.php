@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\Student\ExtraCur;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use DB;
 class ExtraCurController extends Controller
 {
     //
@@ -41,6 +41,8 @@ class ExtraCurController extends Controller
             'excc_description' => $request->excc_description,
 
         ]);
+        $uid = auth()->user()->id;
+        DB::table('users')->where('id','=',$uid)->increment('profile_count');
         notify()->flash('Added Successfully! Go to Dashboard', 'success', [
            'timer' => 2000,
 
@@ -52,6 +54,8 @@ class ExtraCurController extends Controller
     {
       $var = ExtraCur::where('extra_id','=',$id);
       $var->delete();
+      $uid = auth()->user()->id;
+    DB::table('users')->where('id','=',$uid)->decrement('profile_count');
       notify()->flash('Deleted Successfully!', 'success', [
          'timer' => 2000,
 

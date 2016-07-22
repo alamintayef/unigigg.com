@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\Student\FunFacts;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use DB;
 class FunFactsController extends Controller
 {
     //
@@ -50,7 +50,8 @@ class FunFactsController extends Controller
 
         ]);
       }
-      DB::table('users')->increment('profile_count');
+      $uid = auth()->user()->id;
+    DB::table('users')->where('id','=',$uid)->increment('profile_count');
 
         notify()->flash('About Added Successfully!', 'success', [
            'timer' => 2000,

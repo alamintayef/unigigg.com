@@ -86,6 +86,8 @@ Route::get('/github', function(){
     Route::get('blogs', 'PublicController@showBlogs');
     Route::get('blog/article/{slug}','PublicController@showBlog');
     Route::get('search/people','PublicController@search');
+    Route::get('search/jobs','PublicController@chakrisearch');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -99,7 +101,7 @@ Route::get('/github', function(){
 
 Route::group(['middleware' => ['web']], function () {
       //
-      Route::get('/view/jobs/{title}','PublicController@showjobs');
+      Route::get('/view/jobs/{slug}','PublicController@showjobs');
       Route::get('/view/odd/jobs/{title}','PublicController@showEccentricJobs');
       Route::get('blogs','PublicController@showBlogs');
       Route::get('blog/article/{slug}','PublicController@showBlog');
@@ -186,6 +188,10 @@ Route::group(['middleware' => ['web']], function () {
       Route::post('change/user/password','UserInfoController@PrimaryInfoUpdate');
 
       // admin end ---------------------------------------------------
+
+      //competition
+      Route::get('add/competition','CompetitionController@index');
+      Route::post('add/competition/create','CompetitionController@store');
 
 
       //Appointment

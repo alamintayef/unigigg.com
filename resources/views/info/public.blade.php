@@ -18,10 +18,8 @@ body
       <div class="transparentbg" >
         <ul class="nav nav-pills  nav-justified">
           <li class="active"><a href="{{url('jobs/view')}}"><strong class="textw">Regular Jobs</strong></a></li>
-          <li ><a href="{{url('jobs/view/eccentric')}}"><strong class="textw">Eccentric Jobs </strong></a></li>
-          <li><form class="form-inline center" action="#" method="post">
-            <input type="search" class="form-control" name="name" value=""> <button type="button" class=" btn-change textb " name="button"><i class="fa fa-search">Search</i></button>
-          </form></li>
+          <li><a href="{{url('jobs/view/eccentric')}}"><strong class="textw">Eccentric Jobs </strong></a></li>
+          <li class="textw">@include('search.search',['url'=>'search/jobs'])</li>
         </ul>
       </div>
       <hr>

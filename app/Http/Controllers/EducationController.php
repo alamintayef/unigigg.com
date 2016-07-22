@@ -107,7 +107,8 @@ class EducationController extends Controller
       $edu = Education::where('id','=',$id);
 
       $edu->delete();
-      DB::table('users')->decrement('profile_count');
+      $uid = auth()->user()->id;
+      DB::table('users')->where('id','=',$uid)->decrement('profile_count');
 
       notify()->flash('Deleted Successfully!', 'success', [
          'timer' => 2000,

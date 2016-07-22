@@ -42,8 +42,8 @@ class InterestController extends Controller
             'interest_name' => $request->interest_name,
 
         ]);
-        DB::table('users')->increment('profile_count');
-
+        $uid = auth()->user()->id;
+      DB::table('users')->where('id','=',$uid)->increment('profile_count');
        notify()->flash('Added Successfully! Go to Dashboard', 'success', [
           'timer' => 2000,
 
@@ -55,6 +55,8 @@ class InterestController extends Controller
     {
       $interest = Interest::where('interest_id','=',$id);
       $interest->delete();
+      $uid = auth()->user()->id;
+    DB::table('users')->where('id','=',$uid)->decrement('profile_count');
       notify()->flash('Deleted Successfully!', 'success', [
          'timer' => 1000,
 

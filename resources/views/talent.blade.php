@@ -76,7 +76,7 @@
 
           <div class="container-fluid  center pad" id="student-price">
             <div class="col-md-6 pad fontbig price">
-              <h3 class="textw">Whats Free</h3>
+              <h3 class="textw">What(s) Free</h3>
               <ul class="list-inline">
                 <h4><strong>
                 <li class="textw">Creatng A Gig Profile</li>

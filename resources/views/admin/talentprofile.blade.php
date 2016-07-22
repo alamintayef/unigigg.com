@@ -125,6 +125,9 @@
                   Level
                 </th>
                 <th>
+                  Proof
+                </th>
+                <th>
                   Verification
                 </th>
               </thead>
@@ -138,17 +141,17 @@
                     <td class="td">
                       {{$skills->skill_level}}
                     </td>
-
-                      <td>
-                        @if($user->varified===0)
+                    <td>
+                      <a href="{{$skills->skill_proof}}"> {{$skills->skill_name}}</a>
+                    </td>
+                    <td>
+                        @if($skills->varified===0)
                           <button type="button" name="button" class="btn-danger">Not Verified</button>
                         @else
                           <button type="button" name="button" class="btn-success">Verified</button>
                         @endif
                       </td>
-
-
-                  </tr>
+                    </tr>
                 </tbody>
               @endforeach
             </table>

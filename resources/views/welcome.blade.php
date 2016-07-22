@@ -9,19 +9,6 @@ $.preloadImages("http://s32.postimg.org/rg1efg31h/cover2w.jpg");
 </script>
 @section('content')
 <style media="screen">
-
-span{
-  animation: blink 1s infinite;
-}
-
-@keyframes type{
-  from { width: 0; }
-}
-
-
-@keyframes blink{
-  to{opacity: .0;}
-}
 body{
 
   /*
@@ -55,6 +42,9 @@ body{
 .green{
   color:lightgreen;
 }
+.red{
+  color:red;
+}
 </style>
 <div class="">
 
@@ -75,8 +65,8 @@ body{
       <br>
       <br>
       <br>
-      <div class="foo">
-        <h1 class = "textw bighead">We Help <span class="dirtfello">Y</span>oung <span class="green">T</span>alents to <strike>Find</strike> Get <br> Jobs &amp; Internships</h1>
+      <div >
+        <h1 class = "textw bighead">We Help <span class="dirtfello">Y</span>oung <span class="green">T</span>alents to <strike class="red">Find</strike> Get <br> Jobs &amp; Internships</h1>
       </div>
       <br>
       <br>
@@ -90,7 +80,7 @@ body{
       <div class="foo">
       <a href="#search" class="btn btn-default btn-change font-cor"></b><i class="fa fa-search fa-1x"></i> Search Jobs</b></a>
       <a class="btn btn-default font-cor btn-change" href="{{url('jobs/view')}}"><b>Find a Gigg / Internship <i class="fa fa-search-plus"></i></b></a>
-      <a class="btn btn-default font-cor btn-change" onclick="myFunction();"><b>Post a Job <i class="fa fa-pencil"></i></b></a>
+      <a class="btn btn-default font-cor btn-change" href="{{('login')}}"><b>Post a Job <i class="fa fa-pencil"></i></b></a>
       </div>
       <script>
           function myFunction() {
@@ -119,8 +109,9 @@ body{
 <div class="service-block">
 <i class="material-icons">account_box</i>
 <h2>Public Resume</h2>
-<p>Build up your digital profile, Display your profile in public. We will monitor and help you to build your perfect profile and resume. Build the profile once and use it everywhere.</p>
-
+<!--
+<p>A resume is one of the most important writeup you will ever write. It is important to have a good Resume or CV to land on a job and we will help you to have that good Resume and CV</p>
+-->
 </div>
 </div>
 
@@ -128,8 +119,9 @@ body{
 <div class="service-block">
 <i class="material-icons md-24">supervisor_account</i>
 <h2>Mentoring</h2>
+<!--
 <p>Mentors guide you to take decision that will help you make your life better. We are introducting virtual mentoring from industry expert who will guide to through every step</p>
-
+-->
 </div>
 </div>
 
@@ -137,32 +129,36 @@ body{
 <div class="service-block">
 <i class="material-icons">lightbulb_outline</i>
 <h2>Skill Development</h2>
+<!--
 <p>We help you to invest in you. Most of the people do not get jobs because of not having the right skills. Here we connect you with skill development opportunities</p>
-
+-->
 </div>
 </div>
 <div class="col-sm-4">
 <div class="service-block">
 <i class="material-icons">business_center</i>
 <h2>Jobs &amp; Internships</h2>
+<!--
 <p>We help you find jobs according to your skills. We spent time on you to make you better, make you career ready and fit for the job</p>
-
+-->
 </div>
 </div>
 <div class="col-sm-4">
 <div class="service-block">
 <i class="material-icons">school</i>
 <h2>Training</h2>
-<p>We help you to invest in you. Most of the people do not get jobs because of not having the right skills. Here we connect you with skill development opportunities</p>
-
+<!--
+<p>Professional training helps boost confidence. Confidence is one of the key of success. Here we connect you with various training opportunitie</p>
+-->
 </div>
 </div>
 <div class="col-sm-4">
 <div class="service-block">
 <i class="fa fa-trophy fa-4x"></i>
 <h2>Comeptitions</h2>
-<p>Competition is one of the best way to practice team building and to learn multi-disiplinary skills</p>
-
+<!--
+<p>Competition is one of the best way to practice team building and to learn multi-disiplinary skills. Compete to solve a real life problems, pick up new skilss and shine</p>
+-->
 </div>
 </section>
 
@@ -268,7 +264,7 @@ body{
     </div>
   </div>
 </section>
-<!--
+
 <div class="container-fluid pad whiteproper">
   <h2 class="center">Find <i class="fa fa-search fa-2x"></i>Jobs</h2>
   <div class="row">
@@ -419,6 +415,34 @@ body{
 
 </div>
 -->
+<div class="container-fluid  center pad" id="student-price">
+  <div class="col-md-6 pad fontbig price ecc">
+    <h3 class="textw">What(s) Free</h3>
+    <ul class="list-inline">
+      <h4><strong>
+      <li class="textw">Creatng A Gig Profile</li>
+      <li class="textw">Generating Resume/CV</li>
+      <li class="textw">Applying to Regular Jobs</li>
+      <li class="textw">Applying to Eccentric Jobs <sub>Partially</sub></li>
+      <li class="textw">Applying to Experienceships</li>
+      </strong>
+      </h4>
+       <h3 class="textw">Whats Not Free</h3>
+       <h4>
+      <ul class="list-inline">
+        <strong>
+        <li class="textw">Validating Profile <sub>500 Tk./Every Request</sub></li>
+
+        <li class="textw">Applying to Eccentric jobs <sub>500 Tk. For Six Months</sub></li>
+        </strong>
+        </h4>
+      </ul>
+    </ul>
+
+  </div>
+
+
+</div>
 
 
 <div class="container-fluid center whiteproper  padsmall" >

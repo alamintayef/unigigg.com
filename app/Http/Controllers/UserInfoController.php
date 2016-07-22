@@ -88,7 +88,8 @@ namespace App\Http\Controllers;
 
           ]);
         }
-        DB::table('users')->increment('profile_count');
+        $uid = auth()->user()->id;
+      DB::table('users')->where('id','=',$uid)->increment('profile_count');
 
         notify()->flash('Added Successfully! Go to Dashboard', 'success', [
            'timer' => 3000,
@@ -173,7 +174,9 @@ namespace App\Http\Controllers;
 
             ]);
           }
-          DB::table('users')->increment('profile_count',30);
+          $uid = auth()->user()->id;
+    DB::table('users')->where('id','=',$uid)->increment('profile_count',30);
+        //  DB::table('users')->where()increment('profile_count',30);
 
           notify()->flash('Added Successfully!', 'success', [
             'timer' => 3000,

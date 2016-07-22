@@ -40,7 +40,7 @@ class AdminController extends Controller
     public function index()
     {
 
-      $alluser = DB::table('users')->where('type',1)->paginate(15);
+      $alluser = DB::table('users')->where('type',1)->orderBy('point', 'asc')->paginate(15);
       $count = DB::table('users')
               ->join('skills','users.id','=','skills.user_id')
               ->join('user_info','users.id','=','user_info.user_id')

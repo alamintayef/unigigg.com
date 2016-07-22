@@ -285,7 +285,6 @@ body{
           <h3>Talent Sourcing</h3>
           <div class="divider clearfix"></div>
           <p>We actively source talent and help them to be career ready so that you can find the right fit for your company</p>
-          <a href="page-services.html">Read More <i class="pl-5 fa fa-angle-double-right"></i></a>
         </div>
       </div>
       <div class="col-md-4 ">
@@ -294,7 +293,7 @@ body{
           <h3>Pre-screening</h3>
           <div class="divider clearfix"></div>
           <p>All our talents skills are validated. Therefore you do not have to go through intial screening. Which saves a lot of cost and time</p>
-          <a href="page-services.html">Read More <i class="pl-5 fa fa-angle-double-right"></i></a>
+
         </div>
       </div>
       <div class="col-md-4 ">
@@ -303,7 +302,6 @@ body{
           <h3>Branding</h3>
           <div class="divider clearfix"></div>
           <p>We work closely with you to promote your company, make your company appealing to the youth so that you can attract proper talent </p>
-          <a href="page-services.html">Read More <i class="pl-5 fa fa-angle-double-right"></i></a>
         </div>
       </div>
     </div>

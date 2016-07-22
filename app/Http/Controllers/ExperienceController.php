@@ -42,7 +42,8 @@ class ExperienceController extends Controller
             'exp_validation'  => $request->exp_validation,
 
         ]);
-        DB::table('users')->increment('profile_count');
+        $uid = auth()->user()->id;
+    DB::table('users')->where('id','=',$uid)->increment('profile_count');
 
         notify()->flash('Added Successfully! Go to Dashboard', 'success', [
            'timer' => 2000,
@@ -55,7 +56,8 @@ class ExperienceController extends Controller
     {
       $var = Experience::where('exp_id','=',$id);
       $var->delete();
-      DB::table('users')->decrement('profile_count');
+      $uid = auth()->user()->id;
+    DB::table('users')->where('id','=',$uid)->decrement('profile_count');
 
       notify()->flash('Deleted Successfully!', 'success', [
          'timer' => 2000,
