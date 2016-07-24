@@ -80,13 +80,33 @@ body{
       <div class="foo">
       <a href="#search" class="btn btn-default btn-change font-cor"></b><i class="fa fa-search fa-1x"></i> Search Jobs</b></a>
       <a class="btn btn-default font-cor btn-change" href="{{url('jobs/view')}}"><b>Find a Gigg / Internship <i class="fa fa-search-plus"></i></b></a>
-      <a class="btn btn-default font-cor btn-change" href="{{('login')}}"><b>Post a Job <i class="fa fa-pencil"></i></b></a>
+      <a class="btn btn-default font-cor btn-change" data-toggle="modal" data-target="#myModal"><b>Post a Job <i class="fa fa-pencil"></i></b></a>
       </div>
       <script>
           function myFunction() {
                swal("We are working on It!", "Thank you for trying out :D")
           }
       </script>
+
+      <!--- Modal --->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 class="modal-title" id="">Post a Job</h3>
+            </div>
+            <div class="modal-body">
+              <h5>Post a Job with a Call or SMS at : <i class="fa fa-phone"></i> 01987847548</h5>
+              <h5><a class="btn font-cor btn-primary" href="{{url('login')}}"> Post a Job Now</a></h5>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
       <br>
       <br>
       <br>
@@ -415,28 +435,19 @@ body{
 
 </div>
 -->
-<div class="container-fluid  center pad" id="student-price">
+<div class="container-fluid  center pad" id="student-price" style="height:400px";>
   <div class="col-md-6 pad fontbig price ecc">
-    <h3 class="textw">What(s) Free</h3>
-    <ul class="list-inline">
-      <h4><strong>
-      <li class="textw">Creatng A Gig Profile</li>
-      <li class="textw">Generating Resume/CV</li>
-      <li class="textw">Applying to Regular Jobs</li>
-      <li class="textw">Applying to Eccentric Jobs <sub>Partially</sub></li>
-      <li class="textw">Applying to Experienceships</li>
-      </strong>
-      </h4>
-       <h3 class="textw">Whats Not Free</h3>
-       <h4>
-      <ul class="list-inline">
-        <strong>
-        <li class="textw">Validating Profile <sub>500 Tk./Every Request</sub></li>
 
-        <li class="textw">Applying to Eccentric jobs <sub>500 Tk. For Six Months</sub></li>
-        </strong>
+    <ul class="list-inline">
+
+      <h4>
+        <li class="textw">CV Validation Tk.500/Every Request</li>
+
+        <li class="textw">Subscription fee Tk.500/6 Months</li>
+
+        <li class="textw">Customized CV Tk.500 </li>
         </h4>
-      </ul>
+
     </ul>
 
   </div>

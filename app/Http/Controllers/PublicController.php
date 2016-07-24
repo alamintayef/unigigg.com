@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-
+use App\Model\Student\Competition;
 use DB;
 use SMSGateway;
 
@@ -201,6 +201,15 @@ class PublicController extends Controller
             'jobs'=>$jobs
           ]);
 
+  }
+
+  //competition
+  public function Competitionshow()
+  {
+    $competition= Competition::all();
+    return view('competitions',[
+      'competition' => $competition,
+    ]);
   }
 
 }

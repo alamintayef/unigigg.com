@@ -30,7 +30,7 @@
 
         </li>
         <li class="list-group-item">
-          <a href="{{url('eccentric/jobs/whoapplied')}}">See Applied</strong></a>
+          <a href="{{url('eccentric/jobs/whoapplied')}}">Show Applied</strong></a>
 
         </li>
       </ul>
@@ -39,6 +39,9 @@
 
   <li class="list-group-item">
     <a href="{{url('postedjobs')}}"><strong><i class="small material-icons">shopping_basket</i> Posted Jobs</strong></a>
+  </ul>
+  <li class="list-group-item">
+    <a href="{{url('view/applied')}}"><strong><i class=" fa fa-folder-open-o"></i> See Applied</strong></a>
   </ul>
 
   <li class="list-group-item">

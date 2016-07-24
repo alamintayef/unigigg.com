@@ -61,6 +61,8 @@
       @include('student.partials.userview.interestview')
 
       @include('student.partials.userview.exccview')
+      @include('student.partials.userview.referenceview')
+
       @include('student.partials.userview.funview')
         </div>
 

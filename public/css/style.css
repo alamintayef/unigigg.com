@@ -45,7 +45,7 @@
 #student-price{
 
   background: url(http://s32.postimg.org/6du0ehiw5/blank_price_tag.jpg) no-repeat center center fixed;
-
+  font-family: 'Roboto',sans-serif;
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;

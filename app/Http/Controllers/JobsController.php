@@ -125,6 +125,16 @@ class JobsController extends Controller
 
       ]);
     }
+    public function Applicationshow(Request $request)
+    {
+      $postedjobs = Jobs::where('user_id', $request->user()->id)->select('jobs.job_name')->orderBy('created_at', 'desc')->get();
+      $area =Area::all();
+      return view('employer.ShowApplication', [
+        'postedjobs'=>$postedjobs,
+        'area'=> $area,
+
+      ]);
+    }
     public function jobboard(Request $request)
     {
 

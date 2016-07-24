@@ -15,7 +15,9 @@ class CompetitionController extends Controller
       $this->middleware('employer');
     }
 
-    public function index(){
+
+    public function index()
+    {
       $competition= Competition::all();
       return view('competitions.addCompetition',[
         'competition' => $competition,

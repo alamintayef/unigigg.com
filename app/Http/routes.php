@@ -15,10 +15,7 @@ Route::get('/', function () {
 
     return view('welcome');
 });
-Route::get('competitions', function () {
 
-    return view('competitions');
-});
 Route::get('trainings', function () {
 
     return view('training');
@@ -27,10 +24,7 @@ Route::get('events', function () {
 
     return view('news');
 });
-Route::get('competitions', function () {
 
-    return view('competitions');
-});
 Route::get('/recruiter', function () {
     return view('rec');
 });
@@ -87,7 +81,7 @@ Route::get('/github', function(){
     Route::get('blog/article/{slug}','PublicController@showBlog');
     Route::get('search/people','PublicController@search');
     Route::get('search/jobs','PublicController@chakrisearch');
-
+    Route::get('/competions', 'PublicController@Competitionshow');
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -192,6 +186,7 @@ Route::group(['middleware' => ['web']], function () {
       //competition
       Route::get('add/competition','CompetitionController@index');
       Route::post('add/competition/create','CompetitionController@store');
+      Route::get('/competitions', 'PublicController@Competitionshow');
 
 
       //Appointment
@@ -216,6 +211,7 @@ Route::group(['middleware' => ['web']], function () {
       Route::post('/postjobs', 'JobsController@store');
       Route::post('deletejobs/{id}','JobsController@destroy');
       Route::get('/postedjobs', 'JobsController@show');
+      Route::get('/view/applied', 'JobsController@Applicationshow');
   //Jobs
       Route::get('/jobs', 'JobsController@jobboard');
       Route::get('/chakri', 'ChakriController@chakriboard');

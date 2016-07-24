@@ -50,36 +50,9 @@
                         </button>
 
                         <h6 class="pull-right textb">Expires on : {{$jobs->job_expires}}</h6>
-                      </form>
-                      <form class="pull-right" action="{{url('/shortlists',$jobs->job_id)}}" method="GET">
-                        {!! csrf_field() !!}
-                        <button type="submit" class="btn btn-primary btn-sm">
-                          <i class="fa fa-star"></i> show Shortlisted
-                        </button>
-                      </form>
-                      <form class="pull-right" action="{{url('/whoapplied',$jobs->job_id)}}" method="GET">
-                        {!! csrf_field() !!}
-                        <button type="submit" class="btn btn-primary btn-sm">
-                          <i class="fa fa-paper-plane"></i> Show Applied
-                        </button>
-                      </form>
+                    
 
 
-                      @if(Auth::user()->subs_type===0)
-                        <form class="pull-right" action="{{url('/setappointment',$jobs->job_id)}}" method="GET">
-
-                        <button type="submit" class="btn btn-default btn-sm">
-                          <i class="fa fa-phone"></i> call Shortlisted
-                        </button>
-                      </form>
-                      @else
-                        <form class="pull-right" action="{{url('callthem/all',$jobs->job_id)}}" method="POST">
-                        {!! csrf_field() !!}
-                        <button type="submit" class="btn btn-default btn-sm">
-                          <i class="fa fa-phone"></i> call-for-interview
-                        </button>
-                      </form>
-                    @endif
 
                   </div>
 
@@ -281,3 +254,4 @@ autocomplete.list =['C', 'C++', 'JavaScript','MS-Office','Accounting','Python','
   });
   autocompletecgpa.list = ['2','2.5','2.75','3','3.25','3.5']
   </script>
+@endsection
