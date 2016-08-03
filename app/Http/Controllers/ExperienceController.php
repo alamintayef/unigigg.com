@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\Student\Experience;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use DB;
 class ExperienceController extends Controller
 {
     //

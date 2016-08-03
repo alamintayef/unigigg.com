@@ -7,6 +7,7 @@ use App\Model\Student\Hobbies;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Session;
+use DB;
 class HobbyController extends Controller
 {
     //

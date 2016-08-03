@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Model\Student\OddShortlist;
 use App\Http\Requests;
-
+use DB;
 class OddShortlistController extends Controller
 {
     //
@@ -23,5 +23,5 @@ class OddShortlistController extends Controller
 
       return redirect('/shortlists');
     }
-    
+
 }

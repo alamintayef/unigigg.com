@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\student\Competition;
 use App\Http\Requests;
 
+use DB;
 class CompetitionController extends Controller
 {
     //

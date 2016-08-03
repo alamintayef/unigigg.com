@@ -7,7 +7,8 @@
       <div class="col-md-10">
         <div class="panel whiteproper padsmall">
           <h4 class="textb">Applied Candidates</h4>
-          <a href="{{url('postedjobs')}}">Go Back</a>
+          <button type="button" Class="btn btn-default pull-right" name="button">Sort <i class="fa fa-search"></i></button>
+          <a href="{{url('view/applied')}}">Go Back</a>
         </div>
 
 
@@ -24,7 +25,7 @@
 
             </div>
             <div class="panel-body">
-              
+
 
               <p class="col-md-4">
                 <strong >Applied for</strong> : {{$seek->job_name}} <br>
@@ -82,6 +83,7 @@
       </div>
     </div>
   </div>
+@endsection
   <script type="text/javascript">
 
   (function ($) {

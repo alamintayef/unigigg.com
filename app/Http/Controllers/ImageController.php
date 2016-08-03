@@ -10,6 +10,7 @@ use App\Model\Student\Image;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use Redirect;
+use DB;
 class ImageController extends Controller
 {
   //

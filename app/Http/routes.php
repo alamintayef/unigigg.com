@@ -16,10 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('trainings', function () {
 
-    return view('training');
-});
 Route::get('events', function () {
 
     return view('news');
@@ -81,7 +78,8 @@ Route::get('/github', function(){
     Route::get('blog/article/{slug}','PublicController@showBlog');
     Route::get('search/people','PublicController@search');
     Route::get('search/jobs','PublicController@chakrisearch');
-    Route::get('/competions', 'PublicController@Competitionshow');
+    Route::get('/competitions', 'PublicController@Competitionshow');
+    Route::get('/trainings', 'PublicController@Trainingshow');
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -175,7 +173,10 @@ Route::group(['middleware' => ['web']], function () {
       Route::post('notify/user/about/{email}','AdminUserController@notifyuserAbout');
       Route::post('notify/user/info/{email}','AdminUserController@notifyuserInfo');
       Route::post('notify/user/skill/{email}','AdminUserController@notifyuserSkill');
-
+      //jobboard
+      Route::get('/admin/job/board','AdminController@jobview');
+      Route::post('/admin/status/activate/{id}','AdminController@activate');
+      Route::post('/admin/status/inactivate/{id}','AdminController@inactivate');
 
       //passchange
       Route::get('change/password','UserInfoController@Change');
@@ -188,6 +189,11 @@ Route::group(['middleware' => ['web']], function () {
       Route::post('add/competition/create','CompetitionController@store');
       Route::get('/competitions', 'PublicController@Competitionshow');
 
+
+      //trainings
+      Route::get('add/training','TrainingController@index');
+      Route::post('add/training/create','TrainingController@store');
+      Route::get('/trainings', 'PublicController@Trainingshow');
 
       //Appointment
       Route::get('setappointment/{id}','BillController@appointment');

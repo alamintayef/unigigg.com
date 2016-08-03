@@ -113,6 +113,11 @@
             </form>
 
           @endif
+          @if(count($interest)>0)
+              <h4><a href="{{$interest->interest_name}}">CV</a></h4>
+              
+          @endif
+
           @if(count($skill)>0)
 
             <h4>Skills</h4>
@@ -165,6 +170,7 @@
             </form>
           </td>
         @endif
+
         @if(count($education)>0)
           <h4>Education</h4>
           @foreach($education as $edu )

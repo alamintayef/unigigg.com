@@ -96,7 +96,7 @@ namespace App\Http\Controllers;
            'text' => 'Basic Information Done ! Congrats',
          ]);
 
-          return redirect('home');
+          return redirect('userinfo');
       }
 
       public function edit($id)

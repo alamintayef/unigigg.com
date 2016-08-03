@@ -15,7 +15,7 @@ use App\Model\Student\Interest;
 use App\Model\Student\User;
 use App\Model\Student\FunFacts;
 use App\Model\Student\Image;
-
+use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 

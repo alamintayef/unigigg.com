@@ -11,7 +11,7 @@ use App\Model\Student\Skills;
 use App\Model\Student\Hobbies;
 use App\Model\Student\Education;
 use App\Model\Student\Interest;
-
+use DB;
 use App\Model\Student\Reference;
 use App\Model\Student\Image;
 use App\Model\Student\EmInfo;

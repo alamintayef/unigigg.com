@@ -463,21 +463,21 @@ body{
     <div class="carousel-inner logofoo">
 
       <div class="item active container ">
-          <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/v6yho8rwl/7teen.jpg" alt="...">
-          <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s33.postimg.org/ksxxfm3tr/Blue_Scheme_Logo.jpg" alt="...">
-          <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/yvdkmkvut/download.jpg" alt="...">
-          <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/dkl2ffk1x/FInal_Amar_Bike_Logo_Page_01.png" alt="...">
-          <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s33.postimg.org/gwzraz1sv/logo.png" alt="...">
-          <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/5i9g50vxx/13233332_10209234151228216_840004034_n.jpg" alt="...">
+          <a href="https://www.facebook.com/7teenEvents/" target="_blank"> <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/v6yho8rwl/7teen.jpg" alt="..."></a>
+          <a href="http://www.bscheme.com/" target="_blank"><img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s33.postimg.org/ksxxfm3tr/Blue_Scheme_Logo.jpg" alt="..."> </a>
+          <a href="http://www.beatnikbd.com/" target="_blank"><img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="https://s31.postimg.org/s2rke2m8r/58167_636165749824102_6021701706231799474_n.jpg" alt="..."> </a>
+          <a href="https://www.amarbike.com/" target="_blank"><img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/dkl2ffk1x/FInal_Amar_Bike_Logo_Page_01.png" alt="..." > </a>
+          <a href="http://www.sheba.xyz/#/" target="_blank"><img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s33.postimg.org/gwzraz1sv/logo.png" alt="...">  </a>
+          <a href="http://simplesettler.com/" target="_blank"><img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/5i9g50vxx/13233332_10209234151228216_840004034_n.jpg" alt="..."> </a>
       </div>
 
       <div class="item container ">
-        <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s33.postimg.org/9xgnehvj3/logo_1430124641.png" alt="...">
-        <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/yvdkmkvut/download.jpg" alt="...">
-        <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/dkl2ffk1x/FInal_Amar_Bike_Logo_Page_01.png" alt="...">
-        <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s33.postimg.org/v47zjeiu7/logo_1456081131.png" alt="...">
-        <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="https://s32.postimg.org/walnnejj9/unifox.png" alt="...">
-        <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="https://s32.postimg.org/dtm6zppmd/tripping.png" alt="...">
+        <a href="http://hifipublic.com/" target="_blank"> <img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s33.postimg.org/9xgnehvj3/logo_1430124641.png" alt="..."></a>
+        <a href="http://simplesettler.com/" target="_blank"><img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s32.postimg.org/yvdkmkvut/download.jpg" alt="..."> </a>
+        <a href="https://www.bookmylook.xyz" target="_blank"><img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="https://s32.postimg.org/re0nwooth/13331073_947029015394863_8014595200055167169_n.png" alt="..."></a>
+        <a href="http://tripooly.com/" target="_blank"><img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="http://s33.postimg.org/v47zjeiu7/logo_1456081131.png" alt="..."> </a>
+        <a href="http://www.unifox.com.bd/" target="_blank"><img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="https://s32.postimg.org/walnnejj9/unifox.png" alt="..."> </a>
+        <a href="http://gotripping.club/" target="_blank"><img class="col-md-2 col-sm-2 col-xs-2 logo img-responsive" src="https://s32.postimg.org/dtm6zppmd/tripping.png" alt="..."> </a>
 
         </div>
 

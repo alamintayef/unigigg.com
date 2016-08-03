@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\Student\Interest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use DB;
 use Session;
 class InterestController extends Controller
 {

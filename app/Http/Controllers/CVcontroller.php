@@ -16,7 +16,7 @@ use App\Model\Student\Reference;
 use App\Model\Student\Image;
 use App\Model\Student\EmInfo;
 use App\Model\Student\Jobs;
-
+use DB;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 

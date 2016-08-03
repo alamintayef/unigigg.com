@@ -6,7 +6,7 @@ use App\Http\Requests;
 use Validator;
 use App\Http\Controllers\Controller;
 use App\Model\Student\EmInfo;
-
+use DB;
 
 class EmployerInfoController extends Controller
 {

@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Model\Student\Competition;
 use DB;
 use SMSGateway;
+use App\Model\student\Training;
 
 class PublicController extends Controller
 {
@@ -209,6 +210,14 @@ class PublicController extends Controller
     $competition= Competition::all();
     return view('competitions',[
       'competition' => $competition,
+    ]);
+  }
+
+  public function Trainingshow()
+  {
+    $training= Training::all();
+    return view('training',[
+      'training' => $training,
     ]);
   }
 

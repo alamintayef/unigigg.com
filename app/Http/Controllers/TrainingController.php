@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-
+use App\Model\student\Training;
+use DB;
 class TrainingController extends Controller
 {
     //
@@ -14,6 +15,15 @@ class TrainingController extends Controller
     {
       $this->middleware('auth');
     }
+
+    public function index()
+    {
+      $training= Training::all();
+      return view('Training.training',[
+        'training' => $training,
+      ]);
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -22,22 +32,22 @@ class TrainingController extends Controller
             'training_type' => 'required',
             'application_fee'=>'required',
             'application_dead_line'=>'required',
-            'payment_method'="required",
-            'hosted_by'=>'required',
+            'payment_method'=>"required",
+            'organized_by'=>'required',
 
         ]);
 
-        $request->user()->training()->create([
+        Training::create([
             'title' => $request->title,
             'training_description' => $request->training_description,
             'news_slug' => str_slug($request->title),
             'training_type'=>$request->training_type,
             'application_fee'=> $request->application_fee,
+            'training_start_date'=> $request->training_start_date,
             'application_dead_line'=>$request->application_dead_line,
             'payment_method'=>$request->payment_method,
-            'hosted_by'=>$request->hosted_by,
-
-        ]);
+            'organized_by'=>$request->organized_by,
+          ]);
         notify()->flash('Added Successfully!', 'success', [
            'timer' => 2000,
            'text' => 'Thank you'

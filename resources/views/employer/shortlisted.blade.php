@@ -9,7 +9,7 @@
           @if(count($shortlisted)>0)
 
           <h4 class="textb">Shortlisted Candidates </h4>
-          <a href="{{url('/postedjobs')}}"><h5> <i class="fa fa-arrow-left"></i> Go Back</h5></a>
+          <a href="{{url('view/applied')}}"><h5> <i class="fa fa-arrow-left"></i> Go Back</h5></a>
 
 
           @foreach( $shortlisted as $shortlist )

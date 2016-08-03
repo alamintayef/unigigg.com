@@ -40,7 +40,7 @@ class AdminController extends Controller
     public function index()
     {
 
-      $alluser = DB::table('users')->where('type',1)->orderBy('point', 'asc')->paginate(15);
+      $alluser = DB::table('users')->where('type',1)->orderBy('profile_count', 'asc')->paginate(15);
       $count = DB::table('users')
               ->join('skills','users.id','=','skills.user_id')
               ->join('user_info','users.id','=','user_info.user_id')
@@ -76,6 +76,33 @@ class AdminController extends Controller
         ]);
     }
 
+    public function jobview()
+    {
+      $jobs = Jobs::all();
+
+      return view('admin.job.jobboard',[
+        'jobs'=>$jobs,
+      ]);
+
+
+    }
+
+    public function activate($id)
+    {
+          DB::table('jobs')
+          ->where('job_id','=',$id)
+          ->update(['status'=> 1]);
+
+          return redirect('/admin/job/board');
+    }
+    public function inactivate($id)
+    {
+          DB::table('jobs')
+          ->where('job_id','=',$id)
+          ->update(['status'=> 0]);
+          return redirect('/admin/job/board');
+    }
+
 
     // Student Profile view
     public function studentadminview($id)
@@ -86,7 +113,7 @@ class AdminController extends Controller
       $education = Education::where('user_id','=', $id)->get();
       $exps = Experience::where('user_id','=', $id)->get();
       $refs = Reference::where('user_id','=', $id)->get();
-      $interest = Interest::where('user_id','=', $id)->get();
+      $interest = Interest::where('user_id','=', $id)->first();
       $hobby =Hobbies::where('user_id','=', $id)->get();
       $about =FunFacts::where('user_id','=', $id)->get();
       $images = Image::where('user_id','=', $id)->orderBy('created_at', 'desc')->limit(1)->get();

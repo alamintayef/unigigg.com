@@ -10,6 +10,7 @@ use App\Model\Student\UserInfo;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
+use Mailgun;
 use Carbon\Carbon;
 class JobsController extends Controller
 {
@@ -107,12 +108,22 @@ class JobsController extends Controller
          'timer' => 2000,
 
        ]);
+    //   $data = array('company_name' => $employer->company_name,'email'=> $employer->email,'jname'=>$employer->job_name,'name'=> $user->name);
+
+       $users = User::where('type','=','1');
+
+
+         Mailgun::send('email.test', ['user' => $user], function ($m) use ($user) {
+           $m->from('tayef@unigigg.com', 'New job posted');
+
+           $m->to('sarkeralaminnsu@gmail.com')->subject('Hello ! A new job');
+       });
 
       return redirect('/home');
 
-
-
     }
+
+
 
 
     public function show(Request $request)
@@ -127,7 +138,7 @@ class JobsController extends Controller
     }
     public function Applicationshow(Request $request)
     {
-      $postedjobs = Jobs::where('user_id', $request->user()->id)->select('jobs.job_name')->orderBy('created_at', 'desc')->get();
+      $postedjobs = Jobs::where('user_id', $request->user()->id)->select('jobs.job_name','jobs.job_id')->orderBy('created_at', 'desc')->get();
       $area =Area::all();
       return view('employer.ShowApplication', [
         'postedjobs'=>$postedjobs,
