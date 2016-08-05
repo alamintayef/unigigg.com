@@ -91,7 +91,7 @@ class ChakriController extends Controller
 
     private function mailEmployer($id, $uid)
     {
-      $employer_mail=DB::table('jobs')->where('job_id','=',$id)->select('jobs.user_id')->first();
+      $employer_mail=DB::table('jobs')->where('id','=',$id)->select('jobs.user_id')->first();
       $userid= $employer_mail->user_id;
       $employer = DB::table('em_infos')
                         ->where('em_infos.user_id','=',$userid)
@@ -130,7 +130,7 @@ class ChakriController extends Controller
             ->join('user_info','users.id','=','user_info.user_id')
             ->select('user_info.fname','user_info.lname')
             ->first();
-      $job= DB::table('jobs')->where('job_id','=',$jobId)->select('jobs.job_name')->first();
+      $job= DB::table('jobs')->where('id','=',$jobId)->select('jobs.job_name')->first();
 
       $info = array('fname'=> $user->fname,'lname'=> $user->lname, 'job_name'=> $job->job_name);
       Mailgun::send('email.notify.notifyAdminJobs',['info' => $info] , function ($m) use ($info)
@@ -151,6 +151,7 @@ class ChakriController extends Controller
       $jobs = DB::table('jobs')
             ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
             ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
+            ->where('jobs.status','=','1')
             ->orderBy('created_at', 'desc')
             ->get();
 
@@ -263,7 +264,7 @@ class ChakriController extends Controller
     public function showjobs($id)
     {
       $job = DB::table('jobs')
-            ->where('jobs.job_id','=', $id)
+            ->where('jobs.id','=', $id)
             ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
             ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
             ->orderBy('created_at', 'desc')

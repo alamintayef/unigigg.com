@@ -90,7 +90,7 @@ class AdminController extends Controller
     public function activate($id)
     {
           DB::table('jobs')
-          ->where('job_id','=',$id)
+          ->where('id','=',$id)
           ->update(['status'=> 1]);
 
           return redirect('/admin/job/board');
@@ -98,7 +98,7 @@ class AdminController extends Controller
     public function inactivate($id)
     {
           DB::table('jobs')
-          ->where('job_id','=',$id)
+          ->where('id','=',$id)
           ->update(['status'=> 0]);
           return redirect('/admin/job/board');
     }

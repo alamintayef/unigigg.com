@@ -66,7 +66,7 @@ class EmployerController extends Controller
           ->join('user_info', 'em_shortlists.user_id', '=', 'user_info.user_id')
           ->join('users', 'em_shortlists.user_id','=','users.id')
           ->join('em_infos', 'em_shortlists.shortlistedby', '=', 'em_infos.user_id')
-          ->join('jobs', 'em_shortlists.shortlisted_for_job_id', '=', 'jobs.job_id')
+          ->join('jobs', 'em_shortlists.shortlisted_for_job_id', '=', 'jobs.id')
           ->select('user_info.fname', 'user_info.mobile', 'user_info.lname','em_infos.company_name','jobs.job_name','users.email','em_infos.company_phone')
           ->where('em_shortlists.em_shortlist_id', $id)
           ->first();
@@ -99,7 +99,7 @@ class EmployerController extends Controller
           ->join('user_info', 'em_shortlists.user_id', '=', 'user_info.user_id')
           ->join('users', 'em_shortlists.user_id','=','users.id')
           ->join('em_infos', 'em_shortlists.shortlistedby', '=', 'em_infos.user_id')
-          ->join('jobs', 'em_shortlists.shortlisted_for_job_id', '=', 'jobs.job_id')
+          ->join('jobs', 'em_shortlists.shortlisted_for_job_id', '=', 'jobs.id')
           ->select('user_info.fname','user_info.lname', 'user_info.mobile', 'user_info.lname','em_infos.company_name','jobs.job_name','users.email','em_infos.company_phone')
           ->where('em_shortlists.shortlisted_for_job_id', $id)
           ->get();

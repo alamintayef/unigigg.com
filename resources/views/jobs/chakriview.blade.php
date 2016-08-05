@@ -47,7 +47,7 @@
                       <form class="form-control" action="{{url('apply')}}" method="post">
                         {!! csrf_field() !!}
                         <div class="form-group">
-                          <input type="hidden" name="applied_for_job_id" value="{{$job->job_id}}">
+                          <input type="hidden" name="applied_for_job_id" value="{{$job->id}}">
                         </div>
                         <div class="form-group">
                           <input type="hidden" name="user_id" value="{{Auth::user()->id}}">

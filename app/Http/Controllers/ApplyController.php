@@ -40,10 +40,10 @@ class ApplyController extends Controller
       $applied = DB::table('student_applieds')
             ->where('applied_for_job_id', $id)
             ->join('user_info', 'student_applieds.user_id', '=', 'user_info.user_id')
-            ->join('jobs', 'student_applieds.applied_for_job_id', '=', 'jobs.job_id')
+            ->join('jobs', 'student_applieds.applied_for_job_id', '=', 'jobs.id')
             ->join('users' ,'student_applieds.user_id','=','users.id')
           //  ->join('vprofiles', 'users.id','=', 'vprofiles.user_id')
-            ->select('student_applieds.*', 'user_info.*','users.id','jobs.job_id', 'jobs.job_name','jobs.user_id','jobs.paid')
+            ->select('student_applieds.*', 'user_info.*','users.id','jobs.id as job_id', 'jobs.job_name','jobs.user_id','jobs.paid')
             ->get();
      $uid= auth()->user()->id;
      $email = auth()->user()->email;

@@ -22,27 +22,27 @@
                     <strong>Job Title : {{$jobs->job_name}}</strong>
 
 
-                      <form class="pull-right" action="{{url('/shortlists',$jobs->job_id)}}" method="GET">
+                      <form class="pull-right" action="{{url('/shortlists',$jobs->id)}}" method="GET">
                         {!! csrf_field() !!}
                         <button type="submit" class="btn btn-primary ">
                           <i class="fa fa-star"></i> Show Shortlisted
                         </button>
                       </form>
-                      <form class="pull-right" action="{{url('/whoapplied',$jobs->job_id)}}" method="GET">
+                      <form class="pull-right" action="{{url('/whoapplied',$jobs->id)}}" method="GET">
                         {!! csrf_field() !!}
                         <button type="submit" class="btn btn-primary">
                           <i class="fa fa-paper-plane"></i> Show Applied
                         </button>
                       </form>
                       @if(Auth::user()->subs_type===0)
-                        <form class="pull-right" action="{{url('/setappointment',$jobs->job_id)}}" method="GET">
+                        <form class="pull-right" action="{{url('/setappointment',$jobs->id)}}" method="GET">
 
                         <button type="submit" class="btn btn-default ">
                           <i class="fa fa-phone"></i> call Shortlisted
                         </button>
                       </form>
                       @else
-                        <form class="pull-right" action="{{url('callthem/all',$jobs->job_id)}}" method="POST">
+                        <form class="pull-right" action="{{url('callthem/all',$jobs->id)}}" method="POST">
                         {!! csrf_field() !!}
                         <button type="submit" class="btn btn-default btn-sm">
                           <i class="fa fa-phone"></i> call-for-interview

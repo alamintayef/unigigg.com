@@ -57,10 +57,20 @@ class JobsController extends Controller
             'job_last_date_application' => $request->job_last_date_application,
             'job_expires' => $jobExpires,
             'paid' => $request->paid,
-            'slug' => str_slug($request->title),
+            'slug' => str_slug($request->job_name),
 
 
         ]);
+
+        $users = User::where('type','=','1');
+
+        foreach($users as $user) {
+          Mailgun::send('email.notify.jobalert', ['user' => $user], function ($m) use ($user) {
+            $m->from('tayef@unigigg.com', 'New Job Posted');
+
+            $m->to($user->email)->subject('New job Posted');
+        });
+     }
         notify()->flash('Added Successfully! Check Posted Jobs', 'success', [
            'timer' => 2000,
            'text' => 'Great. Thank you for posting a job',
@@ -71,13 +81,24 @@ class JobsController extends Controller
 
 
     }
+
+    public function updateview($id)
+    {
+      $jobs =Jobs::findorFail($id);
+        $area =Area::all();
+      return view('employer.jobupdate',[
+        'jobs'=> $jobs,
+        'area' => $area,
+      ]);
+    }
+
     public function update(Request $request, $id)
     {
 
       $this->validate($request, [
           'job_name' => 'required|max:255',
           'job_type' => 'required',
-          'job_salary' => 'required|min:4|max:12',
+          'job_salary' => 'required|min:4|max:20',
           'job_location' => 'required',
           'job_description' => 'required',
           'min_edu_level' => 'required',
@@ -90,7 +111,7 @@ class JobsController extends Controller
       ]);
 
 
-      $jobs = Jobs::where('job_id',$id);
+      $jobs = Jobs::findorFail($id);
       $jobs->job_name = $request->job_name;
       $jobs->job_type = $request->job_type;
       $jobs->job_salary = $request->job_salary;
@@ -103,12 +124,15 @@ class JobsController extends Controller
       $jobs->job_reqs_additional = $request->job_reqs_additional;
       $jobs->job_start_date = $request->job_start_date;
       $jobs->job_last_date_application = $request->job_last_date_application;
+      $jobs->paid= $request->paid;
+      $jobs->slug = str_slug($request->job_name);
       $jobs->save();
+
       notify()->flash('Updated Successfully!', 'success', [
          'timer' => 2000,
 
        ]);
-    //   $data = array('company_name' => $employer->company_name,'email'=> $employer->email,'jname'=>$employer->job_name,'name'=> $user->name);
+    /*   $data = array('company_name' => $employer->company_name,'email'=> $employer->email,'jname'=>$employer->job_name,'name'=> $user->name);
 
        $users = User::where('type','=','1');
 
@@ -118,8 +142,8 @@ class JobsController extends Controller
 
            $m->to('sarkeralaminnsu@gmail.com')->subject('Hello ! A new job');
        });
-
-      return redirect('/home');
+*/
+      return redirect('/postedjobs');
 
     }
 
@@ -128,6 +152,7 @@ class JobsController extends Controller
 
     public function show(Request $request)
     {
+
       $postedjobs = Jobs::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->get();
       $area =Area::all();
       return view('employer.postedjobs', [
@@ -138,7 +163,7 @@ class JobsController extends Controller
     }
     public function Applicationshow(Request $request)
     {
-      $postedjobs = Jobs::where('user_id', $request->user()->id)->select('jobs.job_name','jobs.job_id')->orderBy('created_at', 'desc')->get();
+      $postedjobs = Jobs::where('user_id', $request->user()->id)->select('jobs.job_name','jobs.id')->orderBy('created_at', 'desc')->get();
       $area =Area::all();
       return view('employer.ShowApplication', [
         'postedjobs'=>$postedjobs,
@@ -164,7 +189,7 @@ class JobsController extends Controller
 
     public function destroy($id)
     {
-      $jobs = Jobs::where('job_id','=',$id);
+      $jobs = Jobs::where('id','=',$id);
 
       $jobs->delete();
       notify()->flash('Deleted Successfully!', 'success', [
@@ -194,7 +219,7 @@ class JobsController extends Controller
   public function showjobs($id)
   {
     $job = DB::table('jobs')
-          ->where('jobs.job_id','=', $id)
+          ->where('jobs.id','=', $id)
           ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
           ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
           ->orderBy('created_at', 'desc')

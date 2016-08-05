@@ -34,7 +34,7 @@
               <td>
                 @if($job->status===0)
                   Inactive
-                  <form class="form-group" action="{{url('/admin/status/activate',$job->job_id)}}" method="POST">
+                  <form class="form-group" action="{{url('/admin/status/activate',$job->id)}}" method="POST">
                     {!! csrf_field() !!}
                     <button type="submit" class="btn btn-sm raised btn-primary">
                       <i class="fa fa-check"></i> Change
@@ -42,7 +42,7 @@
                   </form>
                 @else
                   Active
-                  <form class="form-group" action="{{url('/admin/status/inactivate',$job->job_id)}}" method="POST">
+                  <form class="form-group" action="{{url('/admin/status/inactivate',$job->id)}}" method="POST">
                     {!! csrf_field() !!}
                     <button type="submit" class="btn btn-sm raised btn-warning">
                       <i class="fa fa-check"></i> Change

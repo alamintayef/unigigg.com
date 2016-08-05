@@ -2,20 +2,19 @@
 <html lang="en">
 
   <body>
-    Dear <h4>{{ ($data['name'])}}</h4>
+    Dear <h4>{{$user->name}}</h4>
     <p>
 
-      A new job has been posted with the title {{ ($data['job_name'])}} <br>
-      Job Type : {{($data['job_type'])}}<br>
-      Salary : {{($data['job_salary'])}}<br>
-      Application Deadline : {{($data['job_last_date_application'])}}
+      A new job has been posted! <br>
+      Please check the jobboard from your dashboard to see the job details. <br>
 
+      Please verify your profile to apply to the jobs if not yet verified <br>
 
-      Please click the link to see the job details <a href="http://unigigg.dev/view/jobs/{{($data['title'])}}"></a>
-      Thank you for using unigigg <br>
+      Thank you
+
 
       Best,<br>
-      tayef,<br>
+      Tayef,<br>
       CEO/Co-Founder, <em>unigigg</em>
 
     </p>

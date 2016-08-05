@@ -150,11 +150,7 @@
           @else
             <small class="text-danger">Please build company profile to post a job</small>
           @endif
-          @if(Auth::user()->subs_type!=0)
-            <input type="hidden" name="paid" value="1">
-          @else
-              <input type="hidden" name="paid" value="0">
-          @endif
+        
           {!! Form::close() !!}
         </div>
 

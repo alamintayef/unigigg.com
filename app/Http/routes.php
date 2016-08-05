@@ -215,6 +215,8 @@ Route::group(['middleware' => ['web']], function () {
   //Post Jobs
       Route::get('/postjobs', 'EmployerController@postjobs');
       Route::post('/postjobs', 'JobsController@store');
+      Route::get('/postjobs/update/view/{id}','JobsController@updateview');
+      Route::post('/postjobs/update/{id}', 'JobsController@update');
       Route::post('deletejobs/{id}','JobsController@destroy');
       Route::get('/postedjobs', 'JobsController@show');
       Route::get('/view/applied', 'JobsController@Applicationshow');

@@ -18,8 +18,8 @@ class PublicController extends Controller
 
     $jobs = DB::table('jobs')
     ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
-
     ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
+    ->where('jobs.status','=','1')
     ->orderByRaw("RAND()")->get();
 
     $applied = DB::table('student_applieds')

@@ -39,13 +39,13 @@ class ShortlistController extends Controller
     {
       $shortlisted = DB::table('em_shortlists')
                     ->join('user_info', 'em_shortlists.user_id', '=', 'user_info.user_id')
-                    ->join('jobs', 'em_shortlists.shortlisted_for_job_id', '=', 'jobs.job_id')
+                    ->join('jobs', 'em_shortlists.shortlisted_for_job_id', '=', 'jobs.id')
                     ->select('em_shortlists.*', 'user_info.fname','user_info.lname','jobs.paid')
                     ->where('em_shortlists.shortlisted_for_job_id', $id)
                     ->get();
       $id = auth()->user()->id;
       $shortlistlimit = DB::table('em_shortlists')
-              ->join('jobs', 'em_shortlists.shortlisted_for_job_id', '=', 'jobs.job_id')
+              ->join('jobs', 'em_shortlists.shortlisted_for_job_id', '=', 'jobs.id')
               ->count();
       $jobcount = DB::table('jobs')
                 ->select('jobs.*')
@@ -99,7 +99,7 @@ class ShortlistController extends Controller
         $call = DB::table('em_shortlists')
             ->join('user_info', 'em_shortlists.user_id', '=', 'user_info.user_id')
             ->join('em_infos', 'em_shortlists.shortlistedby', '=', 'em_infos.user_id')
-            ->join('jobs', 'em_shortlists.shortlisted_for_job_id', '=', 'jobs.job_id')
+            ->join('jobs', 'em_shortlists.shortlisted_for_job_id', '=', 'jobs.id')
             ->select('user_info.fname', 'user_info.mobile', 'user_info.lname','em_infos.company_name','jobs.job_name')
             ->get();
 
