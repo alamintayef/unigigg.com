@@ -7,6 +7,7 @@ use App\Model\Student\Reference;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
+use Slack;
 class RefController extends Controller
 {
     //
@@ -29,17 +30,18 @@ class RefController extends Controller
         'referred_by' => 'required|max:100',
         'reference_description' => 'required',
         'referee_number'=>'required|max:14|min:11',
-
-
       ]);
-
       $request->user()->ref()->create([
         'referred_by' => $request->referred_by,
         'reference_description' => $request->reference_description,
         'referee_number' => $request->referee_number,
       ]);
       $uid = auth()->user()->id;
-    DB::table('users')->where('id','=',$uid)->increment('profile_count');
+      $name = auth()->user()->name;
+      $email = auth()->user()->email;
+      Slack::send(''.$name.' has added new reference. His/Her email is '.$email.' ');
+
+      DB::table('users')->where('id','=',$uid)->increment('profile_count');
       notify()->flash('Added Successfully! Go to Dashboard', 'success', [
          'timer' => 3000,
          'text' => 'Thank you',

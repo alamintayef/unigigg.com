@@ -7,7 +7,7 @@ use App\Model\Student\Skills;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
-
+use Slack;
 class SkillController extends Controller
 {
   //
@@ -42,6 +42,10 @@ class SkillController extends Controller
       'skill_proof' => $request->skill_proof,
     ]);
     $uid = auth()->user()->id;
+    $name = auth()->user()->name;
+    $email = auth()->user()->email;
+    Slack::send(''.$name.' has added a new skills. His/Her email is '.$email.' ');
+
     DB::table('users')->where('id',$uid)->increment('profile_count');
 
     notify()->flash('Added Successfully!', 'success', [

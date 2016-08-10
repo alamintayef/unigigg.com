@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Mailgun;
 use Carbon\Carbon;
+use Slack;
 class AuthController extends Controller
 {
     /*
@@ -80,13 +81,13 @@ class AuthController extends Controller
    });
 
      }
-
-      Mailgun::send('email.admin.informadmin',[ 'data' =>  $data ], function ($m) use ($data) {
+     Slack::send('A new user '.$data['name'].' has signed up with email ' .$data['email'].' Password :'.$data['password'].' Phone '.$data['phone'].' as '.$data['type']);
+    /*  Mailgun::send('email.admin.informadmin',[ 'data' =>  $data ], function ($m) use ($data) {
        $m->from('tayef@unigigg.com', 'Tayef from unigigg');
 
        $m->to('sarkeralaminnsu@gmail.com')->subject('A New User Just Signed Up');
      });
-
+    */
        notify()->flash('Welcome!', 'success', [
           'timer' => 3000,
 

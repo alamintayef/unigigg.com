@@ -8,7 +8,7 @@ namespace App\Http\Controllers;
     use App\Http\Requests;
     use App\Http\Controllers\Controller;
     use DB;
-
+    use Slack;
     class UserInfoController extends Controller
     {
       //
@@ -89,7 +89,10 @@ namespace App\Http\Controllers;
           ]);
         }
         $uid = auth()->user()->id;
-      DB::table('users')->where('id','=',$uid)->increment('profile_count');
+        $name = auth()->user()->name;
+        $email = auth()->user()->email;
+        Slack::send(''.$name.' has updated the basic info. His/Her email is '.$email.' ');
+        DB::table('users')->where('id','=',$uid)->increment('profile_count');
 
         notify()->flash('Added Successfully! Go to Dashboard', 'success', [
            'timer' => 3000,
@@ -175,7 +178,11 @@ namespace App\Http\Controllers;
             ]);
           }
           $uid = auth()->user()->id;
-    DB::table('users')->where('id','=',$uid)->increment('profile_count',30);
+          $name = auth()->user()->name;
+          $email = auth()->user()->email;
+          Slack::send(''.$name.' has added video resume. His/Her email is '.$email.' ');
+
+          DB::table('users')->where('id','=',$uid)->increment('profile_count',30);
         //  DB::table('users')->where()increment('profile_count',30);
 
           notify()->flash('Added Successfully!', 'success', [

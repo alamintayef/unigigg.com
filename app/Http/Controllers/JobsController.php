@@ -11,6 +11,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
 use Mailgun;
+use Mail;
 use Carbon\Carbon;
 class JobsController extends Controller
 {
@@ -62,7 +63,7 @@ class JobsController extends Controller
 
         ]);
 
-        $users = User::where('type','=','1');
+       $users = DB::table('users')->where('type','=',1)->get();
 
         foreach($users as $user) {
           Mailgun::send('email.notify.jobalert', ['user' => $user], function ($m) use ($user) {

@@ -7,6 +7,7 @@ use App\Model\Student\ExtraCur;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
+use Slack;
 class ExtraCurController extends Controller
 {
     //
@@ -42,6 +43,10 @@ class ExtraCurController extends Controller
 
         ]);
         $uid = auth()->user()->id;
+        $name = auth()->user()->name;
+        $email = auth()->user()->email;
+        Slack::send(''.$name.' has added new experience. His/Her email is '.$email.' ');
+
         DB::table('users')->where('id','=',$uid)->increment('profile_count');
         notify()->flash('Added Successfully! Go to Dashboard', 'success', [
            'timer' => 2000,

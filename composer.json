@@ -13,7 +13,9 @@
         "guzzlehttp/guzzle": "~5.3|6.2",
         "limatheus/smsgateway": "^1.0",
         "bogardo/mailgun": "4.0.*",
-        "pragmarx/tracker": "^2.0"
+        "pragmarx/tracker": "^2.0",
+        "maknz/slack": "^1.7",
+        "maknz/slack-laravel": "^1.0"
 
 
 

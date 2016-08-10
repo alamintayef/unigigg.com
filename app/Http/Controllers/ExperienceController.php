@@ -7,6 +7,7 @@ use App\Model\Student\Experience;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
+use Slack;
 class ExperienceController extends Controller
 {
     //
@@ -43,7 +44,11 @@ class ExperienceController extends Controller
 
         ]);
         $uid = auth()->user()->id;
-    DB::table('users')->where('id','=',$uid)->increment('profile_count');
+        $name = auth()->user()->name;
+        $email = auth()->user()->email;
+        Slack::send(''.$name.' has added new experience. His/Her email is '.$email.' ');
+
+        DB::table('users')->where('id','=',$uid)->increment('profile_count');
 
         notify()->flash('Added Successfully! Go to Dashboard', 'success', [
            'timer' => 2000,

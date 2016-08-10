@@ -152,6 +152,7 @@ return [
         Codecourse\Notify\NotifyServiceProvider::class,
         Limatheus\SmsGateway\SmsGatewayServiceProvider::class,
         Bogardo\Mailgun\MailgunServiceProvider::class,
+        Maknz\Slack\Laravel\ServiceProvider::class,
 
 
 
@@ -224,6 +225,8 @@ return [
         'Notify'    => Codecourse\Notify\Facades\Notify::class,
         'SMSGateway'=> Limatheus\SmsGateway\Facade::class,
         'Mailgun' => Bogardo\Mailgun\Facades\Mailgun::class,
+        'Slack' => Maknz\Slack\Laravel\Facade::class,
+
 
 
 

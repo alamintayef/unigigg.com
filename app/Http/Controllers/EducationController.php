@@ -51,7 +51,8 @@ class EducationController extends Controller
               'Degree_institute'=> $request->Degree_institute,
               'Degree_result'=> $request->Degree_result,
           ]);
-          DB::table('users')->increment('profile_count');
+          $uid = auth()->user()->id;
+      DB::table('users')->where('id','=',$uid)->increment('profile_count');
 
           notify()->flash('Added Successfully! Go to Dashboard', 'success', [
              'timer' => 2000,

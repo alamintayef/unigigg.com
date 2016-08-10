@@ -433,4 +433,13 @@ class AdminController extends Controller
     {
       return view('admin.addvlogvdo');
     }
+
+    // SUB ADMIN STARTS
+
+    public function subAdmin()
+    {
+      return view('admin.subadmin.index');
+    }
+
+
 }

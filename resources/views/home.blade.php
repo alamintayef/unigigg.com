@@ -5,7 +5,9 @@
   @include('student.partials.dashboard');
 @elseif(Auth::user()->type === 2)
   @include('employer.emdashboard');
-@else
+@elseif(Auth::user()->type === 3)
   @include('admin.adboard');
+@else
+  @include('admin.subadmin.index')
 @endif
 @endsection

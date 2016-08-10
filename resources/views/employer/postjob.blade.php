@@ -136,6 +136,12 @@
             {!! Form::label('job_last_date_application', 'Last Date Of Application') !!}
             {!! Form::date('job_last_date_application', null, ['class'=>'form-control'] ) !!}
           </div>
+          @if(Auth::user()->subs_type===0)
+            <input type="hidden" name="paid" value="0">
+          @else
+            <input type="hidden" name="paid" value="1">
+          @endif
+
 
           @if($postable>0)
             @if(Auth::user()->verified===0)
@@ -150,7 +156,7 @@
           @else
             <small class="text-danger">Please build company profile to post a job</small>
           @endif
-        
+
           {!! Form::close() !!}
         </div>
 

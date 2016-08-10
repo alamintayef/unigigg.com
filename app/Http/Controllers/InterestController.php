@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
 use Session;
+use Slack;
 class InterestController extends Controller
 {
     //
@@ -43,7 +44,11 @@ class InterestController extends Controller
 
         ]);
         $uid = auth()->user()->id;
-      DB::table('users')->where('id','=',$uid)->increment('profile_count');
+        $name = auth()->user()->name;
+        $email = auth()->user()->email;
+        Slack::send(''.$name.' has added a CV. His/Her email is '.$email.' ');
+
+        DB::table('users')->where('id','=',$uid)->increment('profile_count');
        notify()->flash('Added Successfully! Go to Dashboard', 'success', [
           'timer' => 2000,
 

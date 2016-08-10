@@ -80,6 +80,7 @@ Route::get('/github', function(){
     Route::get('search/jobs','PublicController@chakrisearch');
     Route::get('/competitions', 'PublicController@Competitionshow');
     Route::get('/trainings', 'PublicController@Trainingshow');
+    Route::get('/slack','PublicController@slack');
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -183,6 +184,12 @@ Route::group(['middleware' => ['web']], function () {
       Route::post('change/user/password','UserInfoController@PrimaryInfoUpdate');
 
       // admin end ---------------------------------------------------
+
+      //sub admin
+
+
+
+
 
       //competition
       Route::get('add/competition','CompetitionController@index');

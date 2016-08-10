@@ -9,7 +9,7 @@ use App\Model\Student\Competition;
 use DB;
 use SMSGateway;
 use App\Model\student\Training;
-
+use Slack;
 class PublicController extends Controller
 {
   //
@@ -201,6 +201,12 @@ class PublicController extends Controller
           return view('chakri.regularchakri.publicCharkiSearch',[
             'jobs'=>$jobs
           ]);
+
+  }
+
+  public function slack()
+  {
+    Slack::send('Hello world!');
 
   }
 

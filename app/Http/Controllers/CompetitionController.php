@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\student\Competition;
+use App\Model\student\CompetitionApplied;
 use App\Http\Requests;
 
 use DB;
@@ -53,5 +54,22 @@ class CompetitionController extends Controller
          ]);
 
         return redirect('/add/competition');
+    }
+
+    public function comepetitionApply()
+    {
+      $input = $request->all();
+      CompetitionApplied::create($input);
+
+      notify()->flash('Applied Successfully!', 'success', [
+         'timer' => 2000,
+         'text' => 'Thank you'
+       ]);
+
+       return redirect('/');
+
+
+
+
     }
 }

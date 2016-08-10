@@ -39,7 +39,7 @@
     <div class="form-group">
       {!! Form::label('skill_proof', 'Please provide a sample of your work for validation:"', ['class' => 'control-label']) !!}
       {!! Form::text('skill_proof', null, ['class' => 'form-control']) !!}
-      <span class="text-primary">Optional</span><br>
+      
       <small>Please note that without a sample of your work you will be able to apply to jobs or verify your profile</small><br>
       <small class="textb">Upload your skill proof to dropbox/ googledrive/ ondrive and share the link here</small><br>
       <small class="textb">i,e You have MS-powerpoint skill. So do a good powerpoint slide upload it in the cloud and share it</small>
