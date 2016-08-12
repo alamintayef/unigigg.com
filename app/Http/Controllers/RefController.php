@@ -29,7 +29,7 @@ class RefController extends Controller
       $this->validate($request, [
         'referred_by' => 'required|max:100',
         'reference_description' => 'required',
-        'referee_number'=>'required|max:14|min:11',
+        'referee_number'=>'required|max:100|min:11',
       ]);
       $request->user()->ref()->create([
         'referred_by' => $request->referred_by,
@@ -40,7 +40,6 @@ class RefController extends Controller
       $name = auth()->user()->name;
       $email = auth()->user()->email;
       Slack::send(''.$name.' has added new reference. His/Her email is '.$email.' ');
-
       DB::table('users')->where('id','=',$uid)->increment('profile_count');
       notify()->flash('Added Successfully! Go to Dashboard', 'success', [
          'timer' => 3000,

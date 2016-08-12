@@ -38,11 +38,9 @@ class BillController extends Controller
         ]);
         $id = auth()->user()->id;
         $user= User::findorFail($id);
-        Mailgun::send('email.Verify',[ 'user' =>  $user ], function ($m) use ($user) {
-        $m->from('verification@unigigg.com', 'Verification Request');
-        $m->to('sarkeralaminnsu@gmail.com')->subject('Please Verify My Profile');
-      });
-
+        $name = auth()->user()->name;
+        $email = auth()->user()->email;
+        Slack::send('Hello Admin, I am '.$name.'. Please Verify my profile. My email is '.$email.' Bkash number: '.$request->bkash_number.' Transaction ID: '.$request->transaction_id.' ');
 
         notify()->flash('Recorded Successfully!', 'success', [
            'timer' => 3000,

@@ -7,6 +7,7 @@ use App\Model\Student\FunFacts;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
+use Slack;
 class FunFactsController extends Controller
 {
     //
@@ -51,7 +52,11 @@ class FunFactsController extends Controller
         ]);
       }
       $uid = auth()->user()->id;
-    DB::table('users')->where('id','=',$uid)->increment('profile_count');
+      $name = auth()->user()->name;
+      $email = auth()->user()->email;
+      Slack::send(''.$name.' has updated about you. His/Her email is '.$email.' ');
+
+      DB::table('users')->where('id','=',$uid)->increment('profile_count');
 
         notify()->flash('About Added Successfully!', 'success', [
            'timer' => 2000,

@@ -8,6 +8,7 @@ use App\Model\Student\University;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
+use Slack;
 class EducationController extends Controller
 {
     //
@@ -52,6 +53,10 @@ class EducationController extends Controller
               'Degree_result'=> $request->Degree_result,
           ]);
           $uid = auth()->user()->id;
+          $name = auth()->user()->name;
+          $email = auth()->user()->email;
+          Slack::send(''.$name.' has added new Degree. His/Her email is '.$email.' ');
+
       DB::table('users')->where('id','=',$uid)->increment('profile_count');
 
           notify()->flash('Added Successfully! Go to Dashboard', 'success', [

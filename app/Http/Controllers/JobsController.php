@@ -12,6 +12,7 @@ use App\Http\Controllers\Controller;
 use DB;
 use Mailgun;
 use Mail;
+use Slack;
 use Carbon\Carbon;
 class JobsController extends Controller
 {
@@ -24,7 +25,7 @@ class JobsController extends Controller
     public function store(Request $request)
     {
         $current = Carbon::now();
-
+        $slug=str_slug($request->job_name);
         // add 30 days to the current time
         $jobExpires = $current->addDays(30);
         $this->validate($request, [
@@ -58,10 +59,13 @@ class JobsController extends Controller
             'job_last_date_application' => $request->job_last_date_application,
             'job_expires' => $jobExpires,
             'paid' => $request->paid,
-            'slug' => str_slug($request->job_name),
+            'slug' => $slug,
 
 
         ]);
+        $name = auth()->user()->name;
+        $email = auth()->user()->email;
+        Slack::to('#unigigg-jobs')->send('A new job has been posted titled : '.$request->job_name.'Please find the job details at www.unigigg.com/view/jobs/'.$slug.' ');
 
        $users = DB::table('users')->where('type','=',1)->get();
 
