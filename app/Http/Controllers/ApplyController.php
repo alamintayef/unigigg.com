@@ -71,11 +71,16 @@ class ApplyController extends Controller
         'refs'=> $refs,
         'images'=> $images,
         'user' => $user,
-
-
-
       ]);
 
+
+    }
+    public function removeApplication($id){
+
+      $applied = StudentApplied::where('applied_id','=',$id);
+      $applied->delete();
+
+      return redirect('view/applied');
 
     }
 }

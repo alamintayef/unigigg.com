@@ -5,7 +5,7 @@
     <div class="row">
 
       <div class="col-md-10 " style="font-size:12px;">
-      
+
         <br>
         @if(count($jobs)>0)
 
@@ -26,7 +26,7 @@
               <!-- Check if its recruter or not-->
 
 
-                  <form class="form-control" action="{{url('show/jobs',$job->job_id)}}" method="GET">
+                  <form class="form-control" action="{{url('show/jobs',$job->id)}}" method="GET">
                     {!! csrf_field() !!}
 
 

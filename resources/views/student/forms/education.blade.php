@@ -37,6 +37,8 @@
     <div class="form-group">
       {!! Form::label('Degree_start_date', 'Start Date:', ['class' => 'control-label']) !!}
       {!! Form::date('Degree_start_date', null, ['class' => 'form-control']) !!}
+      <small>You do not need to put the exact date. A probable date is good enough</small>
+      <small>SSC starts from class 9</small>
     </div>
     <div class="form-group">
       {!! Form::label('Degree_end_date', 'Expected / Passing Date:', ['class' => 'control-label']) !!}

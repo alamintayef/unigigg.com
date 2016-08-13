@@ -242,6 +242,7 @@ Route::group(['middleware' => ['web']], function () {
       Route::get('/onetime', 'ChakriController@onetime');
   //show who applied
       Route::get('/whoapplied/{id}', ['as'=>'whoapplied','uses'=> 'ApplyController@showApplied']);
+      Route::post('/remove/applied/{id}','ApplyController@removeApplication');
   //shortlist
       Route::post('/shortlist','ShortlistController@store');
       Route::get('/shortlists/{id}',['as'=>'shortlists', 'uses'=> 'ShortlistController@shortlistview']);

@@ -20,6 +20,7 @@ use App\Model\Student\User;
 use App\Model\Student\Jobs;
 use Mailgun;
 use Session;
+use Slack;
 class ChakriController extends Controller
 {
     //
@@ -187,6 +188,7 @@ class ChakriController extends Controller
                ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
                ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
                ->where('job_type', 'internship')
+               ->where('status', 1)
                ->orderBy('created_at', 'desc')
                ->get();
 
@@ -201,6 +203,7 @@ class ChakriController extends Controller
                ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
                ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
                ->where('job_type', 'fulltime')
+               ->where('status', 1)
                ->orderBy('created_at', 'desc')
                ->get();
 
@@ -215,6 +218,7 @@ class ChakriController extends Controller
                ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
                ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
                ->where('job_type', 'parttime')
+               ->where('status', 1)
                ->orderBy('created_at', 'desc')
                ->get();
 
@@ -229,6 +233,7 @@ class ChakriController extends Controller
                ->join('em_infos', 'jobs.user_id', '=', 'em_infos.user_id')
                ->select('jobs.*', 'em_infos.company_name', 'em_infos.company_type')
                ->where('job_type', 'onetime')
+               ->where('status', 1)
                ->orderBy('created_at', 'desc')
                ->get();
 
@@ -271,7 +276,7 @@ class ChakriController extends Controller
             ->first();
 
 
-      $uid= auth()->user()->id;
+      $uid=auth()->user()->id;
 
       $applicable=DB::table('user_info')
                   ->where('user_info.user_id' ,'=',$uid)

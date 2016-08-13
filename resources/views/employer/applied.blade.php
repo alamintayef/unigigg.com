@@ -56,6 +56,13 @@
                   </form>
                 @endif
 
+                <form class="pull-right" action="{{url('/remove/applied',$seek->applied_id)}}" method="POST">
+                  {!! csrf_field() !!}
+                  <button type="submit" class="btn btn-danger">
+                    <i class="fa fa-Trash"></i> Remove
+                  </button>
+                </form>
+
               @if($seek->already===0)
                   <form action="{{url('shortlist')}}" method="post">
                     {!! csrf_field() !!}

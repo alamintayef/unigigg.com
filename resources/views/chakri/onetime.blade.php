@@ -32,7 +32,7 @@
 
               <!-- Check if its recruter or not-->
 
-              <form class="form-control" action="{{url('show/jobs',$job->job_id)}}" method="GET">
+              <form class="form-control" action="{{url('show/jobs',$job->id)}}" method="GET">
                 {!! csrf_field() !!}
 
                 <button type="submit" name="button" class="btn btn-default btn-lg">view</button>
