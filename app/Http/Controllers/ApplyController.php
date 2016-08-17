@@ -22,6 +22,8 @@ use App\Model\Student\Image;
 use App\Model\Student\EmInfo;
 use App\Model\Student\Jobs;
 use Mail;
+use Mailgun;
+use Slack;
 class ApplyController extends Controller
 {
     //
@@ -77,8 +79,23 @@ class ApplyController extends Controller
     }
     public function removeApplication($id){
 
-      $applied = StudentApplied::where('applied_id','=',$id);
-      $applied->delete();
+      $user= DB::table('student_applieds')
+            ->where('student_applieds.applied_id','=',$id)
+            ->join('jobs', 'student_applieds.applied_for_job_id','=','jobs.id')
+            ->join('users','student_applieds.user_id','=','users.id')
+            ->select('users.*', 'jobs.job_name')
+            ->first();
+
+      Mailgun::send('email.notify.rejection', ['user' => $user], function ($m) use ($user) {
+      $m->from('tayef@unigigg.com', 'Tayef from unigigg');
+
+      $m->to($user->email, $user->name)->subject('Hey '.$user->name.'! We are sorry inform you that your application has been turned down');
+
+
+    });
+    $applied = StudentApplied::where('applied_id','=',$id);
+    $applied->delete();
+
 
       return redirect('view/applied');
 

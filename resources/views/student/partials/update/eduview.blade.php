@@ -23,6 +23,8 @@
               <select class="form-control" name="Degree_type" id="select">
                 <option value="SSC">SSC</option>
                 <option value="HSC">HSC</option>
+                <option value="O Level">O level</option>
+                <option value="A Level">A Level</option>
                 <option value="Bachelors">Bachelors</option>
                 <option value="Masters">Masters</option>
               </select>

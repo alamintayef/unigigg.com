@@ -30,7 +30,7 @@ class SkillController extends Controller
     $this->validate($request, [
       'skill_name' => 'required|max:50',
       'skill_experience' => 'required|max:2|min:1',
-      'skill_proof' => 'url'
+      'skill_proof' => 'url|required'
 
 
     ]);

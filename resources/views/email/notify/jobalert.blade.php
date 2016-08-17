@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <style media="screen">
+    body{
+      font-size: 15px;
+    }
+  </style>
+</head>
 
   <body>
-    Dear <h4>{{$user->name}}</h4>
-    <p>
 
+    <p>
+      Dear {{$user->name}},<br>
       A new job has been posted! <br>
-      Please check the jobboard from your dashboard to see the job details. <br>
+      <b>Job Name : </b>{{$jobname}}<br>
+      <b>Job Type : </b>{{$jobType}}<br>
+      <b>Application Deadline : </b>{{$deadline}}<br>
+      Please visit the link to see the job details
+      www.unigigg.com/view/jobs/{{$slug}} <br>
 
       Please verify your profile to apply to the jobs if not yet verified <br>
 
-      Thank you
+      Thank you.
 
 
       Best,<br>
-      Tayef,<br>
-      CEO/Co-Founder, <em>unigigg</em>
+      Md Al Amin Sarker,<br>
+      CEO/Co-Founder,Unigigg
 
     </p>
 

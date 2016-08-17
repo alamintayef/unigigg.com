@@ -240,7 +240,7 @@ class AdminController extends Controller
     }
     public function deletejobs($id)
     {
-      $jobs = Jobs::where('job_id','=',$id);
+      $jobs = Jobs::findorFail('id','=',$id);
 
       $jobs->delete();
       notify()->flash('Deleted Successfully!', 'success', [
@@ -314,7 +314,7 @@ class AdminController extends Controller
 
       $interviewcall = DB:: table('call_for_interviews')
                     ->join('em_infos', 'call_for_interviews.user_id', '=', 'em_infos.user_id')
-                    ->join('jobs', 'call_for_interviews.job_id', '=', 'jobs.job_id')
+                    ->join('jobs', 'call_for_interviews.id', '=', 'jobs.id')
 
                     ->select('em_infos.*','jobs.*','call_for_interviews.*')
                     ->get();
@@ -339,16 +339,16 @@ class AdminController extends Controller
     public function callallforinterview($id)
     {
       DB::table('jobs')
-                  ->where('job_id', $id)
+                  ->where('id', $id)
                   ->update(['paid' => '1']);
       $call = DB::table('em_shortlists')
-            ->join('call_for_interviews','em_shortlists.shortlisted_for_job_id','=','call_for_interviews.job_id')
-            ->join('jobs','em_shortlists.shortlisted_for_job_id','=','jobs.job_id')
+            ->join('call_for_interviews','em_shortlists.shortlisted_for_id','=','call_for_interviews.id')
+            ->join('jobs','em_shortlists.shortlisted_for_id','=','jobs.id')
             ->join('users','em_shortlists.user_id','=','users.id')
             ->join('user_info','users.id','=','user_info.user_id')
             ->join('em_infos','call_for_interviews.user_id','=','em_infos.user_id')
-            ->select('users.email','em_shortlists.shortlisted_for_job_id','jobs.job_name','em_infos.company_name','em_infos.company_phone','user_info.fname','user_info.lname','user_info.mobile','call_for_interviews.appointment','jobs.paid')
-            ->where('em_shortlists.shortlisted_for_job_id','=',$id)
+            ->select('users.email','em_shortlists.shortlisted_for_id','jobs.job_name','em_infos.company_name','em_infos.company_phone','user_info.fname','user_info.lname','user_info.mobile','call_for_interviews.appointment','jobs.paid')
+            ->where('em_shortlists.shortlisted_for_id','=',$id)
             ->get();
           foreach ($call as $calls)
           {
@@ -376,7 +376,7 @@ class AdminController extends Controller
                       ->join('users', 'jobs.user_id','=','users.id')
                       ->join('em_infos','users.id', '=', 'em_infos.user_id')
                       ->select('jobs.job_name', 'users.email', 'em_infos.company_name')
-                      ->where('jobs.job_id',$id)->first();
+                      ->where('jobs.id',$id)->first();
 
                       Mailgun::send('email.admin.callrequestok',[ 'employer' =>  $employer ], function ($m) use ($employer)
                       {

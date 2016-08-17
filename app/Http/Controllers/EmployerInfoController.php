@@ -7,7 +7,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use App\Model\Student\EmInfo;
 use DB;
-
+use Slack;
 class EmployerInfoController extends Controller
 {
     //
@@ -59,6 +59,11 @@ class EmployerInfoController extends Controller
 
               ]);
             }
+
+            $name = auth()->user()->name;
+            $email = auth()->user()->email;
+            Slack::to('#unigigg-jobs')->send('' .$name.' has added his company info ');
+
 
              notify()->flash('Added Successfully! ', 'success', [
                 'timer' => 2000,

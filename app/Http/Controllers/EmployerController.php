@@ -25,6 +25,7 @@ use App\Http\Controllers\Controller;
 use DB;
 use Mailgun;
 use SMSGateway;
+use Slack;
 class EmployerController extends Controller
 {
     //

@@ -26,6 +26,9 @@ class JobsController extends Controller
     {
         $current = Carbon::now();
         $slug=str_slug($request->job_name);
+        $jobname=$request->job_name;
+        $jobType=$request->job_type;
+        $deadline= $request->job_last_date_application;
         // add 30 days to the current time
         $jobExpires = $current->addDays(30);
         $this->validate($request, [
@@ -70,10 +73,10 @@ class JobsController extends Controller
        $users = DB::table('users')->where('type','=',1)->get();
 
         foreach($users as $user) {
-          Mailgun::send('email.notify.jobalert', ['user' => $user], function ($m) use ($user) {
-            $m->from('tayef@unigigg.com', 'New Job Posted');
+          Mailgun::send('email.notify.jobalert', ['user' => $user,'slug'=> $slug,'jobname'=>$jobname,'jobType'=>$jobType,'deadline'=>$deadline], function ($m) use ($user, $slug,$jobname,$jobType,$deadline) {
+            $m->from('tayef@unigigg.com', ''.$jobname.' ');
 
-            $m->to($user->email)->subject('New job Posted');
+            $m->to($user->email)->subject('New Job Postd');
         });
      }
         notify()->flash('Added Successfully! Check Posted Jobs', 'success', [

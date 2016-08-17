@@ -19,7 +19,7 @@
 
     <div class="form-group">
       {!! Form::label('body', 'Write Post:', ['class' => 'control-label']) !!}
-      {!! Form::textarea('body', null, ['class' => 'form-control' ,'rows'=>'4','id'=>'post']) !!}
+      {!! Form::textarea('body', null, ['class' => 'form-control' ,'rows'=>'10','id'=>'post']) !!}
     </div>
     @if($errors->any())
     <div class="alert alert-danger">

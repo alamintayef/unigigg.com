@@ -50,18 +50,19 @@
                       </form>
                     @endif
                     </div>
+                  @endforeach
+                @else
+                  <h4>You have Posted No Jobs</h4>
+                @endif
                   </div>
 
 
 
-              @endforeach
-            @else
-              <h4>You have Posted No Jobs</h4>
-            @endif
 
 
 
-        </div>
+
+
       </div>
     </div>
   </div>
