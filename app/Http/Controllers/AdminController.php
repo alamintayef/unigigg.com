@@ -40,7 +40,7 @@ class AdminController extends Controller
     public function index()
     {
 
-      $alluser = DB::table('users')->where('type',1)->orderBy('profile_count', 'asc')->paginate(15);
+      $alluser = DB::table('users')->where('type',1)->orderBy('profile_count', 'desc')->paginate(15);
       $count = DB::table('users')
               ->join('skills','users.id','=','skills.user_id')
               ->join('user_info','users.id','=','user_info.user_id')
@@ -267,7 +267,8 @@ class AdminController extends Controller
 
       return redirect('/postedjobs');
 
-  }
+   }
+
     public function adduni()
     {
       return view('admin.adduni');
@@ -301,7 +302,6 @@ class AdminController extends Controller
 
        $skill = DB::table('users')
               ->where('name','like','%'.$search.'%')
-
               ->get();
 
 

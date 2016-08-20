@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use DB;
+use Slack;
 class BlogController extends Controller
 {
     //
@@ -33,6 +34,9 @@ class BlogController extends Controller
             'slug' => str_slug($request->title),
 
         ]);
+        $name=auth()->user()->name;
+        Slack::send(' '.$request->title.' has been posted by '.$name.' ');
+
         notify()->flash('Added Successfully!', 'success', [
            'timer' => 2000,
            'text' => 'Thank you'

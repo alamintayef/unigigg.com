@@ -15,10 +15,16 @@
     Name
   </th>
   <th>
+    Email
+  </th>
+  <th>
     Status
   </th>
   <th>
     View Profile
+  </th>
+  <th>
+    Delete
   </th>
   </thead>
   <tbody>
@@ -26,23 +32,32 @@
       <tr>
 
         <td>{{ $skills->name }}</td>
+        <td>{{ $skills->email }}</td>
         <td>
         @if($skills->verified===1)
           <h5>verified</h5>
         @else
           not verified
-
         @endif
         </td>
         <td>
 
-        <form class="form-control" action="{{url('/aprofile',$skills->id)}}" method="GET">
+        <form  action="{{url('/aprofile',$skills->id)}}" method="GET">
 
-          <button type="submit" class="btn btn-default btn-mini pull-right">view</button>
+          <button type="submit" class="btn btn-default ">view</button>
 
         </form>
 
       </td>
+      <td>
+        <form  action="{{url('admin/delete/user',$skills->id)}}" method="POST">
+          {!! csrf_field() !!}
+          <button type="submit" class="btn btn-danger">
+            <i class="fa fa-trash"></i> Delete
+          </button>
+        </form>
+      </td>
+
       </tr>
     @endforeach
   </tbody>

@@ -30,7 +30,7 @@ class SkillController extends Controller
     $this->validate($request, [
       'skill_name' => 'required|max:50',
       'skill_experience' => 'required|max:2|min:1',
-      'skill_proof' => 'url|required'
+      'skill_proof' => 'required|url'
 
 
     ]);
@@ -44,7 +44,7 @@ class SkillController extends Controller
     $uid = auth()->user()->id;
     $name = auth()->user()->name;
     $email = auth()->user()->email;
-    Slack::send(''.$name.' has added a new skills. His/Her email is '.$email.' ');
+    Slack::send(''.$name.' has added a new skills. His/Her email is '.$email.'Skill Name : '.$request->skill_name.' Skills Proof: '.$request->skill_proof.'');
 
     DB::table('users')->where('id',$uid)->increment('profile_count');
 

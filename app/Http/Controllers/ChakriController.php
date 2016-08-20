@@ -132,14 +132,14 @@ class ChakriController extends Controller
             ->select('user_info.fname','user_info.lname')
             ->first();
       $job= DB::table('jobs')->where('id','=',$jobId)->select('jobs.job_name')->first();
-
-      $info = array('fname'=> $user->fname,'lname'=> $user->lname, 'job_name'=> $job->job_name);
+      Slack::send(''.$user->fname.' '.$user->lname.' has applied to '.$job->job_name.' ');
+      /*$info = array('fname'=> $user->fname,'lname'=> $user->lname, 'job_name'=> $job->job_name);
       Mailgun::send('email.notify.notifyAdminJobs',['info' => $info] , function ($m) use ($info)
         {
           $m->from('info@unigigg.com',' '.$info['fname'].' applied for the post '.$info['job_name'].'');
           $m->to('sarkeralaminnsu@gmail.com')->subject('New Job Application Submitted');
         });
-
+        */
 
     }
 

@@ -24,6 +24,7 @@ use App\Model\Student\Jobs;
 use Mail;
 use Mailgun;
 use Slack;
+use Redirect;
 class ApplyController extends Controller
 {
     //
@@ -49,8 +50,6 @@ class ApplyController extends Controller
             ->get();
      $uid= auth()->user()->id;
      $email = auth()->user()->email;
-
-
      return view('employer.applied', [
         'applied'=>$applied,
       ]);
@@ -83,7 +82,7 @@ class ApplyController extends Controller
             ->where('student_applieds.applied_id','=',$id)
             ->join('jobs', 'student_applieds.applied_for_job_id','=','jobs.id')
             ->join('users','student_applieds.user_id','=','users.id')
-            ->select('users.*', 'jobs.job_name')
+            ->select('users.*', 'jobs.job_name','student_applieds.applied_for_job_id')
             ->first();
 
       Mailgun::send('email.notify.rejection', ['user' => $user], function ($m) use ($user) {
@@ -93,11 +92,13 @@ class ApplyController extends Controller
 
 
     });
+    Slack::send(' '.$user->name.' has been remove from '.$user->job_name.' ');
+
     $applied = StudentApplied::where('applied_id','=',$id);
     $applied->delete();
 
+    return Redirect::route('whoapplied', $user->applied_for_job_id);
 
-      return redirect('view/applied');
 
     }
 }

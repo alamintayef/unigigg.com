@@ -187,7 +187,7 @@ Route::group(['middleware' => ['web']], function () {
 
       //sub admin
 
-
+      Route::get('admin','AdminController@index');
 
 
 
@@ -226,7 +226,7 @@ Route::group(['middleware' => ['web']], function () {
       Route::post('/postjobs/update/{id}', 'JobsController@update');
       Route::post('deletejobs/{id}','JobsController@destroy');
       Route::get('/postedjobs', 'JobsController@show');
-      Route::get('/view/applied', 'JobsController@Applicationshow');
+      Route::get('/view/applied', [ 'as'=>'viewapplied','uses'=>'JobsController@Applicationshow']);
   //Jobs
       Route::get('/jobs', 'JobsController@jobboard');
       Route::get('/chakri', 'ChakriController@chakriboard');

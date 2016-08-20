@@ -1,7 +1,7 @@
 @extends('layouts.app')
-
+<title>Employer Board</title>
 @section('content')
-  <div class="container padtop">
+  <div class="container padtop panel">
     <div class="row">
       <table class="table table-striped">
         <thead>
@@ -16,6 +16,12 @@
           </th>
           <th>
             Verify
+          </th>
+          <th>
+            Status
+          </th>
+          <th>
+            Delete
           </th>
         </thead>
         <tbody>
@@ -56,13 +62,16 @@
                   </p>
                 </td>
               @endif
-
-
-
-
+              <td>
+                <form  action="{{url('admin/delete/user',$users->id)}}" method="POST">
+                  {!! csrf_field() !!}
+                  <button type="submit" class="btn btn-danger">
+                    <i class="fa fa-trash"></i> Delete
+                  </button>
+                </form>
+              </td>
             </tr>
           @endforeach
-
         </tbody>
       </table>
     </div>
