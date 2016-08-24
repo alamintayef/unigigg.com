@@ -4,20 +4,20 @@
   <p>
     @if(count($infos)>0)
 
-      @foreach ($infos as $users)
+
         <p>
 
             You Have Applied to :  {{count($joblimit)}} jobs <br>
             You Have Applied to :  {{count($oddjoblimit)}} Eccentric jobs
           <hr>
-          <h6>Phone : {{$users->mobile}}</h6>
-          <h6>Institute: {{$users->institute}}</h6>
-          <h6>NID : {{$users->NId}}</h6>
+          <h6>Phone : {{$infos->mobile}}</h6>
+          <h6>Institute: {{$infos->institute}}</h6>
+          <h6>NID : {{$infos->NId}}</h6>
         </p>
         <p>
-        <h5>University ID :{{$users->universityId}}</h5>
+        <h5>University ID :{{$infos->universityId}}</h5>
         Facebook: Id:
-        <a href="{{$users->facebookId}}" target="_blank">{{$users->fname}}</a><br>
+        <a href="{{$infos->facebookId}}" target="_blank">{{$infos->fname}}</a><br>
       <a class="btn btn-default raised  " href="{{url('userinfo')}}"> <i class="fa fa-edit"></i>Edit Info</a></div>
 
           <hr>
@@ -30,7 +30,7 @@
           </form>
           <hr>
 
-      @endforeach
+      
 @else
     <p>Please add you profile information from <a href="{{url('userinfo')}}">Build profile</a> Tab</p>
   @endif

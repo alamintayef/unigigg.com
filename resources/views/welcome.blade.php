@@ -66,7 +66,7 @@ body{
       <br>
       <br>
       <div >
-        <h1 class = "textw bighead">We Help <span class="dirtfello">Y</span>oung <span class="green">T</span>alents to <strike class="red">Find</strike> Get <br> Jobs &amp; Internships</h1>
+        <h1 class = "textw bighead">We Help <span class="green">T</span>alents to Get <br> Jobs &amp; Internships</h1>
       </div>
       <br>
       <br>
@@ -78,7 +78,7 @@ body{
       <br>
       <br>
       <div class="foo">
-      <a href="#search" class="btn btn-default btn-change font-cor"></b><i class="fa fa-search fa-1x"></i> Search Jobs</b></a>
+      <a href="#search" class="btn btn-default btn-change font-cor"><b><i class="fa fa-search fa-1x"></i> Search Jobs</b></a>
       <a class="btn btn-default font-cor btn-change" href="{{url('jobs/view')}}"><b>Find a Gigg / Internship <i class="fa fa-search-plus"></i></b></a>
       <a class="btn btn-default font-cor btn-change" data-toggle="modal" data-target="#myModal"><b>Post a Job <i class="fa fa-pencil"></i></b></a>
       </div>
@@ -117,15 +117,15 @@ body{
     </div>
   </div>
 </div>
-  <div class="col-md-8 col-md-offset-2 text-center padtop ">
+  <div class="col-md-8 col-md-offset-2 text-center  padtop ">
     <h2 class="text-uppercase">Features That Builds You</h2>
     <div class="divider"></div>
     <p class="foo">We are the only <em>Career</em> Readiness platform in Bangladesh. Our mission is to make you career ready and help you to kick start your career</p>
   </div>
-<section class="services-container ">
+<section class="services-container  ">
 <div class="container">
 <div class="row">
-<div class="col-sm-4">
+<div class="col-sm-4 white" >
 <div class="service-block">
 <i class="material-icons">account_box</i>
 <h2>Public Resume</h2>
@@ -135,7 +135,7 @@ body{
 </div>
 </div>
 
-<div class="col-sm-4">
+<div class="col-sm-4 white">
 <div class="service-block">
 <i class="material-icons md-24">supervisor_account</i>
 <h2>Mentoring</h2>
@@ -145,7 +145,7 @@ body{
 </div>
 </div>
 
-<div class="col-sm-4">
+<div class="col-sm-4 white">
 <div class="service-block">
 <i class="material-icons">lightbulb_outline</i>
 <h2>Skill Development</h2>
@@ -154,7 +154,7 @@ body{
 -->
 </div>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-4 white">
 <div class="service-block">
 <i class="material-icons">business_center</i>
 <h2>Jobs &amp; Internships</h2>
@@ -163,7 +163,7 @@ body{
 -->
 </div>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-4 white">
 <div class="service-block">
 <i class="material-icons">school</i>
 <h2>Training</h2>
@@ -172,7 +172,7 @@ body{
 -->
 </div>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-4 white">
 <div class="service-block">
 <i class="fa fa-trophy fa-4x"></i>
 <h2>Comeptitions</h2>
@@ -441,7 +441,7 @@ body{
     <ul class="list-inline">
 
       <h4>
-        <li class="textw">CV Validation Tk.500/Every Request</li>
+        <li class="textw">CV Validation Tk.500/One Time (Refundable)</li>
 
         <li class="textw">Subscription fee Tk.500/6 Months</li>
 

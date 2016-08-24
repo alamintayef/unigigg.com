@@ -22,6 +22,7 @@ class CreateBlogsTable extends Migration
           $table->text('subtitle');
           $table->text('body');
           $table->string('slug')->unique();
+          $table->boolean('status')->default(0);
           $table->timestamps();
       });
   }

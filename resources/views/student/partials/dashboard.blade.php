@@ -29,7 +29,9 @@
               Free Subscription Expires on : <strong> {{Auth::user()->expireson}}</strong>
               <br>
               <h3>
+              @if(count($infos)>0)
               <a class="btn btn-success raised btn-sm " href="{{ url('/payment') }}"><i class="fa fa-btn fa-check-square-o"></i>Verify Profile</a></h3>
+              @endif
               @if(Auth::user()->subs_type===0)
               @else
                 <button type="button" name="button" class="btn-default btn-lg">Subscribed for 6 months</button>

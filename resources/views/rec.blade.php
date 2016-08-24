@@ -83,7 +83,10 @@ body{
 .boton{
   font-size: 15px;
 }
-}
+
+
+
+
 
 </style>
 <div class="container-fluid transparentbg">
@@ -97,8 +100,9 @@ body{
       <br>
       <br>
       <div class=" pad">
-        <h1 class="textw">Stop Recruiting Like You are in the <strike> 90's</strike></h1>
-        <h1 class="textw">Join Unigigg To Hire Faster and Efficiently</h1>
+        <h1 class="textw">Finding Talents Got Easier</h1>
+        <h3 class="textw">Hire Faster, Hire Better</h3>
+      </h1>
         <br>
         <a type="submit" name="button" class="btn btn-default btn-large boton" href="{{url('login')}}">Post a Job For Free</a>
 
@@ -226,7 +230,7 @@ body{
         <div class="col-md-4 pull left padsmall foo">
 
           <h2>We Curate Talent For You</h2>
-          <h3>and take the headache of recruting for you</h3>
+
 
         </div>
       <div class="col-md-8 foo" >
@@ -238,15 +242,15 @@ body{
   <div class="container-fluid transparentbg pad textw">
     <h3 class="center textw foo">How it Works</h3>
   <div class="col-md-4 col-md-offset-1 bar">
-    <h4 class="textw">1. Create a profile</h4>
+    <h4 class="textw ">1. Create a profile</h4>
     <p class="textw">
       Create a company profile with all the necessary information
     </p>
   </div>
 
   <div class="col-md-4 col-md-offset-1 bar">
-    <h4 class="textw">2. Post a Job</h4>
-    <p class="textw">
+    <h4 class="textw ">2. Post a Job</h4>
+    <p class="textw ">
       Post job specifying exact needs, target university, area <br>
       <small>we will notify every student that matchs with your needs</small>
 
@@ -254,7 +258,7 @@ body{
 
   </div>
   <div class="col-md-4 col-md-offset-1 bar">
-    <h4 class="textw">3. Curating Starts</h4>
+    <h4 class="textw ">3. Curating Starts</h4>
     <p class="textw">
       Sit back, watch the applications roll in <br>
       <small>You can also search through our database and shortlist</small>
@@ -262,8 +266,8 @@ body{
 
   </div>
   <div class="col-md-4 col-md-offset-1 bar">
-    <h4 class="textw">4. Shortlist. Finalize. Pay</h4>
-    <p class="textw">
+    <h4 class="textw ">4. Shortlist. Finalize. Pay</h4>
+    <p class="textw ">
       After you shortlist a bunch of applicants, you finalize them for interview <br>
       <small>After Finalizing You pay us. Then notify the candidates for interview according to your time</small>
     </p>

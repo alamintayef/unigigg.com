@@ -26,10 +26,11 @@ body{
 
 
   <div class="panel whiteproper pad raised">
-    <h4>Add you payment information</h4>
+    <h4>Add payment information</h4>
     <small>You can use any bkash number. Just bkash the fee and add the number with transaction id</small>
     <br><small class="text-primary">We encourage you to register for bkash.</small>
     <h5>Our Bkash number is <b>01674795639</b></h5>
+    <h5><a class="btn btn-link" data-toggle="modal" data-target="#myPayment">See Why are we charging you the money</a></h5>
       {!! Form::open(array('url' => '/payment/store/bkash')) !!}
       @if(count($errors)>0)
         <div class="alert alert-danger">
@@ -66,5 +67,32 @@ body{
   </div>
 </div>
 </div>
+
+<div class="modal fade" id="myPayment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Why are we charging you ?</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+        We check every aspect of your profile, which takes time and effort, That is why we charge you a little amount of fee.<br>
+        But if you think your cv is good enough and presentable you do not have to pay the fee.<br>
+        Just Provide your number and write I am Confident on the transaction_id field. We will get back you to.
+
+        <h5>Cheers</h5>
+        </p>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
 
 @endsection

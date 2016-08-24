@@ -14,6 +14,7 @@ use App\Model\Student\Hobbies;
 use App\Model\Student\Education;
 use App\Model\Student\Interest;
 use App\Model\Student\User;
+use App\Model\Student\Blog;
 use App\Model\Student\Billing;
 use App\Model\Student\FunFacts;
 use App\Model\Student\Image;
@@ -93,13 +94,53 @@ class AdminController extends Controller
           ->where('id','=',$id)
           ->update(['status'=> 1]);
 
+          $job = DB::table('jobs')->where('id','=',$id)->select('jobs.job_name','jobs.job_type','jobs.job_last_date_application','jobs.slug','jobs.job_skill_reqs')->first();
+          $slug = $job->slug;
+          $jobname=$job->job_name;
+          $jobType=$job->job_type;
+          $deadline = $job->job_last_date_application;
+          $job_skill = $job->job_skill_reqs;
+
+          $users = DB::table('users')
+                  ->join('skills','users.id','=','skills.user_id')
+                  ->select('users.*','skills.skill_name')
+                  ->where('skills.skill_name','=',$job_skill)
+                  ->where('users.type','=',1)->get();
+
+            foreach($users as $user) {
+              Mailgun::send('email.notify.jobalert', ['user' => $user,'slug'=> $slug,'jobname'=>$jobname,'jobType'=>$jobType,'deadline'=>$deadline], function ($m) use ($user, $slug,$jobname,$jobType,$deadline) {
+                $m->from('tayef@unigigg.com', ''.$jobname.' ');
+
+                $m->to($user->email)->subject('Job Alert');
+            });
+
           return redirect('/admin/job/board');
     }
+  }
+
+
     public function inactivate($id)
     {
           DB::table('jobs')
           ->where('id','=',$id)
           ->update(['status'=> 0]);
+          return redirect('/admin/job/board');
+    }
+
+    public function blogview()
+    {
+      $blogs = Blog::all();
+
+      return view('admin.blog.blogBoard',[
+        'blogs'=>$blogs,
+      ]);
+    }
+
+    public function activateblog($id)
+    {
+          DB::table('blogs')
+          ->where('id','=',$id)
+          ->update(['status'=> 1]);
           return redirect('/admin/job/board');
     }
 
@@ -200,6 +241,9 @@ class AdminController extends Controller
       DB::table('users')
                   ->where('id', $id)
                   ->update(['verified' => '1']);
+      DB::table('skills')
+                ->where('user_id',$id)
+                ->update(['varified' => '1']);
 
       $verified = DB::table('user_info')->select('user_info.*')->where('user_id',$id)->first();
 

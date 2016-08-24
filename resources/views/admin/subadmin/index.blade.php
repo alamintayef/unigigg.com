@@ -1,7 +1,7 @@
 
 <div class="container padtop">
   <div class="row">
-    <div class="col-md-10 card-raised">
+
 
 
     <h3>Welcome <strong class="primary">{{ Auth::user()->name }}
@@ -14,13 +14,35 @@
       </div>
     @endif
 
+    <div class="col-md-4 card card-raised padsmall">
+      <i class="fa fa-user fa-5x"></i>
+      <h3><a href="admin">User board</a>
+      <h4>{{$allusers}}</h4></h3>
+
+    </div>
+    <div class="col-md-4 panel padsmall">
+      <i class="fa fa-users fa-5x"></i>
+      <h3>
+      <a href="{{url('employerlist')}}">
+      Employer board</a>
+      <h4>{{$allemployer}}</h4>
+      </h3>
+    </div>
+    <div class="col-md-4 panel padsmall">
+      <i class="fa fa-dashboard fa-5x"></i>
+      <h3>
+      <a href="{{url('admin/job/board')}}">Job board</a>
+      <h4>{{$jobcount}}</h4>
+      </h3>
+    </div>
+<!--
   <div class="col-sm-4 panel col-sm-offset-1">
 
       <ul class="list-group">
         <!--
        <li class="list-group-item"><a href="{{url('verification')}}">Show Verification Request</a</li>
 
-       --> 
+
        <li class="list-group-item"><a href="{{url('area')}}">Add area</a></li>
        <li class="list-group-item"><a href="{{url('managejobs')}}">Cron Jobs</a></li>
        <li class="list-group-item"><a href="{{url('manage/odd/jobs')}}">Eccentric Cron Jobs</a></li>
@@ -51,6 +73,7 @@
     <a href="{{url('admin/create/user')}}" class="btn btn-link"><i class="fa fa-plus"></i> Create <i class="fa fa-user"></i></a>
 
   </div>
+-->
 
     @if (notify()->ready())
       <script>

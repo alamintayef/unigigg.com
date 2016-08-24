@@ -27,20 +27,6 @@
   webshims.polyfill('forms forms-ext');
   </script>
 
-<script>
-    ChatraID = 'sjunCQBzAYta2fZXP';
-    (function(d, w, c) {
-        var n = d.getElementsByTagName('script')[0],
-            s = d.createElement('script');
-        w[c] = w[c] || function() {
-            (w[c].q = w[c].q || []).push(arguments);
-        };
-        s.async = true;
-        s.src = (d.location.protocol === 'https:' ? 'https:': 'http:')
-            + '//call.chatra.io/chatra.js';
-        n.parentNode.insertBefore(s, n);
-    })(document, window, 'Chatra');
-</script>
 
   {!! Html::script('js/sweetalert.min.js') !!}
   {!! Html::script('js/prism.js') !!}
@@ -82,7 +68,7 @@
 
   <style>
   body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: 	#f7f7f7;
     font-size: 13px;
     margin-top: 50px;
@@ -150,6 +136,19 @@
     background-color: rgba(0, 0, 0, 0.5);;
   }
 
+  .navbar-brand{
+    font-size: 30px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+
+  }
+  .navbar-nav{
+    font-size: 17px;
+    font-weight: 600;
+
+  }
+
+
 
   </style>
 
@@ -188,7 +187,7 @@
           <ul class="nav navbar-nav navbar-right">
             <!-- Authentication Links -->
             <ul class="nav navbar-nav">
-              <li><a href="#">Jobs</a></li>
+
 
               <li ><a href="{{ url('/') }}" class="btn-change">Talent</a></li>
               <li class="show-on-hover">

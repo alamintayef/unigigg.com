@@ -47,7 +47,7 @@ class HomeController extends Controller
     public function index(Request $request)
     {
 
-      $infos = Userinfo::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->limit(1)->get();
+      $infos = Userinfo::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->first();
       $skill = Skills::where('user_id', $request->user()->id)->get();
       $interest = Interest::where('user_id', $request->user()->id)->get();
       $hobbies = Hobbies::where('user_id', $request->user()->id)->get();
@@ -64,7 +64,7 @@ class HomeController extends Controller
 
       //employer
       $eminfos = EmInfo::where('user_id', $request->user()->id)->get();
-      $jobcount = DB::table('jobs')->select('jobs.*')->where('user_id', $request->user()->id)->count();
+      $jobcount = DB::table('jobs')->select('jobs.*')->count();
       //admin
       $allusers = User::where('type','=',1)->count();
       $allemployer = User::where('type','=',2)->count();

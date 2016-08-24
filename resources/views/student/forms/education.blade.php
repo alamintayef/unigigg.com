@@ -3,25 +3,27 @@
   <div class="card card-raised pad">
 
     {!! Form::open(array('url' => '/edustore')) !!}
+
     <div class="form-group">
       {!! Form::label('Degree_name', 'Major:', ['class' => 'control-label']) !!}
-      <input name="Degree_name" list='major' class="awesomplete form-control" />
-      <datalist id="major">
-            <p>Computer Science And Engineering</p>
-            <p>Business Administration</p>
-            <p>Economics</p>
-            <p>English</p>
-            <p>Mechanical Engineering</p>
-            <p>Textile Engineering</p>
-            <p>Electrical Engineering</p>
-            <p>Science</p>
-            <p>Commerce</p>
-            <p>Arts</p>
-            <p>Fine Arts</p>
+      <input name="Degree_name" id='major' class="awesomplete form-control" />
 
-      </datalist>
+      <script type="text/javascript">
+      var major = document.getElementById("major");
+      var autocompletemajor=new Awesomplete(major, {
+      minChars: 1,
+      autoFirst: true
+      });
+        autocompletemajor.list =['Computer Science and Engineering', 'Science','Commerce','Arts','Business Administration', 'Economics','Mathemtics','Mechanical Engineering','Pharmacy','Electrical and Electronic Engineering','Physics','Chemistry']
+      </script>
+      <small class="text-danger">Required</small>
+      </div>
+      <div class="form-group">
+        {!! Form::label('cgpa', 'Minimum CGPA:', ['class' => 'control-label']) !!}
+        <input name="cgpa" id='cgpa' class="awesomplete form-control" />
 
-    </div>
+        <small class="text-danger">Required</small>
+        </div>
     <div class="form-group">
       {!! Form::label('Degree_type', 'Level:', ['class' => 'control-label']) !!}
       <select class="form-control" name="Degree_type" id="select">
@@ -34,6 +36,12 @@
       </select>
 
     </div>
+    <!---
+    <div class="form-group">
+      {!! Form::label('Degree_start_date', 'Start Date:', ['class' => 'control-label']) !!}
+      {{ Form::selectYear('year', 2013, 2015, ['class' => 'form-control']) }}
+    </div>
+    --->
     <div class="form-group">
       {!! Form::label('Degree_start_date', 'Start Date:', ['class' => 'control-label']) !!}
       {!! Form::date('Degree_start_date', null, ['class' => 'form-control']) !!}

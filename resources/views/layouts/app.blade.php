@@ -73,7 +73,7 @@
 
   <style>
   body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: 	#f7f7f7;
     font-size: 13px;
     margin-top: 50px;
@@ -140,6 +140,17 @@
   {
     background-color: rgba(0, 0, 0, 0.7);;
   }
+  .navbar-brand{
+    font-size: 30px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+
+  }
+  .navbar-nav{
+    font-size: 17px;
+    font-weight: 600;
+
+  }
 
 
   </style>
@@ -179,8 +190,8 @@
           <ul class="nav navbar-nav navbar-right">
             <!-- Authentication Links -->
             <ul class="nav navbar-nav">
-              <li><a href="#" class="hvr-underline-from-center">Jobs</a></li>
-              <li class="btn-change hvr-underline-from-center"><a href="{{ url('/recruiter') }}">Recruiter Site</a></li>
+
+              <li class="btn-change hvr-underline-from-center"><a href="{{ url('/recruiter') }}">For Employers</a></li>
 
               <li class="show-on-hover">
                 <a  href="#" class="dropdown-toggle text-primary hvr-underline-from-center" data-toggle="dropdown" role="button" aria-expanded="false"  aria-haspopup="true">

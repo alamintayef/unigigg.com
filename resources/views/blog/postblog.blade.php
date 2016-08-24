@@ -12,9 +12,7 @@
       @include('layouts.menu')
       <div class="col-md-10">
 
-
-
-          <div class="well">
+      <div class="well">
 
             @if(count($errors)>0)
               <div class="alert alert-danger">

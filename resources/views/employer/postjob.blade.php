@@ -86,7 +86,7 @@
             <datalist id="levellist">
              <option>Bachelors</option>
              <option>Masters</option>
-             <option>HSC</option>
+             <option>HSC/A Level</option>
              <option>Graduating Soon</option>
            </datalist>
          </select>
@@ -104,7 +104,7 @@
             minChars: 1,
             autoFirst: true
             });
-              autocompletemajor.list =['Computer Science', 'Business Administration', 'Economics','Mathemtics']
+              autocompletemajor.list =['Computer Science and Engineering', 'Business Administration', 'Economics','Mathemtics','Mechanical Engineering','Pharmacy','Electrical and Electronic Engineering','Physics','Chemistry']
             </script>
             <small class="text-danger">Required</small>
             </div>
@@ -115,11 +115,12 @@
               <small class="text-danger">Required</small>
               </div>
 
-          <hr>
+
           <div class="form-group">
-            {!! Form::label('job_skill_reqs', 'Skill Requirments:') !!}<span class="text-danger">*</span>
+            {!! Form::label('job_skill_reqs', 'One Core Skill:') !!}<span class="text-danger">*</span>
           <input name="job_skill_reqs" id='job_skill_reqs' class="awesomplete form-control" data-multiple  />
             <small class="ssmal">Insert the specific skill set you are looking for. e.g. MS-Office, Php, Java, Accounting</small>
+
           </div>
 
           </script>
@@ -187,6 +188,16 @@
 
   </script>
   <script type="text/javascript">
+    var major = document.getElementById("job_skill_reqs");
+    var autocomplete=new Awesomplete(job_skill_reqs, {
+    minChars: 1,
+    autoFirst: true
+    });
+    autocomplete.list =['C', 'C++', 'JavaScript','MS-Office','Accounting','Python','Php','Laravel','NodeJs','HTML','Django','Java', 'ASP.NET','Marketing','Finance','Writing','Graphic Design','Web Design','Photo Shop','Adobe Suite','3D Modeling']
+
+  </script>
+  <!---
+  <script type="text/javascript">
   var input = document.getElementById("job_skill_reqs");
   var autocomplete=new Awesomplete(input, {
   minChars: 1,
@@ -200,9 +211,10 @@
     this.input.value = before + text + ", ";
   }
 });
-autocomplete.list =['C', 'C++', 'JavaScript','MS-Office','Accounting','Python','Php','Laravel','NodeJs','HTML','Django','Java', 'ASP.NET','Marketing','Finance','Writing','Graphic Desing','Web Design']
+autocomplete.list =['C', 'C++', 'JavaScript','MS-Office','Accounting','Python','Php','Laravel','NodeJs','HTML','Django','Java', 'ASP.NET','Marketing','Finance','Writing','Graphic Design','Web Design']
 
   </script>
+  --->
   <script type="text/javascript">
   var cgpa = document.getElementById("cgpa");
   var autocompletecgpa=new Awesomplete(cgpa, {

@@ -179,6 +179,10 @@ Route::group(['middleware' => ['web']], function () {
       Route::post('/admin/status/activate/{id}','AdminController@activate');
       Route::post('/admin/status/inactivate/{id}','AdminController@inactivate');
 
+      //blogboard
+      Route::get('/admin/blog/board','AdminController@blogview');
+      Route::post('/admin/blog/status/activate/{id}','AdminController@Blogactivate');
+
       //passchange
       Route::get('change/password','UserInfoController@Change');
       Route::post('change/user/password','UserInfoController@PrimaryInfoUpdate');
