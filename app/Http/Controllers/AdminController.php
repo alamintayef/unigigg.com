@@ -38,6 +38,8 @@ class AdminController extends Controller
     {
       $this->middleware(['auth','employer']);
     }
+
+    /// ADMIN DASHBOARD
     public function index()
     {
 
@@ -53,6 +55,9 @@ class AdminController extends Controller
       ]);
 
     }
+
+    /// EMPLOYER TABLE
+
     public function employer()
     {
       $allemployer = DB::table('users')->where('type',2)->get();
@@ -63,6 +68,8 @@ class AdminController extends Controller
 
 
     }
+
+    /// EMPLOYER VIEW
     public function employerview($id)
     {
       $employer = DB::table('users')
@@ -77,6 +84,7 @@ class AdminController extends Controller
         ]);
     }
 
+    // JOB DETAILED VIEW
     public function jobview()
     {
       $jobs = Jobs::all();
@@ -87,6 +95,8 @@ class AdminController extends Controller
 
 
     }
+    /// ACTIVATE JOBS
+
 
     public function activate($id)
     {
@@ -94,18 +104,14 @@ class AdminController extends Controller
           ->where('id','=',$id)
           ->update(['status'=> 1]);
 
-          $job = DB::table('jobs')->where('id','=',$id)->select('jobs.job_name','jobs.job_type','jobs.job_last_date_application','jobs.slug','jobs.job_skill_reqs')->first();
+          $job = DB::table('jobs')->where('id','=',$id)->select('jobs.job_name','jobs.job_type','jobs.job_last_date_application','jobs.slug')->first();
           $slug = $job->slug;
           $jobname=$job->job_name;
           $jobType=$job->job_type;
           $deadline = $job->job_last_date_application;
-          $job_skill = $job->job_skill_reqs;
 
-          $users = DB::table('users')
-                  ->join('skills','users.id','=','skills.user_id')
-                  ->select('users.*','skills.skill_name')
-                  ->where('skills.skill_name','=',$job_skill)
-                  ->where('users.type','=',1)->get();
+
+           $users = DB::table('users')->where('type','=',1)->get();
 
             foreach($users as $user) {
               Mailgun::send('email.notify.jobalert', ['user' => $user,'slug'=> $slug,'jobname'=>$jobname,'jobType'=>$jobType,'deadline'=>$deadline], function ($m) use ($user, $slug,$jobname,$jobType,$deadline) {
@@ -113,12 +119,14 @@ class AdminController extends Controller
 
                 $m->to($user->email)->subject('Job Alert');
             });
+            }
+
 
           return redirect('/admin/job/board');
-    }
+
   }
 
-
+    // INACTIVATE JOBS
     public function inactivate($id)
     {
           DB::table('jobs')
@@ -127,6 +135,7 @@ class AdminController extends Controller
           return redirect('/admin/job/board');
     }
 
+    // BLOG VIEW
     public function blogview()
     {
       $blogs = Blog::all();
@@ -135,13 +144,13 @@ class AdminController extends Controller
         'blogs'=>$blogs,
       ]);
     }
-
+    /// BLOG ACTIVATE
     public function activateblog($id)
     {
           DB::table('blogs')
           ->where('id','=',$id)
           ->update(['status'=> 1]);
-          return redirect('/admin/job/board');
+          return redirect('/admin/blog/board');
     }
 
 
@@ -174,6 +183,8 @@ class AdminController extends Controller
 
       ]);
     }
+
+    // STORE UNIVERSITY
     public function unistore(Request $request)
     {
       $this->validate($request, [
@@ -189,12 +200,16 @@ class AdminController extends Controller
 
     return redirect('/home');
     }
+
+    /// SHOW AREA
     public function getarea()
     {
         $area = Area::all();
         return view('admin.area',['area'=>$area,]);
     }
 
+
+    /// ADD AREA
     public function areastore(Request $request)
     {
       $this->validate($request, [
@@ -210,6 +225,7 @@ class AdminController extends Controller
 
     return redirect('/area');
     }
+
     //SHOW VERIFICATION REQUEST
     public function verification(){
 
@@ -382,6 +398,7 @@ class AdminController extends Controller
 
     public function callallforinterview($id)
     {
+
       DB::table('jobs')
                   ->where('id', $id)
                   ->update(['paid' => '1']);
@@ -483,6 +500,13 @@ class AdminController extends Controller
     public function subAdmin()
     {
       return view('admin.subadmin.index');
+    }
+
+    public function AdminEmail()
+    {
+      $users = User::all();
+
+      return view('admin.email.postEmail',['users' => $users]);
     }
 
 

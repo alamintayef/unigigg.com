@@ -3,14 +3,14 @@
 @section('content')
   <script type="text/javascript">
   (function ($) {
-    $('#hobby').smoothState();
+    $('#email').smoothState();
  }) (jQuery);
 
   </script>
-  <div class="container padtop" id="hobby">
+  <div class="container padtop" id="email">
     <div class="row">
-      @include('layouts.menu')
-      <div class="col-md-10">
+
+      <div class="col-md-12">
 
       <div class="well">
 
@@ -28,33 +28,33 @@
 
       <div class="panel-body">
 
-    {!! Form::open(array('url' => 'blog/post/create')) !!}
+    {!! Form::open(array('url' => 'admin/email/send')) !!}
 
-    <small class="text-danger">Every field is required</small>
-    <div class="form-group">
-      {!! Form::label('title', 'Title:', ['class' => 'control-label']) !!}
-      {!! Form::text('title', null, ['class' => 'form-control']) !!}
-    </div>
-    <div class="form-group">
-      {!! Form::label('subtitle', 'Sub Title:', ['class' => 'control-label']) !!}
-      {!! Form::text('subtitle', null, ['class' => 'form-control']) !!}
-    </div>
+        <small class="text-danger">Email</small>
+        <div class="form-group">
+          {!! Form::label('Subject', 'Subject:', ['class' => 'control-label']) !!}
+          {!! Form::text('Subject', null, ['class' => 'form-control']) !!}
+        </div>
+        <div class="form-group">
+          {!! Form::label('subtitle', 'Sub Title:', ['class' => 'control-label']) !!}
+          {!! Form::text('subtitle', null, ['class' => 'form-control']) !!}
+        </div>
 
-    <div class="form-group">
-      {!! Form::label('body', 'Write Post:', ['class' => 'control-label']) !!}
-      {!! Form::textarea('body', null, ['class' => 'form-control' ,'rows'=>'10','id'=>'post']) !!}
-    </div>
-    @if($errors->any())
-    <div class="alert alert-danger">
-        @foreach($errors->all() as $error)
-            <p>{{ $error }}</p>
-        @endforeach
-    </div>
-  @endif
+        <div class="form-group">
+          {!! Form::label('body', 'Body :', ['class' => 'control-label']) !!}
+          {!! Form::textarea('body', null, ['class' => 'form-control' ,'rows'=>'10','id'=>'post']) !!}
+        </div>
+        @if($errors->any())
+        <div class="alert alert-danger">
+            @foreach($errors->all() as $error)
+                <p>{{ $error }}</p>
+            @endforeach
+        </div>
+      @endif
 
 
 
-    {!! Form::submit('Add', ['class' => 'btn btn-primary']) !!}
+        {!! Form::submit('Send', ['class' => 'btn btn-primary']) !!}
 
  {!! Form::close() !!}
 

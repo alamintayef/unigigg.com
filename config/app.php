@@ -163,7 +163,6 @@ return [
 
 
 
-
         /*
          * Application Service Providers...
          */
@@ -226,7 +225,6 @@ return [
         'SMSGateway'=> Limatheus\SmsGateway\Facade::class,
         'Mailgun' => Bogardo\Mailgun\Facades\Mailgun::class,
         'Slack' => Maknz\Slack\Laravel\Facade::class,
-
 
 
 

@@ -43,7 +43,7 @@ namespace App\Http\Controllers;
           'passing_date' => 'required|date',
           'mobile' => 'required|max:14|min:11',
           'universityId' => 'required|max:20',
-        
+
           'facebookId' => 'required|url',
           'LinkedInId' => 'url',
 
@@ -228,6 +228,16 @@ namespace App\Http\Controllers;
         return redirect('/home');
 
 
+      }
+      public function unsubscribe($id)
+      {
+        DB::table('users')->where('id','=',$id)->update(['subscribe' => '1']);
+
+        notify()->flash('Successfully Unsubscribed', 'success', [
+          'timer' => 3000,
+          'text' => 'It\'s really great to see you again',
+        ]);
+        return redirect('home');;
       }
 
 

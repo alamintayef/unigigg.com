@@ -80,7 +80,8 @@ Route::get('/github', function(){
     Route::get('search/jobs','PublicController@chakrisearch');
     Route::get('/competitions', 'PublicController@Competitionshow');
     Route::get('/trainings', 'PublicController@Trainingshow');
-    Route::get('/slack','PublicController@slack');
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -181,11 +182,15 @@ Route::group(['middleware' => ['web']], function () {
 
       //blogboard
       Route::get('/admin/blog/board','AdminController@blogview');
-      Route::post('/admin/blog/status/activate/{id}','AdminController@Blogactivate');
+      Route::post('/admin/blog/status/activate/{id}','AdminController@activateblog');
 
       //passchange
       Route::get('change/password','UserInfoController@Change');
       Route::post('change/user/password','UserInfoController@PrimaryInfoUpdate');
+
+      //Admin Email
+
+      Route::get('Admin/Email','AdminController@AdminEmail');
 
       // admin end ---------------------------------------------------
 
@@ -299,6 +304,7 @@ Route::group(['middleware' => 'web'], function () {
   //userinfo
       Route::get('/userinfo', 'UserInfoController@create');
       Route::post('/userstore', 'UserInfoController@store');
+      Route::post('/unsubscribe/{id}', 'UserInfoController@unsubscribe');
     //  Route::get('/userupdate/{id}', 'UserInfoController@update');
       Route::post('/userupdate/{id}', 'UserInfoController@update');
       Route::get('/vdoprofile','UserInfoController@vprofileshow');

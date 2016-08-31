@@ -68,7 +68,7 @@
 
   <style>
   body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Raleway', sans-serif;
     background-color: 	#f7f7f7;
     font-size: 13px;
     margin-top: 50px;
@@ -139,13 +139,17 @@
   .navbar-brand{
     font-size: 30px;
     font-family: 'Raleway', sans-serif;
-    font-weight: 600;
+    font-weight: 500;
 
   }
   .navbar-nav{
     font-size: 17px;
     font-weight: 600;
 
+  }
+  .verified{
+    font-size: 25px;
+    font-weight: bold;
   }
 
 
@@ -189,7 +193,8 @@
             <ul class="nav navbar-nav">
 
 
-              <li ><a href="{{ url('/') }}" class="btn-change">Talent</a></li>
+              <li ><a href="{{ url('/talent') }}" class="btn-change">For Talents</a></li>
+
               <li class="show-on-hover">
                 <a  href="#" class="dropdown-toggle text-primary " data-toggle="dropdown" role="button" aria-expanded="false"  aria-haspopup="true">
                   <i class="fa fa-btn fa-lightbulb-o"></i> Resources <span class="caret"></span>
@@ -325,7 +330,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/jquery.stellar/0.6.2/jquery.stellar.min.js"></script>
-    <script src="//fast.eager.io/V77aiwbirP.js"></script>
+
 
     <div id="search">
         <button type="button" class="close textw">×</button>

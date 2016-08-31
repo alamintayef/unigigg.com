@@ -17,6 +17,9 @@
           Transaction ID
           </th>
           <th>
+            Profile
+          </th>
+          <th>
             verify
           </th>
           <th>
@@ -35,12 +38,21 @@
             <td>
               {{$verify->transaction_id}}
             </td>
+            <td>
+              <form  action="{{url('/aprofile',$verify->id)}}" method="GET">
+                {!! csrf_field() !!}
+                <button type="submit" class="btn btn-primary">
+                  <i class="fa fa-user"></i> View profile
+                </button>
+              </form>
+            </td>
             @if($verify->verified===1)
               <td>
                 <button type="button" class="btn-success">
                   Already Verified
                 </button>
               </td>
+
               <td>
                 <form class="form-group" action="{{url('/undo/verify',$verify->id)}}" method="POST">
                   {!! csrf_field() !!}

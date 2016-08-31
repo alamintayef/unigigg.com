@@ -6,7 +6,7 @@
   <div class="container padtop " id="postjob">
     <div class="row">
       @include('layouts.emmenu')
-      <div class="col-md-6 ">
+      <div class="col-md-8">
         <div class="well panel whiteproper" >
           <h4>Post A Job</h4>
           @if($postable>0)
@@ -75,7 +75,7 @@
 
           <div class="form-group">
             {!! Form::label('job_description', 'Job Description:') !!}<span class="text-danger">*</span>
-            {!! Form::textarea('job_description', null, ['class'=>'form-control', 'rows'=>2, 'id'=> 'job_description'] ) !!}
+            {!! Form::textarea('job_description', null, ['class'=>'form-control', 'rows'=>5, 'id'=> 'job_description'] ) !!}
             <small class="ssmal">Describe what the job is all about. e.g. Responsibilities</small>
           </div>
 
@@ -126,7 +126,7 @@
           </script>
       <div class="form-group">
             {!! Form::label('job_reqs_additional', 'Additional Requirments: ') !!}
-            {!! Form::textarea('job_reqs_additional', null, ['class'=>'form-control', 'rows'=>2,'id'=> 'job_reqs_additional'] ) !!}
+            {!! Form::textarea('job_reqs_additional', null, ['class'=>'form-control', 'rows'=>3,'id'=> 'job_reqs_additional'] ) !!}
             <small class="ssmal">If you have and specific additional requirments</small>
           </div>
           <div class="form-group">
@@ -164,7 +164,7 @@
 
 
       </div>
-      <div class="col-md-3 col-xs-offset-1 panel whiteproper pad">
+      <div class="col-md-2  panel whiteproper pad">
         <h5>Your Jobs</h5>
         @foreach($postedjobs as $jobs)
           <li>{{$jobs->job_name}}</li>

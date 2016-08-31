@@ -83,6 +83,10 @@ body{
 .boton{
   font-size: 15px;
 }
+.bighead{
+  font-size: 90px;
+  font-weight: 400;
+}
 
 
 
@@ -100,11 +104,11 @@ body{
       <br>
       <br>
       <div class=" pad">
-        <h1 class="textw">Finding Talents Got Easier</h1>
-        <h3 class="textw">Hire Faster, Hire Better</h3>
+        <h1 class="textw bighead">Finding Talents Got Easier</h1>
+        <h3 class="textw">Discover Skills Validated Rockstars With A Click</h3>
       </h1>
         <br>
-        <a type="submit" name="button" class="btn btn-default btn-large boton" href="{{url('login')}}">Post a Job For Free</a>
+        <a type="submit" name="button" class="button-alt-light-big" href="{{url('login')}}">Post a Job For Free</a>
 
       </div>
       <br>
@@ -127,6 +131,81 @@ body{
   </div>
 
 </div>
+<div class="container-fluid whiteproper">
+    <div class="row">
+        <div class="col-md-6 pad">
+          <br>
+          <br>
+          <h1 class="textb">Find Pre-Screen Talents
+          </h1>
+           <p class="verified textb">
+          Candidates who apply through our platform have to go though a long process of verification and validation of skills.
+          Each week we’ll deliver fresh, experienced, and fully verified candidates straight to you.
+          </p>
+          
+        </div>
+        <div class="col-md-6 pad">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>Talents</h4>
+                </div>
+                <ul class="list-group" id="contact-list">
+                    <li class="list-group-item">
+                        <div class="col-xs-12 col-sm-3">
+                            <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="Scott Stevens" class="img-responsive img-circle" />
+                        </div>
+                        <div class="col-xs-12 col-sm-9">
+                            <span class="name">Scott Stevens</span><i class="fa fa-check fa-2x"></i><br/>
+                            <span>Android Developer</span><br>
+                            <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip" title="5842 Hillcrest Rd"></span>
+                            <span class="visible-xs"> <span class="text-muted">5842 Hillcrest Rd</span><br/></span>
+                            <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="(870) 288-4149"></span>
+                            <span class="visible-xs"> <span class="text-muted">(870) 288-4149</span><br/></span>
+                            <span class="fa fa-comments text-muted c-info" data-toggle="tooltip" title="scott.stevens@example.com"></span>
+                            <span class="visible-xs"> <span class="text-muted">scott.stevens@example.com</span><br/></span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="col-xs-12 col-sm-3">
+                            <img src="http://api.randomuser.me/portraits/men/97.jpg" alt="Seth Frazier" class="img-responsive img-circle" />
+                        </div>
+                        <div class="col-xs-12 col-sm-9">
+                            <span class="name">Seth Frazier</span> <i class="fa fa-check fa-2x"></i><br/>
+                              <span>Business Developer</span><br>
+                            <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip" title="7396 E North St"></span>
+                            <span class="visible-xs"> <span class="text-muted">7396 E North St</span><br/></span>
+                            <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="(560) 180-4143"></span>
+                            <span class="visible-xs"> <span class="text-muted">(560) 180-4143</span><br/></span>
+                            <span class="fa fa-comments text-muted c-info" data-toggle="tooltip" title="seth.frazier@example.com"></span>
+                            <span class="visible-xs"> <span class="text-muted">seth.frazier@example.com</span><br/></span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="col-xs-12 col-sm-3">
+                            <img src="http://api.randomuser.me/portraits/women/90.jpg" alt="Jean Myers" class="img-responsive img-circle" />
+                        </div>
+                        <div class="col-xs-12 col-sm-9">
+                            <span class="name">Jean Myers</span><i class="fa fa-check fa-2x"></i><br/>
+                            <span>Data Analyst</span><br>
+                            <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip" title="4949 W Dallas St"></span>
+                            <span class="visible-xs"> <span class="text-muted">4949 W Dallas St</span><br/></span>
+                            <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="(477) 792-2822"></span>
+                            <span class="visible-xs"> <span class="text-muted">(477) 792-2822</span><br/></span>
+                            <span class="fa fa-comments text-muted c-info" data-toggle="tooltip" title="jean.myers@example.com"></span>
+                            <span class="visible-xs"> <span class="text-muted">jean.myers@example.com</span><br/></span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+	</div>
+
+
 <!---
 <div class="container-fluid">
 <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
@@ -224,7 +303,6 @@ body{
       </div>
     </div>
   </div>
---->
   <div class="container pad pb whiteproper">
       <div class="row">
         <div class="col-md-4 pull left padsmall foo">
@@ -275,6 +353,79 @@ body{
   </div>
 
 </div>
+
+--->
+<div class="container-fluid whiteproper">
+	<div class="row">
+
+		<div class="col-md-6 pad bar">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Sheena </h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-3 col-lg-3 " align="right"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
+            <div class=" col-md-9 col-lg-9 ">
+              <table class="table table-user-information">
+                <tbody>
+                  <tr>
+                    <td>Department:</td>
+                    <td>Programming</td>
+                  </tr>
+                  <tr>
+                    <td>Hire date:</td>
+                    <td>06/23/2013</td>
+                  </tr>
+                  <tr>
+                    <td>Date of Birth</td>
+                    <td>01/24/1988</td>
+                  </tr>
+
+                     <tr>
+                         <tr>
+                    <td>Gender</td>
+                    <td>Female</td>
+                  </tr>
+                    <tr>
+                    <td>Home Address</td>
+                    <td>Dhaka, Bangladesh</td>
+                  </tr>
+                  <tr>
+                    <td>Email</td>
+                    <td><a >info@support.com</a></td>
+                  </tr>
+                    <td>Phone Number</td>
+                    <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
+                    </td>
+
+                  </tr>
+
+                </tbody>
+              </table>
+
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="col-md-6 pad efoo">
+      <br>
+      <br>
+      <h1 class="textb">Take Complete Control</h1>
+      <p class="textb verified">
+        Review resumes, salary expectations, and other details for every candidate. We give you the ability to request interviews directly with candidates and control your hiring process without pushy recruiters.
+      </p>
+
+    </div>
+  </div>
+	</div>
+</div>
+
 <section>
   <div class="container">
     <div class="row">
@@ -432,10 +583,12 @@ body{
       </div>
 
     </div>
+    <!--
     <div class="center pad whiteproper">
     <h4>  Hiring for Eccentric Job is free <a href="eccentric">Learn more.</a>
       </h4>
   </div>
+  --->
   <script type="text/javascript">
   (function ($) {
     $('#rec').smoothState();

@@ -25,6 +25,8 @@
   <li class="list-group-item">
     <a href="{{url('jobsapplied')}}"><strong>Jobs Applied</strong></a>
   </li>
+
+  <!--
   <li class="list-group-item dropdown">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
       <strong> <i class="fa fa-btn fa-tasks"></i> Resources <span class="caret"></span></strong>
@@ -39,6 +41,7 @@
     </ul>
 
   </li>
+  --->
   <li class="list-group-item">
     <a href="#"><strong>Jobs Sorted</strong></a>
   </li>
@@ -82,6 +85,15 @@
   <li class="list-group-item"> <strong>
     <a  href="{{ url('blog/post') }}">Post a article</a></strong>
   </li>
+  <li class="list-group-item">
+    <form class="" action="{{url('unsubscribe',Auth::user()->id)}}" method="post">
+      {!! csrf_field() !!}
+      @if(Auth::user()->subscribe==0)
+         <button  type="submit" name="name" value=""> Unsubscribe</button>
+      @endif
+      From Job Notification
+    </form>
+</li>
 
 
 

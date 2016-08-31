@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Model\Student\Competition;
 use DB;
 use SMSGateway;
-use App\Model\student\Training;
+use App\Model\Student\Training;
 use Slack;
 class PublicController extends Controller
 {
@@ -208,11 +208,7 @@ class PublicController extends Controller
 
   }
 
-  public function slack()
-  {
-    Slack::send('Hello world!');
 
-  }
 
   //competition
   public function Competitionshow()
@@ -230,5 +226,6 @@ class PublicController extends Controller
       'training' => $training,
     ]);
   }
+
 
 }

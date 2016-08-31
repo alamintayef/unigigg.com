@@ -35,6 +35,20 @@
       <h4>{{$jobcount}}</h4>
       </h3>
     </div>
+    <div class="col-md-4 panel padsmall">
+      <i class="fa fa-check fa-5x"></i>
+      <h3>
+      <a href="{{url('verification')}}">Verification Request</a>
+
+      </h3>
+    </div>
+    <div class="col-md-4 panel padsmall">
+      <i class="fa fa-plus fa-5x"></i>
+      <h3>
+      <a href="{{url('Area')}}">Add Area</a>
+
+      </h3>
+    </div>
 <!--
   <div class="col-sm-4 panel col-sm-offset-1">
 

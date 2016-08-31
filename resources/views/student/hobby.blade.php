@@ -21,7 +21,7 @@
           <li><a href="{{url('refs')}}">Reference</a></li>
           <li><a href="{{url('excc')}}">Extra-Curricular</a></li>
           <li><a href="{{url('interest')}}">Interests</a></li>
-          <li class="active"><a href="{{url('hobby')}}">Hobbies</a></li>
+          <li class="active"><a href="{{url('hobby')}}">Cover Letter</a></li>
           <li><a href="{{url('fun')}}">About You</a></li>
             <li><a href="{{url('vdoprofile')}}">Video Profile</a></li>
 
@@ -58,7 +58,8 @@
       </div>
     </div>
     <div class="col-md-2 panel whiteproper">
-      <h5 class="textb">Hobbies</h5>
+      <h5 class="textb">Cover Letter Link</h5>
+      <small class="textb">Add a cover letter, tweak it a little bit before applying to a job</small>
       @foreach($var as $hobby)
         <ul class="list-group">
           <li class="list-group-item">{{$hobby->hobbies_name}}</li>

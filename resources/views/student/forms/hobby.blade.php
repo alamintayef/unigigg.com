@@ -1,7 +1,7 @@
 
 
     <div class="panel panel-default">
-      <div class="panel-heading"><a class="btn btn-primary  btn-lg" data-toggle="collapse" href="#collapse6">Add Hobbies</a></div>
+      <div class="panel-heading"><a class="btn btn-primary  btn-lg" data-toggle="collapse" href="#collapse6">Add a Cover Letter</a></div>
         <div id="collapse6" class="panel-collapse collapse">
       <div class="panel-body">
 
@@ -9,13 +9,10 @@
 
 
     <div class="form-group">
-      {!! Form::label('hobbies_name', 'Hobby Name:', ['class' => 'control-label']) !!}
+      {!! Form::label('hobbies_name', 'Cover Letter URL:', ['class' => 'control-label']) !!}
       {!! Form::text('hobbies_name', null, ['class' => 'form-control']) !!}
     </div>
-    <div class="form-group">
-      {!! Form::label('hobbies_related_work', 'Why This Hobby ? :', ['class' => 'control-label']) !!}
-      {!! Form::textarea('hobbies_related_work', null, ['class' => 'form-control']) !!}
-    </div>
+
 
 
     {!! Form::submit('Add', ['class' => 'btn btn-primary']) !!}

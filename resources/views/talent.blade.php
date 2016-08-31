@@ -2,21 +2,27 @@
 
 @section('content')
   <style media="screen">
-    body{
-      background: url(http://s33.postimg.org/os2cacwbj/talent.jpg) no-repeat center center fixed;
-      -webkit-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
+
     .price{
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.7);
     }
     .carsol{
       background-color: rgba(0, 0, 0, 0.1);
     }
+    .btn-link{
+      font-size: 30px;
+    }
+    .texty{
+      color: yellow;
+    }
+    h1{
+      font-size: 80px;
+    }
+
   </style>
-    <div class="container-fluid center pad " id="talent">
+    <div class="container-fluid center " id="talent">
             <div class="row ">
+              <div class="price pad">
               <br>
               <br>
               <br>
@@ -26,53 +32,29 @@
               <br>
               <br>
               <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-              <div id="text-carousel" class="carousel slide carsol" data-ride="carousel">
-                <!-- Wrapper for slides -->
-                <div class="row">
 
-                    <div class="col-md-offset-3 col-md-6 foo">
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <div class="carousel-content">
-                                    <div>
-                                      <h2 class="textw "> Get Hired Faster</h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="carousel-content">
-                                    <div>
-                                      <h2 class="textw ">Gain Experience</h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              <a class="left carousel-control" href="#text-carousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-              </a>
-              <a class="right carousel-control" href="#text-carousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-              </a>
-              </div>
+              <h1 class="textw">
+                We've got your back
+                </h1>
+                <h2 class="textw">
+                Our talent team will help you polish your profile,
+                nail your interviews, and be by your side all the way till your first day at your new job.
+                <br>
+                <br>
+                <a href="register" class="button-alt-light-big">Sign Up</a>
+                </h2>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
             </div>
-
+            </div>
           </div>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
 
+<!--
 
           <div class="container-fluid  center pad" id="student-price">
             <div class="col-md-6 pad fontbig price">
@@ -102,37 +84,150 @@
 
 
           </div>
-          <div class="container-fluid whiteproper center pad">
-            <div class="foo">
+--->
+<div class="container-fluid white">
+      <div class="row">
+        <div class="col-md-6 pad">
+          <h1 class="textb">Get Verified
+          </h1>
+ <p class="verified textb">
+Tell us about yourself. We’ll look over your profile to see if you match our clients’ hiring needs.
+Then we’ll help refine your profile to give you the best opportunity at landing your dream job.
+</p>
+        </div>
 
-              <h2 class="textb">We Help you to</h2>
-              <h5 class="textb">Identify you professional work skills</h5>
-              <br>
-              <h5 class="textb">Build a dynamic profile showing your primary skill group</h5>
-              <br>
-              <h5 class="textb">Create a portfolio of online content showing your skills.</h5>
-              <br>
-              <h5 class="textb">Build work experience.</h5>
-              <br>
-              <h5 class="textb"> Find better offers, super fast </h5>
 
+        <div class="col-md-6 toppad" >
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Sheena </h3>
             </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="right"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
+                <div class=" col-md-9 col-lg-9 ">
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Department:</td>
+                        <td>Programming</td>
+                      </tr>
+                      <tr>
+                        <td>Hire date:</td>
+                        <td>06/23/2013</td>
+                      </tr>
+                      <tr>
+                        <td>Date of Birth</td>
+                        <td>01/24/1988</td>
+                      </tr>
 
-          </div>
+                         <tr>
+                             <tr>
+                        <td>Gender</td>
+                        <td>Female</td>
+                      </tr>
+                        <tr>
+                        <td>Home Address</td>
+                        <td>Dhaka, Bangladesh</td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td><a >info@support.com</a></td>
+                      </tr>
+                        <td>Phone Number</td>
+                        <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
+                        </td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
 
 
-          <div class="container-fluid white pad" >
-            <div class="row center pb foo" >
-                  <br>
-                  <br>
-                  <br>
-                  <h2 class="textb">Eccentric Jobs</h2>
-                  <h4 class="textb">Tutions, Assignments, nano-gigs that are neglected as jobs are eccentric jobs</h4>
-                  <a href="{{url('eccentric')}}" class="btn btn-default btn-lg">Learn More</a>
-
-
+                </div>
               </div>
             </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid whiteproper pad">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="http://appointmentschedulingnews.com/wp-content/uploads/2016/03/schedulingsystempoweruser.png" alt="" height="450" width="500px" />
+        </div>
+        <div class="col-md-6">
+          <h1 class="textb">Get Empowered
+          </h1>
+     <p class="verified textb">
+       While polishing your profile
+       if we find anything that is not right we help you to fix it.
+       We connect you the opportunities that will empower your to land on your dream job.
+     </p>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="container-fluid white pad">
+
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="textb">Meet the team
+          </h1>
+     <p class="verified textb">
+      We know as a fresher you'll be nervous about interviews.
+      Meet our talent team and set up a mock interview.
+      They’ll guide you in your job search as a resource, coordinator and a friend.
+     </p>
+        </div>
+        <div class="col-md-6 ">
+          <img src="http://www.pngall.com/wp-content/uploads/2016/07/Team-PNG.png" alt="" height="300" width="405px" class="pull-right" />
+        </div>
+
+
+      </div>
+
+    </div>
+    <div class="container-fluid whiteproper pad">
+
+      <div class="row">
+        <div class="col-md-6 ">
+          <img src="http://www.freeiconspng.com/uploads/like-icon-0.png" alt="" height="300" width="300"  />
+        </div>
+        <div class="col-md-6">
+          <h1 class="textb">Get Hired
+          </h1>
+     <p class="verified textb">
+      Land at your dream job, Don't worry about the next because we're always here to help !
+     </p>
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+    <div class="container-fluid white pad">
+      <div class="col-md-6">
+        <h1 class="textb">Ready to get hired ?</h1>
+        <p class="textb verified">
+          We are ready to help! Try Unigigg to find a job you desire <br>
+          <a href="register" class="button-alt-big">Sign Up</a>
+        </p>
+      </div>
+      <div class="col-md-5 col-md-offset-1 pull-right">
+        <h1 class="textb ">Have more questions ?</h1>
+        <p class="verified textb">Check out our <a href="/faqs" class="btn btn-link">FAQs</a></h3>
+
+      </div>
+
+    </div>
+
           </div>
 
           <script type="text/javascript">

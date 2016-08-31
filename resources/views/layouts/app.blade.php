@@ -9,28 +9,32 @@
   <meta name="name" content="First Online Youth Employment Platform in Bangladesh">
   <meta name="jobs" content="Find Jobs, Tuitions , Internships">
   <meta http-equiv="Page-Enter" content="revealTrans(Duration=2.0,Transition=12)">
+  <meta name=“csrf-token” content=“{{ csrf_token() }}” />
   <title>Internships & Jobs for Young Talents</title>
   <!-- Fonts--->
 
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway" />
   <!-- Fonts--->
 
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open Sans" />
   <link href='https://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" media="screen" title="no title" charset="utf-8">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" media="screen" title="no title" charset="utf-8">
   <!-- jqurey -->
-   <!--js -->
+  <!--js -->
   <script src="https://cdn.jsdelivr.net/jquery.smoothstate/0.7.2/jquery.smoothState.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js" type="text/javascript"></script>
 
   <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
   <script>
-      webshims.setOptions('forms-ext', {types: 'date'});
+  webshims.setOptions('forms-ext', {types: 'date'});
   webshims.polyfill('forms forms-ext');
   </script>
+
+
+
 
 
   {!! Html::script('js/sweetalert.min.js') !!}
@@ -56,31 +60,32 @@
   <script type="text/javascript">
   $(function () {
     $('a[href="#search"]').on('click', function(event) {
-        event.preventDefault();
-        $('#search').addClass('open');
-        $('#search > form > input[type="search"]').focus();
+      event.preventDefault();
+      $('#search').addClass('open');
+      $('#search > form > input[type="search"]').focus();
     });
 
     $('#search, #search button.close').on('click keyup', function(event) {
-        if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
-            $(this).removeClass('open');
-        }
+      if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+        $(this).removeClass('open');
+      }
     });
 
-});
+  });
 
   </script>
 
+
   <style>
   body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Raleway', sans-serif;
     background-color: 	#f7f7f7;
     font-size: 13px;
     margin-top: 50px;
-}
-.padtop{
-  padding-top: 30px;
-}
+  }
+  .padtop{
+    padding-top: 30px;
+  }
 
   .font-cor{
     font-family: 'Raleway', cursive;
@@ -133,6 +138,9 @@
   .textb{
     color:#3b5998;
   }
+  .textg{
+    color:#4bbd93;
+  }
   .student{
     background-image: url(http://cdn1.theodysseyonline.com/files/2016/01/23/635891727862807756463608822_inspiration.jpg);
   }
@@ -143,7 +151,7 @@
   .navbar-brand{
     font-size: 30px;
     font-family: 'Raleway', sans-serif;
-    font-weight: 600;
+    font-weight: 500;
 
   }
   .navbar-nav{
@@ -151,8 +159,10 @@
     font-weight: 600;
 
   }
-
-
+  .verified{
+    font-size: 25px;
+    font-weight: bold;
+  }
   </style>
 
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -192,6 +202,7 @@
             <ul class="nav navbar-nav">
 
               <li class="btn-change hvr-underline-from-center"><a href="{{ url('/recruiter') }}">For Employers</a></li>
+              <li class="btn-change hvr-underline-from-center"><a href="{{ url('/talent') }}">For Talents</a></li>
 
               <li class="show-on-hover">
                 <a  href="#" class="dropdown-toggle text-primary hvr-underline-from-center" data-toggle="dropdown" role="button" aria-expanded="false"  aria-haspopup="true">
@@ -218,7 +229,7 @@
 
             <li><a href="{{ url('/login') }}" class="hvr-underline-from-center"><i class="fa fa-sign-in"></i> Sign in</a></li>
 
-            </ul>
+          </ul>
         </div>
       </div>
     </nav>
@@ -246,15 +257,11 @@
           <!-- Left Side Of Navbar -->
           <ul class="nav navbar-nav">
             <li>
-            <a class=" text-primary" href="{{ url('/home') }}" >
-              <i class="fa fa-home "></i> Dashboard
-            </a>
+              <a class=" text-primary" href="{{ url('/home') }}" >
+                <i class="fa fa-home "></i> Dashboard
+              </a>
             </li>
           </ul>
-
-
-
-
 
           <!-- Right Side Of Navbar -->
           <ul class="nav navbar-nav navbar-right">
@@ -273,8 +280,11 @@
                     <li><a href="{{ url('blogs') }}"><i class="fa fa-btn fa-paperclip animsition-link"></i>Blog</a></li>
                     <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-rocket animsition-link"></i>Competitions</a></li>
                     <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-question-circle animsition-link"></i>FAQs</a></li>
+
+
                     <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-sitemap animsition-link"></i>Tutorials</a></li>
                     <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-tablet animsition-link"></i>Training</a></li>
+
                   </ul>
                 </li>
               @endif
@@ -326,26 +336,23 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/jquery.stellar/0.6.2/jquery.stellar.min.js"></script>
-    <script src="//fast.eager.io/V77aiwbirP.js"></script>
-
     <div id="search">
-        <button type="button" class="close textw">×</button>
-        <form role="form" method="GET" action="{{ url('/search/people') }}">
-              {!! csrf_field() !!}
-            <input type="search" name="search" value="" placeholder="type skill(s) here" />
-            <button type="submit" class="btn btn-primary" >Find Me Jobs</button>
-            <p>
-              Search People
-            </p>
-        </form>
+      <button type="button" class="close textw">×</button>
+      <form role="form" method="GET" action="{{ url('/search/people') }}">
+        {!! csrf_field() !!}
+        <input type="search" name="search" value="" placeholder="type skill(s) here" />
+        <button type="submit" class="btn btn-primary" >Find Me Jobs</button>
+        <p>
+          Search People
+        </p>
+      </form>
     </div>
     <script>
-function myFunction() {
-     swal("We are working on It!", "Thank you for trying out :D")
-}
-</script>
+    function myFunction() {
+      swal("We are working on It!", "Thank you for trying out :D")
+    }
+    </script>
 
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
   </body>

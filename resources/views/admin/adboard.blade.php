@@ -41,6 +41,7 @@
          {!! Form::close() !!}
        </li>
        <li class="list-group-item"><a href="{{url('adduniversity')}}">Add University</a> <span class="badge">{{$uni}}</span></li>
+       <li class="list-group-item"><a href="{{url('Admin/Email')}}">Email</a></li>
       </ul>
 
 

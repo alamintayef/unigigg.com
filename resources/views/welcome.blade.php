@@ -33,7 +33,11 @@ body{
   background-color: rgba(0, 0, 0, 0.5);
 }
 .bighead{
-  font-size: 60px;
+  font-size: 90px;
+  font-weight: 400;
+}
+.bighead2{
+  font-size: 70px;
   font-weight: 400;
 }
 .dirtfello{
@@ -45,6 +49,10 @@ body{
 .red{
   color:red;
 }
+.azure{
+  background-color: #F0FFFF;
+}
+
 </style>
 <div class="">
 
@@ -71,16 +79,10 @@ body{
       <br>
       <br>
       <br>
-      <br>
-
-
-      <br>
-      <br>
-      <br>
       <div class="foo">
-      <a href="#search" class="btn btn-default btn-change font-cor"><b><i class="fa fa-search fa-1x"></i> Search Jobs</b></a>
-      <a class="btn btn-default font-cor btn-change" href="{{url('jobs/view')}}"><b>Find a Gigg / Internship <i class="fa fa-search-plus"></i></b></a>
-      <a class="btn btn-default font-cor btn-change" data-toggle="modal" data-target="#myModal"><b>Post a Job <i class="fa fa-pencil"></i></b></a>
+      <a href="#search" class="button-alt-light-big"><b><i class="fa fa-search fa-1x"></i> Search Jobs</b></a>
+      <a class="button-alt-light-big" href="{{url('jobs/view')}}"><b>Find a Gigg / Internship <i class="fa fa-search-plus"></i></b></a>
+      <a class="button-alt-light-big" data-toggle="modal" data-target="#myModal"><b>Post a Job <i class="fa fa-pencil"></i></b></a>
       </div>
       <script>
           function myFunction() {
@@ -117,70 +119,7 @@ body{
     </div>
   </div>
 </div>
-  <div class="col-md-8 col-md-offset-2 text-center  padtop ">
-    <h2 class="text-uppercase">Features That Builds You</h2>
-    <div class="divider"></div>
-    <p class="foo">We are the only <em>Career</em> Readiness platform in Bangladesh. Our mission is to make you career ready and help you to kick start your career</p>
-  </div>
-<section class="services-container  ">
-<div class="container">
-<div class="row">
-<div class="col-sm-4 white" >
-<div class="service-block">
-<i class="material-icons">account_box</i>
-<h2>Public Resume</h2>
-<!--
-<p>A resume is one of the most important writeup you will ever write. It is important to have a good Resume or CV to land on a job and we will help you to have that good Resume and CV</p>
--->
-</div>
-</div>
 
-<div class="col-sm-4 white">
-<div class="service-block">
-<i class="material-icons md-24">supervisor_account</i>
-<h2>Mentoring</h2>
-<!--
-<p>Mentors guide you to take decision that will help you make your life better. We are introducting virtual mentoring from industry expert who will guide to through every step</p>
--->
-</div>
-</div>
-
-<div class="col-sm-4 white">
-<div class="service-block">
-<i class="material-icons">lightbulb_outline</i>
-<h2>Skill Development</h2>
-<!--
-<p>We help you to invest in you. Most of the people do not get jobs because of not having the right skills. Here we connect you with skill development opportunities</p>
--->
-</div>
-</div>
-<div class="col-sm-4 white">
-<div class="service-block">
-<i class="material-icons">business_center</i>
-<h2>Jobs &amp; Internships</h2>
-<!--
-<p>We help you find jobs according to your skills. We spent time on you to make you better, make you career ready and fit for the job</p>
--->
-</div>
-</div>
-<div class="col-sm-4 white">
-<div class="service-block">
-<i class="material-icons">school</i>
-<h2>Training</h2>
-<!--
-<p>Professional training helps boost confidence. Confidence is one of the key of success. Here we connect you with various training opportunitie</p>
--->
-</div>
-</div>
-<div class="col-sm-4 white">
-<div class="service-block">
-<i class="fa fa-trophy fa-4x"></i>
-<h2>Comeptitions</h2>
-<!--
-<p>Competition is one of the best way to practice team building and to learn multi-disiplinary skills. Compete to solve a real life problems, pick up new skilss and shine</p>
--->
-</div>
-</section>
 
 <!--
 
@@ -344,7 +283,7 @@ body{
     	</div>
 	</div>
 </div>
--->
+
 <div class="container-fluid" id="timelinebg">
   <div class="col-md-12 pad">
 
@@ -400,6 +339,65 @@ body{
 </ul>
   </div>
 </div>
+--->
+<div class="container-fluid whiteproper">
+	<div class="row">
+    <div class="col-md-6 pad efoo">
+      <h1 class="textb">How Does <br> Unigigg Work ?</h1>
+      <p class="textb verified">
+        Create a profile. Get verified. Receive Notifications. Get Hired.
+      </p>
+      <a href="talent" class="button-alt-big">I want to know more</a>
+    </div>
+		<div class="col-md-6 pad bar">
+    	 <div class="well profile">
+            <div class="col-sm-12">
+                <div class="col-xs-12 col-sm-8">
+                    <h2>Shereen</h2>
+                    <p><strong>About: </strong> Web Designer / UI. </p>
+                    <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
+                    <p><strong>Skills: </strong>
+                        <span class="tags">html5</span>
+                        <span class="tags">css3</span>
+                        <span class="tags">jquery</span>
+                        <span class="tags">bootstrap3</span>
+                    </p>
+                </div>
+                <div class="col-xs-12 col-sm-4 text-center">
+                    <figure>
+                        <img src="https://cdn1.iconfinder.com/data/icons/character-2/240/19-512.png" alt="" class="img-circle img-responsive">
+
+                    </figure>
+                </div>
+            </div>
+
+    	 </div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container-fluid azure pad">
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <img src="http://vignette3.wikia.nocookie.net/thestudents/images/2/2c/Megamind_Run.png/revision/latest?cb=20140629163338" alt="" />
+
+
+    </div>
+    <div class="col-md-6">
+      <h1 class="textb bighead2">Looking for a Megamind to join your team ?</h1>
+    </div>
+
+    <div class="col-md-12 text-center">
+      <br><br>
+      <h3 class="textb">Try Unigigg To Hire The Superstar You Want !</h3>
+      <a href="recruiter" class="button-alt-big">Learn More</a>
+
+    </div>
+
+  </div>
+
+</div>
 <!--
 <div class="container-fluid white center " >
   <div class="row pad">
@@ -434,7 +432,7 @@ body{
   </div>
 
 </div>
--->
+
 <div class="container-fluid  center pad" id="student-price" style="height:400px";>
   <div class="col-md-6 pad fontbig price ecc">
 
@@ -454,7 +452,7 @@ body{
 
 
 </div>
-
+--->
 
 <div class="container-fluid center whiteproper  padsmall" >
   <h3 class="padsmall" style="font-size:3.2em;"> People We Work With</h2>

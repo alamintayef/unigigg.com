@@ -4,7 +4,7 @@
       <h3><i class="fa fa-graduation-cap text-primary"></i><span class="textw">unigigg</span></h3>
       <h5 class="textw">
       <br>
-      We are on a mission to help our youth build better future and help employers attract proactive talents.
+      We are on a mission to make the hiring process transparent and automated in Bangladesh.
     </h5>
 
     </div>
