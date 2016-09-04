@@ -24,7 +24,7 @@
       <a href="{{url('admin')}}">Go Back</a>
     @endif
 
-    <div class="col-md-10">
+    <div class="col-md-10 col-sm-10 col-xs-10">
 
       <div class="panel panel-blue" >
         <div class="panel-heading">
@@ -40,6 +40,7 @@
 
 
                 <div class="well">
+
                   {!! $info->fun_facts !!}<br>
                   {!! $info->inspiration_qot !!}<br>
                   {{$info->Why_you}}<br>
@@ -115,13 +116,13 @@
           @endif
           @if(count($interest)>0)
               <h4><a href="{{$interest->interest_name}}">CV</a></h4>
-              
+
           @endif
 
           @if(count($skill)>0)
 
             <h4>Skills</h4>
-            <table class="table ft">
+            <table class="table ft table-responsive">
               <thead>
                 <th>
                   Title
@@ -240,8 +241,8 @@
           @if(count($vdo)>0)
 
 
-            <div class="center card card-raised padsmall">
-              <iframe width="460" height="275" src="https://www.youtube.com/embed/{{$vdo->vdourl}}" frameborder="0" allowfullscreen></iframe>
+            <div class="center card card-raised padsmall embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" width="460" height="275" src="https://www.youtube.com/embed/{{$vdo->vdourl}}" frameborder="0" allowfullscreen></iframe>
 
             </div>
           @endif

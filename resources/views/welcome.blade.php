@@ -50,7 +50,7 @@ body{
   color:red;
 }
 .azure{
-  background-color: #F0FFFF;
+  background-color: #F5F3EE;
 }
 
 </style>
@@ -377,7 +377,7 @@ body{
 </div>
 
 
-<div class="container-fluid azure pad">
+<div class="container-fluid   pad">
   <div class="row">
     <div class="col-md-6 text-center">
       <img src="http://vignette3.wikia.nocookie.net/thestudents/images/2/2c/Megamind_Run.png/revision/latest?cb=20140629163338" alt="" />

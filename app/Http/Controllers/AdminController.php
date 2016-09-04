@@ -263,7 +263,7 @@ class AdminController extends Controller
 
       $verified = DB::table('user_info')->select('user_info.*')->where('user_id',$id)->first();
 
-      $deviceID = '23724';
+      $deviceID = '28632';
       $number = $verified->mobile;
 
       $message = 'Congratulations ! '.$verified->fname.' '.$verified->lname. ' Your profile has been verified successfully, You can now apply to regular jobs. Regards unigigg team ';
@@ -446,10 +446,10 @@ class AdminController extends Controller
                       });
 
 
-                                notify()->flash('Notified!', 'success', [
-                                  'timer' => 2000,
+            notify()->flash('Notified!', 'success', [
+              'timer' => 2000,
 
-                                ]);
+            ]);
 
       return redirect('call/for/in');
     }
@@ -507,6 +507,28 @@ class AdminController extends Controller
       $users = User::all();
 
       return view('admin.email.postEmail',['users' => $users]);
+    }
+    public function PostAdminEmail(Request $request)
+    {
+      $subject = $request->subject;
+      $subtitle = $request->subtitle;
+      $body = $request->body;
+      $link =$request->link;
+
+      $user=DB::table('users')->where('type','=','1')->get();
+      foreach ($user as $users) {
+
+      Mailgun::send('email.notify.adminemail',[ 'users' =>  $users, 'subject' =>$subject, 'subtitle'=>$subtitle,'body' => $body ], function ($m) use ($users,$subject,$subtitle,$body)
+      {
+        $m->from('info@unigigg.com', ''.$subtitle.'');
+        $m->to($users->email)->subject(''.$subject.'');
+      });
+      }
+
+      return redirect('home');
+
+
+
     }
 
 

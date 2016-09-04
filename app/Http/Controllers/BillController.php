@@ -50,7 +50,7 @@ class BillController extends Controller
     }
     public function appointment($id)
     {
-      $job=DB::table('jobs')->select('jobs.*')->where('job_id','=',$id)->first();
+      $job=DB::table('jobs')->select('jobs.*')->where('id','=',$id)->first();
 
       return view('employer.appointment.paynsetappointment',[
         'job'=> $job,
@@ -70,7 +70,7 @@ class BillController extends Controller
         $request->user()->c4i()->create([
             'appointment'=> $request->appointment,
             'appoint_time' => $request->appoint_time,
-            'job_id' =>$request->job_id,
+            'id' =>$request->id,
             'identifier' => $request->identifier,
             'transaction_id' => $request->transaction_id,
           ]);

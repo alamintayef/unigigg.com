@@ -54,7 +54,7 @@
             </td>
             <td>
               @if($calls->paid===0)
-                <form  action="{{url('call/for/interview',$calls->job_id)}}" method="POST">
+                <form  action="{{url('call/for/interview',$calls->id)}}" method="POST">
                 {!! csrf_field() !!}
                 <button type="submit" class="btn btn-default btn-sm">
                   <i class="fa fa-phone"></i> Notify

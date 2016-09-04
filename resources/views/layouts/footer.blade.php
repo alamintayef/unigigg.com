@@ -12,10 +12,10 @@
 
       <h5><a href="{{url('about')}}">About Us</a></h5>
       <h5><a href="{{url('coming/soon')}}">Team</a></h5>
-      <h5><a href="faqs">FAQS </a><br></h5>
+      <h5><a href="faqs">FAQs</a><br></h5>
       <h5><a href="{{url('terms&services')}}">Terms and Conditions</a></h5>
       <h5><a href="{{url('vlog')}}">Vlog</a></h5>
-        <h5><a href="{{url('blog')}}">Blog</a></h5>
+      <h5><a href="{{url('blogs')}}">Blog</a></h5>
       <h5><a href="{{url('recruiter')}}">Recruiter</a></h5>
       <h5><a href="{{url('talent')}}">Talent</a></h5>
 

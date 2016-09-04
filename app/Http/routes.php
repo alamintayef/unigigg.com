@@ -191,6 +191,7 @@ Route::group(['middleware' => ['web']], function () {
       //Admin Email
 
       Route::get('Admin/Email','AdminController@AdminEmail');
+      Route::post('admin/email/send', 'AdminController@PostAdminEmail');
 
       // admin end ---------------------------------------------------
 

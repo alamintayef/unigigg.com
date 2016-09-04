@@ -17,6 +17,14 @@
     }
     h1{
       font-size: 80px;
+
+     word-wrap: break-word;
+     -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+     -ms-hyphens: auto;
+     -o-hyphens: auto;
+     hyphens: auto;
+
     }
 
   </style>
@@ -87,7 +95,7 @@
 --->
 <div class="container-fluid white">
       <div class="row">
-        <div class="col-md-6 pad">
+        <div class="col-md-6 col-xs-12 pad">
           <h1 class="textb">Get Verified
           </h1>
  <p class="verified textb">
@@ -97,14 +105,14 @@ Then we’ll help refine your profile to give you the best opportunity at landin
         </div>
 
 
-        <div class="col-md-6 toppad" >
+        <div class="col-md-6 col-xs-12 toppad" >
           <div class="panel panel-info">
             <div class="panel-heading">
               <h3 class="panel-title">Sheena </h3>
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-3 col-lg-3 " align="right"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
+                <div class="col-md-3 col-lg-3 " align="right"> <img alt="User Pic" class="img-responsive" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
                 <div class=" col-md-9 col-lg-9 ">
                   <table class="table table-user-information">
                     <tbody>
@@ -156,10 +164,10 @@ Then we’ll help refine your profile to give you the best opportunity at landin
 
     <div class="container-fluid whiteproper pad">
       <div class="row">
-        <div class="col-md-6">
-          <img src="http://appointmentschedulingnews.com/wp-content/uploads/2016/03/schedulingsystempoweruser.png" alt="" height="450" width="500px" />
+        <div class="col-md-6 col-xs-12">
+          <img src="http://appointmentschedulingnews.com/wp-content/uploads/2016/03/schedulingsystempoweruser.png" class="img-responsive" alt="" height="450" width="500px" />
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col-xs-12">
           <h1 class="textb">Get Empowered
           </h1>
      <p class="verified textb">
@@ -179,13 +187,14 @@ Then we’ll help refine your profile to give you the best opportunity at landin
           <h1 class="textb">Meet the team
           </h1>
      <p class="verified textb">
-      We know as a fresher you'll be nervous about interviews.
-      Meet our talent team and set up a mock interview.
+
+      Meet our talent team.
       They’ll guide you in your job search as a resource, coordinator and a friend.
+      We know as a fresher you'll be nervous about interviews. You can always call our team and set a mock interview to give you a boost
      </p>
         </div>
         <div class="col-md-6 ">
-          <img src="http://www.pngall.com/wp-content/uploads/2016/07/Team-PNG.png" alt="" height="300" width="405px" class="pull-right" />
+          <img src="http://www.pngall.com/wp-content/uploads/2016/07/Team-PNG.png" class="img-responsive" alt="" height="300" width="405px" class="pull-right" />
         </div>
 
 
@@ -196,7 +205,7 @@ Then we’ll help refine your profile to give you the best opportunity at landin
 
       <div class="row">
         <div class="col-md-6 ">
-          <img src="http://www.freeiconspng.com/uploads/like-icon-0.png" alt="" height="300" width="300"  />
+          <img src="http://www.freeiconspng.com/uploads/like-icon-0.png" class="img-responsive" alt="" height="300" width="300"  />
         </div>
         <div class="col-md-6">
           <h1 class="textb">Get Hired
@@ -213,14 +222,14 @@ Then we’ll help refine your profile to give you the best opportunity at landin
     </div>
 
     <div class="container-fluid white pad">
-      <div class="col-md-6">
+      <div class="col-md-6 col-xs-12">
         <h1 class="textb">Ready to get hired ?</h1>
         <p class="textb verified">
           We are ready to help! Try Unigigg to find a job you desire <br>
           <a href="register" class="button-alt-big">Sign Up</a>
         </p>
       </div>
-      <div class="col-md-5 col-md-offset-1 pull-right">
+      <div class="col-md-5 col-xs-12 col-md-offset-1 pull-right">
         <h1 class="textb ">Have more questions ?</h1>
         <p class="verified textb">Check out our <a href="/faqs" class="btn btn-link">FAQs</a></h3>
 

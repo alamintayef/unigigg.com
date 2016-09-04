@@ -14,7 +14,7 @@
             </button>
         {!! Form::close() !!}
         </div>
-        <table class="table table-striped">
+        <table class="table table-striped table-responsive">
           <thead>
             <th>
               Name

@@ -94,7 +94,7 @@
                                 <tr>
                                     <td width="600" class="mobile" align="center" mc:label="the_banner" mc:edit="the_banner">
 
-                                        <img src="https://media.giphy.com/media/brsEO1JayBVja/giphy.gif" width="400" height="250" style="margin:0; padding:0; border:none; display:block; border-radius:8px;" border="0" class="imgClass" alt="" mc:edit="the_image" />
+                                        <img src="https://mediatorsoftexas.com/wp-content/uploads/2015/06/job-icon.png" width="400" height="250" style="margin:0; padding:0; border:none; display:block; border-radius:8px;" border="0" class="imgClass" alt="" mc:edit="the_image" />
 
                                     </td>
                                 </tr>
@@ -122,18 +122,10 @@
                             <table width="600" cellpadding="0" cellspacing="0" border="0" class="container">
                                 <tr>
                                     <td width="600" class="mobile" style="font-family:arial; font-size:18px; line-height:24px;" align="center" mc:label="the_title" mc:edit="the_title">
-                                        Hello <span style="color:#40a7ff;"><strong>[{{$data['name']}}</strong></span>,
-                                        Welcome,
-                                        Thank you for joining Unigigg. <br>
-                                        the first thing you’ll want to do is build up your profile and then someone from our talent team will contact you to help you polish your profile<br>
 
-                                        I would love to hear more about how you’re using Unigigg.<br> We’re here to build an amazing experience. If you have any questions or comments please knock me on facebook at wwww.facebook.com/tayeif<br>
-                                        We believe the current communication system is broken and we want to change that, that is why we use facebook as one of our communication method.<br>
-
-																				Cheers!<br>
-                                        Tayef,<br>
-                                        Co-Founder, <br>
-                                        tayef@unigigg.com
+																				<p>
+																					{!! $body !!}
+																				</p>
 
                                     </td>
                                 </tr>
@@ -158,21 +150,23 @@
                                 <tr>
                                     <td height="20" style="font-size:10px; line-height:10px;"></td>
                                 </tr>
+                                <!--
                                 <tr>
                                     <td width="600" class="mobile" align="center">
 
-                                        <!-- Start Button -->
+
                                         <table width="170" cellpadding="0" cellspacing="0" align="center" border="0">
                                             <tr>
                                                 <td width="170" height="46" bgcolor="#40a7ff" align="center" valign="middle" style="font-family: Arial, sans-serif; font-size: 16px; color: #ffffff; line-height:18px; -webkit-border-radius: 50px; -moz-border-radius: 50px; border-radius: 50px; font-weight:bold;" mc:label="the_btnText" mc:edit="the_btnText">
-                                                <a href="http://www.unigigg.com" target="_blank" alias="" style="font-family: Arial, sans-serif; text-decoration: none; color: #ffffff;">Sign in <span style="font-size:23px;">&rsaquo;</span></a>
+                                                <a href="" target="_blank" alias="" style="font-family: Arial, sans-serif; text-decoration: none; color: #ffffff;">View the Post <span style="font-size:23px;">&rsaquo;</span></a>
                                                 </td>
                                             </tr>
                                         </table>
-                                        <!-- End Button -->
+
 
                                     </td>
                                 </tr>
+                              -->
                             </table>
                             <!-- Start Container  -->
 
@@ -202,7 +196,7 @@
                                             <tr>
                                                 <td align="center" style="font-family:arial; font-size:12px; line-height:18px; color:#aeaeae;" mc:label="the_terms" mc:edit="the_terms">
                                                     You’re receiving this email because you opted in at our website.
-If you do NOT wish to receive these marketing updates you can unsubscribe from your unigigg dashboard.
+If you do NOT wish to receive these job updates you can unsubscribe from your dashboard.
 
                                                 </td>
                                             </tr>
@@ -215,8 +209,7 @@ If you do NOT wish to receive these marketing updates you can unsubscribe from y
                                 </tr>
                                 <tr>
                                     <td width="600" class="mobile" style="font-family:arial; font-size:12px; line-height:18px; color:#aeaeae;" align="center">
-                                        <a href="" target="_blank" alias="" style="font-size:12px; line-height:18px; color:#aeaeae; text-decoration:underline;" mc:label="the_unsubscribe" mc:edit="the_unsubscribe">Unsubcribe</a>
-
+                                      
                                         <span style="color:#dddddd; font-size:17px;">  |  </span>
 
                                         <a href="" target="_blank" alias="" style="font-size:12px; line-height:18px; color:#aeaeae; text-decoration:underline;" mc:label="the_settings" mc:edit="the_settings">Settings</a>

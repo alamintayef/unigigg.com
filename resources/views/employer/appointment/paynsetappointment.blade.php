@@ -50,7 +50,7 @@
       {!! Form::label('transaction_id', 'Transaction ID:', ['class' => 'control-label']) !!}
       {!! Form::text('transaction_id', null, ['class' => 'form-control']) !!}
     </div>
-    <input type="hidden" name="job_id" value="{{$job->job_id}}">
+    <input type="hidden" name="id" value="{{$job->id}}">
 
 
   {!! Form::submit('Confirm', ['class' => 'btn btn-primary']) !!}

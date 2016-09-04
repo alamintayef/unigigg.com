@@ -82,12 +82,12 @@ class EmployerController extends Controller
               $m->to($calls->email)->subject('Congrats!');
           });
 
-          //SMS
+          /*
             $deviceID = '20198';
             $number = $calls->mobile;
             $message = 'You have been called for an interview for '.$calls->job_name.' by '.$calls->company_name. ' please check your mail. unigigg.com';
             $message =  SMSGateway::sendMessageToNumber($number, $message, $deviceID);
-
+            */
           return redirect('home');
 
     }
@@ -119,7 +119,7 @@ class EmployerController extends Controller
                   $m->to($calls->email)->subject('Congrats!');
               });
           }
-          // SMS
+          /*
           foreach ($call as $calls)
           {
 
@@ -131,7 +131,7 @@ class EmployerController extends Controller
             $message = 'You have been called for an interview for '.$calls->job_name.' by '.$calls->company_name. 'please check your mail. -unigigg.com';
               }
             $message =  SMSGateway::sendMessageToNumber($number, $message, $deviceID);
-
+            */
             notify()->flash('Notified!', 'success', [
               'timer' => 2000,
 

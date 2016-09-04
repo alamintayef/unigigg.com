@@ -9,13 +9,13 @@
   <meta name="name" content="First Online Youth Employment Platform in Bangladesh">
   <meta name="jobs" content="Find Jobs, Tuitions , Internships">
   <meta http-equiv="Page-Enter" content="revealTrans(Duration=2.0,Transition=12)">
-  <meta name=“csrf-token” content=“{{ csrf_token() }}” />
+
   <title>Internships & Jobs for Young Talents</title>
   <!-- Fonts--->
 
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway" />
   <!-- Fonts--->
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css" media="screen" title="no title">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open Sans" />
   <link href='https://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
@@ -76,7 +76,14 @@
   </script>
 
 
+
   <style>
+  @media (max-width: 768px) {
+  html, body {
+  width: auto !important;
+  overflow-x: hidden !important;
+  }
+  }
   body {
     font-family: 'Raleway', sans-serif;
     background-color: 	#f7f7f7;
@@ -165,8 +172,7 @@
   }
   </style>
 
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
   <script src="//load.sumome.com/" data-sumo-site-id="79713ef64a547e6957b04c95a8e49c51d903a0a06c631de8bebd3aaa78b44098" async="async"></script>
 
 </head>
@@ -334,7 +340,6 @@
 
     <!-- JavaScripts -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.stellar/0.6.2/jquery.stellar.min.js"></script>
     <div id="search">

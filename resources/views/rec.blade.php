@@ -142,7 +142,7 @@ body{
           Candidates who apply through our platform have to go though a long process of verification and validation of skills.
           Each week we’ll deliver fresh, experienced, and fully verified candidates straight to you.
           </p>
-          
+
         </div>
         <div class="col-md-6 pad">
             <div class="panel panel-default">
@@ -152,11 +152,11 @@ body{
                 <ul class="list-group" id="contact-list">
                     <li class="list-group-item">
                         <div class="col-xs-12 col-sm-3">
-                            <img src="http://api.randomuser.me/portraits/men/49.jpg" alt="Scott Stevens" class="img-responsive img-circle" />
+                            <img src="https://pbs.twimg.com/profile_images/495254085067476993/haerjYuZ_400x400.png" alt="Scott Stevens" class="img-responsive img-circle" />
                         </div>
                         <div class="col-xs-12 col-sm-9">
-                            <span class="name">Scott Stevens</span><i class="fa fa-check fa-2x"></i><br/>
-                            <span>Android Developer</span><br>
+                            <span class="name">Jonny Bravo</span><i class="fa fa-check fa-2x"></i><br/>
+                            <span>Business Developer</span><br>
                             <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip" title="5842 Hillcrest Rd"></span>
                             <span class="visible-xs"> <span class="text-muted">5842 Hillcrest Rd</span><br/></span>
                             <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="(870) 288-4149"></span>
@@ -168,11 +168,11 @@ body{
                     </li>
                     <li class="list-group-item">
                         <div class="col-xs-12 col-sm-3">
-                            <img src="http://api.randomuser.me/portraits/men/97.jpg" alt="Seth Frazier" class="img-responsive img-circle" />
+                            <img src="http://i2.kym-cdn.com/entries/icons/original/000/020/802/Dexter-DextersLaboratory.png" alt="Seth Frazier" class="img-responsive img-circle" />
                         </div>
                         <div class="col-xs-12 col-sm-9">
-                            <span class="name">Seth Frazier</span> <i class="fa fa-check fa-2x"></i><br/>
-                              <span>Business Developer</span><br>
+                            <span class="name">Dexter</span> <i class="fa fa-check fa-2x"></i><br/>
+                              <span>Data Scientist</span><br>
                             <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip" title="7396 E North St"></span>
                             <span class="visible-xs"> <span class="text-muted">7396 E North St</span><br/></span>
                             <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="(560) 180-4143"></span>
@@ -184,11 +184,11 @@ body{
                     </li>
                     <li class="list-group-item">
                         <div class="col-xs-12 col-sm-3">
-                            <img src="http://api.randomuser.me/portraits/women/90.jpg" alt="Jean Myers" class="img-responsive img-circle" />
+                            <img src="http://vignette4.wikia.nocookie.net/powerpuff/images/7/7b/Bubbles-pic.png/revision/latest?cb=20160727212257" alt="Jean Myers" class="img-responsive img-circle" />
                         </div>
                         <div class="col-xs-12 col-sm-9">
-                            <span class="name">Jean Myers</span><i class="fa fa-check fa-2x"></i><br/>
-                            <span>Data Analyst</span><br>
+                            <span class="name">Bubbles</span><i class="fa fa-check fa-2x"></i><br/>
+                            <span>Power Manager</span><br>
                             <span class="glyphicon glyphicon-map-marker text-muted c-info" data-toggle="tooltip" title="4949 W Dallas St"></span>
                             <span class="visible-xs"> <span class="text-muted">4949 W Dallas St</span><br/></span>
                             <span class="glyphicon glyphicon-earphone text-muted c-info" data-toggle="tooltip" title="(477) 792-2822"></span>
@@ -355,7 +355,7 @@ body{
 </div>
 
 --->
-<div class="container-fluid whiteproper">
+<div class="container-fluid white">
 	<div class="row">
 
 		<div class="col-md-6 pad bar">
@@ -424,44 +424,30 @@ body{
     </div>
   </div>
 	</div>
-</div>
 
-<section>
-  <div class="container">
+
+  <div class="container-fluid whiteproper pad">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2 text-center">
-        <h2 class="text-uppercase">Our Services</h2>
-        <div class="divider"></div>
-        <p>We take the headache out for recruitment</p>
-      </div>
-      <div class="col-md-4 ">
-        <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="100">
-          <span class="icon bg-df circle"><i class="fa fa-search"></i></span>
-          <h3>Talent Sourcing</h3>
-          <div class="divider clearfix"></div>
-          <p>We actively source talent and help them to be career ready so that you can find the right fit for your company</p>
-        </div>
-      </div>
-      <div class="col-md-4 ">
-        <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="150">
-          <span class="icon bg-df circle"><i class="fa fa-connectdevelop"></i></span>
-          <h3>Pre-screening</h3>
-          <div class="divider clearfix"></div>
-          <p>All our talents skills are validated. Therefore you do not have to go through intial screening. Which saves a lot of cost and time</p>
 
-        </div>
+
+      <div class="col-md-6">
+        <br><br><br>
+        <h1 class="textb">Get Results </h1>
+        <p class="textb verified">
+          Find better candidates with less hassle. We’re confident you’ll find a great candidate who will fit perfectly with your requirements.
+        </p>
+
       </div>
-      <div class="col-md-4 ">
-        <div class="pv-30 ph-20 service-block bordered shadow text-center object-non-visible animated object-visible fadeInDownSmall" data-animation-effect="fadeInDownSmall" data-effect-delay="200">
-          <span class="icon bg-df circle"><i class="fa fa-diamond"></i></span>
-          <h3>Branding</h3>
-          <div class="divider clearfix"></div>
-          <p>We work closely with you to promote your company, make your company appealing to the youth so that you can attract proper talent </p>
-        </div>
+      <div class="col-md-6">
+
+        <img src="http://clickmultiplier.com/wp-content/uploads/2015/01/ResultsPresentation.png" alt="" />
+
       </div>
+
+
     </div>
+
   </div>
-</section>
 
 
   <div class="container-fluid white center pad">
@@ -563,26 +549,21 @@ body{
       </div>
 
 
-    </div>
-    <div class="container-fluid pb pad whiteproper" id="student-vdo">
-      <div class="row center">
-        <div class="col-md-3"></div>
-
-        <div class="panel padsmall white col-md-6">
-
-
-          <h3>We help you to :</h3>
-          <h4>Identify proactive employees with specific skills</h4>
-
-          <h4>Expedite the lengthy hiring process</h4>
-          <h4>Reduce HR Cost</h4>
+      <div class="container-fluid whiteproper pad">
+        <div class="col-md-6">
+          <h1 class="textb">Ready to hire ?</h1>
+          <p class="textb verified">
+            We are ready to help! Try Unigigg to find a candidate you desire <br>
+            <a href="register" class="button-alt-big">Sign Up</a>
+          </p>
+        </div>
+        <div class="col-md-5 col-md-offset-1 pull-right">
+          <h1 class="textb ">Have more questions ?</h1>
+          <p class="verified textb">Check out our <a href="/faqs" class="btn btn-link">FAQs</a></h3>
 
         </div>
-        <div class="col-md-3"></div>
 
       </div>
-
-    </div>
     <!--
     <div class="center pad whiteproper">
     <h4>  Hiring for Eccentric Job is free <a href="eccentric">Learn more.</a>
