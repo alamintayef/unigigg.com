@@ -33,7 +33,7 @@ body{
   background-color: rgba(0, 0, 0, 0.5);
 }
 .bighead{
-  font-size: 90px;
+  font-size: 80px;
   font-weight: 400;
 }
 .bighead2{

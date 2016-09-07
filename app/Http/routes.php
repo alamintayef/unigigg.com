@@ -220,6 +220,8 @@ Route::group(['middleware' => ['web']], function () {
       Route::post('payment/store/bkash','BillController@store');
       Route::post('payment/call/for/interview','BillController@employerreqstore');
 
+      Route::get('verify/me','BillController@verifyme');
+
       Route::get('/employer/login','EmployerController@login');
 
       //Registration

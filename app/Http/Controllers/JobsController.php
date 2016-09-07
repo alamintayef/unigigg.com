@@ -69,17 +69,18 @@ class JobsController extends Controller
         $name = auth()->user()->name;
         $email = auth()->user()->email;
         Slack::to('#unigigg-jobs')->send('A new job has been posted titled : '.$request->job_name.'Please find the job details at www.unigigg.com/view/jobs/'.$slug.' ');
-
+        /*
        $users = DB::table('users')->where('type','=',1)->get();
 
         foreach($users as $user) {
           Mailgun::send('email.notify.jobalert', ['user' => $user,'slug'=> $slug,'jobname'=>$jobname,'jobType'=>$jobType,'deadline'=>$deadline], function ($m) use ($user, $slug,$jobname,$jobType,$deadline) {
             $m->from('tayef@unigigg.com', ''.$jobname.' ');
 
-            $m->to($user->email)->subject('New Job Postd');
+            $m->to($user->email)->subject('New Job Posted');
         });
      }
-     
+     */
+
         notify()->flash('Added Successfully! Check Posted Jobs', 'success', [
            'timer' => 2000,
            'text' => 'Great. Thank you for posting a job',

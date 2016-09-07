@@ -24,12 +24,7 @@ class BillController extends Controller
     }
     public function store(Request $request)
     {
-        $this->validate($request, [
 
-            'bkash_number' => 'required|min:11',
-            'transaction_id' => 'required',
-
-        ]);
 
         $request->user()->bill()->create([
             'bkash_number' => $request->bkash_number,
@@ -46,7 +41,7 @@ class BillController extends Controller
            'timer' => 3000,
            'text' => 'We will contact you within 24 hours and validate your profile with 48 hours ! ',
          ]);
-         return redirect('/payment');
+         return redirect('/Home');
     }
     public function appointment($id)
     {
@@ -86,6 +81,12 @@ class BillController extends Controller
            'text' => 'Thank you ! ',
          ]);
          return redirect('/home');
+  }
+
+  public function verifyme(){
+
+    return view('admin.user.verifyme');
+
   }
 
 }

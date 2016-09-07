@@ -179,7 +179,7 @@
 
           <!-- Branding Image -->
           <a class="navbar-brand text-primary" href="{{ url('/') }}" >
-            <i class="fa fa-graduation-cap text-primary "></i>  unigigg<sub>alpha</sub>
+            <i class="fa fa-graduation-cap text-primary "></i>  unigigg<sub>&beta;eta</sub>
           </a>
 
         </div>
@@ -239,7 +239,7 @@
 
           <!-- Branding Image -->
           <a class="navbar-brand text-primary" href="{{ url('/') }}" >
-            <i class="fa fa-graduation-cap text-primary"></i>unigigg<sub><small>alpha</small></sub>
+            <i class="fa fa-graduation-cap text-primary"></i>unigigg<sub><small>&beta;eta</small></sub>
           </a>
 
         </div>
