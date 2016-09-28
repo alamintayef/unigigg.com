@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Model\Student\Blog;
 use App\Http\Requests;
 use DB;
 use Slack;
@@ -43,5 +43,30 @@ class BlogController extends Controller
          ]);
 
         return redirect('/home');
+    }
+
+    public function edit($id)
+    {
+      $post = DB::table('blogs')->where('id','=',$id)->first();
+
+      return view('blog.editblog',[
+        'post' => $post,
+      ]);
+
+    }
+    public function update(Request $request,$id){
+        $post = Blog::findorFail($id);
+        $post->title = $request->title;
+        $post->subtitle = $request->subtitle;
+        $post->body = $request->body;
+        $post->save();
+
+        notify()->flash('Added Successfully!', 'success', [
+           'timer' => 2000,
+           'text' => 'Thank you'
+         ]);
+
+        return redirect('/home');
+
     }
 }

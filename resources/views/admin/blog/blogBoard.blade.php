@@ -26,7 +26,7 @@
               <td>
                 {{$blog->title}}
               </td>
-            
+
               <td>
                 @if($blog->status===0)
                   Inactive
@@ -46,6 +46,14 @@
                   </form>
                 @endif
 
+              </td>
+              <td>
+                <form class="form-group" action="{{url('blog/edit',$blog->id)}}" method="GET">
+
+                  <button type="submit" class="btn btn-sm raised btn-warning">
+                    <i class="fa fa-check"></i> Update
+                  </button>
+                </form>
               </td>
             </tr>
           </tbody>

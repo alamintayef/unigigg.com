@@ -49,6 +49,8 @@
         @foreach($competition as $com)
           {{$com->title}}
 
+          <button type="submit" name="button"> <i class="fa fa-edit"></i></button></form> <form class="" action="index.html" method="post"><button type="submit" ><i class="fa fa-close"></i></button></form>
+
         @endforeach
 
       @endif

@@ -372,6 +372,8 @@ Route::group(['middleware' => 'web'], function () {
       Route::get('blog/post', 'BlogController@index');
       Route::post('blog/post/create', 'BlogController@store');
       Route::get('blog', 'PublicController@showBlog');
+      Route::get('blog/edit/{id}','BlogController@edit');
+      Route::post('blog/update/{id}','BlogController@update');
 
 
   //

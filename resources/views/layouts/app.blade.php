@@ -218,8 +218,8 @@
                   <li><a href="{{ url('blogs') }}"><i class="fa fa-btn fa-paperclip hvr-shutter-out-horizontal"></i>Blog</a></li>
                   <li><a href="{{ url('competitions') }}"><i class="fa fa-btn fa-rocket hvr-shutter-out-horizontal"></i>Competitions</a></li>
                   <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-question-circle hvr-shutter-out-horizontal"></i>FAQs</a></li>
-                  <li><a href="{{ url('events') }}"><i class="fa fa-btn fa-sitemap hvr-shutter-out-horizontal"></i>Tutorials</a></li>
-                  <li><a href="{{ url('trainings') }}"><i class="fa fa-btn fa-tablet hvr-shutter-out-horizontal"></i>Training</a></li>
+                  <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-sitemap hvr-shutter-out-horizontal"></i>Tutorials</a></li>
+                  <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-tablet hvr-shutter-out-horizontal"></i>Training</a></li>
                 </ul>
               </li>
               <li class="show-on-hover">
