@@ -55,7 +55,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" media="screen" title="no title" charset="utf-8">
   <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.1.4/scrollreveal.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/paper/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/yeti/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
   {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
   <script type="text/javascript">
   $(function () {
@@ -155,15 +155,21 @@
   {
     background-color: rgba(0, 0, 0, 0.7);;
   }
+  .navbar{
+    height: 50px;
+  }
   .navbar-brand{
+
     font-size: 30px;
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
 
   }
   .navbar-nav{
+    padding-top: 3px;
     font-size: 17px;
     font-weight: 600;
+
 
   }
   .verified{
@@ -204,11 +210,11 @@
 
           <!-- Right Side Of Navbar -->
           <ul class="nav navbar-nav navbar-right">
-            <!-- Authentication Links -->
+            <!-- Authentication Links  btn-change hvr-underline-from-center-->
             <ul class="nav navbar-nav">
 
-              <li class="btn-change hvr-underline-from-center"><a href="{{ url('/recruiter') }}">For Employers</a></li>
-              <li class="btn-change hvr-underline-from-center"><a href="{{ url('/talent') }}">For Talents</a></li>
+              <li class=" "><a href="{{ url('/recruiter') }}">For Employers</a></li>
+              <li class=" "><a href="{{ url('/talent') }}">For Talents</a></li>
 
               <li class="show-on-hover">
                 <a  href="#" class="dropdown-toggle text-primary hvr-underline-from-center" data-toggle="dropdown" role="button" aria-expanded="false"  aria-haspopup="true">

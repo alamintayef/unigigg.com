@@ -90,9 +90,37 @@
       {!! csrf_field() !!}
       @if(Auth::user()->subscribe==0)
          <button  type="submit" name="name" value=""> Unsubscribe</button>
+
+      From Job Notifications
       @endif
-      From Job Notification
     </form>
+</li>
+<li class="list-group-item">
+  <a data-toggle="modal" data-target="#feedback">Feedback</a>
+  <!-- Modal -->
+<div class="modal fade" id="feedback" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Help us improve</h4>
+      </div>
+      <form class="" action="{{url('/feedback')}}" method="post">
+      {!! csrf_field() !!}
+
+      <div class="modal-body">
+        <label for="feedback">Tell us your problems with our system</label>
+        <textarea name="feedback" rows="8" cols="40"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 </li>
 
 

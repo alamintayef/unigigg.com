@@ -11,10 +11,10 @@
       </div>
       <div class="panel-body">
 
-        <strong>Institute</strong> {{$edu->Degree_institute}} <br>
-        <strong>Results</strong>  {{$edu->Degree_result}}<br>
-        <strong> Start Date: </strong> {{$edu->Degree_start_date}}<br>
-        <strong> Passing Date: </strong>  {{$edu->Degree_end_date}}
+        <strong>Institute</strong> {{$edu->Degree_institute}}
+        <strong>Result:</strong>  {{$edu->Degree_result}}
+        <strong> Starting Year : </strong> {{$edu->Degree_start_date}}
+        <strong> Passing Year: </strong>  {{$edu->Degree_end_date}}
 
       </div>
 

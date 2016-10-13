@@ -57,8 +57,10 @@
           @include('student.forms.basicinfo')
 
 
+
         </div>
       </div>
+      
     </div>
   </div>
 

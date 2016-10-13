@@ -46,7 +46,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" media="screen" title="no title" charset="utf-8">
   <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.1.4/scrollreveal.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/paper/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/yeti/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
   {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
   <script type="text/javascript">
   $(function () {
@@ -143,6 +143,7 @@
 
   }
   .navbar-nav{
+    padding-top: 3px;
     font-size: 17px;
     font-weight: 600;
 

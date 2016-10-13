@@ -205,7 +205,7 @@ body{
         </div>
 	</div>
 
-
+</div>
 <!---
 <div class="container-fluid">
 <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">

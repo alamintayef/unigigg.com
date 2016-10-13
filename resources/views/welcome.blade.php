@@ -453,11 +453,11 @@ body{
 
 </div>
 --->
-
+<!---
 <div class="container-fluid center whiteproper  padsmall" >
   <h3 class="padsmall" style="font-size:3.2em;"> People We Work With</h2>
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-    <!-- Wrapper for slides -->
+    <!-- Wrapper for slides -
     <div class="carousel-inner logofoo">
 
       <div class="item active container ">
@@ -483,7 +483,7 @@ body{
     </div>
 
       <div align="center" style="margin-top:20px;">
-      <!-- Controls -->
+      <!-- Controls --
             <a class="left" href="#carousel-example-generic" data-slide="prev">
               <span class="glyphicon glyphicon-chevron-left"></span>
             </a>
@@ -494,7 +494,7 @@ body{
 
   </div>
 </div>
-</div><!--
+</div>
 <script type="text/javascript">
 (function ($) {
   $('#content').smoothState();

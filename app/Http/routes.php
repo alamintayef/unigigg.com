@@ -374,8 +374,13 @@ Route::group(['middleware' => 'web'], function () {
       Route::get('blog', 'PublicController@showBlog');
       Route::get('blog/edit/{id}','BlogController@edit');
       Route::post('blog/update/{id}','BlogController@update');
-
+  //feedback
+      Route::post('feedback','UserInfoController@feedback');
+  //
 
   //
+  Route::get('/github', function(){
+     return view('vlog.github');
+  });
 
 });

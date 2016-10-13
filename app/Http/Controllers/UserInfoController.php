@@ -17,13 +17,14 @@ namespace App\Http\Controllers;
         $this->middleware('auth');
       }
 
+
       public function create()
       {
 
         $uid= auth()->user()->id;
         $area= DB::table('areas')->select('areas.*')->orderBy('area', 'ASC')->get();
         $uni= DB::table('universities')->select('universities.*')->orderBy('university', 'ASC')->get();
-        $userinfo= DB::table('user_info')->select('user_info.*')->where('user_id',$uid )->get();
+        $userinfo= DB::table('user_info')->select('user_info.*')->where('user_id',$uid )->first();
         return view('student.userinfo',[
           'uni'=> $uni,
           'userinfo'=> $userinfo,
@@ -240,7 +241,19 @@ namespace App\Http\Controllers;
         return redirect('home');;
       }
 
-    
+      public function feedback(Request $request)
+      {
+        $feedback = $request->feedback;
+        $uid = auth()->user()->id;
+        $name = auth()->user()->name;
+        $email = auth()->user()->email;
+        Slack::send(''.$name.' has updated the basic info. His/Her email is '.$email.' Feed back : '.$feedback.' ');
+
+        return redirect('home');
+
+      }
+
+
 
 
     }

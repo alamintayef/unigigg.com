@@ -30,12 +30,12 @@
           </form>
           <hr>
 
-      
+
 @else
     <p>Please add you profile information from <a href="{{url('userinfo')}}">Build profile</a> Tab</p>
   @endif
-        <a href="{{url('/profile',$user->name)}}"> CV</a>
-        <a href="{{url('profile/template',$user->name)}}">CV-2</a>
+        <a class="btn btn-default" href="{{url('/profile',$user->name)}}"> Public Resume 1</a>
+        <a class="btn btn-default" href="{{url('profile/template',$user->name)}}">Public Resume 2</a>
 
 
 
