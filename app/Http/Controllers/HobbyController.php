@@ -29,13 +29,13 @@ class HobbyController extends Controller
     {
         $this->validate($request, [
             'hobbies_name' => 'required|max:200',
-            'hobbies_related_work' => 'required',
+          //  'hobbies_related_work' => 'required',
 
         ]);
 
         $request->user()->hobbies()->create([
             'hobbies_name' => $request->hobbies_name,
-            'hobbies_related_work' => $request->hobbies_related_work,
+            //'hobbies_related_work' => $request->hobbies_related_work,
 
         ]);
         notify()->flash('Added Successfully!', 'success', [

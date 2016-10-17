@@ -7,7 +7,7 @@
 
 
     <div class="form-group">
-      <h4>Upload you CV/Resume and Cover Letter in GoogleDriver/Dropbox and share the link here.</h4>
+      <h4>Upload you CV/Resume in GoogleDriver/Dropbox and share the link here.</h4>
       {!! Form::label('interest_name', 'Your CV or Resume Link', ['class' => 'control-label']) !!}
       {!! Form::text('interest_name', null, ['class' => 'form-control']) !!}
     </div>

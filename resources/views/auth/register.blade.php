@@ -27,7 +27,7 @@ body
                             <i class="fa fa-user"></i>
 
                             <div class="col-md-6">
-                                <input type="text" class="form-control textw" name="name" value="{{ old('name') }}" >
+                                <input type="text" class="form-control " name="name" value="{{ old('name') }}" >
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -42,7 +42,7 @@ body
                             <i class="fa fa-envelope"></i>
 
                             <div class="col-md-6">
-                                <input type="email" id='email' class=" form-control textw" name="email" value="{{ old('email') }}">
+                                <input type="email" id='email' class=" form-control " name="email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -56,7 +56,7 @@ body
                             <i class="fa fa-phone"></i>
 
                             <div class="col-md-6">
-                                <input type="phone" id='phone' class=" form-control textw" name="phone" value="{{ old('phone') }}">
+                                <input type="phone" id='phone' class=" form-control " name="phone" value="{{ old('phone') }}">
 
                                 @if ($errors->has('phone'))
                                     <span class="help-block">
@@ -71,7 +71,7 @@ body
                             <i class="fa fa-key"></i>
 
                             <div class="col-md-6">
-                                <input type="password" class="form-control textw" name="password" placeholder="Min 8 characters">
+                                <input type="password" class="form-control " name="password" placeholder="Min 8 characters">
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -86,7 +86,7 @@ body
                             <i class="fa fa-key"></i>
 
                             <div class="col-md-6">
-                                <input type="password" class="form-control textw" name="password_confirmation">
+                                <input type="password" class="form-control " name="password_confirmation">
 
                                 @if ($errors->has('password_confirmation'))
                                     <span class="help-block">
@@ -111,9 +111,9 @@ body
                         <div class="form-group">
                           <div class="col-md-8 col-md-offset-3">
                           <p>
-                          <strong>*</strong><small>By signing up you agree to our Terms and Conditions and Privacy Policy</small>
+                          <strong class="textw">*</strong><small class="textw">By signing up you agree to our Terms and Conditions and Privacy Policy</small>
                           </p>
-                          <p class="">
+                          <p class="textw">
                             Already signed up ? <a href="{{url('login')}}"> </i> Sign In</a><br>
                             Not A Talent ? Signup as  <a href="{{url('employer/register')}}">Recruiter</a>
                           </p>

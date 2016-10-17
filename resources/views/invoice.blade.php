@@ -22,7 +22,7 @@
 }
 
 #nav {
-  h5ne-height:30px;
+  h5ne-height:20px;
   background-color:#eeeeee;
   height:300px;
   width:100px;
@@ -33,7 +33,7 @@
   text-align: right;
 }
 body{
-  padding: 25px;
+  padding: 10px;
 }
 .supersmall{
   text-align: right;
@@ -45,7 +45,7 @@ body{
   padding:10px;
 }
 .smallpad{
-  padding: 5px;
+  padding: 3px;
 }
 #footer {
   background-color:black;
@@ -90,8 +90,8 @@ td {
     <h3>Education</h3>
     <div >
       @foreach($education as $edu )
-        <strong >  Degree : </strong> <span class="smallpad"> {{$edu->Degree_name}}</span><strong> Institute :</strong> <span class="smallpad">{{$edu->Degree_institute}}</span><br>
-        <strong >  Passing Year: </strong> <span class="smallpad">{{$edu->Degree_end_date}} </span><strong> Result:</strong><span class="smallpad">{{$edu->Degree_result}}</span><br>
+        <strong >Degree :</strong><span class="smallpad"> {{$edu->Degree_name}}</span><strong> Institute :</strong> <span class="smallpad">{{$edu->Degree_institute}}</span><br>
+        <strong >Passing Year: </strong> <span class="smallpad">{{$edu->Degree_end_date}} </span><strong> Result:</strong><span class="smallpad">{{$edu->Degree_result}}</span><br>
 
       @endforeach
 
@@ -128,8 +128,7 @@ td {
         @foreach($refs as $ref )
           <p>
             <strong>Referred By</strong> {{$ref->referred_by}}<br>
-            <strong>Description</strong>:<br>
-            {{$ref->reference_description}}<br>
+
             <small><strong>Contact : </strong>{{$ref->referee_number}}</small>  </p>
           @endforeach
         @endif
@@ -140,7 +139,7 @@ td {
         <div >
           @foreach($extras as $excc )
             <p>
-              <strong>Referred By</strong> {{$excc->excc_name}}<br>
+              <strong> {{$excc->excc_name}}</strong><br>
               <strong>Description</strong>:<br>
               {{$excc->excc_description}}<br>
               <small><strong>start date :</strong></small> {{$excc->excc_start_date}} <small><strong>end date :</strong></small> {{$excc->exp_end_date}}

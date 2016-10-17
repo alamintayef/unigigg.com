@@ -42,7 +42,7 @@ body{
                             <i class="fa fa-envelope"></i>
                             <div class="col-md-6">
 
-                                <input type="email" class="form-control textw" name="email" value="{{ old('email') }}">
+                                <input type="email" class="form-control " name="email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -57,7 +57,7 @@ body{
                               <i class="fa fa-key"></i>
                             <div class="col-md-6">
 
-                                <input type="password" class="form-control textw" name="password">
+                                <input type="password" class="form-control " name="password">
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">

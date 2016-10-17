@@ -150,7 +150,7 @@
             @else
               <div class="form-group">
 
-                  {!! Form::submit('Post Job', array( 'class'=>'btn btn-success form-control' )) !!}
+                  {!! Form::submit(' Post Job ', array( 'class'=>'btn btn-success form-control' )) !!}
                 </div>
             @endif
 

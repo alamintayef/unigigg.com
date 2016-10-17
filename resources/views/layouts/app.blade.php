@@ -26,6 +26,7 @@
   <!--js -->
   <script src="https://cdn.jsdelivr.net/jquery.smoothstate/0.7.2/jquery.smoothState.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js" type="text/javascript"></script>
+  <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
 
   <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
   <script>
@@ -84,9 +85,10 @@
   overflow-x: hidden !important;
   }
   }
+
   body {
     font-family: 'Raleway', sans-serif;
-    background-color: 	#f7f7f7;
+    background-color:#dfe3ee;
     font-size: 13px;
     margin-top: 50px;
   }
