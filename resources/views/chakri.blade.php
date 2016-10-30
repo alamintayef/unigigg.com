@@ -19,7 +19,7 @@
         </div>
         @if(count($jobs)>0)
           @foreach($jobs as $job)
-
+            <!---
             <div class="col-md-3 col-md-offset-1 whiteproper card-raised padsmall">
 
               <h5 >{{$job->job_name}}</h5>
@@ -31,14 +31,24 @@
               <strong>Posted By {{$job->company_name}}</strong><br>
               <strong>Posted on {{$job->created_at}}</strong>
 
-              <!-- Check if its recruter or not-->
+              <!-- Check if its recruter or not-
 
                   <form class="form-control" action="{{url('show/jobs',$job->id)}}" method="GET">
                     {!! csrf_field() !!}
                     <button type="submit" name="button" class="btn btn-default raised">view</button>
                   </form>
             </div>
-
+          -->
+          <div class="table table-responsive table-stripped col-md-6  whiteproper card-raised padsmall">
+            <tr>
+              <td>
+                <strong> {{$job->job_name}}</strong>
+                <br>Location: {{$job->job_location}}
+                <br>Salary: {{$job->job_salary}}<br>
+                <strong>Posted By {{$job->company_name}}</strong><br>
+              </td>
+            </tr>
+          </div>
           @endforeach
 
         @endif

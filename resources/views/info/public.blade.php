@@ -23,19 +23,31 @@ body
         </ul>
       </div>
       <hr>
+      <table class="table table-responsive table-stripped   whiteproper card-raised padsmall">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Location</th>
+            <th>Salary</th>
+            <th>Company</th>
+            <th>View </th>
+          </tr>
+        </thead>
       @if(count($jobs)>0)
         @foreach($jobs as $job)
+
+          <!---
           <div class="col-md-3 col-md-offset-1">
             <div class="card-container">
               <div class="card">
                 <div class="front">
-                  <!--
+
                   <div class="cover">
 
                     <img src="http://photos.gograph.com/thumbs/CSP/CSP894/k8940822.jpg" alt="logo" height="100px" width="100px"/>
 
                   </div>
-                -->
+                --
               <div class="content">
                 <div class="main">
                   <h3 class="name"> {{$job->job_name}} </h3>
@@ -54,7 +66,7 @@ body
                   </div>
                 </div>
               </div>
-            </div> <!-- end front panel -->
+            </div> <!-- end front panel --
             <div class="back">
               <div class="header">
                 <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
@@ -80,30 +92,56 @@ body
               <div class="footer">
 
               </div>
-            </div> <!-- end back panel -->
-          </div> <!-- end card -->
-        </div> <!-- end card-container -->
+            </div> <!-- end back panel --
+          </div> <!-- end card --
+        </div> <!-- end card-container -
 
 
 
 
 
 
-        <!-- Check if its recruter or not-->
+        <!-- Check if its recruter or not--
 
 
 
 
 
       </div>
+    -->
+
+        <tbody>
+        <tr>
+          <td>
+            <strong> {{$job->job_name}}</td>
+            <td>
+              {{$job->job_location}}
+            </td>
+            <td>
+              <br> {{$job->job_salary}}<br>
+            </td>
+            <td>
+            <strong>{{$job->company_name}}</strong><br>
+
+          </td>
+          <td>
+              <a href="{{url('/view/jobs',$job->slug)}}" class="btn btn-link">view</a>
+
+          </td>
+        </tr>
+
+</tbody>
 
     @endforeach
 
   @endif
 
 
+
+</table>
 </div>
 </div>
 </div>
+
 @include('layouts.footer')
 @endsection

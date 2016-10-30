@@ -158,13 +158,15 @@
     background-color: rgba(0, 0, 0, 0.7);;
   }
   .navbar{
-    height: 50px;
+    min-height: 50px;
+
   }
   .navbar-brand{
 
     font-size: 30px;
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
+
 
   }
   .navbar-nav{

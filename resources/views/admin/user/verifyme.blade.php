@@ -19,8 +19,10 @@
           </p>
           <h5>Yes i have added all of these</h5>
           <h5>And i am confident that i won't need your help to polish my profile because its already polished </h5>
-          <form class="" action="/payment/store/bkash" method="post">
+          <form class="" action="{{url('payment/store/bkash')}}" method="post">
             {!! csrf_field() !!}
+            <input type="hidden" name="bkash_number" value="0">
+            <input type="hidden" name="transaction_id" value="0">
             <button type="submit" name="button" class="button">Verify My profile</button>
           </form>
 

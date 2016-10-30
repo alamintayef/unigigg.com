@@ -135,6 +135,10 @@
   {
     background-color: rgba(0, 0, 0, 0.5);;
   }
+  .navbar{
+    min-height: 50px;
+
+  }
 
   .navbar-brand{
     font-size: 30px;

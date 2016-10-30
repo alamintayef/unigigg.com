@@ -24,12 +24,9 @@ class BillController extends Controller
     }
     public function store(Request $request)
     {
-
-
         $request->user()->bill()->create([
             'bkash_number' => $request->bkash_number,
             'transaction_id' => $request->transaction_id,
-
         ]);
         $id = auth()->user()->id;
         $user= User::findorFail($id);
@@ -41,7 +38,7 @@ class BillController extends Controller
            'timer' => 3000,
            'text' => 'We will contact you within 24 hours and validate your profile with 48 hours ! ',
          ]);
-         return redirect('/Home');
+         return redirect('/home');
     }
     public function appointment($id)
     {

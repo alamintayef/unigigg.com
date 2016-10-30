@@ -194,7 +194,7 @@ Then we’ll help refine your profile to give you the best opportunity at landin
      </p>
         </div>
         <div class="col-md-6 ">
-          <img src="http://www.pngall.com/wp-content/uploads/2016/07/Team-PNG.png" class="img-responsive" alt="" height="300" width="405px" class="pull-right" />
+          <img src="https://s16.postimg.org/g96cygp11/Team_PNG.png" class="img-responsive" alt="" height="300" width="405px" class="pull-right" />
         </div>
 
 
