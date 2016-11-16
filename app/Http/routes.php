@@ -95,6 +95,10 @@ Route::get('/github', function(){
 
 Route::group(['middleware' => ['web']], function () {
       //
+      //facebook
+      Route::get('/redirect', 'SocialAuthController@redirect');
+      Route::get('/callback', 'SocialAuthController@callback');
+
       Route::get('/view/jobs/{slug}','PublicController@showjobs');
       Route::get('/view/odd/jobs/{title}','PublicController@showEccentricJobs');
       Route::get('blogs','PublicController@showBlogs');

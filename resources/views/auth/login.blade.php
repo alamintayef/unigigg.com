@@ -88,6 +88,7 @@ body{
                                 Not Signed up yet ?
 
                                 <a class="link" href="{{ url('/register') }}">sign up</a>
+                                <a href="{{url('redirect')}}">FB Login</a>
 
                             </div>
                         </div>

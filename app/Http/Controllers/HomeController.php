@@ -55,7 +55,7 @@ class HomeController extends Controller
       $experiences = Experience::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->limit(5)->get();
       $extracs = ExtraCur::where('user_id', $request->user()->id)->get();
       $funs = FunFacts::where('user_id', $request->user()->id)->get();
-      $images = Image::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->limit(1)->get();
+      $images = Image::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->limit(1)->first();
       $refs = Reference::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->limit(3)->get();
       $vdo = Vprofile::where('user_id', $request->user()->id)->first();
       $joblimit=StudentApplied::where('user_id', $request->user()->id)->get();
@@ -63,7 +63,7 @@ class HomeController extends Controller
       $user=User::where('id', $request->user()->id)->first();
 
       //employer
-      $eminfos = EmInfo::where('user_id', $request->user()->id)->get();
+      $eminfos = EmInfo::where('user_id', $request->user()->id)->first();
       $jobcount = DB::table('jobs')->select('jobs.*')->count();
       //admin
       $allusers = User::where('type','=',1)->count();

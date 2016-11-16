@@ -23,15 +23,15 @@ class Employer
                  return redirect()->guest('login');
              }
          }else {
-           if(Auth::user()->type===2)
+           if(Auth::user()->type===1)
+           {
+             return $next($request);
+           }
+           elseif(Auth::user()->type==2)
            {
              return $next($request);
            }
            elseif(Auth::user()->type==3)
-           {
-             return $next($request);
-           }
-           elseif(Auth::user()->type==4)
            {
              return $next($request);
            }

@@ -105,7 +105,7 @@ body{
       <br>
       <div class=" pad">
         <h1 class="textw bighead">Finding Talents Got Easier</h1>
-        <h3 class="textw">Discover Skills Validated Rockstars With A Click</h3>
+        <h3 class="textw">Discover Skill Validated Rockstars With A Click</h3>
       </h1>
         <br>
         <a type="submit" name="button" class="button-alt-light-big" href="{{url('login')}}">Post a Job For Free</a>

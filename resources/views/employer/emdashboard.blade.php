@@ -4,9 +4,23 @@
   <div class="container padtop" id="dash">
     <div class="row">
       @include('layouts.emmenu')
-      <div class="col-md-10 ">
-        <div class="panel panel-primary">
-          <div class="panel-heading">Employer Dashboard</div>
+      <div class="col-md-10">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h3>Dashboard</h3>
+            <!--
+            @if(Auth::user()->verified===0)
+             <p class="">
+               <button  class="btn btn-link btn-danger">Not Verified</button>
+
+             </p>
+            @else
+              <p class="">
+                <button  class="btn btn-link btn-success">Verified</button>
+
+              </p>
+            @endif
+          -->
+          </div>
 
           <div class="panel-body">
             <div>
@@ -24,64 +38,59 @@
                 </script>
               @endif
 
-              <div style="text-align:center;">
 
 
-              @if(count($images)>0)
-                @foreach($images as $image)
-                  <img src="{!!'files/images/'.$image->filePath !!}" alt="propic" height="200px" width="200px" style="border-radius:30%;" />
+            <h2>Welcome <strong class="primary">{{ Auth::user()->name }}
+            ,</strong></h2>
 
-                @endforeach
-
-              @endif
-            </div>
-            @if(Auth::user()->subs_type===0)
-              <button type="button" name="button" class="btn-default">Pay As You Go</button>
-            @elseif(Auth::user()->subs_type===1)
-              <button type="button" name="button" class="btn-default">Limited Pack</button>
-            @else
-              <button type="button" name="button" class="btn-default">Unlimited Pack Subscribed</button>
-            @endif
-            <h3>Welcome <strong class="primary">{{ Auth::user()->name }}
-              </strong> The Recruiter</h3>
-            </div>
-            @if(Auth::user()->verified===0)
-             <p class="  pull-right">
-               <button type="button" class=" btn-danger" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-original-title="" title="" aria-describedby="popover936988">Not Verified</button>
-
-             </p>
-            @else
-              <p class=" pull-right">
-                <button type="button" class=" btn-success">Verified</button>
-
+            @if(count($eminfos)==0)
+              <p>
+                The first thing you would like to do is build up your profile <a href="{{url('employerinfo')}}">Here</a>
               </p>
             @endif
 
+            </div>
+            <div class="">
+            @if(count($images)>0)
+
+                <img src="{!!'files/images/'.$images->filePath !!}" alt="propic" height="100px" width="100px" style="border-radius:20%;" />
+
+            @endif
+          </div>
+
+            <hr>
             <div >
               @if(count($eminfos)>0)
                 <div class="pad">
 
-
-                  <h4>Company Details</h4><a href="{{url('employerinfo')}}" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
-
-                  @foreach ($eminfos as $eminfo)
-                    <p>
-
-                      <p>Company Name: {{$eminfo->company_name}}</p>
-                      <p>Company Type: {{$eminfo->company_type}}</p>
-                      <p>Company Size: {{$eminfo->company_size}}</p>
-                      <p><h4>Company Description:</h4> {{$eminfo->company_description}}</p>
-                      <p>Company Email: {{$eminfo->company_email}}</p>
-                      <p>Company Contact: {{$eminfo->company_phone}}</p>
+                  <a href="{{url('employerinfo')}}" class="btn btn-default btn-sm pull-right"><i class="fa fa-edit"></i> Edit</a>
 
 
-                    </p>
+                    <div class="">
 
-                  @endforeach
 
-                  <h5>You have posted <em> {{$jobcount}} </em>jobs</h5>
+                    <div class="pull-left">
+                      <h4>Company Information:</h4>
+                      <p>Company Name: {{$eminfos->company_name}}  </p>
+                      <p>  Company Type: {{$eminfos->company_type}}  </p>
+                      <p>  Company Size: {{$eminfos->company_size}}  </p>
+                      <p>
+                        <h5>You have posted <em> {{$jobcount}} </em>jobs</h5>
+                      </p>
+                    </div>
+                    <div class="pull-right">
+                      <p><h4>Company Description:</h4> {{$eminfos->company_description}}</p>
+                      <p>Company Email: {{$eminfos->company_email}}</p>
+                      <p>Company Contact: {{$eminfos->company_phone}}</p>
+                        </div>
+
+                  </div>
+
+
+
 
                 </div>
+
               @endif
 
 

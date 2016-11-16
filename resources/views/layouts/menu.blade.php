@@ -45,6 +45,7 @@
   <li class="list-group-item">
     <a href="#"><strong>Jobs Sorted</strong></a>
   </li>
+  <!---
   <li class="list-group-item dropdown">
       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
       <strong>   Eccentric-Jobs <span class="caret"></span></strong>
@@ -75,9 +76,8 @@
 
     </ul>
 
-
-
   </li>
+  --->
 
   <li class="list-group-item"> <strong>
     <a  href="{{ url('change/password') }}">Change Password</a></strong>
@@ -86,12 +86,12 @@
     <a  href="{{ url('blog/post') }}">Post a article</a></strong>
   </li>
   <li class="list-group-item">
-    <form class="" action="{{url('unsubscribe',Auth::user()->id)}}" method="post">
+    <a action="{{url('unsubscribe',Auth::user()->id)}}" method="post">
       {!! csrf_field() !!}
       @if(Auth::user()->subscribe==0)
-         <button  type="submit" name="name" value=""> Unsubscribe</button>
+         <a type="submit" name="name" value=""> Unsubscribe</a>
 
-      From Job Notifications
+
       @endif
     </form>
 </li>
@@ -126,5 +126,6 @@
 
 
   </ul>
+
 </div>
 </div>

@@ -15,7 +15,9 @@
         "bogardo/mailgun": "4.0.*",
         "pragmarx/tracker": "^2.0",
         "maknz/slack": "^1.7",
-        "maknz/slack-laravel": "^1.0"
+        "maknz/slack-laravel": "^1.0",
+        "laravel/socialite": "^2.0",
+        "laravel-notification-channels/backport": "^1.0"
 
 
 

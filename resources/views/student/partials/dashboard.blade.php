@@ -26,7 +26,7 @@
               @else
                 <h5 class="text-success">Verified</h5>
               @endif
-              Free Subscription Expires on : <strong> {{Auth::user()->expireson}}</strong>
+            
               <br>
               <h3>
               @if(count($infos)>0)

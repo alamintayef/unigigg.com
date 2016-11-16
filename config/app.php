@@ -153,6 +153,8 @@ return [
         Limatheus\SmsGateway\SmsGatewayServiceProvider::class,
         Bogardo\Mailgun\MailgunServiceProvider::class,
         Maknz\Slack\Laravel\ServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        Illuminate\Notifications\NotificationServiceProvider::class,
 
 
 
@@ -225,6 +227,8 @@ return [
         'SMSGateway'=> Limatheus\SmsGateway\Facade::class,
         'Mailgun' => Bogardo\Mailgun\Facades\Mailgun::class,
         'Slack' => Maknz\Slack\Laravel\Facade::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
 
 
 

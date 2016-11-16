@@ -18,7 +18,7 @@ class HobbyController extends Controller
     public function index()
     {
       $uid = auth()->user()->id;
-      $var = Hobbies::where('user_id', $uid)->orderBy('created_at', 'desc')->get();
+      $var = Hobbies::where('user_id', $uid)->orderBy('created_at', 'desc')->limit(1)->first();
       return view('student.hobby',[
         'var' =>$var,
       ]);
@@ -43,7 +43,7 @@ class HobbyController extends Controller
            'text' => 'Add More or Check Dashboard'
          ]);
 
-        return redirect('/hobby');
+        return response()->json( $request->hobbies_name );
     }
     public function destroy($id)
     {

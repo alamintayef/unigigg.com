@@ -16,7 +16,7 @@
       <a href="{{url('postjobs')}}"><strong><i class="fa fa-edit"></i> Post a Job</strong></a>
 
     </li>
-
+    <!---
     <li class="list-group-item dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
         <strong>Eccentric-Jobs <span class="caret"></span></strong>
@@ -36,7 +36,7 @@
       </ul>
     </li>
   </li>
-
+  --->
   <li class="list-group-item">
     <a href="{{url('postedjobs')}}"><strong><i class="small material-icons">shopping_basket</i> Posted Jobs</strong></a>
   </ul>

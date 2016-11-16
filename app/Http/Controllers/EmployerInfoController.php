@@ -15,10 +15,13 @@ class EmployerInfoController extends Controller
     {
        $this->middleware('employer');
     }
-  public function index()
+  public function index(Request $request)
   {
+       $eminfos = EmInfo::where('user_id', $request->user()->id)->first();
 
-       return view('employer.employerinfo');
+       return view('employer.employerinfo', [
+         'eminfos'=>$eminfos,
+       ]);
    }
    public function store(Request $request){
      // Store records process
@@ -70,6 +73,6 @@ class EmployerInfoController extends Controller
                 'text' => 'Please Check the Dashboard',
               ]);
 
-              return redirect('/employerinfo');
+              return redirect('/home');
         }
 }

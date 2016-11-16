@@ -104,7 +104,7 @@
 
 
           @else
-            
+
           {!! Form::open(array('url' => '/userstore')) !!}
           <div class="md-col-12 panel whiteproper pad">
           <div class="row">
@@ -115,14 +115,14 @@
 
 
             {!! Form::label('fname', 'First Name', ['class' => 'control-label']) !!}
-            {!! Form::text('fname',  null , ['class' => 'form-control']) !!}
+            {!! Form::text('fname',  null , ['class' => 'form-control', 'required']) !!}
               <small class="text-danger">Required</small>
           </div>
           </div>
           <div class="col-md-6">
           <div class="form-group">
             {!! Form::label('lname', 'Last Name', ['class' => 'control-label']) !!}
-            {!! Form::text('lname', null, ['class' => 'form-control']) !!}
+            {!! Form::text('lname', null, ['class' => 'form-control', 'required']) !!}
             <small class="text-danger">Required</small>
           </div>
         </div>
@@ -142,14 +142,14 @@
           <div class="col-md-6">
           <div class="form-group">
             {!! Form::label('post_code', 'Post Code', ['class' => 'control-label']) !!}
-            {!! Form::text('post_code', null, ['class' => 'form-control']) !!}
+            {!! Form::text('post_code', null, ['class' => 'form-control', 'required']) !!}
               <small class="text-danger">Required</small>
           </div>
           </div>
           </div>
           <div class="form-group">
             {!! Form::label('other', 'Other Details (if any)', ['class' => 'control-label']) !!}
-            {!! Form::text('other', null, ['class' => 'form-control']) !!}
+            {!! Form::text('other', null, ['class' => 'form-control', ]) !!}
             <small class="text-danger">Optional</small>
           </div>
           <div class="form-group">
@@ -167,18 +167,18 @@
           <div class="form-group">
             {!! Form::label('passing_date', 'Expected/Passing Year :', ['class' => 'control-label']) !!}
 
-            {!! Form::date('passing_date', null, ['class' => 'form-control','id'=>'passing_date']) !!}
+            {!! Form::date('passing_date', null, ['class' => 'form-control','id'=>'passing_date', 'required']) !!}
 
 
               <small class="text-danger">Required</small>
           </div>
           <div class="form-group">
-            {!! Form::label('mobile', 'Contact No :', ['class' => 'control-label']) !!}
+            {!! Form::label('mobile', 'Contact No :', ['class' => 'control-label', 'required']) !!}
             {!! Form::text('mobile', null, ['class' => 'form-control']) !!}
               <small class="text-danger">Required</small>
           </div>
           <div class="form-group">
-            {!! Form::label('universityId', 'University ID:', ['class' => 'control-label']) !!}
+            {!! Form::label('universityId', 'University ID:', ['class' => 'control-label', 'required']) !!}
             {!! Form::text('universityId', null, ['class' => 'form-control']) !!}
               <small class="text-danger">Required</small>
           </div>
@@ -188,7 +188,7 @@
               <small class="text-danger">Optional</small>
           </div>
           <div class="form-group">
-            {!! Form::label('facebookId', 'Facebook ID:', ['class' => 'control-label']) !!}
+            {!! Form::label('facebookId', 'Facebook ID:', ['class' => 'control-label', 'required']) !!}
             {!! Form::text('facebookId', null, ['class' => 'form-control']) !!}
               <small class="text-danger">Required</small>
             <small>Please use the full link like http://www.facebook.com/yourid</small>

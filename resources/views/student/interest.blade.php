@@ -61,7 +61,7 @@
       <h5 class="textb">Your CV Link</h5>
       @foreach($var as $interest)
         <ul class="list-group">
-          <li class="list-group-item">{{$interest->interest_name}}</li>
+          <li class="list-group-item"><a href="{{$interest->interest_name}}">Your CV </a></li>
         </ul>
       @endforeach
 
