@@ -14,7 +14,8 @@
 
     <div class="form-group">
       {!! Form::label('exp_start_date', 'Start Date:', ['class' => 'control-label']) !!}
-      {!! Form::date('exp_start_date', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}
+      <input class="datepicker form-control" type="text" value=""/>
+
     </div>
     <div class="form-group">
 
@@ -47,3 +48,9 @@
 </div>
 
 </div>
+<script type="text/javascript">
+$('.datepicker').datepicker({
+weekStart:1,
+format:'dd/mm/yyyy',
+});
+</script>

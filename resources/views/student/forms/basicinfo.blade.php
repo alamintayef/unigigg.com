@@ -167,7 +167,7 @@
           <div class="form-group">
             {!! Form::label('passing_date', 'Expected/Passing Year :', ['class' => 'control-label']) !!}
 
-            {!! Form::date('passing_date', null, ['class' => 'form-control','id'=>'passing_date', 'required']) !!}
+            <input class="datepicker form-control" type="text" value="03/12/2016"/>
 
 
               <small class="text-danger">Required</small>
@@ -205,3 +205,10 @@
           {!! Form::close() !!}
 
   @endif
+
+  <script type="text/javascript">
+  $('.datepicker').datepicker({
+weekStart:1
+format:'dd/mm/yyyy'
+});
+  </script>

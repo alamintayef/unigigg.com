@@ -17,7 +17,8 @@
         "maknz/slack": "^1.7",
         "maknz/slack-laravel": "^1.0",
         "laravel/socialite": "^2.0",
-        "laravel-notification-channels/backport": "^1.0"
+        "laravel-notification-channels/backport": "^1.0",
+        "laravel-notification-channels/facebook-poster": "^0.0.1"
 
 
 

@@ -51,15 +51,21 @@
   <script src="//cdn.ckeditor.com/4.5.8/standard/ckeditor.js"></script>
   <!--- Css -->
   {!! Html::style('css/rotating-card.css') !!}
-  {!! Html::style('css/paper.css') !!}
+
   {!! Html::style('css/style.css') !!}
   {!! Html::style('css/sweetalert.css') !!}
   {!! Html::style('css/prism.css') !!}
   {!! Html::style('css/awesomplete.css') !!}
+  {!! Html::style('css/css/demo.css') !!}
+  {!! Html::style('css/css/material-kit.css') !!}
+  {!! Html::style('css/css/bootstrap.min.css') !!}
+  {!! Html::script('css/js/material-kit.js') !!}
+  {!! Html::script('css/js/material.min.js') !!}
+  {!! Html::script('css/js/bootstrap-datepicker.js') !!}
+  {!! Html::script('css/js/bootstrap.min.js') !!}
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" media="screen" title="no title" charset="utf-8">
   <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.1.4/scrollreveal.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/yeti/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
   {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
   <script type="text/javascript">
   $(function () {
@@ -91,9 +97,9 @@
 
   body {
     font-family: 'Raleway', sans-serif;
-    background-color:#dfe3ee;
+    background: #eee;
     font-size: 13px;
-    margin-top: 50px;
+
   }
   .padtop{
     padding-top: 30px;
@@ -160,8 +166,10 @@
   {
     background-color: rgba(0, 0, 0, 0.7);;
   }
+
   .navbar{
-    min-height: 50px;
+    min-height: 40px;
+
 
   }
   .navbar-brand{
@@ -173,8 +181,8 @@
 
   }
   .navbar-nav{
-    padding-top: 3px;
-    font-size: 17px;
+
+    font-size: 20px;
     font-weight: 600;
 
 
@@ -183,6 +191,7 @@
     font-size: 25px;
     font-weight: bold;
   }
+
   </style>
 
 
@@ -193,7 +202,7 @@
 
   @if(Auth::guest())
 
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-info navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
 
@@ -206,8 +215,8 @@
           </button>
 
           <!-- Branding Image -->
-          <a class="navbar-brand text-primary" href="{{ url('/') }}" >
-            <i class="fa fa-graduation-cap text-primary "></i>  unigigg<sub>&beta;eta</sub>
+          <a class="navbar-brand " href="{{ url('/') }}" >
+            <i class="fa fa-graduation-cap "></i>  unigigg<sub>&beta;eta</sub>
           </a>
 
         </div>
@@ -224,7 +233,7 @@
               <li class=" "><a href="{{ url('/talent') }}">For Talents</a></li>
 
               <li class="show-on-hover">
-                <a  href="#" class="dropdown-toggle text-primary hvr-underline-from-center" data-toggle="dropdown" role="button" aria-expanded="false"  aria-haspopup="true">
+                <a  href="#" class="dropdown-toggle  " data-toggle="dropdown" role="button" aria-expanded="false"  aria-haspopup="true">
                   <i class="fa fa-btn fa-lightbulb-o"></i> Resources <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu" >
@@ -253,7 +262,7 @@
       </div>
     </nav>
   @else
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-info ">
       <div class="container">
         <div class="navbar-header">
 
@@ -266,8 +275,8 @@
           </button>
 
           <!-- Branding Image -->
-          <a class="navbar-brand text-primary" href="{{ url('/') }}" >
-            <i class="fa fa-graduation-cap text-primary"></i>unigigg<sub><small>&beta;eta</small></sub>
+          <a class="navbar-brand " href="{{ url('/') }}" >
+            <i class="fa fa-graduation-cap "></i>unigigg<sub><small>&beta;eta</small></sub>
           </a>
 
         </div>
@@ -276,7 +285,7 @@
           <!-- Left Side Of Navbar -->
           <ul class="nav navbar-nav">
             <li>
-              <a class=" text-primary" href="{{ url('/home') }}" >
+              <a class=" " href="{{ url('/home') }}" >
                 <i class="fa fa-home "></i> Dashboard
               </a>
             </li>
@@ -309,16 +318,12 @@
               @endif
 
 
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                  <i class="fa fa-btn fa-user"></i>  {{ Auth::user()->name }} <span class="caret"></span>
-                </a>
+              <li >
 
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Sign Out</a></li>
+                  <a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Sign Out</a>
 
 
-                </ul>
+
               </li>
 
             </ul>
@@ -360,7 +365,7 @@
       <form role="form" method="GET" action="{{ url('/search/people') }}">
         {!! csrf_field() !!}
         <input type="search" name="search" value="" placeholder="type skill(s) here" />
-        <button type="submit" class="btn btn-primary" >Find Me Jobs</button>
+        <button type="submit" class="btn btn-defualt" >Find Me Jobs</button>
         <p>
           Search People
         </p>

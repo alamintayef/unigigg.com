@@ -131,3 +131,9 @@ $(function() {
   });
 
 </script>
+<script type="text/javascript">
+$('.datepicker').datepicker({
+weekStart:1
+format:'dd/mm/yyyy'
+});
+</script>
