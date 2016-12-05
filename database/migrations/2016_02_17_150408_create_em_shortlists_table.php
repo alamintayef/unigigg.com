@@ -20,7 +20,7 @@ class CreateEmShortlistsTable extends Migration
             $table->boolean('finalized')->default(0);
             $table->boolean('called')->default(0);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('shortlisted_for_job_id')->references('job_id')->on('jobs')->onDelete('cascade');
+            $table->foreign('shortlisted_for_job_id')->references('id')->on('jobs')->onDelete('cascade');
             $table->timestamps();
         });
     }

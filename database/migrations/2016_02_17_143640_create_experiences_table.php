@@ -13,7 +13,7 @@ class CreateExperiencesTable extends Migration
     public function up()
     {
         Schema::create('experiences', function (Blueprint $table) {
-            $table->increments('exp_id');
+            $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
             $table->string('exp_name');
             $table->date('exp_start_date')->nullable();

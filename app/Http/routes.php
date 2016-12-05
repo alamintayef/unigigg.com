@@ -14,7 +14,9 @@
 Route::get('/', function () {
 
     return view('welcome');
+
 });
+Route::post('form','PublicController@ajaxPost');
 
 
 Route::get('events', function () {
@@ -96,6 +98,8 @@ Route::get('/github', function(){
 Route::group(['middleware' => ['web']], function () {
       //
       //facebook
+
+
       Route::get('/redirect', 'SocialAuthController@redirect');
       Route::get('/callback', 'SocialAuthController@callback');
 
@@ -327,9 +331,13 @@ Route::group(['middleware' => 'web'], function () {
       Route::post('/interest/{id}','InterestController@destroy');
       Route::get('/interest', 'InterestController@index');
       //hobby
-      Route::post('/hobbystore', 'HobbyController@store');
-      Route::post('/hobby/{id}','HobbyController@destroy');
-      Route::get('/hobby', 'HobbyController@index');
+      Route::get('/ajax/get', 'HobbyController@ajaxGet');
+      Route::get('hobby','HobbyController@hobbyview');
+      Route::post('hobby', 'HobbyController@store');
+    //  Route::post('/hobby/{id}','HobbyController@destroy');
+      Route::get('/hobbyview', 'HobbyController@index');
+
+
 
   // Education
       Route::get('/edu','EducationController@index');

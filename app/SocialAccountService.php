@@ -28,6 +28,7 @@ class SocialAccountService
                 $user = Model\student\User::create([
                     'email' => $providerUser->getEmail(),
                     'name' => $providerUser->getName(),
+                    
                 ]);
             }
 

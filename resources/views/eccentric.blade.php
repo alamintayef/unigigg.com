@@ -60,6 +60,7 @@
               <li class="list-group-item">Minimum job offering Tk.1000</li>
             </ul>
           </div>
+          
         </div>
 
       </div>

@@ -17,10 +17,12 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique()->nullable();
             $table->string('password', 60);
-            $table->tinyInteger('type');
+            $table->tinyInteger('type')->default(1);
             $table->boolean('verified')->default(0);
             $table->integer('subs_type')->default(0);
             $table->date('expireson');
+            $table->integer('profile_count');
+            $table->boolean('subscribe');
             $table->rememberToken();
             $table->timestamps();
         });

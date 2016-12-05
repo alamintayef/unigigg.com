@@ -8,7 +8,6 @@
 
           <div class="form-group">
 
-
             {!! Form::label('fname', 'First Name', ['class' => 'control-label']) !!}
             {!! Form::text('fname',  $userinfo->fname , ['class' => 'form-control']) !!}
               <small class="text-danger">Required</small>
@@ -24,13 +23,7 @@
           <div class="col-md-6">
           <div class="form-group">
             {!! Form::label('area', 'Location:', ['class' => 'control-label']) !!}
-            <input name="area" class="form-control" list="arealist" />
-            <datalist id="arealist">
-              @foreach($area as $areas)
-                <option>{{$areas->area}}</option>
-              @endforeach
-            </datalist>
-
+            {!! Form::text('area', $userinfo->area, ['class' => 'form-control']) !!}
               <small class="text-danger">Required</small>
             </div>
           </div>
@@ -49,14 +42,7 @@
           </div>
           <div class="form-group">
             <label for="institute" class="control-label">Institute</label>
-          <input name="institute" class="form-control" list="unilist" />
-              <datalist id="unilist">
-              @foreach($uni as $unis)
-
-                <p value="{{$unis->university}}">{{$unis->university}}</p>
-
-                @endforeach
-              </datalist>
+            {!! Form::text('institute', $userinfo->institute, ['class' => 'form-control']) !!}
               <small class="text-danger">Required</small>
           </div>
           <div class="form-group">
@@ -166,10 +152,7 @@
           </div>
           <div class="form-group">
             {!! Form::label('passing_date', 'Expected/Passing Year :', ['class' => 'control-label']) !!}
-
-            <input class="datepicker form-control" type="text" value="03/12/2016"/>
-
-
+            {!! Form::date('passing_date', null, ['class' => 'form-control']) !!}
               <small class="text-danger">Required</small>
           </div>
           <div class="form-group">

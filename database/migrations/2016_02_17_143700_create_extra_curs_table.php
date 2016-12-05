@@ -13,7 +13,7 @@ class CreateExtraCursTable extends Migration
     public function up()
     {
         Schema::create('extra_curs', function (Blueprint $table) {
-            $table->increments('extra_id');
+            $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
             $table->string('excc_name');
             $table->date('excc_start_date');

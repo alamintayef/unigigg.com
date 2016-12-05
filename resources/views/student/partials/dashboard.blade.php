@@ -3,7 +3,7 @@
   <div class="row">
     @include('layouts.menu')
 
-    <div class="col-md-10 " id="font">
+    <div class="col-md-10" id="font">
       <div class="card card-raised padsmall">
         <div class="panel-heading"><h4 class="textb">Dashboard</h4></div>
 
@@ -26,7 +26,7 @@
               @else
                 <h5 class="text-success">Verified</h5>
               @endif
-            
+
               <br>
               <h3>
               @if(count($infos)>0)

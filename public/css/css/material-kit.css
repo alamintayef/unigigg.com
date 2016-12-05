@@ -1976,7 +1976,7 @@ legend {
 }
 .navbar .navbar-brand {
   position: relative;
-  height: 50px;
+  height: 40px;
   line-height: 30px;
   color: inherit;
   padding: 10px 15px;
@@ -2158,7 +2158,7 @@ legend {
   color: #ffffff;
 }
 .navbar.navbar-inverse {
-  background-color: #3f51b5;
+  background-color: #ffffff;
   color: contrast-color(#3f51b5, #000000, #ffffff);
 }
 .navbar.navbar-inverse .navbar-form .form-group input.form-control::-moz-placeholder,
@@ -2218,42 +2218,43 @@ legend {
   color: #ffffff;
 }
 .navbar.navbar-success {
-  background-color: #4caf50;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #000;
 }
 .navbar.navbar-success .navbar-form .form-group input.form-control::-moz-placeholder,
 .navbar.navbar-success .navbar-form input.form-control::-moz-placeholder {
-  color: #ffffff;
+  color: #000;
 }
 .navbar.navbar-success .navbar-form .form-group input.form-control:-ms-input-placeholder,
 .navbar.navbar-success .navbar-form input.form-control:-ms-input-placeholder {
-  color: #ffffff;
+  color: #000;
 }
 .navbar.navbar-success .navbar-form .form-group input.form-control::-webkit-input-placeholder,
 .navbar.navbar-success .navbar-form input.form-control::-webkit-input-placeholder {
-  color: #ffffff;
+  color: #000;
 }
 .navbar.navbar-success .dropdown-menu {
   border-radius: 3px !important;
+  background-color: grey;
 }
 .navbar.navbar-success .dropdown-menu li > a:hover, .navbar.navbar-success .dropdown-menu li > a:focus {
-  color: #FFFFFF;
-  background-color: #4caf50;
+  color: #000;
+  background-color: #fff;
 }
 .navbar.navbar-success .dropdown-menu .active > a {
-  background-color: #4caf50;
-  color: #ffffff;
+  background-color: #fff;
+  color: #000000 ;
 }
 .navbar.navbar-success .dropdown-menu .active > a:hover, .navbar.navbar-success .dropdown-menu .active > a:focus {
-  color: #ffffff;
+  color: #000;
 }
 .navbar.navbar-info {
-  background-color: #03a9f4;
+  background-color: #ffffff;
   color: #ffffff;
 }
 .navbar.navbar-info .navbar-form .form-group input.form-control::-moz-placeholder,
 .navbar.navbar-info .navbar-form input.form-control::-moz-placeholder {
-  color: #ffffff;
+  color: #000;
 }
 .navbar.navbar-info .navbar-form .form-group input.form-control:-ms-input-placeholder,
 .navbar.navbar-info .navbar-form input.form-control:-ms-input-placeholder {
@@ -2272,10 +2273,10 @@ legend {
 }
 .navbar.navbar-info .dropdown-menu .active > a {
   background-color: #03a9f4;
-  color: #ffffff;
+  color: #000000;
 }
 .navbar.navbar-info .dropdown-menu .active > a:hover, .navbar.navbar-info .dropdown-menu .active > a:focus {
-  color: #ffffff;
+  color: #000;
 }
 .navbar.navbar-warning {
   background-color: #fbc02d;
@@ -2338,7 +2339,7 @@ legend {
   color: #ffffff;
 }
 .navbar-inverse {
-  background-color: #3f51b5;
+  background-color: #fff;
 }
 .navbar.navbar-transparent {
   background-color: transparent;
@@ -2361,7 +2362,7 @@ legend {
     */
   }
   .navbar .navbar-brand {
-    height: 50px;
+    height: 40px;
     padding: 10px 15px;
   }
   .navbar .navbar-nav > li > a {

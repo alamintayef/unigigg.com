@@ -1,12 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <script type="text/javascript">
-  (function ($) {
-    $('#hobby').smoothState();
- }) (jQuery);
 
-  </script>
   <div class="container padtop" id="hobby">
     <div class="row">
       @include('layouts.menu')
@@ -60,16 +55,91 @@
     <div class="col-md-2 panel whiteproper">
       <h5 class="textb">Cover Letter Link</h5>
       <small class="textb">Add a cover letter, tweak it a little bit before applying to a job</small>
-      @foreach($var as $hobby)
+
         <ul class="list-group">
-          <li class="list-group-item">{{$hobby->hobbies_name}}</li>
+          <li class="list-group-item" id=list></li>
         </ul>
-      @endforeach
+
 
     </div>
   </div>
 </div>
 
+<script type="text/javascript">
+
+//$.ajaxSetup({ headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') } });
+// handlers
+
+
+$(document).ready(function() {
+     $.ajax({    //create an ajax request to load_page.php
+       type: "GET",
+       url: 'hobbyview',
+       dataType: 'html',   //expect html to be returned
+       success: function(data){
+        var data = JSON.parse(data);
+          $('#list').html('<li>' +  data  +'</li>')
+           //alert(response);
+       }
+
+    });
+    /*
+    $('.send-btn').click(function(){
+      $.ajax({
+        url: '/hobby/store',
+        type: 'POST',
+        dataType: 'json',
+        data: {'hobbies_name':$('input[name=hobbies_name').val(), '_token': $('input[name=_token]').val()},
+        success: function(response){
+          var data = JSON.parse(response);
+          toastr.success(data.data);
+        }
+      });
+    });
+*/
+});
+
+</script>
+
+<script type="text/javascript">
+  var form = $('#form');
+  var submit = $('#submit');
+  var alert = $('.alert');// contact form
+ $(".send-btn").click(function (e) {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        })
+
+        e.preventDefault();
+
+$.ajax({
+              url: '/hobby',
+              data: {'hobbies_name':$('input[name=hobbies_name').val(), '_token': $('input[name=_token]').val()},
+              type: 'POST',
+              datatype: 'JSON',
+              success: function (data) {
+                alertify.success("Added Successfully");
+                //  toastr.success(data);
+                /*  toastr.options = {
+                          "closeButton": true,
+                          "debug": false,
+                          "newestOnTop": false,
+                          "progressBar": true,
+                          "positionClass": "toast-bottom-right",
+
+                }*/
+                  $('#list').html('<li>' +  data  +'</li>')
+                  form.trigger('reset');
+
+              },
+              error: function (data) {
+                console.log('Error:', data);
+            }
+          });
+        });
+</script>
 
 
 @endsection

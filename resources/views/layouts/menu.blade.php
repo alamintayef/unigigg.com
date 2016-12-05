@@ -1,4 +1,7 @@
-<div class="col-md-2">
+<div class="col-md-2 ">
+<div class="sidebar-nav-fixed affix">
+
+
 <div class="navbar-header">
 <button type="button" class="navbar-toggle collapsed btn btn-xs" data-toggle="collapse" data-target="#app-nav-collapse">
   <span class="sr-only">Toggle Navigation</span>
@@ -9,9 +12,9 @@
 </button>
 
 </div>
-<div class="collapse navbar-collapse" id="app-nav-collapse">
+<div class="collapse navbar-collapse nav-stacked" id="app-nav-collapse">
+<div class="list-group">
 
-  <ul class="list-group">
     <li class="list-group-item">
       <a href="{{url('home')}}"><strong><i class="fa fa-dashboard"></i> Dashboard</strong></a>
     </li>
@@ -95,6 +98,7 @@
       @endif
     </form>
 </li>
+</div>
 <li class="list-group-item">
 <strong><a data-toggle="modal" data-target="#feedback">Feedback</a></strong>
   <!-- Modal -->
@@ -127,5 +131,6 @@
 
   </ul>
 
+</div>
 </div>
 </div>

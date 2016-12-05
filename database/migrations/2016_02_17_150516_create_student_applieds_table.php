@@ -18,7 +18,7 @@ class CreateStudentAppliedsTable extends Migration
               $table->integer('user_id')->unsigned()->index();
               $table->boolean('already')->default(0);
               $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-              $table->foreign('applied_for_job_id')->references('job_id')->on('jobs')->onDelete('cascade');
+              $table->foreign('applied_for_job_id')->references('id')->on('jobs')->onDelete('cascade');
               $table->timestamps();
         });
     }

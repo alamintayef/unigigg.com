@@ -13,7 +13,7 @@ class CreateHobbiesTable extends Migration
     public function up()
     {
         Schema::create('hobbies', function (Blueprint $table) {
-            $table->increments('hobbies_id');
+            $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
             $table->string('hobbies_name');
             $table->text('hobbies_related_work');

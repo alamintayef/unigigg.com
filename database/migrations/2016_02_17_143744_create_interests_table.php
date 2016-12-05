@@ -13,7 +13,7 @@ class CreateInterestsTable extends Migration
     public function up()
     {
         Schema::create('interests', function (Blueprint $table) {
-            $table->increments('interest_id');
+            $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
             $table->string('interest_name');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

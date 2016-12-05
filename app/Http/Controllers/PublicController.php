@@ -12,6 +12,17 @@ use App\Model\Student\Training;
 use Slack;
 class PublicController extends Controller
 {
+  public function ajaxPost(Request $request)
+  {
+
+      $email = $request->input('email');
+      $password = $request->input('password');
+      $password = bcrypt($password);
+      $data = array('email' => $email, 'password'=> $password);
+      $data =  array('value' => str_random(3), 'input' => str_random(3));
+      return response()->json($password);
+
+  }
   //
   public function publicboard(Request $request)
   {

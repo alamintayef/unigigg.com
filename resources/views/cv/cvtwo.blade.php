@@ -1,4 +1,4 @@
-sc<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -45,7 +45,7 @@ sc<!DOCTYPE html>
               <li class="ad"> {{$info->area}}</li>
               <li class="mail"> {{$user->email}}</li>
               <li class="tel"> Confidential</li>
-              <li class="web"> www.businessweb.com</li>
+
             </ul>
           </div>
           <!-- End Personal Information -->

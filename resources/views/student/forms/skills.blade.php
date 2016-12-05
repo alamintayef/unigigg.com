@@ -64,5 +64,23 @@
 
 
 </div>
+</script>
+<script type="text/javascript">
+$.ajaxSetup({
+ headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+});
+$(document).ready(function(){
+  $('.send-btn').click(function(){
+    $.ajax({
+      url: 'form',
+      type: "post",
+      data: {'email':$('input[name=email]').val(), '_token': $('input[name=_token]').val(),'password':$('input[name=password]').val()},
+      success: function(response){
+        toastr.success(response);
+      }
+    });
+  });
+});
+</script>
 
 </div>
