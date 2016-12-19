@@ -15,7 +15,10 @@ class SkillController extends Controller
   {
     $this->middleware('auth');
   }
-  public function index(Request $request)
+  public function view(){
+    return view('student.skill');
+  }
+  public function index()
   {
     $uid = auth()->user()->id;
     $skill = Skills::where('user_id', $uid)->orderBy('created_at', 'desc')->get();
@@ -29,37 +32,34 @@ class SkillController extends Controller
   {
     $this->validate($request, [
       'skill_name' => 'required|max:50',
-      'skill_experience' => 'required|max:2|min:1',
       'skill_proof' => 'required|url'
-
-
-    ]);
+  ]);
+    $skill_name = $request->input('skill_name');
 
     $request->user()->skills()->create([
-      'skill_name' => $request->skill_name,
-      'skill_level' => $request->skill_level,
-      'skill_experience' => $request->skill_experience,
-      'skill_proof' => $request->skill_proof,
-    ]);
-    $uid = auth()->user()->id;
-    $name = auth()->user()->name;
-    $email = auth()->user()->email;
-    Slack::send(''.$name.' has added a new skills. His/Her email is '.$email.'Skill Name : '.$request->skill_name.' Skills Proof: '.$request->skill_proof.'');
+        'skill_name' => $skill_name,
+        'skill_level' => $request->skill_level,
+        'skill_experience' => $request->skill_experience,
+        'skill_proof' => $request->skill_proof,
+      ]);
+      $uid = auth()->user()->id;
+      $name = auth()->user()->name;
+      $email = auth()->user()->email;
+      Slack::send(''.$name.' has added a new skills. His/Her email is '.$email.'Skill Name : '.$request->skill_name.' Skills Proof: '.$request->skill_proof.'');
 
-    DB::table('users')->where('id',$uid)->increment('profile_count');
+      DB::table('users')->where('id',$uid)->increment('profile_count');
 
-    notify()->flash('Added Successfully!', 'success', [
+  /*  notify()->flash('Added Successfully!', 'success', [
       'timer' => 2000,
 
     ]);
-
-
-    return redirect('/skill');
+*/
+  return response()->json($skill_name);
 
   }
   public function destroy($id)
   {
-    $skill = Skills::where('skill_id','=',$id);
+    $skill = Skills::where('id','=',$id);
     $skill->delete();
     $uid=auth()->user()->id;
     DB::table('users')->where('id','=',$uid)->decrement('profile_count');

@@ -13,7 +13,6 @@
             <div class="col-md-8 pull-left">
                 <h4>Welcome onboard <strong>{{Auth::user()->name}}</strong></h4>
             </div>
-
           </div>
 
           <div class="col-md-12">

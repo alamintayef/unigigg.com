@@ -3,7 +3,7 @@
 
           <div class="panel-body">
 
-    {!! Form::open(array('url' => '/experiencestore')) !!}
+    {!! Form::open(array('url' => 'experiencestore','method'=> 'post' ,'id'=>'expform')) !!}
 
 
     <div class="form-group">
@@ -14,7 +14,7 @@
 
     <div class="form-group">
       {!! Form::label('exp_start_date', 'Start Date:', ['class' => 'control-label']) !!}
-      <input class="datepicker form-control" type="text" value=""/>
+      {!! Form::date('exp_start_date', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}
 
     </div>
     <div class="form-group">
@@ -39,18 +39,15 @@
     </div>
   @endif
 
-
-
-    {!! Form::submit('Add', ['class' => 'btn btn-primary']) !!}
+  <i id='loading' class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+  <span class="sr-only">Loading...</span>
+    {!! Form::submit('Add', ['class' => 'btn btn-primary','id'=> 'send-btn']) !!}
 
  {!! Form::close() !!}
 
 </div>
+<script type="text/javascript">
+  $("#loading").hide();
+</script>
 
 </div>
-<script type="text/javascript">
-$('.datepicker').datepicker({
-weekStart:1,
-format:'dd/mm/yyyy',
-});
-</script>

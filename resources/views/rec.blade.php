@@ -108,7 +108,7 @@ body{
         <h3 class="textw">Discover Skill Validated Rockstars With A Click</h3>
       </h1>
         <br>
-        <a type="submit" name="button" class="button-alt-light-big" href="{{url('login')}}">Post a Job For Free</a>
+        <a  name="button" class="button-alt-light-big" href="{{url('login')}}">Post a Job For Free</a>
 
       </div>
       <br>

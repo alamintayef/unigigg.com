@@ -23,7 +23,7 @@ class BlogController extends Controller
     {
         $this->validate($request, [
             'title' => 'required|unique:blogs',
-            'body' => 'required',
+          
 
         ]);
 
@@ -37,12 +37,13 @@ class BlogController extends Controller
         $name=auth()->user()->name;
         Slack::send(' '.$request->title.' has been posted by '.$name.' ');
 
-        notify()->flash('Added Successfully!', 'success', [
+      /*  notify()->flash('Added Successfully!', 'success', [
            'timer' => 2000,
            'text' => 'Thank you'
          ]);
+         */
 
-        return redirect('/home');
+        return response()->json();
     }
 
     public function edit($id)

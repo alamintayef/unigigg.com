@@ -1,12 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <script type="text/javascript">
-  (function ($) {
-    $('#experience').smoothState();
- }) (jQuery);
 
-  </script>
   <div class="container padtop" id="experience">
     <div class="row">
       @include('layouts.menu')
@@ -29,13 +24,7 @@
 
           <div class="well">
 
-            @if(count($errors)>0)
-              <div class="alert alert-danger">
-                @foreach($errors->all() as $error)
-                  <p>{{ $error }}</p>
-                @endforeach
-              </div>
-            @endif
+
             @if (notify()->ready())
               <script>
               swal({
@@ -58,15 +47,88 @@
     </div>
     <div class="col-md-2 panel whiteproper">
       <h5 class="textb">Experiences you added</h5>
-      @foreach($var as $exp)
-        <ul class="list-group">
-          <li class="list-group-item">{{$exp->exp_name}}</li>
-        </ul>
+
+    <ul class="list-group">
+      @foreach($data as $exp )
+        <li class="list-group-item" id=explist>{{$exp->exp_name}}</li>
       @endforeach
 
+    </ul>
     </div>
   </div>
 </div>
+<script type="text/javascript">
+
+//$.ajaxSetup({ headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') } });
+// handlers
+
+
+$(document).ready(function() {
+     $.ajax({    //create an ajax request to load_page.php
+       type: "GET",
+       url: '/experience/view',
+       dataType: 'html',   //expect html to be returned
+       success: function(data){
+          var x = JSON.parse(data);
+          for (var i = 0; i < x.length; i++) {
+            $('#explist').append('<li>' +  x +'</li>')
+          }
+
+
+        }
+
+
+      //  }
+           //alert(response);
+
+
+    });
+
+});
+
+</script>
+
+<script type="text/javascript">
+  var form = $('#expform');
+  var submit = $('#submit');
+  var alert = $('.alert');// contact form
+ $("#send-btn").click(function (e) {
+        $("#loading").show();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        })
+        e.preventDefault();
+
+    $.ajax({
+              url: '/experiencestore',
+              data: {
+                    'exp_name':$('input[name=exp_name').val(),
+                    '_token': $('input[name=_token]').val(),
+                    'exp_start_date':$('input[name=exp_start_date').val(),
+                    'exp_end_date':$('input[name=exp_end_date').val(),
+                    'exp_description':$('textarea[name=exp_description').val(),
+                    'exp_validation':$('input[name=exp_validation').val()
+                  },
+              type: 'POST',
+              datatype: 'JSON',
+              success: function (data) {
+                $("#loading").hide();
+                //var data = JSON.parse(data);
+                alertify.success("Added Successfully");
+
+                form.trigger('reset');
+                  $('#explist').append('<li>' +  data  +'</li>');
+
+
+              },
+              error: function (data) {
+                console.log('Error:', data);
+            }
+          });
+        });
+</script>
 
 
 @endsection

@@ -4,7 +4,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Resume</title>
 {!! Html::style('css/blue.css') !!}
-<!--{!! Html::style('css/print.css') !!}-->
 <!--[if IE 7]>
 <link href="css/ie7.css" rel="stylesheet" type="text/css" />
 <![endif]-->
@@ -35,7 +34,9 @@
       <div id="paper-mid">
         <div class="entry">
           <!-- Begin Image -->
-          <img class="portrait" src="{!! ('/files/images/'.$image->filePath) !!}" alt="John Smith" />
+					@if(count($image)>0)
+						<img class="portrait" src="{!! ('/files/images/'.$image->filePath) !!}" alt="John Smith" />
+					@endif
           <!-- End Image -->
           <!-- Begin Personal Information -->
           <div class="self">
@@ -74,6 +75,9 @@
 				</div>
         <!-- End 1st Row -->
         <!-- Begin 2nd Row -->
+				@if(count($edu)>0)
+
+
         <div class="entry">
           <h2>EDUCATION</h2>
 					@foreach($edu as $education)
@@ -85,8 +89,12 @@
 				@endforeach
 
         </div>
+					@endif
         <!-- End 2nd Row -->
         <!-- Begin 3rd Row -->
+				@if(count($exp)>0)
+
+
         <div class="entry">
           <h2>EXPERIENCE</h2>
           <div class="content">
@@ -95,12 +103,11 @@
   					<p>
 							{{$x->exp_name}}
               </p>
-            <ul class="info">
-              <li><p>{{$x->exp_description}}</p></li>
-            </ul>
+
 					@endforeach
 
           </div>
+
 					<!--
           <div class="content">
             <h3>Jun 2007 - May 2009</h3>
@@ -113,6 +120,7 @@
           </div>
 				-->
         </div>
+						@endif
         <!-- End 3rd Row -->
         <!-- Begin 4th Row -->
         <div class="entry">

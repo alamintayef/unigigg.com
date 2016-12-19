@@ -1,16 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-  <script type="text/javascript">
-  (function ($) {
-    $('#excc').smoothState();
- }) (jQuery);
 
-  </script>
   <div class="container padtop" id="excc">
     <div class="row">
       @include('layouts.menu')
-      <div class="col-md-7">
+      <div class="col-md-6">
 
         <ul class="nav nav-pills panel whiteproper">
           <li ><a href="{{url('userinfo')}}">Basic Information</a></li>
@@ -37,19 +32,7 @@
                 @endforeach
               </div>
             @endif
-            @if (notify()->ready())
-              <script>
-              swal({
-                title: "{!! notify()->message() !!}",
-                text: "{!! notify()->option('text') !!}",
-                type: "{{ notify()->type() }}",
-                @if (notify()->option('timer'))
-                timer: {{ notify()->option('timer') }},
-                showConfirmButton: false
-                @endif
-              });
-              </script>
-            @endif
+
 
 
             @include('student.forms.excc')
@@ -59,11 +42,12 @@
     </div>
     <div class="col-md-2 panel whiteproper">
       <h5 class="textb">Experiences you added</h5>
-      @foreach($var as $excc)
         <ul class="list-group">
-          <li class="list-group-item">{{$excc->excc_name}}</li>
-        </ul>
+
+      @foreach($var as $excc)
+        <li  class="list-group-item" id="excclist">{{$excc->excc_name}}</li>
       @endforeach
+      </ul>
 
     </div>
   </div>

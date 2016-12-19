@@ -13,8 +13,6 @@
   <title>Internships & Jobs for Young Talents</title>
   <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 
-
-
   <!-- pass through the CSRF (cross-site request forgery) token -->
   <meta name="csrf-token" content="<?php echo csrf_token() ?>" />
   <!-- Fonts--->
@@ -40,8 +38,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" charset="utf-8"></script>
 
-
-
   {!! Html::script('js/sweetalert.min.js') !!}
   {!! Html::script('js/prism.js') !!}
   {!! Html::script('js/index.js') !!}
@@ -49,8 +45,6 @@
   {!! Html::script('css/js/material-kit.js') !!}
   {!! Html::script('css/js/material.min.js') !!}
   {!! Html::script('css/js/nouislider.min.js') !!}
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="//cdn.ckeditor.com/4.5.8/standard/ckeditor.js"></script>
@@ -58,7 +52,8 @@
   {!! Html::style('css/rotating-card.css') !!}
   {!! Html::style('css/css/material-kit.css') !!}
   {!! Html::style('css/css/demo.css') !!}
-  {!! Html::style('css/css/bootstrap.min.css') !!}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 
   {!! Html::style('css/style.css') !!}
   {!! Html::style('css/sweetalert.css') !!}
@@ -85,8 +80,13 @@
   });
 
   </script>
-
-
+  <!-- mixpanel analytics   -->
+  <!-- start Mixpanel -->
+  <script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+  0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+  for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+  mixpanel.init("13aee2085d337102f498831ec7774533");</script><
+  !-- end Mixpanel -->
 
   <style>
   @media (max-width: 768px) {
@@ -182,7 +182,7 @@
   }
   .navbar-nav{
 
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 500;
 
 
@@ -231,7 +231,7 @@
               <li class=" "><a href="{{ url('/recruiter') }}">For Employers</a></li>
               <li class=" "><a href="{{ url('/talent') }}">For Talents</a></li>
 
-              <li class="show-on-hover">
+              <li class="">
                 <a  href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-expanded="false"  aria-haspopup="true">
                   <i class="fa fa-btn fa-lightbulb-o"></i> Resources <span class="caret"></span>
                 </a>
@@ -243,7 +243,7 @@
                   <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-tablet hvr-shutter-out-horizontal"></i>Training</a></li>
                 </ul>
               </li>
-              <li class="show-on-hover">
+              <li class="">
                 <a  href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-expanded="false">
                   <i class="fa fa-btn fa-sign-up"></i> Sign Up <span class="caret"></span>
                 </a>
@@ -274,7 +274,7 @@
           </button>
 
           <!-- Branding Image -->
-          <a class="navbar-brand " href="{{ url('/') }}" >
+          <a class="navbar-brand" href="{{ url('/') }}" >
             <i class="fa fa-graduation-cap "></i>unigigg<sub><small>&beta;eta</small></sub>
           </a>
 
@@ -297,18 +297,15 @@
 
             <ul class="nav navbar-nav">
               @if(Auth::user()->type===1)
-
-                <li>
-                  <a  href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                <li class="dropdown">
+                  <a  href="#" class=" dropdown-toggle" data-toggle="dropdown" role="button" >
                     <i class="fa fa-btn fa-lightbulb-o"></i> Resources <span class="caret"></span>
                   </a>
-                  <ul class="dropdown-menu " role="menu">
+                  <ul class="dropdown-menu " >
 
                     <li><a href="{{ url('blogs') }}"><i class="fa fa-btn fa-paperclip animsition-link"></i>Blog</a></li>
                     <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-rocket animsition-link"></i>Competitions</a></li>
                     <li><a href="{{ url('faqs') }}"><i class="fa fa-btn fa-question-circle animsition-link"></i>FAQs</a></li>
-
-
                     <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-sitemap animsition-link"></i>Tutorials</a></li>
                     <li><a href="{{ url('coming/soon') }}"><i class="fa fa-btn fa-tablet animsition-link"></i>Training</a></li>
 
@@ -316,14 +313,8 @@
                 </li>
               @endif
 
-
-
-                <li>  <a href="{{ url('/logout') }}">
-
-                                  Logout</a>
-
-
-                                </li>
+          <li><a href="{{ url('/logout') }}">Logout</a>
+          </li>
 
             </ul>
           </div>
@@ -354,27 +345,47 @@
         </div>
       </div>
     </div>
+    <!-- Modal -->
+  <div class="modal fade" id="feedback"  role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Help us improve</h4>
+        </div>
+        <form class="" action="{{url('/feedback')}}" method="post">
+        {!! csrf_field() !!}
+
+        <div class="modal-body">
+          <label for="feedback">Tell us your problems with our system</label>
+          <textarea name="feedback" rows="8" cols="40"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
     <!-- JavaScripts -->
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.stellar/0.6.2/jquery.stellar.min.js"></script>
     <div id="search">
-      <button type="button" class="close textw">×</button>
+
       <form role="form" method="GET" action="{{ url('/search/people') }}">
         {!! csrf_field() !!}
-        <input type="search" name="search" value="" placeholder="type skill(s) here" />
-        <button type="submit" class="btn btn-primary" >Find Me Jobs</button>
+        <input type="search" name="search" value="" placeholder="type skill(s) here and press enter" />
+
         <p>
           Search People
         </p>
       </form>
     </div>
-    <script>
-    function myFunction() {
-      swal("We are working on It!", "Thank you for trying out :D")
-    }
 
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+
+
   </body>
-  </html>
+</html>

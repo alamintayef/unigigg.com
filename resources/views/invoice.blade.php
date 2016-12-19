@@ -140,7 +140,7 @@ ul.skills li {
 
 
 .menu ul { padding:0; margin:0; list-style:none; border:0;}
-.menu ul li {  margin-right:50px; padding-right:50px; padding-bottom: 20px; border:0;display: inline;}
+.menu ul li {  margin-right:50px; padding-right:50px; padding-bottom: 20px; border:0;display: inline;float: left;}
 
   </style>
 
@@ -204,9 +204,9 @@ ul.skills li {
       <div >
         @foreach($exps as $exp )
           <p>
-            <strong>Title:</strong> {{$exp->exp_name}}<br>
-            <strong>Description</strong>:<br>
-            {{$exp->exp_description}}<br>
+            {{$exp->exp_name}}<br>
+
+
             <small><strong>start date :</strong></small> {{$exp->exp_start_date}} <small><strong>end date :</strong></small> {{$exp->exp_end_date}}
           </p>
         @endforeach

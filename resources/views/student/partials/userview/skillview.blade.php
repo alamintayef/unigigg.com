@@ -60,10 +60,10 @@
                   </td>
                 @endif
                 <td>
-                  <form action="{{url('skill',$skills->skill_id)}}" method="POST">
+                  <form action="{{url('skill',$skills->id)}}" method="POST">
                     {!! csrf_field() !!}
-                    <button type="submit" class="btn btn-danger btn-sm btn-raised">
-                      <i class="fa fa-cross"></i> Delete
+                    <button type="submit" class="btn btn-danger">
+                      <i class="fa fa-trash fa-3x"></i>
                     </button>
                   </form>
                 </td>

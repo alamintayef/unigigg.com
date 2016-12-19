@@ -2,7 +2,7 @@
 
   <div class="card card-raised pad">
 
-    {!! Form::open(array('url' => '/edustore')) !!}
+    {!! Form::open(array('url' => '', 'method'=> 'post' ,'id'=>'eduForm')) !!}
 
     <div class="form-group">
       {!! Form::label('Degree_name', 'Major:', ['class' => 'control-label']) !!}
@@ -94,46 +94,54 @@
     </div>
 
 
-
-    {!! Form::submit('Add', ['class' => 'btn btn-primary']) !!}
+    <i id='loading' class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+    {!! Form::submit('Add', ['class' => 'btn btn-primary','id'=>'edu-submit']) !!}
 
  {!! Form::close() !!}
 
 </div>
 <script type="text/javascript">
-
-$(function() {
-
-  $(document).ready(function(){
-
-      $(".monthPicker").datepicker({
-          dateFormat: 'mm-yy',
-          changeMonth: true,
-          changeYear: true,
-          showButtonPanel: true,
-
-          onClose: function(dateText, inst) {
-              var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
-              var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
-              $(this).val($.datepicker.formatDate('yy-mm', new Date(year, month, 1)));
-          }
-      });
-
-      $(".monthPicker").focus(function () {
-          $(".ui-datepicker-calendar").hide();
-          $("#ui-datepicker-div").position({
-              my: "center top",
-              at: "center bottom",
-              of: $(this)
-          });
-      });
-
-  });
-
+  $("#loading").hide();
 </script>
 <script type="text/javascript">
-$('.datepicker').datepicker({
-weekStart:1
-format:'dd/mm/yyyy'
-});
+  var form = $('#eduForm');
+  var submit = $('#submit');
+  var alert = $('.alert');// contact form
+ $("#edu-submit").click(function (e) {
+        $("#loading").show();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        })
+        e.preventDefault();
+
+    $.ajax({
+              url: '/edustore',
+              data: {
+                    'Degree_name':$('input[name=Degree_name').val(),
+                    '_token': $('input[name=_token]').val(),
+                    'Degree_type':$('select[name=Degree_type').val(),
+                    'Degree_start_date':$('select[name=Degree_start_date').val(),
+                    'Degree_end_date':$('select[name=Degree_end_date').val(),
+                    'Degree_institute':$('input[name=Degree_institute').val(),
+                    'Degree_result':$('input[name=Degree_result').val()
+                  },
+              type: 'POST',
+              datatype: 'JSON',
+              success: function (data) {
+                $("#loading").hide();
+                //var data = JSON.parse(data);
+                alertify.success("Added Successfully");
+
+                form.trigger('reset');
+                //  $('#explist').append('<li>' +  data  +'</li>');
+
+
+              },
+              error: function (data) {
+                console.log('Error:', data);
+            }
+          });
+        });
 </script>

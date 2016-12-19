@@ -2,10 +2,10 @@
 
     <div class="panel panel-default">
       <div class="panel-heading">Add Extra Curricular Acitivities</div>
-      
+
           <div class="panel-body">
 
-    {!! Form::open(array('url' => '/exccstore')) !!}
+    {!! Form::open(array('url' => '','method'=>'post','id'=> 'excForm')) !!}
 
     <small class="text-danger">Every field is required</small>
     <div class="form-group">
@@ -35,11 +35,54 @@
   @endif
 
 
-
-    {!! Form::submit('Add', ['class' => 'btn btn-primary']) !!}
+    <i id='loading' class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+    {!! Form::submit('Add', ['class' => 'btn btn-primary', 'id'=>'exc-submit']) !!}
 
  {!! Form::close() !!}
 
 </div>
-
 </div>
+<script type="text/javascript">
+  $("#loading").hide();
+</script>
+<script type="text/javascript">
+  var form = $('#excForm');
+  var submit = $('#submit');
+  var alert = $('.alert');// contact form
+ $("#exc-submit").click(function (e) {
+        $("#loading").show();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        })
+        e.preventDefault();
+
+    $.ajax({
+              url: '/exccstore',
+              data: {
+                    'excc_name':$('input[name=excc_name').val(),
+                    '_token': $('input[name=_token]').val(),
+                    'excc_start_date':$('input[name=excc_start_date').val(),
+                    'excc_end_date':$('input[name=excc_end_date').val(),
+                    'excc_description':$('textarea[name=excc_description').val(),
+
+                  },
+              type: 'POST',
+              datatype: 'JSON',
+              success: function (data) {
+                $("#loading").hide();
+                //var data = JSON.parse(data);
+                alertify.success("Added Successfully");
+
+                form.trigger('reset');
+                  $('#excclist').append('<li class="list-group-item">' +  data  +'</li>');
+
+
+              },
+              error: function (data) {
+                console.log('Error:', data);
+            }
+          });
+        });
+</script>

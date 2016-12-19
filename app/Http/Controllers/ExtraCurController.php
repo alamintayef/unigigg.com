@@ -29,12 +29,12 @@ class ExtraCurController extends Controller
     {
         $this->validate($request, [
             'excc_name' => 'required|max:250',
-            'excc_start_date' => 'required|date',
-            'excc_end_date' => 'required|date',
-            'excc_description' => 'required',
+          //  'excc_start_date' => 'required|date',
+          //  'excc_end_date' => 'required|date',
+          //  'excc_description' => 'required',
 
         ]);
-
+        $data = $request->excc_name;
         $request->user()->exccs()->create([
             'excc_name' => $request->excc_name,
             'excc_start_date' => $request->excc_start_date,
@@ -48,19 +48,15 @@ class ExtraCurController extends Controller
         Slack::send(''.$name.' has added new experience. His/Her email is '.$email.' ');
 
         DB::table('users')->where('id','=',$uid)->increment('profile_count');
-        notify()->flash('Added Successfully! Go to Dashboard', 'success', [
-           'timer' => 2000,
 
-         ]);
-
-         return redirect('/excc');
+        return response()->json($data);
     }
     public function destroy($id)
     {
       $var = ExtraCur::where('extra_id','=',$id);
       $var->delete();
       $uid = auth()->user()->id;
-    DB::table('users')->where('id','=',$uid)->decrement('profile_count');
+      DB::table('users')->where('id','=',$uid)->decrement('profile_count');
       notify()->flash('Deleted Successfully!', 'success', [
          'timer' => 2000,
 

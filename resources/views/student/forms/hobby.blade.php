@@ -14,17 +14,7 @@
       <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 -->
-@if(Session::has('message'))
 
-<div class="alert alert-{{ Session::get('message-type') }} alert-dismissable">
-
-<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-
-<i class="glyphicon glyphicon-{{ Session::get('message-type') == 'success' ? 'ok' : 'remove'}}"></i> {{ Session::get('message') }}
-
-</div>
-
-@endif
 {!! Form::open(array('url'=>'/hobby','method'=>'post', 'id'=>'form')) !!}
 
 
@@ -33,7 +23,8 @@
       {!! Form::label('hobbies_name', 'Cover Letter URL:', ['class' => 'control-label']) !!}
       {!! Form::text('hobbies_name', null, ['class' => 'form-control']) !!}
     </div>
-
+    <i id='loading' class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+    <span class="sr-only">Loading...</span>
     {!! Form::submit('add', array('class'=>'send-btn')) !!}
 
  {!! Form::close() !!}

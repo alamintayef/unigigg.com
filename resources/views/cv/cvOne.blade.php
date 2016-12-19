@@ -27,9 +27,12 @@
 </a>
 <div id="cv" class="instaFade">
 	<div class="mainDetails">
-		<div id="headshot" class="quickFade">
-		<img class="card-raised " src="{!!('/files/images/'.$image->filePath) !!}" alt="propic" height="150px" width="150px" />
-		</div>
+    @if(count($image)>0)
+      <div id="headshot" class="quickFade">
+  		<img class="card-raised " src="{!!('/files/images/'.$image->filePath) !!}" alt="propic" height="150px" width="150px" />
+  		</div>
+    @endif
+
 
 		<div id="name">
 			<h2 class="quickFade delayTwo">{{$info->fname}} {{$info->lname}}</h2>

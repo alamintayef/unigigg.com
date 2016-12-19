@@ -236,40 +236,7 @@ Then we’ll help refine your profile to give you the best opportunity at landin
       </div>
 
     </div>
-    <div class="">
-      {!! Form::open(array('url'=>'form','method'=>'', 'id'=>'myform')) !!}
-      <div class="control-group">
-        <div class="controls">
-           {!! Form::text('email','',array('id'=>'','class'=>'form-control span6','placeholder' => 'Email')) !!}
-        </div>
-      </div>
-      <div class="control-group">
-        <div class="controls">
-        {!! Form::password('password','',array('id'=>'','class'=>'form-control span6', 'placeholder' => 'Please Enter your name')) !!}
-        </div>
-      </div>
-      {!! Form::button('Login', array('class'=>'send-btn')) !!}
-      {!! Form::close() !!}
-    </div>
-    <script type="text/javascript">
-    $.ajaxSetup({
-     headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
-    });
-    $(document).ready(function(){
-      $('.send-btn').click(function(){
-        $.ajax({
-          url: 'form',
-          type: "post",
-          data: {'email':$('input[name=email]').val(), '_token': $('input[name=_token]').val(),'password':$('input[name=password]').val()},
-          success: function(response){
-            toastr.success(response);
-          }
-        });
-      });
-    });
-    </script>
 
-</div>
 
           <script type="text/javascript">
           (function ($) {

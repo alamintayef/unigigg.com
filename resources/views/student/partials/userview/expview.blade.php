@@ -37,10 +37,10 @@
                 {{$experience->exp_description}}
               </td>
               <td>
-                <form action="{{url('experience',$experience->exp_id)}}" method="POST">
+                <form action="{{url('experience',$experience->id)}}" method="POST">
                   {!! csrf_field() !!}
                   <button type="submit" class="btn btn-danger ">
-                    <i class="fa fa-cross"></i> Delete
+                    <i class="fa fa-trash"></i>
                   </button>
                 </form>
               </td>
@@ -48,6 +48,6 @@
 
           </tbody>
         </table>
-    
+
 
       </div>

@@ -22,13 +22,14 @@ class FunFactsController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'fun_facts' => 'required|',
+      /*  $this->validate($request, [
+            'fun_facts' => 'required',
             'inspiration_qot' =>'required',
             'Why_you'=> 'required',
             'Why_not_you'=> 'required',
 
         ]);
+        */
 
         $uid= auth()->user()->id;
         $entrylimit=FunFacts::where('user_id','=' ,$uid)->get();
@@ -57,12 +58,12 @@ class FunFactsController extends Controller
       Slack::send(''.$name.' has updated about you. His/Her email is '.$email.' ');
 
       DB::table('users')->where('id','=',$uid)->increment('profile_count');
-
+      /*
         notify()->flash('About Added Successfully!', 'success', [
            'timer' => 2000,
            'text' => 'Awesome',
          ]);
-
-         return redirect('/home');
+      */
+         return response()->json('Ok');
     }
 }

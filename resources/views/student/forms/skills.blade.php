@@ -4,10 +4,8 @@
     <div class="panel-heading">Add Skills</div>
 
       <div class="panel-body">
-        <p>
 
-        </p>
-    {!! Form::open(array('url' => '/skillstore')) !!}
+    {!! Form::open(array('url' => '/skillstore','method' =>'post' ,'id'=> 'form')) !!}
 
 
     <div class="form-group">
@@ -56,31 +54,17 @@
       <small class="textb">If your skill is a soft skill like Negotiation, Communication, just put your facebook profile link or linkedinlink</small>
     </div>
 
-
-    {!! Form::submit('Add', ['class' => 'btn btn-success btn-sm btn-raised']) !!}
+    <i id='loading' class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+    <span class="sr-only">Loading...</span>
+    {!! Form::submit('Add', ['class' => 'btn btn-success btn-sm btn-raised' ,'id'=>'skill_submit']) !!}
 
  {!! Form::close() !!}
 
 
 
 </div>
-</script>
 <script type="text/javascript">
-$.ajaxSetup({
- headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
-});
-$(document).ready(function(){
-  $('.send-btn').click(function(){
-    $.ajax({
-      url: 'form',
-      type: "post",
-      data: {'email':$('input[name=email]').val(), '_token': $('input[name=_token]').val(),'password':$('input[name=password]').val()},
-      success: function(response){
-        toastr.success(response);
-      }
-    });
-  });
-});
+  $("#loading").hide();
 </script>
 
 </div>

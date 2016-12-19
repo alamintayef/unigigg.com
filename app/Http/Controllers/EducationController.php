@@ -33,17 +33,17 @@ class EducationController extends Controller
     public function store(Request $request)
     {
 
-          $this->validate($request, [
+        /* $this->validate($request, [
             'Degree_name'=> 'required|min:3|max:255',
           //  'Degree_type'=> 'required|max:10',
-            'Degree_start_date'=> 'required',
-            'Degree_end_date'=> 'required',
-          // 'Degree_institute'=> 'required|max:50',
-            'Degree_result'=>'required',
+            'Degree_start_date'=> 'required|max:10',
+            'Degree_end_date'=> 'required|max:10',
+           'Degree_institute'=> 'required|max:200',
+            'Degree_result'=>'required|max:5',
 
 
           ]);
-
+*/
         $request->user()->education()->create([
               'Degree_name'=> $request->Degree_name,
               'Degree_type'=> $request->Degree_type,
@@ -57,14 +57,9 @@ class EducationController extends Controller
           $email = auth()->user()->email;
           Slack::send(''.$name.' has added new Degree. His/Her email is '.$email.' ');
 
-      DB::table('users')->where('id','=',$uid)->increment('profile_count');
+          DB::table('users')->where('id','=',$uid)->increment('profile_count');
 
-          notify()->flash('Added Successfully! Go to Dashboard', 'success', [
-             'timer' => 2000,
-             'text' => 'Add More',
-           ]);
-
-           return redirect('/edu');
+           return response()->json();
     }
     public function updateview($id){
 

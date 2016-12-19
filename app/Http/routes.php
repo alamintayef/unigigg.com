@@ -321,10 +321,11 @@ Route::group(['middleware' => 'web'], function () {
       Route::get('/vdoprofile','UserInfoController@vprofileshow');
       Route::post('/vdostore','UserInfoController@vprofilestore');
   //skills
+    //  Route::get('/skill', 'SkillController@view');
       Route::get('/skill', 'SkillController@index');
       Route::post('/skillstore', 'SkillController@store');
       Route::post('/skill/{id}','SkillController@destroy');
-      Route::post('/skills/{id}','SkillController@add_skill_proof');
+      //Route::post('/skills/{id}','SkillController@add_skill_proof');
 
   //interest
       Route::post('/intereststore', 'InterestController@store');
@@ -353,6 +354,7 @@ Route::group(['middleware' => 'web'], function () {
       Route::post('/refdelete/{id}','RefController@destroy');
       Route::get('/refs', 'RefController@index');
   // experience
+    //  Route::get('/experience','ExperienceController@view');
       Route::post('/experiencestore', 'ExperienceController@store');
       Route::post('/experience/{id}','ExperienceController@destroy');
       Route::get('/experience','ExperienceController@index');

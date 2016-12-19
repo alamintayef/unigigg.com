@@ -1,12 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <script type="text/javascript">
-  (function ($) {
-    $('#skill').smoothState();
- }) (jQuery);
 
-  </script>
   <div class="container padtop" id="skill">
     <div class="row">
       @include('layouts.menu')
@@ -29,26 +24,6 @@
 
           <div class="well">
 
-            @if(count($errors)>0)
-              <div class="alert alert-danger">
-                @foreach($errors->all() as $error)
-                  <p>{{ $error }}</p>
-                @endforeach
-              </div>
-            @endif
-            @if (notify()->ready())
-            <script>
-          swal({
-              title: "{!! notify()->message() !!}",
-              text: "{!! notify()->option('text') !!}",
-              type: "{{ notify()->type() }}",
-              @if (notify()->option('timer'))
-                  timer: {{ notify()->option('timer') }},
-                  showConfirmButton: false
-              @endif
-          });
-      </script>
-  @endif
 
 
             @include('student.forms.skills')
@@ -56,18 +31,76 @@
 
       </div>
     </div>
-    <div class="col-md-2 card raised whiteproper">
-      <h5 class="textb">Skills you added</h5>
-      @foreach($skill as $skills)
+    <div class="col-md-2 panel whiteproper">
+      <h5 class="textb">Skills You have Added</h5>
 
-        <ul class="list-group">
-          <li class="list-group-item">{{$skills->skill_name}}</li>
+
+        <ul class="">
+
+          @foreach($skill as $skills )
+
+              <li id='list're>{{$skills->skill_name}}</li>
+
+          @endforeach
         </ul>
-      @endforeach
+
 
     </div>
+
   </div>
 </div>
+<script type="text/javascript">
+
+  var form = $('#form');
+  var submit = $('#submit');
+  var alert = $('.alert');// contact form
+
+ $("#skill_submit").click(function (e) {
+          $("#loading").show();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        })
+
+        e.preventDefault();
+
+$.ajax({
+              url: '/skillstore',
+
+              data: {
+                'skill_name':$('input[name=skill_name]').val(),
+               '_token': $('input[name=_token]').val(),
+                'skill_level':$('select[name=skill_level]').val(),
+                'skill_experience':$('select[name=skill_experience]').val(),
+                'skill_proof':$('input[name=skill_proof]').val()
+
+              },
+
+              type: 'POST',
+              datatype: 'JSON',
+              success: function (skill_name) {
+                $("#loading").hide();
+                alertify.success("Added Successfully");
+                //  toastr.success(data);
+                /*  toastr.options = {
+                          "closeButton": true,
+                          "debug": false,
+                          "newestOnTop": false,
+                          "progressBar": true,
+                          "positionClass": "toast-bottom-right",
+
+                }*/
+                  $('#list').append('<li><strong>' +  skill_name  +'</strong></li>')
+                  form.trigger('reset');
+
+              },
+              error: function (data) {
+                console.log('Error:', data);
+            }
+          });
+        });
+</script>
 
 
 @endsection

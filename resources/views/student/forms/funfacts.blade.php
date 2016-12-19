@@ -4,7 +4,7 @@
 
       <div class="panel-body">
 
-    {!! Form::open(array('url' => '/funstore')) !!}
+    {!! Form::open(array('url' => '/funstore', 'id'=>'aboutForm')) !!}
 
     <small class="text-danger">Every field is required</small>
     <div class="form-group">
@@ -26,18 +26,23 @@
     </div>
     <div class="form-group">
       {!! Form::label('expected_salary', 'Expected salary ?', ['class' => 'control-label']) !!}
-      {!! Form::text('expected_salary', null, ['class' => 'form-control',]) !!}
+      {!! Form::text('expected_salary', null, ['class' => 'form-control']) !!}
     </div>
 
-
-
-    {!! Form::submit('Add', ['class' => 'btn btn-primary']) !!}
+    <i id='loading' class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+    <span class="sr-only">Loading...</span>
+    {!! Form::submit('Add', ['class' => 'btn btn-primary','id'=>'about_submit']) !!}
 
  {!! Form::close() !!}
 
 </div>
 </div>
 </div>
+<script type="text/javascript">
+  $("#loading").hide();
+</script>
+
+
 <script type="text/javascript">
  CKEDITOR.replace( 'yourself' );
  CKEDITOR.replace( 'inspiration_qot' );

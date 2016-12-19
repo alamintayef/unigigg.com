@@ -10,7 +10,10 @@
 
 @else
   <h4>Please take a look at the video to get started ! Thank you </h4>
+  <div class="embed-responsive embed-responsive-16by9 raised">
+
    <iframe width="660" height="315" src="https://www.youtube.com/embed/DF3qUXJLC_s" frameborder="0" allowfullscreen></iframe>
+   </div>
   @endif
 
 </div>

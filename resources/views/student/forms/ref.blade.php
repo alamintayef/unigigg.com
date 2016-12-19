@@ -18,7 +18,8 @@
   {!! Form::label('referee_number', 'Referee Contact:', ['class' => 'control-label']) !!}
   {!! Form::text('referee_number', null, ['class' => 'form-control']) !!}
 </div>
-
+<i id='loading' class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+<span class="sr-only">Loading...</span>
 {!! Form::submit('Add', ['class' => 'btn btn-primary']) !!}
 
 {!! Form::close() !!}

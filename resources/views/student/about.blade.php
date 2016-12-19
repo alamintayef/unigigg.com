@@ -1,12 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <script type="text/javascript">
-  (function ($) {
-    $('#about').smoothState();
- }) (jQuery);
 
-  </script>
   <div class="container padtop" id="about">
     <div class="row">
       @include('layouts.menu')
@@ -23,42 +18,93 @@
           <li><a href="{{url('interest')}}">Upload CV</a></li>
           <li ><a href="{{url('hobby')}}">Cover Letter</a></li>
           <li class="active"><a href="{{url('fun')}}">About You</a></li>
-            <li><a href="{{url('vdoprofile')}}">Video Profile</a></li>
+          <li><a href="{{url('vdoprofile')}}">Video Profile</a></li>
 
         </ul>
 
 
-          <div class="well">
 
-            @if(count($errors)>0)
-              <div class="alert alert-danger">
-                @foreach($errors->all() as $error)
-                  <p>{{ $error }}</p>
-                @endforeach
-              </div>
-            @endif
-            @if (notify()->ready())
-              <script>
-              swal({
-                title: "{!! notify()->message() !!}",
-                text: "{!! notify()->option('text') !!}",
-                type: "{{ notify()->type() }}",
-                @if (notify()->option('timer'))
-                timer: {{ notify()->option('timer') }},
-                showConfirmButton: false
-                @endif
-              });
-              </script>
-            @endif
+          @if(count($errors)>0)
+            <div class="alert alert-danger">
+              @foreach($errors->all() as $error)
+                <p>{{ $error }}</p>
+              @endforeach
+            </div>
+          @endif
+          @if (notify()->ready())
+            <script>
+            swal({
+              title: "{!! notify()->message() !!}",
+              text: "{!! notify()->option('text') !!}",
+              type: "{{ notify()->type() }}",
+              @if (notify()->option('timer'))
+              timer: {{ notify()->option('timer') }},
+              showConfirmButton: false
+              @endif
+            });
+            </script>
+          @endif
 
 
-            @include('student.forms.funfacts')
+          @include('student.forms.funfacts')
+
 
 
       </div>
     </div>
   </div>
-</div>
+  <script type="text/javascript">
+  var form = $('#aboutForm');
+
+  var alert = $('.alert');// contact form
+
+  $("#about_submit").click(function (e) {
+    $("#loading").show();
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+      }
+    })
+
+    e.preventDefault();
+
+    $.ajax({
+      url: '/funstore',
+
+      data: {
+        'fun_facts':$('textarea[name=fun_facts]').val(),
+        '_token': $('input[name=_token]').val(),
+        'inspiration_qot':$('textarea[name=inspiration_qot]').val(),
+        'Why_you':$('textarea[name=Why_you]').val(),
+        'Why_not_you':$('textarea[name=Why_not_you]').val(),
+        'expected_salary':$('input[name=expected_salary]').val(),
+      },
+
+      type: 'POST',
+      datatype: 'JSON',
+      success: function (response) {
+        $("#loading").hide();
+        alertify.success("Added Successfully");
+        //  toastr.success(data);
+        /*  toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": true,
+        "positionClass": "toast-bottom-right",
+
+      }*/
+      //  $('#list').append('<li><strong>' +  skill_name  +'</strong></li>')
+      form.trigger('reset');
+
+    },
+    error: function (data) {
+      console.log('Error:', data);
+    }
+  });
+  });
+  </script>
+
 
 
 @endsection

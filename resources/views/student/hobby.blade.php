@@ -106,6 +106,7 @@ $(document).ready(function() {
   var submit = $('#submit');
   var alert = $('.alert');// contact form
  $(".send-btn").click(function (e) {
+   $("#loading").show();
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
@@ -120,6 +121,7 @@ $.ajax({
               type: 'POST',
               datatype: 'JSON',
               success: function (data) {
+                $("#loading").hide();
                 alertify.success("Added Successfully");
                 //  toastr.success(data);
                 /*  toastr.options = {

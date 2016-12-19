@@ -15,13 +15,18 @@ class ExperienceController extends Controller
     {
       $this->middleware('auth');
     }
+    public function view(){
+
+      return view('student.experience');
+    }
     public function index()
     {
       $uid = auth()->user()->id;
-      $var = Experience::where('user_id', $uid)->orderBy('created_at', 'desc')->get();
+      $data = Experience::where('user_id', $uid)->orderBy('created_at', 'desc')->get();
       return view('student.experience',[
-        'var' =>$var,
-      ]);
+        'data' =>$data,
+    ]);
+
     }
 
     public function store(Request $request)
@@ -50,16 +55,16 @@ class ExperienceController extends Controller
 
         DB::table('users')->where('id','=',$uid)->increment('profile_count');
 
-        notify()->flash('Added Successfully! Go to Dashboard', 'success', [
+      /*  notify()->flash('Added Successfully! Go to Dashboard', 'success', [
            'timer' => 2000,
 
          ]);
-
-         return redirect('/experience');
+    */
+         return response()->json('Thank you');
     }
     public function destroy($id)
     {
-      $var = Experience::where('exp_id','=',$id);
+      $var = Experience::where('id','=',$id);
       $var->delete();
       $uid = auth()->user()->id;
     DB::table('users')->where('id','=',$uid)->decrement('profile_count');
