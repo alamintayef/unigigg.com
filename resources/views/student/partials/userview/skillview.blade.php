@@ -2,7 +2,7 @@
   <h4>Your Skills</h4>
   @if(count($skill)>0)
 
-    @foreach ($skill as $skills)
+
       <p>
         <table class="table table-bordered table-responsive " style="text-align:center;">
           <thead>
@@ -28,6 +28,7 @@
 
           </thead>
           <tbody>
+            @foreach ($skill as $skills)
             <tr>
               <td>
                 {{$skills->skill_name}}
@@ -68,11 +69,12 @@
                   </form>
                 </td>
               </tr>
+                @endforeach
             </tbody>
           </table>
         </p>
 
-      @endforeach
+
     @else
         <p>No Skills Added Yet</p>
       <p>

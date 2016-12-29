@@ -28,7 +28,7 @@ class RefController extends Controller
     {
       $this->validate($request, [
         'referred_by' => 'required|max:100',
-        'reference_description' => 'required',
+        'reference_description' => 'required|max:500|min:20',
         'referee_number'=>'required|max:100|min:11',
       ]);
       $request->user()->ref()->create([
@@ -41,12 +41,9 @@ class RefController extends Controller
       $email = auth()->user()->email;
       Slack::send(''.$name.' has added new reference. His/Her email is '.$email.' ');
       DB::table('users')->where('id','=',$uid)->increment('profile_count');
-      notify()->flash('Added Successfully! Go to Dashboard', 'success', [
-         'timer' => 3000,
-         'text' => 'Thank you',
-       ]);
+    
 
-       return redirect('/refs');
+       return response()->json();
     }
 
     public function destroy($id)
@@ -54,7 +51,7 @@ class RefController extends Controller
       $ref = Reference::where('id','=',$id);
       $ref->delete();
 
-      return redirect('/home');
+      return response()->json();
 
 
     }

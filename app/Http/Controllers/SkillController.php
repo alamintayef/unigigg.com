@@ -59,17 +59,18 @@ class SkillController extends Controller
   }
   public function destroy($id)
   {
-    $skill = Skills::where('id','=',$id);
+    $skill = Skills::find($id);
     $skill->delete();
     $uid=auth()->user()->id;
     DB::table('users')->where('id','=',$uid)->decrement('profile_count');
 
-    notify()->flash('Deleted Successfully!', 'success', [
+  /*  notify()->flash('Deleted Successfully!', 'success', [
       'timer' => 2000,
 
     ]);
+    */
 
-    return redirect('/home');
+    return response()->json($id);
 
   }
 

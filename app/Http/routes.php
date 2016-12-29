@@ -324,11 +324,11 @@ Route::group(['middleware' => 'web'], function () {
     //  Route::get('/skill', 'SkillController@view');
       Route::get('/skill', 'SkillController@index');
       Route::post('/skillstore', 'SkillController@store');
-      Route::post('/skill/{id}','SkillController@destroy');
+      Route::post('/skill/delete/{id}','SkillController@destroy');
       //Route::post('/skills/{id}','SkillController@add_skill_proof');
 
   //interest
-      Route::post('/intereststore', 'InterestController@store');
+      Route::post('/interest/store', 'InterestController@store');
       Route::post('/interest/{id}','InterestController@destroy');
       Route::get('/interest', 'InterestController@index');
       //hobby

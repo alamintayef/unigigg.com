@@ -3,7 +3,7 @@
     <div class="panel panel-default">
     <div class="panel-body">
 
-    {!! Form::open(array('url' => '/intereststore')) !!}
+    {!! Form::open(array('url' => '/interest/store','id'=>'cvform')) !!}
 
 
     <div class="form-group">
@@ -15,7 +15,7 @@
 
     <i id='loading' class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
     <span class="sr-only">Loading...</span>
-    {!! Form::submit('Add', ['class' => 'btn btn-primary']) !!}
+    {!! Form::submit('Add', ['class' => 'btn btn-info','id'=>'cvid']) !!}
 
  {!! Form::close() !!}
 

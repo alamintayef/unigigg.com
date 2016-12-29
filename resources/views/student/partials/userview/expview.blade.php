@@ -1,5 +1,5 @@
 <div class="padsmall col-md-12" >
-  <h5>Experience</h5>
+  <h4>Experience</h4>
 
   <table class="table table-striped table-hover">
     <thead>

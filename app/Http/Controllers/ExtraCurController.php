@@ -53,7 +53,7 @@ class ExtraCurController extends Controller
     }
     public function destroy($id)
     {
-      $var = ExtraCur::where('extra_id','=',$id);
+      $var = ExtraCur::where('id','=',$id);
       $var->delete();
       $uid = auth()->user()->id;
       DB::table('users')->where('id','=',$uid)->decrement('profile_count');

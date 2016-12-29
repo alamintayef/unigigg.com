@@ -60,14 +60,56 @@
     <div class="col-md-2 panel whiteproper">
       <h5 class="textb">Your CV Link</h5>
       @foreach($var as $interest)
-        <ul class="list-group">
-          <li class="list-group-item"><a href="{{$interest->interest_name}}">Your CV </a></li>
+        <ul  class="list-group">
+          <li id="list" class="list-group-item"><a href="{{$interest->interest_name}}">Your CV </a></li>
         </ul>
       @endforeach
 
     </div>
   </div>
 </div>
+<script type="text/javascript">
+$("#loading").hide();
+  var form = $('#cvform');
+  var submit = $('#submit');
+  var alert = $('.alert');// contact form
+ $("#cvid").click(function (e) {
+   $("#loading").show();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            }
+        })
+
+        e.preventDefault();
+
+$.ajax({
+              url: 'interest/store',
+              data: {'interest_name':$('input[name=interest_name').val(), '_token': $('input[name=_token]').val()},
+              type: 'POST',
+              datatype: 'JSON',
+              success: function (data) {
+                $("#loading").hide();
+                alertify.success("Added Successfully");
+                //  toastr.success(data);
+                /*  toastr.options = {
+                          "closeButton": true,
+                          "debug": false,
+                          "newestOnTop": false,
+                          "progressBar": true,
+                          "positionClass": "toast-bottom-right",
+
+                }*/
+                //  $('#list').html('<li>' +  data  +'</li>')
+                  form.trigger('reset');
+
+              },
+              error: function (data) {
+                console.log('Error:', data);
+            }
+          });
+        });
+</script>
 
 
 @endsection

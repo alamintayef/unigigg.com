@@ -1,7 +1,7 @@
 <div class="padsmall col-md-12" >
-  <h5>Extra Curricular Activities</h5>
+  <h4>Extra Curricular Activities</h4>
 
-  @foreach ($extracs as $excc)
+
 
   <table class="table table-striped table-hover">
     <thead>
@@ -19,9 +19,11 @@
         <th>
           Description
         </th>
+        <th>Delete</th>
 
         <tr>
         </thead>
+        @foreach ($extracs as $excc)
         <tbody>
 
             <tr>
@@ -38,14 +40,14 @@
               <td>
                 {{$excc->excc_description}}
               </td>
-              <table>
-                <form action="{{url('excc',$excc->extra_id)}}" method="POST">
+              <td>
+                <form action="{{url('excc',$excc->id)}}" method="POST">
                   {!! csrf_field() !!}
                   <button type="submit" class="btn btn-danger ">
-                    <i class="fa fa-cross"></i> Delete
+                    <i class="fa fa-trash"></i> 
                   </button>
                 </form>
-              </table>
+              </td>
             @endforeach
 
           </tbody>
