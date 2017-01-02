@@ -8,7 +8,6 @@
 <meta name="viewport" content="width=device-width"/>
 <meta name="description" content="Resume from unigigg.com."/>
 <meta charset="UTF-8">
-  <script src="//fast.eager.io/V77aiwbirP.js"></script>
 
   {!! Html::style('css/cvOne.css') !!}
 
@@ -21,10 +20,12 @@
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 </head>
+<!--
 <body id="top">
   <a href="https://www.facebook.com/sharer/sharer.php?u=www.unigigg.com/profile/{{$user->name}}" target="_blank">
   <button type="button" class="btn btn-link" name="button"><i class="fa fa-facebook"></i>Share <i class="fa fa-share"></i></button>
 </a>
+-->
 <div id="cv" class="instaFade">
 	<div class="mainDetails">
     @if(count($image)>0)
@@ -81,11 +82,10 @@
 			<div class="sectionContent">
 				@foreach($edu as $education)
 
-
-				<article>
+	      <article>
 					<h2>{{$education->Degree_type}} in {{$education->Degree_name}}</h2>
 					<p class="subDetails">{{$education->Degree_institute}}</p>
-					<p>Start : {{$education->Degree_start_date}}  Passing : {{$education->Degree_end_date}}
+					<p>Start : {{$education->Degree_start_date}} Passing : {{$education->Degree_end_date}}
 						Result:{{$education->Degree_result}}
 					</p>
 				</article>
@@ -108,7 +108,7 @@
 				<article>
           @foreach($exp as $x)
             <h2>{{$x->exp_name}}</h2>
-            <p class="subDetails">{{$x->exp_start_date}} - {{$x->exp_end_date}}</p>
+            <p class="subDetails">{{\Carbon\Carbon::parse($x->exp_start_date)->toFormattedDateString()}} - {{\Carbon\Carbon::parse($x->exp_start_date)->toFormattedDateString()}}</p>
             <p>{{$x->exp_description}}</p>
           @endforeach
 
@@ -131,7 +131,6 @@
             <li><a href="{{$skill->skill_proof}}"> {{$skill->skill_name}}</a></li>
           @endforeach
 
-
 				</ul>
 
       @else
@@ -149,7 +148,7 @@
         <article>
           @foreach($extra as $xtra)
             <h2>{{$xtra->excc_name}}</h2>
-            <p class="subDetails">{{$xtra->excc_start_date}} - {{$xtra->excc_end_date}}</p>
+            <p class="subDetails">{{\Carbon\Carbon::parse($xtra->excc_start_date)->toFormattedDateString()}} - {{\Carbon\Carbon::parse($xtra->excc_end_date)->toFormattedDateString()}}</p>
             <p>{{$xtra->excc_description}}</p>
           @endforeach
 

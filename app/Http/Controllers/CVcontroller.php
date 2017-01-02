@@ -30,6 +30,7 @@ class CVcontroller extends Controller
 
     public function createPdf(){
           $user_id= auth()->user()->id;
+          $image = Image::where('user_id','=', $user_id)->limit(1)->get();
           $data = UserInfo::where('user_id', '=', $user_id)->get();
           $education = Education::where('user_id', '=', $user_id)->get();
           $skill = Skills::where('user_id', '=', $user_id)->get();
@@ -47,7 +48,7 @@ class CVcontroller extends Controller
 
         ]);*/
 
-         $view =  \View::make('invoice', compact('data', 'education', 'skill', 'refs','exps','extras'))->render();
+         $view =  \View::make('invoice', compact('data', 'education', 'skill', 'refs','exps','extras','image'))->render();
           $pdf = \App::make('dompdf.wrapper');
           $pdf->loadHTML($view)->setPaper('a4', 'potrait');
           return $pdf->stream('invoice');

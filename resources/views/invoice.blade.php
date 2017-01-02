@@ -5,19 +5,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
 
 
-
-
-
-
 </script>
-<title>CV</title>
+<title>Resume</title>
 <style>
 #header {
   background-color:black;
   color:white;
   text-ah5gn:center;
-
-
 
 }
 
@@ -31,6 +25,9 @@
 }
 .right{
   text-align: right;
+}
+.left{
+  text-align: left;
 }
 html{
     background: #ededed;
@@ -132,17 +129,22 @@ ul.skills li {
   	color: #cf8a05;
   }
 
-  .sectionContent h2 {
+.sectionContent h2 {
   	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
   	font-size: 1.5em;
   	margin-bottom: -2px;
   }
-
-
 .menu ul { padding:0; margin:0; list-style:none; border:0;}
-.menu ul li {  margin-right:50px; padding-right:50px; padding-bottom: 20px; border:0;display: inline;float: left;}
+.menu ul li {
+   margin-right:10px;
+   padding-right:10px;
+   padding-bottom: 20px;
+   border:0;
+   display: inline;
+   float: left;
+ }
 
-  </style>
+</style>
 
 
 </head>
@@ -150,15 +152,20 @@ ul.skills li {
 
   <main class="pad">
     <div id="details">
-      <div id="invoice" class="right">
-        @foreach($data as $user)
+
+      <div id="invoice">
+        <div class="left">
+        
+        </div>
+        <div class="right">
+          @foreach($data as $user)
           <h2>{{$user->fname}} {{$user->lname}}</h2>
           <small class="small">  {{$user->mobile}}<br>
             {{$user->area}}<br>
           @endforeach
           {{Auth::user()->email}}</small>
           <hr>
-
+          </div>
         </div>
       </div>
     </main>
@@ -173,9 +180,7 @@ ul.skills li {
           @foreach($skill as $skills)
             <li>{{$skills->skill_name}}</li>
           @endforeach
-
-
-        </ul>
+      </ul>
 
       @else
         Under Construction
@@ -183,67 +188,69 @@ ul.skills li {
       </div>
       <div class="clear"></div>
     </section>
+    @if(count($exps)>0)
+      <section>
+        <div class="sectionTitle">
+          <h1>Experience</h1>
+        </div>
+        @foreach($exps as $exp)
+          <p>
+          <strong>  {{$exp->exp_name}}</strong>,
+          <small>  {{\Carbon\Carbon::parse($exp->exp_start_date)->toFormattedDateString()}} - {{\Carbon\Carbon::parse($exp->exp_start_date)->toFormattedDateString()}}</small>
+          </p>
+        @endforeach
+
+    </section>
+
+    @endif
     <section>
       <div class="sectionTitle">
         <h1>Education</h1>
       </div>
     <div>
       @foreach($education as $edu )
-        <strong >Degree :</strong><span class="smallpad"> {{$edu->Degree_name}}</span><strong> Institute :</strong> <span class="smallpad">{{$edu->Degree_institute}}</span><br>
-        <strong >Passing Year: </strong> <span class="smallpad">{{$edu->Degree_end_date}} </span><strong> Result:</strong><span class="smallpad">{{$edu->Degree_result}}</span><br>
-
+          <strong><span class="">{{$edu->Degree_type}} in {{$edu->Degree_name}}</span></strong>,<span class="smallpad">{{$edu->Degree_institute}}</span><br>
+          <strong>Passing Year: </strong> <span class="smallpad">{{$edu->Degree_end_date}} </span><strong> Result:</strong><span class="smallpad">{{$edu->Degree_result}}</span><br><br>
       @endforeach
-
     </div>
-    <section>
-    @if(count($exps)>0)
-      <section>
-        <div class="sectionTitle">
-          <h1>Experience</h1>
-        </div>
-      <div >
-        @foreach($exps as $exp )
-          <p>
-            {{$exp->exp_name}}<br>
+  </section>
 
-
-            <small><strong>start date :</strong></small> {{$exp->exp_start_date}} <small><strong>end date :</strong></small> {{$exp->exp_end_date}}
-          </p>
-        @endforeach
-
+    @if(count($extras)>0)
+      <div class="sectionTitle">
+          <h1>Extra Curricular</h1>
       </div>
-    </section>
-
-    @endif
+      <div class="">
+        @foreach($extras as $excc )
+            <strong> {{$excc->excc_name}}</strong><br>
+            <strong>Description</strong>:
+            {{$excc->excc_description}}<br>
+          <small>{{\Carbon\Carbon::parse($excc->excc_start_date)->toFormattedDateString()}} - {{\Carbon\Carbon::parse($excc->excc_end_date)->toFormattedDateString()}}</small><br>
+        @endforeach
+        @endif
+        </div>
 
     @if(count($refs)>0)
-      <h3>References</h3>
+      <div class="sectionTitle">
+        <h1>References</h1>
+        </div>
       <div >
         @foreach($refs as $ref )
-          <p>
+          <p >
             <strong>Referred By</strong> {{$ref->referred_by}}<br>
 
-            <small><strong>Contact : </strong>{{$ref->referee_number}}</small>  </p>
+            <small><strong>Contact : </strong>{{$ref->referee_number}}</small>
+          </p>
           @endforeach
         @endif
       </div>
-      <hr>
-      @if(count($extras)>0)
-        <h3>Extra Curricular</h3>
-        <div >
-          @foreach($extras as $excc )
-            <p>
-              <strong> {{$excc->excc_name}}</strong><br>
-              <strong>Description</strong>:<br>
-              {{$excc->excc_description}}<br>
-              <small><strong>start date :</strong></small> {{$excc->excc_start_date}} <small><strong>end date :</strong></small> {{$excc->exp_end_date}}
-            @endforeach
-          @endif
+
+
           <div class="supersmall">
+            <hr>
             <small>Gerenated by unigigg.com</small>
           </div>
 
-        </div>
+
 </body>
 
 

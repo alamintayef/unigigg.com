@@ -49,7 +49,7 @@ class HomeController extends Controller
 
       $infos = Userinfo::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->first();
       $skill = Skills::where('user_id', $request->user()->id)->get();
-      $interest = Interest::where('user_id', $request->user()->id)->get();
+      $interest = Interest::where('user_id', $request->user()->id)->first();
       $hobbies = Hobbies::where('user_id', $request->user()->id)->get();
       $education = Education::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->limit(5)->get();
       $experiences = Experience::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->limit(5)->get();

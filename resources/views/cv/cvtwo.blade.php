@@ -99,7 +99,7 @@
           <h2>EXPERIENCE</h2>
           <div class="content">
 						@foreach($exp as $x)
-							<h3>{{$x->exp_start_date}} - {{$x->exp_end_date}}</h3>
+							<h3>{{\Carbon\Carbon::parse($x->exp_start_date)->toFormattedDateString()}} - {{\Carbon\Carbon::parse($x->exp_start_date)->toFormattedDateString()}}</h3>
   					<p>
 							{{$x->exp_name}}
               </p>

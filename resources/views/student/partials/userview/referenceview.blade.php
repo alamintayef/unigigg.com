@@ -49,7 +49,7 @@
          <form action="{{url('refdelete',$ref->id)}}" method="POST">
            {!! csrf_field() !!}
            <button type="submit" class="btn btn-danger ">
-             <i class="fa fa-cross"></i> Delete
+             <i class="fa fa-trash"></i> 
            </button>
          </form>
        </td>
