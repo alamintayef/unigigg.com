@@ -76,6 +76,7 @@
             @endif
 
           @endforeach
+            {{ $varreqs->links() }}
       </table>
     </div>
     </div>

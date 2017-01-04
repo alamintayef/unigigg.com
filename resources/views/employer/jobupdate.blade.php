@@ -14,7 +14,7 @@
       @endforeach
     </div>
   @endif
-
+  <input type="hidden" name="" value="{{$jobs->id}}" id="id">
   <div class="form-group">
     {!! Form::label('job_name', 'Tltle:') !!}<span class="text-danger">*</span>
     {!! Form::text('job_name', $jobs->job_name, ['class'=>'form-control']) !!}
@@ -150,8 +150,8 @@ autocomplete.list =['C', 'C++', 'JavaScript','MS-Office','Accounting','Python','
   @endif
 
   <div class="form-group">
-
-      {!! Form::submit('Update', array( 'class'=>'btn btn-success form-control' )) !!}
+      <i id='loading' class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+      {!! Form::submit('Update', array( 'class'=>'btn btn-info job_post' )) !!}
   </div>
 </form>
 
@@ -160,8 +160,9 @@ autocomplete.list =['C', 'C++', 'JavaScript','MS-Office','Accounting','Python','
 </div>
 <script src="//cdn.ckeditor.com/4.5.8/basic/ckeditor.js"></script>
 <script type="text/javascript">
- CKEDITOR.replace( 'job_reqs_additional' );
- CKEDITOR.replace( 'job_description' );
+  CKEDITOR.replace( 'job_reqs_additional' );
+  CKEDITOR.replace( 'job_description' );
 
 </script>
+
 @endsection

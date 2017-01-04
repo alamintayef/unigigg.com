@@ -13,6 +13,7 @@
           <div class="panel">
 
           <h3 class="textb padsmall">{{$job->job_name}}</h3>
+          <h5 class="textb padsmall">Company: {{$job->company_name}}</h5>
 
             <div class="col-md-12 card card-raised">
 
@@ -39,7 +40,7 @@
                 <div class="panel-footer">
 
                   <div class="well">
-                    <strong>Posted By {{$job->company_name}}</strong>
+
                     <hr>
                   <a href="{{url('login')}}" class="btn btn-link">Apply</a><br>
                   share the post on

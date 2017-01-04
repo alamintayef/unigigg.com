@@ -4,12 +4,12 @@
   <div class="container padtop">
     <div class="row">
       <div class="card card-raised">
-        <div class="pull-right padsmall">
+        <div class=" padsmall">
 
 
         {!! Form::open(['method'=>'GET','url'=>'search/manush','class'=>'form-inline'])  !!}
           <input type="text" class="form-control" name="search" placeholder="Search...">
-          <button class="btn btn-default-sm" type="submit">
+          <button class="btn btn-default" type="submit">
             <i class="fa fa-search"></i>
             </button>
         {!! Form::close() !!}
@@ -48,7 +48,7 @@
                   <form  action="{{url('/aprofile',$users->id)}}" method="GET">
                     {!! csrf_field() !!}
                     <button type="submit" class="btn btn-primary">
-                      <i class="fa fa-user"></i> View profile
+                      <i class="fa fa-user"></i>
                     </button>
                   </form>
                 </td>
@@ -57,14 +57,14 @@
                   @if($users->verified===0)
                     <button type="button" name="button" class="btn-danger">Not Verified</button>
                   @else
-                    <button type="button" name="button" class="btn-success">Verified</button>
+                      <i class="fa fa-check-circle fa-2x"></i>
                   @endif
                 </td>
                 <td>
                   <form  action="{{url('admin/delete/user',$users->id)}}" method="POST">
                     {!! csrf_field() !!}
                     <button type="submit" class="btn btn-danger">
-                      <i class="fa fa-trash"></i> Delete
+                      <i class="fa fa-trash"></i>
                     </button>
                   </form>
                 </td>

@@ -40,25 +40,7 @@ class EmployerController extends Controller
     {
       return view('employer.auth.register');
     }
-    public function postjobs(Request $request)
-    {
-      $area  = Area::all();
-      $postedjobs = Jobs::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->get();
-      $uid= auth()->user()->id;
-      $postable=DB::table('em_infos')
-                  ->where('em_infos.user_id' ,'=',$uid)
-                  ->select('em_info.*')
-                  ->count();
 
-      return view('employer.postjob', [
-        'postedjobs'=>$postedjobs,
-        'postable' => $postable,
-        'area' =>$area,
-
-      ]);
-
-
-    }
 
     // Call All Shorlisted Candidates one by one
     public function callforinterview($id)

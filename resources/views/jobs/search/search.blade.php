@@ -4,7 +4,7 @@
     <div class="row ft ">
       <a href="{{url('home')}}"><h4 class="text-primary"><i class="fa fa-arrow-left"></i> Go Back </h4></a>
       <div >
-        <ul class="nav nav-pills panel whiteproper nav-justified">
+        <ul class="nav nav-pills panel ">
           <li class="active"><a href="{{url('eccentricJobs')}}">All</a></li>
           <li ><a href="{{url('tuitions')}}">Tutions</a></li>
           <li ><a href="{{url('assignements')}}">Assignments</a></li>

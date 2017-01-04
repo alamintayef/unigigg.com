@@ -139,6 +139,8 @@ Route::group(['middleware' => ['web']], function () {
 
       //admin
       Route::get('admin','AdminController@index');
+      Route::post('update/employer/subscripton/{id}','AdminController@updateSub');
+
       //addvdo
       Route::get('addvdo','AdminController@addvlogvdo');
       Route::post('add/vdo', 'AdminController@vlogvdostore');
@@ -240,8 +242,8 @@ Route::group(['middleware' => ['web']], function () {
       Route::get('/employerinfo', 'EmployerInfoController@index');
       Route::post('/employerinfo', 'EmployerInfoController@store');
   //Post Jobs
-      Route::get('/postjobs', 'EmployerController@postjobs');
-      Route::post('/postjobs', 'JobsController@store');
+      Route::get('/postjobs', 'JobsController@postjobs');
+      Route::post('create/job/post', 'JobsController@store');
       Route::get('/postjobs/update/view/{id}','JobsController@updateview');
       Route::post('/postjobs/update/{id}', 'JobsController@update');
       Route::post('deletejobs/{id}','JobsController@destroy');

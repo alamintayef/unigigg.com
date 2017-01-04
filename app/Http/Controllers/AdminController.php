@@ -60,7 +60,7 @@ class AdminController extends Controller
 
     public function employer()
     {
-      $allemployer = DB::table('users')->where('type',2)->get();
+      $allemployer = DB::table('users')->where('type',2)->paginate(10);
 
       return view('admin.employerboard',[
         'allemployer' => $allemployer,
@@ -232,7 +232,7 @@ class AdminController extends Controller
       $varreqs = DB::table('users')
               ->join('billings', 'users.id', '=', 'billings.user_id')
               ->select('users.name','users.id','users.verified','billings.bkash_number','billings.transaction_id')
-              ->get();
+              ->paginate(10);
       return view('admin.verification',[
         'varreqs' => $varreqs,
       ]);
@@ -394,6 +394,15 @@ class AdminController extends Controller
           return view('admin.c4in', [
             'interviewcall' => $interviewcall,
           ]);
+    }
+
+    public function updateSub($id)
+    {
+      DB::table('users')
+                  ->where('id', $id)
+                  ->update(['subs_type' => '2']);
+
+      return redirect('/employerlist');
     }
 
     public function callallforinterview($id)

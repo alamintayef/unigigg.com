@@ -45,6 +45,7 @@
   {!! Html::script('css/js/material-kit.js') !!}
   {!! Html::script('css/js/material.min.js') !!}
   {!! Html::script('css/js/nouislider.min.js') !!}
+  <link rel="stylesheet" href="//cdn.bootcss.com/hover.css/2.1.0/css/hover-min.css">
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="//cdn.ckeditor.com/4.5.8/standard/ckeditor.js"></script>
@@ -86,7 +87,7 @@
   0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
   for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
   mixpanel.init("13aee2085d337102f498831ec7774533");</script><
-  !-- end Mixpanel -->
+  <!-- end Mixpanel -->
 
   <style>
   @media (max-width: 768px) {
@@ -313,7 +314,7 @@
                 </li>
               @endif
 
-          <li><a href="{{ url('/logout') }}">Logout</a>
+          <li><a href="{{ url('/logout') }}">Log <i class="fa fa-power-off fa-1x"></i>out </a>
           </li>
 
             </ul>

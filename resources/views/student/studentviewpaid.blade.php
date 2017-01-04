@@ -11,12 +11,7 @@
   width:150px;
   }
   </style>
-  <script type="text/javascript">
-  (function ($) {
-    $('#svp').smoothState();
- }) (jQuery);
 
-  </script>
   <div class="container padtop" id="svp">
     <div class="row">
       @if(Auth::user()->type==2)
@@ -66,13 +61,26 @@
             @endforeach
 
             <h4>Skills</h4>
+            <table class="table">
+              <thead>
+                <tr>
 
-            @foreach($skill as $skills)
+                  <th>Skill Name</th>
+                  <th>Skill Level</th>
 
-            <strong>Skills :</strong> {{$skills->skill_name}} , <strong>Level: </strong>{{$skills->skill_level}} <br>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach($skill as $skills)
+                  <tr>
 
-            @endforeach
+                    <td>{{$skills->skill_name}}</td>
+                    <td>{{$skills->skill_level}}</td>
 
+                  </tr>
+                @endforeach
+              </tbody>
+            </table>
             <h4>Education</h4>
 
             @foreach($education as $edu )

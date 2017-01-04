@@ -1,9 +1,15 @@
 @extends('layouts.app')
 <title>Employer Board</title>
 @section('content')
-  <div class="container padtop panel">
-    <div class="row">
-      <table class="table table-striped">
+
+      <div class="padtop">
+        <h2>Employer Board</h2>
+        <div class="panel">
+
+
+      <div class="table-responsive">
+
+      <table class="table table-bordered">
         <thead>
           <th>
             Name
@@ -20,6 +26,7 @@
           <th>
             Status
           </th>
+          <th>Sub Type </th>
           <th>
             Delete
           </th>
@@ -37,15 +44,15 @@
                 <form  action="{{url('/employer/profile',$users->id)}}" method="GET">
                   {!! csrf_field() !!}
                   <button type="submit" class="btn btn-primary">
-                    <i class="fa fa-user"></i> view profile
+                    <i class="fa fa-user"></i>
                   </button>
                 </form>
               </td>
               <td>
                 <form  action="{{url('verify/employer',$users->id)}}" method="POST">
                   {!! csrf_field() !!}
-                  <button type="submit" class="btn btn-primary">
-                    <i class="fa fa-check-circle"></i> Verify
+                  <button type="submit" class="btn btn-success">
+                    <i class="fa fa-check-circle"></i>
                   </button>
                 </form>
               </td>
@@ -63,18 +70,27 @@
                 </td>
               @endif
               <td>
+                <form  action="{{url('update/employer/subscripton',$users->id)}}" method="POST">
+                  {!! csrf_field() !!}
+                  <button type="submit" class="btn btn-info">
+                    Change
+                  </button>
+                </form>
+              </td>
+              <td>
                 <form  action="{{url('admin/delete/user',$users->id)}}" method="POST">
                   {!! csrf_field() !!}
                   <button type="submit" class="btn btn-danger">
-                    <i class="fa fa-trash"></i> Delete
+                    <i class="fa fa-trash"></i>
                   </button>
                 </form>
               </td>
             </tr>
           @endforeach
+            {{ $allemployer->links() }}
         </tbody>
       </table>
+      </div>
     </div>
-  </div>
-
+</div>
 @endsection

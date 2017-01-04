@@ -10,19 +10,7 @@
 
           <h2 class="textb">Basic information</h2>
         </div>
-        @if (notify()->ready())
-          <script>
-          swal({
-            title: "{!! notify()->message() !!}",
-            text: "{!! notify()->option('text') !!}",
-            type: "{{ notify()->type() }}",
-            @if (notify()->option('timer'))
-            timer: {{ notify()->option('timer') }},
-            showConfirmButton: false
-            @endif
-          });
-          </script>
-        @endif
+
         @if(count($eminfos)>0)
 
 
@@ -75,7 +63,8 @@
 
 
           <div class="form-group">
-            {!! Form::submit('Save', array( 'class'=>'btn btn-success form-control' )) !!}
+            {!! Form::submit('Update', array( 'class'=>'btn btn-default employer_post' )) !!}
+            <i id='loading' class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
           </div>
 
 
@@ -83,7 +72,7 @@
         </div>
         @else
           <div class="panel whiteproper pad">
-            {!! Form::open(array('url' => '/employerinfo')) !!}
+            {!! Form::open(array('url' => '/employerinfo','method'=>'post', 'id'=>'eminfo')) !!}
             @if($errors->any())
               <div class="alert alert-danger">
                 @foreach($errors->all() as $error)
@@ -131,7 +120,9 @@
 
 
             <div class="form-group">
-              {!! Form::submit('Save', array( 'class'=>'btn btn-success form-control' )) !!}
+
+              {!! Form::submit('Save', array( 'class'=>'btn btn-success  employer_post' )) !!}
+              <i id='loading' class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
             </div>
 
 
@@ -141,12 +132,53 @@
 
           @include('student.forms.image')
 
+          <script type="text/javascript">
+            $("#loading").hide();
+          </script>
+          <script type="text/javascript">
 
+          $(".employer_post").click(function (e) {
+            $("#loading").show();
+          $.ajaxSetup({
+              headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+              }
+            })
+            e.preventDefault();
+          $.ajax({
+              url: '/employerinfo',
+              data: {
+                '_token': $('input[name=_token]').val(),
+                'company_name':$('input[name=company_name]').val(),
+                'company_phone':$('input[name=company_phone]').val(),
+                'company_email':$('input[name=company_email]').val(),
+                'company_address':$('textarea[name=company_address]').val(),
+                'company_type':$('select[name=company_type]').val(),
+                'company_size':$('input[name=company_size]').val(),
+                'company_description':$('textarea[name=company_description]').val(),
+
+              },
+              type: 'POST',
+              datatype: 'JSON',
+              success: function (name) {
+                $("#loading").hide();
+                alertify.success("Added Successfully");
+                //$('#list').append('<li><strong>' +  name  +'</strong></li>')
+                //document.getElementById('eminfo').reset();
+
+            },
+            error: function (data) {
+              console.log('Error:', data);
+            }
+          });
+          });
+          </script>
 
 
 
       </div>
     </div>
   </div>
+
 
 @endsection

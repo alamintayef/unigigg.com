@@ -12,18 +12,21 @@
     {!! Html::script('css/js/bootstrap.min.js') !!}
 
     <style media="screen">
+    body{
+        background-color:#f7f7f7;
+    }
       .top{
-        padding-top: 160px;
+        padding-top: 100px;
       }
     </style>
 
   </head>
   <body>
-    
+
 
     <div class="container padtop top">
       <div class="row">
-        <div class="col-md-10 card-raised">
+
 
 
         <h3>Welcome <strong class="primary">{{ Auth::user()->name }}
@@ -93,7 +96,7 @@
         @endif
 
 
-    </div>
+
     </div>
     </div>
 

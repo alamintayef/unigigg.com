@@ -29,11 +29,11 @@ class EmployerInfoController extends Controller
             $this->validate($request, [
                  'company_name' => 'required|min:3',
                  'company_phone'=> 'required|min:11|max:14',
-                 'company_email'=> 'required',
+              /*   'company_email'=> 'required',
                  'company_address'=>'required',
                  'company_type'=>'required',
                  'company_size'=>'required',
-                 'company_description'=>'required',
+                 'company_description'=>'required',*/
              ]);
              $uid= auth()->user()->id;
              $entrylimit=EmInfo::where('user_id','=' ,$uid)->count();
@@ -68,11 +68,6 @@ class EmployerInfoController extends Controller
             Slack::to('#unigigg-jobs')->send('' .$name.' has added his company info ');
 
 
-             notify()->flash('Added Successfully! ', 'success', [
-                'timer' => 2000,
-                'text' => 'Please Check the Dashboard',
-              ]);
-
-              return redirect('/home');
+              return response()->json();
         }
 }

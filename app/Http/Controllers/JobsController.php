@@ -21,6 +21,25 @@ class JobsController extends Controller
     {
       $this->middleware('employer');
     }
+    public function postjobs(Request $request)
+    {
+      $area  = Area::all();
+      $postedjobs = Jobs::where('user_id', $request->user()->id)->orderBy('created_at', 'desc')->get();
+      $uid= auth()->user()->id;
+      $postable=DB::table('em_infos')
+                  ->where('em_infos.user_id' ,'=',$uid)
+                  ->select('em_info.*')
+                  ->count();
+
+      return view('employer.postjob', [
+        'postedjobs'=>$postedjobs,
+        'postable' => $postable,
+        'area' =>$area,
+
+      ]);
+
+
+    }
 
     public function store(Request $request)
     {
@@ -33,16 +52,16 @@ class JobsController extends Controller
         $jobExpires = $current->addDays(30);
         $this->validate($request, [
             'job_name' => 'required|max:255',
-            'job_type' => 'required',
+            'job_type' => 'required|min:1',
             'job_salary' => 'required|min:4|max:12',
-            'job_location' => 'required',
-            'job_description' => 'required',
+            'job_location' => 'required|min:4',
+            'job_description' => 'required|min:10',
             'min_edu_level' => 'required',
-            'major' => 'required',
-            'cgpa' => 'required',
-            'job_skill_reqs' => 'required',
-            'job_start_date' => 'required|date',
-            'job_last_date_application' => 'required|date',
+            'major' => 'required|min:1',
+            'cgpa' => 'required|min:1',
+          //  'job_skill_reqs' => 'required',
+          //  'job_start_date' => 'required|date',
+          //  'job_last_date_application' => 'required|date',
 
 
         ]);
@@ -80,14 +99,8 @@ class JobsController extends Controller
         });
      }
      */
-
-        notify()->flash('Added Successfully! Check Posted Jobs', 'success', [
-           'timer' => 2000,
-           'text' => 'Great. Thank you for posting a job',
-         ]);
-
-
-         return redirect('/postedjobs');
+      //  $name = $request->job_name;
+        return redirect('postedjobs');;
 
 
     }

@@ -13,6 +13,7 @@
 
 
               <h3 class="textb  padsmall">Title: {{$job->job_name}}</h3>
+              <h4>Company: {{$job->company_name}}</h4>
             </div>
             <div class="col-md-12">
 
@@ -46,7 +47,7 @@
                 <div class="panel-footer">
 
                   <div class="well">
-                    <strong>Posted By {{$job->company_name}}</strong>
+
 
                     <!-- Check if its recruter or not-->
                     @if(Auth::user()->type===1)
