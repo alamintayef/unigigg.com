@@ -70,6 +70,7 @@
 
                   <td>{{$skills->skill_name}}</td>
                   <td>{{$skills->skill_level}}</td>
+                    <td><a href="{{$skills->skill_proof}}"> {{$skills->skill_name}}</a></td>
 
                 </tr>
               @endforeach

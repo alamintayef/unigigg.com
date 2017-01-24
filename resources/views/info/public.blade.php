@@ -14,11 +14,13 @@ body
 <div class="container padtop">
   <div class="row pad">
 
-    <div class="col-md-12 " style="font-size:12px; padding:5px">
+    <div class="col-md-12 " style="font-size:14px; padding:5px">
       <div class="transparentbg" >
-        <ul class="nav nav-pills  nav-justified">
+        <ul class="">
+          <!--
           <li class="active"><a href="{{url('jobs/view')}}"><strong class="textw">Regular Jobs</strong></a></li>
           <li><a href="{{url('jobs/view/eccentric')}}"><strong class="textw">Eccentric Jobs </strong></a></li>
+        -->
           <li class="textw">@include('search.search',['url'=>'search/jobs'])</li>
         </ul>
       </div>
@@ -118,14 +120,14 @@ body
               {{$job->job_location}}
             </td>
             <td>
-              <br> {{$job->job_salary}}<br>
+              {{$job->job_salary}}
             </td>
             <td>
-            <strong>{{$job->company_name}}</strong><br>
+            <strong>{{$job->company_name}}</strong>
 
           </td>
           <td>
-              <a href="{{url('/view/jobs',$job->slug)}}" class="btn btn-link">view</a>
+              <a href="{{url('/view/jobs',$job->slug)}}" class="btn btn-default">view</a>
 
           </td>
         </tr>

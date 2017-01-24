@@ -32,8 +32,8 @@
               @endforeach
               <br>
               <br>
-              @foreach($user as $users)
-                @if($users->verified===1)
+
+                @if($user->verified===1)
                   <h6 class="text-success">
                     Verified
                   </h6>
@@ -42,19 +42,23 @@
                     Not Verified
                   </h6>
                 @endif
-              @endforeach
+
             </div>
               @foreach($profile as $view )
-              <h3 class="textb">{{$view->fname}}   {{$view->lname}}</h3>
+              <h3 class="textb">{{$view->fname}} {{$view->lname}}</h3>
 
             </div>
             <div class="panel-body ft pl">
-              <div >
+              <div>
 
                 <p>
                 <b>  University:</b> <b> {{$view->institute}} </b><br> <b>  Contact:</b> <b> {{$view->mobile}} </b>
                 <br>
-                Facebook Profile : <a href="{{$view->facebookId}}">{{$view->fname}} {{$view->lname}}</a>
+                {{$view->area}}
+                <br>
+                Facebook Profile : <a href="{{$view->facebookId}}">{{$view->fname}} {{$view->lname}}</a><br>
+                CV : <a href="{{$cv->interest_name}}">CV of {{$view->fname}} </a>
+
                 </p>
 
               </div>
@@ -67,6 +71,7 @@
 
                   <th>Skill Name</th>
                   <th>Skill Level</th>
+                  <th>Skill Proof</th>
 
                 </tr>
               </thead>
@@ -76,6 +81,7 @@
 
                     <td>{{$skills->skill_name}}</td>
                     <td>{{$skills->skill_level}}</td>
+                    <td><a href="{{$skills->skill_proof}}"> {{$skills->skill_name}}</a></td>
 
                   </tr>
                 @endforeach

@@ -131,6 +131,7 @@ class EmployerController extends Controller
       $exps = Experience::where('user_id','=', $id)->get();
       $refs = Reference::where('user_id','=', $id)->get();
       $images = Image::where('user_id','=', $id)->orderBy('created_at', 'desc')->limit(1)->get();
+      $cv = Interest::where('user_id','=',$id)->first();
       return view('student.studentviewpaid', [
         'profile'=>$profile,
         'skill'=>$skill,
@@ -139,6 +140,7 @@ class EmployerController extends Controller
         'refs'=> $refs,
         'images'=> $images,
         'user' => $user,
+        'cv' => $cv,
 
 
 

@@ -60,7 +60,7 @@
 
 				<div class="sectionContent">
           @if(count($about)!=0)
-              {!! $about->fun_facts !!}
+              {!! $about->Why_you !!}
           @else
             <p>
               I haven't added anything Yet

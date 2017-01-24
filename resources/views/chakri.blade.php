@@ -8,50 +8,62 @@
 
       <div class="col-md-10 " style="font-size:12px;">
         <div >
-          <ul class="nav nav-pills panel whiteproper nav-justified">
+          <ul class="nav nav-pills panel whiteproper ">
+                    <!--
             <li class="active"><a href="{{url('chakri')}}">All</a></li>
+
             <li ><a href="{{url('internships')}}">Internships</a></li>
             <li ><a href="{{url('fulltime')}}">Full-Time</a></li>
             <li ><a href="{{url('parttime')}}">Part-Time</a></li>
             <li ><a href="{{url('onetime')}}">One-Time</a></li>
+            -->
+            
             <li>@include('search.search',['url'=>'search/charki'])</li>
           </ul>
         </div>
-        @if(count($jobs)>0)
-          @foreach($jobs as $job)
-            <!---
-            <div class="col-md-3 col-md-offset-1 whiteproper card-raised padsmall">
 
-              <h5 >{{$job->job_name}}</h5>
+          <table class="table table-responsive table-stripped  whiteproper card-raised padsmall">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Location</th>
+                <th>Salary</th>
+                <th>Company</th>
+                <th>View </th>
+              </tr>
+            </thead>
+          @if(count($jobs)>0)
+            @foreach($jobs as $job)
 
-                Type: {{$job->job_type}}
-                <br>Location: {{$job->job_location}}
-                <br>Salary: {{$job->job_salary}}<br>
 
-              <strong>Posted By {{$job->company_name}}</strong><br>
-              <strong>Posted on {{$job->created_at}}</strong>
-
-              <!-- Check if its recruter or not-
-
-                  <form class="form-control" action="{{url('show/jobs',$job->id)}}" method="GET">
-                    {!! csrf_field() !!}
-                    <button type="submit" name="button" class="btn btn-default raised">view</button>
-                  </form>
-            </div>
-          -->
-          <div class="table table-responsive table-stripped col-md-6  whiteproper card-raised padsmall">
+            <tbody>
             <tr>
               <td>
-                <strong> {{$job->job_name}}</strong>
-                <br>Location: {{$job->job_location}}
-                <br>Salary: {{$job->job_salary}}<br>
-                <strong>Posted By {{$job->company_name}}</strong><br>
+                <strong> {{$job->job_name}}</td>
+                <td>
+                  {{$job->job_location}}
+                </td>
+                <td>
+                   {{$job->job_salary}}
+                </td>
+                <td>
+                {{$job->company_name}}
+
+              </td>
+              <td>
+                  <a href="{{url('show/jobs',$job->id)}}" class="btn btn-default">view</a>
               </td>
             </tr>
-          </div>
-          @endforeach
 
-        @endif
+    </tbody>
+
+        @endforeach
+
+      @endif
+
+
+
+    </table>
 
 
       </div>

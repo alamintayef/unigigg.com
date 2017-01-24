@@ -52,9 +52,5 @@
 
     </div>
   </div>
-  <script type="text/javascript">
-  (function ($) {
-  $('#jobs').smoothState();
-})(jQuery);
-  </script>
+  
 @endsection

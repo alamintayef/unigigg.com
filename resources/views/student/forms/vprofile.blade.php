@@ -18,6 +18,8 @@
  {!! Form::close() !!}
 
 </div>
-
+<script type="text/javascript">
+  $("#loading").hide();
+</script>
 
 </div>
