@@ -13,7 +13,7 @@
 
     <i id='loading' class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
     <span class="sr-only">Loading...</span>
-    {!! Form::submit('Add', ['class' => 'btn btn-sm btn-raised']) !!}
+    {!! Form::submit('Add', ['class' => 'btn btn-success btn-raised']) !!}
 
  {!! Form::close() !!}
 

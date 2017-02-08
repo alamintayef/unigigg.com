@@ -31,8 +31,7 @@
       </select>
 
     </div>
-
-    <div class="form-group">
+<div class="form-group">
       {!! Form::label('Degree_start_date', 'Start Date:', ['class' => 'control-label']) !!}
       <select name="Degree_start_date" class="form-control">
         <option value="2001">2001</option>
@@ -57,7 +56,9 @@
         <option value="2020">2020</option>
     </select>
     </div>
-  <div class="form-group">
+
+
+      <div class="form-group">
       {!! Form::label('Degree_end_date', 'Expected / Passing Date:', ['class' => 'control-label']) !!}
       <select name="Degree_end_date" class="form-control">
         <option value="2001">2001</option>
@@ -83,6 +84,7 @@
     </select>
 
     </div>
+
     <div class="form-group">
       {!! Form::label('Degree_institute', 'Institute:', ['class' => 'control-label']) !!}
       {!! Form::text('Degree_institute', null, ['class' => 'form-control']) !!}

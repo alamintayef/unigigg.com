@@ -449,99 +449,37 @@ body{
 
   </div>
 
-
+<!-- pricing starts -->
   <div class="container-fluid white center pad">
 
       <h2 class="center foo">Pricing</h2>
       <h4 class="center foo">Posting a Job is Completely Free</h4>
       <h5 class="center foo">You’ll only be charged when you finalize applicants who match your requirements</h5>
 
-      <div class="col-md-3 foo ">
+      <div class="col-md-4 foo ">
 
         <!-- PRICE ITEM -->
-        <div class="panel price panel-white">
-          <div class="panel-heading arrow_box text-center">
-          <h5>Starter</h5>
-          </div>
-          <div class="panel-body text-center">
-            <p class="lead" style="font-size:20px"><strong>Free</strong></p>
-          </div>
-          <ul class="list-group list-group-flush text-center">
-            <li class="list-group-item"><i class="icon-ok text-success"></i>Self Serve</li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i>First 2 Hires or 3 months</li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i> 24/7 support</li>
-          </ul>
 
-        </div>
         <!-- /PRICE ITEM -->
 
 
       </div>
 
-      <div class="col-md-3 foo ">
+      <div class="col-md-4 foo ">
 
-        <!-- PRICE ITEM -->
-        <div class="panel price panel-white">
-          <div class="panel-heading arrow_box text-center">
-          <h5>Pay as You Go</h5>
-          </div>
-          <div class="panel-body text-center">
-            <p class="lead" style="font-size:20px"><strong>Tk.1000 / Hire</strong></p>
-          </div>
-          <ul class="list-group list-group-flush text-center">
-            <li class="list-group-item"><i class="icon-ok text-success"></i>Self Serve</li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i>Better For &lt; 10 Hires </li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i> 24/7 support</li>
-          </ul>
-
-        </div>
-        <!-- /PRICE ITEM -->
+        <h3>10% of Hired Employee's first month's salary</h3>
 
 
       </div>
 
-      <div class=" col-md-3 foo">
+      <div class=" col-md-4 foo">
 
-        <!-- PRICE ITEM -->
-        <div class="panel price panel-white">
-          <div class="panel-heading arrow_box text-center">
-          <h5>Pay Up Front and Save</h5>
-          </div>
-          <div class="panel-body text-center">
-            <p class="lead" style="font-size:20px"><strong>Contact Us for the pricing</strong></p>
-          </div>
-          <ul class="list-group list-group-flush text-center">
-            <li class="list-group-item"><i class="icon-ok text-success"></i> Dedicated Account Manager</li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i> Suited for &gt; 10 Hires</li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i> 24/7 support</li>
-          </ul>
 
-        </div>
-      <h4 class="text-success">  Best Value </h4>
-        <!-- /PRICE ITEM -->
 
 
       </div>
 
-        <div class=" col-md-3 foo">
 
-        <!-- PRICE ITEM -->
-        <div class="panel price panel-white">
-          <div class="panel-heading arrow_box text-center">
-          <h5>Corporate</h5>
-          </div>
-          <div class="panel-body text-center">
-            <p class="lead" style="font-size:20px"><strong>Contact Us for the pricing</strong></p>
-          </div>
-          <ul class="list-group list-group-flush text-center">
-            <li class="list-group-item"><i class="icon-ok text-success"></i> Dedicated Account Manager</li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i> No Limit on Hiring</li>
-            <li class="list-group-item"><i class="icon-ok text-success"></i> 24/7 support</li>
-          </ul>
-
-        </div>
-          </div>
-        <!-- /PRICE ITEM -->
 
         <!-- /PRICE ITEM -->
 

@@ -110,6 +110,12 @@ Route::group(['middleware' => ['web']], function () {
       Route::get('/jobs/view','PublicController@publicboard');
       Route::get('/vlog','PublicController@showVlog');
       Route::get('/jobs/view/eccentric','PublicController@publiceccentricboard');
+
+      Route::get('coming/soon', function()
+      {
+         return view('coming');
+      });
+
       Route::get('/', function () {
 
           return view('welcome');

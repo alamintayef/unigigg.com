@@ -25,7 +25,7 @@
           <li ><a href="{{url('interest')}}">Upload CV</a></li>
           <li ><a href="{{url('hobby')}}">Cover Letter</a></li>
           <li><a href="{{url('fun')}}">About You</a></li>
-          <li><a href="{{url('vdoprofile')}}">Video Profile</a></li>
+          <li><a href="{{url('vdoprofile')}}">Video Resume</a></li>
 
         </ul>
 
@@ -60,7 +60,7 @@
 
         </div>
       </div>
-      
+
     </div>
   </div>
 

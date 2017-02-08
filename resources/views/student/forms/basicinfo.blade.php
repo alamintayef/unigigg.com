@@ -5,7 +5,7 @@
           <div class="row">
 
           <div class="col-md-6">
-          
+
 
           <div class="form-group">
 
@@ -84,7 +84,7 @@
 
 
 
-          {!! Form::submit('Add', ['class' => 'btn btn-primary btn-raised btn-sm']) !!}
+          {!! Form::submit('Add', ['class' => 'btn btn-primary btn-raised']) !!}
 
 
           {!! Form::close() !!}
@@ -183,7 +183,7 @@
             <small class="text-danger">Optional</small>
           </div>
 
-          {!! Form::submit('Add', ['class' => 'btn btn-primary btn-raised btn-sm']) !!}
+          {!! Form::submit('Add', ['class' => 'btn btn-primary btn-raised']) !!}
 
 
           {!! Form::close() !!}

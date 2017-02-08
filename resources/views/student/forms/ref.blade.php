@@ -1,6 +1,6 @@
 <div class="panel panel-default">
-  <div class="panel-heading"><a class="btn btn-primary  btn-lg" data-toggle="collapse" href="#collapseref">Add Reference</a></div>
-    <div id="collapseref" class="panel-collapse collapse">
+  <div class="panel-heading">Add Reference</div>
+
   <div class="panel-body">
 
 {!! Form::open(array('url' => 'refstore', 'method'=>'post')) !!}
@@ -26,7 +26,7 @@
 
 </div>
 </div>
-</div>
+
 <script type="text/javascript">
   $("#loading").hide();
   var form = $('#formRef');

@@ -381,8 +381,6 @@ body{
   <div class="row">
     <div class="col-md-6 text-center">
       <img src="http://vignette3.wikia.nocookie.net/thestudents/images/2/2c/Megamind_Run.png/revision/latest?cb=20140629163338" alt="" />
-
-
     </div>
     <div class="col-md-6">
       <h1 class="textb bighead2">Looking for a Megamind to join your team ?</h1>
@@ -394,6 +392,22 @@ body{
       <a href="recruiter" class="button-alt-big">Learn More</a>
 
     </div>
+
+  </div>
+
+</div>
+<div class="container-fluid whiteproper pad">
+  <div class="row">
+    <div class="col-md-12 text-center ">
+      <h2 class="bighead2 textb">What our user thinks about us</h2>
+    </div>
+
+    <div class="col-md-6 col-xl-6 text-center">
+
+      <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fzerin.tasnime%2Fposts%2F924481521011551%3A0&width=500" width="500" height="335" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+    </div>
+    <div class="col-md-6 col-xl-6 text-center">
+  <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Faihalim%2Fposts%2F10153579772942327%3A0&width=500" width="500" height="335" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>  </div>
 
   </div>
 

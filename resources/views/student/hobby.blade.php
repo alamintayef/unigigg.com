@@ -18,7 +18,7 @@
           <li><a href="{{url('interest')}}">Upload CV</a></li>
           <li class="active"><a href="{{url('hobby')}}">Cover Letter</a></li>
           <li><a href="{{url('fun')}}">About You</a></li>
-            <li><a href="{{url('vdoprofile')}}">Video Profile</a></li>
+          <li><a href="{{url('vdoprofile')}}">Video Profile</a></li>
 
         </ul>
 
@@ -46,9 +46,7 @@
               </script>
             @endif
 
-
             @include('student.forms.hobby')
-
 
       </div>
     </div>
@@ -59,7 +57,6 @@
         <ul class="list-group">
           <li class="list-group-item" id=list></li>
         </ul>
-
 
     </div>
   </div>

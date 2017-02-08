@@ -236,6 +236,14 @@ Then we’ll help refine your profile to give you the best opportunity at landin
       </div>
 
     </div>
+    <div class="container-fluid whiteproper pad">
+      <div class="col-md-12 col-xs-12 text-center">
+        <h1 class="textb">What a user has to say about us </h1>
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fomixccc%2Fposts%2F1295299073814482%3A0&width=500" width="500" height="411" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+
+      </div>
+
+    </div>
 
 
           <script type="text/javascript">

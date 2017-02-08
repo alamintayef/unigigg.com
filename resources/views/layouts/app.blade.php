@@ -90,14 +90,13 @@
   <!-- end Mixpanel -->
 
   <style>
-  @media (max-width: 768px) {
+  @media (min-width: 300px) {
   html, body {
   width: auto !important;
   overflow-x: hidden !important;
   }
   }
-
-  body {
+body {
     font-family: 'Raleway', sans-serif;
     background-color:#f7f7f7;
     font-size: 13px;

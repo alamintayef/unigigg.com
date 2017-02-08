@@ -7,11 +7,11 @@
 
       <div class="form-group">
           {!! Form::label('filePath', 'Choose profile Image') !!}
-          {!! Form::file('filePath', array('class'=>'btn btn-info')) !!}
+          {!! Form::file('filePath', array('class'=>'btn btn-info form-control')) !!}
       </div>
 
       <div class="form-group">
-          {!! Form::submit('upload', array( 'class'=>'btn btn-success form-contro' )) !!}
+          {!! Form::submit('upload', array( 'class'=>'btn btn-success ' )) !!}
       </div>
 
 

@@ -27,7 +27,7 @@
           {{$skills->job_skill_reqs}}
         </td>
         <td>
-          <form class="form-control" action="{{url('/view/jobs',$skills->job_name)}}" method="GET">
+          <form class="form-control" action="{{url('/view/jobs',$skills->slug)}}" method="GET">
 
             <button type="submit" class="btn btn-default btn-mini pull-right">view</button>
 

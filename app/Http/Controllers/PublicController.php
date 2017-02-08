@@ -184,7 +184,7 @@ class PublicController extends Controller
             'job'=>$job,
           ]);
   }
-
+  //landing page search
   public function search(Request $request)
   {
     $this->validate($request, [
@@ -194,6 +194,7 @@ class PublicController extends Controller
 
      $skill = DB::table('jobs')
             ->select('jobs.*')
+            ->where('jobs.status','=','1')
             ->where('job_skill_reqs','like','%'.$search.'%')
             ->get();
 
@@ -202,6 +203,7 @@ class PublicController extends Controller
         'skill'=> $skill,
       ]);
   }
+  //Search on the joboard
   public function chakrisearch()
   {
     $search = \Request::get('search');

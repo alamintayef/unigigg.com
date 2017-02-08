@@ -5,7 +5,7 @@
   <div class="container padtop" id="excc">
     <div class="row">
       @include('layouts.menu')
-      <div class="col-md-6">
+      <div class="col-md-7">
 
         <ul class="nav nav-pills panel whiteproper">
           <li ><a href="{{url('userinfo')}}">Basic Information</a></li>
@@ -18,7 +18,7 @@
           <li ><a href="{{url('interest')}}">Upload CV</a></li>
           <li ><a href="{{url('hobby')}}">Cover Letter</a></li>
           <li><a href="{{url('fun')}}">About You</a></li>
-            <li><a href="{{url('vdoprofile')}}">Video Profile</a></li>
+          <li><a href="{{url('vdoprofile')}}">Video Profile</a></li>
 
         </ul>
 

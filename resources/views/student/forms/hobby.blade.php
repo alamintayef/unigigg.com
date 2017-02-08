@@ -25,12 +25,14 @@
     </div>
     <i id='loading' class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
     <span class="sr-only">Loading...</span>
-    {!! Form::submit('add', array('class'=>'send-btn')) !!}
+    {!! Form::submit('Add', array('class'=>'send-btn')) !!}
 
  {!! Form::close() !!}
 
 
-
+ <script type="text/javascript">
+   $("#loading").hide();
+ </script>
 
 </div>
 </div>
