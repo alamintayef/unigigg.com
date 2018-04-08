@@ -61,7 +61,7 @@
                   </td>
                 @endif
                 <td>
-                  <form action="{{url('skill',$skills->id)}}" method="POST">
+                  <form action="{{url('skill/delete',$skills->id)}}" method="POST">
                     {!! csrf_field() !!}
                     <button type="submit" class="btn btn-danger">
                       <i class="fa fa-trash fa-3x"></i>

@@ -34,6 +34,7 @@
             @endforeach
             <br>
             <br>
+          
 
             @if(count($about)>0)
             @foreach($about as $info)

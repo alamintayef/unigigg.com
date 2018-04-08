@@ -12,6 +12,7 @@
 
   <title>Internships & Jobs for Young Talents</title>
   <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="https://conversational-form-0iznjsw.stackpathdns.com/conversational-form.min.js" crossorigin></script>
 
   <!-- pass through the CSRF (cross-site request forgery) token -->
   <meta name="csrf-token" content="<?php echo csrf_token() ?>" />
@@ -61,7 +62,7 @@
   {!! Html::style('css/prism.css') !!}
   {!! Html::style('css/awesomplete.css') !!}
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" media="screen" title="no title" charset="utf-8">
   <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.1.4/scrollreveal.min.js"></script>
   {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
   <script type="text/javascript">

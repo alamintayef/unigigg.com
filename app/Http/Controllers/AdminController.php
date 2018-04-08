@@ -25,6 +25,7 @@ use App\Model\Student\Area;
 use App\Model\Student\Reference;
 use App\Model\Student\Vprofile;
 use App\Model\Student\OddJobs;
+
 use DB;
 use Mailgun;
 use SMSGateway;
@@ -169,6 +170,7 @@ class AdminController extends Controller
       $images = Image::where('user_id','=', $id)->orderBy('created_at', 'desc')->limit(1)->get();
       $vdo =Vprofile::where('user_id','=', $id)->first();
       return view('admin.talentprofile', [
+
         'view'=>$view,
         'skill'=>$skill,
         'education'=> $education,

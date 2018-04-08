@@ -51,6 +51,7 @@ class AdminUserController extends Controller
        ]);
       return redirect('home');
     }
+    
 
     public function deleleUser($id)
     {
@@ -66,7 +67,7 @@ class AdminUserController extends Controller
     }
 
     public function usercount(){
-      
+
     }
 
     public function notifyuserAbout($email)
